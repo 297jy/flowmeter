@@ -1,0 +1,1175 @@
+[2020-02-08 00:16:39,715] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 00:16:43,035] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 00:16:43,063] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 00:16:44,329] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 00:16:44,329] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-08 00:16:47,404] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 00:16:47,425] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 00:16:47,446] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 00:16:47,446] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-08 00:17:34,234] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 00:17:36,544] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 00:17:36,573] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 00:21:27,392] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-08 00:21:27,965] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 00:22:20,376] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\urls.py changed, reloading.
+[2020-02-08 00:22:20,951] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 00:22:27,528] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2637
+[2020-02-08 00:22:27,547] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 00:22:27,749] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 00:22:27,750] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 00:22:27,754] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 00:23:04,544] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2649
+[2020-02-08 00:23:37,840] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2661
+[2020-02-08 00:25:25,526] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login_view.py changed, reloading.
+[2020-02-08 00:25:26,089] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 00:37:40,232] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\auth.py changed, reloading.
+[2020-02-08 00:37:40,800] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 00:42:07,405] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\auth.py changed, reloading.
+[2020-02-08 00:42:07,952] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 11:31:21,366] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login_view.py changed, reloading.
+[2020-02-08 11:31:21,966] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 11:50:57,161] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\auth.py changed, reloading.
+[2020-02-08 11:50:57,730] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 11:55:55,325] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\urls.py changed, reloading.
+[2020-02-08 11:55:55,905] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 11:57:21,355] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\urls.py changed, reloading.
+[2020-02-08 11:57:21,926] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 12:12:31,165] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\common.py changed, reloading.
+[2020-02-08 12:12:31,755] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 12:12:50,981] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2654
+[2020-02-08 12:15:15,149] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2654
+[2020-02-08 12:19:05,024] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 12:19:09,502] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2634
+[2020-02-08 12:19:09,518] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:19:16,688] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2634
+[2020-02-08 12:19:16,706] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:19:16,706] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:19:16,707] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:19:16,711] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:19:16,712] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:19:16,717] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:19:16,742] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:19:16,743] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:19:16,743] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:19:16,752] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:19:16,758] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:19:16,765] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:22:21,961] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2634
+[2020-02-08 12:22:30,469] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2634
+[2020-02-08 12:22:30,486] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:22:30,487] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:22:30,487] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:22:30,490] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:22:30,492] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:22:30,493] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:22:30,518] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:22:30,519] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:22:30,519] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:22:30,528] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:22:30,534] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:22:30,541] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:23,032] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:23,048] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:24:23,049] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:23,049] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:24:23,052] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:24:23,053] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:24:23,058] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:24:23,077] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:24:23,077] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:23,078] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:24:23,087] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:24:23,094] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:24:23,102] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:24,076] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:24,093] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:24:24,093] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:24:24,093] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:24:24,093] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:24,094] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:24:24,103] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:24:24,124] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:24:24,124] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:24,124] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:24:24,132] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:24:24,138] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:24:24,144] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:24,913] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:24,933] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:24:24,933] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:24,934] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:24:24,934] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:24:24,935] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:24:24,941] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:24:24,962] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:24:24,962] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:24,963] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:24:24,971] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:24:24,977] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:24:24,984] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:25,718] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:25,732] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:24:25,733] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:25,733] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:24:25,733] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:24:25,734] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:24:25,740] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:24:25,761] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:25,761] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:24:25,761] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:24:25,770] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:24:25,775] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:24:25,781] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:26,427] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:26,442] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:24:26,443] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:26,443] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:24:26,443] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:24:26,444] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:24:26,453] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:24:26,474] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:24:26,474] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:26,474] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:24:26,483] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:24:26,489] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:24:26,496] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:27,127] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:27,143] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:24:27,144] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:27,144] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:24:27,144] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:24:27,145] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:24:27,154] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:24:27,174] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:24:27,174] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:27,175] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:24:27,184] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:24:27,189] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:24:27,194] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:27,766] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:27,782] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:24:27,782] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:27,782] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:24:27,783] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:24:27,784] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:24:27,789] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:24:27,810] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:27,810] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:24:27,811] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:24:27,819] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:24:27,825] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:24:27,830] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:28,381] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:28,398] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:24:28,399] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:24:28,399] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:28,399] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:24:28,401] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:24:28,407] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:24:28,426] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:24:28,426] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:28,426] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:24:28,435] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:24:28,441] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:24:28,447] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:29,030] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:29,046] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:24:29,048] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:29,048] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:24:29,048] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:24:29,049] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:24:29,056] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:24:29,075] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:24:29,075] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:24:29,076] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:24:29,084] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:24:29,089] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:24:29,096] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:24:31,958] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:35,958] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 12:24:38,933] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:40,157] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:40,855] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:41,548] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2562
+[2020-02-08 12:24:49,691] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2556
+[2020-02-08 12:24:57,356] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2556
+[2020-02-08 12:24:58,907] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2556
+[2020-02-08 12:25:09,166] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index HTTP/1.1" 301 0
+[2020-02-08 12:25:09,196] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 12:25:09,215] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:09,218] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:09,220] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:09,222] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-08 12:25:09,227] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:09,239] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:09,246] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-08 12:25:09,254] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-08 12:25:09,259] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 12:25:09,261] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-08 12:25:09,268] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:09,271] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-08 12:25:09,278] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:09,280] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:09,284] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:09,287] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-08 12:25:09,292] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:09,305] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-08 12:25:09,314] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:09,323] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-08 12:25:09,382] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:09,385] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-08 12:25:09,442] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-08 12:25:17,210] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2556
+[2020-02-08 12:25:17,233] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:17,242] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:17,242] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:17,243] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:17,244] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:25:17,253] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:17,272] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:17,272] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:25:17,273] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:25:17,281] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:25:17,288] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:17,295] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:22,626] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index HTTP/1.1" 301 0
+[2020-02-08 12:25:22,652] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 12:25:22,670] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:22,677] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:22,677] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-08 12:25:22,677] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:22,683] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:22,692] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:22,694] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-08 12:25:22,703] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 12:25:22,704] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-08 12:25:22,704] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-08 12:25:22,710] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:22,711] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-08 12:25:22,725] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:22,725] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:22,725] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:22,726] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-08 12:25:22,739] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:22,740] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-08 12:25:22,749] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:22,757] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-08 12:25:22,790] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:22,791] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-08 12:25:22,811] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-08 12:25:27,707] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2556
+[2020-02-08 12:25:27,728] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:27,730] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:27,730] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:27,731] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:27,732] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:25:27,737] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:27,757] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:25:27,757] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:27,758] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:25:27,766] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:25:27,771] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:27,777] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:33,686] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index HTTP/1.1" 301 0
+[2020-02-08 12:25:33,715] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 12:25:33,731] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:33,734] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:33,734] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:33,734] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-08 12:25:33,742] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:33,751] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:33,752] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-08 12:25:33,760] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 12:25:33,762] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-08 12:25:33,762] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-08 12:25:33,768] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:33,772] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-08 12:25:33,781] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:33,781] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:33,781] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:33,782] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-08 12:25:33,796] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:33,799] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-08 12:25:33,807] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:33,816] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-08 12:25:33,852] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:33,852] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-08 12:25:33,873] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-08 12:25:34,997] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2556
+[2020-02-08 12:25:35,017] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:35,023] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:35,023] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:35,023] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:35,025] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:25:35,030] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:35,049] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:25:35,049] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:35,049] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:25:35,059] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:25:35,065] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:35,070] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:47,501] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index HTTP/1.1" 301 0
+[2020-02-08 12:25:47,524] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 12:25:47,542] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:47,543] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:47,549] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:47,549] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-08 12:25:47,554] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:47,563] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:47,565] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-08 12:25:47,572] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 12:25:47,575] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-08 12:25:47,575] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-08 12:25:47,581] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:47,586] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:47,587] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:47,587] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-08 12:25:47,591] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:47,602] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-08 12:25:47,605] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:47,613] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:47,623] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-08 12:25:47,628] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:47,629] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-08 12:25:48,498] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-08 12:25:48,508] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-08 12:25:54,776] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2558
+[2020-02-08 12:25:54,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:54,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:54,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:54,799] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:54,800] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:25:54,805] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:54,824] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:25:54,824] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:54,825] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:25:54,833] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:25:54,839] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:54,845] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:55,772] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2558
+[2020-02-08 12:25:55,789] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:55,789] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:55,789] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:55,789] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:55,791] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:25:55,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:55,818] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:55,819] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:25:55,819] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:25:55,827] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:25:55,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:55,839] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:56,553] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2558
+[2020-02-08 12:25:56,569] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:56,571] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:56,571] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:56,571] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:56,572] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:25:56,578] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:56,599] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:25:56,599] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:56,599] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:25:56,606] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:25:56,612] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:56,618] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:25:56,986] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2558
+[2020-02-08 12:25:56,997] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:25:57,003] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:25:57,004] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:57,004] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:25:57,005] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:25:57,011] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:25:57,032] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:25:57,032] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:25:57,032] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:25:57,040] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:25:57,046] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:25:57,052] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:26:59,419] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2581
+[2020-02-08 12:26:59,436] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:26:59,437] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:26:59,437] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:26:59,437] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:26:59,438] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:26:59,446] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:26:59,468] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:26:59,468] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:26:59,468] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:26:59,477] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:26:59,482] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:26:59,488] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:27:23,871] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2607
+[2020-02-08 12:27:23,887] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:27:23,888] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:27:23,888] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:27:23,888] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:27:23,890] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:27:23,897] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:27:23,920] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:27:23,920] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:27:23,921] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:27:23,929] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:27:23,935] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:27:23,940] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:28:23,650] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2501
+[2020-02-08 12:28:23,668] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:28:23,669] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:28:23,669] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:28:23,669] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:28:23,671] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:28:23,675] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:28:23,696] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:28:23,697] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:28:23,697] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:28:23,705] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:28:23,711] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:28:23,717] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 12:28:40,982] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2503
+[2020-02-08 12:28:40,998] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 12:28:41,002] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:28:41,002] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 12:28:41,002] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 12:28:41,003] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 12:28:41,009] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 12:28:41,030] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 12:28:41,031] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 12:28:41,031] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 12:28:41,039] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 12:28:41,045] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 12:28:41,050] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 13:48:03,493] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2842
+[2020-02-08 13:48:03,517] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 13:48:03,518] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:48:03,520] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 13:48:03,521] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 13:48:03,523] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 13:48:03,526] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 13:48:03,546] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 13:48:03,546] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 13:48:03,549] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:48:06,129] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2842
+[2020-02-08 13:49:14,457] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2846
+[2020-02-08 13:49:14,473] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 13:49:14,474] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:49:14,476] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 13:49:14,477] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 13:49:14,478] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 13:49:14,483] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 13:49:14,503] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 13:49:14,503] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 13:49:14,505] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:49:14,511] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 13:49:14,521] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 13:49:14,528] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 13:49:14,539] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 13:49:16,245] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2846
+[2020-02-08 13:49:16,260] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 13:49:16,261] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:49:16,262] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 13:49:16,262] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 13:49:16,263] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 13:49:16,269] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 13:49:16,289] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 13:49:16,290] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:49:16,291] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 13:49:16,301] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 13:49:16,306] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 13:49:16,313] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 13:49:16,323] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 13:49:24,583] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2846
+[2020-02-08 13:49:24,600] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 13:49:24,601] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:49:24,601] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 13:49:24,602] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 13:49:24,603] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 13:49:24,608] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 13:49:24,630] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:49:24,630] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 13:49:24,630] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 13:49:24,637] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 13:49:24,643] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 13:49:24,650] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 13:49:24,659] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 13:49:29,629] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2846
+[2020-02-08 13:49:29,645] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:49:29,645] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 13:49:29,645] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 13:49:29,646] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 13:49:29,646] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 13:49:29,653] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 13:49:29,674] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:49:29,674] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 13:49:29,675] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 13:49:29,682] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 13:49:29,688] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 13:49:29,694] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 13:49:29,704] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 13:52:37,664] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2416
+[2020-02-08 13:52:37,681] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 13:52:37,682] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:52:37,684] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 13:52:37,684] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 13:52:37,685] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 504
+[2020-02-08 13:52:37,686] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 13:52:37,692] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 13:52:37,712] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:52:37,713] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 13:52:37,713] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 13:52:37,721] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 13:52:37,727] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 13:52:37,733] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 13:54:25,694] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2424
+[2020-02-08 13:54:25,708] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 13:54:25,713] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 13:54:25,713] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 504
+[2020-02-08 13:54:25,713] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 13:54:25,714] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:54:25,715] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 13:54:25,724] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 13:54:25,745] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 13:54:25,745] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 13:54:25,746] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 13:54:25,754] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 13:54:25,760] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 13:54:25,767] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 13:54:26,817] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 14:02:16,279] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2938
+[2020-02-08 14:02:16,296] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:02:16,296] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:02:16,300] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:02:16,300] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:02:16,303] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:02:16,303] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 504
+[2020-02-08 14:02:16,309] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:02:16,329] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:02:16,329] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:02:16,332] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:02:16,339] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:02:16,345] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:02:16,352] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:02:22,000] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\middleware\common.py", line 54, in process_request
+    path = self.get_full_path_with_slash(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\middleware\common.py", line 94, in get_full_path_with_slash
+    'url': request.get_host() + new_path,
+RuntimeError: You called this URL via POST, but the URL doesn't end in a slash and you have APPEND_SLASH set. Django can't redirect to the slash URL while maintaining POST data. Change your form to point to localhost:8000/handler/login/ (note the trailing slash), or set APPEND_SLASH=False in your Django settings.
+[2020-02-08 14:02:22,001] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login HTTP/1.1" 500 18030
+[2020-02-08 14:03:38,296] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2939
+[2020-02-08 14:03:38,309] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:03:38,312] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:03:38,315] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:03:38,317] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:03:38,320] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:03:38,324] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:03:38,326] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 504
+[2020-02-08 14:03:38,344] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:03:38,346] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:03:38,348] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:03:38,356] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:03:38,361] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:03:38,368] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:03:41,402] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF cookie not set.): /handler/login/
+[2020-02-08 14:03:41,402] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2864
+[2020-02-08 14:04:49,941] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:04:49,956] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:04:49,958] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:04:49,960] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:04:49,963] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:04:49,964] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:04:49,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:04:49,969] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 504
+[2020-02-08 14:04:49,988] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:04:49,990] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:04:49,993] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:04:49,999] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:04:50,004] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:04:50,010] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:04:52,793] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF cookie not set.): /handler/login/
+[2020-02-08 14:04:52,793] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2864
+[2020-02-08 14:05:02,649] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:05:02,663] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:05:02,666] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:05:02,669] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:05:02,672] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:05:02,676] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:05:02,678] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:05:02,680] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 504
+[2020-02-08 14:05:02,699] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:05:02,703] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:05:02,705] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:05:02,713] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:05:02,719] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:05:02,726] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:05:43,311] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:05:43,326] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:05:43,329] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:05:43,331] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:05:43,333] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:05:43,335] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:05:43,338] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:05:43,340] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 504
+[2020-02-08 14:05:43,360] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:05:43,363] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:05:43,365] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:05:43,371] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:05:43,376] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:05:43,381] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:08:55,930] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:08:55,944] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:08:55,946] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:08:55,948] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:08:55,951] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:08:55,954] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:08:55,956] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:08:55,958] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 591
+[2020-02-08 14:08:55,976] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:08:55,978] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:08:55,980] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:08:55,986] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:08:55,993] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:08:55,998] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:08:57,143] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:08:57,157] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:08:57,158] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:08:57,160] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:08:57,161] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 591
+[2020-02-08 14:08:57,162] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:08:57,163] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:08:57,166] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:08:57,187] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:08:57,187] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:08:57,188] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:08:57,197] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:08:57,203] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:08:57,210] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:08:58,030] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:08:58,047] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:08:58,048] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:08:58,049] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 591
+[2020-02-08 14:08:58,050] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:08:58,050] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:08:58,051] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:08:58,057] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:08:58,077] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:08:58,077] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:08:58,078] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:08:58,086] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:08:58,092] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:08:58,098] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:09:04,462] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF cookie not set.): /login/
+[2020-02-08 14:09:04,462] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /login/ HTTP/1.1" 403 2864
+[2020-02-08 14:09:09,881] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:09:09,898] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:09:09,899] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:09:09,899] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 591
+[2020-02-08 14:09:09,899] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:09:09,899] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:09:09,901] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:09:09,911] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:09:09,933] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:09:09,933] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:09:09,933] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:09:09,943] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:09:09,949] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:09:09,955] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:09:11,515] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF cookie not set.): /login/
+[2020-02-08 14:09:11,516] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /login/ HTTP/1.1" 403 2864
+[2020-02-08 14:09:18,634] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:09:18,658] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:09:18,658] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:09:18,658] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:09:18,658] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:09:18,659] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 591
+[2020-02-08 14:09:18,660] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:09:18,667] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:09:18,688] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:09:18,688] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:09:18,689] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:09:18,698] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:09:18,708] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:09:18,713] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:09:53,483] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:10:02,263] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:10:02,281] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:10:02,282] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:10:02,286] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:10:02,286] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:10:02,290] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 591
+[2020-02-08 14:10:02,290] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:10:02,294] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:10:02,315] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:10:02,315] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:10:02,318] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:10:02,326] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:10:02,331] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:10:02,338] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:12:48,178] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:12:48,192] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:12:48,192] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:12:48,194] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:12:48,195] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:12:48,198] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 591
+[2020-02-08 14:12:48,198] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:12:48,205] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:12:48,228] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:12:48,228] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:12:48,231] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:12:48,239] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:12:48,244] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:12:48,252] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:14:12,441] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:14:12,456] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:14:12,456] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:14:12,459] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:14:12,461] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:14:12,461] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:14:12,464] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 604
+[2020-02-08 14:14:12,467] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:14:12,487] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:14:12,487] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:14:12,490] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:14:12,497] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:14:12,503] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:14:12,508] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:14:15,540] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF cookie not set.): /handler/login/
+[2020-02-08 14:14:15,540] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2864
+[2020-02-08 14:14:22,203] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF cookie not set.): /handler/login/
+[2020-02-08 14:14:22,204] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2864
+[2020-02-08 14:14:51,618] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:14:51,634] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:14:51,635] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:14:51,637] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:14:51,638] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:14:51,641] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:14:51,641] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 604
+[2020-02-08 14:14:51,644] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:14:51,667] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:14:51,668] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:14:51,670] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:14:51,678] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:14:51,686] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:14:51,692] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:17:55,217] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:17:55,231] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:17:55,232] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:17:55,234] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:17:55,236] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:17:55,237] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:17:55,238] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 604
+[2020-02-08 14:17:55,242] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:17:55,262] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:17:55,263] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:17:55,265] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:17:55,274] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:17:55,279] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:17:55,285] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:17:56,525] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF cookie not set.): /login/
+[2020-02-08 14:17:56,526] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /login/ HTTP/1.1" 403 2864
+[2020-02-08 14:17:57,704] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:17:57,722] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:17:57,722] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:17:57,722] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 604
+[2020-02-08 14:17:57,722] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:17:57,723] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:17:57,724] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:17:57,730] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:17:57,751] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:17:57,751] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:17:57,751] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:17:57,761] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:17:57,766] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:17:57,772] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:18:00,447] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:18:00,465] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 604
+[2020-02-08 14:18:00,465] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:18:00,466] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:18:00,466] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:18:00,466] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:18:00,468] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:18:00,476] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:18:00,498] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:18:00,498] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:18:00,499] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:18:00,509] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:18:00,515] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:18:00,522] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:18:02,316] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 14:19:02,291] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2948
+[2020-02-08 14:19:02,331] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-08 14:19:21,153] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF cookie not set.): /handler/login/
+[2020-02-08 14:19:21,153] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2864
+[2020-02-08 14:19:52,559] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2974
+[2020-02-08 14:19:52,577] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:19:52,578] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 604
+[2020-02-08 14:19:52,578] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:19:52,578] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:19:52,578] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:19:52,580] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:19:52,586] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:19:52,608] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:19:52,608] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:19:52,608] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:19:52,616] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:19:52,623] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:19:52,629] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:19:56,289] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF cookie not set.): /handler/login/
+[2020-02-08 14:19:56,290] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2864
+[2020-02-08 14:24:34,154] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login.py changed, reloading.
+[2020-02-08 14:24:34,744] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:24:41,297] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 3159
+[2020-02-08 14:24:41,314] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:24:41,314] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:24:41,317] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:24:41,318] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:24:41,319] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:24:41,321] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 604
+[2020-02-08 14:24:41,324] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:24:41,345] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:24:41,345] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:24:41,348] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:24:41,355] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:24:41,360] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:24:41,366] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:35:17,635] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login.py changed, reloading.
+[2020-02-08 14:35:18,234] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:35:19,735] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 3068
+[2020-02-08 14:35:19,756] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:35:19,757] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:35:19,759] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:35:19,762] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:35:19,763] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:35:19,767] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 592
+[2020-02-08 14:35:19,768] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:35:19,788] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:35:19,789] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:35:19,792] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:35:19,800] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:35:19,806] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:35:19,812] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:35:26,658] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3068
+[2020-02-08 14:35:26,671] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-08 14:35:33,690] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3068
+[2020-02-08 14:35:33,710] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:35:33,710] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:35:33,713] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:35:33,714] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:35:33,718] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 592
+[2020-02-08 14:35:33,718] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:35:33,723] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:35:33,743] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:35:33,743] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:35:33,745] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:35:33,750] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:35:33,756] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:35:33,761] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:35:47,943] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3068
+[2020-02-08 14:35:47,958] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:35:47,958] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:35:47,962] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:35:47,963] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:35:47,967] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 592
+[2020-02-08 14:35:47,967] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:35:47,971] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:35:47,992] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:35:47,993] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:35:47,995] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:35:48,002] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:35:48,007] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:35:48,013] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:35:59,930] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3068
+[2020-02-08 14:35:59,949] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:35:59,949] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:35:59,953] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:35:59,954] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:35:59,957] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 592
+[2020-02-08 14:35:59,957] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:35:59,960] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:35:59,980] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:35:59,980] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:35:59,982] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:35:59,990] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:35:59,996] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:36:00,005] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:36:37,025] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3068
+[2020-02-08 14:36:37,040] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:36:37,040] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:36:37,044] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:36:37,045] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:36:37,047] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 592
+[2020-02-08 14:36:37,047] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:36:37,051] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:36:37,070] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:36:37,070] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:36:37,072] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:36:37,078] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:36:37,085] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:36:37,090] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:37:20,724] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3068
+[2020-02-08 14:37:20,739] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:37:20,740] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:37:20,743] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:37:20,744] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:37:20,747] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 587
+[2020-02-08 14:37:20,747] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:37:20,752] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:37:20,771] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:37:20,772] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:37:20,774] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:37:20,780] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:37:20,786] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:37:20,792] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:37:23,915] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF token missing or incorrect.): /handler/login/
+[2020-02-08 14:37:23,915] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2513
+[2020-02-08 14:38:01,637] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3068
+[2020-02-08 14:38:01,650] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:38:01,651] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:38:01,653] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:38:01,654] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:38:01,656] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:38:01,657] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 609
+[2020-02-08 14:38:01,659] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:38:01,679] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:38:01,679] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:38:01,682] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:38:01,690] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:38:01,696] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:38:01,703] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:38:05,611] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF token missing or incorrect.): /handler/login/
+[2020-02-08 14:38:05,611] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2513
+[2020-02-08 14:45:14,540] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3147
+[2020-02-08 14:45:14,561] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:45:14,561] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:45:14,564] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:45:14,565] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:45:14,568] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 14:45:14,568] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:45:14,572] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 592
+[2020-02-08 14:45:14,573] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:45:14,593] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:45:14,594] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:45:14,596] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:45:14,603] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:45:14,608] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:45:14,613] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:45:18,235] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF token missing or incorrect.): /handler/login/
+[2020-02-08 14:45:18,236] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2513
+[2020-02-08 14:45:52,821] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3147
+[2020-02-08 14:45:52,836] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:45:52,836] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:45:52,840] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:45:52,840] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:45:52,844] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 14:45:52,844] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:45:52,848] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 614
+[2020-02-08 14:45:52,848] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:45:52,869] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:45:52,870] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:45:52,872] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:45:52,878] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:45:52,886] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:45:52,891] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:45:56,665] [log.py:228] [log:log_response] [WARNING]- Forbidden (CSRF token missing or incorrect.): /handler/login/
+[2020-02-08 14:45:56,665] [basehttp.py:157] [basehttp:log_message] [WARNING]- "POST /handler/login/ HTTP/1.1" 403 2513
+[2020-02-08 14:49:28,192] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:49:32,737] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3147
+[2020-02-08 14:49:32,755] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:49:32,756] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:49:32,757] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:49:32,760] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 14:49:32,760] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:49:32,763] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 946
+[2020-02-08 14:49:32,764] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:49:32,766] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:49:32,787] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:49:32,788] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:49:32,790] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:49:32,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:49:32,803] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:49:32,810] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:49:32,871] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3147
+[2020-02-08 14:49:32,887] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:49:32,888] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:49:32,891] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:49:32,892] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:49:32,894] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 14:49:32,898] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:49:32,899] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:49:32,902] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 946
+[2020-02-08 14:49:33,210] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:49:33,211] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:49:33,211] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:49:33,218] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:49:33,224] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:49:33,231] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:49:35,723] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 42, in login_handler
+    result = LoginActionHandler().handle(request)
+  File "D:\project\python\flowmeter\flowmeter\views\common.py", line 48, in handle
+    handler = self.get_action_handler(request)
+  File "D:\project\python\flowmeter\flowmeter\views\common.py", line 38, in get_action_handler
+    action = request.get_action(request)
+AttributeError: 'WSGIRequest' object has no attribute 'get_action'
+[2020-02-08 14:49:35,724] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 18252
+[2020-02-08 14:51:06,975] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:52:09,954] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3061
+[2020-02-08 14:52:09,975] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:52:09,975] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 14:52:09,978] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 14:52:09,979] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 14:52:09,982] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 14:52:09,982] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 14:52:09,986] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 946
+[2020-02-08 14:52:09,987] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 14:52:10,008] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 14:52:10,008] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 14:52:10,011] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 14:52:10,018] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 14:52:10,024] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 14:52:10,030] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 14:52:12,140] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 42, in login_handler
+    result = LoginActionHandler().handle(request)
+  File "D:\project\python\flowmeter\flowmeter\views\common.py", line 51, in handle
+    return handler(request)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 24, in login
+    param = request.get_param(request)
+AttributeError: 'WSGIRequest' object has no attribute 'get_param'
+[2020-02-08 14:52:12,141] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 18246
+[2020-02-08 14:52:34,086] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login.py changed, reloading.
+[2020-02-08 14:52:34,663] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:52:36,126] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 43, in login_handler
+    return HttpResponse(json.dumps(result))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'Result' is not JSON serializable
+[2020-02-08 14:52:36,128] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 18561
+[2020-02-08 14:54:01,667] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\common.py changed, reloading.
+[2020-02-08 14:54:02,255] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:54:46,873] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\common.py changed, reloading.
+[2020-02-08 14:54:47,446] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:55:26,520] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\common.py changed, reloading.
+[2020-02-08 14:55:27,120] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:59:09,362] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\common.py changed, reloading.
+[2020-02-08 14:59:09,948] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 14:59:13,158] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 14:59:13,166] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 14:59:31,028] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 14:59:35,651] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:00:38,590] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:05:46,650] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\auth.py changed, reloading.
+[2020-02-08 15:05:47,245] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 15:05:50,991] [auth.py:51] [auth:user_validate] [WARNING]- 账号：，不存在！
+[2020-02-08 15:05:50,992] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:08:31,917] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 15:08:32,505] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 15:08:52,942] [auth.py:51] [auth:user_validate] [WARNING]- 账号：，不存在！
+[2020-02-08 15:08:52,943] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:08:59,574] [auth.py:51] [auth:user_validate] [WARNING]- 账号：，不存在！
+[2020-02-08 15:08:59,575] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:09:18,399] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3061
+[2020-02-08 15:09:18,413] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-08 15:09:20,672] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3061
+[2020-02-08 15:09:22,960] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 3061
+[2020-02-08 15:09:32,560] [auth.py:51] [auth:user_validate] [WARNING]- 账号：，不存在！
+[2020-02-08 15:09:32,561] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:09:54,121] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login.py changed, reloading.
+[2020-02-08 15:09:54,711] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 15:09:55,161] [auth.py:51] [auth:user_validate] [WARNING]- 账号：，不存在！
+[2020-02-08 15:09:55,161] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:09:55,262] [auth.py:51] [auth:user_validate] [WARNING]- 账号：，不存在！
+[2020-02-08 15:09:55,263] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:11:04,953] [auth.py:51] [auth:user_validate] [WARNING]- 账号：，不存在！
+[2020-02-08 15:11:04,954] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:12:38,605] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 2939
+[2020-02-08 15:12:38,620] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 15:12:38,622] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 15:12:38,625] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 15:12:38,627] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 15:12:38,630] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 15:12:38,633] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 15:12:38,634] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 15:12:38,636] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 946
+[2020-02-08 15:12:38,654] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 15:12:38,656] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 15:12:38,658] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 15:12:38,664] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 15:12:38,669] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 15:12:38,675] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 15:12:41,737] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 43, in login_handler
+    result = LoginActionHandler().handle(request)
+  File "D:\project\python\flowmeter\flowmeter\views\common.py", line 61, in handle
+    return handler(request)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 26, in login
+    account = param.get('account', '')
+AttributeError: 'str' object has no attribute 'get'
+[2020-02-08 15:12:41,738] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 18306
+[2020-02-08 15:14:02,661] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 15:14:03,252] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 15:14:03,578] [auth.py:51] [auth:user_validate] [WARNING]- 账号：adsf，不存在！
+[2020-02-08 15:14:03,579] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 109
+[2020-02-08 15:14:03,586] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 15:14:10,121] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 2939
+[2020-02-08 15:16:06,876] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 70
+[2020-02-08 15:16:10,095] [log.py:228] [log:log_response] [WARNING]- Not Found: /login/index.html
+[2020-02-08 15:16:10,096] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /login/index.html HTTP/1.1" 404 2418
+[2020-02-08 15:16:29,679] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /login/ HTTP/1.1" 200 2935
+[2020-02-08 15:16:29,692] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-08 15:16:35,425] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 70
+[2020-02-08 15:16:38,661] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 15:16:38,697] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 15:17:26,043] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 15:17:34,325] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 70
+[2020-02-08 15:17:35,560] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 15:17:35,595] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 15:18:04,492] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login.py changed, reloading.
+[2020-02-08 15:18:05,083] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

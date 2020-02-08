@@ -1,0 +1,3 @@
+[2020-01-29 23:06:32,712] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-01-29 23:08:34,691] [test.py:15] [test:<module>] [INFO]- 请求成功！ response_code:response_code；response_headers:response_headers；response_body:response_body[:251]
+[2020-01-29 23:08:34,691] [test.py:17] [test:<module>] [ERROR]- 请求出错：error

@@ -1,0 +1,542 @@
+[2020-02-07 22:43:27,509] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 22:43:59,552] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index HTTP/1.1" 301 0
+[2020-02-07 22:43:59,675] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\index_view.py", line 19, in index
+    return HttpResponse(template.render(context))
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\template\backends\django.py", line 59, in render
+    context = make_context(context, request, autoescape=self.backend.engine.autoescape)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\template\context.py", line 270, in make_context
+    raise TypeError('context must be a dict rather than %s.' % context.__class__.__name__)
+TypeError: context must be a dict rather than RequestContext.
+[2020-02-07 22:43:59,676] [basehttp.py:157] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 84274
+[2020-02-07 22:43:59,822] [log.py:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2020-02-07 22:43:59,822] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2081
+[2020-02-07 22:56:29,676] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 22:56:33,425] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 7091
+[2020-02-07 22:56:33,443] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 22:56:33,444] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 22:56:33,447] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 22:56:33,447] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 22:56:33,450] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 22:56:33,457] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 22:56:33,463] [log.py:228] [log:log_response] [WARNING]- Not Found: /index/welcome.html
+[2020-02-07 22:56:33,464] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /index/welcome.html HTTP/1.1" 404 2102
+[2020-02-07 22:56:33,482] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 22:56:33,482] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 22:56:33,490] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 22:56:33,491] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 22:56:33,542] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 22:57:27,224] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 7091
+[2020-02-07 22:57:27,251] [log.py:228] [log:log_response] [WARNING]- Not Found: /index/welcome.html
+[2020-02-07 22:57:27,252] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /index/welcome.html HTTP/1.1" 404 2102
+[2020-02-07 23:20:43,918] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:20:47,427] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6881
+[2020-02-07 23:20:47,456] [log.py:228] [log:log_response] [WARNING]- Not Found: /index/welcome.html
+[2020-02-07 23:20:47,457] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /index/welcome.html HTTP/1.1" 404 2102
+[2020-02-07 23:23:03,808] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6881
+[2020-02-07 23:23:03,836] [log.py:228] [log:log_response] [WARNING]- Not Found: /index/welcome.html
+[2020-02-07 23:23:03,836] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /index/welcome.html HTTP/1.1" 404 2102
+[2020-02-07 23:25:20,659] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-07 23:25:21,237] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:28:12,295] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\urls.py changed, reloading.
+[2020-02-07 23:28:12,874] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:28:13,300] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:28:13,330] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:28:13,335] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:28:17,317] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:29:54,271] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-07 23:29:54,850] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:30:09,640] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:30:09,694] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:31:27,455] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-07 23:31:28,024] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:34:20,535] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-07 23:34:21,120] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:34:32,604] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-07 23:34:33,195] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:34:45,558] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-07 23:34:46,134] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:34:46,554] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\index_view.py", line 20, in index
+    response = json.dumps(HttpResponse(template.render(context)))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'HttpResponse' is not JSON serializable
+[2020-02-07 23:34:46,556] [basehttp.py:157] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 94970
+[2020-02-07 23:35:49,553] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:35:57,893] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\index_view.py", line 21, in index
+    response = JsonResponse(HttpResponse(template.render(context)))
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\http\response.py", line 581, in __init__
+    'In order to allow non-dict objects to be serialized set the '
+TypeError: In order to allow non-dict objects to be serialized set the safe parameter to False.
+[2020-02-07 23:35:57,894] [basehttp.py:157] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 81755
+[2020-02-07 23:37:19,937] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-07 23:37:20,521] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:37:22,758] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\index_view.py", line 21, in index
+    response = json.dumps(HttpResponse(template.render(context)))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'HttpResponse' is not JSON serializable
+[2020-02-07 23:37:22,759] [basehttp.py:157] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 94970
+[2020-02-07 23:37:23,868] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\index_view.py", line 21, in index
+    response = json.dumps(HttpResponse(template.render(context)))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'HttpResponse' is not JSON serializable
+[2020-02-07 23:37:23,869] [basehttp.py:157] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 94970
+[2020-02-07 23:37:28,837] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:37:32,076] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /index/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\index_view.py", line 21, in index
+    response = json.dumps(HttpResponse(template.render(context)))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'HttpResponse' is not JSON serializable
+[2020-02-07 23:37:32,078] [basehttp.py:157] [basehttp:log_message] [ERROR]- "GET /index/ HTTP/1.1" 500 94970
+[2020-02-07 23:39:18,907] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:39:23,398] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:39:23,432] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:39:56,923] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:39:56,956] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:42:10,538] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:42:15,397] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:42:15,430] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:43:35,359] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-07 23:43:35,931] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:43:48,539] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:43:52,717] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:43:52,749] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:07,627] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:07,641] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:07,643] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:07,645] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:07,647] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:07,650] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:07,659] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:07,662] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:07,665] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:07,667] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:07,672] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:07,678] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:07,680] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:07,719] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:10,951] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:10,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:10,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:10,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:10,969] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:10,974] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:10,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:10,984] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:10,989] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:10,990] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:10,993] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:11,005] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:11,005] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:11,044] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:11,804] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:11,818] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:11,819] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:11,821] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:11,821] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:11,825] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:11,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:11,835] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:11,839] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:11,840] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:11,844] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:11,859] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:11,860] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:11,894] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:13,237] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:13,254] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:13,254] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:13,255] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:13,255] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:13,261] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:13,270] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:13,271] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:13,275] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:13,276] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:13,279] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:13,292] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:13,292] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:13,327] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:14,303] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:14,320] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:14,321] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:14,321] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:14,321] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:14,327] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:14,336] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:14,337] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:14,342] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:14,343] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:14,346] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:14,354] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:14,355] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:14,395] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:15,106] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:15,122] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:15,123] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:15,123] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:15,123] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:15,130] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:15,138] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:15,140] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:15,144] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:15,144] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:15,151] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:15,161] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:15,162] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:15,202] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:15,787] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:15,803] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:15,803] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:15,804] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:15,804] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:15,810] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:15,820] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:15,821] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:15,825] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:15,825] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:15,830] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:15,839] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:15,840] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:15,876] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:16,473] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:16,490] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:16,490] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:16,491] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:16,491] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:16,499] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:16,508] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:16,509] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:16,514] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:16,516] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:16,518] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:16,532] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:16,533] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:16,568] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:17,156] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:17,172] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:17,173] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:17,173] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:17,174] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:17,181] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:17,190] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:17,191] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:17,197] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:17,197] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:17,199] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:17,213] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:17,214] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:17,247] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:17,778] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:17,795] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:17,795] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:17,795] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:17,796] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:17,802] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:17,811] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:17,813] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:17,817] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:17,818] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:17,821] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:17,831] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:17,831] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:17,868] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:18,427] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:18,446] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:18,446] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:18,447] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:18,447] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:18,454] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:18,465] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:18,466] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:18,472] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:18,472] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:18,474] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:18,486] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:18,487] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:18,525] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:19,038] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:19,056] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:19,057] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:19,057] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:19,057] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:19,066] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:19,074] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:19,077] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:19,086] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:19,086] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:19,090] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:19,099] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:19,100] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:19,138] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:19,678] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:44:19,694] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:44:19,695] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:44:19,695] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:44:19,695] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:44:19,701] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:44:19,710] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:44:19,712] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:44:19,716] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:44:19,717] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:44:19,722] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:44:19,730] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:44:19,731] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:44:19,767] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:44:20,750] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:46:43,093] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index_view.py changed, reloading.
+[2020-02-07 23:46:43,670] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:47:50,655] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-07 23:47:55,199] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:47:55,217] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:47:55,217] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:47:55,221] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:47:55,221] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:47:55,225] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:47:55,235] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:47:55,237] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:47:55,240] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:47:55,241] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:47:55,246] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:47:55,252] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:47:55,253] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:47:55,261] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:47:55,262] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:47:55,265] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:47:55,265] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:47:55,273] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:47:55,275] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:47:55,285] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:47:55,289] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:47:55,344] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:47:55,345] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:47:55,364] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:48:07,073] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:48:07,100] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:52:06,335] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:52:06,361] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:52:14,278] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:52:14,304] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:52:41,008] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:52:41,024] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:52:41,024] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:52:41,027] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:52:41,028] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:52:41,033] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:52:41,042] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:52:41,046] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:52:41,048] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:52:41,049] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:52:41,055] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:52:41,062] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:52:41,063] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:52:41,072] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:52:41,072] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:52:41,075] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:52:41,075] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:52:41,085] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:52:41,088] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:52:41,096] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:52:41,102] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:52:41,142] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:52:41,144] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:52:41,168] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:53:05,162] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6875
+[2020-02-07 23:53:05,178] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:53:05,178] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:53:05,182] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:53:05,182] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:53:05,186] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:53:05,195] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:53:05,196] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-07 23:53:05,201] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:53:05,201] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-07 23:53:05,206] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:53:05,213] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:53:05,214] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:53:05,223] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-07 23:53:05,223] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-07 23:53:05,227] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-07 23:53:05,227] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-07 23:53:05,236] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-07 23:53:05,240] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:53:05,248] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-07 23:53:05,252] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-07 23:53:05,295] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-07 23:53:05,296] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-07 23:53:05,613] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-07 23:55:37,857] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6892
+[2020-02-07 23:55:37,882] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:55:38,806] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-07 23:55:38,806] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-07 23:55:39,630] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:55:39,631] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:55:40,376] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-07 23:55:40,377] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-07 23:55:40,936] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:55:40,937] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:55:41,363] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-07 23:55:41,363] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-07 23:55:42,052] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:55:42,052] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:55:42,378] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-07 23:55:42,378] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-07 23:55:45,517] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-07 23:55:45,518] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-07 23:55:46,066] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:55:46,067] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:55:46,461] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-07 23:55:46,461] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-07 23:55:46,886] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:55:46,887] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:55:47,173] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-07 23:55:47,173] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-07 23:55:50,728] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:55:50,729] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:55:51,249] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-07 23:55:51,249] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-07 23:55:51,619] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:55:51,619] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:55:51,880] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-07 23:55:51,880] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-07 23:55:54,487] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-07 23:55:54,487] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-07 23:56:02,501] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:56:02,501] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:56:02,803] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-07 23:56:02,804] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-07 23:56:03,455] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:56:03,455] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:56:42,790] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6894
+[2020-02-07 23:56:42,817] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-07 23:56:42,865] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-07 23:56:42,867] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-07 23:56:42,868] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-07 23:56:42,871] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-07 23:56:42,873] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-07 23:56:42,873] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-07 23:59:59,740] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-07 23:59:59,766] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 00:00:01,501] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-08 00:00:01,502] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-08 00:00:02,395] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 00:00:02,395] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-08 00:00:02,752] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 00:00:02,752] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-08 00:00:03,061] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 00:00:03,062] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-08 00:00:03,339] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-08 00:00:03,340] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-08 00:00:03,591] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 00:00:03,591] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-08 00:00:03,822] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 00:00:03,822] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-08 00:00:04,035] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 00:00:04,035] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-08 00:00:04,237] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-08 00:00:04,237] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-08 00:00:04,469] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 00:00:04,469] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-08 00:00:04,701] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 00:00:04,701] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-08 00:00:04,914] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 00:00:04,915] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-08 00:00:05,094] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-08 00:00:05,095] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-08 00:00:05,490] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 00:00:05,490] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-08 00:00:05,702] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 00:00:05,702] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-08 00:00:05,893] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 00:00:05,894] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
+[2020-02-08 00:00:06,102] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-08 00:00:06,102] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2171
+[2020-02-08 00:04:05,930] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 00:04:05,930] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2168
+[2020-02-08 00:04:06,291] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 00:04:06,291] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2171
