@@ -19,16 +19,22 @@ from django.urls import include
 from flowmeter.views import index
 from flowmeter.views import welcome
 from flowmeter.views import login
+from flowmeter.views import error
 
 # 视图处理器路由
 handler_urlpatterns = [
     path('login/', login.login_handler)
 ]
+# 错误页面路由
+error_urlpatterns = [
+    path('403/', error.error_403_view)
+]
 # 视图路由
 urlpatterns = [
     path('handler/', include(handler_urlpatterns)),
+    path('error/', include(error_urlpatterns)),
     path('admin/', admin.site.urls),
     path('index/', index.index_view),
     path('welcome/', welcome.welcome_view),
-    path('login/', login.login_view)
+    path('login/', login.login_view),
 ]

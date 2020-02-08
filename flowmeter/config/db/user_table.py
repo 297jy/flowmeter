@@ -22,6 +22,8 @@ class User(models.Model):
         pass
 
     def get_dict(self):
+
+        auths = [auth.permission_action for auth in self.role.authorities.all()]
         return {
             "id": self.id,
             "name": self.name,
@@ -30,4 +32,5 @@ class User(models.Model):
             "create_time": self.create_time,
             "state": self.state,
             "remark": self.remark,
+            "auths": auths
         }

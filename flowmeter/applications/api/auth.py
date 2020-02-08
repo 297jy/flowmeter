@@ -14,9 +14,8 @@ def is_action_allowed(user, action):
     :param action: 当前正要执行的动作
     :return:
     """
-    actions = [authority.permission_action for authority in user.role.authorities]
-
-    if action in actions:
+    auths = user.get('auths', [])
+    if action in auths:
         allowed = True
     else:
         allowed = False
@@ -37,9 +36,9 @@ def structure_nav_bars_by_role(role):
     return nav_bars
 
 
-def user_validate(account, password):
+def validate_and_get_user(account, password):
     """
-    用户校验
+    用户校验，校验失败返回None,校验成功返回用户对象
     :return:
     """
     StrCheck.check_is_str(account)
@@ -49,9 +48,13 @@ def user_validate(account, password):
 
     if user is None:
         logger.warning('账号：{}，不存在！'.format(account))
-        return False
+        return None
 
-    return core.password_validate(password, user.password)
+    # 如果密码验证通过
+    if core.password_validate(password, user.password):
+        return user
+    else:
+        return None
 
 
 

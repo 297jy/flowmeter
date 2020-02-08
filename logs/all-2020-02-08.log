@@ -1173,3 +1173,514 @@ AttributeError: 'str' object has no attribute 'get'
 [2020-02-08 15:17:35,595] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
 [2020-02-08 15:18:04,492] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login.py changed, reloading.
 [2020-02-08 15:18:05,083] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 17:10:27,508] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 17:10:27,536] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 17:21:19,045] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 17:21:19,645] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 17:58:49,370] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 17:58:49,981] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 17:59:47,949] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 17:59:48,537] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:12:02,395] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 18:12:03,009] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:20:04,278] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 18:20:04,883] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:27:35,721] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:27:41,813] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,816] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,818] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,824] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,827] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,829] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,830] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,832] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,836] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,839] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,841] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,843] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,845] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,847] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,849] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,851] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,853] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,856] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,858] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,956] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,959] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,961] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,963] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,966] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,970] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,975] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,977] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,979] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,981] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,985] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,987] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,989] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,991] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,993] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,996] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:41,998] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:41,999] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,429] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,435] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,441] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,443] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,445] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,447] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,449] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,451] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,453] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,456] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,458] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,460] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,462] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,463] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,466] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,467] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,469] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,473] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:27:44,475] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:27:44,477] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 18:28:08,426] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-08 18:28:09,017] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:28:10,543] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 18:28:10,591] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-08 18:28:16,833] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-02-08 18:28:16,841] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 18:28:23,014] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-02-08 18:28:23,025] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 18:28:35,183] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 45, in login_handler
+    return HttpResponse(json.dumps(dict(result)))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'set' is not JSON serializable
+[2020-02-08 18:28:35,185] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 18695
+[2020-02-08 18:28:35,721] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 45, in login_handler
+    return HttpResponse(json.dumps(dict(result)))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'set' is not JSON serializable
+[2020-02-08 18:28:35,721] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 18695
+[2020-02-08 18:28:37,306] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 45, in login_handler
+    return HttpResponse(json.dumps(dict(result)))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'set' is not JSON serializable
+[2020-02-08 18:28:37,307] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 18695
+[2020-02-08 18:29:34,074] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 18:29:34,667] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:29:37,122] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\contextlib.py", line 52, in inner
+    return func(*args, **kwds)
+  File "D:\project\python\flowmeter\flowmeter\views\login.py", line 45, in login_handler
+    return HttpResponse(json.dumps(dict(result)))
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 231, in dumps
+    return _default_encoder.encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'set' is not JSON serializable
+[2020-02-08 18:29:37,124] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 18752
+[2020-02-08 18:31:49,504] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 18:31:50,114] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:34:07,121] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-08 18:34:07,696] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:34:09,705] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:34:14,168] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 18:34:14,188] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 18:34:14,189] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 18:34:14,192] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 18:34:14,194] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 18:34:14,195] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 18:34:14,196] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 18:34:14,199] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 946
+[2020-02-08 18:34:14,200] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 18:34:14,222] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 18:34:14,223] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 18:34:14,225] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 18:34:14,232] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 18:34:14,239] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 18:34:14,247] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 18:34:18,247] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\middleware.py", line 58, in process_response
+    request.session.save()
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 81, in save
+    return self.create()
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in create
+    self.save(must_create=True)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'User' is not JSON serializable
+[2020-02-08 18:34:18,248] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 19383
+[2020-02-08 18:34:28,394] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:34:31,601] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 18:34:31,616] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 18:34:31,616] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 18:34:31,619] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 18:34:31,620] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 18:34:31,623] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 18:34:31,623] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 18:34:31,627] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 946
+[2020-02-08 18:34:31,628] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 18:34:31,649] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 18:34:31,650] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 18:34:31,652] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 18:34:31,659] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 18:34:31,665] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 18:34:31,671] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 18:34:35,504] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\middleware.py", line 58, in process_response
+    request.session.save()
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 81, in save
+    return self.create()
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 55, in create
+    self.save(must_create=True)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'User' is not JSON serializable
+[2020-02-08 18:34:35,506] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 19383
+[2020-02-08 18:37:44,576] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 18:37:45,197] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 18:37:46,816] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 18:37:46,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 18:37:46,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 18:37:46,838] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 18:37:46,838] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 18:37:46,841] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 18:37:46,843] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 18:37:46,846] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 946
+[2020-02-08 18:37:46,847] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 18:37:46,869] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 18:37:46,869] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 18:37:46,872] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 18:37:46,880] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 18:37:46,886] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 18:37:46,892] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 18:37:50,633] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 100
+[2020-02-08 18:37:50,640] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 18:37:51,850] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index HTTP/1.1" 301 0
+[2020-02-08 18:37:51,858] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-02-08 18:37:51,861] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login HTTP/1.1" 301 0
+[2020-02-08 18:37:51,866] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 18:37:51,884] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-08 18:37:51,884] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-08 18:37:51,884] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 18:37:51,885] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-08 18:37:51,885] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-08 18:37:51,887] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-08 18:37:51,890] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 946
+[2020-02-08 18:37:51,894] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 69524
+[2020-02-08 18:37:51,916] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/aiwrap.png HTTP/1.1" 200 3032
+[2020-02-08 18:37:51,917] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/login.css HTTP/1.1" 200 2268
+[2020-02-08 18:37:51,917] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/images/bg.png HTTP/1.1" 200 28211
+[2020-02-08 18:37:51,925] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-08 18:37:51,931] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-08 18:37:51,937] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-08 22:13:52,532] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\user_table.py changed, reloading.
+[2020-02-08 22:13:53,125] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:13:54,120] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:13:54,140] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-08 22:13:57,444] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\middleware.py", line 58, in process_response
+    request.session.save()
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'datetime' is not JSON serializable
+[2020-02-08 22:13:57,445] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 19132
+[2020-02-08 22:13:58,180] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/login/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 96, in __call__
+    response = self.process_response(request, response)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\middleware.py", line 58, in process_response
+    request.session.save()
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 83, in save
+    obj = self.create_model_instance(data)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\db.py", line 70, in create_model_instance
+    session_data=self.encode(data),
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\contrib\sessions\backends\base.py", line 105, in encode
+    serialized = self.serializer().dumps(session_dict)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\signing.py", line 87, in dumps
+    return json.dumps(obj, separators=(',', ':')).encode('latin-1')
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\__init__.py", line 238, in dumps
+    **kw).encode(obj)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 199, in encode
+    chunks = self.iterencode(o, _one_shot=True)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 257, in iterencode
+    return _iterencode(o, 0)
+  File "C:\Users\admin\AppData\Local\Programs\Python\Python36\Lib\json\encoder.py", line 180, in default
+    o.__class__.__name__)
+TypeError: Object of type 'datetime' is not JSON serializable
+[2020-02-08 22:13:58,181] [basehttp.py:157] [basehttp:log_message] [ERROR]- "POST /handler/login/ HTTP/1.1" 500 19132
+[2020-02-08 22:15:29,195] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-08 22:15:29,787] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:15:30,538] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 100
+[2020-02-08 22:15:30,546] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-08 22:15:31,757] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index HTTP/1.1" 301 0
+[2020-02-08 22:15:31,765] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 73
+[2020-02-08 22:16:13,534] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index HTTP/1.1" 301 0
+[2020-02-08 22:16:13,543] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 73
+[2020-02-08 22:16:22,044] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 73
+[2020-02-08 22:17:24,583] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-08 22:17:25,163] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:17:56,654] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-08 22:17:57,260] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:17:58,501] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 73
+[2020-02-08 22:17:59,602] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 73
+[2020-02-08 22:19:43,133] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-08 22:19:43,713] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:19:44,953] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 22:19:44,986] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 73
+[2020-02-08 22:19:56,333] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-08 22:19:56,924] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:19:58,054] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 22:19:58,082] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 22:21:02,824] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-08 22:21:03,418] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:36:19,343] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-08 22:36:22,657] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/member-list.html HTTP/1.1" 200 73
+[2020-02-08 22:36:25,863] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/member-del.html HTTP/1.1" 200 73
+[2020-02-08 22:36:32,743] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 200 73
+[2020-02-08 22:36:33,485] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test2 HTTP/1.1" 200 73
+[2020-02-08 22:36:33,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 200 73
+[2020-02-08 22:36:34,519] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test HTTP/1.1" 200 73
+[2020-02-08 22:36:34,807] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 200 73
+[2020-02-08 22:36:35,140] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test2 HTTP/1.1" 200 73
+[2020-02-08 22:36:36,236] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test HTTP/1.1" 200 73
+[2020-02-08 22:36:36,459] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 200 73
+[2020-02-08 22:36:36,699] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test2 HTTP/1.1" 200 73
+[2020-02-08 22:36:37,106] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 200 73
+[2020-02-08 22:43:54,047] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-08 22:43:54,638] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:49:47,026] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\urls.py changed, reloading.
+[2020-02-08 22:49:47,613] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:49:51,627] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 22:49:51,659] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 22:49:51,707] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 22:49:51,709] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-08 22:49:51,709] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2491
+[2020-02-08 22:49:51,710] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2491
+[2020-02-08 22:49:51,718] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 22:49:51,718] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2488
+[2020-02-08 22:49:55,269] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 22:49:55,297] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 22:49:55,346] [log.py:228] [log:log_response] [WARNING]- Not Found: /test1
+[2020-02-08 22:49:55,347] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test1 HTTP/1.1" 404 2491
+[2020-02-08 22:49:55,348] [log.py:228] [log:log_response] [WARNING]- Not Found: /test2
+[2020-02-08 22:49:55,350] [log.py:228] [log:log_response] [WARNING]- Not Found: /test
+[2020-02-08 22:49:55,350] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test2 HTTP/1.1" 404 2491
+[2020-02-08 22:49:55,350] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /test HTTP/1.1" 404 2488
+[2020-02-08 22:50:19,184] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-08 22:50:19,770] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:50:20,133] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,138] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,143] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,148] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,153] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,158] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,162] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,167] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,171] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,176] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,180] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,185] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,190] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,195] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,199] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,204] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,208] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,213] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,218] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,222] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,328] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,333] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,338] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,343] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,348] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,352] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,356] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,361] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,366] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,370] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,375] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,379] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,384] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,388] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,393] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,397] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,402] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,407] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,412] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:20,417] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 302 0
+[2020-02-08 22:50:34,116] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:55:15,394] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-08 22:55:16,008] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:55:16,787] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1203
+[2020-02-08 22:55:16,820] [log.py:228] [log:log_response] [WARNING]- Not Found: /error/403/css/font.css
+[2020-02-08 22:55:16,822] [log.py:228] [log:log_response] [WARNING]- Not Found: /error/403/css/xadmin.css
+[2020-02-08 22:55:16,822] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /error/403/css/font.css HTTP/1.1" 404 2593
+[2020-02-08 22:55:16,822] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /error/403/css/xadmin.css HTTP/1.1" 404 2599
+[2020-02-08 22:55:45,212] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1215
+[2020-02-08 22:56:01,881] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1144
+[2020-02-08 22:56:02,484] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1144
+[2020-02-08 22:56:02,649] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1144
+[2020-02-08 22:56:02,805] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1144
+[2020-02-08 22:56:02,958] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1144
+[2020-02-08 22:56:03,113] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1144
+[2020-02-08 22:56:17,490] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-08 22:56:18,093] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 22:56:18,706] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:19,809] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:20,357] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:20,596] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:20,764] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:20,929] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:21,080] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:21,237] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:52,162] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 22:56:52,193] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 22:56:52,274] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 302 0
+[2020-02-08 22:56:52,278] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test2 HTTP/1.1" 302 0
+[2020-02-08 22:56:52,283] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test HTTP/1.1" 302 0
+[2020-02-08 22:56:52,286] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:52,291] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:56:52,296] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 22:59:51,794] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:51,819] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-08 22:59:52,649] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:53,048] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:53,222] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:53,389] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:53,546] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:53,706] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:53,857] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:54,015] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:54,175] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:54,333] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:54,514] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:54,680] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:54,840] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 22:59:55,006] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
+[2020-02-08 23:01:05,107] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login.py changed, reloading.
+[2020-02-08 23:01:05,706] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

@@ -2,6 +2,8 @@
 
 import json
 
+from django.shortcuts import render
+
 from flowmeter.applications.api import auth as auth_api
 from django.http import HttpResponse
 from django.template import loader
@@ -14,9 +16,7 @@ def index_view(request):
     :return:
     """
 
-    template = loader.get_template('index.html')
     nav_bars = auth_api.structure_nav_bars_by_role('admin')
 
     context = {'nav_bars': nav_bars}
-
-    return HttpResponse(template.render(context))
+    return render(request, 'index.html', context)
