@@ -2,26 +2,40 @@
 
 from flowmeter.exceptions import NotFoundActionException
 from flowmeter.common.api import request as request_api
+from flowmeter.common.api.validators import ListCheck
+
+import logging
+logger = logging.getLogger('log')
 
 
 class Result:
 
-    def __init__(self, success, data=None, msg=''):
+    ERROR_CODE = 1
+    SUCCESS_CODE = 0
+
+    def __init__(self, success, data=None, msg='', code=SUCCESS_CODE, count=0):
         self.success = success
         self.data = data
         self.msg = msg
+        self.code = code
+        self.count = count
 
     @staticmethod
-    def success(data, msg='登录成功！'):
-        return Result(success=True, data=data, msg=msg)
+    def success(data=None, msg=''):
+
+        count = None
+        if isinstance(data, list):
+            count = len(data)
+
+        return Result(success=True, data=data, msg=msg, count=count)
 
     @staticmethod
     def error(msg=''):
-        return Result(success=False, msg=msg)
+        return Result(success=False, msg=msg, code=Result.ERROR_CODE)
 
     # 获取字典的键
     def keys(self):
-        s = ('success', 'msg', 'data')
+        s = ('success', 'msg', 'data', 'code', 'count')
         return s
 
     # 获取键对应的值
@@ -47,6 +61,7 @@ class ActionHandlerBase:
         """
 
         action = request_api.get_action(request)
+        logger.info('当前正在操作action：{}'.format(action))
         handler = self.action_dict.get(action)
         return handler
 

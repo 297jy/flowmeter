@@ -9,6 +9,19 @@ from flowmeter.common.api.excel import Excel
 from flowmeter.common.api import password as password_api
 from flowmeter import settings
 
+def __transfer_user_obj_to_dict(users):
+    """
+    将用户对象转成字典
+    :param users:
+    :return:
+    """
+    user_dicts = []
+    for user in users:
+        user_dict = user.get_dict()
+        __transfer_database_to_display(user_dict)
+        user_dicts.append(user_dict)
+    return user_dicts
+
 
 def __find_users_by_query_terms(query_terms):
 
@@ -35,7 +48,7 @@ def __find_users_by_query_terms(query_terms):
 
     users = conf_user_api.get_users(query_box.get_filters() & query_role.get_filters() & query_time.get_filters())
 
-    return users
+    return __transfer_user_obj_to_dict(users)
 
 
 def __create_user(user_info):

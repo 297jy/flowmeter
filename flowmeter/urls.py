@@ -13,28 +13,39 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+
 from django.urls import path
 from django.urls import include
 from flowmeter.views import index
 from flowmeter.views import welcome
 from flowmeter.views import login
 from flowmeter.views import error
+from flowmeter.views import user
+from flowmeter.views import logout
 
 # 视图处理器路由
 handler_urlpatterns = [
-    path('login/', login.login_handler)
+    path('login/', login.login_handler),
+    path('admin/', user.user_handler),
+    path('user/', user.user_handler),
 ]
 # 错误页面路由
 error_urlpatterns = [
     path('403/', error.error_403_view)
 ]
+
+admin_urlpatterns = [
+    path('view/', user.admin_view),
+    path('add/', user.admin_add),
+]
+
 # 视图路由
 urlpatterns = [
     path('handler/', include(handler_urlpatterns)),
     path('error/', include(error_urlpatterns)),
-    path('admin/', admin.site.urls),
     path('index/', index.index_view),
     path('welcome/', welcome.welcome_view),
     path('login/', login.login_view),
+    path('admin/', include(admin_urlpatterns)),
+    path('logout/', logout.logout_view),
 ]

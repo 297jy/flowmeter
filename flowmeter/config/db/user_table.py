@@ -4,6 +4,7 @@ from django.db import models
 from flowmeter.config import const
 from flowmeter.config.db import role_table
 from flowmeter.common.const import UserStateType
+from flowmeter.common.common import get_allowed_action_of_role
 
 
 class User(models.Model):
@@ -14,7 +15,7 @@ class User(models.Model):
     email = models.EmailField()
     create_time = models.DateTimeField()
     state = models.CharField(max_length=16, default=UserStateType.ENABLE_STATE)
-    remark = models.CharField(max_length=const.REMARK_CHAR_LEN, null=True)
+    remark = models.CharField(max_length=const.REMARK_CHAR_LEN, default='')
     # 用户角色，基本角色包括：管理员、厂商、流量计用户
     role = models.ForeignKey(role_table.Role, on_delete=models.CASCADE)
 
@@ -23,7 +24,6 @@ class User(models.Model):
 
     def get_dict(self):
 
-        auths = [auth.permission_action for auth in self.role.authorities.all()]
         return {
             "id": self.id,
             "name": self.name,
@@ -32,5 +32,5 @@ class User(models.Model):
             "create_time": self.create_time,
             "state": self.state,
             "remark": self.remark,
-            "auths": auths
+            "actions": get_allowed_action_of_role(self.role)
         }

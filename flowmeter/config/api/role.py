@@ -46,4 +46,19 @@ def get_auth_by_role(role):
     return authorities
 
 
+def get_allowed_actions_of_role_name(role_name):
+    """
+    获取该角色所有允许执行的action
+    :param role_name: 角色名
+    :return:
+    """
+    authorities = get_auth_by_role(role_name)
+
+    action_list = []
+    for auth in authorities:
+        actions = auth.permission_action.split(';')
+        action_list.extend(actions)
+    return action_list
+
+
 

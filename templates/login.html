@@ -46,7 +46,7 @@
             form.on('submit(login)', function (data) {
                 post({"param": JSON.stringify(data.field), "action": "login"}, '/handler/login/', function (data) {
                     if(data.success){
-                        layer.msg(data.msg,{icon:1,time:1000},function () {
+                        layer.msg('登录成功！',{icon:1,time:1000},function () {
                           location.href='/index'
                         });
                     }

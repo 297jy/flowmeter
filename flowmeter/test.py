@@ -67,6 +67,6 @@ if __name__ == "__main__":
     # test_edit_admin()
     # test_del_file()
     # test_chinese_len()
-    test_create_admin()
+    # test_create_admin()
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    print(BASE_DIR)
+    print(user_api.check_email_unique('1347704262@qq.com'))

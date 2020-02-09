@@ -1684,3 +1684,39 @@ TypeError: Object of type 'datetime' is not JSON serializable
 [2020-02-08 22:59:55,006] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2935
 [2020-02-08 23:01:05,107] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login.py changed, reloading.
 [2020-02-08 23:01:05,706] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-08 23:01:06,140] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 302 0
+[2020-02-08 23:01:06,166] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 23:01:06,209] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 23:01:06,248] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 302 0
+[2020-02-08 23:01:06,252] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test2 HTTP/1.1" 302 0
+[2020-02-08 23:01:06,254] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test HTTP/1.1" 302 0
+[2020-02-08 23:01:06,256] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 23:01:06,260] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 23:01:06,265] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 23:44:59,528] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-08 23:44:59,561] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-08 23:45:01,073] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 302 0
+[2020-02-08 23:45:01,078] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 23:45:01,632] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test HTTP/1.1" 302 0
+[2020-02-08 23:45:01,638] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-08 23:45:06,128] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test HTTP/1.1" 302 0
+[2020-02-08 23:45:06,133] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-09 00:14:19,546] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test HTTP/1.1" 302 0
+[2020-02-09 00:14:19,551] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-09 14:05:21,532] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6880
+[2020-02-09 14:05:21,590] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-09 14:05:21,685] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test HTTP/1.1" 302 0
+[2020-02-09 14:05:21,690] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-09 14:05:24,130] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 302 0
+[2020-02-09 14:05:24,134] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-09 14:05:24,845] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test2 HTTP/1.1" 302 0
+[2020-02-09 14:05:24,850] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-09 14:05:25,487] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 302 0
+[2020-02-09 14:05:25,491] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-09 14:05:26,007] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test HTTP/1.1" 302 0
+[2020-02-09 14:05:26,012] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-09 14:05:26,507] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test1 HTTP/1.1" 302 0
+[2020-02-09 14:05:26,512] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-09 14:05:26,823] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /test2 HTTP/1.1" 302 0
+[2020-02-09 14:05:26,827] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-09 14:52:46,757] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\urls.py changed, reloading.

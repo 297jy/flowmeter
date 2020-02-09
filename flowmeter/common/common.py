@@ -15,3 +15,19 @@ def extract_data_in_dict(data, keys):
         if val:
             res[key] = val
     return res
+
+
+def get_allowed_action_of_role(role):
+    """
+    获取该角色所有能够执行的action
+    :param role:
+    :return:
+    """
+    authorities = role.authorities.all()
+
+    action_list = []
+    for auth in authorities:
+        actions = auth.permission_action.split(';')
+        action_list.extend(actions)
+    return action_list
+

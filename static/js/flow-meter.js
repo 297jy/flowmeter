@@ -37,6 +37,41 @@ function post(data, url, success, error = errorHandler, dataType = 'json') {
         data: data,
         dataType: dataType,
         success: success,
+        error: error,
     });
 
+}
+
+function get(data, url, success, error=errorHandler, dataType='json') {
+
+    $.ajax({
+        type: "GET",
+        url: url,
+        data: data,
+        dataType: dataType,
+        success: success,
+        error: error,
+    });
+
+}
+
+/***
+ * 验证电话号码格式是否正确
+ * @param phone
+ * @returns {boolean}
+ */
+function checkPhone(phone){
+    let reg = new RegExp('^1([3456789])\d{9}$');
+    if(!reg.test(phone)){
+        return false;
+    }
+    return true;
+}
+
+function checkEmail(email) {
+    let reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //正则表达式
+    if(!reg.test(email)){
+        return false;
+    }
+    return true;
 }

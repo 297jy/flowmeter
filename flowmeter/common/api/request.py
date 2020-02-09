@@ -45,7 +45,9 @@ def get_param(request):
         param = request.GET.get('param', {})
     elif request.method == 'POST':
         param = request.POST.get('param', {})
-    return json.loads(param)
+    if isinstance(param, str):
+        param = json.loads(param)
+    return param
 
 
 def get_path(request):

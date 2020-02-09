@@ -9,13 +9,12 @@ from flowmeter.common.api import request as request_api
 from flowmeter.applications.api import user as app_user_api
 
 
-class UserActionHandler(ActionHandlerBase):
+class AdminActionHandler(ActionHandlerBase):
 
     def __init__(self):
 
         action_dict = {
-            'query_admin': self.query_admin,
-            'check_email_unique': self.check_email_unique,
+            'query_admin': self.query_admin
         }
         super().__init__(action_dict)
 
@@ -27,30 +26,13 @@ class UserActionHandler(ActionHandlerBase):
 
         return Result.success(data=admins)
 
-    def create_admin(self, request):
+    def add(self, request):
 
         admin_info = request_api.get_param(request)
 
         app_user_api.create_admin(admin_info)
 
         return Result.success()
-
-    def check_email_unique(self, request):
-
-        param = request_api.get_param(request)
-        email = param.get('email')
-        is_unique = app_user_api.check_email_unique(email)
-
-        return Result.success(data=is_unique)
-
-    def check_phone_unique(self, request):
-        param = request_api.get_param(request)
-        phone = param.get('phone')
-
-        is_unique = app_user_api.check_phone_unique(phone)
-
-        return Result.success(data=is_unique)
-
 
 @xframe_options_sameorigin
 def admin_view(request):
@@ -64,8 +46,8 @@ def admin_add(request):
     return render(request, 'admin/admin-add.html', {})
 
 
-def user_handler(request):
+def admin_handler(request):
 
-    result = UserActionHandler().handle(request)
+    result = AdminActionHandler().handle(request)
     return HttpResponse(json.dumps(dict(result)))
 

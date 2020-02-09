@@ -14,7 +14,7 @@ def is_action_allowed(user, action):
     :param action: 当前正要执行的动作
     :return:
     """
-    auths = user.get('auths', [])
+    auths = user.get('actions', [])
     if action in auths:
         allowed = True
     else:
