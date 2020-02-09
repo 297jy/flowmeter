@@ -46,6 +46,9 @@ class AuthMiddleware(MiddlewareMixin):
 
         # 检查用户是否拥有执行当前action的权限
         action = request_api.get_action(request)
+        # 如过action为空，表示不需要检查权限
+        if action is None:
+            return
         user = request_api.get_user(request)
         if is_action_allowed(user, action) is False:
             if request.method == 'GET':
