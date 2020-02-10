@@ -47,6 +47,9 @@ def get_param(request):
         param = request.POST.get('param', {})
     if isinstance(param, str):
         param = json.loads(param)
+    # 删除csrf token
+    if 'csrfmiddlewaretoken' in param.keys():
+        del param['csrfmiddlewaretoken']
     return param
 
 

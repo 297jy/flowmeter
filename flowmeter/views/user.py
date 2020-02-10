@@ -16,6 +16,8 @@ class UserActionHandler(ActionHandlerBase):
         action_dict = {
             'query_admin': self.query_admin,
             'check_email_unique': self.check_email_unique,
+            'check_phone_unique': self.check_phone_unique,
+            'create_admin': self.create_admin,
         }
         super().__init__(action_dict)
 

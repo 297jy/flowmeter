@@ -72,5 +72,5 @@ class AuthMiddleware(MiddlewareMixin):
             if request.method == 'GET':
                 return redirect('/error/403/')
             else:
-                return HttpResponse(json.dumps(dict(Result.error('权限不足！'))))
+                return HttpResponse(json.dumps(dict(Result.error('权限不足,请联系管理员添加权限！'))))
 
