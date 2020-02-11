@@ -25,7 +25,7 @@ class UserActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
 
-        admins = app_user_api.find_admins_by_query_terms({})
+        admins = app_user_api.find_admins_by_query_terms(param)
 
         return Result.success(data=admins)
 

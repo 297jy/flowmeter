@@ -9,6 +9,7 @@ from flowmeter.common.api.excel import Excel
 from flowmeter.common.api import password as password_api
 from flowmeter import settings
 
+
 def __transfer_user_obj_to_dict(users):
     """
     将用户对象转成字典
@@ -28,10 +29,10 @@ def __find_users_by_query_terms(query_terms):
     query_box = query_terms.get('query_box')
     begin_time = query_terms.get('begin_time')
     if begin_time:
-        begin_time = datetime.datetime.fromtimestamp(begin_time)
+        begin_time = datetime.datetime.strptime(begin_time, '%Y-%m-%d')
     end_time = query_terms.get('end_time')
     if end_time:
-        end_time = datetime.datetime.fromtimestamp(end_time)
+        end_time = datetime.datetime.strptime(end_time, '%Y-%m-%d')
     role = query_terms.get('role')
 
     # 构造查询框的查询条件

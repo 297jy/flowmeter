@@ -19,8 +19,8 @@ def find_admins_by_query_terms(query_terms):
     """
 
     optional_dict = {
-        "begin_time": int,
-        "end_time": int,
+        "begin_time": str,
+        "end_time": str,
         "query_box": str,
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
