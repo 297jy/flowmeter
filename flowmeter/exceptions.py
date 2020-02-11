@@ -30,3 +30,9 @@ class ValueValidException(Exception):
     非法值异常
     """
 
+
+class ForbiddenException(Exception):
+    """
+    禁止操作异常
+    """
+

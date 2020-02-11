@@ -19,6 +19,7 @@ class UserActionHandler(ActionHandlerBase):
             'check_phone_unique': self.check_phone_unique,
             'create_admin': self.create_admin,
             "edit_admin": self.edit_admin,
+            "switch_admin_state": self.switch_admin_state,
         }
         super().__init__(action_dict)
 
@@ -61,6 +62,14 @@ class UserActionHandler(ActionHandlerBase):
         is_unique = app_user_api.check_phone_unique(phone)
 
         return Result.success(data=is_unique)
+
+    def switch_admin_state(self, request):
+        param = request_api.get_param(request)
+        admin_id = param.get('admin_id')
+
+        app_user_api.switch_admin_state_by_id(admin_id)
+
+        return Result.success()
 
 
 @xframe_options_sameorigin

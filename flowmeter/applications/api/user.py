@@ -30,6 +30,21 @@ def find_admins_by_query_terms(query_terms):
     return admins
 
 
+def switch_admin_state_by_id(admin_id):
+
+    user_core.switch_admin_state_by_id(admin_id)
+
+
+def switch_manufacturer_state_by_id(manufacturer_id):
+
+    user_core.switch_manufacturer_state_by_id(manufacturer_id)
+
+
+def switch_dtu_user_state_by_id(dtu_user_id):
+
+    user_core.switch_dtu_user_state_by_id(dtu_user_id)
+
+
 def find_manufacturers_by_query_terms(query_terms):
     """
     根据查询条件来查询厂商

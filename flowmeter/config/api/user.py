@@ -28,6 +28,13 @@ def get_users(filters=None):
     return users
 
 
+def get_user_by_id(user_id):
+
+    user = user_core.get_user({'id': user_id})
+
+    return user
+
+
 def get_user_by_name(name):
 
     user = user_core.get_user({"name": name})
@@ -76,6 +83,12 @@ def create_user(user_info):
     user_info['create_time'] = datetime.datetime.now()
 
     User.objects.create(**user_info)
+
+
+def switch_user_state_by_id(user_id):
+
+    user = user_core.get_user({'id': user_id})
+    user_core.switch_user_state(user)
 
 
 def edit_user(user_info):

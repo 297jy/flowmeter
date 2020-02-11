@@ -53,6 +53,24 @@ def __find_users_by_query_terms(query_terms):
     return __transfer_user_obj_to_dict(users)
 
 
+def __switch_user_state_by_id(user_id):
+
+    conf_user_api.switch_user_state_by_id(user_id)
+
+
+def switch_admin_state_by_id(admin_id):
+
+    __switch_user_state_by_id(admin_id)
+
+
+def switch_manufacturer_state_by_id(manufacturer_id):
+    __switch_user_state_by_id(manufacturer_id)
+
+
+def switch_dtu_user_state_by_id(dtu_user_id):
+    __switch_user_state_by_id(dtu_user_id)
+
+
 def __create_user(user_info):
 
     # 设置默认的用户密码

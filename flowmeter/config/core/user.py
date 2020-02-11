@@ -69,6 +69,20 @@ def edit_user(user_info):
     User.objects.create(**user_info)
 
 
+def switch_user_state(user):
+    """
+    转换用户的状态
+    :param user:
+    :return:
+    """
+    if user.state == const.UserStateType.ENABLE_STATE:
+        user.state = const.UserStateType.FORBIDDEN_STATE
+    else:
+        user.state = const.UserStateType.ENABLE_STATE
+
+    user.save()
+
+
 def del_user(user_id):
     """
     删除系统用户

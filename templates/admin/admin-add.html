@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="/static/css/xadmin.css">
     <script type="text/javascript" src="/static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/js/xadmin.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
     <script src="/static/js/flow-meter.js" charset="utf-8"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
@@ -29,7 +31,8 @@
                     <span class="x-red">*</span>用户名</label>
                 <div class="layui-input-inline">
                     <input type="text" id="L_username" name="name" required="" lay-verify="name" autocomplete="off"
-                           class="layui-input"></div>
+                           class="layui-input">
+                </div>
             </div>
             <div class="layui-form-item">
                 <label for="L_email" class="layui-form-label">
@@ -46,14 +49,20 @@
                     <span class="x-red">*</span>联系电话</label>
                 <div class="layui-input-inline">
                     <input type="text" id="L_phone" name="phone" required="" lay-verify="phone" autocomplete="off"
-                           class="layui-input"></div>
+                           class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span style="color: red;display: none" id="unique_phone_msg">该联系电话已存在！</span>
+                </div>
             </div>
-            <div class="layui-form-item">
-                <label for="L_remark" class="layui-form-label">备注</label>
-                <div class="layui-input-inline">
-                    <input type="text" id="L_remark" name="remark" lay-verify="remark" autocomplete="off"
-                           class="layui-input"></div>
-            </div>
+            <div class="layui-form-item layui-form-text">
+                    <label for="desc" class="layui-form-label">
+                        备注
+                    </label>
+                    <div class="layui-input-block">
+                        <textarea placeholder="请输入内容" id="desc" name="remark" class="layui-textarea"></textarea>
+                    </div>
+                </div>
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label"></label>
                 <button class="layui-btn" lay-filter="add" lay-submit="">添加</button>
@@ -71,7 +80,9 @@
         //自定义验证规则
         form.verify({
             name: function (value) {
-
+                if (checkName(value)) {
+                    return "用户名字符长度只能为[1-32]个字符！"
+                }
             },
             phone: function (value) {
                 if (!checkPhone(value)) {
@@ -84,8 +95,8 @@
                 }
             },
             remark: function (value) {
-                if (value.length() > 128) {
-                    return "备注字符长度只能为[1-128]个字符！"
+                if (checkRemark(value)) {
+                    return "备注字符长度只能为[0-128]个字符！"
                 }
             }
         });
@@ -93,7 +104,7 @@
         //监听提交
         form.on('submit(add)',
             function (data) {
-                post({"param": JSON.stringify(data.field), "action": "admin_add"}, '/handler/admin/', function (data) {
+                post({"param": JSON.stringify(data.field), "action": "create_admin"}, '/handler/admin/', function (data) {
                     if (data.success) {
                         layer.alert("添加成功", {
                                 icon: 6
@@ -121,6 +132,20 @@
                 }
                 else{
                     $("#unique_email_msg").show();
+                }
+            });
+        });
+
+        $("#L_phone").on("input", function (e) {
+            //获取input输入的值
+            let val = e.delegateTarget.value;
+            get({'param': JSON.stringify({'phone': val}), 'action': 'check_phone_unique'},
+                '/handler/user/',function (data) {
+                if(data.data){
+                    $("#unique_phone_msg").hide();
+                }
+                else{
+                    $("#unique_phone_msg").show();
                 }
             });
         });

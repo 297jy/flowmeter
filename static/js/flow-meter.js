@@ -61,7 +61,7 @@ function get(data, url, success, error=errorHandler, dataType='json') {
  * @returns {boolean}
  */
 function checkPhone(phone){
-    let reg = new RegExp('^1([3456789])\d{9}$');
+    let reg = /^[1][345789][0-9]{9}$/;
     if(!reg.test(phone)){
         return false;
     }
@@ -70,8 +70,14 @@ function checkPhone(phone){
 
 function checkEmail(email) {
     let reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$"); //正则表达式
-    if(!reg.test(email)){
-        return false;
-    }
-    return true;
+    return reg.test(email);
+
+}
+
+function checkName(name) {
+    return value.length <= 32;
+}
+
+function checkRemark() {
+    return value.length <= 128;
 }

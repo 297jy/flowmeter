@@ -7,6 +7,7 @@ from flowmeter.config.api import role as conf_role_api
 from flowmeter.config.api import navigation_bar as conf_nav_bar_api
 from flowmeter.exceptions import DoesNotExistException
 from flowmeter.common.api.password import password_encryption
+from flowmeter.common import const
 
 import logging
 
@@ -111,6 +112,19 @@ def structure_nav_bars(nav_bars):
             nav_bar_list.append(nav_bar)
 
     return nav_bar_list
+
+
+def check_user_is_forbidden(user):
+
+    """
+    检查用户的账号是否被禁用
+    :param user:
+    :return:
+    """
+    if user.state == const.UserStateType.FORBIDDEN_STATE:
+        return True
+    else:
+        return False
 
 
 

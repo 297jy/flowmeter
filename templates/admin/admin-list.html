@@ -42,18 +42,21 @@
                 <div class="layui-card-body ">
                     <form class="layui-form layui-col-space5">
                         <div class="layui-inline layui-col-md1">
-                            <input class="layui-input" autocomplete="off" placeholder="开始日" name="start" id="start">
+                            <input class="layui-input" autocomplete="off" placeholder="开始日" name="begin_time"
+                                   id="begin_time">
                         </div>
                         <div class="layui-inline layui-col-md1">
-                            <input class="layui-input" autocomplete="off" placeholder="截止日" name="end" id="end">
+                            <input class="layui-input" autocomplete="off" placeholder="截止日" name="end_time"
+                                   id="end_time">
                         </div>
                         <div class="layui-inline layui-col-md2">
-                            <input type="text" name="username" placeholder="请输入用户名/联系电话/邮箱" autocomplete="off"
+                            <input type="text" name="query_box" placeholder="请输入用户名\联系电话\邮箱" autocomplete="off"
                                    class="layui-input">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="sreach">
-                                <i class="layui-icon">&#xe615;</i></button>
+                            <button class="layui-btn" lay-submit="" lay-filter="search">
+                                <i class="layui-icon">&#xe615;</i>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -65,22 +68,7 @@
                     </button>
                 </div>
                 <div class="layui-card-body ">
-                    <table class="layui-table"
-                           lay-data="{url:'/handler/admin/?action=query_admin',
-                           page:true,toolbar: '#toolbarDemo',id:'test'}" lay-filter="test">
-                        <thead>
-                        <tr>
-                            <th lay-data="{type:'checkbox', width:'5%'}">ID</th>
-                            <th lay-data="{field:'id', width:'5%'}">ID</th>
-                            <th lay-data="{field:'name',   edit: 'text', width:'15%',}">用户名</th>
-                            <th lay-data="{field:'phone',  edit: 'text', width:'10%'}">手机</th>
-                            <th lay-data="{field:'email',  edit: 'text', width:'20%'}">邮箱</th>
-                            <th lay-data="{field:'remark', edit: 'text', width:'25%', templet: '#displayOmit',}">备注</th>
-                            <th lay-data="{field:'create_time',  width:'10%'}">创建时间</th>
-                            <th lay-data="{field:'state', templet: '#switchState', width:'10%'}">状态</th>
-                        </tr>
-
-                        </thead>
+                    <table lay-filter="admin" id="admin">
                     </table>
                 </div>
             </div>
@@ -88,13 +76,7 @@
     </div>
 </div>
 </body>
-<script type="text/html" id="toolbarDemo">
-
-    </script>
-<script type="text/html" id="switchState">
-    <input type="checkbox" name="state" value="{{ d.id }}" lay-skin="switch" lay-text="启用|禁用" lay-filter="adminState"
-           checked>
-</script>
+<script type="text/html" id="toolbarDemo"></script>
 {% verbatim %}
 <script type="text/html" id="displayOmit">
     <div><span title="{{d.remark}}">{{d.remark}}</span></div>
@@ -107,33 +89,90 @@
 
         //执行一个laydate实例
         laydate.render({
-            elem: '#start' //指定元素
+            elem: '#begin_time' //指定元素
         });
 
         //执行一个laydate实例
         laydate.render({
-            elem: '#end' //指定元素
+            elem: '#end_time', //指定元素
         });
 
     });
 </script>
 <script>
-    layui.use('table',
+    layui.use(['table', 'form', 'jquery', 'element'],
         function () {
-            var table = layui.table;
+            $ = layui.jquery;
+            let table = layui.table, form = layui.form;
+
+            table.render({
+                elem: '#admin', //指定原始表格元素选择器（推荐id选择器）
+                cols: [[
+                    {checkbox: true, width: '5%', field: 'id'},
+                    {
+                        numbbers: true,
+                        width: '5%',
+                        title: '序号',
+                        templet: function (data) {
+                            return data.LAY_TABLE_INDEX + 1;
+                        }
+                    },
+                    {field: 'name', edit: 'text', width: '15%', title: '用户名'},
+                    {field: 'phone', edit: 'text', width: '10%', title: '联系电话'},
+                    {field: 'email', edit: 'text', width: '20%', title: '邮箱'},
+                    {field: 'remark', edit: 'text', width: '25%', templet: '#displayOmit', title: '备注'},
+                    {field: 'create_time', width: '10%', title: '创建时间'},
+                    {
+                        field: 'state',
+                        templet: '#switchState',
+                        width: '10%',
+                        title: '状态',
+                        templet: function (data) {
+                            if(data.state === '启用'){
+                                return "<form>\n" +
+                                    "        <input type=\"checkbox\" name=\"state\" value=\""+data.id+"\" lay-skin=\"switch\" lay-text=\"启用|禁用\" lay-filter=\"state\" checked>\n" +
+                                    "    </form>";
+                            }
+                            else {
+                                return "<form>\n" +
+                                    "        <input type=\"checkbox\" name=\"state\" value=\""+data.id+"\" lay-skin=\"switch\" lay-text=\"启用|禁用\" lay-filter=\"state\">\n" +
+                                    "    </form>";
+                            }
+                        }
+                    },
+                ]],
+                url: '/handler/admin/?action=query_admin',
+                page: true,
+                toolbar: '#toolbarDemo',
+            });
+            form.on('switch(state)', function (data) {
+                post({
+                    "param": JSON.stringify({'admin_id': data.value}),
+                    "action": "switch_admin_state"
+                }, '/handler/admin/', function (data) {
+                    if (!data.success) {
+                        layer.msg(data.msg, {icon: 5, time: 1000});
+                    }
+                });
+            });
             //监听单元格编辑
-            table.on('edit(test)',
+            table.on('edit(admin)',
                 function (obj) {
-                    var value = obj.value //得到修改后的值
-                        ,
-                        data = obj.data //得到所在行所有键值
-                        ,
-                        field = obj.field; //得到字段
+                    let value = obj.value, data = obj.data, field = obj.field;
+                    delete data.create_time;
+                    post({
+                        "param": JSON.stringify(data),
+                        "action": "edit_admin"
+                    }, '/handler/admin/', function (data) {
+                        if (!data.success) {
+                            layer.msg(data.msg, {icon: 5, time: 2000});
+                        }
+                    });
                     layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
                 });
 
             //头工具栏事件
-            table.on('toolbar(test)',
+            table.on('toolbar(admin)',
                 function (obj) {
                     var checkStatus = table.checkStatus(obj.config.id);
                     switch (obj.event) {
@@ -149,13 +188,23 @@
                             layer.msg(checkStatus.isAll ? '全选' : '未全选');
                             break;
                     }
-                    ;
                 });
-        });</script>
+            //监听提交
+            form.on('submit(search)',
+                function (data) {
+                    table.reload('admin', {
+                        "where": {
+                            "param": JSON.stringify(data.field),
+                        }
+                    });
+                    return false;
+                });
+
+        });
+</script>
 <script>var _hmt = _hmt || [];
 (function () {
     var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
     var s = document.getElementsByTagName("script")[0];
     s.parentNode.insertBefore(hm, s);
 })();</script>

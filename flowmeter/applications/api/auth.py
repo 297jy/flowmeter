@@ -2,6 +2,8 @@
 
 from flowmeter.common.api.validators import StrCheck
 from flowmeter.applications.core import auth as core
+from flowmeter.exceptions import ForbiddenException
+
 import logging
 
 logger = logging.getLogger('log')
@@ -45,6 +47,9 @@ def validate_and_get_user(account, password):
     StrCheck.check_is_str(password)
 
     user = core.find_user_by_account(account)
+    # 检查用户是否被停用
+    if core.check_user_is_forbidden(user):
+        raise ForbiddenException("该账号已被禁用，请联系管理员！")
 
     if user is None:
         logger.warning('账号：{}，不存在！'.format(account))

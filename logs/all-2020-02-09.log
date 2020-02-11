@@ -2466,3 +2466,208 @@ flowmeter.exceptions.NotFoundActionException
 [2020-02-09 22:46:48,214] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
 [2020-02-09 22:46:48,439] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
 [2020-02-09 22:46:48,440] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 69
+[2020-02-09 22:47:30,046] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-09 22:47:30,076] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-09 22:47:30,116] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 7009
+[2020-02-09 22:47:30,125] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-09 22:47:30,174] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-09 22:47:30,178] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 775
+[2020-02-09 22:47:30,878] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-09 22:47:32,201] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:32,202] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:32,939] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:32,941] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:33,136] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:33,138] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:34,026] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:34,027] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:34,153] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:34,154] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213477%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:34,725] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:34,727] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134770%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:35,076] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:35,077] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:35,282] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:35,283] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213477042%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:35,474] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:35,476] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134770426%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:35,578] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:35,579] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:36,071] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:36,072] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:36,284] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:36,285] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:36,466] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:36,467] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:36,944] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:36,945] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:37,070] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:37,071] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:37,174] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:37,176] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:47:37,346] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:47:37,347] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 69
+[2020-02-09 22:48:15,518] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:48:15,519] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:48:16,797] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:48:16,799] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 69
+[2020-02-09 22:51:28,720] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:28,721] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:51:28,876] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:28,878] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:51:29,064] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:29,065] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:51:29,250] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:29,252] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:51:32,360] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:32,361] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:51:33,705] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:33,707] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.v%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:51:34,247] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:34,248] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:51:35,107] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:35,109] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:51:36,081] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:36,082] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-09 22:51:36,420] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-09 22:51:36,421] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 69
+[2020-02-09 23:13:56,872] [log.py:228] [log:log_response] [WARNING]- Not Found: /manufacturer/view/
+[2020-02-09 23:13:56,872] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /manufacturer/view/ HTTP/1.1" 404 2637
+[2020-02-09 23:13:57,180] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 7009
+[2020-02-09 23:13:57,191] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-09 23:13:57,251] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-09 23:13:57,256] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 775
+[2020-02-09 23:13:57,784] [log.py:228] [log:log_response] [WARNING]- Not Found: /manufacturer/view/
+[2020-02-09 23:13:57,784] [basehttp.py:157] [basehttp:log_message] [WARNING]- "GET /manufacturer/view/ HTTP/1.1" 404 2637
+[2020-02-09 23:13:58,152] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 7009
+[2020-02-09 23:13:58,202] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-09 23:13:58,205] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 775
+[2020-02-09 23:14:00,898] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-09 23:14:03,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-09 23:14:06,560] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-09 23:14:08,633] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-09 23:14:11,858] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-09 23:14:14,508] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-09 23:45:13,038] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2020-02-09 23:45:13,044] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-02-09 23:45:13,071] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-09 23:45:13,074] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 304 0
+[2020-02-09 23:45:18,427] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-02-09 23:45:18,436] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-02-09 23:45:26,471] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-09 23:45:26,473] [auth.py:50] [auth:validate_and_get_user] [WARNING]- 账号：adsfsdfdsf，不存在！
+[2020-02-09 23:45:26,474] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 132
+[2020-02-10 10:45:57,339] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-02-10 10:45:57,362] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-02-10 10:45:57,416] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1702
+[2020-02-10 10:46:15,699] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-02-10 10:46:15,713] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-02-10 10:46:15,763] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-10 10:46:15,768] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 304 0
+[2020-02-10 10:46:19,690] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-10 10:46:19,716] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 96
+[2020-02-10 10:46:20,985] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-10 10:46:21,032] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-10 10:46:21,077] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 7009
+[2020-02-10 10:46:21,135] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-10 10:46:21,141] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 775
+[2020-02-10 10:46:28,778] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-10 10:46:30,487] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:30,489] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:30,751] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:30,753] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:30,958] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:30,960] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:31,736] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:31,737] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:31,871] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:31,873] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213477%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:32,435] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:32,436] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134770%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:32,825] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:32,827] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:33,067] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:33,069] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213477042%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:33,280] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:33,281] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134770426%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:33,423] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:33,425] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:34,376] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:34,378] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:34,612] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:34,613] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:34,841] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:34,842] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:35,375] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:35,376] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:35,510] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:35,512] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:35,629] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:35,631] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:35,815] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:35,817] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.cok%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:36,372] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:36,374] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 10:46:36,732] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 10:46:36,734] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 69
+[2020-02-10 16:18:55,637] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-10 16:18:55,661] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 304 0
+[2020-02-10 16:18:55,693] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-10 16:18:55,704] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 6911
+[2020-02-10 16:18:55,728] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-10 16:18:55,787] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-10 16:18:55,791] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 775
+[2020-02-10 16:18:58,165] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-10 16:19:00,273] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:00,274] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:00,559] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:00,561] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:00,755] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:00,756] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:01,565] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:01,566] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:01,678] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:01,680] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213477%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:01,862] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:01,864] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134777%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:02,251] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:02,253] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213477%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:02,399] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:02,401] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:02,544] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:02,546] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:02,691] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:02,693] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:02,839] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:02,841] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:02,987] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:02,988] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:03,365] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:03,366] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:03,642] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:03,644] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:03,870] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:03,872] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:04,212] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:04,214] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:04,361] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:04,362] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213477%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:04,941] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:04,942] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134770%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:05,297] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:05,299] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:05,518] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:05,520] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%2213477042%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:05,706] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:05,707] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22134770426%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:19:05,850] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-10 16:19:05,851] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221347704262%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-10 16:52:09,328] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-10 16:52:09,389] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-10 16:52:09,488] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 6911
+[2020-02-10 16:52:09,563] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-10 16:52:09,569] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 775
+[2020-02-10 16:52:19,229] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-10 16:52:23,120] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-10 16:52:26,551] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663
+[2020-02-10 16:52:32,244] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 5663

@@ -15,7 +15,6 @@ class ErrorHandlerMiddleware(MiddlewareMixin):
     错误处理中间件
     """
     def process_exception(self, request, exception):
-        print("这里是 Test2 的 process_exception")
-        print(str(exception))
+
         result = Result.error(msg=str(exception))
         return HttpResponse(json.dumps(dict(result)))
