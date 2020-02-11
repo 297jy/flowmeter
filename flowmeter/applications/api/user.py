@@ -151,6 +151,7 @@ def edit_admin(admin_info):
     optional_dict = {
         "remark": StrCheck.check_remark
     }
+    user_core.transfer_display_to_database(admin_info)
     param_check(admin_info, must_dict, optional_dict)
 
     user_core.edit_admin(admin_info)
@@ -172,6 +173,7 @@ def edit_manufacturer(manufacturer_info):
     optional_dict = {
         "remark": StrCheck.check_remark
     }
+    user_core.transfer_display_to_database(manufacturer_info)
     param_check(manufacturer_info, must_dict, optional_dict)
 
     user_core.edit_manufacturer(manufacturer_info)
@@ -193,6 +195,7 @@ def edit_dtu_user(dtu_user_info):
     optional_dict = {
         "remark": StrCheck.check_remark
     }
+    user_core.transfer_display_to_database(dtu_user_info)
     param_check(dtu_user_info, must_dict, optional_dict)
 
     user_core.edit_dtu_user(dtu_user_info)

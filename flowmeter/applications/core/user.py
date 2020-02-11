@@ -20,6 +20,7 @@ def __transfer_user_obj_to_dict(users):
     for user in users:
         user_dict = user.get_dict()
         __transfer_database_to_display(user_dict)
+        del user_dict['actions']
         user_dicts.append(user_dict)
     return user_dicts
 
@@ -165,7 +166,7 @@ def __user_import(filename, prop_list, name_list):
     excel.read(filename)
     users = excel.obj_dict_list
     for user in users:
-        __transfer_display_to_database(user)
+        transfer_display_to_database(user)
 
     return users
 
@@ -227,7 +228,7 @@ def __transfer_database_to_display(user_info):
     user_info['state'] = state
 
 
-def __transfer_display_to_database(user_info):
+def transfer_display_to_database(user_info):
     """
     将前端显示的值，转为存储在数据库中的值
     :param user_info:
@@ -235,9 +236,10 @@ def __transfer_display_to_database(user_info):
     """
 
     # 将字符串转成日期时间戳
-    create_time = user_info.get('create_time', datetime.datetime.now().strftime(settings.DATETIME_FORMAT_STR))
-    user_info['create_time'] = \
-        time.mktime(datetime.datetime.strptime(create_time, settings.DATETIME_FORMAT_STR).timetuple())
+    if 'create_time' in user_info:
+        create_time = user_info['create_time']
+        user_info['create_time'] = \
+            time.mktime(datetime.datetime.strptime(create_time, settings.DATETIME_FORMAT_STR).timetuple())
 
     # 将中文的状态值，转化为英文
     state = user_info['state']

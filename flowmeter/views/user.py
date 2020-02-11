@@ -18,6 +18,7 @@ class UserActionHandler(ActionHandlerBase):
             'check_email_unique': self.check_email_unique,
             'check_phone_unique': self.check_phone_unique,
             'create_admin': self.create_admin,
+            "edit_admin": self.edit_admin,
         }
         super().__init__(action_dict)
 
@@ -34,6 +35,14 @@ class UserActionHandler(ActionHandlerBase):
         admin_info = request_api.get_param(request)
 
         app_user_api.create_admin(admin_info)
+
+        return Result.success()
+
+    def edit_admin(self, request):
+
+        admin_info = request_api.get_param(request)
+
+        app_user_api.edit_admin(admin_info)
 
         return Result.success()
 
@@ -70,4 +79,3 @@ def user_handler(request):
 
     result = UserActionHandler().handle(request)
     return HttpResponse(json.dumps(dict(result)))
-
