@@ -70,3 +70,5 @@ if __name__ == "__main__":
     # test_create_admin()
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     print(user_api.check_email_unique('1347704262@qq.com'))
+    x = [1, 2, 3]
+    print(x[4: 3])

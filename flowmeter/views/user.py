@@ -7,6 +7,7 @@ from django.views.decorators.clickjacking import xframe_options_sameorigin
 from flowmeter.views.common import ActionHandlerBase, Result
 from flowmeter.common.api import request as request_api
 from flowmeter.applications.api import user as app_user_api
+from flowmeter.common import common
 
 
 class UserActionHandler(ActionHandlerBase):
@@ -27,9 +28,13 @@ class UserActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
 
-        admins = app_user_api.find_admins_by_query_terms(param)
+        all_admins = app_user_api.find_admins_by_query_terms(param)
 
-        return Result.success(data=admins)
+        page = request_api.get_page_num(request)
+        limit = request_api.get_page_limit(request)
+        admins = common.get_page_data(all_admins, page, limit)
+
+        return Result.success(data=admins, count=len(all_admins))
 
     def create_admin(self, request):
 

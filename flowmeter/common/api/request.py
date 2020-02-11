@@ -72,3 +72,27 @@ def is_login(request):
         return False
 
 
+def get_page_num(request):
+    """
+    获取当前表格的页数
+    :param request:
+    :return:
+    """
+    page_num = None
+    if request.method == 'GET':
+        page_num = int(request.GET.get('page', 0))
+    return page_num
+
+
+def get_page_limit(request):
+    """
+    获取每页最多显示的数据条数
+    :param request:
+    :return:
+    """
+    limit = None
+    if request.method == 'GET':
+        limit = int(request.GET.get('limit', 0))
+    return limit
+
+

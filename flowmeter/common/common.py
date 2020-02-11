@@ -31,3 +31,17 @@ def get_allowed_action_of_role(role):
         action_list.extend(actions)
     return action_list
 
+
+def get_page_data(datas, page, limit):
+    """
+    用于分页查询，获取某页的数据
+    :param datas: 待分页的数据
+    :param page: 当前页数
+    :param limit: 每页最多显示的数据条数
+    :return:
+    """
+
+    start_index = limit * (page - 1)
+    end_index = limit * page
+
+    return datas[start_index: end_index]

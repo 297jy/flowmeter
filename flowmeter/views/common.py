@@ -2,7 +2,6 @@
 
 from flowmeter.exceptions import NotFoundActionException
 from flowmeter.common.api import request as request_api
-from flowmeter.common.api.validators import ListCheck
 
 import logging
 logger = logging.getLogger('log')
@@ -13,7 +12,7 @@ class Result:
     ERROR_CODE = 1
     SUCCESS_CODE = 0
 
-    def __init__(self, success, data=None, msg='', code=SUCCESS_CODE, count=0):
+    def __init__(self, success, data=None, msg='', code=SUCCESS_CODE, count=None):
         self.success = success
         self.data = data
         self.msg = msg
@@ -21,11 +20,7 @@ class Result:
         self.count = count
 
     @staticmethod
-    def success(data=None, msg=''):
-
-        count = None
-        if isinstance(data, list):
-            count = len(data)
+    def success(data=None, msg='', count=None):
 
         return Result(success=True, data=data, msg=msg, count=count)
 

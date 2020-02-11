@@ -75,9 +75,9 @@ function checkEmail(email) {
 }
 
 function checkName(name) {
-    return value.length <= 32;
+    return name.length <= 32;
 }
 
-function checkRemark() {
-    return value.length <= 128;
+function checkRemark(remark) {
+    return remark.length <= 128;
 }

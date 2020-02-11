@@ -80,7 +80,7 @@
         //自定义验证规则
         form.verify({
             name: function (value) {
-                if (checkName(value)) {
+                if (!checkName(value)) {
                     return "用户名字符长度只能为[1-32]个字符！"
                 }
             },
@@ -95,7 +95,7 @@
                 }
             },
             remark: function (value) {
-                if (checkRemark(value)) {
+                if (!checkRemark(value)) {
                     return "备注字符长度只能为[0-128]个字符！"
                 }
             }

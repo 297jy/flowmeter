@@ -2981,3 +2981,1399 @@ flowmeter.exceptions.ParameterErrorException: 参数校验失败，[Invalid('ext
 [2020-02-11 19:34:24,964] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
 [2020-02-11 19:34:39,465] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：login
 [2020-02-11 19:34:39,467] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 156
+[2020-02-11 19:36:55,611] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-11 19:36:55,613] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 156
+[2020-02-11 23:32:03,978] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-11 23:32:03,981] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 156
+[2020-02-11 23:32:07,800] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-11 23:32:07,811] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 96
+[2020-02-11 23:32:09,057] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:32:09,097] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:32:09,139] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:32:09,156] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-11 23:32:09,212] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:32:09,218] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 387
+[2020-02-11 23:32:13,572] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:32:13,624] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:32:13,629] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 387
+[2020-02-11 23:32:16,189] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:32:16,196] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:32:18,644] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6747
+[2020-02-11 23:32:20,555] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6747
+[2020-02-11 23:32:22,306] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6747
+[2020-02-11 23:32:24,173] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6747
+[2020-02-11 23:32:25,701] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6747
+[2020-02-11 23:32:27,385] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6747
+[2020-02-11 23:32:36,127] [common.py:64] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:32:36,135] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22%22%7D HTTP/1.1" 200 387
+[2020-02-11 23:34:02,361] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-11 23:34:02,953] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:34:46,741] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-11 23:34:47,339] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:36:09,708] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-11 23:36:10,317] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:37:17,431] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\common.py changed, reloading.
+[2020-02-11 23:37:18,048] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:38:07,388] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\common.py changed, reloading.
+[2020-02-11 23:38:07,979] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:41:48,481] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\common.py changed, reloading.
+[2020-02-11 23:41:49,107] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:41:51,490] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:41:51,515] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:41:51,516] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:41:51,519] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:41:51,519] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:41:51,523] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:41:51,534] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:41:51,535] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:41:51,540] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:41:51,540] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:41:51,549] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:41:51,557] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:41:51,558] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:41:51,567] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:41:51,567] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:41:51,570] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:41:51,571] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:41:51,583] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:41:51,587] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:41:51,597] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:41:51,600] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:41:51,629] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:41:51,641] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:41:51,641] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:41:51,648] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:41:51,648] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:41:51,651] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:41:51,652] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:41:51,654] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:41:51,655] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:41:51,658] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:41:51,664] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:41:51,670] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:41:51,680] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:41:51,694] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:41:51,695] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:41:51,699] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:41:51,717] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:41:51,718] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:41:51,723] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:41:51,732] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:41:51,744] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:41:51,752] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:41:51,758] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:41:51,780] [common.py:60] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:41:51,786] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 115
+[2020-02-11 23:42:36,406] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-02-11 23:42:37,052] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:42:38,781] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:42:38,806] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:42:38,809] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:42:38,811] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:42:38,812] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:42:38,816] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:42:38,828] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:42:38,833] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:42:38,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:42:38,836] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:42:38,851] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:42:38,852] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:42:38,855] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:42:38,867] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:42:38,868] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:42:38,870] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:42:38,872] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:42:38,881] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:42:38,885] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:42:38,895] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:42:38,900] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:42:38,931] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:42:38,942] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:42:38,944] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:42:38,951] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:42:38,952] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:42:38,955] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:42:38,956] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:42:38,958] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:42:38,959] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:42:38,961] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:42:38,976] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:42:38,980] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:42:38,991] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:42:39,008] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:42:39,019] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:42:39,020] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:42:39,037] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:42:39,038] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:42:39,041] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:42:39,044] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:42:39,059] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:42:39,064] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:42:39,069] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:42:39,100] [common.py:60] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:42:39,107] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 115
+[2020-02-11 23:43:08,712] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-02-11 23:43:09,339] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:43:27,566] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-02-11 23:43:28,192] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:43:29,101] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:43:29,130] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:43:29,130] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:43:29,133] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:43:29,133] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:43:29,137] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:43:29,150] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:43:29,152] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:43:29,156] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:43:29,156] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:43:29,164] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:43:29,171] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:43:29,173] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:43:29,183] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:43:29,184] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:43:29,187] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:43:29,187] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:43:29,198] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:43:29,201] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:43:29,211] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:43:29,215] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:43:29,244] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:43:29,254] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:43:29,255] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:43:29,262] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:43:29,265] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:43:29,268] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:43:29,269] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:43:29,273] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:43:29,274] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:43:29,276] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:43:29,283] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:43:29,287] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:43:29,297] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:43:29,313] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:43:29,324] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:43:29,324] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:43:29,337] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:43:29,338] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:43:29,345] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:43:29,346] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:43:29,360] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:43:29,366] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:43:29,373] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:43:29,392] [common.py:60] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:43:29,398] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 134
+[2020-02-11 23:43:57,529] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-02-11 23:43:58,141] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:44:51,673] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-02-11 23:44:52,286] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:44:55,494] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:44:55,516] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:44:55,519] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:44:55,520] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:44:55,522] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:44:55,525] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:44:55,535] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:44:55,542] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:44:55,544] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:44:55,544] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:44:55,555] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:44:55,565] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:44:55,568] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:44:55,576] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:44:55,577] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:44:55,581] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:44:55,581] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:44:55,585] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:44:55,600] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:44:55,620] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:44:55,622] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:44:55,647] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:44:55,665] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:44:55,667] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:44:55,674] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:44:55,674] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:44:55,678] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:44:55,678] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:44:55,684] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:44:55,684] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:44:55,687] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:44:55,688] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:44:55,700] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:44:55,716] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:44:55,733] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:44:55,740] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:44:55,740] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:44:55,755] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:44:55,755] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:44:55,761] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:44:55,763] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:44:55,782] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:44:55,789] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:44:55,795] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:44:55,813] [common.py:60] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:44:55,823] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 134
+[2020-02-11 23:45:13,475] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:45:13,497] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:45:13,497] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:45:13,501] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:45:13,501] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:45:13,508] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:45:13,518] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:45:13,523] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:45:13,525] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:45:13,525] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:45:13,533] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:45:13,540] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:45:13,541] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:45:13,550] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:45:13,551] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:45:13,553] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:45:13,554] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:45:13,567] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:45:13,568] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:45:13,577] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:45:13,581] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:45:13,609] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:45:13,619] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:45:13,620] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:45:13,629] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:45:13,629] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:45:13,631] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:45:13,632] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:45:13,635] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:45:13,636] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:45:13,638] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:45:13,647] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:45:13,653] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:45:13,663] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:45:13,681] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:45:13,692] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:45:13,692] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:45:13,708] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:45:13,709] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:45:13,715] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:45:13,720] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:45:13,732] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:45:13,738] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:45:13,744] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:45:13,761] [common.py:60] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:45:13,767] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 134
+[2020-02-11 23:45:20,649] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-02-11 23:45:21,262] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:45:22,775] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:45:22,803] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:45:22,804] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:45:22,807] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:45:22,808] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:45:22,813] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:45:22,825] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:45:22,830] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:45:22,833] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:45:22,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:45:22,844] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:45:22,856] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:45:22,860] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:45:22,865] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:45:22,865] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:45:22,870] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:45:22,870] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:45:22,876] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:45:22,889] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:45:22,908] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:45:22,911] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:45:22,939] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:45:22,952] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:45:22,954] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:45:22,963] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:45:22,964] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:45:22,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:45:22,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:45:22,972] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:45:22,974] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:45:22,976] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:45:22,985] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:45:22,990] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:45:23,014] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:45:23,031] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:45:23,043] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:45:23,044] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:45:23,055] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:45:23,055] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:45:23,061] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:45:23,070] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:45:23,082] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:45:23,089] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:45:23,095] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:45:23,127] [common.py:60] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:45:23,135] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 115
+[2020-02-11 23:48:28,698] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\common.py changed, reloading.
+[2020-02-11 23:48:29,318] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:49:18,635] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\common.py changed, reloading.
+[2020-02-11 23:49:19,240] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:49:21,339] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:49:21,360] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:49:21,365] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:49:21,365] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:49:21,368] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:49:21,373] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:49:21,382] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:49:21,383] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:49:21,388] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:49:21,388] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:49:21,396] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:49:21,406] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:49:21,407] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:49:21,411] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:49:21,412] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:49:21,415] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:49:21,416] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:49:21,420] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:49:21,433] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:49:21,442] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:49:21,446] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:49:21,476] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:49:21,487] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:49:21,488] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:49:21,494] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:49:21,495] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:49:21,499] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:49:21,501] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:49:21,504] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:49:21,504] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:49:21,507] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:49:21,516] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:49:21,519] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:49:21,528] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:49:21,541] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:49:21,554] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:49:21,555] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:49:21,567] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:49:21,568] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:49:21,571] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:49:21,576] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:49:21,591] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:49:21,596] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:49:21,603] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:49:21,623] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:49:21,630] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 119
+[2020-02-11 23:49:44,271] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\common.py changed, reloading.
+[2020-02-11 23:49:44,924] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:49:46,751] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:49:46,773] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:49:46,774] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:49:46,776] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:49:46,777] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:49:46,781] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:49:46,791] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:49:46,794] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:49:46,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:49:46,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:49:46,804] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:49:46,812] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:49:46,813] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:49:46,821] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:49:46,822] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:49:46,824] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:49:46,825] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:49:46,840] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:49:46,841] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:49:46,851] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:49:46,855] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:49:46,885] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:49:46,898] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:49:46,899] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:49:46,906] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:49:46,907] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:49:46,909] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:49:46,910] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:49:46,912] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:49:46,913] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:49:46,915] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:49:46,924] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:49:46,930] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:49:46,940] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:49:46,961] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:49:46,973] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:49:46,973] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:49:46,984] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:49:46,984] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:49:46,989] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:49:46,992] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:49:47,019] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:49:47,026] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:49:47,032] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:49:47,048] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:49:47,054] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 119
+[2020-02-11 23:49:58,845] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:50:02,809] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:50:02,832] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:50:02,832] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:50:02,835] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:50:02,836] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:50:02,840] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:50:02,851] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:50:02,854] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:50:02,857] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:50:02,858] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:50:02,865] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:50:02,873] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:50:02,874] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:50:02,881] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:50:02,882] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:50:02,886] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:50:02,886] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:50:02,898] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:50:02,902] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:50:02,910] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:50:02,914] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:50:02,942] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:50:02,952] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:50:02,953] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:50:02,960] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:50:02,960] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:50:02,964] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:50:02,964] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:50:02,967] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:50:02,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:50:02,970] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:50:02,979] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:50:02,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:50:02,991] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:50:03,007] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:50:03,019] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:50:03,020] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:50:03,037] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:50:03,037] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:50:03,041] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:50:03,045] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:50:03,058] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:50:03,064] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:50:03,070] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:50:03,086] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:50:03,094] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 119
+[2020-02-11 23:51:17,205] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-11 23:51:17,828] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:51:18,816] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:51:18,838] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:51:18,838] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:51:18,842] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:51:18,843] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:51:18,848] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:51:18,858] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:51:18,859] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:51:18,863] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:51:18,863] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:51:18,871] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:51:18,882] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:51:18,883] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:51:18,890] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:51:18,890] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:51:18,894] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:51:18,894] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:51:18,898] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:51:18,912] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:51:18,921] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:51:18,925] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:51:18,956] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:51:18,968] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:51:18,969] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:51:18,973] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:51:18,977] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:51:18,978] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:51:18,981] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:51:18,982] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:51:18,985] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:51:18,986] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:51:18,988] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1779
+[2020-02-11 23:51:19,000] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:51:19,007] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:51:19,023] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:51:19,035] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:51:19,035] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:51:19,047] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:51:19,047] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:51:19,058] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:51:19,061] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:51:19,073] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:51:19,080] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:51:19,086] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:51:19,104] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:51:19,112] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 387
+[2020-02-11 23:51:25,346] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6747
+[2020-02-11 23:51:32,130] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:51:32,131] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:33,390] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:51:33,392] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:33,880] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:51:33,882] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:34,055] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:51:34,056] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:35,333] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:51:35,335] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:35,467] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:51:35,468] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:35,576] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:51:35,578] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:35,759] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:51:35,761] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:37,204] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:37,206] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:37,859] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:37,860] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:38,740] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:38,741] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:39,012] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:39,013] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:39,530] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:39,532] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:39,925] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:39,926] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:42,038] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:42,039] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:42,293] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:42,294] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:42,685] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:42,686] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505920%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:43,030] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:43,032] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:43,187] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:51:43,189] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592081%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:51:45,822] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/?csrfmiddlewaretoken=l2O3zJxJefylYWUeTgPr3ePK8wZHmguci7yo3wZy4NfJ039u08q7fBMjhdsmVYrA&name=test11&email=1%40qq.com&phone=13850592081&remark=test HTTP/1.1" 200 6747
+[2020-02-11 23:52:34,131] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:52:34,150] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:52:34,151] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:52:34,155] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:52:34,156] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:52:34,160] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:52:34,169] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:52:34,178] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-11 23:52:34,180] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-11 23:52:34,181] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:52:34,190] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:52:34,191] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:52:34,193] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:52:34,203] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:52:34,203] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:52:34,206] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:52:34,206] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:52:34,220] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:52:34,222] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:52:34,231] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:52:34,235] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:52:34,266] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:52:34,275] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:52:34,277] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-11 23:52:34,285] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:52:34,285] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:52:34,288] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:52:34,288] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:52:34,292] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:52:34,292] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:52:34,294] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:52:34,302] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:52:34,306] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:52:34,315] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:52:34,331] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:52:34,342] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:52:34,342] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:52:34,357] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:52:34,358] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:52:34,362] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:52:34,366] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:52:34,380] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:52:34,385] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:52:34,392] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:52:34,407] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:52:34,413] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 387
+[2020-02-11 23:52:35,132] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-11 23:52:35,132] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:52:35,134] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6747
+[2020-02-11 23:52:35,149] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:52:35,151] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:52:35,151] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:52:35,152] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:52:35,153] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:52:35,154] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:52:35,155] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:52:35,161] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:52:35,170] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:52:35,191] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:52:35,196] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:52:35,197] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:52:43,893] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:52:43,894] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:44,718] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:52:44,720] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:44,948] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:52:44,950] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:45,129] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:52:45,131] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:45,470] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:52:45,471] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:45,953] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:52:45,954] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:46,050] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:52:46,051] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:46,180] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:52:46,182] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:46,346] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:52:46,347] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:47,601] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:47,603] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:47,892] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:47,894] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:48,567] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:48,568] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:48,850] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:48,852] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:49,041] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:49,043] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:49,155] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:49,156] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:49,971] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:49,973] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:50,161] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:50,162] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:50,486] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:50,488] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505920%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:50,906] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:50,908] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:51,164] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:51,166] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592086%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:52:52,714] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:52,716] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:52,825] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:52:52,826] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592081%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:52:54,604] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:53:49,144] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-11 23:53:49,159] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:53:49,160] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:53:49,160] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:53:49,160] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:53:49,161] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:53:49,162] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:53:49,164] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:53:49,169] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:53:49,178] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:53:49,202] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:53:49,206] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:53:49,207] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:53:54,909] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:53:54,910] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:55,536] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:53:55,537] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:55,795] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:53:55,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:55,982] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:53:55,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:56,347] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:53:56,349] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:56,793] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:53:56,795] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:56,901] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:53:56,902] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:57,009] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:53:57,011] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:57,176] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:53:57,178] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%221%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:58,413] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:53:58,415] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:58,727] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:53:58,728] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:53:59,406] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:53:59,407] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:00,687] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:00,688] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:01,216] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:01,217] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:01,581] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:01,583] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:02,534] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:02,536] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:03,235] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:03,236] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:03,546] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:03,548] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505920%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:03,984] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:03,985] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:04,146] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:04,147] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592081%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:06,610] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：create_admin
+[2020-02-11 23:54:06,621] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:54:06,628] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:54:07,817] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:54:07,832] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:54:07,833] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:54:07,833] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:54:07,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:54:07,835] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:54:07,836] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:54:07,836] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:54:07,842] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:54:07,851] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:54:07,865] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:54:07,875] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:54:07,876] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:54:07,882] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:54:07,882] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:54:07,886] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:54:07,893] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:54:07,908] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:54:07,913] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:54:07,920] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:54:07,935] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:54:07,943] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 548
+[2020-02-11 23:54:10,889] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-11 23:54:10,889] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:54:10,892] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-11 23:54:10,911] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:54:10,912] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:54:10,912] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:54:10,913] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:54:10,914] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:54:10,916] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:54:10,916] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:54:10,925] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:54:10,935] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:54:10,955] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:54:10,959] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:54:10,962] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:54:15,533] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:15,534] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%222%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:16,355] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:16,356] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%222%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:16,602] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:16,603] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%222%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:16,803] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:16,805] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%222%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:17,371] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:17,372] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%222%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:17,498] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:17,499] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%222%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:17,618] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:17,620] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%222%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:17,780] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:17,781] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%222%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:19,016] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:19,017] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22e%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:19,161] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:19,163] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22es%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:19,283] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:19,284] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22est%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:20,167] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:20,168] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22es%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:20,286] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:20,287] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22e%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:20,432] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:20,434] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:20,857] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:20,859] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:21,660] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:21,661] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:22,090] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:22,091] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:22,356] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:22,357] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:22,863] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:22,864] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:23,218] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:23,220] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:23,984] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:23,985] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:24,232] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:24,234] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:24,565] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:24,567] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505920%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:25,242] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:25,243] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:25,378] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:25,380] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592082%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:29,325] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：create_admin
+[2020-02-11 23:54:29,334] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:54:29,341] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:54:30,228] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:54:30,243] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:54:30,244] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:54:30,245] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:54:30,245] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:54:30,246] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:54:30,247] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:54:30,248] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:54:30,252] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:54:30,261] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:54:30,274] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:54:30,284] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:54:30,285] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:54:30,293] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:54:30,293] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:54:30,298] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:54:30,304] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:54:30,316] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:54:30,322] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:54:30,328] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:54:30,344] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:54:30,355] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 703
+[2020-02-11 23:54:31,578] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-11 23:54:31,578] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:54:31,581] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-11 23:54:31,595] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:54:31,595] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:54:31,595] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:54:31,596] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:54:31,596] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:54:31,598] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:54:31,601] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:54:31,606] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:54:31,615] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:54:31,637] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:54:31,642] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:54:31,643] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:54:33,644] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:33,646] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592082%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:54:34,786] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:34,787] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:34,941] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:34,942] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592081%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:54:35,470] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:35,471] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:36,052] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:54:36,053] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592083%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:41,978] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:41,979] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%222%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:43,468] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:43,470] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%22%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:43,612] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:43,614] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:44,458] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:44,459] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:44,680] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:44,682] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:44,832] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:44,833] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:45,335] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:45,337] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40qq%2C%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:45,357] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:45,359] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40qq%2C.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:45,905] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:45,907] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40qq%2C%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:46,275] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:46,277] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:46,758] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:46,760] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:46,864] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:46,865] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:46,987] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:46,988] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:47,193] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:47,194] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%223%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:48,521] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：create_admin
+[2020-02-11 23:54:48,531] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:54:48,539] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:54:49,574] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:54:49,596] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:54:49,599] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:54:49,600] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:54:49,600] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:54:49,601] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:54:49,601] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:54:49,603] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:54:49,608] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:54:49,618] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:54:49,631] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:54:49,633] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:54:49,634] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:54:49,646] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:54:49,647] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:54:49,652] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:54:49,661] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:54:49,676] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:54:49,683] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:54:49,689] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:54:49,706] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:54:49,720] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 854
+[2020-02-11 23:54:51,097] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-11 23:54:51,097] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:54:51,099] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-11 23:54:51,114] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:54:51,115] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:54:51,115] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:54:51,116] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:54:51,117] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:54:51,117] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:54:51,118] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:54:51,125] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:54:51,134] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:54:51,155] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:54:51,160] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:54:51,160] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:54:58,344] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:58,345] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%224%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:58,805] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:58,806] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%224%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:59,017] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:59,018] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%224%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:59,181] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:59,182] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%224%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:59,683] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:59,685] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%224%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:59,836] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:59,837] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%224%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:54:59,953] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:54:59,955] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%224%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:00,132] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:00,133] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%224%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:01,490] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:01,491] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592082%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:55:02,319] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:02,321] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:02,641] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:02,642] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592084%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:05,043] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：create_admin
+[2020-02-11 23:55:05,051] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:55:05,057] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:55:05,853] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:55:05,869] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:55:05,870] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:55:05,870] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:55:05,870] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:55:05,871] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:55:05,872] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:55:05,875] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:55:05,880] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:55:05,889] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:55:05,901] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:55:05,911] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:55:05,911] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:55:05,917] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:55:05,918] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:55:05,924] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:55:05,928] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:55:05,943] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:55:05,949] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:55:05,955] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:55:05,970] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:55:05,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1011
+[2020-02-11 23:55:07,899] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-11 23:55:07,900] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:55:07,901] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-11 23:55:07,914] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:55:07,917] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:55:07,917] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:55:07,917] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:55:07,917] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:55:07,919] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:55:07,920] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:55:07,926] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:55:07,942] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:55:07,958] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:55:07,964] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:55:07,965] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:55:13,823] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:13,824] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%225%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:14,366] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:14,368] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%225%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:14,577] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:14,578] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%225%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:14,759] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:14,760] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%225%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:15,229] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:15,230] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%225%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:15,354] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:15,356] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%225%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:15,458] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:15,459] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%225%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:15,630] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:15,632] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%225%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:17,113] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:17,114] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592082%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:55:18,017] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:18,018] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:18,348] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:18,349] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592085%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:20,239] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：create_admin
+[2020-02-11 23:55:20,247] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:55:20,254] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:55:20,964] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:55:20,979] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:55:20,982] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:55:20,982] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:55:20,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:55:20,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:55:20,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:55:20,984] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:55:20,991] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:55:21,000] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:55:21,016] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:55:21,026] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:55:21,026] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:55:21,033] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:55:21,033] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:55:21,041] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:55:21,045] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:55:21,059] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:55:21,065] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:55:21,072] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:55:21,091] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:55:21,106] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1166
+[2020-02-11 23:55:23,088] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-11 23:55:23,089] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:55:23,091] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-11 23:55:23,110] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:55:23,111] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:55:23,111] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:55:23,112] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:55:23,112] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:55:23,115] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:55:23,116] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:55:23,123] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:55:23,133] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:55:23,145] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:55:23,169] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:55:23,170] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:55:28,239] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:28,241] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%226%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:28,906] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:28,907] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%226%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:29,104] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:29,105] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%226%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:29,263] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:29,264] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%226%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:29,807] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:29,809] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%226%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:29,971] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:29,972] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%226%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:30,073] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:30,074] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%226%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:30,258] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:30,260] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%226%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:38,089] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:38,090] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592082%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:55:39,337] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:39,338] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:39,662] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:39,663] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592086%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:55:40,216] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:40,218] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:40,743] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:40,745] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592087%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:55:41,201] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:41,202] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:41,923] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:41,925] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592088%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:45,589] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：create_admin
+[2020-02-11 23:55:45,597] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:55:45,604] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:55:46,357] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:55:46,370] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:55:46,375] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:55:46,375] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:55:46,376] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:55:46,376] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:55:46,376] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:55:46,377] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:55:46,382] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:55:46,391] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:55:46,405] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:55:46,405] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:55:46,407] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:55:46,416] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:55:46,417] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:55:46,424] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:55:46,430] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:55:46,446] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:55:46,459] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:55:46,466] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:55:46,487] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:55:46,505] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1317
+[2020-02-11 23:55:47,736] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:55:47,736] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-11 23:55:47,738] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-11 23:55:47,753] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:55:47,754] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:55:47,755] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:55:47,755] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:55:47,755] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:55:47,756] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:55:47,757] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:55:47,762] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:55:47,774] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:55:47,795] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:55:47,801] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:55:47,802] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:55:49,439] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:49,440] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592082%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:55:50,378] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:50,379] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:50,661] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:55:50,662] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592089%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:56,792] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:56,793] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%227%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:57,265] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:57,266] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%227%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:57,468] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:57,470] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%227%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:57,623] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:57,624] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%227%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:58,079] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:58,080] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%227%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:58,205] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:58,206] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%227%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:58,356] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:58,357] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%227%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:58,563] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:55:58,564] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%227%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:55:59,297] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：create_admin
+[2020-02-11 23:55:59,306] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:55:59,312] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:56:01,110] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:56:01,126] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:56:01,127] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:56:01,128] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:56:01,129] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:56:01,129] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:56:01,130] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:56:01,131] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:56:01,135] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:56:01,145] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:56:01,157] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:56:01,166] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:56:01,168] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:56:01,176] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:56:01,177] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:56:01,181] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:56:01,184] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:56:01,197] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:56:01,203] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:56:01,209] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:56:01,229] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:56:01,249] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1469
+[2020-02-11 23:56:10,984] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-11 23:56:10,986] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:56:10,987] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-11 23:56:11,006] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:56:11,007] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:56:11,008] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:56:11,008] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:56:11,010] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:56:11,011] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:56:11,013] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:56:11,020] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:56:11,031] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:56:11,055] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:56:11,059] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:56:11,061] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:56:16,579] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:16,581] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%228%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:17,066] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:17,068] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%228%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:17,283] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:17,285] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%228%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:17,446] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:17,448] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%228%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:17,947] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:17,949] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%228%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:18,069] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:18,070] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%228%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:18,187] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:18,188] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%228%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:18,376] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:18,378] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%228%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:19,881] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:19,882] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:20,196] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:20,198] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:20,674] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:20,676] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22130%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:20,801] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:20,803] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221300%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:21,552] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:21,553] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213003%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:22,087] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:22,089] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22130039%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:22,547] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:22,548] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221300395%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:22,703] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:22,705] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213003950%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:23,110] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:23,112] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22130039502%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:23,250] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:23,252] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221300395022%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:23,448] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:23,450] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213003950221%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:24,713] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：create_admin
+[2020-02-11 23:56:24,722] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:56:24,729] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:56:25,908] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:56:25,926] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:56:25,926] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:56:25,926] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:56:25,926] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:56:25,928] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:56:25,929] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:56:25,931] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:56:25,936] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:56:25,945] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:56:25,958] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:56:25,970] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:56:25,970] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:56:25,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:56:25,984] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:56:25,994] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:56:25,997] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:56:26,019] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:56:26,027] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:56:26,035] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:56:26,051] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:56:26,071] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1622
+[2020-02-11 23:56:27,022] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-11 23:56:27,022] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:56:27,025] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-11 23:56:27,040] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:56:27,042] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:56:27,042] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:56:27,042] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:56:27,043] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:56:27,045] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:56:27,045] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:56:27,052] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:56:27,060] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:56:27,081] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:56:27,086] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:56:27,087] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:56:32,382] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:32,384] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%229%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:32,912] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:32,914] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%229%40%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:33,102] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:33,104] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%229%40q%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:33,249] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:33,251] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%229%40qq%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:33,716] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:33,717] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%229%40qq.%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:33,827] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:33,829] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%229%40qq.c%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:33,961] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:33,963] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%229%40qq.co%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:34,145] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_email_unique
+[2020-02-11 23:56:34,147] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22email%22%3A%229%40qq.com%22%7D&action=check_email_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:35,964] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:35,966] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592082%22%7D&action=check_phone_unique HTTP/1.1" 200 69
+[2020-02-11 23:56:36,976] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:36,978] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059208%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:37,110] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:37,111] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505920%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:37,264] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:37,266] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850592%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:37,481] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:37,482] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385059%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:37,655] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:37,657] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:38,584] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:38,586] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385056%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:39,279] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:39,280] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850563%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:39,860] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:39,862] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%22138505638%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:41,001] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:41,003] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%221385056384%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:41,233] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：check_phone_unique
+[2020-02-11 23:56:41,234] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/user/?param=%7B%22phone%22%3A%2213850563840%22%7D&action=check_phone_unique HTTP/1.1" 200 68
+[2020-02-11 23:56:42,533] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：create_admin
+[2020-02-11 23:56:42,541] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:56:42,548] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-11 23:56:43,330] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:56:43,347] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-11 23:56:43,347] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-11 23:56:43,348] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-11 23:56:43,348] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-11 23:56:43,349] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-11 23:56:43,352] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1785
+[2020-02-11 23:56:43,352] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-11 23:56:43,357] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-11 23:56:43,366] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-11 23:56:43,379] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-11 23:56:43,389] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-11 23:56:43,389] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-11 23:56:43,395] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-11 23:56:43,396] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-11 23:56:43,401] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-11 23:56:43,404] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-11 23:56:43,422] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-11 23:56:43,427] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-11 23:56:43,434] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-11 23:56:43,452] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:56:43,475] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1622
+[2020-02-11 23:57:07,081] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:07,088] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:07,490] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:07,496] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:07,761] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:07,766] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:08,296] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:08,303] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:08,566] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:08,570] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:08,836] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:08,841] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:09,117] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:09,122] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:09,391] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:09,396] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:09,668] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:09,673] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:10,049] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:10,053] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:10,381] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:10,385] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:10,816] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:10,822] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:11,415] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:11,421] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:12,328] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:12,335] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:12,725] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:12,732] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:13,387] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:13,394] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:13,718] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:13,722] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:14,628] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:14,633] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:14,953] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:14,957] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:15,267] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：switch_admin_state
+[2020-02-11 23:57:15,272] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-11 23:57:54,487] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-02-11 23:57:55,096] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-11 23:57:55,589] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-11 23:57:55,628] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-11 23:57:55,685] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 8998
+[2020-02-11 23:57:55,697] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-11 23:57:55,754] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:57:55,776] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1622
+[2020-02-11 23:57:57,450] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:57:57,469] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=2&limit=10 HTTP/1.1" 200 214
+[2020-02-11 23:57:58,747] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:57:58,766] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1622
+[2020-02-11 23:57:59,803] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:57:59,824] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=2&limit=10 HTTP/1.1" 200 214
+[2020-02-11 23:58:00,777] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:00,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1622
+[2020-02-11 23:58:01,667] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:01,686] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=2&limit=10 HTTP/1.1" 200 214
+[2020-02-11 23:58:02,518] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:02,539] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1622
+[2020-02-11 23:58:03,365] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:03,387] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=2&limit=10 HTTP/1.1" 200 214
+[2020-02-11 23:58:04,297] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:04,317] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1622
+[2020-02-11 23:58:05,276] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:05,296] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=2&limit=10 HTTP/1.1" 200 214
+[2020-02-11 23:58:06,846] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:06,866] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1622
+[2020-02-11 23:58:08,052] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:08,071] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=2&limit=10 HTTP/1.1" 200 214
+[2020-02-11 23:58:09,581] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:09,600] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 1622
+[2020-02-11 23:58:10,639] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-11 23:58:10,659] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=2&limit=10 HTTP/1.1" 200 214
