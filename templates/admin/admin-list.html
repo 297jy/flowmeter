@@ -26,9 +26,9 @@
 <div class="x-nav">
             <span class="layui-breadcrumb">
                 <a href="">首页</a>
-                <a href="">演示</a>
-                <a>
-                    <cite>导航元素</cite></a>
+                <a href="">
+                    <cite>管理员列表</cite>
+                </a>
             </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        onclick="location.reload()" title="刷新">
@@ -83,6 +83,32 @@
 </script>
 {% endverbatim %}
 <script>
+    function delAll(argument) {
+        layer.confirm('确认要删除吗？', function (index) {
+            let checkStatus = table.checkStatus('admin');
+            if (checkStatus.data.length === 0) {
+                parent.layer.msg('请先选择要删除的数据行！', {icon: 2});
+                return;
+            }
+            let ids = [];
+            for (let i = 0; i < checkStatus.data.length; i++) {
+                ids.push(checkStatus.data[i].id);
+            }
+            post({
+                "param": JSON.stringify({'admin_ids': ids}),
+                "action": "del_batch_admin"
+            }, '/handler/admin/', function (data) {
+                if (!data.success) {
+                    layer.msg(data.msg, {icon: 5, time: 1000});
+                } else {
+                    layer.msg('删除成功!', {icon: 1});
+                    table.reload('admin');
+                }
+            });
+        });
+    }
+</script>
+<script>
 
     layui.use('laydate', function () {
         var laydate = layui.laydate;
@@ -103,7 +129,8 @@
     layui.use(['table', 'form', 'jquery', 'element'],
         function () {
             $ = layui.jquery;
-            let table = layui.table, form = layui.form;
+            table = layui.table
+            form = layui.form;
 
             table.render({
                 elem: '#admin', //指定原始表格元素选择器（推荐id选择器）
@@ -128,14 +155,13 @@
                         width: '10%',
                         title: '状态',
                         templet: function (data) {
-                            if(data.state === '启用'){
+                            if (data.state === '启用') {
                                 return "<form>\n" +
-                                    "        <input type=\"checkbox\" name=\"state\" value=\""+data.id+"\" lay-skin=\"switch\" lay-text=\"启用|禁用\" lay-filter=\"state\" checked>\n" +
+                                    "        <input type=\"checkbox\" name=\"state\" value=\"" + data.id + "\" lay-skin=\"switch\" lay-text=\"启用|禁用\" lay-filter=\"state\" checked>\n" +
                                     "    </form>";
-                            }
-                            else {
+                            } else {
                                 return "<form>\n" +
-                                    "        <input type=\"checkbox\" name=\"state\" value=\""+data.id+"\" lay-skin=\"switch\" lay-text=\"启用|禁用\" lay-filter=\"state\">\n" +
+                                    "        <input type=\"checkbox\" name=\"state\" value=\"" + data.id + "\" lay-skin=\"switch\" lay-text=\"启用|禁用\" lay-filter=\"state\">\n" +
                                     "    </form>";
                             }
                         }
@@ -144,7 +170,7 @@
                 url: '/handler/admin/?action=query_admin',
                 page: true,
                 toolbar: '#toolbarDemo',
-                
+
             });
             form.on('switch(state)', function (data) {
                 post({
@@ -169,7 +195,6 @@
                             layer.msg(data.msg, {icon: 5, time: 2000});
                         }
                     });
-                    layer.msg('[ID: ' + data.id + '] ' + field + ' 字段更改为：' + value);
                 });
 
             //头工具栏事件
@@ -201,13 +226,12 @@
                     return false;
                 });
 
+
         });
 </script>
 <script>var _hmt = _hmt || [];
 (function () {
-    var hm = document.createElement("script");
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
+
 })();</script>
 
 </html>

@@ -21,6 +21,7 @@ class UserActionHandler(ActionHandlerBase):
             'create_admin': self.create_admin,
             "edit_admin": self.edit_admin,
             "switch_admin_state": self.switch_admin_state,
+            "del_batch_admin": self.del_batch_admin,
         }
         super().__init__(action_dict)
 
@@ -61,6 +62,7 @@ class UserActionHandler(ActionHandlerBase):
         return Result.success(data=is_unique)
 
     def check_phone_unique(self, request):
+
         param = request_api.get_param(request)
         phone = param.get('phone')
 
@@ -69,10 +71,20 @@ class UserActionHandler(ActionHandlerBase):
         return Result.success(data=is_unique)
 
     def switch_admin_state(self, request):
+
         param = request_api.get_param(request)
         admin_id = param.get('admin_id')
 
         app_user_api.switch_admin_state_by_id(admin_id)
+
+        return Result.success()
+
+    def del_batch_admin(self, request):
+
+        param = request_api.get_param(request)
+        admin_ids = param.get('admin_ids')
+
+        app_user_api.del_batch_admin(admin_ids)
 
         return Result.success()
 
