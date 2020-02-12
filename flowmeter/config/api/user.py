@@ -142,6 +142,9 @@ def del_batch_user(user_ids):
     :return:
     """
     ListCheck.check_is_int_list(user_ids)
+    # 如果要删除的用户为空，直接返回
+    if len(user_ids) == 0:
+        return
     user_core.del_batch_user(user_ids)
 
 

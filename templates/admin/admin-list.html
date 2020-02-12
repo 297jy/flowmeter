@@ -60,13 +60,6 @@
                         </div>
                     </form>
                 </div>
-                <div class="layui-card-header">
-                    <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除
-                    </button>
-                    <button class="layui-btn" onclick="xadmin.open('添加管理员','/admin/add/',600,400)">
-                        <i class="layui-icon"></i>添加
-                    </button>
-                </div>
                 <div class="layui-card-body ">
                     <table lay-filter="admin" id="admin">
                     </table>
@@ -76,7 +69,16 @@
     </div>
 </div>
 </body>
-<script type="text/html" id="toolbarDemo"></script>
+<script type="text/html" id="toolbarDemo">
+    <button class="layui-btn layui-btn-danger" lay-event="del_batch">
+        <i class="layui-icon"></i>批量删除
+    </button>
+    <button class="layui-btn" onclick="xadmin.open('添加管理员','/admin/add/',600,400)">
+        <i class="layui-icon"></i>添加
+    </button>
+    <button class="layui-btn layui-btn-sm" lay-event="getSelect">导入</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getInsert">导出</button>
+</script>
 {% verbatim %}
 <script type="text/html" id="displayOmit">
     <div><span title="{{d.remark}}">{{d.remark}}</span></div>
@@ -84,28 +86,7 @@
 {% endverbatim %}
 <script>
     function delAll(argument) {
-        layer.confirm('确认要删除吗？', function (index) {
-            let checkStatus = table.checkStatus('admin');
-            if (checkStatus.data.length === 0) {
-                parent.layer.msg('请先选择要删除的数据行！', {icon: 2});
-                return;
-            }
-            let ids = [];
-            for (let i = 0; i < checkStatus.data.length; i++) {
-                ids.push(checkStatus.data[i].id);
-            }
-            post({
-                "param": JSON.stringify({'admin_ids': ids}),
-                "action": "del_batch_admin"
-            }, '/handler/admin/', function (data) {
-                if (!data.success) {
-                    layer.msg(data.msg, {icon: 5, time: 1000});
-                } else {
-                    layer.msg('删除成功!', {icon: 1});
-                    table.reload('admin');
-                }
-            });
-        });
+
     }
 </script>
 <script>
@@ -170,6 +151,7 @@
                 url: '/handler/admin/?action=query_admin',
                 page: true,
                 toolbar: '#toolbarDemo',
+                defaultToolbar: ['filter', 'print'],
 
             });
             form.on('switch(state)', function (data) {
@@ -202,9 +184,25 @@
                 function (obj) {
                     var checkStatus = table.checkStatus(obj.config.id);
                     switch (obj.event) {
-                        case 'getCheckData':
-                            var data = checkStatus.data;
-                            layer.alert(JSON.stringify(data));
+                        case 'del_batch':
+                            layer.confirm('确认要删除吗？', function (index) {
+                                let checkStatus = table.checkStatus('admin');
+                                let ids = [];
+                                for (let i = 0; i < checkStatus.data.length; i++) {
+                                    ids.push(checkStatus.data[i].id);
+                                }
+                                post({
+                                    "param": JSON.stringify({'admin_ids': ids}),
+                                    "action": "del_batch_admin"
+                                }, '/handler/admin/', function (data) {
+                                    if (!data.success) {
+                                        layer.msg(data.msg, {icon: 5, time: 1000});
+                                    } else {
+                                        layer.msg('删除成功!', {icon: 1});
+                                        table.reload('admin');
+                                    }
+                                });
+                            });
                             break;
                         case 'getCheckLength':
                             var data = checkStatus.data;
