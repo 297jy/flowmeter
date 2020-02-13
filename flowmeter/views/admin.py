@@ -34,6 +34,7 @@ class AdminActionHandler(ActionHandlerBase):
 
         return Result.success()
 
+
 @xframe_options_sameorigin
 def admin_view(request):
 

@@ -76,7 +76,7 @@
     <button class="layui-btn" onclick="xadmin.open('添加管理员','/admin/add/',600,400)">
         <i class="layui-icon"></i>添加
     </button>
-    <button class="layui-btn layui-btn-sm" lay-event="getSelect">导入</button>
+    <button class="layui-btn layui-btn-sm" lay-event="getSelect" onclick="xadmin.open('导入管理员','/admin/import/',400,200)">导入</button>
     <button class="layui-btn layui-btn-sm" lay-event="getInsert">导出</button>
 </script>
 {% verbatim %}
@@ -84,11 +84,6 @@
     <div><span title="{{d.remark}}">{{d.remark}}</span></div>
 </script>
 {% endverbatim %}
-<script>
-    function delAll(argument) {
-
-    }
-</script>
 <script>
 
     layui.use('laydate', function () {
@@ -110,7 +105,7 @@
     layui.use(['table', 'form', 'jquery', 'element'],
         function () {
             $ = layui.jquery;
-            table = layui.table
+            table = layui.table;
             form = layui.form;
 
             table.render({

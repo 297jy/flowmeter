@@ -96,3 +96,15 @@ def get_page_limit(request):
     return limit
 
 
+def get_file(request):
+    """
+    获取文件对象
+    :param request:
+    :return:
+    """
+    file = None
+    if request.method == 'POST':
+        file = request.FILES.get('file')
+    return file
+
+

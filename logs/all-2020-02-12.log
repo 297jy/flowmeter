@@ -751,3 +751,27 @@
 [2020-02-12 20:28:12,490] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 220
 [2020-02-12 20:29:17,678] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\api\user.py changed, reloading.
 [2020-02-12 20:29:18,306] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-12 20:29:21,171] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-12 20:29:21,202] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-12 20:29:21,227] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 9842
+[2020-02-12 20:29:21,277] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-12 20:29:21,282] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 220
+[2020-02-12 20:29:23,217] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：del_batch_admin
+[2020-02-12 20:29:23,218] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-12 20:29:23,230] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-12 20:29:23,234] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 220
+[2020-02-12 20:29:27,802] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 6749
+[2020-02-12 20:37:58,161] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-12 20:37:58,199] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-12 20:37:58,238] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 9842
+[2020-02-12 20:37:58,298] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-12 20:37:58,301] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 220
+[2020-02-12 20:38:09,919] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：del_batch_admin
+[2020-02-12 20:38:09,920] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-12 20:38:09,933] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-12 20:38:09,938] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 220
+[2020-02-12 20:41:02,747] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-12 20:41:02,776] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-12 20:41:02,819] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 9842
+[2020-02-12 20:41:02,875] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-12 20:41:02,879] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 220

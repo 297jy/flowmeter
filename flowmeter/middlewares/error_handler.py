@@ -9,6 +9,9 @@ from flowmeter.common.api import request as request_api
 from flowmeter.views.common import Result
 from flowmeter.applications.api.auth import is_action_allowed
 
+import logging
+logger = logging.getLogger('log')
+
 
 class ErrorHandlerMiddleware(MiddlewareMixin):
     """
@@ -16,5 +19,6 @@ class ErrorHandlerMiddleware(MiddlewareMixin):
     """
     def process_exception(self, request, exception):
 
+        logger.error(str(exception))
         result = Result.error(msg=str(exception))
         return HttpResponse(json.dumps(dict(result)))

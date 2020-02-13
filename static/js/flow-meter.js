@@ -13,6 +13,20 @@ function csrfSafeMethod(method) {
     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 }
 
+/***
+ * 添加csrftoken头部
+ */
+function ajaxCsrfSetup() {
+    let csrftoken = $.cookie('csrftoken');
+    $.ajaxSetup({
+        beforeSend: function (xhr, settings) {
+            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                xhr.setRequestHeader("X-CSRFToken", csrftoken);
+            }
+        }
+    });
+}
+
 /**
  * 向服务器发生post请求
  * @param data
@@ -23,14 +37,8 @@ function csrfSafeMethod(method) {
  */
 function post(data, url, success, error = errorHandler, dataType = 'json') {
 
-    let csrftoken = $.cookie('csrftoken');
-    $.ajaxSetup({
-        beforeSend: function (xhr, settings) {
-            if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
-                xhr.setRequestHeader("X-CSRFToken", csrftoken);
-            }
-        }
-    });
+    ajaxCsrfSetup();
+
     $.ajax({
         type: "POST",
         url: url,

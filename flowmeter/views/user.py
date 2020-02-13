@@ -101,6 +101,12 @@ def admin_add(request):
     return render(request, 'admin/admin-add.html', {})
 
 
+@xframe_options_sameorigin
+def admin_import(request):
+
+    return render(request, 'admin/admin-import.html', {})
+
+
 def user_handler(request):
 
     result = UserActionHandler().handle(request)

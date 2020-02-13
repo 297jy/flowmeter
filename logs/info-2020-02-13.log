@@ -1,0 +1,89 @@
+[2020-02-13 18:40:43,199] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 19:46:23,479] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 19:49:24,441] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 19:51:07,161] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:03:45,975] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:04:45,184] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:05:43,553] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:06:42,643] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:07:08,062] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:07:16,975] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:07:57,963] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:09:34,920] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:09:58,587] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:10:09,707] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:15:11,373] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:15:33,162] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:15:49,781] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:16:03,902] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:16:10,643] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:31:56,721] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:32:31,315] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:32:55,721] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:36:28,484] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:36:57,569] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:37:04,626] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：None
+[2020-02-13 20:44:08,942] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:44:13,911] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：None
+[2020-02-13 20:59:51,973] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 20:59:58,379] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：None
+[2020-02-13 21:06:44,058] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 21:06:50,821] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：None
+[2020-02-13 21:07:10,277] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 21:07:16,248] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：None
+[2020-02-13 21:09:38,353] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 21:10:56,106] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 21:17:11,003] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 21:18:49,959] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 21:20:54,640] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 21:20:58,305] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 21:20:58,308] [error_handler.py:23] [error_handler:process_exception] [ERROR]- <flowmeter.views.common.Result object at 0x00000152CB59B898>
+[2020-02-13 21:21:37,030] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 21:21:40,594] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 21:21:40,595] [error_handler.py:22] [error_handler:process_exception] [ERROR]- [Errno 2] No such file or directory: 'D:\\project\\python\\flowmeter\\tmp\\c53b51a4-4e63-11ea-a4e5-00d861f9f354'
+[2020-02-13 21:27:42,343] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 21:27:46,060] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 21:27:46,075] [error_handler.py:22] [error_handler:process_exception] [ERROR]- [Errno 13] Permission denied: 'D:\\project\\python\\flowmeter\\tmp\\9f10e8f4-4e64-11ea-9f52-00d861f9f354'
+[2020-02-13 21:29:55,620] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 21:29:55,621] [error_handler.py:22] [error_handler:process_exception] [ERROR]- [Errno 13] Permission denied: 'D:\\project\\python\\flowmeter\\tmp\\ec4a39de-4e64-11ea-8d5d-00d861f9f354'
+[2020-02-13 23:27:45,148] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:27:50,407] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:27:50,408] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:28:39,828] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:28:39,829] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:30:11,675] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:30:21,962] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:30:21,963] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:32:07,224] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:32:07,225] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:32:30,862] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:32:30,863] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:37:11,118] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:37:16,439] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:37:16,440] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:37:26,381] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:37:31,883] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:37:31,884] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:38:06,240] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:38:15,065] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:38:15,065] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:38:23,738] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:38:29,278] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:38:29,278] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:38:58,567] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:39:03,546] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:39:03,546] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:39:54,369] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:40:01,356] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:40:01,357] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:40:14,164] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:40:18,714] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:40:18,715] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:40:47,645] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:40:57,771] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:40:57,772] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:42:26,398] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:42:30,672] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-13 23:42:30,673] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'NoneType' object has no attribute 'chunks'
+[2020-02-13 23:46:04,632] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:46:11,450] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload

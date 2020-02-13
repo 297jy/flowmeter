@@ -22,13 +22,16 @@ from flowmeter.views import login
 from flowmeter.views import error
 from flowmeter.views import user
 from flowmeter.views import logout
+from flowmeter.views import file
 
 # 视图处理器路由
 handler_urlpatterns = [
     path('login/', login.login_handler),
     path('admin/', user.user_handler),
     path('user/', user.user_handler),
+    path('file/', file.file_handler),
 ]
+
 # 错误页面路由
 error_urlpatterns = [
     path('403/', error.error_403_view)
@@ -37,6 +40,7 @@ error_urlpatterns = [
 admin_urlpatterns = [
     path('view/', user.admin_view),
     path('add/', user.admin_add),
+    path('import/', user.admin_import),
 ]
 
 # 视图路由

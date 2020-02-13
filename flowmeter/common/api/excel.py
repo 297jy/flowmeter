@@ -3,6 +3,9 @@ import xlrd
 import xlwt
 from flowmeter.exceptions import ValueValidException, ParameterErrorException
 
+import logging
+logger = logging.getLogger('log')
+
 
 class Excel:
     """
@@ -95,11 +98,15 @@ class ExcelUtils:
         :param file_name:
         :return:
         """
-        # 打开文件，获取excel文件的workbook（工作簿）对象
-        workbook = xlrd.open_workbook(file_name)
-        # 通过sheet_name获得一个工作表对象
-        worksheet = workbook.sheet_by_index(ExcelUtils.__FIRST_WORK_SHEET)
-        return worksheet
+        try:
+            # 打开文件，获取excel文件的workbook（工作簿）对象
+            workbook = xlrd.open_workbook(file_name)
+            # 通过sheet_name获得一个工作表对象
+            worksheet = workbook.sheet_by_index(ExcelUtils.__FIRST_WORK_SHEET)
+            return worksheet
+        except Exception as e:
+            logging.error(e)
+            raise ParameterErrorException("读取EXCEL文件失败，该文件不是EXCEL格式！")
 
     @staticmethod
     def __open_write_book_and_sheet(sheet_name):

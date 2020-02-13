@@ -30,13 +30,17 @@ class AuthMiddleware(MiddlewareMixin):
         return False
 
     @staticmethod
-    def __not_check_auth(path):
+    def __not_check_auth(path, action):
         """
-        不用检查权限的路径
+        不用检查权限的路径或行为
         :param path:
         :return:
         """
         path_white_list = ['/index/', '/welcome/', '/error/']
+        action_white_list = ['file_upload']
+
+        if action in action_white_list:
+            return True
 
         for white in path_white_list:
             if re.match(white, path):
@@ -59,11 +63,12 @@ class AuthMiddleware(MiddlewareMixin):
             else:
                 return HttpResponse(json.dumps(dict(Result.error('请先登录！'))))
 
-        if AuthMiddleware.__not_check_auth(path):
-            return
-
         # 检查用户是否拥有执行当前action的权限
         action = request_api.get_action(request)
+
+        if AuthMiddleware.__not_check_auth(path, action):
+            return
+
         # 如过action为空，表示不需要检查权限
         if action is None:
             return
