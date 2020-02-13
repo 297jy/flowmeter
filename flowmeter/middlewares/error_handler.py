@@ -2,6 +2,7 @@
 
 import json
 import re
+import traceback
 from django.http import HttpResponse
 from django.shortcuts import redirect
 from django.utils.deprecation import MiddlewareMixin
@@ -19,6 +20,6 @@ class ErrorHandlerMiddleware(MiddlewareMixin):
     """
     def process_exception(self, request, exception):
 
-        logger.error(str(exception))
+        traceback.print_exc()
         result = Result.error(msg=str(exception))
         return HttpResponse(json.dumps(dict(result)))

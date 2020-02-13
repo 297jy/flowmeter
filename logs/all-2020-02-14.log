@@ -1,0 +1,116 @@
+[2020-02-14 00:04:32,932] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:04:32,932] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:04:34,119] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-14 00:04:34,154] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 00:04:34,189] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 9851
+[2020-02-14 00:04:34,261] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 00:04:34,266] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 220
+[2020-02-14 00:04:35,287] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/import/ HTTP/1.1" 200 3347
+[2020-02-14 00:06:42,788] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/import/ HTTP/1.1" 200 3347
+[2020-02-14 00:06:42,799] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-14 00:06:42,802] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-14 00:06:42,804] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-14 00:06:42,808] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-14 00:06:42,810] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-14 00:06:42,814] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-14 00:06:42,816] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-14 00:06:42,819] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1879
+[2020-02-14 00:06:42,822] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-14 00:06:42,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/upload.js HTTP/1.1" 200 6971
+[2020-02-14 00:06:42,847] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-14 00:06:42,850] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-14 00:06:47,109] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-14 00:06:47,111] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/file/ HTTP/1.1" 200 150
+[2020-02-14 00:06:47,120] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：import_admin
+[2020-02-14 00:06:47,138] [error_handler.py:22] [error_handler:process_exception] [ERROR]- 'state'
+[2020-02-14 00:06:47,138] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 76
+[2020-02-14 00:06:47,146] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-14 00:08:07,007] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\error_handler.py changed, reloading.
+[2020-02-14 00:08:07,609] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:08:25,732] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\error_handler.py changed, reloading.
+[2020-02-14 00:08:26,342] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:08:36,874] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-14 00:08:36,898] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-14 00:08:36,902] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-14 00:08:36,902] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-14 00:08:36,904] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-14 00:08:36,909] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-14 00:08:37,219] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-14 00:08:37,225] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-14 00:08:37,226] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-14 00:08:37,227] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-14 00:08:37,236] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 00:08:37,243] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-14 00:08:37,244] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-14 00:08:37,257] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-14 00:08:37,257] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-14 00:08:37,258] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-14 00:08:37,258] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-14 00:08:37,273] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-14 00:08:37,278] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-14 00:08:37,297] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 9851
+[2020-02-14 00:08:37,309] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-14 00:08:37,313] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-14 00:08:37,313] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-14 00:08:37,314] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-14 00:08:37,318] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-14 00:08:37,318] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1879
+[2020-02-14 00:08:37,319] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-14 00:08:37,322] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-14 00:08:37,333] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-14 00:08:37,347] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-14 00:08:37,358] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-14 00:08:37,358] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-14 00:08:37,366] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-14 00:08:37,367] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-14 00:08:37,371] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-14 00:08:37,377] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-14 00:08:37,389] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-14 00:08:37,394] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-14 00:08:37,400] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-14 00:08:37,416] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 00:08:37,421] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 220
+[2020-02-14 00:08:37,585] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-14 00:08:37,598] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-14 00:08:37,598] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-14 00:08:37,629] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-14 00:08:38,127] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-14 00:08:38,128] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-14 00:08:38,130] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/import/ HTTP/1.1" 200 3347
+[2020-02-14 00:08:38,144] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-14 00:08:38,147] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-14 00:08:38,147] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-14 00:08:38,147] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-14 00:08:38,147] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-14 00:08:38,148] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1879
+[2020-02-14 00:08:38,149] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-14 00:08:38,157] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-14 00:08:38,166] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-14 00:08:38,175] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/upload.js HTTP/1.1" 200 6971
+[2020-02-14 00:08:38,186] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-14 00:08:38,187] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-14 00:08:42,596] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-14 00:08:42,598] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/file/ HTTP/1.1" 200 150
+[2020-02-14 00:08:42,608] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：import_admin
+[2020-02-14 00:08:42,638] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 76
+[2020-02-14 00:08:42,644] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-14 00:09:53,276] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\user.py changed, reloading.
+[2020-02-14 00:09:53,877] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:09:53,960] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\user.py changed, reloading.
+[2020-02-14 00:09:54,551] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:09:58,211] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-14 00:09:58,221] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/file/ HTTP/1.1" 200 150
+[2020-02-14 00:09:58,228] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：import_admin
+[2020-02-14 00:09:58,294] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-14 00:11:23,751] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-14 00:11:23,753] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/file/ HTTP/1.1" 200 150
+[2020-02-14 00:11:23,761] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：import_admin
+[2020-02-14 00:11:23,766] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-14 00:14:55,688] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\user.py changed, reloading.
+[2020-02-14 00:14:56,269] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:14:56,297] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\user.py changed, reloading.
+[2020-02-14 00:14:56,901] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:16:48,962] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\user.py changed, reloading.
+[2020-02-14 00:16:48,985] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\user.py changed, reloading.
+[2020-02-14 00:16:49,614] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:16:49,615] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

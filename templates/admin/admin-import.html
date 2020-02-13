@@ -25,12 +25,12 @@
 <div class="layui-fluid">
     <div class="layui-row">
 
-            {% csrf_token %}
+        {% csrf_token %}
+        <div class="layui-upload">
             <div class="layui-upload">
-                <div class="layui-upload">
-                    <button type="button" class="layui-btn layui-btn-normal" id="file">请选择EXCEL文件</button>
-                </div>
+                <button type="button" class="layui-btn layui-btn-normal" id="file">请选择EXCEL文件</button>
             </div>
+        </div>
 
     </div>
 </div>
@@ -57,7 +57,24 @@
                 if (!res.success) {
                     layer.msg(res.msg, {icon: 5, time: 2000});
                 } else {
-                    layer.msg(res.data, {icon: 1, time: 1000});
+                    post({
+                        "param": JSON.stringify({'filename': res.data}),
+                        "action": "import_admin"
+                    }, '/handler/admin/', function (data) {
+                        if (data.success) {
+                            layer.alert("导入成功", {
+                                    icon: 6
+                                },
+                                function () {
+                                    //关闭当前frame
+                                    xadmin.close();
+                                    // 可以对父窗口进行刷新
+                                    xadmin.father_reload();
+                                });
+                        } else {
+                            layer.msg(data.msg, {icon: 5, time: 3000});
+                        }
+                    });
                 }
             }
         });

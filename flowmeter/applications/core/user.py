@@ -8,6 +8,7 @@ from flowmeter.common import const
 from flowmeter.common.api.excel import Excel
 from flowmeter.common.api import password as password_api
 from flowmeter import settings
+from flowmeter.exceptions import NotUniqueException
 
 
 def __transfer_user_obj_to_dict(users):
@@ -199,7 +200,10 @@ def admin_import(filename):
     name_list = ['用户名', '联系电话', '邮箱', '状态', '备注', '创建时间']
     admins = __user_import(filename, prop_list, name_list)
     for admin in admins:
-        create_admin(admin)
+        try:
+            create_admin(admin)
+        except NotUniqueException:
+            pass
 
 
 def manufacturer_import(filename):
@@ -260,12 +264,23 @@ def transfer_display_to_database(user_info):
             time.mktime(datetime.datetime.strptime(create_time, settings.DATETIME_FORMAT_STR).timetuple())
 
     # 将中文的状态值，转化为英文
-    state = user_info['state']
-    if state == '启用':
-        state = const.UserStateType.ENABLE_STATE
-    elif state == '禁用':
-        state = const.UserStateType.FORBIDDEN_STATE
-    user_info['state'] = state
+    if 'state' in user_info:
+        state = user_info['state']
+        if state == '启用':
+            state = const.UserStateType.ENABLE_STATE
+        elif state == '禁用':
+            state = const.UserStateType.FORBIDDEN_STATE
+        user_info['state'] = state
+
+    if 'phone' in user_info:
+        phone = user_info['phone']
+        if isinstance(phone, float) or isinstance(phone, int):
+            user_info['phone'] = str(int(phone))
+
+    if 'name' in user_info:
+        name = user_info['name']
+        if isinstance(name, float) or isinstance(name, int):
+            user_info['name'] = str(int(name))
 
 
 def __user_export(query_terms, sheet_name, filename, prop_list, name_list):

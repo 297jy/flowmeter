@@ -1918,3 +1918,14 @@
 [2020-02-13 23:49:33,111] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
 [2020-02-13 23:49:33,122] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/file/ HTTP/1.1" 200 150
 [2020-02-13 23:49:33,129] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-02-13 23:53:29,915] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-13 23:53:29,946] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-13 23:53:30,004] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 9851
+[2020-02-13 23:53:30,067] [common.py:59] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-13 23:53:30,071] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 220
+[2020-02-13 23:58:48,230] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-02-13 23:58:48,674] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-02-13 23:58:48,825] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-13 23:58:49,248] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 00:04:32,271] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\user.py changed, reloading.
+[2020-02-14 00:04:32,281] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\user.py changed, reloading.
