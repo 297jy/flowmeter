@@ -243,3 +243,6 @@ USE_TZ = False
 
 # 系统日期字符串格式
 DATETIME_FORMAT_STR = '%Y-%m-%d %H:%M:%S'
+
+# 临时文件目录路径
+TMP_FILE_DIRECTORY_PATH = os.path.join(BASE_DIR, 'file', 'tmp')

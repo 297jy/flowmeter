@@ -12,17 +12,21 @@ class Result:
     ERROR_CODE = 1
     SUCCESS_CODE = 0
 
-    def __init__(self, success, data=None, msg='', code=SUCCESS_CODE, count=None):
+    JSON_DATA_TYPE = 'json'
+    FILE_DATA_TYPE = 'file'
+
+    def __init__(self, success, data=None, msg='', code=SUCCESS_CODE, count=None, data_type=JSON_DATA_TYPE):
         self.success = success
         self.data = data
         self.msg = msg
         self.code = code
         self.count = count
+        self.data_type = data_type
 
     @staticmethod
-    def success(data=None, msg='', count=None):
+    def success(data=None, msg='', count=None, data_type=JSON_DATA_TYPE):
 
-        return Result(success=True, data=data, msg=msg, count=count)
+        return Result(success=True, data=data, msg=msg, count=count, data_type=data_type)
 
     @staticmethod
     def error(msg=''):

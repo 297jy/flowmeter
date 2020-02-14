@@ -51,7 +51,7 @@
                         </div>
                         <div class="layui-inline layui-col-md2">
                             <input type="text" name="query_box" placeholder="请输入用户名\联系电话\邮箱" autocomplete="off"
-                                   class="layui-input">
+                                   class="layui-input" id="query_box">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
                             <button class="layui-btn" lay-submit="" lay-filter="search">
@@ -200,6 +200,33 @@
                             });
                             break;
                         case 'export':
+                            post({
+                                "param": JSON.stringify({
+                                    "begin_time": $("#begin_time").val(),
+                                    "end_time": $("#end_time").val(),
+                                    "query_box": $("#query_box").val(),
+                                }),
+                                "action": "export_admin"
+                            }, '/handler/admin/', function (res) {
+                                if (!res.success) {
+                                    layer.msg(res.msg, {icon: 5, time: 3000});
+                                } else {
+                                    let param = JSON.stringify({
+                                            "filename": res.data,
+                                    });
+                                    let action = 'download_file';
+                                    window.open('/handler/file/?param='+ param + '&action='+action);
+                                    /**
+                                    get({
+                                        'action': 'download_file',
+                                        'param': JSON.stringify({
+                                            "filename": res.data,
+                                        }),
+                                    }, '/handler/file/', function (res) {
+
+                                    },)**/
+                                }
+                            });
                             break;
                     }
                 });

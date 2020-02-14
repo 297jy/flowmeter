@@ -288,12 +288,7 @@ def __user_export(query_terms, sheet_name, filename, prop_list, name_list):
     将用户列表导出到文件中
     """
 
-    users = __find_users_by_query_terms(query_terms)
-    user_dict_list = []
-    for user in users:
-        user_info = user.get_dict()
-        __transfer_database_to_display(user_info)
-        user_dict_list.append(user_info)
+    user_dict_list = __find_users_by_query_terms(query_terms)
 
     excel = Excel(prop_list=prop_list, name_list=name_list)
     excel.obj_dict_list = user_dict_list

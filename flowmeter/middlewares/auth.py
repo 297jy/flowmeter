@@ -37,7 +37,7 @@ class AuthMiddleware(MiddlewareMixin):
         :return:
         """
         path_white_list = ['/index/', '/welcome/', '/error/']
-        action_white_list = ['file_upload']
+        action_white_list = ['file_upload', 'download_file']
 
         if action in action_white_list:
             return True

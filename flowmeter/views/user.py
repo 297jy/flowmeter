@@ -1,6 +1,8 @@
 # coding=utf-8
 
 import json
+import os
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.clickjacking import xframe_options_sameorigin
@@ -8,6 +10,8 @@ from flowmeter.views.common import ActionHandlerBase, Result
 from flowmeter.common.api import request as request_api
 from flowmeter.applications.api import user as app_user_api
 from flowmeter.common import common
+from flowmeter.applications.api import file as app_file_api
+from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
 
 
 class UserActionHandler(ActionHandlerBase):
@@ -23,6 +27,7 @@ class UserActionHandler(ActionHandlerBase):
             "switch_admin_state": self.switch_admin_state,
             "del_batch_admin": self.del_batch_admin,
             "import_admin": self.import_admin,
+            "export_admin": self.export_admin,
         }
         super().__init__(action_dict)
 
@@ -92,10 +97,23 @@ class UserActionHandler(ActionHandlerBase):
     def import_admin(self, request):
 
         param = request_api.get_param(request)
-        filename = param.get('filename')
+        name = param.get('filename')
+        filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
+
         app_user_api.admin_import(filename)
+        app_file_api.del_file(filename)
 
         return Result.success()
+
+    def export_admin(self, request):
+
+        param = request_api.get_param(request)
+        name = app_file_api.generate_excel_file_name()
+        filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
+
+        app_user_api.admin_export(param, filename)
+
+        return Result.success(data=name)
 
 
 @xframe_options_sameorigin

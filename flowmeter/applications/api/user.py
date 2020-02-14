@@ -368,7 +368,6 @@ def admin_import(filename):
     """
     StrCheck.check_not_null(filename)
     user_core.admin_import(filename)
-    file_api.del_file(filename)
 
 
 def manufacturer_import(filename):

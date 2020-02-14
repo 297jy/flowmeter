@@ -6,13 +6,14 @@ from flowmeter.settings import BASE_DIR
 from flowmeter.common.api import file as file_api
 
 
-def generate_tmp_file_path():
+def generate_tmp_file_name(suffix='file'):
     """
     产生一个临时文件名，这个文件夹下的文件，会被定时清理
     :return:
     """
-    path = os.path.join(BASE_DIR, 'file', 'tmp', str(uuid.uuid1()) + '.file')
-    return path
+    filename = str(uuid.uuid1()) + '.' + suffix
+
+    return filename
 
 
 def save_file(file, path):
@@ -29,3 +30,15 @@ def save_file(file, path):
     for i in file.chunks():
         f.write(i)
     f.close()
+
+
+def del_file(filename):
+
+    file_api.del_file(filename)
+
+
+def open_file(filename, mode='rb'):
+
+    file = open(filename, mode)
+
+    return file

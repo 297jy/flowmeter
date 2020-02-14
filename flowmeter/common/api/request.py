@@ -2,6 +2,8 @@
 
 import json
 
+from django.http import FileResponse
+
 
 def get_user(request):
     """
@@ -42,14 +44,17 @@ def get_param(request):
     """
     param = '{}'
     if request.method == 'GET':
-        param = request.GET.get('param', {})
+        param = request.GET.get('param', '{}')
     elif request.method == 'POST':
-        param = request.POST.get('param', {})
+        param = request.POST.get('param', '{}')
+
     if isinstance(param, str):
         param = json.loads(param)
+
     # 删除csrf token
-    if 'csrfmiddlewaretoken' in param.keys():
-        del param['csrfmiddlewaretoken']
+    if request.method == 'POST':
+        if 'csrfmiddlewaretoken' in param.keys():
+            del param['csrfmiddlewaretoken']
     return param
 
 
@@ -108,3 +113,10 @@ def get_file(request):
     return file
 
 
+def get_file_response(file, filename):
+
+    print(filename)
+    response = FileResponse(file)
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename="{}"'.format(filename)
+    return response
