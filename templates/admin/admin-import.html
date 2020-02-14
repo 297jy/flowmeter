@@ -25,13 +25,14 @@
 <div class="layui-fluid">
     <div class="layui-row">
 
-        {% csrf_token %}
-        <div class="layui-upload">
-            <div class="layui-upload">
-                <button type="button" class="layui-btn layui-btn-normal" id="file">请选择EXCEL文件</button>
+        <form style="text-align: center;margin-top: 35px">
+            {% csrf_token %}
+            <div class="layui-upload" >
+                <div class="layui-upload">
+                    <button type="button" class="layui-btn layui-btn-normal" id="file">请选择EXCEL文件</button>
+                </div>
             </div>
-        </div>
-
+        </form>
     </div>
 </div>
 <script>

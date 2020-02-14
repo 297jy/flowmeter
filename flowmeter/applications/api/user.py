@@ -4,6 +4,7 @@ from flowmeter.common.api.validators import StrCheck, ListCheck, IntCheck, White
 from flowmeter.applications.core import user as user_core
 from flowmeter.config.api import user as conf_user_api
 from flowmeter.exceptions import NotUniqueException
+from flowmeter.common.api import file as file_api
 
 
 def find_admins_by_query_terms(query_terms):
@@ -367,6 +368,7 @@ def admin_import(filename):
     """
     StrCheck.check_not_null(filename)
     user_core.admin_import(filename)
+    file_api.del_file(filename)
 
 
 def manufacturer_import(filename):

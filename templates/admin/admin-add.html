@@ -30,6 +30,10 @@
                 <label for="L_username" class="layui-form-label">
                     <span class="x-red">*</span>用户名
                 </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="name" name="name" required="" lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
             </div>
             <div class="layui-form-item">
                 <label for="L_email" class="layui-form-label">
@@ -53,13 +57,13 @@
                 </div>
             </div>
             <div class="layui-form-item layui-form-text">
-                    <label for="desc" class="layui-form-label">
-                        备注
-                    </label>
-                    <div class="layui-input-block">
-                        <textarea placeholder="请输入内容" id="desc" name="remark" class="layui-textarea"></textarea>
-                    </div>
+                <label for="desc" class="layui-form-label">
+                    备注
+                </label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" id="desc" name="remark" class="layui-textarea"></textarea>
                 </div>
+            </div>
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label"></label>
                 <button class="layui-btn" lay-filter="add" lay-submit="">添加</button>
@@ -69,85 +73,86 @@
 </div>
 <script>
     layui.use(['form', 'layer', 'jquery'],
-    function () {
-        $ = layui.jquery;
-        var form = layui.form,
-            layer = layui.layer;
+        function () {
+            $ = layui.jquery;
+            var form = layui.form,
+                layer = layui.layer;
 
-        //自定义验证规则
-        form.verify({
-            name: function (value) {
-                if (!checkName(value)) {
-                    return "用户名字符长度只能为[1-32]个字符！"
-                }
-            },
-            phone: function (value) {
-                if (!checkPhone(value)) {
-                    return "联系电话格式错误！"
-                }
-            },
-            email: function (value) {
-                if (!checkEmail(value)) {
-                    return "邮箱格式错误！"
-                }
-            },
-            remark: function (value) {
-                if (!checkRemark(value)) {
-                    return "备注字符长度只能为[0-128]个字符！"
-                }
-            }
-        });
-
-        //监听提交
-        form.on('submit(add)',
-            function (data) {
-                post({"param": JSON.stringify(data.field), "action": "create_admin"}, '/handler/admin/', function (data) {
-                    if (data.success) {
-                        layer.alert("添加成功", {
-                                icon: 6
-                            },
-                            function () {
-                                //关闭当前frame
-                                xadmin.close();
-                                // 可以对父窗口进行刷新
-                                xadmin.father_reload();
-                            });
-                    } else {
-                        layer.msg(data.msg, {icon: 5, time: 3000});
+            //自定义验证规则
+            form.verify({
+                name: function (value) {
+                    if (!checkName(value)) {
+                        return "用户名字符长度只能为[1-32]个字符！"
                     }
+                },
+                phone: function (value) {
+                    if (!checkPhone(value)) {
+                        return "联系电话格式错误！"
+                    }
+                },
+                email: function (value) {
+                    if (!checkEmail(value)) {
+                        return "邮箱格式错误！"
+                    }
+                },
+                remark: function (value) {
+                    if (!checkRemark(value)) {
+                        return "备注字符长度只能为[0-128]个字符！"
+                    }
+                }
+            });
+
+            //监听提交
+            form.on('submit(add)',
+                function (data) {
+                    post({
+                        "param": JSON.stringify(data.field),
+                        "action": "create_admin"
+                    }, '/handler/admin/', function (data) {
+                        if (data.success) {
+                            layer.alert("添加成功", {
+                                    icon: 6
+                                },
+                                function () {
+                                    //关闭当前frame
+                                    xadmin.close();
+                                    // 可以对父窗口进行刷新
+                                    xadmin.father_reload();
+                                });
+                        } else {
+                            layer.msg(data.msg, {icon: 5, time: 3000});
+                        }
+                    });
+                    return false;
                 });
-                return false;
+
+            $("#L_email").on("input", function (e) {
+                //获取input输入的值
+                let val = e.delegateTarget.value;
+                get({'param': JSON.stringify({'email': val}), 'action': 'check_email_unique'},
+                    '/handler/user/', function (data) {
+                        if (data.data) {
+                            $("#unique_email_msg").hide();
+                        } else {
+                            $("#unique_email_msg").show();
+                        }
+                    });
             });
 
-        $("#L_email").on("input", function (e) {
-            //获取input输入的值
-            let val = e.delegateTarget.value;
-            get({'param': JSON.stringify({'email': val}), 'action': 'check_email_unique'},
-                '/handler/user/',function (data) {
-                if(data.data){
-                    $("#unique_email_msg").hide();
-                }
-                else{
-                    $("#unique_email_msg").show();
-                }
+            $("#L_phone").on("input", function (e) {
+                //获取input输入的值
+                let val = e.delegateTarget.value;
+                get({'param': JSON.stringify({'phone': val}), 'action': 'check_phone_unique'},
+                    '/handler/user/', function (data) {
+                        if (data.data) {
+                            $("#unique_phone_msg").hide();
+                        } else {
+                            $("#unique_phone_msg").show();
+                        }
+                    });
             });
+
         });
-
-        $("#L_phone").on("input", function (e) {
-            //获取input输入的值
-            let val = e.delegateTarget.value;
-            get({'param': JSON.stringify({'phone': val}), 'action': 'check_phone_unique'},
-                '/handler/user/',function (data) {
-                if(data.data){
-                    $("#unique_phone_msg").hide();
-                }
-                else{
-                    $("#unique_phone_msg").show();
-                }
-            });
-        });
-
-    });
 </script>
 <script>var _hmt = _hmt || [];
 (function () {

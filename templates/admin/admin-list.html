@@ -76,8 +76,8 @@
     <button class="layui-btn" onclick="xadmin.open('添加管理员','/admin/add/',600,400)">
         <i class="layui-icon"></i>添加
     </button>
-    <button class="layui-btn layui-btn-sm" lay-event="getSelect" onclick="xadmin.open('导入管理员','/admin/import/',400,200)">导入</button>
-    <button class="layui-btn layui-btn-sm" lay-event="getInsert">导出</button>
+    <button class="layui-btn layui-btn-sm" onclick="xadmin.open('导入管理员','/admin/import/',400,200)">导入</button>
+    <button class="layui-btn layui-btn-sm" lay-event="export">导出</button>
 </script>
 {% verbatim %}
 <script type="text/html" id="displayOmit">
@@ -199,12 +199,7 @@
                                 });
                             });
                             break;
-                        case 'getCheckLength':
-                            var data = checkStatus.data;
-                            layer.msg('选中了：' + data.length + ' 个');
-                            break;
-                        case 'isAll':
-                            layer.msg(checkStatus.isAll ? '全选' : '未全选');
+                        case 'export':
                             break;
                     }
                 });
