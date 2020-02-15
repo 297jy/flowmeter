@@ -42,9 +42,9 @@ class FixDurationInputMixin:
 class NumericOutputFieldMixin:
 
     def _resolve_output_field(self):
-        source_fields = self.get_source_fields()
-        if any(isinstance(s, DecimalField) for s in source_fields):
+        source_expressions = self.get_source_expressions()
+        if any(isinstance(s.output_field, DecimalField) for s in source_expressions):
             return DecimalField()
-        if any(isinstance(s, IntegerField) for s in source_fields):
+        if any(isinstance(s.output_field, IntegerField) for s in source_expressions):
             return FloatField()
-        return super()._resolve_output_field() if source_fields else FloatField()
+        return super()._resolve_output_field() if source_expressions else FloatField()

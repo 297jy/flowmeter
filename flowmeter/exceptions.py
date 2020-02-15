@@ -36,3 +36,8 @@ class ForbiddenException(Exception):
     禁止操作异常
     """
 
+
+class OfflineException(Exception):
+    """
+    离线异常
+    """

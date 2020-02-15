@@ -1,0 +1,325 @@
+[2020-02-15 12:02:32,736] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 12:06:04,695] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 12:06:05,523] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 12:09:48,180] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\__init__.py changed, reloading.
+[2020-02-15 12:09:49,001] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 12:14:53,854] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 12:14:54,738] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:22:30,180] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 13:22:31,045] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:22:50,156] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 13:22:51,006] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:23:41,144] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 13:23:41,968] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:23:46,054] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:24:18,725] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\__init__.py changed, reloading.
+[2020-02-15 13:24:18,806] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\__init__.py changed, reloading.
+[2020-02-15 13:24:19,662] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:24:19,704] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:24:54,336] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 13:24:54,557] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 13:24:55,186] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:24:55,412] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:25:14,279] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 13:25:14,760] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 13:25:15,104] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:25:15,607] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:29:56,043] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:29:56,082] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 304 0
+[2020-02-15 13:29:56,117] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:29:56,138] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:29:56,158] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-15 13:29:56,218] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:29:56,224] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:30:23,599] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:30:23,627] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:30:23,670] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:30:23,737] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:30:23,744] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:30:44,012] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 13:30:44,174] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 13:30:44,909] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:30:45,067] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:31:47,522] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:31:47,555] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:31:47,597] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:31:47,665] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:31:47,670] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:34:10,167] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 13:34:10,191] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 13:34:11,139] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:34:11,163] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:37:42,758] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 13:37:42,823] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 13:37:43,661] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:37:43,703] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:38:12,120] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:38:12,157] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:38:12,209] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:38:12,283] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:38:12,290] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:40:07,846] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 13:40:07,918] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 13:40:08,765] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:40:08,828] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:42:08,547] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 13:42:09,401] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:42:28,024] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:42:28,063] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:42:28,112] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:42:28,178] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:42:28,184] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:43:12,314] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 13:43:13,181] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:43:13,723] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:43:13,750] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:43:13,790] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:43:13,863] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:43:13,869] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:44:43,841] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:46:30,736] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:46:30,775] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:46:30,815] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:46:30,877] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:46:30,883] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:47:22,512] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 13:47:23,365] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:47:38,938] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:47:38,981] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:47:39,023] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:47:39,088] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:47:39,093] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:53:29,076] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:53:29,110] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:53:29,155] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:53:29,220] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:53:29,227] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:54:24,392] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 13:54:25,243] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 13:54:26,412] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 13:54:26,441] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 13:54:26,483] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 13:54:26,545] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 13:54:26,550] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 13:55:18,752] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 13:55:41,129] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:01:12,592] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:01:13,436] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:03:41,538] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 14:03:42,436] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:05:38,372] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:07:20,978] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:07:21,866] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:08:26,777] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:08:27,618] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:08:48,871] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 14:08:48,905] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 14:08:48,946] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 14:08:49,018] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 14:08:49,022] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 14:12:33,781] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 14:12:34,626] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:13:42,785] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 14:13:43,676] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:15:29,707] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 14:15:30,589] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:16:28,788] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery_task\tasks.py changed, reloading.
+[2020-02-15 14:16:29,649] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:17:27,793] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery_task\__init__.py changed, reloading.
+[2020-02-15 14:17:28,635] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:17:52,297] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery_task\__init__.py changed, reloading.
+[2020-02-15 14:17:53,125] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:18:33,591] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery_task\celery.py changed, reloading.
+[2020-02-15 14:18:34,473] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:19:00,482] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery_task\celery.py changed, reloading.
+[2020-02-15 14:19:01,349] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:20:26,202] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\__init__.py changed, reloading.
+[2020-02-15 14:20:27,075] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:21:43,900] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:21:44,751] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:22:23,912] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:22:24,791] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:22:44,074] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:22:44,910] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:23:27,363] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:23:28,234] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:26:54,564] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery_task\__init__.py changed, reloading.
+[2020-02-15 14:26:55,399] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:27:28,944] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:27:59,480] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:28:00,368] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:28:41,987] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:28:42,838] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:30:10,060] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:30:10,927] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:30:48,037] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery.py changed, reloading.
+[2020-02-15 14:30:48,905] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:31:03,778] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\__init__.py changed, reloading.
+[2020-02-15 14:31:04,658] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:31:29,546] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 14:31:30,448] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:31:58,793] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:32:24,640] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 14:32:25,468] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:32:37,221] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:32:59,519] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 14:32:59,560] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 14:32:59,603] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 14:32:59,680] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 14:32:59,687] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 14:35:17,371] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:35:51,806] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 14:35:51,839] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 14:35:51,889] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 14:35:51,953] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 14:35:51,961] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 14:38:36,249] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 14:38:37,097] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:38:47,938] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 14:38:47,975] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 14:38:48,024] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 14:38:48,092] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 14:38:48,098] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 14:39:55,601] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 14:39:56,413] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:40:02,062] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 14:40:02,094] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 14:40:02,136] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 14:40:02,202] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 14:40:02,208] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 14:41:09,211] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 14:41:16,046] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 14:41:16,075] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 14:41:16,113] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 14:41:16,172] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 14:41:16,178] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 14:44:57,263] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 14:44:57,291] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 14:44:57,345] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 14:44:57,411] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 14:44:57,416] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 14:46:17,091] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 14:46:17,118] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 14:46:17,152] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 14:46:17,218] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 14:46:17,223] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 14:56:15,646] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 14:56:50,488] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:00:52,845] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 15:00:53,685] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:05:29,561] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 15:05:30,432] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:07:10,880] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 15:07:11,731] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:09:02,132] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 15:09:02,974] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:10:37,944] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 15:10:38,783] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:12:00,553] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 15:12:01,468] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:12:47,626] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 15:12:48,459] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:15:06,999] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 15:15:07,902] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:15:54,230] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:16:01,197] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 15:16:01,231] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 15:16:01,279] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 15:16:01,342] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 15:16:01,348] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 15:20:05,072] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 15:20:05,951] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:21:11,867] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 15:21:12,741] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:21:32,045] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 15:21:32,915] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:22:41,075] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery.py changed, reloading.
+[2020-02-15 15:22:41,936] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:23:06,768] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\__init__.py changed, reloading.
+[2020-02-15 15:23:07,603] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:24:00,138] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 15:24:00,993] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:24:14,738] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 15:24:15,606] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:24:42,718] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery.py changed, reloading.
+[2020-02-15 15:24:43,564] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:25:42,765] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:28:09,758] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 15:28:09,814] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 15:28:09,854] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 15:28:09,928] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 15:28:09,935] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 15:29:42,228] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
+[2020-02-15 15:29:43,110] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 15:35:57,681] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery.py changed, reloading.
+[2020-02-15 16:32:16,138] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 16:32:21,844] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 16:32:23,480] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 16:32:23,570] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 16:32:23,639] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 16:32:23,645] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 16:32:39,111] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 16:32:39,140] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 16:32:39,163] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 16:32:39,221] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 16:32:39,226] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 16:38:25,545] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\venv\Lib\site-packages\django\conf\locale\__init__.py changed, reloading.
+[2020-02-15 16:40:42,963] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 16:40:55,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 16:40:55,064] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 16:40:55,105] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 16:40:55,173] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 16:40:55,178] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 16:41:15,713] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 16:41:15,752] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 16:41:15,789] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 16:41:15,871] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 16:41:15,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 16:41:34,591] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 16:41:35,430] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 16:43:22,043] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\venv\Lib\site-packages\kombu\common.py changed, reloading.
+[2020-02-15 16:53:58,058] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 16:54:02,337] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 16:54:02,390] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 16:54:02,483] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 16:54:02,552] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 16:54:02,557] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 16:57:12,141] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 16:57:12,826] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 16:59:41,641] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 16:59:45,381] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 16:59:45,425] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 16:59:45,520] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 16:59:45,593] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 16:59:45,601] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 17:01:11,058] [tasks.py:13] [tasks:add] [INFO]- 开始执行异步任务！
+[2020-02-15 17:01:11,060] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 17:01:11,086] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 17:01:11,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 17:01:11,142] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 17:01:11,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 17:53:48,617] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 17:53:48,650] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 17:53:48,692] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 17:53:48,708] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-15 17:53:48,760] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 17:53:48,766] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 17:54:04,496] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 17:54:04,524] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 17:54:04,560] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 17:54:04,635] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 17:54:04,641] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 17:55:35,074] [tasks.py:13] [tasks:add] [INFO]- 开始执行异步任务！
+[2020-02-15 17:55:35,077] [tasks.py:13] [tasks:add] [INFO]- 开始执行异步任务！
+[2020-02-15 17:55:50,175] [tasks.py:13] [tasks:add] [INFO]- 开始执行异步任务！
+[2020-02-15 17:55:50,177] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-15 17:55:50,205] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-15 17:55:50,237] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-15 17:55:50,302] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-15 17:55:50,308] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-15 17:56:53,669] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\tasks.py changed, reloading.
+[2020-02-15 17:56:54,375] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 18:03:04,532] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\index.py changed, reloading.
+[2020-02-15 18:03:05,225] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-15 18:44:33,251] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\exceptions.py changed, reloading.
+[2020-02-15 18:44:33,953] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

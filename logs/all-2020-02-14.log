@@ -1066,3 +1066,248 @@
 [2020-02-14 15:28:59,756] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 107
 [2020-02-14 15:28:59,800] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：download_file
 [2020-02-14 15:28:59,801] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/file/?param={%22filename%22:%22aacc1b18-4efb-11ea-a169-00d861f9f354.xlsx%22}&action=download_file HTTP/1.1" 200 5632
+[2020-02-14 15:29:37,089] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/import/ HTTP/1.1" 200 3446
+[2020-02-14 15:29:42,519] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-14 15:29:42,520] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/file/ HTTP/1.1" 200 107
+[2020-02-14 15:29:42,528] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：import_admin
+[2020-02-14 15:29:42,546] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-14 15:29:43,650] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 15:29:43,703] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:29:43,708] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 373
+[2020-02-14 15:29:50,975] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:29:50,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22c%22%7D HTTP/1.1" 200 373
+[2020-02-14 15:30:06,752] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:30:06,757] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22c%22%7D HTTP/1.1" 200 373
+[2020-02-14 15:30:21,190] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:30:21,194] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22ch%22%7D HTTP/1.1" 200 214
+[2020-02-14 15:30:23,750] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:30:23,755] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22c%22%7D HTTP/1.1" 200 373
+[2020-02-14 15:30:28,307] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:30:28,312] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22ch%22%7D HTTP/1.1" 200 214
+[2020-02-14 15:30:35,915] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：export_admin
+[2020-02-14 15:30:35,920] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 107
+[2020-02-14 15:30:35,948] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：download_file
+[2020-02-14 15:30:35,949] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/file/?param={%22filename%22:%22e41e04ba-4efb-11ea-b6e6-00d861f9f354.xlsx%22}&action=download_file HTTP/1.1" 200 5632
+[2020-02-14 15:32:08,073] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/import/ HTTP/1.1" 200 3446
+[2020-02-14 15:32:13,794] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：file_upload
+[2020-02-14 15:32:13,795] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/file/ HTTP/1.1" 200 107
+[2020-02-14 15:32:13,802] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：import_admin
+[2020-02-14 15:32:13,813] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-02-14 15:32:14,902] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 15:32:14,950] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:32:14,956] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 373
+[2020-02-14 15:54:57,017] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-14 15:54:57,054] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 15:54:57,100] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 15:54:57,173] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:54:57,180] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 373
+[2020-02-14 15:54:58,761] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：export_admin
+[2020-02-14 15:54:58,767] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 107
+[2020-02-14 15:54:58,794] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：download_file
+[2020-02-14 15:54:58,794] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/file/?param={%22filename%22:%224c0a9d66-4eff-11ea-b73f-00d861f9f354.xlsx%22}&action=download_file HTTP/1.1" 200 5632
+[2020-02-14 15:55:40,735] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:55:40,740] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 373
+[2020-02-14 15:55:40,908] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:55:40,912] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 373
+[2020-02-14 15:55:51,229] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-14 15:55:51,317] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-14 15:55:51,848] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 15:55:51,964] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 15:55:52,906] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6909
+[2020-02-14 15:55:52,939] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 15:55:52,980] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 15:55:53,055] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 15:55:53,062] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 373
+[2020-02-14 16:19:53,431] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\auth_table.py changed, reloading.
+[2020-02-14 16:19:53,726] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\const.py changed, reloading.
+[2020-02-14 16:19:54,035] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:19:54,325] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:33:46,203] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\const.py changed, reloading.
+[2020-02-14 16:33:46,512] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\const.py changed, reloading.
+[2020-02-14 16:33:46,786] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:33:47,100] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:39:23,452] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\models.py changed, reloading.
+[2020-02-14 16:39:24,039] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:39:24,057] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\const.py changed, reloading.
+[2020-02-14 16:39:24,638] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:42:25,781] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\models.py changed, reloading.
+[2020-02-14 16:42:26,396] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:42:26,663] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\models.py changed, reloading.
+[2020-02-14 16:42:27,233] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:43:12,670] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\meter_table.py changed, reloading.
+[2020-02-14 16:43:13,047] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:43:13,244] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:47:22,315] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\dtu_table.py changed, reloading.
+[2020-02-14 16:47:22,590] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\meter_table.py changed, reloading.
+[2020-02-14 16:47:22,945] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:47:23,196] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:53:31,585] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\models.py changed, reloading.
+[2020-02-14 16:53:31,775] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\models.py changed, reloading.
+[2020-02-14 16:53:32,164] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:53:32,356] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:55:02,306] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\protocol.py changed, reloading.
+[2020-02-14 16:55:02,742] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\protocol.py changed, reloading.
+[2020-02-14 16:55:02,898] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:55:03,357] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:55:42,324] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\data_frame_format_table.py changed, reloading.
+[2020-02-14 16:55:42,539] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:55:42,911] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:57:13,665] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\dtu_table.py changed, reloading.
+[2020-02-14 16:57:13,709] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\dtu_table.py changed, reloading.
+[2020-02-14 16:57:14,293] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:57:14,358] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 16:59:45,136] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\migrations\0001_initial.py changed, reloading.
+[2020-02-14 16:59:45,712] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:00:51,706] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-02-14 17:00:51,756] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-02-14 17:02:26,654] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\auth.py changed, reloading.
+[2020-02-14 17:02:27,249] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:02:27,410] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\auth.py changed, reloading.
+[2020-02-14 17:02:28,022] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:02:30,771] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-14 17:02:30,797] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 111
+[2020-02-14 17:04:22,740] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\auth.py changed, reloading.
+[2020-02-14 17:04:22,817] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\auth.py changed, reloading.
+[2020-02-14 17:04:23,399] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:04:23,453] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:05:27,664] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-14 17:05:27,668] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 110
+[2020-02-14 17:08:35,869] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\common\api\request.py changed, reloading.
+[2020-02-14 17:08:35,972] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\auth.py changed, reloading.
+[2020-02-14 17:08:36,509] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:08:36,621] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:08:37,456] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-14 17:08:37,458] [auth.py:52] [auth:validate_and_get_user] [WARNING]- 账号：13850592086，不存在！
+[2020-02-14 17:08:37,459] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 135
+[2020-02-14 17:09:35,364] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\auth.py changed, reloading.
+[2020-02-14 17:09:35,580] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\auth.py changed, reloading.
+[2020-02-14 17:09:35,955] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:09:36,196] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:09:58,287] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\login.py changed, reloading.
+[2020-02-14 17:09:58,719] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\auth.py changed, reloading.
+[2020-02-14 17:09:58,893] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:09:59,335] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:10:02,063] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-14 17:10:02,084] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 96
+[2020-02-14 17:10:03,328] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 5699
+[2020-02-14 17:10:03,361] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:10:03,404] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:10:03,463] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 302 0
+[2020-02-14 17:10:03,468] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /error/403/ HTTP/1.1" 200 1133
+[2020-02-14 17:14:27,926] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\auth.py changed, reloading.
+[2020-02-14 17:14:28,544] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-14 17:14:35,016] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 5699
+[2020-02-14 17:14:35,048] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:14:35,088] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:14:35,153] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 160
+[2020-02-14 17:18:00,501] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 5699
+[2020-02-14 17:18:00,533] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:18:00,566] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:18:00,629] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 160
+[2020-02-14 17:18:01,484] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 5699
+[2020-02-14 17:18:01,508] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:18:01,525] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:18:01,571] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 160
+[2020-02-14 17:18:02,102] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 5699
+[2020-02-14 17:18:02,129] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:18:02,151] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:18:02,203] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 160
+[2020-02-14 17:18:11,762] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2020-02-14 17:18:11,769] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-02-14 17:18:16,731] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-14 17:18:16,742] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 96
+[2020-02-14 17:18:17,971] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 5699
+[2020-02-14 17:18:18,003] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:18:18,025] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:18:18,087] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 160
+[2020-02-14 17:19:03,979] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2020-02-14 17:19:03,985] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-02-14 17:19:07,366] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-14 17:19:07,378] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 96
+[2020-02-14 17:19:08,609] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 5699
+[2020-02-14 17:19:08,644] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:19:08,668] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:19:08,735] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 17:19:08,743] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-14 17:19:37,953] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6102
+[2020-02-14 17:19:37,983] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:19:38,021] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:19:38,077] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 17:19:38,082] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-14 17:20:00,949] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 5726
+[2020-02-14 17:20:00,978] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:20:01,019] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:20:01,074] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 17:20:01,079] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-14 17:20:04,984] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-14 17:20:06,285] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-14 17:20:59,240] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-14 17:20:59,257] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-14 17:20:59,260] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-14 17:20:59,262] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-14 17:20:59,267] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-14 17:20:59,268] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-14 17:20:59,277] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-14 17:20:59,280] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome HTTP/1.1" 301 0
+[2020-02-14 17:20:59,282] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/fonts/iconfont.woff HTTP/1.1" 200 30200
+[2020-02-14 17:20:59,285] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-14 17:20:59,290] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:20:59,296] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-14 17:20:59,299] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-14 17:20:59,302] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-14 17:20:59,305] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-14 17:20:59,307] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-14 17:20:59,310] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-14 17:20:59,312] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-14 17:20:59,323] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-14 17:20:59,331] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-14 17:20:59,335] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-14 17:20:59,362] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 17:20:59,372] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-14 17:20:59,375] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/jquery.js HTTP/1.1" 200 97648
+[2020-02-14 17:20:59,380] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-02-14 17:20:59,384] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-02-14 17:20:59,386] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-02-14 17:20:59,390] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-02-14 17:20:59,392] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-02-14 17:20:59,394] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-02-14 17:20:59,397] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-02-14 17:20:59,399] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1879
+[2020-02-14 17:20:59,402] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-14 17:20:59,413] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-02-14 17:20:59,428] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-02-14 17:20:59,437] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laydate.js HTTP/1.1" 200 27377
+[2020-02-14 17:20:59,439] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-02-14 17:20:59,449] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-02-14 17:20:59,452] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-02-14 17:20:59,456] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/laydate/default/laydate.css?v=5.0.9 HTTP/1.1" 200 7537
+[2020-02-14 17:20:59,460] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-02-14 17:20:59,471] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-02-14 17:20:59,479] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-02-14 17:20:59,485] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-02-14 17:20:59,505] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 17:20:59,513] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-14 17:21:52,118] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-14 17:21:52,146] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 17:22:15,012] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-14 17:22:15,039] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 18:17:03,806] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-14 18:17:03,834] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 18:17:04,469] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 18:17:04,537] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 18:17:04,543] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-14 18:17:05,891] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/import/ HTTP/1.1" 200 3446
+[2020-02-14 18:17:08,293] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-14 18:17:16,754] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 18:17:16,759] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22%22%7D HTTP/1.1" 200 383
+[2020-02-14 20:45:32,919] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 4953
+[2020-02-14 20:45:32,948] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-14 20:45:32,988] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11030
+[2020-02-14 20:45:33,005] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-14 20:45:33,059] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-14 20:45:33,065] [basehttp.py:157] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 383
+[2020-02-14 20:45:35,843] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-14 20:45:36,434] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-14 20:45:37,154] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-14 20:45:37,541] [basehttp.py:157] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-15 12:02:30,985] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.

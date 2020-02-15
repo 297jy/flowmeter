@@ -2,15 +2,14 @@
 #
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
-# Luke Blaney <transifex@lukeblaney.co.uk>, 2019
 # Michael Thornhill <michael@maithu.com>, 2011-2012,2015
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-16 20:42+0100\n"
-"PO-Revision-Date: 2019-06-22 21:17+0000\n"
-"Last-Translator: Luke Blaney <transifex@lukeblaney.co.uk>\n"
+"POT-Creation-Date: 2017-01-19 16:49+0100\n"
+"PO-Revision-Date: 2017-09-23 18:54+0000\n"
+"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
 "Language-Team: Irish (http://www.transifex.com/django/django/language/ga/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,10 +64,10 @@ msgid "This year"
 msgstr "An blian seo"
 
 msgid "No date"
-msgstr "Gan dáta"
+msgstr ""
 
 msgid "Has date"
-msgstr "Le dáta"
+msgstr ""
 
 #, python-format
 msgid ""
@@ -88,20 +87,11 @@ msgstr "Cuir eile %(verbose_name)s"
 msgid "Remove"
 msgstr "Tóg amach"
 
-msgid "Addition"
-msgstr ""
-
-msgid "Change"
-msgstr "Athraigh"
-
-msgid "Deletion"
-msgstr "Scriosadh"
-
 msgid "action time"
 msgstr "am aicsean"
 
 msgid "user"
-msgstr "úsáideoir"
+msgstr ""
 
 msgid "content type"
 msgstr ""
@@ -110,7 +100,7 @@ msgid "object id"
 msgstr "id oibiacht"
 
 #. Translators: 'repr' means representation
-#. (https://docs.python.org/library/functions.html#repr)
+#. (https://docs.python.org/3/library/functions.html#repr)
 msgid "object repr"
 msgstr "repr oibiacht"
 
@@ -143,25 +133,25 @@ msgstr "Oibiacht LogEntry"
 
 #, python-brace-format
 msgid "Added {name} \"{object}\"."
-msgstr "{name} curtha leis \"{object}\"."
+msgstr ""
 
 msgid "Added."
-msgstr "Curtha leis."
+msgstr ""
 
 msgid "and"
 msgstr "agus"
 
 #, python-brace-format
 msgid "Changed {fields} for {name} \"{object}\"."
-msgstr "{fields} athrithe don {name} \"{object}\"."
+msgstr ""
 
 #, python-brace-format
 msgid "Changed {fields}."
-msgstr "{fields} athrithe."
+msgstr ""
 
 #, python-brace-format
 msgid "Deleted {name} \"{object}\"."
-msgstr "{name} scrioste: \"{object}\"."
+msgstr ""
 
 msgid "No fields changed."
 msgstr "Dada réimse aithraithe"
@@ -176,11 +166,9 @@ msgstr ""
 "amháin a roghnú."
 
 #, python-brace-format
-msgid "The {name} \"{obj}\" was added successfully."
-msgstr "Bhí {name} \"{obj}\" curtha leis go rathúil"
-
-msgid "You may edit it again below."
-msgstr "Thig leat é a athrú arís faoi seo."
+msgid ""
+"The {name} \"{obj}\" was added successfully. You may edit it again below."
+msgstr ""
 
 #, python-brace-format
 msgid ""
@@ -189,15 +177,12 @@ msgid ""
 msgstr ""
 
 #, python-brace-format
-msgid ""
-"The {name} \"{obj}\" was changed successfully. You may edit it again below."
+msgid "The {name} \"{obj}\" was added successfully."
 msgstr ""
-"D'athraigh {name} \"{obj}\" go rathúil.\n"
-"Thig leat é a athrú arís faoi seo."
 
 #, python-brace-format
 msgid ""
-"The {name} \"{obj}\" was added successfully. You may edit it again below."
+"The {name} \"{obj}\" was changed successfully. You may edit it again below."
 msgstr ""
 
 #, python-brace-format
@@ -205,12 +190,10 @@ msgid ""
 "The {name} \"{obj}\" was changed successfully. You may add another {name} "
 "below."
 msgstr ""
-"D'athraigh {name} \"{obj}\" go rathúil.\n"
-"Thig leat {name} eile a chuir leis."
 
 #, python-brace-format
 msgid "The {name} \"{obj}\" was changed successfully."
-msgstr "D'athraigh {name} \"{obj}\" go rathúil."
+msgstr ""
 
 msgid ""
 "Items must be selected in order to perform actions on them. No items have "
@@ -228,7 +211,7 @@ msgstr "Bhí %(name)s \"%(obj)s\" scrioste go rathúil."
 
 #, python-format
 msgid "%(name)s with ID \"%(key)s\" doesn't exist. Perhaps it was deleted?"
-msgstr "Níl%(name)s ann le aitheantais \"%(key)s\". B'fhéidir gur scriosadh é?"
+msgstr ""
 
 #, python-format
 msgid "Add %s"
@@ -237,10 +220,6 @@ msgstr "Cuir %s le"
 #, python-format
 msgid "Change %s"
 msgstr "Aithrigh %s"
-
-#, python-format
-msgid "View %s"
-msgstr "Amharc ar %s"
 
 msgid "Database error"
 msgstr "Botún bunachar sonraí"
@@ -357,7 +336,7 @@ msgid "Change password"
 msgstr "Athraigh focal faire"
 
 msgid "Please correct the error below."
-msgstr "Ceartaigh an botún thíos le do thoil."
+msgstr "Ceartaigh na botúin thíos le do thoil"
 
 msgid "Please correct the errors below."
 msgstr "Le do thoil cheartú earráidí thíos."
@@ -469,8 +448,8 @@ msgstr ""
 "An bhfuil tú cinnte gur mian leat a scriosadh %(objects_name)s roghnaithe? "
 "Beidh gach ceann de na nithe seo a leanas agus a n-ítimí gaolta scroiste:"
 
-msgid "View"
-msgstr "Amharc ar"
+msgid "Change"
+msgstr "Athraigh"
 
 msgid "Delete?"
 msgstr "Cealaigh?"
@@ -489,8 +468,8 @@ msgstr "Samhlacha ins an %(name)s iarratais"
 msgid "Add"
 msgstr "Cuir le"
 
-msgid "You don't have permission to view or edit anything."
-msgstr ""
+msgid "You don't have permission to edit anything."
+msgstr "Níl cead agat aon rud a cuir in eagar."
 
 msgid "Recent actions"
 msgstr ""
@@ -544,8 +523,20 @@ msgstr "Taispéan gach rud"
 msgid "Save"
 msgstr "Sábháil"
 
-msgid "Popup closing…"
+msgid "Popup closing..."
 msgstr ""
+
+#, python-format
+msgid "Change selected %(model)s"
+msgstr "Athraigh roghnaithe %(model)s"
+
+#, python-format
+msgid "Add another %(model)s"
+msgstr "Cuir le %(model)s"
+
+#, python-format
+msgid "Delete selected %(model)s"
+msgstr "Scrios roghnaithe %(model)s"
 
 msgid "Search"
 msgstr "Cuardach"
@@ -571,24 +562,6 @@ msgstr "Sabháil agus cuir le ceann eile"
 
 msgid "Save and continue editing"
 msgstr "Sábhail agus lean ag cuir in eagar"
-
-msgid "Save and view"
-msgstr "Sabháil agus amharc ar"
-
-msgid "Close"
-msgstr "Druid"
-
-#, python-format
-msgid "Change selected %(model)s"
-msgstr "Athraigh roghnaithe %(model)s"
-
-#, python-format
-msgid "Add another %(model)s"
-msgstr "Cuir le %(model)s"
-
-#, python-format
-msgid "Delete selected %(model)s"
-msgstr "Scrios roghnaithe %(model)s"
 
 msgid "Thanks for spending some quality time with the Web site today."
 msgstr "Go raibh maith agat le hadhaigh do cuairt ar an suíomh idirlínn inniú."
@@ -694,10 +667,6 @@ msgstr "Roghnaigh %s"
 #, python-format
 msgid "Select %s to change"
 msgstr "Roghnaigh %s a athrú"
-
-#, python-format
-msgid "Select %s to view"
-msgstr ""
 
 msgid "Date:"
 msgstr "Dáta:"

@@ -26,7 +26,7 @@ class Meter(models.Model):
     # 仪表状态
     state = models.CharField(default=const.UNKNOWN_STATE, max_length=8)
     # 瞬时流量
-    flow_rate = models.CharField(default=const.UNKNOWN_VALUE)
+    flow_rate = models.FloatField(default=const.UNKNOWN_VALUE)
     # 累计流量
     total_flow = models.FloatField(default=const.UNKNOWN_VALUE)
     # 温度

@@ -65,7 +65,6 @@ def find_user_by_account(account):
 def password_validate(input_password, really_password):
 
     password = password_encryption(input_password)
-
     if password == really_password:
         return True
     else:

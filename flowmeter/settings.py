@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import time
+from celery.schedules import crontab
+from celery.schedules import timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -246,3 +248,11 @@ DATETIME_FORMAT_STR = '%Y-%m-%d %H:%M:%S'
 
 # 临时文件目录路径
 TMP_FILE_DIRECTORY_PATH = os.path.join(BASE_DIR, 'file', 'tmp')
+
+# 异步任务队列配置
+# Celery application definition
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TASK_SERIALIZER = 'json'

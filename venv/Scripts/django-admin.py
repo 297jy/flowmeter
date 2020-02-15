@@ -1,4 +1,4 @@
-#!D:\project\python\flowmeter_manage_system\venv\Scripts\python.exe
+#!D:\project\python\flowmeter\venv\Scripts\python.exe
 from django.core import management
 
 if __name__ == "__main__":

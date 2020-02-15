@@ -2,15 +2,14 @@
 #
 # Translators:
 # Jannis Leidel <jannis@leidel.info>, 2011
-# Luke Blaney <transifex@lukeblaney.co.uk>, 2019
 # Michael Thornhill <michael@maithu.com>, 2011-2012,2015
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-05-17 11:50+0200\n"
-"PO-Revision-Date: 2019-06-22 21:36+0000\n"
-"Last-Translator: Luke Blaney <transifex@lukeblaney.co.uk>\n"
+"POT-Creation-Date: 2016-05-17 23:12+0200\n"
+"PO-Revision-Date: 2017-09-23 18:54+0000\n"
+"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
 "Language-Team: Irish (http://www.transifex.com/django/django/language/ga/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -104,21 +103,6 @@ msgstr ""
 "Tá gníomh roghnaithe agat, ach níl do aithrithe sabhailte ar cuid de na "
 "réímse. Is dócha go bhfuil tú ag iarraidh an cnaipe Té ná an cnaipe Sábháil."
 
-msgid "Now"
-msgstr "Anois"
-
-msgid "Midnight"
-msgstr "Meán oíche"
-
-msgid "6 a.m."
-msgstr "6 a.m."
-
-msgid "Noon"
-msgstr "Nóin"
-
-msgid "6 p.m."
-msgstr "6in"
-
 #, javascript-format
 msgid "Note: You are %s hour ahead of server time."
 msgid_plural "Note: You are %s hours ahead of server time."
@@ -142,11 +126,26 @@ msgstr[3] ""
 msgstr[4] ""
 "Tabhair faoi deara: Tá tú %s uair a chloig taobh thiar am an friothálaí."
 
+msgid "Now"
+msgstr "Anois"
+
 msgid "Choose a Time"
-msgstr "Roghnaigh Am"
+msgstr ""
 
 msgid "Choose a time"
 msgstr "Roghnaigh am"
+
+msgid "Midnight"
+msgstr "Meán oíche"
+
+msgid "6 a.m."
+msgstr "6 a.m."
+
+msgid "Noon"
+msgstr "Nóin"
+
+msgid "6 p.m."
+msgstr ""
 
 msgid "Cancel"
 msgstr "Cealaigh"
@@ -155,7 +154,7 @@ msgid "Today"
 msgstr "Inniu"
 
 msgid "Choose a Date"
-msgstr "Roghnaigh Dáta"
+msgstr ""
 
 msgid "Yesterday"
 msgstr "Inné"
@@ -164,68 +163,68 @@ msgid "Tomorrow"
 msgstr "Amárach"
 
 msgid "January"
-msgstr "Eanáir"
+msgstr ""
 
 msgid "February"
-msgstr "Feabhra"
+msgstr ""
 
 msgid "March"
-msgstr "Márta"
+msgstr ""
 
 msgid "April"
-msgstr "Aibreán"
+msgstr ""
 
 msgid "May"
-msgstr "Bealtaine"
+msgstr ""
 
 msgid "June"
-msgstr "Meitheamh"
+msgstr ""
 
 msgid "July"
-msgstr "Iúil"
+msgstr ""
 
 msgid "August"
-msgstr "Lúnasa"
+msgstr ""
 
 msgid "September"
-msgstr "Meán Fómhair"
+msgstr ""
 
 msgid "October"
-msgstr "Deireadh Fómhair"
+msgstr ""
 
 msgid "November"
-msgstr "Samhain"
+msgstr ""
 
 msgid "December"
-msgstr "Nollaig"
+msgstr ""
 
 msgctxt "one letter Sunday"
 msgid "S"
-msgstr "D"
+msgstr ""
 
 msgctxt "one letter Monday"
 msgid "M"
-msgstr "L"
+msgstr ""
 
 msgctxt "one letter Tuesday"
 msgid "T"
-msgstr "M"
+msgstr ""
 
 msgctxt "one letter Wednesday"
 msgid "W"
-msgstr "C"
+msgstr ""
 
 msgctxt "one letter Thursday"
 msgid "T"
-msgstr "D"
+msgstr ""
 
 msgctxt "one letter Friday"
 msgid "F"
-msgstr "A"
+msgstr ""
 
 msgctxt "one letter Saturday"
 msgid "S"
-msgstr "S"
+msgstr ""
 
 msgid "Show"
 msgstr "Taispeán"

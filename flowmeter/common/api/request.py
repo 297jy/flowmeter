@@ -115,7 +115,6 @@ def get_file(request):
 
 def get_file_response(file, filename):
 
-    print(filename)
     response = FileResponse(file)
     response['Content-Type'] = 'application/octet-stream'
     response['Content-Disposition'] = 'attachment;filename="{}"'.format(filename)

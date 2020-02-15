@@ -1,6 +1,5 @@
+import threading
 from pathlib import Path
-
-from asgiref.local import Local
 
 from django.apps import apps
 
@@ -14,7 +13,8 @@ def watch_for_translation_changes(sender, **kwargs):
         directories.extend(Path(config.path) / 'locale' for config in apps.get_app_configs())
         directories.extend(Path(p) for p in settings.LOCALE_PATHS)
         for path in directories:
-            sender.watch_dir(path, '**/*.mo')
+            absolute_path = path.absolute()
+            sender.watch_dir(absolute_path, '**/*.mo')
 
 
 def translation_file_changed(sender, file_path, **kwargs):
@@ -25,5 +25,5 @@ def translation_file_changed(sender, file_path, **kwargs):
         gettext._translations = {}
         trans_real._translations = {}
         trans_real._default = None
-        trans_real._active = Local()
+        trans_real._active = threading.local()
         return True

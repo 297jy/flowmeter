@@ -107,12 +107,14 @@ class KeyTransform(Transform):
             previous = previous.lhs
         lhs, params = compiler.compile(previous)
         if len(key_transforms) > 1:
-            return '(%s %s %%s)' % (lhs, self.nested_operator), params + [key_transforms]
+            return "(%s %s %%s)" % (lhs, self.nested_operator), [key_transforms] + params
         try:
-            lookup = int(self.key_name)
+            int(self.key_name)
         except ValueError:
-            lookup = self.key_name
-        return '(%s %s %%s)' % (lhs, self.operator), tuple(params) + (lookup,)
+            lookup = "'%s'" % self.key_name
+        else:
+            lookup = "%s" % self.key_name
+        return "(%s %s %s)" % (lhs, self.operator, lookup), params
 
 
 class KeyTextTransform(KeyTransform):

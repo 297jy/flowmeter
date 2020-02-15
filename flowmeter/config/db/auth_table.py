@@ -1,4 +1,5 @@
 # coding=utf-8
+
 from django.db import models
 from flowmeter.config import const
 from flowmeter.config.db.auth_category_table import AuthCategory
