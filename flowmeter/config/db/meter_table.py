@@ -49,5 +49,5 @@ class Meter(models.Model):
     remark = models.CharField(max_length=const.REMARK_CHAR_LEN)
     # 仪表的使用用户
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-
-    valve = models.ForeignKey(Valve, on_delete=models.CASCADE)
+    # 仪表对应的阀门控制器
+    valve = models.OneToOneField(Valve, on_delete=models.CASCADE)
