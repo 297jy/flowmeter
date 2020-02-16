@@ -2,6 +2,7 @@
 
 from django.db import models
 from flowmeter.config.db.dtu_table import Dtu
+from flowmeter.config.db.user_table import User
 from flowmeter.config import const
 
 
@@ -45,3 +46,5 @@ class Meter(models.Model):
     version = models.FloatField(default=const.UNKNOWN_VALUE)
     # 仪表备注
     remark = models.CharField(max_length=const.REMARK_CHAR_LEN)
+    # 仪表的使用用户
+    user = models.ForeignKey(User, on_delete=models.CASCADE)

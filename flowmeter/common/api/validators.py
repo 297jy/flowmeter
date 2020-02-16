@@ -8,6 +8,7 @@ from flowmeter.exceptions import ParameterErrorException
 from flowmeter.common.const import RoleType
 from flowmeter.common.const import UserStateType
 from flowmeter.config import const
+from flowmeter.config.db.operator_table import Operator
 
 
 def param_check(data, must_dict=None, optional_dict=None, extra=False):
@@ -170,6 +171,24 @@ class WhiteListCheck:
                 return
 
         raise ParameterErrorException("{} 不属于用户状态的基本类型：{}", format(state_type, str(state_type_list)))
+
+    @staticmethod
+    def check_opr_type(opr_type):
+
+        type_list = [
+            Operator.QUERY,
+            Operator.RECHARGE,
+            Operator.RESET,
+            Operator.SET_METER_ADDRESS,
+            Operator.CLOSE_VALVE,
+            Operator.OPEN_VALVE,
+            Operator.CLOSE_RECHARGE,
+            Operator.OPEN_RECHARGE,
+            Operator.SET_FLOW_RATIO,
+        ]
+
+        if opr_type not in type_list:
+            raise ParameterErrorException("没有该操作类型：{}！", opr_type)
 
 
 class IntCheck:

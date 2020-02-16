@@ -1,8 +1,7 @@
 # coding=utf-8
 
 from flowmeter.config.db.auth_table import Auth
-from flowmeter.config.api import cache
-from flowmeter.config.api import user as conf_user_api
+from flowmeter.config.api import user as conf_user_api, cache
 from flowmeter.config.api import role as conf_role_api
 from flowmeter.config.api import navigation_bar as conf_nav_bar_api
 from flowmeter.exceptions import DoesNotExistException

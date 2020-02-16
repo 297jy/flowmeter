@@ -3,8 +3,10 @@
 import os, django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "flowmeter.settings")
 django.setup()
+import djcelery
+djcelery.setup_loader()
 from flowmeter.applications.api import user as user_api
-
+from flowmeter.config.api import cache
 
 """
 # 新建管理员，DTU用户，厂商
@@ -62,11 +64,17 @@ def test_create_admin():
     })
 
 
+def test_zset_redis():
+
+    cache.add('test', 1, 2)
+
+
 if __name__ == "__main__":
 
     # test_edit_admin()
     # test_del_file()
     # test_chinese_len()
-    test_create_admin()
+    # test_create_admin()
     # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     # print(user_api.check_email_unique('1347704262@qq.com'))
+    test_zset_redis()
