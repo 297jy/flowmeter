@@ -9,6 +9,7 @@ from flowmeter.common.const import RoleType
 from flowmeter.common.const import UserStateType
 from flowmeter.config import const
 from flowmeter.config.db.operator_table import Operator
+from flowmeter.config.db.log_table import AlarmLog, OprLog
 
 
 def param_check(data, must_dict=None, optional_dict=None, extra=False):
@@ -190,6 +191,24 @@ class WhiteListCheck:
         if opr_type not in type_list:
             raise ParameterErrorException("没有该操作类型：{}！", opr_type)
 
+    @staticmethod
+    def check_opr_state(state):
+
+        state_list = [
+            OprLog.SUCCESS_STATE,
+            OprLog.ERROR_STATE,
+            OprLog.WAITE_STATE,
+        ]
+
+        if state not in state_list:
+            raise ParameterErrorException("没有该操作状态：{}！", state)
+
+    @staticmethod
+    def check_alarm_type(alarm_type):
+
+        type_list = [AlarmLog.ALARM_EXCEED_LIMIT, AlarmLog.ALARM_SUB_VALVE, AlarmLog.ALARM_INTERRUPT]
+        if alarm_type not in type_list:
+            raise ParameterErrorException("没有该警报类型：{}！", alarm_type)
 
 class IntCheck:
 

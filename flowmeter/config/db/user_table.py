@@ -11,8 +11,8 @@ class User(models.Model):
 
     name = models.CharField(max_length=const.NAME_CHAR_LEN)
     password = models.CharField(max_length=const.PASSWORD_CHAR_LEN)
-    phone = models.CharField(max_length=11)
-    email = models.EmailField()
+    phone = models.CharField(max_length=11, unique=True)
+    email = models.EmailField(unique=True)
     create_time = models.DateTimeField()
     state = models.CharField(max_length=16, default=UserStateType.ENABLE_STATE)
     remark = models.CharField(max_length=const.REMARK_CHAR_LEN, default='')

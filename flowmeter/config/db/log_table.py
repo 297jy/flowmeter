@@ -18,8 +18,6 @@ class Log(models.Model):
     opr_user = models.ForeignKey(User, on_delete=models.CASCADE)
     # 操作时间
     opr_time = models.DateTimeField()
-    # 操作状态
-    state = models.CharField(max_length=STATE_CHAR_LEN)
 
     class Meta:
         abstract = True
@@ -32,25 +30,33 @@ class LoginLog(Log):
     LOGIN_SUCCESS = 'success'
     LOGIN_ERROR = 'error'
 
+    # 操作状态
+    state = models.CharField(max_length=STATE_CHAR_LEN)
+
 
 class OprLog(Log):
     """
     操作日志
     """
     # 操作名称
-    opr_name = models.CharField(max_length=OPR_TYPE_CHAR_LEN)
+    opr_type = models.CharField(max_length=OPR_TYPE_CHAR_LEN)
+    # 操作状态
+    state = models.CharField(max_length=STATE_CHAR_LEN)
+    # 操作的仪表
+    meter = models.ForeignKey(Meter, on_delete=models.CASCADE)
+
+    class Meta:
+        ordering = ['opr_time']
 
 
 class AlarmLog(Log):
     """
     告警日志
     """
-    EXCEED_LIMIT_ALARM = 'exceed_limit'
-    INTERRUPT = 'interrupt'
-    SUB_VALVE = 'sub_valve'
+    ALARM_EXCEED_LIMIT = 'exceed_limit'
+    ALARM_INTERRUPT = 'interrupt'
+    ALARM_SUB_VALVE = 'sub_valve'
 
-    # 发生告警事件的仪表用户
-    meter_user = models.ForeignKey(User, on_delete=models.CASCADE, related_name='user_alarm')
     # 发生告警事件的仪表
     meter = models.ForeignKey(Meter, on_delete=models.CASCADE)
     # 告警事件类型

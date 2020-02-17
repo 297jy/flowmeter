@@ -18,21 +18,18 @@ def add_operator(opr):
         "dtu_no": int,
         "meter_address": int,
     }
-    param_check(opr, must_dict=must_dict)
+    param_check(opr, must_dict=must_dict, extra=True)
 
     keyname = 'operator' + str(opr['dtu_no'])
     cache.add_sorted_set(keyname, opr, opr['opr_time'])
 
 
-def get_early_operator(dtu_no, opr_type):
+def get_earliest_operator(dtu_no):
     """
     获取日期最早的操作
     :param dtu_no:
-    :param opr_type:
     :return:
     """
-    WhiteListCheck.check_opr_type(opr_type)
-
     keyname = 'operator' + str(dtu_no)
     opr = cache.get_sorted_set_first(keyname)
     return opr

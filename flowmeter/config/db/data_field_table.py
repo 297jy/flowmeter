@@ -2,7 +2,6 @@
 
 from django.db import models
 from flowmeter.config import const
-from flowmeter.config.db.data_frame_format_table import DataFrameFormat
 
 
 class DataField(models.Model):
@@ -15,5 +14,4 @@ class DataField(models.Model):
     begin_address = models.IntegerField()
     # 在数据帧中的结束地址
     end_address = models.IntegerField()
-    # 数据域属于的数据帧
-    frame_format = models.ForeignKey(DataFrameFormat, on_delete=models.CASCADE)
+
