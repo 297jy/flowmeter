@@ -42,13 +42,12 @@ def edit_navigation_bar(navigation_bar):
     core.edit_navigation_bar(navigation_bar)
 
 
-def find_navigation_bars_by_auth_id(auth_id):
+def find_navigation_bars_by_auth_id(auth_id=None):
     """
     根据auth_id，查询全部的导航条
     :param auth_id:
     :return:
     """
-    IntCheck.check_is_int(auth_id)
 
     navigation_bars = core.find_navigation_bars_by_auth_id(auth_id)
 

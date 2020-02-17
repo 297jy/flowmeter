@@ -80,10 +80,18 @@
         <ul id="nav">
             {% for nav in nav_bars %}
                 <li>
+                    {% if nav.url%}
                     <a onclick="xadmin.add_tab('{{ nav.name }}','{{ nav.url }}',true)">
                         <i class="iconfont left-nav-li" lay-tips="{{ nav.name }}">&#{{ nav.icon }};</i>
                         <cite>{{ nav.name }}</cite>
                     </a>
+                    {% endif %}
+                    {% if not nav.url%}
+                    <a>
+                        <i class="iconfont left-nav-li" lay-tips="{{ nav.name }}">&#{{ nav.icon }};</i>
+                        <cite>{{ nav.name }}</cite>
+                    </a>
+                    {% endif %}
                     {% if nav.childs %}
                         <ul class="sub-menu">
                             {% for child_nav in nav.childs %}

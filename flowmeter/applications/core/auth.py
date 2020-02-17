@@ -82,9 +82,11 @@ def find_nav_bars_by_role(role):
 
     nav_bar_list = []
     for auth in auths:
+        # 添加每个权限对应的导航栏
         nav_bars = conf_nav_bar_api.find_navigation_bars_by_auth_id(auth.id)
         nav_bar_list.extend(nav_bars)
-
+    # 添加不需要权限的导航栏
+    nav_bar_list.extend(conf_nav_bar_api.find_navigation_bars_by_auth_id())
     return nav_bar_list
 
 
@@ -94,20 +96,26 @@ def structure_nav_bars(nav_bars):
     :param nav_bars:
     :return:
     """
+    # 父导航条
     nav_bar_list = []
-    for nav in nav_bars:
-        # 先找到父导航条
-        if nav.fid == -1:
-            nav_bar = nav.get_dict()
+    # 子导航条
+    child_nav_bar_list = []
 
-            # 找到该父导航栏的所有子导航栏
-            child_nav_bar_list = []
-            for child_nav in nav_bars:
-                if child_nav.fid == nav.id:
-                    child_nav_bar_list.append(child_nav.get_dict())
-            if len(child_nav_bar_list) > 0:
-                nav_bar['childs'] = child_nav_bar_list
-            nav_bar_list.append(nav_bar)
+    for nav in nav_bars:
+        # 找到所有父导航条
+        if nav.fid == -1:
+            nav_dict = nav.get_dict()
+            nav_dict['childs'] = []
+            nav_bar_list.append(nav_dict)
+        else:
+            child_nav_bar_list.append(nav.get_dict())
+
+    for nav in child_nav_bar_list:
+        # 接着在列表中找到对应的父导航栏
+        for f_nav in nav_bar_list:
+            if f_nav['id'] == nav['fid']:
+                f_nav['childs'].append(nav)
+                break
 
     return nav_bar_list
 

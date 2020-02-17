@@ -45,3 +45,21 @@ def get_page_data(datas, page, limit):
     end_index = limit * page
 
     return datas[start_index: end_index]
+
+
+def transfer_hex_str(num):
+
+    char_dict = {10: 'A', 11: 'B', 12: 'C', 13: 'D', 14: 'E', 15: 'F'}
+
+    hex_str = ""
+
+    if num < 0:
+        num = num + 2 ** 32
+
+    while num >= 16:
+        digit = num % 16
+        hex_str = char_dict.get(digit, str(digit)) + hex_str
+        num //= 16
+    hex_str = char_dict.get(num, str(num)) + hex_str
+    hex_str = '0x' + hex_str
+    return hex_str

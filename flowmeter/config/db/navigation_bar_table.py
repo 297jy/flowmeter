@@ -16,7 +16,7 @@ class NavigationBar(models.Model):
     # 父导航栏的id
     fid = models.IntegerField(default=-1)
     # 导航栏对应的需要的权限
-    auth = models.ForeignKey(Auth, on_delete=models.CASCADE)
+    auth = models.ForeignKey(Auth, on_delete=models.CASCADE, null=True)
     # 导航条排列顺序
     order = models.IntegerField(default=0)
     # 导航条对应的url
@@ -27,6 +27,8 @@ class NavigationBar(models.Model):
 
     def get_dict(self):
         return {
+            "id": self.id,
+            "fid": self.fid,
             "icon": self.icon,
             "name": self.name,
             "url": self.url,

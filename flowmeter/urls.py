@@ -23,6 +23,7 @@ from flowmeter.views import error
 from flowmeter.views import user
 from flowmeter.views import logout
 from flowmeter.views import file
+from flowmeter.views import system_setting
 
 # 视图处理器路由
 handler_urlpatterns = [
@@ -30,6 +31,7 @@ handler_urlpatterns = [
     path('admin/', user.user_handler),
     path('user/', user.user_handler),
     path('file/', file.file_handler),
+    path('system/', system_setting.system_setting_handler),
 ]
 
 # 错误页面路由
@@ -43,6 +45,10 @@ admin_urlpatterns = [
     path('import/', user.admin_import),
 ]
 
+system_setting_urlpatterns = [
+    path('register/', system_setting.control_register_view),
+]
+
 # 视图路由
 urlpatterns = [
     path('handler/', include(handler_urlpatterns)),
@@ -51,5 +57,6 @@ urlpatterns = [
     path('welcome/', welcome.welcome_view),
     path('login/', login.login_view),
     path('admin/', include(admin_urlpatterns)),
+    path('system/', include(system_setting_urlpatterns)),
     path('logout/', logout.logout_view),
 ]
