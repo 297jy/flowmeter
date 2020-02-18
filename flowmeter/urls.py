@@ -47,6 +47,7 @@ admin_urlpatterns = [
 
 system_setting_urlpatterns = [
     path('register/', system_setting.control_register_view),
+    path('frame/', system_setting.data_field_view),
 ]
 
 # 视图路由

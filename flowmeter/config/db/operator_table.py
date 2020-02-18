@@ -8,15 +8,15 @@ class Operator:
     操作实体
     """
 
-    QUERY = 1
-    RECHARGE = 2
-    OPEN_RECHARGE = 3
-    CLOSE_RECHARGE = 4
-    OPEN_VALVE = 5
-    CLOSE_VALVE = 6
-    SET_METER_ADDRESS = 7
-    RESET = 8
-    SET_FLOW_RATIO = 9
+    QUERY = 'query'
+    RECHARGE = 'recharge'
+    OPEN_RECHARGE = 'open_recharge'
+    CLOSE_RECHARGE = 'close_recharge'
+    OPEN_VALVE = 'open_valve'
+    CLOSE_VALVE = 'close_valve'
+    SET_METER_ADDRESS = 'set_meter_address'
+    RESET = 'reset'
+    SET_FLOW_RATIO = 'set_flow_ratio'
 
     def __init__(self, user_id, dtu_no, meter_address, opr_type, opr_time, log_id, val=None):
         self.user_id = user_id

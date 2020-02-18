@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from django.db import models
-from flowmeter.config.const import NAME_CHAR_LEN, REMARK_CHAR_LEN
+from flowmeter.config.const import NAME_CHAR_LEN, REMARK_CHAR_LEN, OPR_TYPE_CHAR_LEN
 
 
 class ControlRegister(models.Model):
@@ -13,6 +13,8 @@ class ControlRegister(models.Model):
     const_data = models.IntegerField(null=True)
     # 备注
     remark = models.CharField(max_length=REMARK_CHAR_LEN, default='')
+    # 操作类型
+    opr_type = models.CharField(max_length=OPR_TYPE_CHAR_LEN, unique=True)
 
     def get_dict(self):
         return {

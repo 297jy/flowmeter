@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>控制寄存器定义</title>
+    <title>数据帧格式定义</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -27,7 +27,7 @@
             <span class="layui-breadcrumb">
                 <a href="">首页</a>
                 <a href="">
-                    <cite>控制寄存器定义</cite>
+                    <cite>数据帧格式定义</cite>
                 </a>
             </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
@@ -42,7 +42,7 @@
                 <div class="layui-card-body ">
                 </div>
                 <div class="layui-card-body ">
-                    <table lay-filter="register" id="register">
+                    <table lay-filter="field" id="field">
                     </table>
                 </div>
             </div>
@@ -53,28 +53,6 @@
 <script type="text/html" id="toolbarDemo">
 
 </script>
-{% verbatim %}
-<script type="text/html" id="displayOmit">
-    <div><span title="{{d.remark}}">{{d.remark}}</span></div>
-</script>
-{% endverbatim %}
-<script>
-
-    layui.use('laydate', function () {
-        var laydate = layui.laydate;
-
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#begin_time' //指定元素
-        });
-
-        //执行一个laydate实例
-        laydate.render({
-            elem: '#end_time', //指定元素
-        });
-
-    });
-</script>
 <script>
     layui.use(['table', 'form', 'jquery', 'element'],
         function () {
@@ -83,7 +61,7 @@
             form = layui.form;
 
             table.render({
-                elem: '#register', //指定原始表格元素选择器（推荐id选择器）
+                elem: '#field', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
                     {
                         numbbers: true,
@@ -93,23 +71,22 @@
                             return data.LAY_TABLE_INDEX + 1;
                         }
                     },
-                    {field: 'name', title: '名称'},
-                    {field: 'address', edit: 'text', title: '地址'},
-                    {field: 'const_data', edit: 'text', title: '固定数据'},
-                    {field: 'remark', edit: 'text', templet: '#displayOmit', title: '备注'},
+                    {field: 'name', title: '数据域名称'},
+                    {field: 'begin_address', edit: 'text', title: '开始地址'},
+                    {field: 'end_address', edit: 'text', title: '结束地址'},
                 ]],
-                url: '/handler/system/?action=query_control_register',
+                url: '/handler/system/?action=query_data_field',
                 toolbar: '#toolbarDemo',
                 defaultToolbar: [],
             });
 
             //监听单元格编辑
-            table.on('edit(register)',
+            table.on('edit(field)',
                 function (obj) {
                     let data = obj.data;
                     post({
                         "param": JSON.stringify(data),
-                        "action": "update_control_register"
+                        "action": "update_data_field"
                     }, '/handler/system/', function (data) {
                         if (!data.success) {
                             layer.msg(data.msg, {icon: 5, time: 2000});
