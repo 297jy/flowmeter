@@ -130,3 +130,47 @@
 [2020-02-18 18:22:30,227] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3776
 [2020-02-18 18:22:30,257] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
 [2020-02-18 18:22:30,259] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-18 18:22:40,212] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3712
+[2020-02-18 18:22:40,261] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-18 18:22:40,263] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-18 18:22:41,842] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_data_field
+[2020-02-18 18:22:41,849] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/system/ HTTP/1.1" 200 68
+[2020-02-18 18:22:43,654] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3712
+[2020-02-18 18:22:43,700] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-18 18:22:43,702] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-18 18:22:43,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3712
+[2020-02-18 18:22:43,853] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-18 18:22:43,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-18 18:22:46,499] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_data_field
+[2020-02-18 18:22:46,504] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/system/ HTTP/1.1" 200 68
+[2020-02-18 18:22:47,496] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3712
+[2020-02-18 18:22:47,534] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-18 18:22:47,535] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-18 18:23:08,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4272
+[2020-02-18 18:23:08,909] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-18 18:23:08,911] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 991
+[2020-02-18 18:23:13,108] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_control_register
+[2020-02-18 18:23:13,114] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/system/ HTTP/1.1" 200 68
+[2020-02-18 18:23:14,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4272
+[2020-02-18 18:23:14,060] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-18 18:23:14,062] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 994
+[2020-02-18 18:25:57,631] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6277
+[2020-02-18 18:25:57,662] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-18 18:25:57,699] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4272
+[2020-02-18 18:25:57,701] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3712
+[2020-02-18 18:25:57,792] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-18 18:25:57,794] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 994
+[2020-02-18 18:25:57,797] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-18 18:25:57,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-19 14:20:47,546] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6277
+[2020-02-19 14:20:50,438] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-19 14:20:50,534] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4272
+[2020-02-19 14:20:50,537] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3712
+[2020-02-19 14:20:50,560] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-19 14:20:50,623] [log.py:228] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2020-02-19 14:20:50,623] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2723
+[2020-02-19 14:20:50,627] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-19 14:20:50,632] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 994
+[2020-02-19 14:20:50,634] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-19 14:20:50,637] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-19 14:43:43,585] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\api\data_field.py changed, reloading.

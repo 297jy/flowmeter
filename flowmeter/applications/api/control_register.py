@@ -21,7 +21,7 @@ def update_control_register(register_info):
 
     must_dict = {
         'id': int,
-        'address': str,
+        'field_val': str,
         'const_data': str,
         'remark': StrCheck.check_remark,
     }

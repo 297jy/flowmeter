@@ -1,5 +1,6 @@
 # coding=utf-8
 
+import json
 
 def extract_data_in_dict(data, keys):
     """
@@ -63,3 +64,31 @@ def transfer_hex_str(num):
     hex_str = char_dict.get(num, str(num)) + hex_str
     hex_str = '0x' + hex_str
     return hex_str
+
+
+def deserialize_obj(obj_str, class_name=None):
+    """
+    反序列化成简单对象
+    :param obj_str 待反序列化的对象字符串
+    :param class_name:
+    :return: class_name为None时直接返回对象字典，否则返回指定对象
+    """
+    obj_dict = json.loads(obj_str)
+    if class_name is None:
+        return obj_dict
+
+    obj = class_name()
+    for key, val in obj_dict:
+        setattr(obj, key, val)
+    return obj
+
+
+def serialize_obj(obj):
+    """
+    将对象序列化成字符串
+    :param obj:
+    :return:
+    """
+    obj_dict = dict(obj)
+    obj_str = json.dumps(obj_dict)
+    return obj_str

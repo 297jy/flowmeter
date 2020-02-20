@@ -8,7 +8,7 @@ class ControlRegister(models.Model):
     # 名称
     name = models.CharField(max_length=NAME_CHAR_LEN)
     # 地址
-    address = models.IntegerField()
+    field_val = models.IntegerField()
     # 固定数据
     const_data = models.IntegerField(null=True)
     # 备注
@@ -20,7 +20,7 @@ class ControlRegister(models.Model):
         return {
             "id": self.id,
             "name": self.name,
-            "address": self.address,
+            "field_val": self.field_val,
             "const_data": self.const_data,
             "remark": self.remark,
         }

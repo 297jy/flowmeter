@@ -16,7 +16,7 @@ def update_control_register(register_info):
     try:
         reg_id = register_info['id']
         register = ControlRegister.objects.get(id=reg_id)
-        register.address = register_info['address']
+        register.address = register_info['field_val']
         register.const_data = register_info['const_data']
         register.remark = register_info['remark']
         register.save()

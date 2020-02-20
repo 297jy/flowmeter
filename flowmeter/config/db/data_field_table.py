@@ -17,6 +17,13 @@ class DataField(models.Model):
     # 数据域名称
     field_name = models.CharField(max_length=const.FIELD_NAME_CHAR_LEN)
 
+    def keys(self):
+        s = ('name', 'begin_address', 'end_address', 'field_name')
+        return s
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+
     def get_dict(self):
         return {
             "id": self.id,

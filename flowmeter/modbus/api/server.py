@@ -43,7 +43,3 @@ class ModBusFactory(Factory):
     def buildProtocol(self, addr):
         return ModBus(self)
 
-
-endpoint = TCP4ServerEndpoint(reactor, 8007)
-endpoint.listen(SpreadFactory())
-reactor.run()

@@ -13,7 +13,7 @@ def transfer_data_to_display(reg_dict):
     将数据库中的数据，转为用户看的数据
     :return:
     """
-    reg_dict['address'] = transfer_hex_str(reg_dict['address'])
+    reg_dict['field_val'] = transfer_hex_str(reg_dict['field_val'])
     if reg_dict['const_data']:
         reg_dict['const_data'] = transfer_hex_str(reg_dict['const_data'])
     else:
@@ -25,9 +25,9 @@ def transfer_display_to_data(reg_dict):
     将用户看的数据,转为数据库中的数据
     :return:
     """
-    address = reg_dict['address']
+    address = reg_dict['field_val']
     address = address[2:]
-    reg_dict['address'] = int(address, 16)
+    reg_dict['field_val'] = int(address, 16)
     if reg_dict['const_data']:
         reg_dict['const_data'] = int(reg_dict['const_data'][2:], 16)
     else:

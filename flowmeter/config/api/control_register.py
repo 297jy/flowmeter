@@ -11,11 +11,18 @@ def find_control_registers():
     return registers
 
 
+def find_registers_by_field_val(field_val):
+
+    registers = core.find_control_registers({'field_val': field_val})
+
+    return registers
+
+
 def update_control_register(register_info):
 
     must_dict = {
         'id': int,
-        'address': int,
+        'field_val': int,
         'remark': StrCheck.check_remark,
     }
 
