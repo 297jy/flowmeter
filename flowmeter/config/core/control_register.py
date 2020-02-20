@@ -11,6 +11,15 @@ def find_control_registers(register_info):
     return registers
 
 
+def find_one_control_register(register_info):
+
+    try:
+        register = ControlRegister.objects.get(**register_info)
+        return register
+    except ControlRegister.DoesNotExist:
+        return None
+
+
 def update_control_register(register_info):
 
     try:

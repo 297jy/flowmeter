@@ -86,17 +86,18 @@
                 elem: '#register', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
                     {
-                        numbbers: true,
+                        align: 'center',
+                        numbers: true,
                         width: '5%',
                         title: '序号',
                         templet: function (data) {
                             return data.LAY_TABLE_INDEX + 1;
                         }
                     },
-                    {field: 'name', title: '名称'},
+                    {field: 'name', title: '名称', align: 'center'},
                     {field: 'field_val', edit: 'text', title: '域值', align: 'center'},
-                    {field: 'const_data', edit: 'text', title: '固定数据'},
-                    {field: 'remark', edit: 'text', templet: '#displayOmit', title: '备注'},
+                    {field: 'const_data', edit: 'text', title: '固定数据', align: 'center'},
+                    {field: 'remark', edit: 'text', templet: '#displayOmit', title: '备注', align: 'center'},
                 ]],
                 url: '/handler/system/?action=query_control_register',
                 toolbar: '#toolbarDemo',

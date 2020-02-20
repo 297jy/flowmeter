@@ -3,6 +3,7 @@
 from flowmeter.config.api import data_field
 from flowmeter.config.api import control_register
 from flowmeter.common.api import math
+from flowmeter.exceptions import ParameterErrorException
 
 __QUERY_OPE_CODE = 3
 
@@ -162,3 +163,30 @@ def get_opr_type(frame):
         for register in registers:
             if register.const_data == const_data:
                 return register.opr_type
+
+
+def get_register_by_opr_type(opr_type):
+
+    return control_register.find_register_by_opr_type(opr_type)
+
+
+def cal_crc(data_frame):
+    """
+    计算校验码
+    :param data_frame:
+    :return:
+    """
+    if len(data_frame & 1) != 0 or (len(data_frame) < 4):
+        raise ParameterErrorException("数据帧格式错误，无法生成校验码")
+
+    crc = (1 << 16) - 1
+    for byte in data_frame:
+        crc ^= byte
+        for j in range(0, 8):
+            move = crc & 1
+            crc >>= 1
+            if move > 0:
+                crc ^= int('A001', 16)
+    crc_h = crc >> 8
+    crc_l = crc - (crc_h << 8)
+    return crc_h, crc_l

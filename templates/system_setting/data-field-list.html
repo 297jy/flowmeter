@@ -64,16 +64,17 @@
                 elem: '#field', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
                     {
-                        numbbers: true,
+                        align: 'center',
+                        numbers: true,
                         width: '5%',
                         title: '序号',
                         templet: function (data) {
                             return data.LAY_TABLE_INDEX + 1;
                         }
                     },
-                    {field: 'name', title: '数据域名称'},
-                    {field: 'begin_address', edit: 'text', title: '开始地址'},
-                    {field: 'end_address', edit: 'text', title: '结束地址'},
+                    {field: 'name', title: '数据域名称', align: 'center'},
+                    {field: 'begin_address', edit: 'text', title: '开始地址', align: 'center'},
+                    {field: 'end_address', edit: 'text', title: '结束地址', align: 'center'},
                 ]],
                 url: '/handler/system/?action=query_data_field',
                 toolbar: '#toolbarDemo',

@@ -18,6 +18,13 @@ def find_registers_by_field_val(field_val):
     return registers
 
 
+def find_register_by_opr_type(opr_type):
+
+    register = core.find_one_control_register({'opr_type': opr_type})
+
+    return register
+
+
 def update_control_register(register_info):
 
     must_dict = {

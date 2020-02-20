@@ -20,3 +20,16 @@
 [2020-02-20 11:54:40,257] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_control_register
 [2020-02-20 11:54:42,336] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_control_register
 [2020-02-20 11:54:44,472] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-20 12:03:15,912] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-20 12:03:17,221] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-20 12:03:17,226] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-20 12:03:17,231] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-20 12:04:09,553] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-20 12:05:09,828] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-20 12:05:09,837] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-20 12:05:09,842] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-20 12:05:40,121] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-20 12:05:42,968] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-20 12:05:52,585] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-20 12:05:54,410] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-20 12:05:56,774] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
