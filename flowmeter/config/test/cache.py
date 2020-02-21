@@ -4,7 +4,7 @@ from django.test import TestCase
 from flowmeter.config.api import cache
 
 
-class TestUserApi(TestCase):
+class TestCacheApi(TestCase):
 
     def setUp(self):
 

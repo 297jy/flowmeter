@@ -2,6 +2,7 @@
 
 from flowmeter.config.core import dtu as core
 from flowmeter.common.api.validators import param_check, StrCheck
+from flowmeter.config.api import cache
 
 
 def find_dtu_by_no(dtu_no):
@@ -44,4 +45,16 @@ def find_meters_by_dtu_no(dtu_no):
     meters = core.find_dtu_meters(dtu)
 
     return meters
+
+
+def find_id_by_dtu_no(dtu_no):
+
+    keyname = 'dtu_no_' + dtu_no
+    if cache.is_exists(keyname):
+        return cache.get_int(keyname)
+
+    dtu = core.find_one_dtu({'dtu_no': dtu_no})
+    cache.set_int(keyname, dtu.id)
+
+    return dtu.id
 

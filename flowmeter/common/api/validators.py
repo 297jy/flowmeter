@@ -174,6 +174,83 @@ class WhiteListCheck:
         raise ParameterErrorException("{} 不属于用户状态的基本类型：{}", format(state_type, str(state_type_list)))
 
     @staticmethod
+    def check_valve_state(state_type):
+
+        state_type_list = [const.VALVE_STATE_OPEN, const.VALVE_STATE_CLOSE, const.UNKNOWN_VALUE]
+
+        for now_state in state_type_list:
+            if now_state == state_type:
+                return
+
+        raise ParameterErrorException("{} 不属于阀门状态的基本类型：{}", format(state_type, str(state_type_list)))
+
+    @staticmethod
+    def check_recharge_state(state_type):
+
+        state_type_list = [const.RECHARGE_STATE_OPEN, const.RECHARGE_STATE_CLOSE, const.UNKNOWN_VALUE]
+
+        for now_state in state_type_list:
+            if now_state == state_type:
+                return
+
+        raise ParameterErrorException("{} 不属于预充值状态的基本类型：{}", format(state_type, str(state_type_list)))
+
+    @staticmethod
+    def check_battery_pressure_state(state_type):
+
+        state_type_list = [const.BATTERY_PRESSURE_STATE_ERROR, const.BATTERY_PRESSURE_STATE_NORMAL, const.UNKNOWN_VALUE]
+
+        for now_state in state_type_list:
+            if now_state == state_type:
+                return
+
+        raise ParameterErrorException("{} 不属于电池欠压状态的基本类型：{}", format(state_type, str(state_type_list)))
+
+    @staticmethod
+    def check_valve_error_flag(flag_type):
+
+        flag_type_list = [const.VALVE_ERROR_FLAG_TRUE, const.VALVE_ERROR_FLAG_FALSE, const.UNKNOWN_VALUE]
+
+        for now_flag in flag_type_list:
+            if now_flag == flag_type:
+                return
+
+        raise ParameterErrorException("{} 不属阀门错误标志的基本类型：{}", format(flag_type, str(flag_type_list)))
+
+    @staticmethod
+    def check_owe_state(state_type):
+
+        state_type_list = [const.OWE_STATE_TRUE, const.OWE_STATE_FALSE, const.UNKNOWN_VALUE]
+
+        for now_state in state_type_list:
+            if now_state == state_type:
+                return
+
+        raise ParameterErrorException("{} 不属于欠费状态的基本类型：{}", format(state_type, str(state_type_list)))
+
+    @staticmethod
+    def check_sensor_state(state_type):
+
+        state_type_list = [const.SENSOR_ERROR_FLAG_TRUE, const.SENSOR_ERROR_FLAG_FALSE, const.UNKNOWN_VALUE]
+
+        for now_state in state_type_list:
+            if now_state == state_type:
+                return
+
+        raise ParameterErrorException("{} 不属于传感器状态的基本类型：{}", format(state_type, str(state_type_list)))
+
+    @staticmethod
+    def check_online_state(state_type):
+
+        state_type_list = [const.STATE_ONLINE, const.STATE_OFFLINE, const.UNKNOWN_STATE]
+
+        for now_state in state_type_list:
+            if now_state == state_type:
+                return
+
+        raise ParameterErrorException("{} 不属于仪表在线状态的基本类型：{}", format(state_type, str(state_type_list)))
+
+    @staticmethod
     def check_opr_type(opr_type):
 
         type_list = [

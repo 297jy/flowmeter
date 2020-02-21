@@ -5,6 +5,7 @@ from twisted.internet.protocol import Factory
 from twisted.internet.endpoints import TCP4ServerEndpoint
 from twisted.internet import reactor
 from flowmeter.exceptions import OfflineException
+from flowmeter.modbus.api import frame
 
 import logging
 
@@ -108,7 +109,7 @@ class FlowMeterServer(Protocol):
             # 回应心跳包
             self.transport.write(data_frame)
         else:
-            pass
+            data = frame.parse_data_frame(data_frame)
 
 
 class ModBusFactory(Factory):

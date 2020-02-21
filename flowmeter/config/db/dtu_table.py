@@ -12,5 +12,5 @@ class Dtu(models.Model):
     # DTU备注
     remark = models.CharField(max_length=REMARK_CHAR_LEN)
     # 心跳包编号
-    dtu_no = models.IntegerField()
+    dtu_no = models.IntegerField(unique=True)
 

@@ -16,6 +16,8 @@ class DtuRegion(models.Model):
     right = models.IntegerField()
     # 区间对应的厂商
     manufacturer = models.ForeignKey(User, on_delete=models.CASCADE)
+    # 该区间已经使用的数量
+    used_num = models.IntegerField()
 
     class Meta:
         ordering = ['left']

@@ -124,3 +124,5 @@
 [2020-02-20 12:05:56,775] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
 [2020-02-20 12:15:12,776] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\api\control_register.py changed, reloading.
 [2020-02-20 12:15:13,438] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-20 21:57:36,430] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6277
+[2020-02-21 11:22:44,046] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.

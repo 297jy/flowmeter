@@ -4,6 +4,8 @@ from flowmeter.config.api import data_field
 from flowmeter.config.api import control_register
 from flowmeter.common.api import math
 from flowmeter.exceptions import ParameterErrorException
+from flowmeter.config.db.operator_table import Operator
+
 
 __QUERY_OPE_CODE = 3
 
@@ -163,6 +165,25 @@ def get_opr_type(frame):
         for register in registers:
             if register.const_data == const_data:
                 return register.opr_type
+
+
+def get_field_val(frame, opr_type):
+    """
+    获取域值
+    :param frame:
+    :param opr_type:
+    :return:
+    """
+    # 数据域在数组中开始的索引
+    __DATA_FIELD_BEGIN_INDEX = 4
+    # 数据域在数组中结束的索引
+    __DATA_FIELD_END_INDEX = 6
+    if opr_type == Operator.RECHARGE:
+        return math.byte_arr_convert_int(frame[__DATA_FIELD_BEGIN_INDEX: __DATA_FIELD_END_INDEX])
+    elif opr_type == Operator.SET_FLOW_RATIO:
+        return math.calculate_double(frame[__DATA_FIELD_BEGIN_INDEX: __DATA_FIELD_END_INDEX])
+    elif opr_type == Operator.SET_METER_ADDRESS:
+        return math.byte_arr_convert_int(frame[__DATA_FIELD_BEGIN_INDEX: __DATA_FIELD_END_INDEX])
 
 
 def get_register_by_opr_type(opr_type):

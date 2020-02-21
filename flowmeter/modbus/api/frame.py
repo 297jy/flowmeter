@@ -16,11 +16,13 @@ def parse_data_frame(data_frame):
         frame['data'] = core.get_frame_data(data_frame)
     else:
         frame['opr_type'] = core.get_opr_type(data_frame)
+        frame['val'] = core.get_field_val(data_frame, frame['opr_type'])
 
 
 def generate_data_frame(address, opr_type, val=None):
     """
     根据操作类型，生成数据帧
+    :param address:
     :param opr_type:
     :param val:
     :return:

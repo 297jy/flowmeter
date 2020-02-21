@@ -4,6 +4,7 @@ from twisted.internet.protocol import Protocol
 from twisted.internet.protocol import Factory
 from twisted.internet.endpoints import TCP4ServerEndpoint
 from twisted.internet import reactor
+from flowmeter.modbus.api import frame
 
 clients = []
 
@@ -33,7 +34,7 @@ class ModBus(Protocol):
                 if client != self:
                     client.transport.write(data)
         else:
-            print(data)
+            pass
 
 
 class ModBusFactory(Factory):

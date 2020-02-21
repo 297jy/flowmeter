@@ -23,6 +23,11 @@ def get_int(name):
     return int(val) if val else None
 
 
+def set_int(name, val):
+    conn = get_redis_connection('default')
+    conn.set(name, val)
+
+
 def get_list(name):
     conn = get_redis_connection('default')
     val = conn.get(name)
