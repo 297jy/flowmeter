@@ -39,6 +39,19 @@ def set_list(name, val_list):
     conn.set(name, val_list)
 
 
+def __is_obj(obj):
+    """
+    判断是否是对象
+    :param obj:
+    :return:
+    """
+    base_type_list = [int, float, str]
+    for base in base_type_list:
+        if isinstance(obj, base):
+            return False
+    return True
+
+
 def add_sorted_set(name, obj, score):
     """
     添加到有序集合中
@@ -48,8 +61,9 @@ def add_sorted_set(name, obj, score):
     :return:
     """
 
-    obj = serialize_obj(obj)
     conn = get_redis_connection('default')
+    if __is_obj(obj):
+        obj = serialize_obj(obj)
     conn.zadd(name, {obj: score})
 
 
@@ -62,7 +76,12 @@ def get_sorted_set_first(name, class_name=None):
     """
     conn = get_redis_connection('default')
     res = conn.zrange(name, 0, 0)
-    return deserialize_obj(res[0], class_name) if len(res) > 0 else None
+
+    if len(res) == 0:
+        return None
+
+    val = res[0]
+    return deserialize_obj(val, class_name) if __is_obj(val) else val
 
 
 def set_obj(keyname, obj):

@@ -1,8 +1,11 @@
 # coding=utf-8
 
+import datetime
 from flowmeter.config.api import meter as conf_meter_api
 from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.db.operator_table import Operator
+from flowmeter.config.api import log as conf_log_api
+from flowmeter.config.db.log_table import OprLog
 
 
 def get_opr_handler(opr_type):
@@ -62,10 +65,18 @@ def update_meter_data(dtu_no, data):
     """
     opr_type = data['opr_type']
     if opr_type == Operator.QUERY:
-        conf_meter_api.update_meter_data(dtu_no, data['address'], data)
+        data_dict = data['data']
+        # 添加更新时间
+        data_dict['last_update_time'] = datetime.datetime.now()
+        conf_meter_api.update_meter_data(dtu_no, data['address'], data_dict)
     elif opr_type == Operator.RECHARGE:
         __add_surplus_gas(dtu_no, data['address'], data['val'])
     elif opr_type == Operator.SET_METER_ADDRESS:
         __set_meter_address(dtu_no, data['address'], data['val'])
     elif opr_type == Operator.SET_FLOW_RATIO:
         __set_flow_ratio(dtu_no, data['address'], data['val'])
+
+
+def update_log_success_state(log_id):
+
+    conf_log_api.update_opr_log_state(log_id, OprLog.SUCCESS_STATE)

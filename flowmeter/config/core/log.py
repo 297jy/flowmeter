@@ -28,3 +28,9 @@ def find_earliest_opr_log(log_info):
 
     return log
 
+
+def update_opr_log_state(log, state):
+
+    log.state = state
+    log.save()
+

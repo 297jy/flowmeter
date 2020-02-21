@@ -11,26 +11,19 @@ def add_operator(opr):
     :return:
     """
 
-    must_dict = {
-        'user_id': int,
-        'opr_type': WhiteListCheck.check_opr_type,
-        "opr_time": int,
-        "dtu_no": int,
-        "meter_address": int,
-    }
-    param_check(opr, must_dict=must_dict, extra=True)
-
-    keyname = 'operator' + str(opr['dtu_no'])
-    cache.add_sorted_set(keyname, opr, opr['opr_time'])
+    keyname = 'operator_' + opr.opr_type + '_' + str(opr.dtu_no) + '_' + str(opr.address)
+    cache.add_sorted_set(keyname, opr.log_id, opr.opr_time)
 
 
-def get_earliest_operator(dtu_no):
+def get_earliest_operator(dtu_no, address, opr_type):
     """
     获取日期最早的操作
+    :param opr_type:
+    :param address:
     :param dtu_no:
     :return:
     """
-    keyname = 'operator' + str(dtu_no)
+    keyname = 'operator_' + opr_type + '_' + str(dtu_no) + '_' + str(address)
     opr = cache.get_sorted_set_first(keyname)
     return opr
 

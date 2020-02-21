@@ -42,6 +42,12 @@ def find_opr_log_by_id(log_id):
     return log
 
 
+def update_opr_log_state(log_id, state):
+
+    log = find_opr_log_by_id(log_id)
+    core.update_opr_log_state(log, state)
+
+
 
 
 
