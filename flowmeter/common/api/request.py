@@ -3,6 +3,7 @@
 import json
 
 from django.http import FileResponse
+from flowmeter.common.common import Page
 
 
 def get_user(request):
@@ -77,28 +78,18 @@ def is_login(request):
         return False
 
 
-def get_page_num(request):
+def get_page(request):
     """
-    获取当前表格的页数
+    获取分页对象
     :param request:
     :return:
     """
-    page_num = None
     if request.method == 'GET':
-        page_num = int(request.GET.get('page', 0))
-    return page_num
-
-
-def get_page_limit(request):
-    """
-    获取每页最多显示的数据条数
-    :param request:
-    :return:
-    """
-    limit = None
-    if request.method == 'GET':
+        index = int(request.GET.get('page', 0))
         limit = int(request.GET.get('limit', 0))
-    return limit
+        return Page(index, limit)
+    else:
+        return None
 
 
 def get_file(request):

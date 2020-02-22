@@ -29,6 +29,7 @@ from flowmeter.views import system_setting
 handler_urlpatterns = [
     path('login/', login.login_handler),
     path('admin/', user.user_handler),
+    path('manufacturer/', user.user_handler),
     path('user/', user.user_handler),
     path('file/', file.file_handler),
     path('system/', system_setting.system_setting_handler),
@@ -45,6 +46,12 @@ admin_urlpatterns = [
     path('import/', user.admin_import),
 ]
 
+manufacturer_urlpatterns = [
+    path('view/', user.manufacturer_view),
+    path('add/', user.manufacturer_add),
+    path('import/', user.manufacturer_import),
+]
+
 system_setting_urlpatterns = [
     path('register/', system_setting.control_register_view),
     path('frame/', system_setting.data_field_view),
@@ -58,6 +65,7 @@ urlpatterns = [
     path('welcome/', welcome.welcome_view),
     path('login/', login.login_view),
     path('admin/', include(admin_urlpatterns)),
+    path('manufacturer/', include(manufacturer_urlpatterns)),
     path('system/', include(system_setting_urlpatterns)),
     path('logout/', logout.logout_view),
 ]

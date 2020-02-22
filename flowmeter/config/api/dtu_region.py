@@ -11,7 +11,7 @@ def add_region(region_info):
     :return:
     """
     must_dict = {
-        "user_id": int,
+        "manufacturer_id": int,
         "left": int,
         "right": int,
         "used_num": int,

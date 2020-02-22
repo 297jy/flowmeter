@@ -247,6 +247,9 @@ DATETIME_FORMAT_STR = '%Y-%m-%d %H:%M:%S'
 # 临时文件目录路径
 TMP_FILE_DIRECTORY_PATH = os.path.join(BASE_DIR, 'file', 'tmp')
 
+# 心跳包最大数目
+MAX_DTU_NO = 1 << 16 - 1
+
 # 异步任务队列配置
 # Celery application definition
 CELERY_BROKER_URL = 'redis://localhost:6379'

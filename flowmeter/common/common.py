@@ -2,6 +2,18 @@
 
 import json
 
+
+class Page:
+    """
+    分页对象
+    """
+    def __init__(self, index, limit):
+        # 页的索引
+        self.index = index
+        # 每页最多数据条数
+        self.limit = limit
+
+
 def extract_data_in_dict(data, keys):
     """
     从data字典提取keys列表中存在的键和相对应的值

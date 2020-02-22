@@ -15,16 +15,25 @@ from flowmeter.common import const
 from flowmeter.exceptions import NotUniqueException
 
 
-def get_users(filters=None):
+def get_users(filters=None, page=None):
     """
     根据查询条件，查找用户
+    :param page: 分页对象
     :param filters:
     :return:
     """
-    if filters:
-        users = User.objects.filter(filters)
+    if page is None:
+        if filters:
+            users = User.objects.filter(filters)
+        else:
+            users = User.objects.all()
     else:
-        users = User.objects.all()
+        start_index = page.limit * (page.index - 1)
+        end_index = page.index * page.limit
+        if filters:
+            users = User.objects.filter(filters)[start_index: end_index]
+        else:
+            users = User.objects.all()[start_index: end_index]
     return users
 
 
@@ -82,7 +91,8 @@ def create_user(user_info):
     user_info['role'] = role
     user_info['create_time'] = datetime.datetime.now()
 
-    User.objects.create(**user_info)
+    user = User.objects.create(**user_info)
+    return user
 
 
 def switch_user_state_by_id(user_id):

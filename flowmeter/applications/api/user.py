@@ -1,4 +1,5 @@
 # coding=utf-8
+
 from flowmeter.common.api.validators import param_check
 from flowmeter.common.api.validators import StrCheck, ListCheck, IntCheck, WhiteListCheck
 from flowmeter.applications.core import user as user_core
@@ -7,10 +8,11 @@ from flowmeter.exceptions import NotUniqueException
 from flowmeter.common.api import file as file_api
 
 
-def find_admins_by_query_terms(query_terms):
+def find_admins_by_query_terms(query_terms, page=None):
     """
     根据查询条件来查询管理员
     查询条件包括：管理员创建的时间，邮箱，手机，备注
+    :param page: 分页对象
     :param query_terms: {
                             "begin_time": "管理员查询创建的开始时间",
                             "end_time": "管理员查询创建的结束时间",
@@ -26,7 +28,7 @@ def find_admins_by_query_terms(query_terms):
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
 
-    admins = user_core.find_admins_by_query_terms(query_terms)
+    admins = user_core.find_admins_by_query_terms(query_terms, page)
 
     return admins
 
@@ -46,10 +48,11 @@ def switch_dtu_user_state_by_id(dtu_user_id):
     user_core.switch_dtu_user_state_by_id(dtu_user_id)
 
 
-def find_manufacturers_by_query_terms(query_terms):
+def find_manufacturers_by_query_terms(query_terms, page=None):
     """
     根据查询条件来查询厂商
     查询条件包括：厂商创建的时间，邮箱，手机，备注
+    :param page: 分页对象
     :param query_terms: {
                             "begin_time": "厂商查询创建的开始时间",
                             "end_time": "厂商查询创建的结束时间",
@@ -59,13 +62,13 @@ def find_manufacturers_by_query_terms(query_terms):
     """
 
     optional_dict = {
-        "begin_time": int,
-        "end_time": int,
+        "begin_time": str,
+        "end_time": str,
         "query_box": str,
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
 
-    manufacturers = user_core.find_manufacturers_by_query_terms(query_terms)
+    manufacturers = user_core.find_manufacturers_by_query_terms(query_terms, page)
 
     return manufacturers
 
@@ -129,7 +132,7 @@ def create_manufacturer(manufacturer_info):
     }
     param_check(manufacturer_info, must_dict, optional_dict)
 
-    user_core.create_manufacturer(manufacturer_info)
+    return user_core.create_manufacturer(manufacturer_info)
 
 
 def create_dtu_user(dtu_user_info):

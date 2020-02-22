@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>管理员列表</title>
+    <title>供气商列表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -27,7 +27,7 @@
             <span class="layui-breadcrumb">
                 <a href="">首页</a>
                 <a href="">
-                    <cite>管理员列表</cite>
+                    <cite>供气商列表</cite>
                 </a>
             </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
@@ -50,7 +50,7 @@
                                    id="end_time">
                         </div>
                         <div class="layui-inline layui-col-md2">
-                            <input type="text" name="query_box" placeholder="请输入用户名\联系电话\邮箱" autocomplete="off"
+                            <input type="text" name="query_box" placeholder="请输入供气商名称\联系电话\邮箱" autocomplete="off"
                                    class="layui-input" id="query_box">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
@@ -61,7 +61,7 @@
                     </form>
                 </div>
                 <div class="layui-card-body ">
-                    <table lay-filter="admin" id="admin">
+                    <table lay-filter="manufacturer" id="manufacturer">
                     </table>
                 </div>
             </div>
@@ -73,10 +73,10 @@
     <button class="layui-btn layui-btn-danger" lay-event="del_batch">
         <i class="layui-icon"></i>批量删除
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加管理员','/admin/add/',600,400)">
+    <button class="layui-btn" onclick="xadmin.open('添加供气商','/manufacturer/add/',700,500)">
         <i class="layui-icon"></i>添加
     </button>
-    <button class="layui-btn layui-btn-sm" onclick="xadmin.open('导入管理员','/admin/import/',400,200)">导入</button>
+    <button class="layui-btn layui-btn-sm" onclick="xadmin.open('导入供气商','/manufacturer/import/',400,200)">导入</button>
     <button class="layui-btn layui-btn-sm" lay-event="export">导出</button>
 </script>
 {% verbatim %}
@@ -109,7 +109,7 @@
             form = layui.form;
 
             table.render({
-                elem: '#admin', //指定原始表格元素选择器（推荐id选择器）
+                elem: '#manufacturer', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
                     {checkbox: true, width: '5%', field: 'id'},
                     {
@@ -120,15 +120,27 @@
                             return data.LAY_TABLE_INDEX + 1;
                         }
                     },
-                    {field: 'name', edit: 'text', width: '15%', title: '用户名'},
+                    {field: 'name', edit: 'text', width: '15%', title: '供气商名称'},
                     {field: 'phone', edit: 'text', width: '10%', title: '联系电话'},
-                    {field: 'email', edit: 'text', width: '20%', title: '邮箱'},
+                    {field: 'email', edit: 'text', width: '10%', title: '邮箱'},
+                    {
+                        width: '5%', title: 'DTU数量',
+                        templet:function (data) {
+                            return data.region['used_num'];
+                        }
+                    },
+                    {
+                        edit: 'text', width: '10%', title: 'DTU最大数量',
+                        templet:function (data) {
+                            return data.region['total_num'];
+                        }
+                    },
                     {field: 'remark', edit: 'text', width: '25%', templet: '#displayOmit', title: '备注'},
                     {field: 'create_time', width: '10%', title: '创建时间'},
                     {
                         field: 'state',
                         templet: '#switchState',
-                        width: '10%',
+                        width: '5%',
                         title: '状态',
                         templet: function (data) {
                             if (data.state === '启用') {
@@ -143,7 +155,7 @@
                         }
                     },
                 ]],
-                url: '/handler/admin/?action=query_admin',
+                url: '/handler/manufacturer/?action=query_manufacturer',
                 page: true,
                 toolbar: '#toolbarDemo',
                 defaultToolbar: ['filter', 'print'],
@@ -151,24 +163,25 @@
             });
             form.on('switch(state)', function (data) {
                 post({
-                    "param": JSON.stringify({'admin_id': data.value}),
-                    "action": "switch_admin_state"
-                }, '/handler/admin/', function (data) {
+                    "param": JSON.stringify({'manufacturer_id': data.value}),
+                    "action": "switch_manufacturer_state"
+                }, '/handler/manufacturer/', function (data) {
                     if (!data.success) {
                         layer.msg(data.msg, {icon: 5, time: 1000});
                     }
                 });
             });
             //监听单元格编辑
-            table.on('edit(admin)',
+            table.on('edit(manufacturer)',
                 function (obj) {
                     let value = obj.value, data = obj.data, field = obj.field;
                     delete data.create_time;
+                    delete data.region;
                     delete data.role;
                     post({
                         "param": JSON.stringify(data),
-                        "action": "edit_admin"
-                    }, '/handler/admin/', function (data) {
+                        "action": "edit_manufacturer"
+                    }, '/handler/manufacturer/', function (data) {
                         if (!data.success) {
                             layer.msg(data.msg, {icon: 5, time: 2000});
                         }
@@ -176,26 +189,26 @@
                 });
 
             //头工具栏事件
-            table.on('toolbar(admin)',
+            table.on('toolbar(manufacturer)',
                 function (obj) {
                     var checkStatus = table.checkStatus(obj.config.id);
                     switch (obj.event) {
                         case 'del_batch':
                             layer.confirm('确认要删除吗？', function (index) {
-                                let checkStatus = table.checkStatus('admin');
+                                let checkStatus = table.checkStatus('manufacturer');
                                 let ids = [];
                                 for (let i = 0; i < checkStatus.data.length; i++) {
                                     ids.push(checkStatus.data[i].id);
                                 }
                                 post({
-                                    "param": JSON.stringify({'admin_ids': ids}),
-                                    "action": "del_batch_admin"
-                                }, '/handler/admin/', function (data) {
+                                    "param": JSON.stringify({'manufacturer_ids': ids}),
+                                    "action": "del_batch_manufacturer"
+                                }, '/handler/manufacturer/', function (data) {
                                     if (!data.success) {
                                         layer.msg(data.msg, {icon: 5, time: 1000});
                                     } else {
                                         layer.msg('删除成功!', {icon: 1});
-                                        table.reload('admin');
+                                        table.reload('manufacturer');
                                     }
                                 });
                             });
@@ -207,8 +220,8 @@
                                     "end_time": $("#end_time").val(),
                                     "query_box": $("#query_box").val(),
                                 }),
-                                "action": "export_admin"
-                            }, '/handler/admin/', function (res) {
+                                "action": "export_manufacturer"
+                            }, '/handler/manufacturer/', function (res) {
                                 if (!res.success) {
                                     layer.msg(res.msg, {icon: 5, time: 3000});
                                 } else {
@@ -217,15 +230,6 @@
                                     });
                                     let action = 'download_file';
                                     window.open('/handler/file/?param='+ param + '&action='+action);
-                                    /**
-                                    get({
-                                        'action': 'download_file',
-                                        'param': JSON.stringify({
-                                            "filename": res.data,
-                                        }),
-                                    }, '/handler/file/', function (res) {
-
-                                    },)**/
                                 }
                             });
                             break;
@@ -234,7 +238,7 @@
             //监听提交
             form.on('submit(search)',
                 function (data) {
-                    table.reload('admin', {
+                    table.reload('manufacturer', {
                         "where": {
                             "param": JSON.stringify(data.field),
                         }

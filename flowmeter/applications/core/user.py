@@ -9,6 +9,7 @@ from flowmeter.common.api.excel import Excel
 from flowmeter.common.api import password as password_api
 from flowmeter import settings
 from flowmeter.exceptions import NotUniqueException
+from flowmeter.config.api import dtu_region as conf_region_api
 
 
 def __transfer_user_obj_to_dict(users):
@@ -21,12 +22,13 @@ def __transfer_user_obj_to_dict(users):
     for user in users:
         user_dict = user.get_dict()
         __transfer_database_to_display(user_dict)
+        # 避免导出用户权限
         del user_dict['actions']
         user_dicts.append(user_dict)
     return user_dicts
 
 
-def __find_users_by_query_terms(query_terms):
+def __find_users_by_query_terms(query_terms, page=None):
 
     query_box = query_terms.get('query_box')
     begin_time = query_terms.get('begin_time')
@@ -49,7 +51,7 @@ def __find_users_by_query_terms(query_terms):
     # 构造角色的查询条件
     query_role = QueryTerms.make_and_query_terms(role=role)
 
-    users = conf_user_api.get_users(query_box.get_filters() & query_role.get_filters() & query_time.get_filters())
+    users = conf_user_api.get_users(query_box.get_filters() & query_role.get_filters() & query_time.get_filters(), page)
 
     return __transfer_user_obj_to_dict(users)
 
@@ -77,7 +79,7 @@ def __create_user(user_info):
     # 设置默认的用户密码
     user_info['password'] = password_api.password_encryption(const.DEFAULT_PASSWORD)
 
-    conf_user_api.create_user(user_info)
+    return conf_user_api.create_user(user_info)
 
 
 def __edit_user(user_info):
@@ -95,14 +97,38 @@ def __del_batch_user(user_ids):
     conf_user_api.del_batch_user(user_ids)
 
 
-def find_admins_by_query_terms(query_terms):
+def find_admins_by_query_terms(query_terms, page=None):
     query_terms['role'] = const.RoleType.ADMIN
-    return __find_users_by_query_terms(query_terms)
+    return __find_users_by_query_terms(query_terms, page)
 
 
-def find_manufacturers_by_query_terms(query_terms):
+def __get_manufacturer_dtu_region(manufacturer_id):
+    """
+    获得每个供气商的dtu区间
+    :param manufacturer_id:
+    :return:
+    """
+    region = conf_region_api.find_region_by_manufacturer_id(manufacturer_id)
+    if region is None:
+        return {
+            "id": None,
+            "total_num": 0,
+            "used_num": 0,
+        }
+    else:
+        return {
+            "id": region.id,
+            "total_num": region.right - region.left + 1,
+            "used_num": region.used_num
+        }
+
+
+def find_manufacturers_by_query_terms(query_terms, page=None):
     query_terms['role'] = const.RoleType.MANUFACTURER
-    return __find_users_by_query_terms(query_terms)
+    manufacturers = __find_users_by_query_terms(query_terms, page)
+    for man in manufacturers:
+        man['region'] = __get_manufacturer_dtu_region(man['id'])
+    return manufacturers
 
 
 def find_dtu_users_by_query_terms(query_terms):
@@ -119,7 +145,7 @@ def create_admin(admin_info):
 def create_manufacturer(manufacturer_info):
 
     manufacturer_info['role'] = const.RoleType.MANUFACTURER
-    __create_user(manufacturer_info)
+    return __create_user(manufacturer_info)
 
 
 def create_dtu_user(dtu_user_info):
