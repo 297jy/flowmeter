@@ -23,7 +23,6 @@ def add_dtu(dtu_info):
     :return:
     """
     must_dict = {
-        'protocol_id': int,
         'dtu_no': int,
         'region_id': int,
     }

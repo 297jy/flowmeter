@@ -15,7 +15,7 @@ class DtuRegion(models.Model):
     # 右区间
     right = models.IntegerField()
     # 区间对应的厂商
-    manufacturer = models.ForeignKey(User, on_delete=models.CASCADE)
+    manufacturer = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
     # 该区间已经使用的数量
     used_num = models.IntegerField()
 

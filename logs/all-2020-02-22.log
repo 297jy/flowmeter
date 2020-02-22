@@ -1,0 +1,27 @@
+[2020-02-22 11:53:22,312] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-22 11:53:27,489] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2020-02-22 11:53:27,517] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-02-22 11:53:32,053] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-02-22 11:53:32,067] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 96
+[2020-02-22 11:53:33,300] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6277
+[2020-02-22 11:53:33,339] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-22 11:53:33,374] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4382
+[2020-02-22 11:53:33,375] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3803
+[2020-02-22 11:53:33,376] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11022
+[2020-02-22 11:53:33,491] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-22 11:53:33,501] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-22 11:53:33,503] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-22 11:53:33,505] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-02-22 11:53:33,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 1017
+[2020-02-22 11:53:33,507] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-22 12:05:23,210] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\user_table.py changed, reloading.
+[2020-02-22 12:05:23,919] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-22 14:17:37,263] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11022
+[2020-02-22 14:17:37,355] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-22 14:17:37,365] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-02-22 14:17:53,770] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/loading-1.gif HTTP/1.1" 200 701
+[2020-02-22 14:17:53,801] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/add/ HTTP/1.1" 200 7118
+[2020-02-22 14:17:56,291] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-22 14:18:02,461] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 160
+[2020-02-22 14:25:58,522] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\dtu_region_table.py changed, reloading.
+[2020-02-22 14:25:59,221] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
