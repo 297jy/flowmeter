@@ -184,3 +184,12 @@
 [2020-02-22 18:43:07,762] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
 [2020-02-22 18:43:09,109] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
 [2020-02-22 18:43:15,548] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-22 18:43:30,422] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-22 18:43:30,437] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-22 18:43:30,445] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-22 18:43:30,456] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-22 18:47:31,228] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：edit_manufacturer
+[2020-02-22 18:47:33,835] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：edit_manufacturer
+[2020-02-22 18:48:43,273] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：switch_manufacturer_state
+[2020-02-22 18:48:43,580] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：switch_manufacturer_state
+[2020-02-23 13:56:29,065] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer

@@ -5,7 +5,7 @@ import time
 from flowmeter.config.api import user as conf_user_api
 from flowmeter.common.api.query import QueryTerms
 from flowmeter.common import const
-from flowmeter.common.api.excel import Excel
+from flowmeter.common.api.excel import Excel, ExcelField
 from flowmeter.common.api import password as password_api
 from flowmeter import settings
 from flowmeter.exceptions import NotUniqueException
@@ -108,26 +108,27 @@ def __get_manufacturer_dtu_region(manufacturer_id):
     :param manufacturer_id:
     :return:
     """
-    region = conf_region_api.find_region_by_manufacturer_id(manufacturer_id)
-    if region is None:
-        return {
-            "id": None,
-            "total_num": 0,
-            "used_num": 0,
-        }
-    else:
-        return {
-            "id": region.id,
-            "total_num": region.right - region.left + 1,
-            "used_num": region.used_num
-        }
+    regions = conf_region_api.find_region_by_manufacturer_id(manufacturer_id)
+    total_num = 0
+    used_num = 0
+    # 统计所有区间的总DTU数量和已经使用的个数
+    for region in regions:
+        total_num += region.right - region.left + 1
+        used_num += region.used_num
+
+    return {
+        "total_num": total_num,
+        "used_num": used_num
+    }
 
 
 def find_manufacturers_by_query_terms(query_terms, page=None):
     query_terms['role'] = const.RoleType.MANUFACTURER
     manufacturers = __find_users_by_query_terms(query_terms, page)
     for man in manufacturers:
-        man['region'] = __get_manufacturer_dtu_region(man['id'])
+        region = __get_manufacturer_dtu_region(man['id'])
+        man['dtu_total_num'] = region['total_num']
+        man['dtu_used_num'] = region['used_num']
     return manufacturers
 
 
@@ -199,15 +200,13 @@ def del_batch_dtu_user(dtu_user_id):
     __del_batch_user(dtu_user_id)
 
 
-def __user_import(filename, prop_list, name_list):
+def __user_import(filename, excel_fields):
     """
     从文件中批量导入用户
     :param filename: 文件名
-    :param prop_list: 用户属性列表
-    :param name_list: excel表格中的列名
     :return:
     """
-    excel = Excel(prop_list=prop_list, name_list=name_list)
+    excel = Excel(excel_fields)
     excel.read(filename)
     users = excel.obj_dict_list
     for user in users:
@@ -224,7 +223,12 @@ def admin_import(filename):
     """
     prop_list = ['name', 'phone', 'email', 'state', 'remark', 'create_time']
     name_list = ['用户名', '联系电话', '邮箱', '状态', '备注', '创建时间']
-    admins = __user_import(filename, prop_list, name_list)
+    require_list = [True, True, True, True, True, False, True]
+    excel_fields = []
+    for index in range(0, len(prop_list)):
+        if require_list[index]:
+            excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
+    admins = __user_import(filename, excel_fields)
     for admin in admins:
         try:
             create_admin(admin)
@@ -239,8 +243,13 @@ def manufacturer_import(filename):
     :return:
     """
     prop_list = ['name', 'phone', 'email', 'state', 'remark', 'create_time']
-    name_list = ['厂商名称', '联系电话', '邮箱', '状态', '备注', '创建时间']
-    manufacturers = __user_import(filename, prop_list, name_list)
+    name_list = ['供气商名称', '联系电话', '邮箱', '状态', '备注', '创建时间']
+    require_list = [True, True, True, True, True, False, True]
+    excel_fields = []
+    for index in range(0, len(prop_list)):
+        if require_list[index]:
+            excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
+    manufacturers = __user_import(filename, excel_fields)
     for manufacturer in manufacturers:
         create_manufacturer(manufacturer)
 
@@ -253,7 +262,12 @@ def dtu_user_import(filename):
     """
     prop_list = ['name', 'phone', 'email', 'state', 'remark', 'create_time']
     name_list = ['姓名', '联系电话', '邮箱', '状态', '备注', '创建时间']
-    dtu_users = __user_import(filename, prop_list, name_list)
+    require_list = [True, True, True, True, True, False, True]
+    excel_fields = []
+    for index in range(0, len(prop_list)):
+        if require_list[index]:
+            excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
+    dtu_users = __user_import(filename, excel_fields)
     for dtu_user in dtu_users:
         create_dtu_user(dtu_user)
 
@@ -309,14 +323,12 @@ def transfer_display_to_database(user_info):
             user_info['name'] = str(int(name))
 
 
-def __user_export(query_terms, sheet_name, filename, prop_list, name_list):
+def __user_export(user_dict_list, sheet_name, filename, excel_fields):
     """
     将用户列表导出到文件中
     """
 
-    user_dict_list = __find_users_by_query_terms(query_terms)
-
-    excel = Excel(prop_list=prop_list, name_list=name_list)
+    excel = Excel(excel_fields)
     excel.obj_dict_list = user_dict_list
     excel.write(filename, sheet_name)
 
@@ -331,7 +343,11 @@ def admin_export(query_terms, filename):
     query_terms['role'] = const.RoleType.ADMIN
     prop_list = ['name', 'phone', 'email', 'state', 'remark', 'create_time']
     name_list = ['用户名', '联系电话', '邮箱', '状态', '备注', '创建时间']
-    __user_export(query_terms, '管理员列表', filename, prop_list, name_list)
+    excel_fields = []
+    for index in range(0, len(prop_list)):
+        excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
+    admin_dicts = find_admins_by_query_terms(query_terms)
+    __user_export(admin_dicts, '管理员列表', filename, excel_fields)
 
 
 def manufacturer_export(query_terms, filename):
@@ -342,10 +358,16 @@ def manufacturer_export(query_terms, filename):
     :return:
     """
     query_terms['role'] = const.RoleType.MANUFACTURER
-    prop_list = ['name', 'phone', 'email', 'state', 'remark', 'create_time']
-    name_list = ['厂商名称', '联系电话', '邮箱', '状态', '备注', '创建时间']
-    __user_export(query_terms, '厂商列表', filename, prop_list, name_list)
+    prop_list = ['name', 'phone', 'email', 'state', 'dtu_used_num', 'dtu_total_num', 'remark', 'create_time']
+    name_list = ['供气商名称', '联系电话', '邮箱', '状态', 'DTU数量', 'DTU最大数量',  '备注', '创建时间']
 
+    excel_fields = []
+    for index in range(0, len(prop_list)):
+        excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
+
+    manufacturers = find_manufacturers_by_query_terms(query_terms)
+    __user_export(manufacturers, '供气商列表', filename, excel_fields)
+    
 
 def dtu_user_export(query_terms, filename):
     """
@@ -357,7 +379,11 @@ def dtu_user_export(query_terms, filename):
     query_terms['role'] = const.RoleType.DTU_USER
     prop_list = ['name', 'phone', 'email', 'state', 'remark', 'create_time']
     name_list = ['姓名', '联系电话', '邮箱', '状态', '备注', '创建时间']
-    __user_export(query_terms, '用户列表', filename, prop_list, name_list)
+    excel_fields = []
+    for index in range(0, len(prop_list)):
+        excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
+    dtu_users = find_dtu_users_by_query_terms(query_terms)
+    __user_export(dtu_users, '用户列表', filename, excel_fields)
 
 
 

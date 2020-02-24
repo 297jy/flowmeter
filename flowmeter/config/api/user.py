@@ -5,6 +5,7 @@ import datetime
 from django.db import models
 from django.db.models import Q
 from django.db import transaction
+from django.db.utils import IntegrityError
 from flowmeter.config.db import user_table
 from flowmeter.config.db.user_table import User
 from flowmeter.config.core import user as user_core
@@ -120,19 +121,14 @@ def edit_user(user_info):
     param_check(user_info, must_dict, optional_dict)
 
     user = user_core.get_user({"id": user_info.get('id')})
-
-    # 开启事务，当一下操作发生错误时，回滚
-    with transaction.atomic():
-        # 深拷贝 用户信息字典，防止编辑用户信息时产生的副作用
-        user_info = copy.deepcopy(user_info)
-        # 准备用户编辑需要的用户信息
-        user_core.prepare_edit_user_info(user_info, user)
-        # 先删除原来的用户，否则一下判断用户的唯一性可能会失败
-        del_user(user_info.get('id'))
-        # 检查用户信息的唯一性，比如：邮箱、电话、名称是否唯一
-        check_user_unique(user_info)
-        # 进行真正的编辑操作
-        user_core.edit_user(user_info)
+    try:
+        user_core.edit_user(user, user_info)
+    except IntegrityError as ex:
+        msg = str(ex)
+        if msg.find("phone") != -1:
+            raise NotUniqueException("联系电话：{} 已存在，编辑失败！".format(user_info['phone']))
+        else:
+            raise NotUniqueException("邮箱：{} 已存在，编辑失败！".format(user_info['email']))
     
     
 def del_user(user_id):

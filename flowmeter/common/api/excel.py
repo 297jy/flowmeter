@@ -7,50 +7,34 @@ import logging
 logger = logging.getLogger('log')
 
 
+class ExcelField:
+
+    def __init__(self, prop, name, is_require):
+        # 对象属性名
+        self.prop = prop
+        # 该属性在excel中的列名
+        self.name = name
+        self.is_require = is_require
+
+    # 创建必要的域
+    @staticmethod
+    def require_field(prop, name):
+        return ExcelField(prop, name, True)
+
+    @staticmethod
+    def optional_field(prop, name):
+        return ExcelField(prop, name, False)
+
+
 class Excel:
     """
     Excel表格实体
     """
-    def __init__(self, prop_list, name_list):
+    def __init__(self, excel_fields):
         """
-        :param prop_list: 属性名列表
-        :param name_list: 列名列表
         """
+        self.excel_fields = excel_fields
         self.obj_dict_list = []
-        self.prop_list = prop_list
-        self.name_list = name_list
-        self.__init_map()
-
-    def __init_map_param_check(self):
-        """
-        检查prop_list和name_list是否合法
-        :return:
-        """
-        if not isinstance(self.prop_list, list):
-            raise ParameterErrorException("prop_list 不是列表类型！")
-
-        if not isinstance(self.name_list, list):
-            raise ParameterErrorException("name_list 不是列表类型！")
-
-        if len(self.prop_list) != len(self.name_list):
-            raise ParameterErrorException("prop_list 和 name_list 列表长度不一致！")
-
-    def __init_map(self):
-        """
-        初始化 属性与列名之间的映射关系
-        :return:
-        """
-
-        self.__init_map_param_check()
-
-        self.prop_name_map = {}
-        self.name_prop_map = {}
-
-        for index in range(0, len(self.prop_list)):
-            prop = self.prop_list[index]
-            name = self.name_list[index]
-            self.prop_name_map[prop] = name
-            self.name_prop_map[name] = prop
 
     def is_empty(self):
         """
@@ -66,14 +50,14 @@ class Excel:
         读取excel表格数据
         :return:
         """
-        self.obj_dict_list = ExcelUtils.read(file_name, self.name_prop_map)
+        self.obj_dict_list = ExcelUtils.read(file_name, self.excel_fields)
 
     def write(self, file_name, sheet_name):
         """
         写入数据到excel表格
         :return:
         """
-        ExcelUtils.write(file_name, sheet_name, self.obj_dict_list, self.prop_list, self.prop_name_map)
+        ExcelUtils.write(file_name, sheet_name, self.obj_dict_list, self.excel_fields)
 
 
 class ExcelUtils:
@@ -92,7 +76,7 @@ class ExcelUtils:
     __FIRST_WORK_SHEET = 0
 
     @staticmethod
-    def __open_read_sheet(file_name):
+    def __open_read_sheet(file_name, sheet_name=None):
         """
         打开一个用于读的excel工作表
         :param file_name:
@@ -101,8 +85,12 @@ class ExcelUtils:
         try:
             # 打开文件，获取excel文件的workbook（工作簿）对象
             workbook = xlrd.open_workbook(file_name)
-            # 通过sheet_name获得一个工作表对象
-            worksheet = workbook.sheet_by_index(ExcelUtils.__FIRST_WORK_SHEET)
+            if sheet_name is None:
+                # 默认读取第一个单元格的内容
+                worksheet = workbook.sheet_by_index(ExcelUtils.__FIRST_WORK_SHEET)
+            else:
+                # 通过sheet_name获得一个工作表对象
+                worksheet = workbook.sheet_by_name(sheet_name)
             return worksheet
         except Exception as e:
             logging.error(e)
@@ -135,21 +123,26 @@ class ExcelUtils:
         return res
 
     @staticmethod
-    def __get_props(worksheet, name_prop_map):
+    def __get_props(worksheet, excel_fields):
         """
         获取工作表格的属性列表
         :param worksheet: 工作表
-        :param name_prop_map: dict，属性名与列名的映射
         :return:
         """
         col_names = worksheet.row_values(0)
         prop_names = []
         for col_name in col_names:
-            prop_name = name_prop_map.get(col_name)
-            # 如果找不到该列名对应的属性名，则说明excel表格格式错误，抛异常
-            if not prop_name:
-                raise ValueValidException("读取excel表格失败！列名：{}，非法".format(col_name))
-            prop_names.append(prop_name)
+            prop = None
+            for field in excel_fields:
+                if field.name == col_name:
+                    prop = field.prop
+                    break
+            prop_names.append(prop)
+
+        for field in excel_fields:
+            # 对象必要的属性excel表格中没有，则说明excel表格格式错误，抛异常
+            if field.is_require and field.prop not in prop_names:
+                raise ValueValidException("读取excel表格失败！列名：{}，不存在！".format(field.name))
 
         return prop_names
 
@@ -172,11 +165,9 @@ class ExcelUtils:
         return res
 
     @staticmethod
-    def __read_object_dict_list(worksheet, name_prop_map):
+    def __read_object_dict_list(worksheet, excel_fields):
         """
-
         :param worksheet: excel表格对象
-        :param name_prop_map: 属性名与列名中的映射
         :return:
         """
 
@@ -184,7 +175,7 @@ class ExcelUtils:
         nrows = worksheet.nrows
         ncols = worksheet.ncols
 
-        prop_names = ExcelUtils.__get_props(worksheet, name_prop_map)
+        prop_names = ExcelUtils.__get_props(worksheet, excel_fields)
         prop_name_index_map = ExcelUtils.__get_prop_index_map(prop_names)
 
         obj_dicts = []
@@ -194,21 +185,22 @@ class ExcelUtils:
             obj_dict = {}
             for col in range(ExcelUtils.__DATA_START_COL_NUM, ncols):
                 prop_name = prop_name_index_map.get(col)
-                obj_dict[prop_name] = values[col]
+                if prop_name is not None:
+                    obj_dict[prop_name] = values[col]
             obj_dicts.append(obj_dict)
 
         return obj_dicts
 
     @staticmethod
-    def read(filename, prop_name_map):
+    def read(filename, excel_fields):
         """
         读取excel表格中的数据
+        :param excel_fields:
         :param filename:
-        :param prop_name_map:
         :return:
         """
         worksheet = ExcelUtils.__open_read_sheet(filename)
-        obj_dicts = ExcelUtils.__read_object_dict_list(worksheet, prop_name_map)
+        obj_dicts = ExcelUtils.__read_object_dict_list(worksheet, excel_fields)
         return obj_dicts
 
     class FontName:
@@ -296,15 +288,14 @@ class ExcelUtils:
         return int(col_width)
 
     @staticmethod
-    def __get_width_dict_of_col(prop_name_map, obj_dict_list):
+    def __get_width_dict_of_col(excel_fields, obj_dict_list):
         """
         获取每一列对应的宽度字典
-        :param prop_name_map: 属性与列名映射关系
         :param obj_dict_list 对象字典数组
         :return: dict
         """
 
-        width_dict = {key: len(val) for key, val in prop_name_map.items()}
+        width_dict = {field.prop: len(field.name) for field in excel_fields}
         for obj_dict in obj_dict_list:
             for key, val in obj_dict.items():
 
@@ -319,17 +310,16 @@ class ExcelUtils:
         return width_dict
 
     @staticmethod
-    def __set_col_width(worksheet, width_dict, prop_list):
+    def __set_col_width(worksheet, width_dict, excel_fields):
         """
         设置每一列单元格的宽度
         :param worksheet:
         :param width_dict: 每个属性对应的宽度
-        :param prop_list: 属性列表
         :return:
         """
 
-        for index in range(0, len(prop_list)):
-            name = prop_list[index]
+        for index in range(0, len(excel_fields)):
+            name = excel_fields[index].prop
             width = width_dict.get(name, 0)
             worksheet.col(index).width = width
 
@@ -345,53 +335,55 @@ class ExcelUtils:
         return style.get_style()
 
     @staticmethod
-    def __write_col_name(worksheet, prop_list, prop_name_map):
+    def __write_col_name(worksheet, excel_fields):
         """
         写入列名如：[姓名,年龄]
         :param worksheet:
-        :param prop_list:
-        :param prop_name_map:
         :return:
         """
         style = ExcelUtils.__get_style()
 
-        for index in range(0, len(prop_list)):
-            prop = prop_list[index]
-            name = prop_name_map.get(prop)
+        for index in range(0, len(excel_fields)):
+            name = excel_fields[index].name
             worksheet.write(ExcelUtils.__COL_NAME_LINE_NUM, index, name, style)
 
     @staticmethod
-    def __write_object_dict_list(worksheet, obj_dict_list, prop_list):
+    def __write_object_dict_list(worksheet, obj_dict_list, excel_fields):
 
         style = ExcelUtils.__get_style()
 
         for row in range(0, len(obj_dict_list)):
             obj_dict = obj_dict_list[row]
-            for col in range(0, len(prop_list)):
-                prop = prop_list[col]
+            for col in range(0, len(excel_fields)):
+                prop = excel_fields[col].prop
                 data = obj_dict.get(prop, '')
                 worksheet.write(row+1, col, data, style)
 
     @staticmethod
-    def write(filename, sheet_name, obj_dict_list, prop_list, prop_name_map):
+    def write(filename, sheet_name, obj_dict_list, excel_fields):
         """
         将excel表格中的数据保存在磁盘上
         :return:
         """
         workbook, worksheet = ExcelUtils.__open_write_book_and_sheet(sheet_name)
         # 设置每列的宽度
-        width_dict = ExcelUtils.__get_width_dict_of_col(prop_name_map, obj_dict_list)
-        ExcelUtils.__set_col_width(worksheet, width_dict, prop_list)
+        width_dict = ExcelUtils.__get_width_dict_of_col(excel_fields, obj_dict_list)
+        ExcelUtils.__set_col_width(worksheet, width_dict, excel_fields)
 
-        ExcelUtils.__write_col_name(worksheet, prop_list, prop_name_map)
-        ExcelUtils.__write_object_dict_list(worksheet, obj_dict_list, prop_list)
+        ExcelUtils.__write_col_name(worksheet, excel_fields)
+        ExcelUtils.__write_object_dict_list(worksheet, obj_dict_list, excel_fields)
 
         workbook.save(filename)
 
 
 def main():
+    props = ['name', 'sex', 'age', 'money']
+    names = ['名字', '性别', '年龄', '余额']
+    excel_fields = []
+    for index in range(0, len(props)):
+        excel_fields.append(ExcelField.require_field(prop=props[index], name=names[index]))
 
-    excel = Excel(['name', 'sex', 'age', 'money'], ['名字', '性别', '年龄', '余额'])
+    excel = Excel(excel_fields)
     student = {
         "name": "陈伟强",
         "sex": "男",

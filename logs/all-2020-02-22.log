@@ -767,3 +767,31 @@
 [2020-02-22 18:43:15,489] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11320
 [2020-02-22 18:43:15,548] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
 [2020-02-22 18:43:15,553] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 314
+[2020-02-22 18:43:30,211] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6686
+[2020-02-22 18:43:30,243] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-22 18:43:30,289] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4382
+[2020-02-22 18:43:30,295] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3803
+[2020-02-22 18:43:30,301] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11060
+[2020-02-22 18:43:30,307] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11320
+[2020-02-22 18:43:30,422] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-22 18:43:30,424] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 1017
+[2020-02-22 18:43:30,437] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-22 18:43:30,440] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-22 18:43:30,445] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-22 18:43:30,452] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-02-22 18:43:30,456] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-22 18:43:30,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 314
+[2020-02-22 18:47:31,228] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：edit_manufacturer
+[2020-02-22 18:47:31,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/manufacturer/ HTTP/1.1" 200 68
+[2020-02-22 18:47:33,835] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：edit_manufacturer
+[2020-02-22 18:47:33,852] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/manufacturer/ HTTP/1.1" 200 68
+[2020-02-22 18:48:43,273] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：switch_manufacturer_state
+[2020-02-22 18:48:43,280] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/manufacturer/ HTTP/1.1" 200 68
+[2020-02-22 18:48:43,580] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：switch_manufacturer_state
+[2020-02-22 18:48:43,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/manufacturer/ HTTP/1.1" 200 68
+[2020-02-22 18:51:52,393] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\user.py changed, reloading.
+[2020-02-22 18:51:53,071] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-23 13:56:28,979] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11320
+[2020-02-23 13:56:29,065] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-23 13:56:29,076] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 314
+[2020-02-23 14:23:23,439] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\dtu_table.py changed, reloading.

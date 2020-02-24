@@ -126,13 +126,13 @@
                     {
                         width: '5%', title: 'DTU数量',
                         templet:function (data) {
-                            return data.region['used_num'];
+                            return data['dtu_used_num'];
                         }
                     },
                     {
-                        edit: 'text', width: '10%', title: 'DTU最大数量',
+                        width: '10%', title: 'DTU最大数量',
                         templet:function (data) {
-                            return data.region['total_num'];
+                            return data['dtu_total_num'];
                         }
                     },
                     {field: 'remark', edit: 'text', width: '25%', templet: '#displayOmit', title: '备注'},
@@ -178,6 +178,8 @@
                     delete data.create_time;
                     delete data.region;
                     delete data.role;
+                    delete data.dtu_total_num;
+                    delete data.dtu_used_num;
                     post({
                         "param": JSON.stringify(data),
                         "action": "edit_manufacturer"

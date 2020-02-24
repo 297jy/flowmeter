@@ -59,14 +59,16 @@ def get_user(user_info):
         raise DoesNotExistException('该用户不存在！')
 
 
-def edit_user(user_info):
+def edit_user(user, user_info):
     """
     编辑系统用户
+    :param user:
     :param user_info: 系统用户的基本信息
     :return:
     """
-
-    User.objects.create(**user_info)
+    for prop, val in user_info.items():
+        setattr(user, prop, val)
+    user.save()
 
 
 def switch_user_state(user):

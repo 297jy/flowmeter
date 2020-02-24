@@ -60,8 +60,8 @@
                 } else {
                     post({
                         "param": JSON.stringify({'filename': res.data}),
-                        "action": "import_admin"
-                    }, '/handler/admin/', function (data) {
+                        "action": "import_manufacturer"
+                    }, '/handler/manufacturer/', function (data) {
                         if (data.success) {
                             layer.alert("导入成功", {
                                     icon: 6

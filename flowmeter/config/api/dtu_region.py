@@ -32,7 +32,7 @@ def find_region_by_manufacturer_id(manufacturer_id):
     :param manufacturer_id:
     :return:
     """
-    return core.find_one_region({'manufacturer_id': manufacturer_id})
+    return core.find_regions({'manufacturer_id': manufacturer_id})
 
 
 def update_region(region_info):
