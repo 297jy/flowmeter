@@ -85,9 +85,12 @@ def get_page(request):
     :return:
     """
     if request.method == 'GET':
-        index = int(request.GET.get('page', 0))
-        limit = int(request.GET.get('limit', 0))
-        return Page(index, limit)
+        index = request.GET.get('page')
+        limit = request.GET.get('limit')
+        if index is None or limit is None:
+            return None
+        else:
+            return Page(int(index), int(limit))
     else:
         return None
 

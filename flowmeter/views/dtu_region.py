@@ -16,6 +16,8 @@ class DtuRegionActionHandler(ActionHandlerBase):
 
         action_dict = {
             'query_dtu_region': self.query_dtu_region,
+            "add_dtu_region": self.add_dtu_region,
+            "update_dtu_region": self.update_dtu_region,
         }
         super().__init__(action_dict)
 
@@ -28,6 +30,26 @@ class DtuRegionActionHandler(ActionHandlerBase):
 
         return Result.success(data=regions, count=len(regions))
 
+    def add_dtu_region(self, request):
+
+        param = request_api.get_param(request)
+        param['total_num'] = int(param['total_num'])
+        param['manufacturer_id'] = int(param['manufacturer_id'])
+
+        app_region_api.add_region(param)
+
+        return Result.success()
+
+    def update_dtu_region(self, request):
+
+        param = request_api.get_param(request)
+        param['total_num'] = int(param['total_num'])
+        param['id'] = int(param['id'])
+
+        app_region_api.update_dtu_region(param)
+
+        return Result.success()
+
 
 @xframe_options_sameorigin
 def region_view(request):
@@ -38,7 +60,7 @@ def region_view(request):
 @xframe_options_sameorigin
 def region_add(request):
 
-    return render(request, 'dtu_region/dtu_region-list.html', {})
+    return render(request, 'dtu_region/dtu_region-add.html', {})
 
 
 def region_handler(request):

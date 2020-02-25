@@ -65,7 +65,7 @@
     <button class="layui-btn layui-btn-danger" lay-event="del_batch">
         <i class="layui-icon"></i>批量删除
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU区间','/dtu_region/add/',600,400)">
+    <button class="layui-btn" onclick="xadmin.open('添加DTU区间','/dtu_region/add/',700,400)">
         <i class="layui-icon"></i>添加
     </button>
 </script>
@@ -106,7 +106,7 @@
                     },
                     {field: 'manufacturer_name', title: '供气商名称'},
                     {field: 'manufacturer_phone',title: '联系电话'},
-                    {field: 'left',title: 'DTU左区间'},
+                    {field: 'left',title: 'DTU起始编号'},
                     {field: 'total_num', edit: 'text', title: 'DTU最大数量'},
                     {field: 'used_num', title: 'DTU已使用数量'},
                 ]],
@@ -122,9 +122,11 @@
                     let data = obj.data;
                     delete data.manufacturer_name;
                     delete data.manufacturer_phone;
+                    delete data.used_num;
+                    delete data.left;
                     post({
                         "param": JSON.stringify(data),
-                        "action": "edit_dtu_region"
+                        "action": "update_dtu_region"
                     }, '/handler/dtu_region/', function (data) {
                         if (!data.success) {
                             layer.msg(data.msg, {icon: 5, time: 2000});

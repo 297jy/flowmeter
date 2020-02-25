@@ -24,6 +24,7 @@ class DtuRegion(models.Model):
 
     def get_dict(self):
         return {
+            "id": self.id,
             "left": self.left,
             "right": self.right,
             "manufacturer": self.manufacturer,

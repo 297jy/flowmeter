@@ -1,18 +1,25 @@
 # coding=utf-8
 
 from flowmeter.applications.core import dtu_region as core
+from flowmeter.config.api import dtu_region as conf_region_api
 from flowmeter.common.api.validators import param_check
+from flowmeter.exceptions import ParameterErrorException
+from flowmeter.common.api.validators import IntCheck
 
 
-def add_region(manufacturer_id, total_num):
+def add_region(region):
     """
     添加一个dtu区间
-    :param manufacturer_id:
-    :param total_num:
     :return:
     """
-    region_info = core.find_can_alloc_region(total_num)
-    region_info['manufacturer_id'] = manufacturer_id
+    must_dict = {
+        "manufacturer_id": int,
+        "total_num": int,
+    }
+    param_check(region, must_dict)
+
+    region_info = core.find_can_alloc_region(region['total_num'])
+    region_info['manufacturer_id'] = region['manufacturer_id']
     region_info['used_num'] = 0
     core.add_region(region_info)
 
@@ -36,4 +43,20 @@ def find_regions_by_query_terms(query_terms, page=None):
 
     return region_dicts
 
+
+def update_dtu_region(region_info):
+
+    must_dict = {
+        "id": int,
+        "total_num": IntCheck.check_is_positive_int,
+    }
+    param_check(region_info, must_dict)
+
+    region = conf_region_api.find_region_by_id(region_info['id'])
+    total_num = region_info['total_num']
+    # 先判断total_num是否合法
+    if core.is_total_num_legal(region, total_num):
+        core.update_region_total_num(region, total_num)
+    else:
+        raise ParameterErrorException("DTU最大数目：{}，太大，更新失败！".format(total_num))
 

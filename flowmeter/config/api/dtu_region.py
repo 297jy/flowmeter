@@ -27,6 +27,11 @@ def find_all_regions():
     return core.find_regions({})
 
 
+def find_region_by_id(region_id):
+
+    return core.find_one_region({'id': region_id})
+
+
 def find_regions(filters=None, page=None):
 
     if page is None:

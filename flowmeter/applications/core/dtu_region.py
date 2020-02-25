@@ -65,4 +65,35 @@ def find_dtu_regions_by_query_terms(query_terms, page=None):
     return regions
 
 
+def is_total_num_legal(region, total_num):
+    """
+    判断DTU区间最大数目是否合法
+    :param region:
+    :param total_num:
+    :return:
+    """
+    # 新的右边界
+    new_right = region.left + total_num - 1
+    # 按区间左边界升序排列
+    regions = conf_region_api.find_all_regions()
+
+    can_expand = True
+    for reg in regions:
+        if reg.id == region.id:
+            continue
+        if reg.left <= new_right <= reg.right or reg.left <= region.left <= reg.right:
+            can_expand = False
+
+    return can_expand
+
+
+def update_region_total_num(region, total_num):
+    """
+    更新DTU区间的最大数目
+    :param region:
+    :param total_num:
+    :return:
+    """
+    region.right = region.left + total_num - 1
+    region.save()
 

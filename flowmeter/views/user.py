@@ -67,9 +67,10 @@ class UserActionHandler(ActionHandlerBase):
     def create_manufacturer(self, request):
 
         manufacturer_info = request_api.get_param(request)
+
         total_num = int(manufacturer_info.pop('total_num', 0))
         manufacturer = app_user_api.create_manufacturer(manufacturer_info)
-        conf_region_api.add_region(manufacturer.id, total_num)
+        conf_region_api.add_region({'manufacturer_id': manufacturer.id, "total_num": total_num})
 
         return Result.success()
 

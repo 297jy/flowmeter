@@ -287,12 +287,19 @@ class WhiteListCheck:
         if alarm_type not in type_list:
             raise ParameterErrorException("没有该警报类型：{}！", alarm_type)
 
+
 class IntCheck:
 
     @staticmethod
     def check_is_int(data):
         if not isinstance(data, int):
             raise ParameterErrorException("{} 不是整形值".format(data))
+
+    @staticmethod
+    def check_is_positive_int(data):
+        IntCheck.check_is_int(data)
+        if data <= 0:
+            raise ParameterErrorException("{} 不是正整数！".format(data))
 
 
 class ListCheck:
