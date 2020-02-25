@@ -825,3 +825,125 @@
 [2020-02-24 17:37:10,203] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/manufacturer/ HTTP/1.1" 200 158
 [2020-02-24 17:37:20,783] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\api\user.py changed, reloading.
 [2020-02-24 17:37:21,467] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-24 17:43:18,550] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 6686
+[2020-02-24 17:43:18,581] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-24 17:43:18,632] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4382
+[2020-02-24 17:43:18,634] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3803
+[2020-02-24 17:43:18,640] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11060
+[2020-02-24 17:43:18,642] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 17:43:18,780] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-24 17:43:18,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 1017
+[2020-02-24 17:43:18,786] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-24 17:43:18,792] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-24 17:43:18,807] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 17:43:18,817] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 17:43:18,818] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-24 17:43:18,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-02-24 17:43:20,471] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 17:43:20,519] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 17:43:20,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 17:43:21,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 17:43:21,122] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 17:43:21,129] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 17:43:21,564] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11060
+[2020-02-24 17:43:21,627] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-24 17:43:21,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-02-24 17:43:21,778] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 17:43:21,817] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 17:43:21,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 17:43:22,237] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 17:43:22,272] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 17:43:22,279] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 17:43:22,489] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11060
+[2020-02-24 17:43:22,529] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-24 17:43:22,538] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-02-24 17:43:22,700] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 17:43:22,750] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 17:43:22,758] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 17:43:23,276] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 17:43:23,311] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 17:43:23,318] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 17:43:23,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11060
+[2020-02-24 17:43:23,550] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-24 17:43:23,557] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-02-24 17:43:23,712] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 17:43:23,749] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 17:43:23,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 19:08:09,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 19:08:09,979] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 19:08:09,987] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 19:08:10,582] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 7093
+[2020-02-24 19:08:10,620] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-24 19:08:10,633] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4382
+[2020-02-24 19:08:10,638] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3803
+[2020-02-24 19:08:10,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 19:08:10,657] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11060
+[2020-02-24 19:08:10,744] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-24 19:08:10,747] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 1017
+[2020-02-24 19:08:10,752] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-24 19:08:10,755] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-24 19:08:10,772] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 19:08:10,778] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-24 19:08:10,786] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 19:08:10,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-02-24 19:08:14,809] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 19:08:14,856] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 19:08:14,863] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 19:08:15,740] [log.py:228] [log:log_response] [WARNING]- Not Found: /dtu_region/view/
+[2020-02-24 19:08:15,740] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /dtu_region/view/ HTTP/1.1" 404 2851
+[2020-02-24 19:08:17,385] [log.py:228] [log:log_response] [WARNING]- Not Found: /dtu_region/view/
+[2020-02-24 19:08:17,385] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /dtu_region/view/ HTTP/1.1" 404 2851
+[2020-02-24 19:08:18,312] [log.py:228] [log:log_response] [WARNING]- Not Found: /dtu_region/view/
+[2020-02-24 19:08:18,312] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /dtu_region/view/ HTTP/1.1" 404 2851
+[2020-02-24 19:08:20,440] [log.py:228] [log:log_response] [WARNING]- Not Found: /dtu_region/view/
+[2020-02-24 19:08:20,441] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /dtu_region/view/ HTTP/1.1" 404 2851
+[2020-02-24 19:08:37,510] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 7093
+[2020-02-24 19:08:37,539] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-02-24 19:08:37,573] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4382
+[2020-02-24 19:08:37,578] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3803
+[2020-02-24 19:08:37,582] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 11060
+[2020-02-24 19:08:37,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-02-24 19:08:37,590] [log.py:228] [log:log_response] [WARNING]- Not Found: /dtu_region/view/
+[2020-02-24 19:08:37,591] [basehttp.py:154] [basehttp:log_message] [WARNING]- "GET /dtu_region/view/ HTTP/1.1" 404 2851
+[2020-02-24 19:08:37,706] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-02-24 19:08:37,711] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 1017
+[2020-02-24 19:08:37,712] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-02-24 19:08:37,716] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-02-24 19:08:37,717] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-02-24 19:08:37,723] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-02-24 19:08:37,735] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 19:08:37,741] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 536
+[2020-02-24 23:38:41,744] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:41,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:43,565] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:43,573] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:44,144] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:44,151] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:44,545] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:44,552] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:44,844] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:44,851] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:45,076] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:45,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:45,297] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:45,305] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:45,515] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:45,523] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:45,699] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:45,708] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:45,886] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:45,895] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:46,049] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:46,056] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:46,203] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:46,212] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:46,348] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:46,355] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:46,493] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:46,500] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:46,629] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:46,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:38:46,753] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-02-24 23:38:46,761] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22138505%22%7D HTTP/1.1" 200 536
+[2020-02-24 23:42:57,092] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\api\dtu_region.py changed, reloading.
+[2020-02-24 23:42:58,782] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

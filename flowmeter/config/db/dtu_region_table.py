@@ -20,4 +20,12 @@ class DtuRegion(models.Model):
     used_num = models.IntegerField()
 
     class Meta:
-        ordering = ['left']
+        ordering = ['manufacturer', 'left']
+
+    def get_dict(self):
+        return {
+            "left": self.left,
+            "right": self.right,
+            "manufacturer": self.manufacturer,
+            "used_num": self.used_num,
+        }
