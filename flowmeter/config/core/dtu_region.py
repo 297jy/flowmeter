@@ -1,5 +1,5 @@
 # coding=utf-8
-
+from flowmeter.common.api import query
 from flowmeter.config.db.dtu_region_table import DtuRegion
 
 
@@ -39,4 +39,14 @@ def del_region(region):
     :return:
     """
     region.delete()
+
+
+def del_batch_region(region_ids):
+    """
+    批量删除DTU区间
+    :return:
+    """
+    query_terms = query.QueryTerms.make_or_query_terms(**{'id': region_ids})
+
+    DtuRegion.objects.filter(query_terms.get_filters()).delete()
 

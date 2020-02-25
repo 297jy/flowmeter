@@ -83,3 +83,10 @@ def del_region(region_id):
     region = core.find_one_region({'id': region_id})
     core.del_region(region)
 
+
+def del_batch_region(region_ids):
+    """
+    :return:
+    """
+
+    core.del_batch_region(region_ids)

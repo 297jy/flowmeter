@@ -18,6 +18,7 @@ class DtuRegionActionHandler(ActionHandlerBase):
             'query_dtu_region': self.query_dtu_region,
             "add_dtu_region": self.add_dtu_region,
             "update_dtu_region": self.update_dtu_region,
+            "del_batch_dtu_region": self.del_batch_dtu_region,
         }
         super().__init__(action_dict)
 
@@ -47,6 +48,15 @@ class DtuRegionActionHandler(ActionHandlerBase):
         param['id'] = int(param['id'])
 
         app_region_api.update_dtu_region(param)
+
+        return Result.success()
+
+    def del_batch_dtu_region(self, request):
+
+        param = request_api.get_param(request)
+        dtu_region_ids = param.get('dtu_region_ids')
+
+        app_region_api.del_batch_region(dtu_region_ids)
 
         return Result.success()
 

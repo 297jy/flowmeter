@@ -60,3 +60,13 @@ def update_dtu_region(region_info):
     else:
         raise ParameterErrorException("DTU最大数目：{}，太大，更新失败！".format(total_num))
 
+
+def del_batch_region(region_ids):
+    """
+    :return:
+    """
+    for region_id in region_ids:
+        core.check_region_can_del(region_id)
+
+    conf_region_api.del_batch_region(region_ids)
+

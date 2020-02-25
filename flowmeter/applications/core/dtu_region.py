@@ -1,7 +1,7 @@
 # coding=utf-8
 from flowmeter.common.api.query import QueryTerms
 from flowmeter.config.api import dtu_region as conf_region_api
-from flowmeter.exceptions import DoesNotExistException
+from flowmeter.exceptions import DoesNotExistException, ParameterErrorException
 from flowmeter.settings import MAX_DTU_NO
 from flowmeter.applications.api import user as app_user_api
 
@@ -97,3 +97,13 @@ def update_region_total_num(region, total_num):
     region.right = region.left + total_num - 1
     region.save()
 
+
+def check_region_can_del(region_id):
+    """
+    判断该DTU区间是否可被删除，不能删除就抛异常
+    :param region_id:
+    :return:
+    """
+    region = conf_region_api.find_region_by_id(region_id)
+    if region.used_num != 0:
+        raise ParameterErrorException("供气商名称：{}，DTU起始编号为：{}的区间上已经存在DTU，删除失败！")

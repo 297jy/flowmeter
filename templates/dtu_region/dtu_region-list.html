@@ -24,12 +24,12 @@
 
 <body>
 <div class="x-nav">
-            <span class="layui-breadcrumb">
-                <a href="">首页</a>
-                <a href="">
-                    <cite>DTU区间列表</cite>
-                </a>
-            </span>
+    <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">
+            <cite>DTU区间列表</cite>
+        </a>
+    </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        onclick="location.reload()" title="刷新">
         <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
@@ -87,7 +87,7 @@
     });
 </script>
 <script>
-    layui.use(['table', 'form', 'jquery', 'element'],
+    layui.use(['table', 'form', 'jquery', 'element', 'tree'],
         function () {
             $ = layui.jquery;
             table = layui.table;
@@ -96,6 +96,7 @@
             table.render({
                 elem: '#dtu_region', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
+                    {checkbox: true, width: '5%', field: 'id'},
                     {
                         numbbers: true,
                         width: '5%',
@@ -105,8 +106,8 @@
                         }
                     },
                     {field: 'manufacturer_name', title: '供气商名称'},
-                    {field: 'manufacturer_phone',title: '联系电话'},
-                    {field: 'left',title: 'DTU起始编号'},
+                    {field: 'manufacturer_phone', title: '联系电话'},
+                    {field: 'left', title: 'DTU起始编号'},
                     {field: 'total_num', edit: 'text', title: 'DTU最大数量'},
                     {field: 'used_num', title: 'DTU已使用数量'},
                 ]],
