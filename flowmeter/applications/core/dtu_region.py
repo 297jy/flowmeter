@@ -55,8 +55,12 @@ def find_dtu_regions_by_query_terms(query_terms, page=None):
 
     # 查找指定条件供气商
     mans = app_user_api.find_manufacturers_by_query_terms(query_terms)
+
     # 提取所有供气商的id
     man_ids = [m['id'] for m in mans]
+    if len(man_ids) == 0:
+        return []
+
     # 构造查询框的查询条件
     query_box = QueryTerms.make_or_query_terms(manufacturer_id=man_ids)
 
