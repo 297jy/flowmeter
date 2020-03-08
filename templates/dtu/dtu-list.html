@@ -41,14 +41,29 @@
             <div class="layui-card">
                 <div class="layui-card-body ">
                     <form class="layui-form layui-col-space5">
-                        <div class="layui-inline layui-col-md2">
-                            <input type="text" name="query_box" placeholder="请输入供气商名称\联系电话\备注" autocomplete="off"
-                                   class="layui-input" id="query_box">
+
+                        <div class="layui-form-item">
+                            <label for="L_username" class="layui-form-label">
+                                <span class="x-red">*</span>供气商
+                            </label>
+                            <div class="layui-input-inline" style="width: 400px">
+                                <select name="manufacturer_id" lay-verify="required" lay-search="" id="manufacturer"
+                                        lay-filter="test">
+                                    <option value="">未选择</option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="layui-inline layui-show-xs-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="search">
-                                <i class="layui-icon">&#xe615;</i>
-                            </button>
+
+                        <div class="layui-form-item">
+                            <label for="L_username" class="layui-form-label">
+                                <span class="x-red">*</span>DTU用户
+                            </label>
+                            <div class="layui-input-inline" style="width: 400px">
+                                <select name="dtu_user_id" lay-verify="required" lay-search="" id="dtu_user"
+                                        lay-filter="test">
+                                    <option value="">未选择</option>
+                                </select>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -89,7 +104,9 @@
                         }
                     },
                     {field: 'manufacturer_name', title: '供气商名称'},
-                    {field: 'manufacturer_phone', title: '联系电话'},
+                    {field: 'manufacturer_phone', title: '供气商联系电话'},
+                    {field: 'dtu_user_name', title: 'DTU用户名称'},
+                    {field: 'dtu_user_phone', title: 'DTU用户联系电话'},
                     {field: 'dtu_no', title: 'DTU编号'},
                     {field: 'valve_control_type', title: 'DTU阀门控制器类型'},
                     {field: 'remark', edit: 'text', title: '备注'},
@@ -109,7 +126,7 @@
                     delete data.left;
                     post({
                         "param": JSON.stringify(data),
-                        "action": "update_dtu"
+                        "action": "edit_dtu"
                     }, '/handler/dtu/', function (data) {
                         if (!data.success) {
                             layer.msg(data.msg, {icon: 5, time: 2000});
@@ -155,7 +172,35 @@
                     return false;
                 });
 
+            get({
+                "param": JSON.stringify({}),
+                "action": "query_manufacturer"
+            }, '/handler/manufacturer/', function (res) {
+                if (!res.success) {
+                    layer.msg(res.msg, {icon: 5, time: 1000});
+                } else {
+                    for(let i=0;i<res.data.length;i++){
+                        $("#manufacturer").append('<option value="' + res.data[i].id + '">'
+                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                    }
+                    form.render('select');
+                }
+            });
 
+            get({
+                "param": JSON.stringify({}),
+                "action": "query_dtu_user"
+            }, '/handler/dtu_user/', function (res) {
+                if (!res.success) {
+                    layer.msg(res.msg, {icon: 5, time: 1000});
+                } else {
+                    for(let i=0;i<res.data.length;i++){
+                        $("#dtu_user").append('<option value="' + res.data[i].id + '">'
+                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                    }
+                    form.render('select');
+                }
+            });
         });
 </script>
 <script>var _hmt = _hmt || [];

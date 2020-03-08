@@ -32,4 +32,5 @@ class NavigationBar(models.Model):
             "icon": self.icon,
             "name": self.name,
             "url": self.url,
+            "order": self.order,
         }

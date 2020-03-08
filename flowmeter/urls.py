@@ -30,6 +30,7 @@ from flowmeter.views import dtu_region
 handler_urlpatterns = [
     path('login/', login.login_handler),
     path('admin/', user.user_handler),
+    path('dtu_user/', user.user_handler),
     path('manufacturer/', user.user_handler),
     path('user/', user.user_handler),
     path('file/', file.file_handler),
@@ -46,6 +47,12 @@ admin_urlpatterns = [
     path('view/', user.admin_view),
     path('add/', user.admin_add),
     path('import/', user.admin_import),
+]
+
+dtu_user_urlpatterns = [
+    path('view/', user.dtu_user_view),
+    path('add/', user.dtu_user_add),
+    path('import/', user.dtu_user_import),
 ]
 
 manufacturer_urlpatterns = [
@@ -72,6 +79,7 @@ urlpatterns = [
     path('welcome/', welcome.welcome_view),
     path('login/', login.login_view),
     path('admin/', include(admin_urlpatterns)),
+    path('dtu_user/', include(dtu_user_urlpatterns)),
     path('manufacturer/', include(manufacturer_urlpatterns)),
     path('dtu_region/', include(dtu_region_urlpatterns)),
     path('system/', include(system_setting_urlpatterns)),

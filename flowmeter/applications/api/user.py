@@ -73,10 +73,11 @@ def find_manufacturers_by_query_terms(query_terms, page=None):
     return manufacturers
 
 
-def find_dtu_users_by_query_terms(query_terms):
+def find_dtu_users_by_query_terms(query_terms, page=None):
     """
     根据查询条件来查询dtu用户
     查询条件包括：dtu用户创建的时间，邮箱，手机，备注
+    :param page:
     :param query_terms: {
                             "begin_time": "dtu用户查询创建的开始时间",
                             "end_time": "dtu用户查询创建的结束时间",
@@ -92,7 +93,7 @@ def find_dtu_users_by_query_terms(query_terms):
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
 
-    dtu_users = user_core.find_dtu_users_by_query_terms(query_terms)
+    dtu_users = user_core.find_dtu_users_by_query_terms(query_terms, page)
 
     return dtu_users
 

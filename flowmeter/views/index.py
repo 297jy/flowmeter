@@ -14,4 +14,5 @@ def index_view(request):
     nav_bars = auth_api.structure_nav_bars_by_role('admin')
 
     context = {'nav_bars': nav_bars}
+    # print(nav_bars)
     return render(request, 'index.html', context)

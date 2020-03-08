@@ -20,20 +20,27 @@ class UserActionHandler(ActionHandlerBase):
 
         action_dict = {
             'query_admin': self.query_admin,
+            'query_dtu_user': self.query_dtu_user,
             'query_manufacturer': self.query_manufacturer,
             'check_email_unique': self.check_email_unique,
             'check_phone_unique': self.check_phone_unique,
             'create_admin': self.create_admin,
+            'create_dtu_user': self.create_dtu_user,
             'create_manufacturer': self.create_manufacturer,
             "edit_admin": self.edit_admin,
             "edit_manufacturer": self.edit_manufacturer,
+            "edit_dtu_user": self.edit_dtu_user,
             "switch_admin_state": self.switch_admin_state,
+            "switch_dtu_user_state": self.switch_dtu_user_state,
             "switch_manufacturer_state": self.switch_manufacturer_state,
             "del_batch_admin": self.del_batch_admin,
+            "del_batch_dtu_user": self.del_batch_dtu_user,
             "del_batch_manufacturer": self.del_batch_manufacturer,
             "import_admin": self.import_admin,
+            "import_dtu_user": self.import_dtu_user,
             "import_manufacturer": self.import_manufacturer,
             "export_admin": self.export_admin,
+            "export_dtu_user": self.export_dtu_user,
             "export_manufacturer": self.export_manufacturer,
         }
         super().__init__(action_dict)
@@ -46,6 +53,15 @@ class UserActionHandler(ActionHandlerBase):
         admins = app_user_api.find_admins_by_query_terms(param, page)
 
         return Result.success(data=admins, count=len(admins))
+
+    def query_dtu_user(self, request):
+
+        param = request_api.get_param(request)
+        page = request_api.get_page(request)
+
+        dtu_users = app_user_api.find_dtu_users_by_query_terms(param, page)
+
+        return Result.success(data=dtu_users, count=len(dtu_users))
 
     def query_manufacturer(self, request):
 
@@ -64,6 +80,14 @@ class UserActionHandler(ActionHandlerBase):
 
         return Result.success()
 
+    def create_dtu_user(self, request):
+
+        dtu_user_info = request_api.get_param(request)
+
+        app_user_api.create_dtu_user(dtu_user_info)
+
+        return Result.success()
+
     def create_manufacturer(self, request):
 
         manufacturer_info = request_api.get_param(request)
@@ -79,6 +103,14 @@ class UserActionHandler(ActionHandlerBase):
         admin_info = request_api.get_param(request)
 
         app_user_api.edit_admin(admin_info)
+
+        return Result.success()
+
+    def edit_dtu_user(self, request):
+
+        dtu_user_info = request_api.get_param(request)
+
+        app_user_api.edit_dtu_user(dtu_user_info)
 
         return Result.success()
 
@@ -116,6 +148,15 @@ class UserActionHandler(ActionHandlerBase):
 
         return Result.success()
 
+    def switch_dtu_user_state(self, request):
+
+        param = request_api.get_param(request)
+        dtu_user_id = param.get('dtu_user_id')
+
+        app_user_api.switch_dtu_user_state_by_id(dtu_user_id)
+
+        return Result.success()
+
     def switch_manufacturer_state(self, request):
 
         param = request_api.get_param(request)
@@ -131,6 +172,15 @@ class UserActionHandler(ActionHandlerBase):
         admin_ids = param.get('admin_ids')
 
         app_user_api.del_batch_admin(admin_ids)
+
+        return Result.success()
+
+    def del_batch_dtu_user(self, request):
+
+        param = request_api.get_param(request)
+        dtu_user_ids = param.get('dtu_user_ids')
+
+        app_user_api.del_batch_dtu_user(dtu_user_ids)
 
         return Result.success()
 
@@ -154,6 +204,17 @@ class UserActionHandler(ActionHandlerBase):
 
         return Result.success()
 
+    def import_dtu_user(self, request):
+
+        param = request_api.get_param(request)
+        name = param.get('filename')
+        filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
+
+        app_user_api.dtu_user_import(filename)
+        app_file_api.del_file(filename)
+
+        return Result.success()
+
     def import_manufacturer(self, request):
 
         param = request_api.get_param(request)
@@ -172,6 +233,16 @@ class UserActionHandler(ActionHandlerBase):
         filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
 
         app_user_api.admin_export(param, filename)
+
+        return Result.success(data=name)
+
+    def export_dtu_user(self, request):
+
+        param = request_api.get_param(request)
+        name = app_file_api.generate_excel_file_name()
+        filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
+
+        app_user_api.dtu_user_export(param, filename)
 
         return Result.success(data=name)
 
@@ -202,6 +273,24 @@ def admin_add(request):
 def admin_import(request):
 
     return render(request, 'admin/admin-import.html', {})
+
+
+@xframe_options_sameorigin
+def dtu_user_view(request):
+
+    return render(request, 'dtu_user/dtu_user-list.html', {})
+
+
+@xframe_options_sameorigin
+def dtu_user_add(request):
+
+    return render(request, 'dtu_user/dtu_user-add.html', {})
+
+
+@xframe_options_sameorigin
+def dtu_user_import(request):
+
+    return render(request, 'dtu_user/dtu_user-import.html', {})
 
 
 @xframe_options_sameorigin

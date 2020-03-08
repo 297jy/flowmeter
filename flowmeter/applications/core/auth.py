@@ -1,5 +1,6 @@
 # coding=utf-8
 
+from operator import itemgetter
 from flowmeter.config.db.auth_table import Auth
 from flowmeter.config.api import user as conf_user_api, cache
 from flowmeter.config.api import role as conf_role_api
@@ -116,6 +117,8 @@ def structure_nav_bars(nav_bars):
             if f_nav['id'] == nav['fid']:
                 f_nav['childs'].append(nav)
                 break
+
+    nav_bar_list = sorted(nav_bar_list, key=itemgetter('order'))
 
     return nav_bar_list
 

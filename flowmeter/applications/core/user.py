@@ -132,9 +132,9 @@ def find_manufacturers_by_query_terms(query_terms, page=None):
     return manufacturers
 
 
-def find_dtu_users_by_query_terms(query_terms):
+def find_dtu_users_by_query_terms(query_terms, page=None):
     query_terms['role'] = const.RoleType.DTU_USER
-    return __find_users_by_query_terms(query_terms)
+    return __find_users_by_query_terms(query_terms, page)
 
 
 def create_admin(admin_info):
