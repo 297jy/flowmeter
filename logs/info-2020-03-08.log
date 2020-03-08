@@ -427,3 +427,9 @@
 [2020-03-08 20:08:30,402] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：edit_dtu_user
 [2020-03-08 20:08:32,653] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：del_batch_dtu_user
 [2020-03-08 20:08:32,686] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-08 20:39:03,849] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-03-08 20:39:03,858] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-08 20:39:03,871] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-08 20:39:03,876] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-08 20:39:03,883] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-08 20:39:03,916] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region

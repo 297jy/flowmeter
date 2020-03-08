@@ -17,6 +17,13 @@ def find_dtu_by_no(dtu_no):
     return dtu
 
 
+def find_dtu_by_id(dtu_id):
+
+    dtu = core.find_one_dtu({'dtu_id': dtu_id})
+
+    return dtu
+
+
 def add_dtu(dtu_info):
     """
     添加dtu
@@ -26,6 +33,7 @@ def add_dtu(dtu_info):
     must_dict = {
         'dtu_no': int,
         'region_id': int,
+        'user_id': int,
     }
     optional_dict = {
         'remark': StrCheck.check_remark,
@@ -67,20 +75,26 @@ def del_batch_dtu(dtu_ids):
     core.del_batch_dtu(dtu_ids)
 
 
-def find_regions(filters=None, page=None):
+def find_dtus(filters=None, page=None):
 
     if page is None:
         if filters:
-            regions = Dtu.objects.filter(filters)
+            dtus = Dtu.objects.select_related('user', 'region').filter(filters).order_by('dtu_no')
         else:
-            regions = Dtu.objects.all()
+            dtus = Dtu.objects.select_related('user', 'region').all().order_by('dtu_no')
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
-            regions = Dtu.objects.filter(filters)[start_index: end_index]
+            dtus = Dtu.objects.filter(filters)[start_index: end_index]
         else:
-            regions = Dtu.objects.all()[start_index: end_index]
+            dtus = Dtu.objects.all()[start_index: end_index]
 
-    return regions
+    return dtus
+
+
+def get_used_num(region_id):
+    res = Dtu.objects.filter(region_id=region_id).count()
+
+    return res
 
