@@ -10,17 +10,22 @@ def find_can_alloc_region(total_num):
 
     # 按区间左边界升序排列
     regions = conf_region_api.find_all_regions()
-    # 从编号0开始分配
+    if len(regions) == 0:
+        return {
+            "left": 0,
+            "right": total_num,
+        }
+
     left = 0
     right = left + total_num - 1
-    for index in range(0, len(regions) - 1):
-        region = regions[index]
-        next_region = regions[index + 1]
+
+    for region in regions:
+
+        # 如果当前选中区间的右边界，不超过下个区间的左边界，则代表选中
+        if right < region.left:
+            break
         left = region.right + 1
         right = left + total_num - 1
-        # 如果当前选中区间的右边界，不超过下个区间的左边界，则代表选中
-        if right < next_region.left:
-            break
 
     if right > MAX_DTU_NO:
         raise DoesNotExistException('不存在DTU最大数目为：{}的可分配区间！'.format(total_num))

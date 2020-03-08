@@ -1,5 +1,5 @@
 # coding=utf-8
-
+from flowmeter.common.api import query
 from flowmeter.config.db.dtu_table import Dtu
 
 
@@ -25,3 +25,13 @@ def find_dtu_meters(dtu):
     meters = dtu.meter_set.all()
 
     return meters
+
+
+def del_batch_dtu(dtu_ids):
+    """
+    批量删除DTU
+    :return:
+    """
+    query_terms = query.QueryTerms.make_or_query_terms(**{'id': dtu_ids})
+
+    Dtu.objects.filter(query_terms.get_filters()).delete()

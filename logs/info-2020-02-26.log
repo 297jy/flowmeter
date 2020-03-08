@@ -30,3 +30,6 @@
 [2020-02-26 19:12:17,054] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
 [2020-02-26 19:12:17,992] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
 [2020-02-26 19:12:18,762] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-02-26 19:12:55,129] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-02-28 21:48:37,564] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-02-28 21:48:37,691] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region

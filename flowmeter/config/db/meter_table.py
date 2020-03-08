@@ -2,7 +2,6 @@
 
 from django.db import models
 from flowmeter.config.db.dtu_table import Dtu
-from flowmeter.config.db.user_table import User
 from flowmeter.config.db.valve_table import Valve
 from flowmeter.config.db.meter_state_table import MeterState
 from flowmeter.config import const

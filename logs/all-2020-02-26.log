@@ -91,3 +91,24 @@
 [2020-02-26 19:12:55,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 7242
 [2020-02-26 19:12:55,129] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
 [2020-02-26 19:12:55,146] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 198
+[2020-02-26 19:19:28,034] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\meter_table.py changed, reloading.
+[2020-02-26 19:19:28,718] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-02-28 21:48:37,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-02-28 21:48:37,419] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-02-28 21:48:37,465] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /dtu_region/view/ HTTP/1.1" 500 59
+[2020-02-28 21:48:37,487] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-28 21:48:37,489] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 304 0
+[2020-02-28 21:48:37,564] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-02-28 21:48:37,597] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 198
+[2020-02-28 21:48:37,619] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-02-28 21:48:37,691] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-02-28 21:48:37,711] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 198
+[2020-02-28 23:36:09,399] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/add/ HTTP/1.1" 200 7817
+[2020-02-28 23:36:09,411] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 304 0
+[2020-02-28 23:36:09,413] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 304 0
+[2020-02-28 23:36:10,842] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/add/ HTTP/1.1" 200 7817
+[2020-02-28 23:36:12,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/add/ HTTP/1.1" 200 7817
+[2020-02-28 23:36:15,370] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/add/ HTTP/1.1" 200 7817
+[2020-02-28 23:36:17,440] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/add/ HTTP/1.1" 200 7817
+[2020-02-28 23:36:20,016] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/add/ HTTP/1.1" 200 7817
+[2020-02-28 23:36:22,313] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/add/ HTTP/1.1" 200 7817

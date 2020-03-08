@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>DTU区间列表</title>
+    <title>DTU列表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -27,7 +27,7 @@
     <span class="layui-breadcrumb">
         <a href="">首页</a>
         <a href="">
-            <cite>DTU区间列表</cite>
+            <cite>DTU列表</cite>
         </a>
     </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
@@ -53,7 +53,7 @@
                     </form>
                 </div>
                 <div class="layui-card-body ">
-                    <table lay-filter="dtu_region" id="dtu_region">
+                    <table lay-filter="dtu" id="dtu">
                     </table>
                 </div>
             </div>
@@ -65,7 +65,7 @@
     <button class="layui-btn layui-btn-danger" lay-event="del_batch">
         <i class="layui-icon"></i>批量删除
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU区间','/dtu_region/add/',700,400)">
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,400)">
         <i class="layui-icon"></i>添加
     </button>
 </script>
@@ -90,18 +90,17 @@
                     },
                     {field: 'manufacturer_name', title: '供气商名称'},
                     {field: 'manufacturer_phone', title: '联系电话'},
-                    {field: 'left', title: 'DTU起始编号'},
-                    {field: 'total_num', edit: 'text', title: 'DTU最大数量'},
-                    {field: 'used_num', title: 'DTU已使用数量'},
+                    {field: 'dtu_no', title: 'DTU编号'},
+                    {field: 'valve_control_type', title: 'DTU阀门控制器类型'},
+                    {field: 'remark', edit: 'text', title: '备注'},
                 ]],
-                url: '/handler/dtu_region/?action=query_dtu_region',
+                url: '/handler/dtu/?action=query_dtu',
                 page: true,
                 toolbar: '#toolbarDemo',
                 defaultToolbar: [],
-
             });
             //监听单元格编辑
-            table.on('edit(dtu_region)',
+            table.on('edit(dtu)',
                 function (obj) {
                     let data = obj.data;
                     delete data.manufacturer_name;
@@ -110,8 +109,8 @@
                     delete data.left;
                     post({
                         "param": JSON.stringify(data),
-                        "action": "update_dtu_region"
-                    }, '/handler/dtu_region/', function (data) {
+                        "action": "update_dtu"
+                    }, '/handler/dtu/', function (data) {
                         if (!data.success) {
                             layer.msg(data.msg, {icon: 5, time: 2000});
                         }
@@ -119,26 +118,26 @@
                 });
 
             //头工具栏事件
-            table.on('toolbar(dtu_region)',
+            table.on('toolbar(dtu)',
                 function (obj) {
                     var checkStatus = table.checkStatus(obj.config.id);
                     switch (obj.event) {
                         case 'del_batch':
                             layer.confirm('确认要删除吗？', function (index) {
-                                let checkStatus = table.checkStatus('dtu_region');
+                                let checkStatus = table.checkStatus('dtu');
                                 let ids = [];
                                 for (let i = 0; i < checkStatus.data.length; i++) {
                                     ids.push(checkStatus.data[i].id);
                                 }
                                 post({
-                                    "param": JSON.stringify({'dtu_region_ids': ids}),
-                                    "action": "del_batch_dtu_region"
-                                }, '/handler/dtu_region/', function (data) {
+                                    "param": JSON.stringify({'dtu_ids': ids}),
+                                    "action": "del_batch_dtu"
+                                }, '/handler/dtu/', function (data) {
                                     if (!data.success) {
                                         layer.msg(data.msg, {icon: 5, time: 1000});
                                     } else {
                                         layer.msg('删除成功!', {icon: 1});
-                                        table.reload('dtu_region');
+                                        table.reload('dtu');
                                     }
                                 });
                             });
@@ -148,7 +147,7 @@
             //监听提交
             form.on('submit(search)',
                 function (data) {
-                    table.reload('dtu_region', {
+                    table.reload('dtu', {
                         "where": {
                             "param": JSON.stringify(data.field),
                         }
