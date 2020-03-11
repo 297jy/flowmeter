@@ -29,12 +29,11 @@ class Meter(models.Model):
     temperature = models.FloatField(default=const.UNKNOWN_VALUE, null=True)
     # 电压
     power = models.FloatField(default=const.UNKNOWN_VALUE, null=True)
-    # 温度
+    # 版本
     version = models.FloatField(default=const.UNKNOWN_VALUE, null=True)
     # 仪表备注
     remark = models.CharField(max_length=const.REMARK_CHAR_LEN, null=True)
-    # 仪表对应的阀门控制器
-    valve = models.OneToOneField(Valve, on_delete=models.CASCADE)
+
     # 仪表对应的各种状态
     state = models.OneToOneField(MeterState, on_delete=models.CASCADE, null=True)
 

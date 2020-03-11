@@ -26,6 +26,7 @@ from flowmeter.views import file
 from flowmeter.views import system_setting
 from flowmeter.views import dtu_region
 from flowmeter.views import dtu
+from flowmeter.views import meter
 
 # 视图处理器路由
 handler_urlpatterns = [
@@ -38,6 +39,7 @@ handler_urlpatterns = [
     path('system/', system_setting.system_setting_handler),
     path('dtu_region/', dtu_region.region_handler),
     path('dtu/', dtu.dtu_handler),
+    path('meter/', meter.meter_handler),
 ]
 
 # 错误页面路由
@@ -78,6 +80,12 @@ dtu_urlpatterns = [
     path('add/', dtu.dtu_add),
 ]
 
+meter_urlpatterns = [
+    path('view/', meter.meter_view),
+    path('add/', meter.meter_add),
+    path('state/', meter.meter_state_view),
+]
+
 # 视图路由
 urlpatterns = [
     path('handler/', include(handler_urlpatterns)),
@@ -90,6 +98,7 @@ urlpatterns = [
     path('manufacturer/', include(manufacturer_urlpatterns)),
     path('dtu_region/', include(dtu_region_urlpatterns)),
     path('dtu/', include(dtu_urlpatterns)),
+    path('meter/', include(meter_urlpatterns)),
     path('system/', include(system_setting_urlpatterns)),
     path('logout/', logout.logout_view),
 ]

@@ -4,37 +4,57 @@ import datetime
 from flowmeter.config.core import meter as core
 from flowmeter.common.api.validators import param_check, StrCheck, WhiteListCheck
 from flowmeter.config.api import dtu as conf_dtu_api
+from flowmeter.config.db.meter_table import Meter
 
 
 def find_opr_logs_by_meter(meter_obj):
-
     logs = core.find_meter_opr_logs(meter_obj)
 
     return logs
 
 
 def find_meter(dtu_no, address):
-
     dtu_id = conf_dtu_api.find_id_by_dtu_no(dtu_no)
     meter = core.find_one_meter({'dtu_id': dtu_id, 'address': address})
 
     return meter
 
 
-def add_meter(meter_info):
+def find_meters(filters=None, page=None):
+    if page is None:
+        if filters:
+            meters = Meter.objects.filter(filters).order_by('dtu__dtu_no')
+        else:
+            meters = Meter.objects.all().order_by('dtu__dtu_no')
+    else:
+        start_index = page.limit * (page.index - 1)
+        end_index = page.index * page.limit
+        if filters:
+            meters = Meter.objects.filter(filters).order_by('dtu__dtu_no')[
+                start_index, end_index]
+        else:
+            meters = Meter.objects.all().order_by('dtu__dtu_no')[start_index:
+                                                                 end_index]
 
+    return meters
+
+
+def add_meter(meter_info):
     must_dict = {
         "dtu_id": int,
         "address": int,
-        "valve_id": int,
+        "surplus_gas_limits": float,
+        "state_id": int,
     }
-    param_check(meter_info, must_dict)
+    optional_dict = {
+        "remark": StrCheck.check_remark,
+    }
+    param_check(meter_info, must_dict, optional_dict)
 
     core.add_meter(meter_info)
 
 
 def update_meter_data(dtu_no, address, meter_data):
-
     optional_dict = {
         "dtu_no": int,
         "address": int,

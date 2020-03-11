@@ -19,6 +19,13 @@ def find_one_meter(meter_info):
         return None
 
 
+def find_meters(meter_info):
+
+    meters = Meter.objects.filter(**meter_info)
+
+    return meters
+
+
 def add_meter(meter_info):
 
     Meter.objects.create(**meter_info)

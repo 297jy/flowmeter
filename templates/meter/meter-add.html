@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>DTU添加</title>
+    <title>仪表添加</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -32,66 +32,40 @@
                 </label>
                 <div class="layui-input-inline" style="width: 400px">
                     <select name="manufacturer_id" lay-verify="required" lay-search="" id="manufacturer"
-                            lay-filter="manufacturer">
+                            lay-filter="manufacturer" required>
                         <option value="">未选择</option>
                     </select>
                 </div>
             </div>
 
-            <div class="layui-form-item">
+            <div class="layui-form-item" id="valve_dtu_div">
                 <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>DTU区间
+                    <span class="x-red">*</span>DTU编号
                 </label>
                 <div class="layui-input-inline">
-                    <select name="region_id" lay-verify="required" lay-search="" id="dtu_region"
-                            lay-filter="dtu_region">
+                    <select name="dtu_id" lay-search="" id="dtu" lay-verify="dtu" required>
                         <option value="">未选择</option>
                     </select>
                 </div>
             </div>
 
-            <div class="layui-form-item">
+            <div class="layui-form-item" id="address_div">
                 <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>DTU用户
-                </label>
-                <div class="layui-input-inline" style="width: 400px">
-                    <select name="user_id" lay-verify="required" lay-search="" id="dtu_user" lay-filter="test">
-                        <option value="">未选择</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="layui-form-item" id="valve_type_div">
-                <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>阀门类型
-                </label>
-                <div class="layui-input-inline">
-                    <select name="valve_type" lay-filter="valve_type">
-                        <option value="inline">流量计内嵌阀门</option>
-                        <option value="share">共享通信链路阀门</option>
-                        <option value="independent">独立通信链路阀门</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="layui-form-item" id="valve_dtu_div" style="display: none">
-                <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>阀门DTU
-                </label>
-                <div class="layui-input-inline">
-                    <select name="valve_dtu" lay-search="" id="valve_dtu" lay-verify="valve_dtu">
-                        <option value="">未选择</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="layui-form-item" id="address_div" style="display: none">
-                <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>阀门地址
+                    <span class="x-red">*</span>仪表地址
                 </label>
                 <div class="layui-input-inline">
                     <input type="number" id="address" name="address"
-                           autocomplete="off" class="layui-input" lay-verify="address">
+                           autocomplete="off" class="layui-input" lay-verify="address" required>
+                </div>
+            </div>
+
+            <div class="layui-form-item" id="address_div">
+                <label for="L_username" class="layui-form-label">
+                    <span class="x-red">*</span>气量限值
+                </label>
+                <div class="layui-input-inline">
+                    <input type="number" id="surplus_gas_limits" name="surplus_gas_limits"
+                           autocomplete="off" class="layui-input" lay-verify="surplus_gas_limits" >
                 </div>
             </div>
 
@@ -119,9 +93,9 @@
 
             //自定义验证规则
             form.verify({
-                valve_dtu: function (value) {
+                dtu: function (value) {
                     let valve_type = $("#valve_type_div").find('.layui-this').attr('lay-value');
-                    if(valve_type !== 'independent'){
+                    if (valve_type !== 'independent') {
                         return;
                     }
                     if (value.length === 0) {
@@ -130,11 +104,16 @@
                 },
                 address: function (value) {
                     let valve_type = $("#valve_type_div").find('.layui-this').attr('lay-value');
-                    if(valve_type !== 'share'){
+                    if (valve_type !== 'share') {
                         return;
                     }
                     if (value.length === 0) {
                         return "阀门地址不能为空！"
+                    }
+                },
+                surplus_gas_limits: function (value) {
+                    if(value === ''){
+                        return "气量限值不能为空！"
                     }
                 }
             });
@@ -142,23 +121,38 @@
             form.on('select(manufacturer)', function () {
 
                 get({
-                    "param": JSON.stringify({'id': $("#manufacturer_input").find('.layui-this').attr('lay-value')}),
-                    "action": "query_man_region"
-                }, '/handler/dtu_region/', function (res) {
+                    "param": JSON.stringify({'manufacturer_id': $("#manufacturer_input").find('.layui-this').attr('lay-value')}),
+                    "action": "query_dtu"
+                }, '/handler/dtu/', function (res) {
                     if (!res.success) {
                         layer.msg(res.msg, {icon: 5, time: 1000});
                     } else {
 
-                        $("#dtu_region").children().remove();
-                        $("#dtu_region").append('<option value="">未选择</option>');
+                        $("#dtu").children().remove();
+                        $("#dtu").append('<option value="">未选择</option>');
 
                         for (let i = 0; i < res.data.length; i++) {
-                            let right = res.data[i].left + res.data[i]['total_num'];
-                            $("#dtu_region").append('<option value="' + res.data[i].id + '">' + res.data[i].left + ' -- ' + right + '</option>');
+                            $("#dtu").append('<option value="' + res.data[i].id + '">' + res.data[i]['dtu_no'] + '</option>');
                         }
                         form.render();
                     }
                 });
+
+                get({
+                    "param": JSON.stringify({}),
+                    "action": "query_dtu_user"
+                }, '/handler/dtu_user/', function (res) {
+                    if (!res.success) {
+                        layer.msg(res.msg, {icon: 5, time: 1000});
+                    } else {
+                        for (let i = 0; i < res.data.length; i++) {
+                            $("#dtu_user").append('<option value="' + res.data[i].id + '">'
+                                + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                        }
+                        form.render('select');
+                    }
+                });
+
             });
 
             form.on('select(valve_type)', function () {
@@ -185,18 +179,11 @@
                 function (res) {
 
                     let obj = res.field;
-                    delete obj.manufacturer_id;
-                    if(obj['valve_dtu'] === ''){
-                        delete obj.valve_dtu;
-                    }
-                    if(obj['address'] === ''){
-                        delete obj.address;
-                    }
-
+                    delete obj['manufacturer_id'];
                     post({
                         "param": JSON.stringify(obj),
-                        "action": "add_dtu"
-                    }, '/handler/dtu/', function (data) {
+                        "action": "add_meter"
+                    }, '/handler/meter/', function (data) {
                         if (data.success) {
                             layer.alert("添加成功", {
                                     icon: 6
@@ -223,21 +210,6 @@
                 } else {
                     for (let i = 0; i < res.data.length; i++) {
                         $("#manufacturer").append('<option value="' + res.data[i].id + '">'
-                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
-                    }
-                    form.render('select');
-                }
-            });
-
-            get({
-                "param": JSON.stringify({}),
-                "action": "query_dtu_user"
-            }, '/handler/dtu_user/', function (res) {
-                if (!res.success) {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                } else {
-                    for (let i = 0; i < res.data.length; i++) {
-                        $("#dtu_user").append('<option value="' + res.data[i].id + '">'
                             + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
                     }
                     form.render('select');

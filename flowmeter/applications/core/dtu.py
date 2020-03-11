@@ -37,7 +37,7 @@ def get_dtu_dict(dtu):
             "id": dtu.id,
             "user_id": dtu.user.id,
             "user_name": dtu.user.name,
-            "user_phone": dtu.user.email,
+            "user_phone": dtu.user.phone,
             "manufacturer_id": dtu.region.manufacturer.id,
             "manufacturer_name": dtu.region.manufacturer.name,
             "manufacturer_phone": dtu.region.manufacturer.phone,

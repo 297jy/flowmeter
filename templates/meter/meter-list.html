@@ -1,0 +1,242 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>仪表列表</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" href="/static/css/xadmin.css">
+    <script src="/static/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/static/js/xadmin.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+    <script src="/static/js/flow-meter.js" charset="utf-8"></script>
+    <!--[if lt IE 9]>
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+<div class="x-nav">
+    <span class="layui-breadcrumb">
+        <a href="">首页</a>
+        <a href="">
+            <cite>仪表列表</cite>
+        </a>
+    </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+       onclick="location.reload()" title="刷新">
+        <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
+    </a>
+</div>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body ">
+                    <form class="layui-form layui-col-space5">
+
+                        <div class="layui-inline layui-show-xs-block">
+                            <select name="manufacturer_id" lay-search="">
+                                <option value="">供气商</option>
+                            </select>
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <select name="dtu_user_id" lay-search="">
+                                <option value="">DTU用户</option>
+                            </select>
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <select name="dtu_id" lay-search="">
+                                <option value="">DTU</option>
+                            </select>
+                        </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                                <i class="layui-icon">&#xe615;</i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="layui-card-body ">
+                    <table lay-filter="dtu" id="dtu">
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/html" id="toolbarDemo">
+    <button class="layui-btn layui-btn-danger" lay-event="del_batch">
+        <i class="layui-icon"></i>批量删除
+    </button>
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/meter/add/',700,500)">
+        <i class="layui-icon"></i>添加
+    </button>
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+        查询
+    </button>
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+        重启仪表
+    </button>
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+        充值
+    </button>
+    <div class="layui-inline layui-show-xs-block">
+        <button class="layui-btn" lay-submit="" lay-filter="search">
+            <i class="layui-icon">&#xe615;</i>
+        </button>
+    </div>
+</script>
+<script>
+    layui.use(['table', 'form', 'jquery', 'element', 'tree'],
+        function () {
+
+            $ = layui.jquery;
+            table = layui.table;
+            form = layui.form;
+
+            table.render({
+                elem: '#dtu', //指定原始表格元素选择器（推荐id选择器）
+                cols: [[
+                    {checkbox: true, width: '5%', field: 'id'},
+                    {
+                        numbbers: true,
+                        width: '5%',
+                        title: '序号',
+                        templet: function (data) {
+                            return data.LAY_TABLE_INDEX + 1;
+                        }
+                    },
+                    {field: 'dtu_no', title: 'DTU编号'},
+                    {field: 'address', title: '物理地址'},
+                    {field: 'surplus_gas', title: '剩余气量(m³)'},
+                    {field: 'total_flow', title: '累计用量(m³)'},
+                    {field: 'surplus_gas_limits', title: '气量限值(m³)'},
+                    {field: 'flow_rate', title: '瞬时流量'},
+                    {field: 'flow_ratio', title: '流量系数'},
+                    {field: 'power', title: '电池电压'},
+                    {field: 'temperature', title: '温度'},
+                    {field: 'version', title: '版本'},
+                    {field: 'last_update_time', title: '更新时间'},
+                    {field: 'remark', edit: 'text', title: '备注'},
+                    {
+                        field: 'state',
+                        title: '仪表状态',
+                        templet: function (d) {
+                            return "<button class=\"layui-btn\" onclick=\"xadmin." +
+                                "open('仪表状态','/meter/state/?id=" + d['state_id'] + "',300, 500)\">查看</button>";
+                        }
+                    },
+                ]],
+                url: '/handler/meter/?action=query_meter',
+                page: true,
+                toolbar: '#toolbarDemo',
+                defaultToolbar: [],
+            });
+            //监听单元格编辑
+            table.on('edit(dtu)',
+                function (obj) {
+                    let data = obj.data;
+                    delete data['manufacturer_name'];
+                    delete data['manufacturer_phone'];
+                    delete data['user_name'];
+                    delete data['user_phone'];
+                    delete data['dtu_no'];
+                    delete data['valve_type'];
+                    delete data['user_id'];
+                    delete data['manufacturer_id'];
+                    delete data['valve_dtu'];
+                    delete data['address'];
+                    post({
+                        "param": JSON.stringify(data),
+                        "action": "update_dtu"
+                    }, '/handler/dtu/', function (data) {
+                        if (!data.success) {
+                            layer.msg(data.msg, {icon: 5, time: 2000});
+                        }
+                    });
+                });
+
+            //头工具栏事件
+            table.on('toolbar(dtu)',
+                function (obj) {
+                    var checkStatus = table.checkStatus(obj.config.id);
+                    switch (obj.event) {
+                        case 'del_batch':
+                            layer.confirm('确认要删除吗？', function (index) {
+                                let checkStatus = table.checkStatus('dtu');
+                                let ids = [];
+                                for (let i = 0; i < checkStatus.data.length; i++) {
+                                    ids.push(checkStatus.data[i].id);
+                                }
+                                post({
+                                    "param": JSON.stringify({'dtu_ids': ids}),
+                                    "action": "del_batch_dtu"
+                                }, '/handler/dtu/', function (data) {
+                                    if (!data.success) {
+                                        layer.msg(data.msg, {icon: 5, time: 1000});
+                                    } else {
+                                        layer.msg('删除成功!', {icon: 1});
+                                        table.reload('dtu');
+                                    }
+                                });
+                            });
+                            break;
+                    }
+                });
+            //监听提交
+            form.on('submit(search)',
+                function (data) {
+                    table.reload('dtu', {
+                        "where": {
+                            "param": JSON.stringify(data.field),
+                        }
+                    });
+                    return false;
+                });
+
+            get({
+                "param": JSON.stringify({}),
+                "action": "query_manufacturer"
+            }, '/handler/manufacturer/', function (res) {
+                if (!res.success) {
+                    layer.msg(res.msg, {icon: 5, time: 1000});
+                } else {
+                    for (let i = 0; i < res.data.length; i++) {
+                        $("#manufacturer").append('<option value="' + res.data[i].id + '">'
+                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                    }
+                    form.render('select');
+                }
+            });
+
+            get({
+                "param": JSON.stringify({}),
+                "action": "query_dtu_user"
+            }, '/handler/dtu_user/', function (res) {
+                if (!res.success) {
+                    layer.msg(res.msg, {icon: 5, time: 1000});
+                } else {
+                    for (let i = 0; i < res.data.length; i++) {
+                        $("#dtu_user").append('<option value="' + res.data[i].id + '">'
+                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                    }
+                    form.render('select');
+                }
+            });
+        });
+</script>
+<script>var _hmt = _hmt || [];
+(function () {
+
+})();</script>
+
+</html>
