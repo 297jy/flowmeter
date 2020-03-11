@@ -11,7 +11,7 @@
  Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 25/02/2020 21:49:42
+ Date: 11/03/2020 15:07:19
 */
 
 SET NAMES utf8mb4;
@@ -403,6 +403,8 @@ INSERT INTO `django_migrations` VALUES (45, 'flowmeter', '0027_auto_20200222_142
 INSERT INTO `django_migrations` VALUES (46, 'flowmeter', '0028_auto_20200223_1423', '2020-02-23 14:23:30.313387');
 INSERT INTO `django_migrations` VALUES (47, 'flowmeter', '0029_auto_20200223_2350', '2020-02-23 23:50:50.325953');
 INSERT INTO `django_migrations` VALUES (48, 'flowmeter', '0030_auto_20200224_1521', '2020-02-24 15:21:41.100991');
+INSERT INTO `django_migrations` VALUES (49, 'flowmeter', '0031_auto_20200311_1120', '2020-03-11 11:20:54.080368');
+INSERT INTO `django_migrations` VALUES (50, 'flowmeter', '0032_valve_valve_dtu', '2020-03-11 11:22:18.811341');
 
 -- ----------------------------
 -- Table structure for django_session
@@ -419,7 +421,7 @@ CREATE TABLE `django_session`  (
 -- ----------------------------
 -- Records of django_session
 -- ----------------------------
-INSERT INTO `django_session` VALUES ('201oh4w0wafq4fp1nmqq1mw4v7bzbvy7', 'NzQyYmNlZmM3OWU2NDUyM2FlYzU1YzFhZWRmMmU0M2MwNDEyODdiOTp7InVzZXIiOnsiaWQiOjIsIm5hbWUiOiJcdTk2NDhcdTRmMWZcdTVmM2EiLCJwaG9uZSI6IjEzODUwNTkyMDg2IiwiZW1haWwiOiIxMzQ3NzA0MjYyQHFxLmNvbSIsInN0YXRlIjoiZW5hYmxlIiwicmVtYXJrIjoiIiwiYWN0aW9ucyI6WyJxdWVyeV9hZG1pbiIsInF1ZXJ5X2NvbnRyb2xfcmVnaXN0ZXIiLCJ1cGRhdGVfY29udHJvbF9yZWdpc3RlciIsInF1ZXJ5X2RhdGFfZmllbGQiLCJ1cGRhdGVfZGF0YV9maWVsZCIsInF1ZXJ5X21hbnVmYWN0dXJlciIsImNyZWF0ZV9hZG1pbiIsImVkaXRfYWRtaW4iLCJjcmVhdGVfbWFudWZhY3R1cmVyIiwiZWRpdF9tYW51ZmFjdHVyZXIiLCJzd2l0Y2hfYWRtaW5fc3RhdGUiLCJzd2l0Y2hfbWFudWZhY3R1cmVyX3N0YXRlIiwiZGVsX2JhdGNoX2FkbWluIiwiZGVsX2JhdGNoX21hbnVmYWN0dXJlciIsImltcG9ydF9hZG1pbiIsImltcG9ydF9tYW51ZmFjdHVyZXIiLCJleHBvcnRfYWRtaW4iLCJleHBvcnRfbWFudWZhY3R1cmVyIiwicXVlcnlfZHR1X3JlZ2lvbiIsImFkZF9kdHVfcmVnaW9uIiwiZGVsX2JhdGNoX2R0dV9yZWdpb24iLCJ1cGRhdGVfZHR1X3JlZ2lvbiJdLCJyb2xlIjoiYWRtaW4ifX0=', '2020-03-10 21:39:40.573300');
+INSERT INTO `django_session` VALUES ('201oh4w0wafq4fp1nmqq1mw4v7bzbvy7', 'MWVhODY2ZjFhMzg1ZWNjYzRkZTcyNGNmZDU2ZjA1MzY3YTc5YTBkYzp7InVzZXIiOnsiaWQiOjIsIm5hbWUiOiJcdTk2NDhcdTRmMWZcdTVmM2EiLCJwaG9uZSI6IjEzODUwNTkyMDg2IiwiZW1haWwiOiIxMzQ3NzA0MjYyQHFxLmNvbSIsInN0YXRlIjoiZW5hYmxlIiwicmVtYXJrIjoiIiwiYWN0aW9ucyI6WyJxdWVyeV9hZG1pbiIsInF1ZXJ5X2NvbnRyb2xfcmVnaXN0ZXIiLCJ1cGRhdGVfY29udHJvbF9yZWdpc3RlciIsInF1ZXJ5X2RhdGFfZmllbGQiLCJ1cGRhdGVfZGF0YV9maWVsZCIsInF1ZXJ5X21hbnVmYWN0dXJlciIsImNyZWF0ZV9hZG1pbiIsImVkaXRfYWRtaW4iLCJjcmVhdGVfbWFudWZhY3R1cmVyIiwiZWRpdF9tYW51ZmFjdHVyZXIiLCJzd2l0Y2hfYWRtaW5fc3RhdGUiLCJzd2l0Y2hfbWFudWZhY3R1cmVyX3N0YXRlIiwiZGVsX2JhdGNoX2FkbWluIiwiZGVsX2JhdGNoX21hbnVmYWN0dXJlciIsImltcG9ydF9hZG1pbiIsImltcG9ydF9tYW51ZmFjdHVyZXIiLCJleHBvcnRfYWRtaW4iLCJleHBvcnRfbWFudWZhY3R1cmVyIiwicXVlcnlfZHR1X3JlZ2lvbiIsInF1ZXJ5X21hbl9yZWdpb24iLCJhZGRfZHR1X3JlZ2lvbiIsImRlbF9iYXRjaF9kdHVfcmVnaW9uIiwidXBkYXRlX2R0dV9yZWdpb24iLCJxdWVyeV9kdHVfdXNlciIsImVkaXRfZHR1X3VzZXIiLCJkZWxfYmF0Y2hfZHR1X3VzZXIiLCJjcmVhdGVfZHR1X3VzZXIiLCJjcmVhdGVfZHR1X3VzZXIiLCJpbXBvcnRfZHR1X3VzZXIiLCJleHBvcnRfZHR1X3VzZXIiLCJxdWVyeV9zZXR0aW5nIiwic3dpdGNoX2R0dV91c2VyX3N0YXRlIiwicXVlcnlfZHR1IiwiYWRkX2R0dSIsInVwZGF0ZV9kdHUiLCJkZWxfYmF0Y2hfZHR1Il0sInJvbGUiOiJhZG1pbiJ9fQ==', '2020-03-25 14:58:46.460492');
 
 -- ----------------------------
 -- Table structure for djcelery_crontabschedule
@@ -558,7 +560,7 @@ CREATE TABLE `flowmeter_auth`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_auth_category_id_8f7a78fc_fk_flowmeter_authcategory_id`(`category_id`) USING BTREE,
   CONSTRAINT `flowmeter_auth_category_id_8f7a78fc_fk_flowmeter_authcategory_id` FOREIGN KEY (`category_id`) REFERENCES `flowmeter_authcategory` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_auth
@@ -581,10 +583,23 @@ INSERT INTO `flowmeter_auth` VALUES (15, '导入管理员', 'import_admin', NULL
 INSERT INTO `flowmeter_auth` VALUES (16, '导入供气商', 'import_manufacturer', NULL, 3);
 INSERT INTO `flowmeter_auth` VALUES (17, '导出管理员', 'export_admin', NULL, 1);
 INSERT INTO `flowmeter_auth` VALUES (18, '导出供气商', 'export_manufacturer', NULL, 3);
-INSERT INTO `flowmeter_auth` VALUES (19, '查询DTU区间', 'query_dtu_region', NULL, 4);
+INSERT INTO `flowmeter_auth` VALUES (19, '查询DTU区间', 'query_dtu_region;query_man_region', NULL, 4);
 INSERT INTO `flowmeter_auth` VALUES (20, '增加DTU区间', 'add_dtu_region', NULL, 4);
 INSERT INTO `flowmeter_auth` VALUES (21, '删除DTU区间', 'del_batch_dtu_region', NULL, 4);
 INSERT INTO `flowmeter_auth` VALUES (22, '编辑DTU区间', 'update_dtu_region', NULL, 4);
+INSERT INTO `flowmeter_auth` VALUES (23, '查询DTU用户', 'query_dtu_user', NULL, 5);
+INSERT INTO `flowmeter_auth` VALUES (24, '编辑DTU用户', 'edit_dtu_user', NULL, 5);
+INSERT INTO `flowmeter_auth` VALUES (25, '批量删除DTU用户', 'del_batch_dtu_user', NULL, 5);
+INSERT INTO `flowmeter_auth` VALUES (26, '添加DTU用户', 'create_dtu_user', NULL, 5);
+INSERT INTO `flowmeter_auth` VALUES (27, '添加DTU用户', 'create_dtu_user', NULL, 5);
+INSERT INTO `flowmeter_auth` VALUES (28, '导入DTU用户', 'import_dtu_user', NULL, 5);
+INSERT INTO `flowmeter_auth` VALUES (29, '导出DTU用户', 'export_dtu_user', NULL, 5);
+INSERT INTO `flowmeter_auth` VALUES (30, '查看系统设置', 'query_setting', NULL, 2);
+INSERT INTO `flowmeter_auth` VALUES (31, '切换DTU用户账号状态', 'switch_dtu_user_state', NULL, 5);
+INSERT INTO `flowmeter_auth` VALUES (32, '查询DTU列表', 'query_dtu', NULL, 6);
+INSERT INTO `flowmeter_auth` VALUES (33, '添加DTU', 'add_dtu', NULL, 6);
+INSERT INTO `flowmeter_auth` VALUES (34, '编辑DTU', 'update_dtu', NULL, 6);
+INSERT INTO `flowmeter_auth` VALUES (35, '删除DTU', 'del_batch_dtu', NULL, 6);
 
 -- ----------------------------
 -- Table structure for flowmeter_authcategory
@@ -595,7 +610,7 @@ CREATE TABLE `flowmeter_authcategory`  (
   `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `remark` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_authcategory
@@ -604,6 +619,8 @@ INSERT INTO `flowmeter_authcategory` VALUES (1, '管理员管理', '');
 INSERT INTO `flowmeter_authcategory` VALUES (2, '系统设置', NULL);
 INSERT INTO `flowmeter_authcategory` VALUES (3, '供气商管理', NULL);
 INSERT INTO `flowmeter_authcategory` VALUES (4, 'DTU区间管理', NULL);
+INSERT INTO `flowmeter_authcategory` VALUES (5, 'DTU用户管理', NULL);
+INSERT INTO `flowmeter_authcategory` VALUES (6, 'DTU管理', NULL);
 
 -- ----------------------------
 -- Table structure for flowmeter_controlregister
@@ -691,6 +708,12 @@ CREATE TABLE `flowmeter_dtu`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Records of flowmeter_dtu
+-- ----------------------------
+INSERT INTO `flowmeter_dtu` VALUES (8, 'test1', 14, 0, 15);
+INSERT INTO `flowmeter_dtu` VALUES (9, 'xxx', 16, 100, 15);
+
+-- ----------------------------
 -- Table structure for flowmeter_dturegion
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_dturegion`;
@@ -703,7 +726,13 @@ CREATE TABLE `flowmeter_dturegion`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_dturegion_manufacturer_id_ad32ad37`(`manufacturer_id`) USING BTREE,
   CONSTRAINT `flowmeter_dturegion_manufacturer_id_ad32ad37_fk_flowmeter` FOREIGN KEY (`manufacturer_id`) REFERENCES `flowmeter_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of flowmeter_dturegion
+-- ----------------------------
+INSERT INTO `flowmeter_dturegion` VALUES (14, 0, 99, 9, 2);
+INSERT INTO `flowmeter_dturegion` VALUES (16, 100, 219, 9, 1);
 
 -- ----------------------------
 -- Table structure for flowmeter_loginlog
@@ -779,17 +808,19 @@ CREATE TABLE `flowmeter_navigationbar`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_navigationbar_auth_id_a595869c_fk_flowmeter_auth_id`(`auth_id`) USING BTREE,
   CONSTRAINT `flowmeter_navigationbar_auth_id_a595869c_fk_flowmeter_auth_id` FOREIGN KEY (`auth_id`) REFERENCES `flowmeter_auth` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_navigationbar
 -- ----------------------------
 INSERT INTO `flowmeter_navigationbar` VALUES (1, 'xe6b8', '管理员列表', -1, 1, '/admin/view/', 1);
-INSERT INTO `flowmeter_navigationbar` VALUES (2, 'xe6b8', '系统设置', -1, 2, '', NULL);
+INSERT INTO `flowmeter_navigationbar` VALUES (2, 'xe6b8', '系统设置', -1, 6, '', 30);
 INSERT INTO `flowmeter_navigationbar` VALUES (3, 'xe6b8', '控制寄存器定义', 2, 1, '/system/register/', 2);
 INSERT INTO `flowmeter_navigationbar` VALUES (4, 'xe6b8', '数据帧格式定义', 2, 2, '/system/frame/', 4);
 INSERT INTO `flowmeter_navigationbar` VALUES (5, 'xe6b8', '供气商列表', -1, 2, '/manufacturer/view/', 6);
-INSERT INTO `flowmeter_navigationbar` VALUES (6, 'xe6b8', 'DTU区间列表', -1, 3, '/dtu_region/view/', 19);
+INSERT INTO `flowmeter_navigationbar` VALUES (6, 'xe6b8', 'DTU区间列表', -1, 4, '/dtu_region/view/', 19);
+INSERT INTO `flowmeter_navigationbar` VALUES (7, 'xe6b8', 'DTU用户列表', -1, 3, '/dtu_user/view/', 24);
+INSERT INTO `flowmeter_navigationbar` VALUES (8, 'xe6b8', 'DTU列表', -1, 5, '/dtu/view/', 32);
 
 -- ----------------------------
 -- Table structure for flowmeter_oprlog
@@ -823,6 +854,7 @@ CREATE TABLE `flowmeter_role`  (
 -- Records of flowmeter_role
 -- ----------------------------
 INSERT INTO `flowmeter_role` VALUES ('admin', NULL);
+INSERT INTO `flowmeter_role` VALUES ('dtu_user', NULL);
 INSERT INTO `flowmeter_role` VALUES ('manufacturer', NULL);
 
 -- ----------------------------
@@ -838,7 +870,7 @@ CREATE TABLE `flowmeter_roleauth`  (
   INDEX `flowmeter_roleauth_role_id_dc772944_fk_flowmeter_role_name`(`role_id`) USING BTREE,
   CONSTRAINT `flowmeter_roleauth_auth_id_076ea1f3_fk_flowmeter_auth_id` FOREIGN KEY (`auth_id`) REFERENCES `flowmeter_auth` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `flowmeter_roleauth_role_id_dc772944_fk_flowmeter_role_name` FOREIGN KEY (`role_id`) REFERENCES `flowmeter_role` (`name`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 32 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_roleauth
@@ -865,6 +897,19 @@ INSERT INTO `flowmeter_roleauth` VALUES (19, 19, 'admin');
 INSERT INTO `flowmeter_roleauth` VALUES (20, 20, 'admin');
 INSERT INTO `flowmeter_roleauth` VALUES (21, 21, 'admin');
 INSERT INTO `flowmeter_roleauth` VALUES (22, 22, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (23, 23, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (24, 24, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (25, 25, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (26, 26, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (27, 27, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (28, 28, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (29, 29, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (30, 30, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (31, 31, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (32, 32, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (33, 33, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (34, 34, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (35, 35, 'admin');
 
 -- ----------------------------
 -- Table structure for flowmeter_user
@@ -885,7 +930,7 @@ CREATE TABLE `flowmeter_user`  (
   UNIQUE INDEX `flowmeter_user_phone_0c31bcc5_uniq`(`phone`) USING BTREE,
   INDEX `flowmeter_user_role_id_0a219bb5_fk_flowmeter_role_name`(`role_id`) USING BTREE,
   CONSTRAINT `flowmeter_user_role_id_0a219bb5_fk_flowmeter_role_name` FOREIGN KEY (`role_id`) REFERENCES `flowmeter_role` (`name`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_user
@@ -897,6 +942,7 @@ INSERT INTO `flowmeter_user` VALUES (10, '供气商2', 'e4e5d1c9bf848d039fcf8afd
 INSERT INTO `flowmeter_user` VALUES (11, '供气商3', 'e4e5d1c9bf848d039fcf8afdb38ec6cb', '13850592087', '13477042611@qq.com', '2020-02-25 16:29:09.801093', 'enable', '', 'manufacturer');
 INSERT INTO `flowmeter_user` VALUES (12, '供气商4', 'e4e5d1c9bf848d039fcf8afdb38ec6cb', '13850599098', '1333@qq.com', '2020-02-25 16:29:34.215352', 'enable', '', 'manufacturer');
 INSERT INTO `flowmeter_user` VALUES (13, '供气商5', 'e4e5d1c9bf848d039fcf8afdb38ec6cb', '13003950222', '211@qq.com', '2020-02-25 16:30:54.408364', 'enable', '', 'manufacturer');
+INSERT INTO `flowmeter_user` VALUES (15, 'test', 'e4e5d1c9bf848d039fcf8afdb38ec6cb', '13850592083', '13444@qq.com', '2020-03-10 22:12:47.616825', 'enable', 'test', 'dtu_user');
 
 -- ----------------------------
 -- Table structure for flowmeter_valve
@@ -907,9 +953,20 @@ CREATE TABLE `flowmeter_valve`  (
   `valve_type` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `address` int(0) DEFAULT NULL,
   `dtu_id` int(0) DEFAULT NULL,
+  `valve_dtu_id` int(0) DEFAULT NULL,
+  `dtu_valve_id` int(0) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
-  INDEX `flowmeter_valve_dtu_id_51252e3a_fk_flowmeter_dtu_id`(`dtu_id`) USING BTREE,
-  CONSTRAINT `flowmeter_valve_dtu_id_51252e3a_fk_flowmeter_dtu_id` FOREIGN KEY (`dtu_id`) REFERENCES `flowmeter_dtu` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+  INDEX `flowmeter_valve_valve_dtu_id_f690f97a_fk_flowmeter_dtu_id`(`valve_dtu_id`) USING BTREE,
+  UNIQUE INDEX `flowmeter_valve_dtu_id_51252e3a_uniq`(`dtu_id`) USING BTREE,
+  INDEX `flowmeter_valve_dtu_valve_id_cfb86c7a_fk_flowmeter_dtu_id`(`dtu_valve_id`) USING BTREE,
+  CONSTRAINT `flowmeter_valve_valve_dtu_id_f690f97a_fk_flowmeter_dtu_id` FOREIGN KEY (`valve_dtu_id`) REFERENCES `flowmeter_dtu` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `flowmeter_valve_dtu_valve_id_cfb86c7a_fk_flowmeter_dtu_id` FOREIGN KEY (`dtu_valve_id`) REFERENCES `flowmeter_dtu` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of flowmeter_valve
+-- ----------------------------
+INSERT INTO `flowmeter_valve` VALUES (1, 'inline', NULL, 8, NULL, NULL);
+INSERT INTO `flowmeter_valve` VALUES (2, 'share', 21, 9, NULL, NULL);
 
 SET FOREIGN_KEY_CHECKS = 1;

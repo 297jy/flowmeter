@@ -982,3 +982,29 @@
 [2020-03-11 14:58:56,568] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu/ HTTP/1.1" 200 112
 [2020-03-11 14:59:42,839] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\dtu.py changed, reloading.
 [2020-03-11 14:59:43,567] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-11 14:59:44,141] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8963
+[2020-03-11 14:59:44,217] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-11 14:59:44,232] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 986
+[2020-03-11 14:59:44,238] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-11 14:59:44,254] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-11 14:59:44,258] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-11 14:59:44,263] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-11 14:59:46,790] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8963
+[2020-03-11 14:59:46,854] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-11 14:59:46,856] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-11 14:59:46,859] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-11 14:59:46,876] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-11 14:59:46,884] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 986
+[2020-03-11 14:59:46,885] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-11 14:59:49,776] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：del_batch_dtu
+[2020-03-11 14:59:49,795] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu/ HTTP/1.1" 200 68
+[2020-03-11 14:59:49,808] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-11 14:59:49,816] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 675
+[2020-03-11 14:59:52,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8963
+[2020-03-11 14:59:52,948] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-11 14:59:52,950] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-11 14:59:52,952] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-11 14:59:52,968] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-11 14:59:52,971] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 675
+[2020-03-11 14:59:52,977] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-11 15:07:29,769] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
