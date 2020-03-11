@@ -126,6 +126,8 @@
                     delete data['valve_type'];
                     delete data['user_id'];
                     delete data['manufacturer_id'];
+                    delete data['valve_dtu'];
+                    delete data['address'];
                     post({
                         "param": JSON.stringify(data),
                         "action": "update_dtu"

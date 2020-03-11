@@ -85,9 +85,13 @@ def del_batch_dtu(dtu_ids):
     # 保证原子性
     with transaction.atomic():
 
+        regions = set()
         for dtu_id in dtu_ids:
             dtu = conf_dtu_api.find_dtu_by_id(dtu_id)
-            core.update_region_used_num(dtu.region)
+            regions.add(dtu.region)
 
         conf_dtu_api.del_batch_dtu(dtu_ids)
+
+        for region in regions:
+            core.update_region_used_num(region)
 
