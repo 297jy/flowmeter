@@ -10,6 +10,7 @@ from flowmeter.common.const import UserStateType
 from flowmeter.config import const
 from flowmeter.config.db.operator_table import Operator
 from flowmeter.config.db.log_table import AlarmLog, OprLog
+from flowmeter.config.db.valve_table import Valve
 
 
 def param_check(data, must_dict=None, optional_dict=None, extra=False):
@@ -286,6 +287,13 @@ class WhiteListCheck:
         type_list = [AlarmLog.ALARM_EXCEED_LIMIT, AlarmLog.ALARM_SUB_VALVE, AlarmLog.ALARM_INTERRUPT]
         if alarm_type not in type_list:
             raise ParameterErrorException("没有该警报类型：{}！", alarm_type)
+
+    @staticmethod
+    def check_valve_type(data):
+
+        valve_type_list = [Valve.SHARE_TYPE, Valve.INLINE_TYPE, Valve.INDEPENDENT_TYPE]
+        if data not in valve_type_list:
+            raise ParameterErrorException("没有该阀门类型：{}！", data)
 
 
 class IntCheck:

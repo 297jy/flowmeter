@@ -17,7 +17,7 @@ def find_one_dtu(dtu_info):
 
 def add_dtu(dtu_info):
 
-    Dtu.objects.create(**dtu_info)
+    return Dtu.objects.create(**dtu_info)
 
 
 def find_dtu_meters(dtu):

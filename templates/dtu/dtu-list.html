@@ -42,29 +42,25 @@
                 <div class="layui-card-body ">
                     <form class="layui-form layui-col-space5">
 
-                        <div class="layui-form-item">
-                            <label for="L_username" class="layui-form-label">
-                                <span class="x-red">*</span>供气商
-                            </label>
                             <div class="layui-input-inline" style="width: 400px">
-                                <select name="manufacturer_id" lay-verify="required" lay-search="" id="manufacturer"
+                                <select name="manufacturer_id" lay-search="" id="manufacturer"
                                         lay-filter="test">
-                                    <option value="">未选择</option>
+                                    <option value="">供气商</option>
                                 </select>
                             </div>
+
+                            <div class="layui-input-inline" style="width: 400px">
+                                <select name="dtu_user_id" lay-search="" id="dtu_user"
+                                        lay-filter="test">
+                                    <option value="">DTU用户</option>
+                                </select>
+                            </div>
+                        <div class="layui-inline layui-show-xs-block">
+                            <button class="layui-btn" lay-submit="" lay-filter="search">
+                                <i class="layui-icon">&#xe615;</i>
+                            </button>
                         </div>
 
-                        <div class="layui-form-item">
-                            <label for="L_username" class="layui-form-label">
-                                <span class="x-red">*</span>DTU用户
-                            </label>
-                            <div class="layui-input-inline" style="width: 400px">
-                                <select name="dtu_user_id" lay-verify="required" lay-search="" id="dtu_user"
-                                        lay-filter="test">
-                                    <option value="">未选择</option>
-                                </select>
-                            </div>
-                        </div>
                     </form>
                 </div>
                 <div class="layui-card-body ">
@@ -80,7 +76,7 @@
     <button class="layui-btn layui-btn-danger" lay-event="del_batch">
         <i class="layui-icon"></i>批量删除
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,400)">
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
         <i class="layui-icon"></i>添加
     </button>
 </script>
@@ -105,10 +101,12 @@
                     },
                     {field: 'manufacturer_name', title: '供气商名称'},
                     {field: 'manufacturer_phone', title: '供气商联系电话'},
-                    {field: 'dtu_user_name', title: 'DTU用户名称'},
-                    {field: 'dtu_user_phone', title: 'DTU用户联系电话'},
+                    {field: 'user_name', title: 'DTU用户名称'},
+                    {field: 'user_phone', title: 'DTU用户联系电话'},
                     {field: 'dtu_no', title: 'DTU编号'},
-                    {field: 'valve_control_type', title: 'DTU阀门控制器类型'},
+                    {field: 'valve_type', title: 'DTU阀门控制器类型'},
+                    {field: 'valve_dtu', title: '阀门DTU编号'},
+                    {field: 'address', title: '阀门物理地址'},
                     {field: 'remark', edit: 'text', title: '备注'},
                 ]],
                 url: '/handler/dtu/?action=query_dtu',
@@ -120,13 +118,17 @@
             table.on('edit(dtu)',
                 function (obj) {
                     let data = obj.data;
-                    delete data.manufacturer_name;
-                    delete data.manufacturer_phone;
-                    delete data.used_num;
-                    delete data.left;
+                    delete data['manufacturer_name'];
+                    delete data['manufacturer_phone'];
+                    delete data['user_name'];
+                    delete data['user_phone'];
+                    delete data['dtu_no'];
+                    delete data['valve_type'];
+                    delete data['user_id'];
+                    delete data['manufacturer_id'];
                     post({
                         "param": JSON.stringify(data),
-                        "action": "edit_dtu"
+                        "action": "update_dtu"
                     }, '/handler/dtu/', function (data) {
                         if (!data.success) {
                             layer.msg(data.msg, {icon: 5, time: 2000});

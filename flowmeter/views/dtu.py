@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.views.decorators.clickjacking import xframe_options_sameorigin
 from flowmeter.views.common import ActionHandlerBase, Result
 from flowmeter.common.api import request as request_api
-from flowmeter.applications.api import dtu_region as app_region_api
+from flowmeter.applications.api import dtu as app_dtu_api
 
 
 class DtuActionHandler(ActionHandlerBase):
@@ -15,65 +15,81 @@ class DtuActionHandler(ActionHandlerBase):
     def __init__(self):
 
         action_dict = {
-            'query_dtu': self.query_dtu_region,
-            "add_dtu": self.add_dtu_region,
-            "update_dtu": self.update_dtu_region,
-            "del_batch_dtu": self.del_batch_dtu_region,
+            'query_dtu': self.query_dtu,
+            "add_dtu": self.add_dtu,
+            "update_dtu": self.update_dtu,
+            "del_batch_dtu": self.del_batch_dtu,
         }
         super().__init__(action_dict)
 
-    def query_dtu_region(self, request):
+    def query_dtu(self, request):
 
         param = request_api.get_param(request)
         page = request_api.get_page(request)
 
-        regions = app_region_api.find_regions_by_query_terms(param, page)
+        if 'manufacturer_id' in param:
+            if param['manufacturer_id']:
+                param['manufacturer_id'] = int(param['manufacturer_id'])
+            else:
+                del param['manufacturer_id']
 
-        return Result.success(data=regions, count=len(regions))
+        if 'dtu_user_id' in param:
+            if param['dtu_user_id']:
+                param['dtu_user_id'] = int(param['dtu_user_id'])
+            else:
+                del param['dtu_user_id']
 
-    def add_dtu_region(self, request):
+        dtus = app_dtu_api.find_dtu_by_query_terms(param, page)
+
+        return Result.success(data=dtus, count=len(dtus))
+
+    def add_dtu(self, request):
 
         param = request_api.get_param(request)
-        param['total_num'] = int(param['total_num'])
-        param['manufacturer_id'] = int(param['manufacturer_id'])
 
-        app_region_api.add_region(param)
+        param['region_id'] = int(param['region_id'])
+        param['user_id'] = int(param['user_id'])
+        if 'address' in param:
+            param['address'] = int(param['address'])
+        if 'valve_dtu' in param:
+            param['valve_dtu'] = int(param['valve_dtu'])
+        app_dtu_api.add_dtu(param)
 
         return Result.success()
 
-    def update_dtu_region(self, request):
+    def update_dtu(self, request):
 
         param = request_api.get_param(request)
-        param['total_num'] = int(param['total_num'])
+
         param['id'] = int(param['id'])
 
-        app_region_api.update_dtu_region(param)
+        app_dtu_api.update_dtu_region(param)
 
         return Result.success()
 
-    def del_batch_dtu_region(self, request):
+    def del_batch_dtu(self, request):
 
         param = request_api.get_param(request)
-        dtu_region_ids = param.get('dtu_region_ids')
+        dtu_ids = param.get('dtu_ids')
 
-        app_region_api.del_batch_region(dtu_region_ids)
+        app_dtu_api.del_batch_dtu(dtu_ids)
 
         return Result.success()
 
 
 @xframe_options_sameorigin
-def region_view(request):
+def dtu_view(request):
 
-    return render(request, 'dtu_region/dtu_region-list.html', {})
+    return render(request, 'dtu/dtu-list.html', {})
 
 
 @xframe_options_sameorigin
-def region_add(request):
+def dtu_add(request):
 
-    return render(request, 'dtu_region/dtu_region-add.html', {})
+    return render(request, 'dtu/dtu-add.html', {})
 
 
-def region_handler(request):
+def dtu_handler(request):
 
-    result = DtuRegionActionHandler().handle(request)
+    result = DtuActionHandler().handle(request)
     return HttpResponse(json.dumps(dict(result)))

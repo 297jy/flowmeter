@@ -19,7 +19,7 @@ def find_dtu_by_no(dtu_no):
 
 def find_dtu_by_id(dtu_id):
 
-    dtu = core.find_one_dtu({'dtu_id': dtu_id})
+    dtu = core.find_one_dtu({'id': dtu_id})
 
     return dtu
 
@@ -40,7 +40,7 @@ def add_dtu(dtu_info):
     }
     param_check(dtu_info, must_dict=must_dict, optional_dict=optional_dict)
 
-    core.add_dtu(dtu_info)
+    return core.add_dtu(dtu_info)
 
 
 def find_meters_by_dtu_no(dtu_no):

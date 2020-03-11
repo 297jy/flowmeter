@@ -25,6 +25,7 @@ from flowmeter.views import logout
 from flowmeter.views import file
 from flowmeter.views import system_setting
 from flowmeter.views import dtu_region
+from flowmeter.views import dtu
 
 # 视图处理器路由
 handler_urlpatterns = [
@@ -35,7 +36,8 @@ handler_urlpatterns = [
     path('user/', user.user_handler),
     path('file/', file.file_handler),
     path('system/', system_setting.system_setting_handler),
-    path('dtu_region/', dtu_region.region_handler)
+    path('dtu_region/', dtu_region.region_handler),
+    path('dtu/', dtu.dtu_handler),
 ]
 
 # 错误页面路由
@@ -71,6 +73,11 @@ dtu_region_urlpatterns = [
     path('add/', dtu_region.region_add),
 ]
 
+dtu_urlpatterns = [
+    path('view/', dtu.dtu_view),
+    path('add/', dtu.dtu_add),
+]
+
 # 视图路由
 urlpatterns = [
     path('handler/', include(handler_urlpatterns)),
@@ -82,6 +89,7 @@ urlpatterns = [
     path('dtu_user/', include(dtu_user_urlpatterns)),
     path('manufacturer/', include(manufacturer_urlpatterns)),
     path('dtu_region/', include(dtu_region_urlpatterns)),
+    path('dtu/', include(dtu_urlpatterns)),
     path('system/', include(system_setting_urlpatterns)),
     path('logout/', logout.logout_view),
 ]

@@ -18,6 +18,9 @@ class Valve(models.Model):
     # 阀门类型
     valve_type = models.CharField(max_length=VALVE_TYPE_CHAR_LEN)
     # 阀门绑定的dtu
-    dtu = models.ForeignKey(Dtu, on_delete=models.CASCADE, null=True)
+    dtu = models.OneToOneField(Dtu, on_delete=models.CASCADE, null=True)
     # 阀门绑定的modbus协议地址
     address = models.IntegerField(null=True)
+    # 阀门绑定的dtu
+    valve_dtu = models.ForeignKey(Dtu, on_delete=models.CASCADE, null=True, related_name='dtu_valve',
+                                  db_column='dtu_valve_id')

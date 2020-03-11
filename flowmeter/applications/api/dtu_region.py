@@ -44,6 +44,22 @@ def find_regions_by_query_terms(query_terms, page=None):
     return region_dicts
 
 
+def find_regions_by_man_id(id):
+
+    """
+    查找DTU区间
+    """
+
+    regions = conf_region_api.find_region_by_manufacturer_id(id)
+
+    region_dicts = []
+    for region in regions:
+        region_dict = core.transfer_dtu_region_obj_to_dict(region)
+        region_dicts.append(region_dict)
+
+    return region_dicts
+
+
 def update_dtu_region(region_info):
 
     must_dict = {

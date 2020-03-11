@@ -17,3 +17,4 @@ class Dtu(models.Model):
     # 仪表的使用用户
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
+

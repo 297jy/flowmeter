@@ -2,12 +2,14 @@
 
 from flowmeter.applications.core import dtu as core
 from flowmeter.config.api import dtu as conf_dtu_api
+from flowmeter.config.api import valve as conf_valve_api
 from flowmeter.config.api import dtu_region as conf_region_api
 from flowmeter.common.api.validators import param_check
-from flowmeter.common.api.validators import StrCheck
+from flowmeter.common.api.validators import StrCheck, WhiteListCheck
+from django.db import transaction
 
 
-def add_dtu(dtu):
+def add_dtu(dtu_info):
     """
     添加一个dtu
     :return:
@@ -15,18 +17,26 @@ def add_dtu(dtu):
     must_dict = {
         "region_id": int,
         "user_id": int,
+        "valve_type": WhiteListCheck.check_valve_type,
     }
     optional_dict = {
+        "valve_dtu": int,
+        "address": int,
         "remark": StrCheck.check_remark,
     }
-    param_check(dtu, must_dict, optional_dict)
+    param_check(dtu_info, must_dict, optional_dict)
 
-    region = conf_region_api.find_region_by_id(dtu['region_id'])
-    dtu['dtu_no'] = core.find_can_use_dtu_no(region)
+    region = conf_region_api.find_region_by_id(dtu_info['region_id'])
+    dtu_info['dtu_no'] = core.find_can_use_dtu_no(region)
+    # 保证原子性
+    with transaction.atomic():
+        # 添加DTU
+        dtu = conf_dtu_api.add_dtu(core.get_dtu_info(dtu_info))
+        # 添加阀门
+        dtu_info['dtu_id'] = dtu.id
+        conf_valve_api.add_valve(core.get_valve_info(dtu_info))
 
-    conf_dtu_api.add_dtu(dtu)
-
-    core.update_region_used_num(region)
+        core.update_region_used_num(region)
 
 
 def find_dtu_by_query_terms(query_terms, page=None):
@@ -72,8 +82,12 @@ def del_batch_dtu(dtu_ids):
     :return:
     """
 
-    conf_dtu_api.del_batch_dtu(dtu_ids)
-    for dtu_id in dtu_ids:
-        dtu = conf_dtu_api.find_dtu_by_id(dtu_id)
-        core.update_region_used_num(dtu.region)
+    # 保证原子性
+    with transaction.atomic():
+
+        for dtu_id in dtu_ids:
+            dtu = conf_dtu_api.find_dtu_by_id(dtu_id)
+            core.update_region_used_num(dtu.region)
+            
+        conf_dtu_api.del_batch_dtu(dtu_ids)
 

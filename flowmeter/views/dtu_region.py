@@ -15,6 +15,7 @@ class DtuRegionActionHandler(ActionHandlerBase):
     def __init__(self):
 
         action_dict = {
+            'query_man_region': self.query_man_region,
             'query_dtu_region': self.query_dtu_region,
             "add_dtu_region": self.add_dtu_region,
             "update_dtu_region": self.update_dtu_region,
@@ -28,6 +29,14 @@ class DtuRegionActionHandler(ActionHandlerBase):
         page = request_api.get_page(request)
 
         regions = app_region_api.find_regions_by_query_terms(param, page)
+
+        return Result.success(data=regions, count=len(regions))
+
+    def query_man_region(self, request):
+
+        param = request_api.get_param(request)
+
+        regions = app_region_api.find_regions_by_man_id(int(param.get('id')))
 
         return Result.success(data=regions, count=len(regions))
 
