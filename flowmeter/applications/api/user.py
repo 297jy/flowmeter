@@ -5,6 +5,7 @@ from flowmeter.common.api.validators import StrCheck, ListCheck, IntCheck, White
 from flowmeter.applications.core import user as user_core
 from flowmeter.config.api import user as conf_user_api
 from flowmeter.exceptions import NotUniqueException
+from flowmeter.config.db.user_table import User
 from flowmeter.common.api import file as file_api
 
 
@@ -392,6 +393,36 @@ def dtu_user_import(filename):
     """
     StrCheck.check_not_null(filename)
     user_core.dtu_user_import(filename)
+
+
+def find_dtu_user_by_man_id(man_id):
+
+    dtu_users = set()
+
+    man = User.objects.prefetch_related('dturegion_set__dtu_set__user').get(id=man_id)
+    # 先获取区间
+    dtu_regions = man.dturegion_set.all()
+
+    for region in dtu_regions:
+
+        # 获取dtu
+        dtus = region.dtu_set.all()
+        for dtu in dtus:
+            dtu_users.add(dtu.user)
+
+    return user_core.transfer_user_obj_to_dict(dtu_users, ['id', 'name', 'phone'])
+
+
+def find_dtu_by_user_id(user_id):
+
+    user = User.objects.prefetch_related('dtu_set').get(id=user_id)
+
+    dtus = user.dtu_set.all()
+
+    return user_core.transfer_user_obj_to_dict(dtus, ['id', 'dtu_no', 'remark'])
+
+
+
 
 
 

@@ -18,6 +18,7 @@ class MeterActionHandler(ActionHandlerBase):
             'query_meter': self.query_meter,
             'add_meter': self.add_meter,
             'query_state': self.query_meter_state,
+            'del_batch_meter': self.del_batch_meter,
         }
         super().__init__(action_dict)
 
@@ -61,6 +62,14 @@ class MeterActionHandler(ActionHandlerBase):
         state = app_meter_api.find_meter_state_by_id(param['state_id'])
 
         return Result.success(data=state)
+
+    def del_batch_meter(self, request):
+
+        param = request_api.get_param(request)
+
+        app_meter_api.del_batch_meter(param.get('meter_ids'), param.get('state_ids'))
+
+        return Result.success()
 
 
 @xframe_options_sameorigin

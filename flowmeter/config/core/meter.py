@@ -1,6 +1,8 @@
 # coding=utf-8
 
 from flowmeter.config.db.meter_table import Meter
+from django.db.utils import IntegrityError
+from flowmeter.exceptions import ValueDuplicateException
 
 
 def find_meter_opr_logs(meter):
@@ -28,7 +30,10 @@ def find_meters(meter_info):
 
 def add_meter(meter_info):
 
-    Meter.objects.create(**meter_info)
+    try:
+        Meter.objects.create(**meter_info)
+    except IntegrityError:
+        raise ValueDuplicateException("该仪表已存在！")
 
 
 def update_meter(old_meter, new_meter):
@@ -51,5 +56,14 @@ def update_meter_state(old_state, new_state):
         setattr(old_state, field, val)
 
     old_state.save()
+
+
+def del_batch_meter(meter_ids):
+    """
+    批量删除仪表
+    :return:
+    """
+
+    Meter.objects.filter(id__in=meter_ids).delete()
 
 

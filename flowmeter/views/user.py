@@ -22,6 +22,8 @@ class UserActionHandler(ActionHandlerBase):
             'query_admin': self.query_admin,
             'query_dtu_user': self.query_dtu_user,
             'query_manufacturer': self.query_manufacturer,
+            'query_dtu_user_by_man_id': self.query_dtu_user_by_man_id,
+            'query_dtu_by_user_id': self.query_dtu_by_user_id,
             'check_email_unique': self.check_email_unique,
             'check_phone_unique': self.check_phone_unique,
             'create_admin': self.create_admin,
@@ -71,6 +73,22 @@ class UserActionHandler(ActionHandlerBase):
         manufacturers = app_user_api.find_manufacturers_by_query_terms(param, page)
 
         return Result.success(data=manufacturers, count=len(manufacturers))
+
+    def query_dtu_user_by_man_id(self, request):
+
+        param = request_api.get_param(request)
+
+        dtu_users = app_user_api.find_dtu_user_by_man_id(param.get('man_id'))
+
+        return Result.success(data=dtu_users, count=len(dtu_users))
+
+    def query_dtu_by_user_id(self, request):
+
+        param = request_api.get_param(request)
+
+        dtus = app_user_api.find_dtu_by_user_id(param.get('user_id'))
+
+        return Result.success(data=dtus, count=len(dtus))
 
     def create_admin(self, request):
 

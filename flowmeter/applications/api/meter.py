@@ -2,7 +2,6 @@
 
 from flowmeter.applications.core import meter as core
 from flowmeter.config.api import meter as conf_meter_api
-from flowmeter.config.api import valve as conf_valve_api
 from flowmeter.config.api import meter_state as conf_state_api
 from flowmeter.common.api.validators import param_check
 from flowmeter.common.api.validators import StrCheck, WhiteListCheck
@@ -60,5 +59,17 @@ def add_meter(meter_info):
         state = conf_state_api.add_meter_state()
         meter_info['state_id'] = state.id
         conf_meter_api.add_meter(meter_info)
+
+
+def del_batch_meter(meter_ids, state_ids):
+    """
+    :return:
+    """
+
+    # 保证原子性
+    with transaction.atomic():
+
+        conf_meter_api.del_batch_meter(meter_ids)
+        conf_state_api.del_batch_meter_state(state_ids)
 
 

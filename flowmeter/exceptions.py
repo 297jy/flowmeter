@@ -41,3 +41,9 @@ class OfflineException(Exception):
     """
     离线异常
     """
+
+
+class ValueDuplicateException(Exception):
+    """
+    重复值异常
+    """

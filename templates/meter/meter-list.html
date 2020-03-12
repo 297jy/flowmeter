@@ -42,30 +42,30 @@
                 <div class="layui-card-body ">
                     <form class="layui-form layui-col-space5">
 
-                        <div class="layui-inline layui-show-xs-block">
-                            <select name="manufacturer_id" lay-search="">
+                        <div class="layui-inline layui-show-xs-block" id="manufacturer_input">
+                            <select name="manufacturer_id" lay-search="" id="manufacturer" lay-filter="manufacturer">
                                 <option value="">供气商</option>
                             </select>
                         </div>
-                        <div class="layui-inline layui-show-xs-block">
-                            <select name="dtu_user_id" lay-search="">
+                        <div class="layui-inline layui-show-xs-block" id="dtu_user_input">
+                            <select name="dtu_user_id" lay-search="" id="dtu_user" lay-filter="dtu_user">
                                 <option value="">DTU用户</option>
                             </select>
                         </div>
                         <div class="layui-inline layui-show-xs-block">
-                            <select name="dtu_id" lay-search="">
+                            <select name="dtu_id" lay-search="" id="dtu">
                                 <option value="">DTU</option>
                             </select>
                         </div>
                         <div class="layui-inline layui-show-xs-block">
-                            <button class="layui-btn" lay-submit="" lay-filter="sreach">
+                            <button class="layui-btn" lay-submit="" lay-filter="search">
                                 <i class="layui-icon">&#xe615;</i>
                             </button>
                         </div>
                     </form>
                 </div>
                 <div class="layui-card-body ">
-                    <table lay-filter="dtu" id="dtu">
+                    <table lay-filter="meter" id="meter">
                     </table>
                 </div>
             </div>
@@ -83,17 +83,16 @@
     <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
         查询
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)" style="margin-right: 20px">
         重启仪表
     </button>
+    <div class="layui-inline layui-show-xs-block">
+        <input type="text" name="query_box" placeholder="" autocomplete="off"
+               class="layui-input" id="query_box">
+    </div>
     <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
         充值
     </button>
-    <div class="layui-inline layui-show-xs-block">
-        <button class="layui-btn" lay-submit="" lay-filter="search">
-            <i class="layui-icon">&#xe615;</i>
-        </button>
-    </div>
 </script>
 <script>
     layui.use(['table', 'form', 'jquery', 'element', 'tree'],
@@ -104,7 +103,7 @@
             form = layui.form;
 
             table.render({
-                elem: '#dtu', //指定原始表格元素选择器（推荐id选择器）
+                elem: '#meter', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
                     {checkbox: true, width: '5%', field: 'id'},
                     {
@@ -166,26 +165,27 @@
                 });
 
             //头工具栏事件
-            table.on('toolbar(dtu)',
+            table.on('toolbar(meter)',
                 function (obj) {
                     var checkStatus = table.checkStatus(obj.config.id);
                     switch (obj.event) {
                         case 'del_batch':
                             layer.confirm('确认要删除吗？', function (index) {
-                                let checkStatus = table.checkStatus('dtu');
-                                let ids = [];
+                                let checkStatus = table.checkStatus('meter');
+                                let ids = [], state_ids = [];
                                 for (let i = 0; i < checkStatus.data.length; i++) {
                                     ids.push(checkStatus.data[i].id);
+                                    state_ids.push(checkStatus.data[i].state_id);
                                 }
                                 post({
-                                    "param": JSON.stringify({'dtu_ids': ids}),
-                                    "action": "del_batch_dtu"
-                                }, '/handler/dtu/', function (data) {
+                                    "param": JSON.stringify({'meter_ids': ids, 'state_ids': state_ids}),
+                                    "action": "del_batch_meter"
+                                }, '/handler/meter/', function (data) {
                                     if (!data.success) {
                                         layer.msg(data.msg, {icon: 5, time: 1000});
                                     } else {
                                         layer.msg('删除成功!', {icon: 1});
-                                        table.reload('dtu');
+                                        table.reload('meter');
                                     }
                                 });
                             });
@@ -195,7 +195,7 @@
             //监听提交
             form.on('submit(search)',
                 function (data) {
-                    table.reload('dtu', {
+                    table.reload('meter', {
                         "where": {
                             "param": JSON.stringify(data.field),
                         }
@@ -218,20 +218,63 @@
                 }
             });
 
-            get({
-                "param": JSON.stringify({}),
-                "action": "query_dtu_user"
-            }, '/handler/dtu_user/', function (res) {
-                if (!res.success) {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                } else {
-                    for (let i = 0; i < res.data.length; i++) {
-                        $("#dtu_user").append('<option value="' + res.data[i].id + '">'
-                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
-                    }
-                    form.render('select');
+            form.on('select(manufacturer)', function () {
+
+                let man_id = $("#manufacturer_input").find('.layui-this').attr('lay-value');
+                $("#dtu_user").children().remove();
+                $("#dtu_user").append('<option value="">DTU用户</option>');
+                form.render('select');
+                if (man_id === "") {
+                    return;
                 }
+                get({
+                    "param": JSON.stringify({'man_id': man_id}),
+                    "action": "query_dtu_user_by_man_id"
+                }, '/handler/user/', function (res) {
+                    if (!res.success) {
+                        layer.msg(res.msg, {icon: 5, time: 1000});
+                    } else {
+
+                        for (let i = 0; i < res.data.length; i++) {
+                            $("#dtu_user").append('<option value="' + res.data[i].id + '">'
+                                + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                        }
+                        form.render('select');
+                    }
+                });
+
+
             });
+
+            form.on('select(dtu_user)', function () {
+
+                let user_id = $("#dtu_user").val();
+
+                $("#dtu").children().remove();
+                $("#dtu").append('<option value="">DTU</option>');
+                form.render('select');
+                if (user_id === "") {
+                    return;
+                }
+
+                get({
+                    "param": JSON.stringify({'user_id': user_id}),
+                    "action": "query_dtu_by_user_id"
+                }, '/handler/user/', function (res) {
+                    if (!res.success) {
+                        layer.msg(res.msg, {icon: 5, time: 1000});
+                    } else {
+
+                        for (let i = 0; i < res.data.length; i++) {
+                            $("#dtu").append('<option value="' + res.data[i].id + '">' + res.data[i]['dtu_no'] + '</option>');
+                        }
+                        form.render('select');
+                    }
+                });
+
+
+            });
+
         });
 </script>
 <script>var _hmt = _hmt || [];

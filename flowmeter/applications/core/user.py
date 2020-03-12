@@ -12,18 +12,35 @@ from flowmeter.exceptions import NotUniqueException
 from flowmeter.config.api import dtu_region as conf_region_api
 
 
-def __transfer_user_obj_to_dict(users):
+def transfer_user_obj_to_dict(users, attribute_list=None):
     """
     将用户对象转成字典
     :param users:
+    :parameter attribute_list: 为None是默认获取全部属性，否则只获取attribute_list中出现的属性名
     :return:
     """
     user_dicts = []
     for user in users:
+
         user_dict = user.get_dict()
         __transfer_database_to_display(user_dict)
-        # 避免导出用户权限
-        del user_dict['actions']
+
+        if 'actions' in user_dict.keys():
+            # 避免导出用户权限
+            del user_dict['actions']
+
+        if attribute_list is not None:
+            # 将要删除的属性列表
+            del_attr_list = []
+            for key in user_dict.keys():
+                # 如果key不在属性列表中，则删除
+                if key not in attribute_list:
+                    del_attr_list.append(key)
+
+            # 删除多余的属性
+            for attr in del_attr_list:
+                del user_dict[attr]
+
         user_dicts.append(user_dict)
     return user_dicts
 
@@ -53,7 +70,7 @@ def __find_users_by_query_terms(query_terms, page=None):
 
     users = conf_user_api.get_users(query_box.get_filters() & query_role.get_filters() & query_time.get_filters(), page)
 
-    return __transfer_user_obj_to_dict(users)
+    return transfer_user_obj_to_dict(users)
 
 
 def __switch_user_state_by_id(user_id):
@@ -280,14 +297,18 @@ def __transfer_database_to_display(user_info):
     """
     # 格式化用户创建日期
     create_time = user_info.get('create_time')
-    user_info['create_time'] = str(create_time.strftime(settings.DATETIME_FORMAT_STR))
-    # 将英文的状态值，转化为中文
-    state = user_info['state']
-    if state == const.UserStateType.ENABLE_STATE:
-        state = '启用'
-    elif state == const.UserStateType.FORBIDDEN_STATE:
-        state = '禁用'
-    user_info['state'] = state
+    if 'create_time' in user_info.keys():
+        user_info['create_time'] = str(create_time.strftime(settings.DATETIME_FORMAT_STR))
+
+    if 'state' in user_info.keys():
+
+        # 将英文的状态值，转化为中文
+        state = user_info['state']
+        if state == const.UserStateType.ENABLE_STATE:
+            state = '启用'
+        elif state == const.UserStateType.FORBIDDEN_STATE:
+            state = '禁用'
+        user_info['state'] = state
 
 
 def transfer_display_to_database(user_info):

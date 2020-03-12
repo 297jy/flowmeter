@@ -30,11 +30,9 @@ def find_meters(filters=None, page=None):
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
-            meters = Meter.objects.filter(filters).order_by('dtu__dtu_no')[
-                start_index, end_index]
+            meters = Meter.objects.filter(filters).order_by('dtu__dtu_no')[start_index: end_index]
         else:
-            meters = Meter.objects.all().order_by('dtu__dtu_no')[start_index:
-                                                                 end_index]
+            meters = Meter.objects.all().order_by('dtu__dtu_no')[start_index: end_index]
 
     return meters
 
@@ -99,3 +97,11 @@ def update_meter_state(dtu_no, address, meter_state):
     old_meter = find_meter(dtu_no, address)
 
     core.update_meter_state(old_meter.state, meter_state)
+
+
+def del_batch_meter(meter_ids):
+    """
+    :return:
+    """
+
+    core.del_batch_meter(meter_ids)

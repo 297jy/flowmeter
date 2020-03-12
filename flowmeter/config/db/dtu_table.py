@@ -17,4 +17,11 @@ class Dtu(models.Model):
     # 仪表的使用用户
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
+    def get_dict(self):
+        return {
+            "id": self.id,
+            "remark": self.remark,
+            "dtu_no": self.dtu_no,
+        }
+
 
