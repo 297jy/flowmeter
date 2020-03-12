@@ -10,10 +10,19 @@ class Role(models.Model):
     """
     name = models.CharField(max_length=const.NAME_CHAR_LEN, primary_key=True)
     remark = models.CharField(max_length=const.REMARK_CHAR_LEN, null=True)
+    label = models.CharField(max_length=const.NAME_CHAR_LEN, default='')
+
     authorities = models.ManyToManyField(Auth, through='RoleAuth')
 
     def __eq__(self, other):
         return self.name == other
+
+    def get_dict(self):
+        return {
+            "name": self.name,
+            "label": self.label,
+            "remark": self.remark,
+        }
 
 
 class RoleAuth(models.Model):

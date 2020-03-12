@@ -12,3 +12,9 @@ class AuthCategory(models.Model):
     name = models.CharField(max_length=const.AUTH_CATEGORY_NAME_CHAR_LEN)
     # 权限分类备注
     remark = models.CharField(max_length=const.REMARK_CHAR_LEN, null=True)
+
+    def get_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+        }

@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="x-admin-sm">
+
+<head>
+    <meta charset="UTF-8">
+    <title>角色拥有的权限</title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport"
+          content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi"/>
+    <link rel="stylesheet" href="/static/css/font.css">
+    <link rel="stylesheet" href="/static/css/xadmin.css">
+    <script src="/static/lib/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/static/js/xadmin.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+    <script src="/static/js/flow-meter.js" charset="utf-8"></script>
+    <!--[if lt IE 9]>
+          <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+          <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form action="" method="post" class="layui-form layui-form-pane">
+            <div class="layui-form-item">
+                <label for="name" class="layui-form-label">
+                    <span class="x-red">*</span>角色名
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text"
+                           autocomplete="off" class="layui-input" readonly value="{{ label }}">
+                    <input type="hidden" name="role_name"
+                           autocomplete="off" class="layui-input" readonly value="{{ name }}">
+
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">
+                    拥有权限
+                </label>
+                <table class="layui-table layui-input-block">
+                    <tbody>
+                    {% for role_auth in role_auths %}
+                        <tr>
+                            <td>
+                                {% if role_auth.check_all %}
+                                    <input type="checkbox" lay-skin="primary" lay-filter="father"
+                                           title="{{ role_auth.name }}" {% if name == 'admin' %}disabled{% endif %}
+                                           checked>
+                                {% endif %}
+                                {% if not role_auth.check_all %}
+                                    <input type="checkbox" lay-skin="primary" lay-filter="father"
+                                           title="{{ role_auth.name }}" {% if name == 'admin' %}disabled{% endif %}>
+                                {% endif %}
+                            </td>
+                            <td>
+                                <div class="layui-input-block">
+                                    {% for auth in role_auth.auths %}
+                                        {% if auth.checked %}
+                                            <input name="auth_ids" lay-skin="primary" type="checkbox"
+                                                   title="{{ auth.name }}" value="{{ auth.id }}" checked
+                                                   {% if name == 'admin' %}disabled{% endif %}>
+                                        {% endif %}
+                                        {% if auth.checked == false %}
+                                            <input name="auth_ids" lay-skin="primary" type="checkbox"
+                                                   title="{{ auth.name }}" value="{{ auth.id }}"
+                                                   {% if name == 'admin' %}disabled{% endif %}>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="layui-form-item">
+                <button class="layui-btn" lay-submit="" lay-filter="add">确定</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    layui.use(['form', 'layer'], function () {
+        $ = layui.jquery;
+        var form = layui.form
+            , layer = layui.layer;
+
+        //监听提交
+        form.on('submit(add)', function (res) {
+            let auth_ids = [];
+            $('input[name=auth_ids]:checked').each(function () {
+                auth_ids.push($(this).val());
+            });
+
+            res.field.action = 'edit_role_auth';
+            post({
+                "param": JSON.stringify({"role_name": "{{ name }}", "auth_ids": auth_ids}),
+                "action": "edit_role_auth"
+            }, '/handler/auth/', function (data) {
+                if (data.success) {
+                    layer.alert("提交成功", {
+                            icon: 6
+                        },
+                        function () {
+                            //关闭当前frame
+                            xadmin.close();
+                            // 可以对父窗口进行刷新
+                            xadmin.father_reload();
+                        });
+                } else {
+                    layer.msg(data.msg, {icon: 5, time: 3000});
+                }
+            });
+            return false;
+        });
+
+
+        form.on('checkbox(father)', function (data) {
+
+            if (data.elem.checked) {
+                $(data.elem).parent().siblings('td').find('input').prop("checked", true);
+                form.render();
+            } else {
+                $(data.elem).parent().siblings('td').find('input').prop("checked", false);
+                form.render();
+            }
+        });
+
+
+    });
+</script>
+<script>var _hmt = _hmt || [];
+(function () {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();</script>
+</body>
+
+</html>

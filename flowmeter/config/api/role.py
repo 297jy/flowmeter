@@ -61,4 +61,12 @@ def get_allowed_actions_of_role_name(role_name):
     return action_list
 
 
+def get_all_role():
+    """
+    获取全部角色
+    :return:
+    """
+    return Role.objects.all()
+
+
 

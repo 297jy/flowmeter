@@ -18,5 +18,14 @@ class Auth(models.Model):
     # 权限备注
     remark = models.CharField(max_length=const.REMARK_CHAR_LEN, null=True)
 
+    def get_dict(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "permission_action": self.permission_action,
+            "category_id": self.category.id
+        }
+
     class Meta:
         ordering = ['id']
+

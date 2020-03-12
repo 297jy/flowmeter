@@ -133,6 +133,15 @@ class StrCheck:
                                           .format(const.AUTH_NAME_CHAR_LEN))
 
     @staticmethod
+    def check_role_name(name):
+
+        StrCheck.check_not_null(name)
+
+        if len(name) > const.NAME_CHAR_LEN:
+            raise ParameterErrorException("权限名称字符长度只能为[1-{}]个字符！"
+                                          .format(const.NAME_CHAR_LEN))
+
+    @staticmethod
     def check_auth_permission_action(action):
 
         StrCheck.check_not_null(action)
