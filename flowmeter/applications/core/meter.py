@@ -3,7 +3,8 @@
 from django.db.models import Q, F
 from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.db.valve_table import Valve
-from flowmeter.config.api import dtu_region as conf_region_api
+from flowmeter.config.db.operator_table import Operator
+from flowmeter.config.api import meter as conf_meter_api
 from flowmeter.exceptions import ValueValidException
 from flowmeter.config.const import UNKNOWN_STATE, UNKNOWN_VALUE
 
@@ -123,3 +124,20 @@ def get_dtu_info(dtu_info):
         dtu_dict['remark'] = dtu_info['remark']
 
     return dtu_dict
+
+
+def get_remote_execute_oprs(meter_info):
+    """
+    获取需要执行的操作
+    :param meter_info:
+    :return:
+    """
+    old_meter = conf_meter_api.find_meter_by_id(meter_info['meter_id'])
+
+    opr_funs = []
+    if old_meter.address != meter_info['address']:
+        opr_funs.append(Operator.create_set_meter_address_opr)
+    if old_meter.flow_ratio != meter_info['flow_ratio']:
+        opr_funs.append(Operator.create_set_flow_ratio_opr)
+
+    return opr_funs

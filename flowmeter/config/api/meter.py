@@ -20,6 +20,13 @@ def find_meter(dtu_no, address):
     return meter
 
 
+def find_meter_by_id(meter_id):
+
+    meter = core.find_one_meter({'id': meter_id})
+
+    return meter
+
+
 def find_meters(filters=None, page=None):
     if page is None:
         if filters:

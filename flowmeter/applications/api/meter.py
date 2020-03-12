@@ -73,3 +73,20 @@ def del_batch_meter(meter_ids, state_ids):
         conf_state_api.del_batch_meter_state(state_ids)
 
 
+def update_meter(meter_info):
+    """
+    更新仪表状态
+    :param meter_info:
+    :return:
+    """
+    must_dict = {
+        "id": int,
+        "address": int,
+        "surplus_gas_limits": float,
+        "flow_ratio": float,
+    }
+    param_check(meter_info, must_dict)
+
+    
+
+

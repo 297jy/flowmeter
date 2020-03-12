@@ -15,7 +15,7 @@ def find_meter_opr_logs(meter):
 def find_one_meter(meter_info):
 
     try:
-        meter = Meter.objects.get(**meter_info)
+        meter = Meter.objects.prefetch_related('dtu').get(**meter_info)
         return meter
     except Meter.DoesNotExist:
         return None
