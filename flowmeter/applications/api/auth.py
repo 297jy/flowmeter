@@ -1,4 +1,5 @@
 # coding=utf-8
+from django.db import transaction
 
 from flowmeter.common.api.validators import StrCheck
 from flowmeter.common.api.validators import param_check
@@ -145,15 +146,20 @@ def edit_role_auth(role_name, auth_ids):
 
     role = conf_role_api.get_role(role_name)
 
-    auths = conf_auth_api.find_auths_by_id_list(auth_ids)
+    if core.check_role_auth_change(role.authorities.all(), auth_ids):
 
-    # 清空原有权限
-    role.authorities.clear()
-    # 添加到新的权限
-    for auth in auths:
-        role.authorities.add(auth)
+        auths = conf_auth_api.find_auths_by_id_list(auth_ids)
 
-    role.save()
+        with transaction.atomic():
+            # 清空原有权限
+            role.authorities.clear()
+            # 添加到新的权限
+            for auth in auths:
+                role.authorities.add(auth)
+            role.save()
+            # 增加角色版本号
+            core.increase_role_version(role_name)
+
 
 
 

@@ -5,6 +5,7 @@ from flowmeter.config.db.auth_table import Auth
 from flowmeter.config.api import user as conf_user_api, cache
 from flowmeter.config.api import role as conf_role_api
 from flowmeter.config.api import navigation_bar as conf_nav_bar_api
+from flowmeter.config.api import flag as conf_flag_api
 from flowmeter.exceptions import DoesNotExistException
 from flowmeter.common.api.password import password_encryption
 from flowmeter.common import const
@@ -134,6 +135,33 @@ def check_user_is_forbidden(user):
         return True
     else:
         return False
+
+
+def check_role_auth_change(now_auths, auth_ids):
+    """
+    检查角色权限是否发生改变
+    :param now_auths:
+    :param auth_ids:
+    :return:
+    """
+    if len(now_auths) == len(auth_ids):
+        for now_auth in now_auths:
+            if str(now_auth.id) not in auth_ids:
+                return True
+    else:
+        return True
+
+    return False
+
+
+def increase_role_version(role_name):
+    """
+    增加角色版本
+    :param role_name:
+    :return:
+    """
+    version = conf_flag_api.get_role_version(role_name)
+    conf_flag_api.set_role_version(role_name, version + 1)
 
 
 

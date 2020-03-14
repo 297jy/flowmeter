@@ -49,12 +49,12 @@
                             <td>
                                 {% if role_auth.check_all %}
                                     <input type="checkbox" lay-skin="primary" lay-filter="father"
-                                           title="{{ role_auth.name }}" {% if name == 'admin' %}disabled{% endif %}
+                                           title="{{ role_auth.name }}" {% if name != 'admin' %}disabled{% endif %}
                                            checked>
                                 {% endif %}
                                 {% if not role_auth.check_all %}
                                     <input type="checkbox" lay-skin="primary" lay-filter="father"
-                                           title="{{ role_auth.name }}" {% if name == 'admin' %}disabled{% endif %}>
+                                           title="{{ role_auth.name }}" {% if name != 'admin' %}disabled{% endif %}>
                                 {% endif %}
                             </td>
                             <td>
@@ -104,15 +104,11 @@
                 "action": "edit_role_auth"
             }, '/handler/auth/', function (data) {
                 if (data.success) {
-                    layer.alert("提交成功", {
-                            icon: 6
-                        },
-                        function () {
-                            //关闭当前frame
-                            xadmin.close();
-                            // 可以对父窗口进行刷新
-                            xadmin.father_reload();
-                        });
+                    //关闭当前frame
+                    xadmin.close();
+                    // 可以对父窗口进行刷新
+                    xadmin.father_reload();
+
                 } else {
                     layer.msg(data.msg, {icon: 5, time: 3000});
                 }

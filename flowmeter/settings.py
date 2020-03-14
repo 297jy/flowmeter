@@ -108,6 +108,8 @@ SESSION_CACHE_ALIAS = 'default'
 
 # 设置session失效时间,单位为秒
 SESSION_COOKIE_AGE = 60 * 5
+# 浏览器一关就失效
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators

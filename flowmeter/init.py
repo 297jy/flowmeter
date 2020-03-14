@@ -154,6 +154,10 @@ def __init_authorities():
 
 
 def init_role_version():
+    """
+    初始化角色权限版本
+    :return:
+    """
     roles = conf_role_api.get_all_role()
     for role in roles:
         try:
