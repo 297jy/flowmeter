@@ -3,9 +3,11 @@
 from flowmeter.applications.core import meter as core
 from flowmeter.config.api import meter as conf_meter_api
 from flowmeter.config.api import meter_state as conf_state_api
+from flowmeter.config.api import operator as conf_opr_api
 from flowmeter.common.api.validators import param_check
 from flowmeter.common.api.validators import StrCheck, WhiteListCheck
 from django.db import transaction
+from flowmeter.common.api import request as request_api
 
 
 def find_meter_by_query_terms(query_terms, page=None):
@@ -73,9 +75,10 @@ def del_batch_meter(meter_ids, state_ids):
         conf_state_api.del_batch_meter_state(state_ids)
 
 
-def update_meter(meter_info):
+def update_meter(meter_info, user):
     """
-    更新仪表状态
+    更新仪表信息
+    :param user: 当前登录的用户
     :param meter_info:
     :return:
     """
@@ -86,6 +89,51 @@ def update_meter(meter_info):
         "flow_ratio": float,
     }
     param_check(meter_info, must_dict)
+
+    dtu_no = conf_meter_api.find_dtu_no_by_meter_id(meter_info['id'])
+
+    # 保证原子性
+    with transaction.atomic():
+        # 获取需要远程执行的命令
+        oprs = core.get_remote_execute_oprs(user['id'], dtu_no, meter_info)
+
+        # 将操作添加到缓存中
+        for opr in oprs:
+            conf_opr_api.add_operator(opr)
+
+        # 更新不需要远程操作的仪表信息
+        conf_meter_api.update_meter_info({"id": meter_info['id'],
+                                          "surplus_gas_limits": meter_info['surplus_gas_limits']})
+
+
+def update_meter_state(meter_state_info, user):
+    """
+    更新仪表信息
+    :param user: 当前登录的用户
+    :param meter_state_info:
+    :return:
+    """
+    must_dict = {
+        "id": int,
+        "meter_id": int,
+    }
+    optional_dict = {
+        "valve_state": int,
+        "recharge_state": int,
+    }
+    param_check(meter_state_info, must_dict, optional_dict)
+
+    dtu_no = conf_meter_api.find_dtu_no_by_meter_id(meter_state_info['meter_id'])
+
+    # 保证原子性
+    with transaction.atomic():
+        # 获取需要远程执行的命令
+        oprs = core.get_remote_execute_oprs(user['id'], dtu_no, meter_state_info=meter_state_info)
+
+        # 将操作添加到缓存中
+        for opr in oprs:
+            conf_opr_api.add_operator(opr)
+
 
 
 

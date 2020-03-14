@@ -19,6 +19,8 @@ class MeterActionHandler(ActionHandlerBase):
             'add_meter': self.add_meter,
             'query_state': self.query_meter_state,
             'del_batch_meter': self.del_batch_meter,
+            "update_meter": self.update_meter,
+            "update_meter_state": self.update_meter_state,
         }
         super().__init__(action_dict)
 
@@ -71,26 +73,38 @@ class MeterActionHandler(ActionHandlerBase):
 
         return Result.success()
 
+    def update_meter(self, request):
+
+        meter_info = request_api.get_param(request)
+        meter_info['flow_ratio'] = meter_info['flow_ratio'] * 1.0
+        app_meter_api.update_meter(meter_info, request_api.get_user(request))
+
+        return Result.success()
+
+    def update_meter_state(self, request):
+
+        meter_info_state = request_api.get_param(request)
+        app_meter_api.update_meter_state(meter_info_state, request_api.get_user(request))
+
+        return Result.success()
+
 
 @xframe_options_sameorigin
 def meter_view(request):
-
     return render(request, 'meter/meter-list.html', {})
 
 
 @xframe_options_sameorigin
 def meter_state_view(request):
-
-    return render(request, 'meter/meter-state.html', {'id': request.GET.get('id')})
+    return render(request, 'meter/meter-state.html',
+                  {'id': request.GET.get('id'), 'meter_id': request.GET.get('meter_id')})
 
 
 @xframe_options_sameorigin
 def meter_add(request):
-
     return render(request, 'meter/meter-add.html', {})
 
 
 def meter_handler(request):
-
     result = MeterActionHandler().handle(request)
     return HttpResponse(json.dumps(dict(result)))

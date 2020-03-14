@@ -72,7 +72,7 @@ class AuthMiddleware(MiddlewareMixin):
         # 如过action为空，表示不需要检查权限
         if action is None:
             return
-        user = request_api.get_user(request)
-        if is_action_allowed(user, action) is False:
+
+        if is_action_allowed(request, action) is False:
             return HttpResponse(json.dumps(dict(Result.error('权限不足,请联系管理员添加权限！'))))
 

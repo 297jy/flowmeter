@@ -7,20 +7,38 @@ from flowmeter.exceptions import ForbiddenException
 from flowmeter.config.api import role as conf_role_api
 from flowmeter.config.api import auth_category as conf_category_api
 from flowmeter.config.api import auth as conf_auth_api
-from django.db import transaction
+from flowmeter.config.api import flag as conf_flag_api
+from flowmeter.config.api import user as conf_user_api
+from flowmeter.common.api import request as request_api
+from flowmeter.exceptions import ExpireException
 
 import logging
 
 logger = logging.getLogger('log')
 
 
-def is_action_allowed(user, action):
+def __check_role_version_expire(user):
+    now_version = conf_flag_api.get_role_version(user['role'])
+    if user['role_version'] < now_version:
+        return True
+    return False
+
+
+def is_action_allowed(request, action):
     """
     判断用户是否被允许执行某个动作
-    :param user: 要执行动作的用户
+    :param request:
     :param action: 当前正要执行的动作
     :return:
     """
+
+    user = request_api.get_user(request)
+    # 角色权限过期，就重新加载权限
+    if __check_role_version_expire(user):
+        user_obj = conf_user_api.get_user_by_id(user['id'])
+        request_api.set_user(request, user_obj)
+        user = request_api.get_user(request)
+
     auths = user.get('actions', [])
     if action in auths:
         allowed = True
@@ -136,6 +154,7 @@ def edit_role_auth(role_name, auth_ids):
         role.authorities.add(auth)
 
     role.save()
+
 
 
 

@@ -27,6 +27,13 @@ def find_meter_by_id(meter_id):
     return meter
 
 
+def find_dtu_no_by_meter_id(meter_id):
+
+    meter = Meter.objects.prefetch_related('dtu__dtu_no').values('dtu__dtu_no').get(id=meter_id)
+    dtu_no = meter['dtu__dtu_no']
+    return dtu_no
+
+
 def find_meters(filters=None, page=None):
     if page is None:
         if filters:
@@ -78,6 +85,19 @@ def update_meter_data(dtu_no, address, meter_data):
     old_meter = find_meter(dtu_no, address)
 
     core.update_meter(old_meter, meter_data)
+
+
+def update_meter_info(meter_info):
+    must_dict = {
+        "id": int,
+    }
+    optional_dict = {
+        "surplus_gas_limits": float,
+    }
+    param_check(meter_info, must_dict, optional_dict)
+
+    old_meter = find_meter_by_id(meter_info['id'])
+    core.update_meter(old_meter, meter_info)
 
 
 def update_meter_state(dtu_no, address, meter_state):

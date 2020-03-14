@@ -1,0 +1,555 @@
+[2020-03-14 13:22:38,056] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-14 13:38:24,745] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\auth.py changed, reloading.
+[2020-03-14 13:38:25,470] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-14 16:07:20,067] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-14 16:07:30,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-03-14 16:07:31,012] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-03-14 16:08:03,928] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-03-14 16:08:13,183] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-03-14 16:08:13,239] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 96
+[2020-03-14 16:08:13,298] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/icon.png HTTP/1.1" 200 11493
+[2020-03-14 16:08:14,526] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8665
+[2020-03-14 16:08:14,591] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-03-14 16:08:14,657] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4382
+[2020-03-14 16:08:14,673] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3803
+[2020-03-14 16:08:14,693] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10617
+[2020-03-14 16:08:14,719] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-14 16:08:14,734] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10678
+[2020-03-14 16:08:14,756] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-03-14 16:08:14,787] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 12560
+[2020-03-14 16:08:14,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 9053
+[2020-03-14 16:08:14,831] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /role/view/ HTTP/1.1" 200 4075
+[2020-03-14 16:08:14,995] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/system/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,000] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/system/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,005] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_user/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,009] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/admin/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,010] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/manufacturer/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,015] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_region/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,016] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 500 18945
+[2020-03-14 16:08:15,016] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 500 18966
+[2020-03-14 16:08:15,017] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 500 18948
+[2020-03-14 16:08:15,018] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 500 18924
+[2020-03-14 16:08:15,021] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 500 18980
+[2020-03-14 16:08:15,022] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 500 18964
+[2020-03-14 16:08:15,058] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/auth/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,064] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_user/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,069] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/meter/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,075] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,080] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/auth/?action=query_role&page=1&limit=10 HTTP/1.1" 500 18916
+[2020-03-14 16:08:15,080] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/manufacturer/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,081] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 500 18926
+[2020-03-14 16:08:15,081] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 500 18924
+[2020-03-14 16:08:15,082] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 500 18908
+[2020-03-14 16:08:15,083] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 500 18956
+[2020-03-14 16:08:15,101] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/manufacturer/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:08:15,102] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 500 18954
+[2020-03-14 16:10:11,976] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-14 16:10:17,741] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8665
+[2020-03-14 16:10:17,805] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-03-14 16:10:17,873] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4382
+[2020-03-14 16:10:17,882] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3803
+[2020-03-14 16:10:17,891] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10617
+[2020-03-14 16:10:17,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-14 16:10:17,900] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10678
+[2020-03-14 16:10:17,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-03-14 16:10:17,909] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 9053
+[2020-03-14 16:10:17,913] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 12560
+[2020-03-14 16:10:17,916] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /role/view/ HTTP/1.1" 200 4075
+[2020-03-14 16:10:18,244] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/system/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,245] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/admin/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,245] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/system/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,256] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 500 18945
+[2020-03-14 16:10:18,262] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_user/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,263] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 500 18924
+[2020-03-14 16:10:18,265] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 500 18966
+[2020-03-14 16:10:18,277] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 500 18948
+[2020-03-14 16:10:18,286] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/manufacturer/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,293] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_region/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,298] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 500 18980
+[2020-03-14 16:10:18,307] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 500 18964
+[2020-03-14 16:10:18,314] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/auth/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,322] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/auth/?action=query_role&page=1&limit=10 HTTP/1.1" 500 18916
+[2020-03-14 16:10:18,332] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/manufacturer/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,337] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,343] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_user/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,344] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 500 18954
+[2020-03-14 16:10:18,345] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 500 18908
+[2020-03-14 16:10:18,350] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/meter/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,351] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 500 18926
+[2020-03-14 16:10:18,357] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 500 18924
+[2020-03-14 16:10:18,366] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/manufacturer/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:10:18,367] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 500 18956
+[2020-03-14 16:10:27,388] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-14 16:10:53,263] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-14 16:11:33,955] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8665
+[2020-03-14 16:11:34,000] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-03-14 16:11:34,071] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4382
+[2020-03-14 16:11:34,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3803
+[2020-03-14 16:11:34,079] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10617
+[2020-03-14 16:11:34,083] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-14 16:11:34,087] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10678
+[2020-03-14 16:11:34,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-03-14 16:11:34,095] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 9053
+[2020-03-14 16:11:34,099] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 12560
+[2020-03-14 16:11:34,101] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /role/view/ HTTP/1.1" 200 4075
+[2020-03-14 16:11:34,367] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/system/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,368] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/system/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,376] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 500 18966
+[2020-03-14 16:11:34,378] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 500 18945
+[2020-03-14 16:11:34,397] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/admin/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,405] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_user/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,406] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 500 18924
+[2020-03-14 16:11:34,413] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_region/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,414] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 500 18948
+[2020-03-14 16:11:34,416] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 500 18964
+[2020-03-14 16:11:34,457] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/manufacturer/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,469] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/auth/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,470] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,470] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 500 18980
+[2020-03-14 16:11:34,476] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/manufacturer/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,487] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/auth/?action=query_role&page=1&limit=10 HTTP/1.1" 500 18916
+[2020-03-14 16:11:34,487] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/meter/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,488] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_user/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,489] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 500 18908
+[2020-03-14 16:11:34,490] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 500 18954
+[2020-03-14 16:11:34,490] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 500 18924
+[2020-03-14 16:11:34,494] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 500 18926
+[2020-03-14 16:11:34,506] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/manufacturer/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\auth.py", line 76, in process_request
+    if is_action_allowed(request, action) is False:
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 37, in is_action_allowed
+    if __check_role_version_expire(user):
+  File "D:\project\python\flowmeter\flowmeter\applications\api\auth.py", line 22, in __check_role_version_expire
+    if user['role_version'] < now_version:
+TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+[2020-03-14 16:11:34,507] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 500 18956
+[2020-03-14 16:13:22,350] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-14 16:16:30,271] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\api\cache.py changed, reloading.
+[2020-03-14 16:16:31,006] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-14 16:17:46,162] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-14 16:18:05,752] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

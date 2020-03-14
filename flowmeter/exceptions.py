@@ -47,3 +47,9 @@ class ValueDuplicateException(Exception):
     """
     重复值异常
     """
+
+
+class ExpireException(Exception):
+    """
+    过期异常
+    """

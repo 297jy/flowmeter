@@ -8,8 +8,8 @@ from flowmeter.common.common import deserialize_obj, serialize_obj
 
 def is_exists(name):
     conn = get_redis_connection('default')
-    exists = conn.exists(name)
-    return exists
+    timeout = conn.ttl(name)
+    return timeout == 0
 
 
 def get_int(name):
@@ -86,7 +86,6 @@ def get_sorted_set_first(name, class_name=None):
 
 def set_obj(keyname, obj):
     conn = get_redis_connection('default')
-    obj = serialize_obj(obj)
     conn.set(keyname, obj)
 
 

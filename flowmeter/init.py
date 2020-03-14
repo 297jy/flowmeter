@@ -3,6 +3,9 @@
 import os
 import json
 from flowmeter.settings import BASE_DIR
+from flowmeter.config.api import role as conf_role_api
+from flowmeter.config.api import flag as conf_flag_api
+from flowmeter.config.db.flag_table import Flag
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flowmeter.settings')
 
@@ -148,6 +151,15 @@ def __init_authorities():
     f = open(flag_file_path, 'wt')
     f.write(json.dumps(cate_auth_map))
     f.close()
+
+
+def init_role_version():
+    roles = conf_role_api.get_all_role()
+    for role in roles:
+        try:
+            conf_flag_api.get_role_version(role.name)
+        except Flag.DoesNotExist:
+            Flag.objects.create(**{"name": "{}_version".format(role.name), "val": str(1)})
 
 
 def main():

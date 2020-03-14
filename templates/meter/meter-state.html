@@ -28,28 +28,14 @@
             {% csrf_token %}
             <div class="layui-form-item" id="manufacturer_input">
                 <label for="L_username" class="layui-form-label">
-                    阀门状态
+                    在线状态
                 </label>
                 <div class="layui-input-inline">
-                    <select name="valve_state"  id="valve_state"
-                            lay-filter="valve_state">
+                    <select name="valve_state" id="online_state"
+                            lay-filter="valve_state" disabled="disabled">
                         <option value="">未知</option>
-                        <option value="1">开启</option>
-                        <option value="0">关闭</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="layui-form-item" id="valve_dtu_div">
-                <label for="L_username" class="layui-form-label">
-                    充值状态
-                </label>
-                <div class="layui-input-inline">
-                    <select name="recharge_state"  id="recharge_state"
-                            lay-filter="recharge_state" >
-                        <option value="">未知</option>
-                        <option value="1">开启</option>
-                        <option value="0">关闭</option>
+                        <option value="online">在线</option>
+                        <option value="offline">离线</option>
                     </select>
                 </div>
             </div>
@@ -59,7 +45,7 @@
                     电池欠压状态
                 </label>
                 <div class="layui-input-inline">
-                    <select  id="battery_pressure_state"
+                    <select id="battery_pressure_state"
                             lay-filter="battery_pressure_state" disabled="disabled">
                         <option value="">未知</option>
                         <option value="1">正常</option>
@@ -110,6 +96,34 @@
                 </div>
             </div>
 
+            <div class="layui-form-item" id="manufacturer_input">
+                <label for="L_username" class="layui-form-label">
+                    阀门状态
+                </label>
+                <div class="layui-input-inline">
+                    <select name="valve_state" id="valve_state"
+                            lay-filter="valve_state">
+                        <option value="">未知</option>
+                        <option value="1">开启</option>
+                        <option value="0">关闭</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item" id="valve_dtu_div">
+                <label for="L_username" class="layui-form-label">
+                    预充值状态
+                </label>
+                <div class="layui-input-inline">
+                    <select name="recharge_state" id="recharge_state"
+                            lay-filter="recharge_state">
+                        <option value="">未知</option>
+                        <option value="1">开启</option>
+                        <option value="0">关闭</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="layui-form-item">
                 <label for="L_repass" class="layui-form-label"></label>
                 <button class="layui-btn" lay-filter="add" lay-submit="">确定</button>
@@ -130,21 +144,23 @@
                 function (res) {
 
                     let obj = res.field;
-                    delete obj['manufacturer_id'];
+                    let data = {
+                        "valve_state": obj['valve_state'],
+                        "recharge_state": obj['recharge_state'],
+                        "id": "{{ id }}",
+                        "meter_id": "{{ meter_id }}"
+                    };
                     post({
-                        "param": JSON.stringify(obj),
-                        "action": "add_meter"
+                        "param": JSON.stringify(data),
+                        "action": "update_meter_state"
                     }, '/handler/meter/', function (data) {
                         if (data.success) {
-                            layer.alert("添加成功", {
-                                    icon: 6
-                                },
-                                function () {
-                                    //关闭当前frame
-                                    xadmin.close();
-                                    // 可以对父窗口进行刷新
-                                    xadmin.father_reload();
-                                });
+
+                            //关闭当前frame
+                            xadmin.close();
+                            // 可以对父窗口进行刷新
+                            xadmin.father_reload();
+
                         } else {
                             layer.msg(data.msg, {icon: 5, time: 3000});
                         }
@@ -161,14 +177,13 @@
                 } else {
                     let state_list = ['valve_state',
                         'recharge_state',
-                        'battery_pressure_state', 'valve_error_flag', 'owe_state', 'sensor_state'];
-                    for(let i=0;i<state_list.length;i++){
-                        $("#"+state_list[i]).val(res.data[state_list[i]]);
+                        'battery_pressure_state', 'valve_error_flag', 'owe_state', 'sensor_state', 'online_state'];
+                    for (let i = 0; i < state_list.length; i++) {
+                        $("#" + state_list[i]).val(res.data[state_list[i]]);
                     }
                     form.render('select');
                 }
             });
-
 
 
         });

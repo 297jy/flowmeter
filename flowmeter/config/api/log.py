@@ -2,6 +2,7 @@
 
 import datetime
 from flowmeter.config.core import log as core
+from flowmeter.config.db.log_table import OprLog
 from flowmeter.common.api.validators import param_check, WhiteListCheck
 
 
@@ -20,12 +21,14 @@ def add_opr_log(log):
 
     must_dict = {
         "opr_type": WhiteListCheck.check_opr_type,
-        "state": WhiteListCheck.check_opr_state,
+        "opr_user_id": int,
+        "meter_id": int,
     }
-    param_check(log, must_dict=must_dict, extra=True)
+    param_check(log, must_dict=must_dict)
 
+    log['state'] = OprLog.WAITE_STATE
     log['opr_time'] = datetime.datetime.now()
-    core.add_opr_log(log)
+    return core.add_opr_log(log)
 
 
 def find_earliest_opr_log(log_info):

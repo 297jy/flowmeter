@@ -4,6 +4,7 @@ import json
 
 from django.http import FileResponse
 from flowmeter.common.common import Page
+from flowmeter.config.api import flag as conf_flag_api
 
 
 def get_user(request):
@@ -19,6 +20,7 @@ def get_user(request):
 def set_user(request, user):
 
     user = user.get_dict()
+    user['role_version'] = conf_flag_api.get_role_version(user['role'])
     user.pop('create_time')
     request.session['user'] = user
 

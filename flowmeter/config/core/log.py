@@ -10,7 +10,8 @@ def add_alarm_log(log):
 
 def add_opr_log(log):
 
-    OprLog.objects.create(**log)
+    opr = OprLog.objects.create(**log)
+    return opr
 
 
 def find_one_opr_log(log_info):

@@ -43,11 +43,17 @@ def update_meter(old_meter, new_meter):
     :param new_meter:
     :return:
     """
-    # 遍历字典存在的属性
-    for field, val in new_meter:
-        setattr(old_meter, field, val)
+    update_flag = False
 
-    old_meter.save()
+    # 遍历字典存在的属性
+    for field, val in new_meter.items():
+
+        if getattr(old_meter, field) != val:
+            update_flag = True
+            setattr(old_meter, field, val)
+
+    if update_flag:
+        old_meter.save()
 
 
 def update_meter_state(old_state, new_state):

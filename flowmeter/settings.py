@@ -102,6 +102,13 @@ CACHES = {
     }
 }
 
+# session的存储配置
+SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+SESSION_CACHE_ALIAS = 'default'
+
+# 设置session失效时间,单位为秒
+SESSION_COOKIE_AGE = 60 * 5
+
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 

@@ -78,14 +78,13 @@ def transfer_hex_str(num):
     return hex_str
 
 
-def deserialize_obj(obj_str, class_name=None):
+def deserialize_obj(obj_dict, class_name=None):
     """
     反序列化成简单对象
-    :param obj_str 待反序列化的对象字符串
+    :param obj_dict 待反序列化的对象字符串
     :param class_name:
     :return: class_name为None时直接返回对象字典，否则返回指定对象
     """
-    obj_dict = json.loads(obj_str)
     if class_name is None:
         return obj_dict
 

@@ -10,9 +10,11 @@ https://docs.djangoproject.com/en/2.1/howto/deployment/wsgi/
 import os
 
 from django.core.wsgi import get_wsgi_application
+from flowmeter.init import init_role_version
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flowmeter.settings')
 
+init_role_version()
 application = get_wsgi_application()
 
 

@@ -83,6 +83,18 @@
     <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
         查询
     </button>
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+        开阀
+    </button>
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+        关阀
+    </button>
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+        打开预充值
+    </button>
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+        关闭预充值
+    </button>
     <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)" style="margin-right: 20px">
         重启仪表
     </button>
@@ -115,12 +127,12 @@
                         }
                     },
                     {field: 'dtu_no', title: 'DTU编号'},
-                    {field: 'address', title: '物理地址'},
+                    {field: 'address', title: '物理地址', edit: 'text',},
                     {field: 'surplus_gas', title: '剩余气量(m³)'},
                     {field: 'total_flow', title: '累计用量(m³)'},
-                    {field: 'surplus_gas_limits', title: '气量限值(m³)'},
+                    {field: 'surplus_gas_limits', title: '气量限值(m³)', edit: 'text',},
                     {field: 'flow_rate', title: '瞬时流量'},
-                    {field: 'flow_ratio', title: '流量系数'},
+                    {field: 'flow_ratio', title: '流量系数', edit: 'number',},
                     {field: 'power', title: '电池电压'},
                     {field: 'temperature', title: '温度'},
                     {field: 'version', title: '版本'},
@@ -131,7 +143,7 @@
                         title: '仪表状态',
                         templet: function (d) {
                             return "<button class=\"layui-btn\" onclick=\"xadmin." +
-                                "open('仪表状态','/meter/state/?id=" + d['state_id'] + "',300, 500)\">查看</button>";
+                                "open('仪表状态','/meter/state/?id=" + d['state_id'] + "&meter_id=" + d['id'] + "',300, 600)\">查看</button>";
                         }
                     },
                 ]],
@@ -141,23 +153,21 @@
                 defaultToolbar: [],
             });
             //监听单元格编辑
-            table.on('edit(dtu)',
+            table.on('edit(meter)',
                 function (obj) {
-                    let data = obj.data;
-                    delete data['manufacturer_name'];
-                    delete data['manufacturer_phone'];
-                    delete data['user_name'];
-                    delete data['user_phone'];
-                    delete data['dtu_no'];
-                    delete data['valve_type'];
-                    delete data['user_id'];
-                    delete data['manufacturer_id'];
-                    delete data['valve_dtu'];
-                    delete data['address'];
+                    let data = {
+                        "id": parseInt(obj.data['id']),
+                        "address": parseInt(obj.data['address']),
+                        "surplus_gas_limits": parseFloat(obj.data['surplus_gas_limits']),
+                        "flow_ratio": obj.data['flow_ratio']
+                    };
+                    if( data['flow_ratio'] === '未知'){
+                        data['flow_ratio'] = -1.0
+                    }
                     post({
                         "param": JSON.stringify(data),
-                        "action": "update_dtu"
-                    }, '/handler/dtu/', function (data) {
+                        "action": "update_meter"
+                    }, '/handler/meter/', function (data) {
                         if (!data.success) {
                             layer.msg(data.msg, {icon: 5, time: 2000});
                         }
