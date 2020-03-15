@@ -138,28 +138,73 @@
             var form = layui.form,
                 layer = layui.layer;
 
+            let meterState = {
+                "id": "{{ id }}",
+                "meter_id": "{{ meter_id }}",
+                "dtu_no": "{{ dtu_no }}",
+            };
 
             //监听提交
             form.on('submit(add)',
                 function (res) {
 
-                    let obj = res.field;
-                    let data = {
-                        "valve_state": obj['valve_state'],
-                        "recharge_state": obj['recharge_state'],
-                        "id": "{{ id }}",
-                        "meter_id": "{{ meter_id }}"
-                    };
+                    return false;
+                });
+
+            form.on('select(valve_state)',
+                function (res) {
+                    let val = res['value'];
+                    if(val.length === 0){
+                        return false;
+                    }
+                    let nowMeterState = JSON.parse(JSON.stringify(meterState));
+                    nowMeterState['valve_state'] = val;
                     post({
-                        "param": JSON.stringify(data),
-                        "action": "update_meter_state"
+                        "param": JSON.stringify(nowMeterState),
+                        "action": "update_valve_state"
                     }, '/handler/meter/', function (data) {
                         if (data.success) {
 
-                            //关闭当前frame
-                            xadmin.close();
-                            // 可以对父窗口进行刷新
-                            xadmin.father_reload();
+                            layer.alert("操作成功", {
+                                    icon: 6
+                                },
+                                function () {
+                                    //关闭当前frame
+                                    xadmin.close();
+                                    // 可以对父窗口进行刷新
+                                    xadmin.father_reload();
+                                });
+
+                        } else {
+                            layer.msg(data.msg, {icon: 5, time: 3000});
+                        }
+                    });
+                    return false;
+                });
+
+            form.on('select(recharge_state)',
+                function (res) {
+                    let val = res['value'];
+                    if(val.length === 0){
+                        return false;
+                    }
+                    let nowMeterState = JSON.parse(JSON.stringify(meterState));
+                    nowMeterState['recharge_state'] = val;
+                    post({
+                        "param": JSON.stringify(nowMeterState),
+                        "action": "update_recharge_state"
+                    }, '/handler/meter/', function (data) {
+                        if (data.success) {
+
+                            layer.alert("操作成功", {
+                                    icon: 6
+                                },
+                                function () {
+                                    //关闭当前frame
+                                    xadmin.close();
+                                    // 可以对父窗口进行刷新
+                                    xadmin.father_reload();
+                                });
 
                         } else {
                             layer.msg(data.msg, {icon: 5, time: 3000});

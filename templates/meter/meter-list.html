@@ -80,29 +80,29 @@
     <button class="layui-btn" onclick="xadmin.open('添加DTU','/meter/add/',700,500)">
         <i class="layui-icon"></i>添加
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+    <button class="layui-btn" lay-event="query_meter">
         查询
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+    <button class="layui-btn" lay-event="open_valve">
         开阀
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+    <button class="layui-btn" lay-event="close_valve">
         关阀
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+    <button class="layui-btn" lay-event="open_recharge">
         打开预充值
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+    <button class="layui-btn" lay-event="close_recharge">
         关闭预充值
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)" style="margin-right: 20px">
+    <button class="layui-btn" lay-event="reset_meter" style="margin-right: 20px">
         重启仪表
     </button>
     <div class="layui-inline layui-show-xs-block">
         <input type="text" name="query_box" placeholder="" autocomplete="off"
-               class="layui-input" id="query_box">
+               class="layui-input" id="money">
     </div>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+    <button class="layui-btn" lay-event="recharge_meter">
         充值
     </button>
 </script>
@@ -157,7 +157,7 @@
 
                     data_map = {};
                     for (let i = 0; i < res.data.length; i++) {
-                        data_map[res.data[i]['id']] = res.data[i];
+                        data_map[res.data[i]['id']] = JSON.parse(JSON.stringify(res.data[i]));
                     }
                 }
             });
@@ -167,10 +167,11 @@
                     let data = {
                         "id": parseInt(obj.data['id']),
                         "address": parseInt(obj.data['address']),
+                        "dtu_no": parseInt(obj.data['dtu_no']),
                     };
 
-                    if (data_map[data['id']]['surplus_gas_limits'] !== data['surplus_gas_limits']) {
-                        data['surplus_gas_limits'] = parseFloat(obj.data['surplus_gas_limits']),
+                    if (data_map[data['id']]['surplus_gas_limits'] !== obj.data['surplus_gas_limits']) {
+                        data['surplus_gas_limits'] = parseFloat(obj.data['surplus_gas_limits']);
                         post({
                             "param": JSON.stringify(data),
                             "action": "update_meter"
@@ -181,11 +182,9 @@
                         });
                     }
 
-                    if (data_map[data['id']]['flow_ratio'] !== data['flow_ratio']) {
+                    if (data_map[data['id']]['flow_ratio'] !== obj.data['flow_ratio']) {
 
-                        if (data['flow_ratio'] === '未知') {
-                            data['flow_ratio'] = -1.0
-                        }
+                        alert(obj.data['flow_ratio']);
                         data['flow_ratio'] = obj.data['flow_ratio'];
                         post({
                             "param": JSON.stringify(data),
@@ -201,11 +200,10 @@
             //头工具栏事件
             table.on('toolbar(meter)',
                 function (obj) {
-                    var checkStatus = table.checkStatus(obj.config.id);
+                    let checkStatus = table.checkStatus('meter');
                     switch (obj.event) {
                         case 'del_batch':
                             layer.confirm('确认要删除吗？', function (index) {
-                                let checkStatus = table.checkStatus('meter');
                                 let ids = [], state_ids = [];
                                 for (let i = 0; i < checkStatus.data.length; i++) {
                                     ids.push(checkStatus.data[i].id);
@@ -222,6 +220,121 @@
                                         table.reload('meter');
                                     }
                                 });
+                            });
+                            break;
+
+                        case 'query_meter':
+                            ids = [];
+                            for (let i = 0; i < checkStatus.data.length; i++) {
+                                ids.push(checkStatus.data[i].id);
+                            }
+                            post({
+                                "param": JSON.stringify({'meter_ids': ids}),
+                                "action": "query_meter_data"
+                            }, '/handler/meter/', function (data) {
+                                if (!data.success) {
+                                    layer.msg(data.msg, {icon: 5, time: 1000});
+                                } else {
+                                    layer.msg('查询成功!', {icon: 1});
+                                }
+                            });
+                            break;
+                            case 'reset_meter':
+                            checkStatus = table.checkStatus('meter');
+                            ids = [];
+                            for (let i = 0; i < checkStatus.data.length; i++) {
+                                ids.push(checkStatus.data[i].id);
+                            }
+                            post({
+                                "param": JSON.stringify({'meter_ids': ids}),
+                                "action": "reset_meter"
+                            }, '/handler/meter/', function (data) {
+                                if (!data.success) {
+                                    layer.msg(data.msg, {icon: 5, time: 1000});
+                                } else {
+                                    layer.msg('重启成功!', {icon: 1});
+                                }
+                            });
+                            break;
+                            case 'recharge_meter':
+                            checkStatus = table.checkStatus('meter');
+                            ids = [];
+                            for (let i = 0; i < checkStatus.data.length; i++) {
+                                ids.push(checkStatus.data[i].id);
+                            }
+                            post({
+                                "param": JSON.stringify({'meter_ids': ids, 'money': $("#money").val()}),
+                                "action": "recharge_meter"
+                            }, '/handler/meter/', function (data) {
+                                if (!data.success) {
+                                    layer.msg(data.msg, {icon: 5, time: 1000});
+                                } else {
+                                    layer.msg('重启成功!', {icon: 1});
+                                }
+                            });
+                            break;
+                            case 'open_valve':
+                            ids = [];
+                            for (let i = 0; i < checkStatus.data.length; i++) {
+                                ids.push(checkStatus.data[i].id);
+                            }
+                            post({
+                                "param": JSON.stringify({'meter_ids': ids, 'valve_state': 1}),
+                                "action": "update_valve_state"
+                            }, '/handler/meter/', function (data) {
+                                if (!data.success) {
+                                    layer.msg(data.msg, {icon: 5, time: 1000});
+                                } else {
+                                    layer.msg('开阀成功!', {icon: 1});
+                                }
+                            });
+                            break;
+                            case 'close_valve':
+                            ids = [];
+                            for (let i = 0; i < checkStatus.data.length; i++) {
+                                ids.push(checkStatus.data[i].id);
+                            }
+                            post({
+                                "param": JSON.stringify({'meter_ids': ids, 'valve_state': 0}),
+                                "action": "update_valve_state"
+                            }, '/handler/meter/', function (data) {
+                                if (!data.success) {
+                                    layer.msg(data.msg, {icon: 5, time: 1000});
+                                } else {
+                                    layer.msg('查询成功!', {icon: 1});
+                                }
+                            });
+                            break;
+                            case 'open_recharge':
+                            ids = [];
+                            for (let i = 0; i < checkStatus.data.length; i++) {
+                                ids.push(checkStatus.data[i].id);
+                            }
+                            post({
+                                "param": JSON.stringify({'meter_ids': ids, 'recharge_state': 1}),
+                                "action": "update_recharge_state"
+                            }, '/handler/meter/', function (data) {
+                                if (!data.success) {
+                                    layer.msg(data.msg, {icon: 5, time: 1000});
+                                } else {
+                                    layer.msg('开启预充值功能成功!', {icon: 1});
+                                }
+                            });
+                            break;
+                            case 'close_recharge':
+                            ids = [];
+                            for (let i = 0; i < checkStatus.data.length; i++) {
+                                ids.push(checkStatus.data[i].id);
+                            }
+                            post({
+                                "param": JSON.stringify({'meter_ids': ids, 'recharge_state': 0}),
+                                "action": "update_recharge_state"
+                            }, '/handler/meter/', function (data) {
+                                if (!data.success) {
+                                    layer.msg(data.msg, {icon: 5, time: 1000});
+                                } else {
+                                    layer.msg('关闭预充值功能成功!', {icon: 1});
+                                }
                             });
                             break;
                     }

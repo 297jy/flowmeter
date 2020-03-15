@@ -8,6 +8,7 @@ from django.views.decorators.clickjacking import xframe_options_sameorigin
 from flowmeter.views.common import ActionHandlerBase, Result
 from flowmeter.common.api import request as request_api
 from flowmeter.applications.api import meter as app_meter_api
+from flowmeter.config.api import meter as conf_meter_api
 
 
 class MeterActionHandler(ActionHandlerBase):
@@ -81,7 +82,6 @@ class MeterActionHandler(ActionHandlerBase):
     def update_meter(self, request):
 
         meter_info = request_api.get_param(request)
-        meter_info['flow_ratio'] = float(meter_info['flow_ratio'])
         app_meter_api.update_meter(meter_info)
 
         return Result.success()
@@ -126,17 +126,19 @@ class MeterActionHandler(ActionHandlerBase):
         return Result.success()
 
 
-
-
 @xframe_options_sameorigin
 def meter_view(request):
+
     return render(request, 'meter/meter-list.html', {})
 
 
 @xframe_options_sameorigin
 def meter_state_view(request):
+    meter_id = request.GET.get('meter_id')
+    state_id = request.GET.get('id')
+    dtu_no = conf_meter_api.find_dtu_no_by_meter_id(meter_id)
     return render(request, 'meter/meter-state.html',
-                  {'id': request.GET.get('id'), 'meter_id': request.GET.get('meter_id')})
+                  {'id': state_id, 'meter_id': meter_id, 'dtu_no': dtu_no})
 
 
 @xframe_options_sameorigin
