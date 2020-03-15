@@ -20,7 +20,12 @@ class MeterActionHandler(ActionHandlerBase):
             'query_state': self.query_meter_state,
             'del_batch_meter': self.del_batch_meter,
             "update_meter": self.update_meter,
-            "update_meter_state": self.update_meter_state,
+            "update_valve_state": self.update_valve_state,
+            "update_recharge_state": self.update_recharge_state,
+            "reset_meter": self.reset_meter,
+            "query_meter_data": self.query_meter_data,
+            "update_flow_ratio": self.update_flow_ratio,
+            "recharge_meter": self.recharge_meter,
         }
         super().__init__(action_dict)
 
@@ -76,17 +81,51 @@ class MeterActionHandler(ActionHandlerBase):
     def update_meter(self, request):
 
         meter_info = request_api.get_param(request)
-        meter_info['flow_ratio'] = meter_info['flow_ratio'] * 1.0
-        app_meter_api.update_meter(meter_info, request_api.get_user(request))
+        meter_info['flow_ratio'] = float(meter_info['flow_ratio'])
+        app_meter_api.update_meter(meter_info)
 
         return Result.success()
 
-    def update_meter_state(self, request):
+    def update_valve_state(self, request):
 
-        meter_info_state = request_api.get_param(request)
-        app_meter_api.update_meter_state(meter_info_state, request_api.get_user(request))
-
+        meter_info = request_api.get_param(request)
+        meter_info['valve_state'] = int(meter_info['vale_ratio'])
+        app_meter_api.update_valve_state(meter_info, request_api.get_user(request))
         return Result.success()
+
+    def update_recharge_state(self, request):
+
+        meter_info = request_api.get_param(request)
+        meter_info['recharge_state'] = int(meter_info['recharge_state'])
+        app_meter_api.update_recharge_state(meter_info, request_api.get_user(request))
+        return Result.success()
+
+    def update_flow_ratio(self, request):
+
+        meter_info = request_api.get_param(request)
+        meter_info['flow_ratio'] = float(meter_info['flow_ratio'])
+        app_meter_api.update_flow_ratio(meter_info, request_api.get_user(request))
+        return Result.success()
+
+    def recharge_meter(self, request):
+
+        meter_info = request_api.get_param(request)
+        meter_info['money'] = float(meter_info['money'])
+        app_meter_api.recharge_meter(meter_info, request_api.get_user(request))
+        return Result.success()
+
+    def reset_meter(self, request):
+
+        meter_info = request_api.get_param(request)
+        app_meter_api.reset_meter(meter_info, request_api.get_user(request))
+        return Result.success()
+
+    def query_meter_data(self, request):
+        meter_info = request_api.get_param(request)
+        app_meter_api.query_meter_data(meter_info, request_api.get_user(request))
+        return Result.success()
+
+
 
 
 @xframe_options_sameorigin

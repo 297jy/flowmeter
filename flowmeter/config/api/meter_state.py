@@ -28,3 +28,25 @@ def del_batch_meter_state(state_ids):
 
     MeterState.objects.filter(id__in=state_ids).delete()
 
+
+def get_valve_state(meter_state_id):
+    """
+    获取阀门状态
+    :param meter_state_id:
+    :return:
+    """
+    state = MeterState.objects.values('valve_state').get(id=meter_state_id)
+    valve_state = state['valve_state']
+    return valve_state
+
+
+def get_recharge_state(meter_state_id):
+    """
+    获取充值状态
+    :param meter_state_id:
+    :return:
+    """
+    state = MeterState.objects.values('recharge_state').get(id=meter_state_id)
+    recharge_state = state['recharge_state']
+    return recharge_state
+

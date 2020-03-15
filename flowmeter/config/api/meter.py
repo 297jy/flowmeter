@@ -29,9 +29,17 @@ def find_meter_by_id(meter_id):
 
 def find_dtu_no_by_meter_id(meter_id):
 
-    meter = Meter.objects.prefetch_related('dtu__dtu_no').values('dtu__dtu_no').get(id=meter_id)
+    meter = Meter.objects.select_related('dtu__dtu_no').values('dtu__dtu_no').get(id=meter_id)
     dtu_no = meter['dtu__dtu_no']
     return dtu_no
+
+
+def find_dtu_nos_by_meter_ids(meter_ids):
+    meters = Meter.objects.select_related('dtu__dtu_no').values('dtu__dtu_no').filter(id__in=meter_ids)
+    dtu_nos = []
+    for meter in meters:
+        dtu_nos.append(meter['dtu__dtu_no'])
+    return dtu_nos
 
 
 def find_meters(filters=None, page=None):
@@ -132,3 +140,8 @@ def del_batch_meter(meter_ids):
     """
 
     core.del_batch_meter(meter_ids)
+
+
+def get_meter_flow_ratio(meter_id):
+
+    Meter.objects.values('flow_ratio').get(id=meter_id)

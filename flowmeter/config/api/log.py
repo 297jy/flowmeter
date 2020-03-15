@@ -24,7 +24,12 @@ def add_opr_log(log):
         "opr_user_id": int,
         "meter_id": int,
     }
-    param_check(log, must_dict=must_dict)
+    optional_dict = {
+        "val": None,
+    }
+    if log.get('val') is not None:
+        log['val'] = str(log['val'])
+    param_check(log, must_dict=must_dict, optional_dict=optional_dict)
 
     log['state'] = OprLog.WAITE_STATE
     log['opr_time'] = datetime.datetime.now()

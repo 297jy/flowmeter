@@ -3,7 +3,7 @@
 from django.db import models
 from flowmeter.config.db.user_table import User
 from flowmeter.config.db.meter_table import Meter
-from flowmeter.config.const import STATE_CHAR_LEN, OPR_TYPE_CHAR_LEN, ALARM_TYPE_CHAR_LEN
+from flowmeter.config.const import STATE_CHAR_LEN, OPR_TYPE_CHAR_LEN, ALARM_TYPE_CHAR_LEN, VALUE_CHAR_LEN
 
 
 class Log(models.Model):
@@ -44,6 +44,8 @@ class OprLog(Log):
     state = models.CharField(max_length=STATE_CHAR_LEN)
     # 操作的仪表
     meter = models.ForeignKey(Meter, on_delete=models.CASCADE)
+    # 操作值
+    val = models.CharField(max_length=VALUE_CHAR_LEN)
 
     class Meta:
         ordering = ['opr_time']

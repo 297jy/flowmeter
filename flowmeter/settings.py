@@ -107,7 +107,7 @@ SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
 SESSION_CACHE_ALIAS = 'default'
 
 # 设置session失效时间,单位为秒
-SESSION_COOKIE_AGE = 60 * 5
+# SESSION_COOKIE_AGE = 60 * 5
 # 浏览器一关就失效
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 

@@ -10,9 +10,8 @@ def add_operator(opr):
     :param opr:
     :return:
     """
-
-    keyname = 'operator_' + opr.opr_type + '_' + str(opr.dtu_no) + '_' + str(opr.address)
-    cache.add_sorted_set(keyname, opr.log_id, opr.opr_time)
+    key = 'operator_{}_{}_{}'.format(opr.dtu_no, opr.opr_type, opr.address)
+    cache.add_sorted_set(key, opr.log_id, opr.opr_time)
 
 
 def get_earliest_operator(dtu_no, address, opr_type):
@@ -23,8 +22,18 @@ def get_earliest_operator(dtu_no, address, opr_type):
     :param dtu_no:
     :return:
     """
-    keyname = 'operator_' + opr_type + '_' + str(dtu_no) + '_' + str(address)
-    opr = cache.get_sorted_set_first(keyname)
+    key = 'operator_{}_{}_{}'.format(dtu_no, opr_type, address)
+    opr = cache.get_sorted_set_first(key)
     return opr
+
+
+def clear_dtu_operator(dtu_no):
+    """
+    删除关于DTU的所有命令操作
+    :param dtu_no:
+    :return:
+    """
+    key = 'operator_{}*'.format(dtu_no)
+    cache.delete(key)
 
 

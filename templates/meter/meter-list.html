@@ -114,6 +114,7 @@
             table = layui.table;
             form = layui.form;
 
+            let data_map = {};
             table.render({
                 elem: '#meter', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
@@ -151,6 +152,14 @@
                 page: true,
                 toolbar: '#toolbarDemo',
                 defaultToolbar: [],
+
+                done: function (res, curr, count) {
+
+                    data_map = {};
+                    for (let i = 0; i < res.data.length; i++) {
+                        data_map[res.data[i]['id']] = res.data[i];
+                    }
+                }
             });
             //监听单元格编辑
             table.on('edit(meter)',
@@ -158,20 +167,35 @@
                     let data = {
                         "id": parseInt(obj.data['id']),
                         "address": parseInt(obj.data['address']),
-                        "surplus_gas_limits": parseFloat(obj.data['surplus_gas_limits']),
-                        "flow_ratio": obj.data['flow_ratio']
                     };
-                    if( data['flow_ratio'] === '未知'){
-                        data['flow_ratio'] = -1.0
+
+                    if (data_map[data['id']]['surplus_gas_limits'] !== data['surplus_gas_limits']) {
+                        data['surplus_gas_limits'] = parseFloat(obj.data['surplus_gas_limits']),
+                        post({
+                            "param": JSON.stringify(data),
+                            "action": "update_meter"
+                        }, '/handler/meter/', function (data) {
+                            if (!data.success) {
+                                layer.msg(data.msg, {icon: 5, time: 2000});
+                            }
+                        });
                     }
-                    post({
-                        "param": JSON.stringify(data),
-                        "action": "update_meter"
-                    }, '/handler/meter/', function (data) {
-                        if (!data.success) {
-                            layer.msg(data.msg, {icon: 5, time: 2000});
+
+                    if (data_map[data['id']]['flow_ratio'] !== data['flow_ratio']) {
+
+                        if (data['flow_ratio'] === '未知') {
+                            data['flow_ratio'] = -1.0
                         }
-                    });
+                        data['flow_ratio'] = obj.data['flow_ratio'];
+                        post({
+                            "param": JSON.stringify(data),
+                            "action": "update_flow_ratio"
+                        }, '/handler/meter/', function (data) {
+                            if (!data.success) {
+                                layer.msg(data.msg, {icon: 5, time: 2000});
+                            }
+                        });
+                    }
                 });
 
             //头工具栏事件
@@ -202,6 +226,7 @@
                             break;
                     }
                 });
+
             //监听提交
             form.on('submit(search)',
                 function (data) {

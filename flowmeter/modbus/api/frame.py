@@ -34,10 +34,17 @@ def generate_data_frame(address, opr_type, val=None):
     field_val_l = register.field_val - (field_val_h << 8)
     frame.append(field_val_h)
     frame.append(field_val_l)
-    const_data_h = register.const_data >> 8
-    const_data_l = register.const_data - const_data_h << 8
-    frame.append(const_data_h)
-    frame.append(const_data_l)
+
+    # 如果有值就使用用户提供的值
+    if val is not None:
+        data_h = val >> 8
+        data_l = val - val << 8
+    else:
+        data_h = register.const_data >> 8
+        data_l = register.const_data - data_h << 8
+    frame.append(data_h)
+    frame.append(data_l)
+
     # 计算校验码
     crc_h, crc_l = core.cal_crc(frame)
     frame.append(crc_h)
