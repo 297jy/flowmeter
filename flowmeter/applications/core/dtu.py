@@ -21,18 +21,6 @@ def get_dtu_filter(manufacturer_id, dtu_user_id):
 
 def get_dtu_dict(dtu):
 
-    valve_dtu = ''
-    address = ''
-    valve_type = dtu.valve.valve_type
-    if valve_type == Valve.SHARE_TYPE:
-        valve_type = '共享通信链路阀门'
-        address = dtu.valve.address
-    elif valve_type == Valve.INDEPENDENT_TYPE:
-        valve_type = '独立通信链路阀门'
-        valve_dtu = dtu.valve.valve_dtu.dtu_no
-    else:
-        valve_type = '流量计内嵌阀门'
-
     return {
             "id": dtu.id,
             "user_id": dtu.user.id,
@@ -41,9 +29,6 @@ def get_dtu_dict(dtu):
             "manufacturer_id": dtu.region.manufacturer.id,
             "manufacturer_name": dtu.region.manufacturer.name,
             "manufacturer_phone": dtu.region.manufacturer.phone,
-            "valve_type": valve_type,
-            "valve_dtu": valve_dtu,
-            "address": address,
             "remark": dtu.remark,
             "dtu_no": dtu.dtu_no,
         }

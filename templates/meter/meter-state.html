@@ -26,8 +26,8 @@
     <div class="layui-row">
         <form class="layui-form">
             {% csrf_token %}
-            <div class="layui-form-item" id="manufacturer_input">
-                <label for="L_username" class="layui-form-label">
+            <div class="layui-form-item">
+                <label for="L_username" class="layui-form-label" style="width: 120px">
                     在线状态
                 </label>
                 <div class="layui-input-inline" id="online_state_div">
@@ -36,7 +36,7 @@
             </div>
 
             <div class="layui-form-item">
-                <label for="L_username" class="layui-form-label">
+                <label for="L_username" class="layui-form-label" style="width: 120px">
                     电池欠压状态
                 </label>
                 <div class="layui-input-inline" id="battery_pressure_state_div">
@@ -45,7 +45,7 @@
             </div>
 
             <div class="layui-form-item">
-                <label for="L_username" class="layui-form-label">
+                <label for="L_username" class="layui-form-label" style="width: 120px">
                     阀门异常标志
                 </label>
                 <div class="layui-input-inline" id="valve_error_flag_div">
@@ -54,7 +54,7 @@
             </div>
 
             <div class="layui-form-item">
-                <label for="L_username" class="layui-form-label">
+                <label for="L_username" class="layui-form-label" style="width: 120px">
                     欠费状态
                 </label>
                 <div class="layui-input-inline" id="owe_state_div">
@@ -63,7 +63,7 @@
             </div>
 
             <div class="layui-form-item">
-                <label for="L_username" class="layui-form-label">
+                <label for="L_username" class="layui-form-label" style="width: 120px">
                     传感器状态
                 </label>
                 <div class="layui-input-inline" id="sensor_state_div">
@@ -72,7 +72,7 @@
             </div>
 
             <div class="layui-form-item">
-                <label for="L_username" class="layui-form-label">
+                <label for="valve_state" class="layui-form-label" style="width: 120px">
                     阀门状态
                 </label>
                 <div class="layui-input-inline" id="valve_state_div">
@@ -86,7 +86,7 @@
             </div>
 
             <div class="layui-form-item" id="valve_dtu_div">
-                <label for="L_username" class="layui-form-label">
+                <label for="recharge_state" class="layui-form-label" style="width: 120px">
                     预充值状态
                 </label>
                 <div class="layui-input-inline" id="recharge_state_div">
@@ -96,6 +96,26 @@
                         <option value="1">开启</option>
                         <option value="0">关闭</option>
                     </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item" id="valve_dtu_div">
+                <label for="valve_dtu" class="layui-form-label" style="width: 120px">
+                    阀门控制器DTU
+                </label>
+                <div class="layui-input-inline">
+                    <select name="valve_dtu_id" lay-search="" id="valve_dtu" lay-filter="valve_dtu">
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item" id="address_div">
+                <label for="valve_address" class="layui-form-label" style="width: 120px">
+                    阀门控制器物理地址
+                </label>
+                <div class="layui-input-inline">
+                    <input type="number" id="valve_address" name="valve_address"
+                           autocomplete="off" class="layui-input">
                 </div>
             </div>
 
@@ -122,9 +142,30 @@
             //监听提交
             form.on('submit(add)',
                 function (res) {
+                    //关闭当前frame
+                    xadmin.close();
 
                     return false;
+                }
+            );
+
+            $("#valve_address").on("change", function () {
+
+                let valve_address = $("#valve_address").val();
+
+                post({
+                    "param": JSON.stringify({
+                        "address": valve_address, "id": "{{ valve_id }}"
+                    }),
+                    "action": "update_valve_address"
+                }, '/handler/meter/', function (data) {
+                    if (!data.success) {
+
+                        layer.msg(data.msg, {icon: 5, time: 3000});
+                    }
                 });
+            });
+
 
             form.on('select(valve_state)',
                 function (res) {
@@ -138,19 +179,7 @@
                         "param": JSON.stringify(nowMeterState),
                         "action": "update_valve_state"
                     }, '/handler/meter/', function (data) {
-                        if (data.success) {
-
-                            layer.alert("操作成功", {
-                                    icon: 6
-                                },
-                                function () {
-                                    //关闭当前frame
-                                    xadmin.close();
-                                    // 可以对父窗口进行刷新
-                                    xadmin.father_reload();
-                                });
-
-                        } else {
+                        if (!data.success) {
                             layer.msg(data.msg, {icon: 5, time: 3000});
                         }
                     });
@@ -169,24 +198,27 @@
                         "param": JSON.stringify(nowMeterState),
                         "action": "update_recharge_state"
                     }, '/handler/meter/', function (data) {
-                        if (data.success) {
-
-                            layer.alert("操作成功", {
-                                    icon: 6
-                                },
-                                function () {
-                                    //关闭当前frame
-                                    xadmin.close();
-                                    // 可以对父窗口进行刷新
-                                    xadmin.father_reload();
-                                });
-
-                        } else {
+                        if (!data.success) {
                             layer.msg(data.msg, {icon: 5, time: 3000});
                         }
                     });
                     return false;
                 });
+
+            form.on('select(valve_dtu)',
+                function (res) {
+                    let val = res['value'];
+                    post({
+                        "param": JSON.stringify({'id': {{ valve_id }}, 'dtu_id': val}),
+                        "action": "update_valve_dtu"
+                    }, '/handler/meter/', function (data) {
+                        if (!data.success) {
+                            layer.msg(data.msg, {icon: 5, time: 3000});
+                        }
+                    });
+                    return false;
+                }
+                );
 
             get({
                 "param": JSON.stringify({"state_id": {{id}}}),
@@ -197,13 +229,33 @@
                 } else {
                     let state_list = ['valve_state',
                         'recharge_state',
-                        'battery_pressure_state', 'valve_error_flag', 'owe_state', 'sensor_state', 'online_state'];
+                        'battery_pressure_state', 'valve_error_flag', 'owe_state', 'sensor_state', 'online_state', 'valve_address'];
                     for (let i = 0; i < state_list.length; i++) {
                         $("#" + state_list[i]).val(res.data[state_list[i]]);
                     }
+                    let valve_dtu_val = res.data['valve_dtu'];
+                    get({
+                        "param": JSON.stringify({}),
+                        "action": "query_dtu"
+                    }, '/handler/dtu/', function (res) {
+                        if (!res.success) {
+                            layer.msg(res.msg, {icon: 5, time: 1000});
+                        } else {
+                            let valve_dtu = $("#valve_dtu");
+                            for (let i = 0; i < res.data.length; i++) {
+                                valve_dtu.append('<option value="' + res.data[i].id + '">'
+                                    + res.data[i]['dtu_no'] + '(' + res.data[i]['remark'] + ')' + '</option>');
+                            }
+
+                            valve_dtu.val(valve_dtu_val);
+                            form.render('select');
+
+                        }
+                    });
                     form.render('select');
                 }
             });
+
 
             $("option").css("color", 'black');
 

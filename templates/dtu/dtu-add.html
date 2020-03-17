@@ -61,40 +61,6 @@
                 </div>
             </div>
 
-            <div class="layui-form-item" id="valve_type_div">
-                <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>阀门类型
-                </label>
-                <div class="layui-input-inline">
-                    <select name="valve_type" lay-filter="valve_type">
-                        <option value="inline">流量计内嵌阀门</option>
-                        <option value="share">共享通信链路阀门</option>
-                        <option value="independent">独立通信链路阀门</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="layui-form-item" id="valve_dtu_div" style="display: none">
-                <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>阀门DTU
-                </label>
-                <div class="layui-input-inline">
-                    <select name="valve_dtu" lay-search="" id="valve_dtu" lay-verify="valve_dtu">
-                        <option value="">未选择</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="layui-form-item" id="address_div" style="display: none">
-                <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>阀门地址
-                </label>
-                <div class="layui-input-inline">
-                    <input type="number" id="address" name="address"
-                           autocomplete="off" class="layui-input" lay-verify="address">
-                </div>
-            </div>
-
             <div class="layui-form-item layui-form-text">
                 <label for="desc" class="layui-form-label">
                     备注
@@ -116,28 +82,6 @@
             $ = layui.jquery;
             var form = layui.form,
                 layer = layui.layer;
-
-            //自定义验证规则
-            form.verify({
-                valve_dtu: function (value) {
-                    let valve_type = $("#valve_type_div").find('.layui-this').attr('lay-value');
-                    if(valve_type !== 'independent'){
-                        return;
-                    }
-                    if (value.length === 0) {
-                        return "阀门DTU不能为空！"
-                    }
-                },
-                address: function (value) {
-                    let valve_type = $("#valve_type_div").find('.layui-this').attr('lay-value');
-                    if(valve_type !== 'share'){
-                        return;
-                    }
-                    if (value.length === 0) {
-                        return "阀门地址不能为空！"
-                    }
-                }
-            });
 
             form.on('select(manufacturer)', function () {
 
@@ -161,37 +105,12 @@
                 });
             });
 
-            form.on('select(valve_type)', function () {
-
-                let valve_type = $("#valve_type_div").find('.layui-this').attr('lay-value');
-                if (valve_type === "share") {
-                    $("#address_div").show();
-                    $("#valve_dtu_div").hide();
-                }
-                if (valve_type === "independent") {
-                    $("#address_div").hide();
-                    $("#valve_dtu_div").show();
-                }
-                if (valve_type === "inline") {
-                    $("#address_div").hide();
-                    $("#valve_dtu_div").hide();
-                }
-
-
-            });
-
             //监听提交
             form.on('submit(add)',
                 function (res) {
 
                     let obj = res.field;
                     delete obj.manufacturer_id;
-                    if(obj['valve_dtu'] === ''){
-                        delete obj.valve_dtu;
-                    }
-                    if(obj['address'] === ''){
-                        delete obj.address;
-                    }
 
                     post({
                         "param": JSON.stringify(obj),

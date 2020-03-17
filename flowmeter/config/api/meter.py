@@ -73,14 +73,13 @@ def add_meter(meter_info):
         "dtu_id": int,
         "address": int,
         "surplus_gas_limits": float,
-        "state_id": int,
     }
     optional_dict = {
         "remark": StrCheck.check_remark,
     }
     param_check(meter_info, must_dict, optional_dict)
 
-    core.add_meter(meter_info)
+    return core.add_meter(meter_info)
 
 
 def update_meter_data(dtu_no, address, meter_data):
@@ -165,3 +164,9 @@ def del_batch_meter(meter_ids):
 def get_meter_flow_ratio(meter_id):
 
     Meter.objects.values('flow_ratio').get(id=meter_id)
+
+
+def get_valve_dtu_and_address(meter_id):
+
+    meter = Meter.objects.values('valve__dtu__dtu_no', 'valve__address').get(id=meter_id)
+    return meter['valve__dtu__dtu_no'], meter['valve__address']

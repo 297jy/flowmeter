@@ -17,11 +17,8 @@ def add_dtu(dtu_info):
     must_dict = {
         "region_id": int,
         "user_id": int,
-        "valve_type": WhiteListCheck.check_valve_type,
     }
     optional_dict = {
-        "valve_dtu": int,
-        "address": int,
         "remark": StrCheck.check_remark,
     }
     param_check(dtu_info, must_dict, optional_dict)
@@ -31,11 +28,7 @@ def add_dtu(dtu_info):
     # 保证原子性
     with transaction.atomic():
         # 添加DTU
-        dtu = conf_dtu_api.add_dtu(core.get_dtu_info(dtu_info))
-        # 添加阀门
-        dtu_info['dtu_id'] = dtu.id
-        conf_valve_api.add_valve(core.get_valve_info(dtu_info))
-
+        conf_dtu_api.add_dtu(core.get_dtu_info(dtu_info))
         core.update_region_used_num(region)
 
 

@@ -11,12 +11,14 @@ from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.api import meter_state as conf_state_api
 from flowmeter.config.api import operator as conf_opr_api
 from flowmeter.config.api import log as conf_log_api
+from flowmeter.config.api import valve as conf_valve_api
 from flowmeter.common.api.validators import param_check
 from flowmeter.common.api.validators import StrCheck, WhiteListCheck
 from flowmeter.config.db.operator_table import Operator
 from flowmeter.config.const import VALVE_STATE_OPEN, VALVE_STATE_CLOSE, RECHARGE_STATE_OPEN, RECHARGE_STATE_CLOSE, \
     STATE_ONLINE
 from django.db import transaction
+from flowmeter.config.db.meter_table import Meter
 from flowmeter.applications.api import log as app_log_api
 
 
@@ -65,15 +67,22 @@ def add_meter(meter_info):
         "surplus_gas_limits": float,
     }
     optional_dict = {
+        "valve_dtu_id": int,
+        "valve_address": int,
         "remark": StrCheck.check_remark,
     }
     param_check(meter_info, must_dict, optional_dict)
 
     # 保证原子性
     with transaction.atomic():
-        state = conf_state_api.add_meter_state()
-        meter_info['state_id'] = state.id
-        conf_meter_api.add_meter(meter_info)
+        # 添加仪表
+        meter = conf_meter_api.add_meter(meter_info)
+        # 添加状态
+        conf_state_api.add_meter_state({'meter_id': meter.id})
+        valve = core.get_valve_info(meter_info)
+        # 添加阀门控制器
+        valve['meter_id'] = meter.id
+        conf_valve_api.add_valve(valve)
 
 
 def del_batch_meter(meter_ids, state_ids):
@@ -85,7 +94,6 @@ def del_batch_meter(meter_ids, state_ids):
     # 保证原子性
     with transaction.atomic():
         conf_meter_api.del_batch_meter(meter_ids)
-        conf_state_api.del_batch_meter_state(state_ids)
         # 清空操作队列
         for dtu_no in dtu_nos:
             conf_opr_api.clear_all_dtu_operator(dtu_no)
@@ -128,7 +136,8 @@ def update_valve_state(meter_state_info, user):
     }
     param_check(meter_state_info, must_dict, )
 
-    dtu_no = meter_state_info['dtu_no']
+    # 查找该流量计对应的阀门DTU
+    valve_dtu_no, valve_address = conf_meter_api.get_valve_dtu_and_address(meter_state_info['meter_id'])
 
     # 保证原子性
     with transaction.atomic():
@@ -139,11 +148,11 @@ def update_valve_state(meter_state_info, user):
         if meter_state_info['valve_state'] == VALVE_STATE_OPEN:
             log_dict['opr_type'] = Operator.OPEN_VALVE
             log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_open_valve_opr(user['id'], dtu_no, meter_state_info['address'], log.id)
+            opr = Operator.create_open_valve_opr(user['id'], valve_dtu_no, valve_address, log.id)
         else:
             log_dict['opr_type'] = Operator.CLOSE_VALVE
             log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_close_valve_opr(user['id'], dtu_no, meter_state_info['address'], log.id)
+            opr = Operator.create_close_valve_opr(user['id'], valve_dtu_no, valve_address, log.id)
 
         app_opr_api.execute_remote_op(opr)
 
@@ -326,3 +335,38 @@ def update_meter_data(dtu_no, data):
         meter_data.update({'recharge_state': RECHARGE_STATE_CLOSE})
 
     conf_state_api.update_meter_state(dtu_no, data['address'], meter_data)
+
+
+def get_meter_state_view_info(meter_id):
+    """
+    获取仪表状态视图需要的消息
+    :param meter_id: 仪表id
+    :return:
+    """
+    meter = Meter.objects.values("meterstate__id", "dtu__dtu_no", "valve__id").get(id=meter_id)
+    return {
+        "meter_id": meter_id,
+        "dtu_no": meter.get('dtu__dtu_no'),
+        "id": meter.get('meterstate__id'),
+        "valve_id": meter.get('valve__id'),
+    }
+
+
+def update_valve_address(valve_info):
+    must_dict = {
+        "id": int,
+        "address": int,
+    }
+    param_check(valve_info, must_dict)
+
+    conf_valve_api.update_valve(valve_info)
+
+
+def update_valve_dtu(valve_info):
+    must_dict = {
+        "id": int,
+        "dtu_id": int,
+    }
+    param_check(valve_info, must_dict)
+
+    conf_valve_api.update_valve(valve_info)

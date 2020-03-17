@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>DTU列表</title>
+    <title>阀门控制器列表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -27,7 +27,7 @@
     <span class="layui-breadcrumb">
         <a href="">首页</a>
         <a href="">
-            <cite>DTU列表</cite>
+            <cite>阀门控制器列表</cite>
         </a>
     </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
@@ -42,19 +42,12 @@
                 <div class="layui-card-body ">
                     <form class="layui-form layui-col-space5">
 
-                            <div class="layui-input-inline" style="width: 400px">
-                                <select name="manufacturer_id" lay-search="" id="manufacturer"
-                                        lay-filter="test">
-                                    <option value="">供气商</option>
-                                </select>
-                            </div>
-
-                            <div class="layui-input-inline" style="width: 400px">
-                                <select name="dtu_user_id" lay-search="" id="dtu_user"
-                                        lay-filter="test">
-                                    <option value="">DTU用户</option>
-                                </select>
-                            </div>
+                        <div class="layui-input-inline" style="width: 400px">
+                            <select name="dtu" lay-search="" id="dtu"
+                                    lay-filter="test">
+                                <option value="">DTU</option>
+                            </select>
+                        </div>
                         <div class="layui-inline layui-show-xs-block">
                             <button class="layui-btn" lay-submit="" lay-filter="search">
                                 <i class="layui-icon">&#xe615;</i>
@@ -64,7 +57,7 @@
                     </form>
                 </div>
                 <div class="layui-card-body ">
-                    <table lay-filter="dtu" id="dtu">
+                    <table lay-filter="valve" id="valve">
                     </table>
                 </div>
             </div>
@@ -76,7 +69,7 @@
     <button class="layui-btn layui-btn-danger" lay-event="del_batch">
         <i class="layui-icon"></i>批量删除
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/dtu/add/',700,500)">
+    <button class="layui-btn" onclick="xadmin.open('添加阀门控制器','/valve/add/',700,500)">
         <i class="layui-icon"></i>添加
     </button>
 </script>
@@ -104,6 +97,9 @@
                     {field: 'user_name', title: 'DTU用户名称'},
                     {field: 'user_phone', title: 'DTU用户联系电话'},
                     {field: 'dtu_no', title: 'DTU编号'},
+                    {field: 'valve_type', title: 'DTU阀门控制器类型'},
+                    {field: 'valve_dtu', title: '阀门DTU编号'},
+                    {field: 'address', title: '阀门物理地址'},
                     {field: 'remark', edit: 'text', title: '备注'},
                 ]],
                 url: '/handler/dtu/?action=query_dtu',
@@ -180,7 +176,7 @@
                 if (!res.success) {
                     layer.msg(res.msg, {icon: 5, time: 1000});
                 } else {
-                    for(let i=0;i<res.data.length;i++){
+                    for (let i = 0; i < res.data.length; i++) {
                         $("#manufacturer").append('<option value="' + res.data[i].id + '">'
                             + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
                     }
@@ -195,7 +191,7 @@
                 if (!res.success) {
                     layer.msg(res.msg, {icon: 5, time: 1000});
                 } else {
-                    for(let i=0;i<res.data.length;i++){
+                    for (let i = 0; i < res.data.length; i++) {
                         $("#dtu_user").append('<option value="' + res.data[i].id + '">'
                             + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
                     }

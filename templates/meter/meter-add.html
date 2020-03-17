@@ -38,7 +38,7 @@
                 </div>
             </div>
 
-            <div class="layui-form-item" id="valve_dtu_div">
+            <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">
                     <span class="x-red">*</span>DTU编号
                 </label>
@@ -49,7 +49,7 @@
                 </div>
             </div>
 
-            <div class="layui-form-item" id="address_div">
+            <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">
                     <span class="x-red">*</span>仪表地址
                 </label>
@@ -59,13 +59,47 @@
                 </div>
             </div>
 
-            <div class="layui-form-item" id="address_div">
+            <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">
                     <span class="x-red">*</span>气量限值
                 </label>
                 <div class="layui-input-inline">
                     <input type="number" id="surplus_gas_limits" name="surplus_gas_limits"
-                           autocomplete="off" class="layui-input" lay-verify="surplus_gas_limits" >
+                           autocomplete="off" class="layui-input" lay-verify="surplus_gas_limits">
+                </div>
+            </div>
+
+            <div class="layui-form-item" id="valve_type_div">
+                <label for="L_username" class="layui-form-label">
+                    <span class="x-red">*</span>阀门类型
+                </label>
+                <div class="layui-input-inline">
+                    <select lay-filter="valve_type">
+                        <option value="inline">流量计内嵌阀门</option>
+                        <option value="share">共享通信链路阀门</option>
+                        <option value="independent">独立通信链路阀门</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item" id="valve_dtu_div" style="display: none">
+                <label for="L_username" class="layui-form-label">
+                    <span class="x-red">*</span>阀门DTU
+                </label>
+                <div class="layui-input-inline">
+                    <select name="valve_dtu_id" lay-search="" id="valve_dtu" lay-verify="valve_dtu">
+                        <option value="">未选择</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item" id="address_div" style="display: none">
+                <label for="L_username" class="layui-form-label">
+                    <span class="x-red">*</span>阀门地址
+                </label>
+                <div class="layui-input-inline">
+                    <input type="number" id="valve_address" name="valve_address"
+                           autocomplete="off" class="layui-input" lay-verify="address">
                 </div>
             </div>
 
@@ -112,7 +146,7 @@
                     }
                 },
                 surplus_gas_limits: function (value) {
-                    if(value === ''){
+                    if (value === '') {
                         return "气量限值不能为空！"
                     }
                 }
@@ -132,7 +166,7 @@
                         $("#dtu").append('<option value="">未选择</option>');
 
                         for (let i = 0; i < res.data.length; i++) {
-                            $("#dtu").append('<option value="' + res.data[i].id + '">' + res.data[i]['dtu_no'] + '</option>');
+                            $("#dtu").append('<option value="' + res.data[i].id + '">' + res.data[i]['dtu_no'] + '(' + res.data[i]['remark'] + ')' + '</option>');
                         }
                         form.render();
                     }
@@ -163,7 +197,7 @@
                     $("#valve_dtu_div").hide();
                 }
                 if (valve_type === "independent") {
-                    $("#address_div").hide();
+                    $("#address_div").show();
                     $("#valve_dtu_div").show();
                 }
                 if (valve_type === "inline") {
@@ -180,6 +214,12 @@
 
                     let obj = res.field;
                     delete obj['manufacturer_id'];
+                    if(obj['valve_address'] === ""){
+                        delete obj['valve_address']
+                    }
+                    if(obj['valve_dtu_id'] === ""){
+                        delete obj['valve_dtu_id']
+                    }
                     post({
                         "param": JSON.stringify(obj),
                         "action": "add_meter"

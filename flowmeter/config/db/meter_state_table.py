@@ -3,6 +3,7 @@
 from django.db import models
 
 from flowmeter.config import const
+from flowmeter.config.db.meter_table import Meter
 
 
 class MeterState(models.Model):
@@ -19,3 +20,5 @@ class MeterState(models.Model):
     owe_state = models.IntegerField(default=const.UNKNOWN_VALUE)
     # 传感器状态
     sensor_state = models.IntegerField(default=const.UNKNOWN_VALUE)
+    # 状态对应的仪表
+    meter = models.OneToOneField(Meter, on_delete=models.CASCADE, null=True)

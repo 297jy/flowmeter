@@ -43,7 +43,7 @@ def get_meter_dict(meter):
         "version": meter.version,
         "last_update_time": meter.last_update_time,
         "remark": meter.remark,
-        "state_id": meter.state.id,
+        "state_id": meter.meterstate.id,
     }
     for key, val in meter_dict.items():
         if val == UNKNOWN_VALUE or val == UNKNOWN_STATE:
@@ -61,6 +61,8 @@ def get_meter_state_dict(state):
         "valve_error_flag": state.valve_error_flag,
         "owe_state": state.owe_state,
         "sensor_state": state.sensor_state,
+        "valve_address": state.meter.valve.address,
+        "valve_dtu": state.meter.valve.dtu.id,
     }
     for key, val in state_dict.items():
         if val == UNKNOWN_VALUE or val == UNKNOWN_STATE:
@@ -106,17 +108,23 @@ def update_dtu(dtu, dtu_info):
     dtu.save()
 
 
-def get_valve_info(dtu_info):
-    valve_info = {
-        "valve_type": dtu_info['valve_type'],
-        "dtu_id": dtu_info['dtu_id'],
+def get_valve_info(meter_info):
+    """
+    提取出阀门信息
+    :param meter_info:
+    :return:
+    """
+    valve = {
+        'dtu_id': meter_info.pop('valve_dtu_id', None),
+        'address': meter_info.pop('valve_address', None),
     }
-    if 'valve_dtu' in dtu_info:
-        valve_info['valve_dtu_id'] = dtu_info['valve_dtu']
-    if 'address' in dtu_info:
-        valve_info['address'] = dtu_info['address']
+    if valve['dtu_id'] is None:
+        valve['dtu_id'] = meter_info['dtu_id']
 
-    return valve_info
+    if valve['address'] is None:
+        valve['address'] = meter_info['address']
+
+    return valve
 
 
 def get_dtu_info(dtu_info):

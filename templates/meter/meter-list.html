@@ -77,7 +77,7 @@
     <button class="layui-btn layui-btn-danger" lay-event="del_batch">
         <i class="layui-icon"></i>批量删除
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/meter/add/',700,500)">
+    <button class="layui-btn" onclick="xadmin.open('添加DTU','/meter/add/',700,650)">
         <i class="layui-icon"></i>添加
     </button>
     <button class="layui-btn" lay-event="query_meter">
@@ -144,7 +144,7 @@
                         title: '仪表状态',
                         templet: function (d) {
                             return "<button class=\"layui-btn\" onclick=\"xadmin." +
-                                "open('仪表状态','/meter/state/?id=" + d['state_id'] + "&meter_id=" + d['id'] + "',300, 600)\">查看</button>";
+                                "open('仪表状态','/meter/state/?meter_id=" + d['id'] + "',500, 600)\">查看</button>";
                         }
                     },
                 ]],

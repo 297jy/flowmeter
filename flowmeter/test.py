@@ -66,6 +66,14 @@ def test_zset_redis():
     cache.add('test', 1, 2)
 
 """
+
+
+class A:
+    def __init__(self):
+        self.test = None
+        pass
+
+
 if __name__ == "__main__":
 
     # test_edit_admin()
@@ -80,4 +88,6 @@ if __name__ == "__main__":
     }
     test.update({"a": "a"})
     print(test)
+    a = A()
+    getattr(a, 'test')
     pass

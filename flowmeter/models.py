@@ -12,3 +12,4 @@ from flowmeter.config.db.control_register_table import ControlRegister
 from flowmeter.config.db.meter_state_table import MeterState
 from flowmeter.config.db.configure_table import Configure
 from flowmeter.config.db.flag_table import Flag
+from flowmeter.config.db.valve_table import Valve

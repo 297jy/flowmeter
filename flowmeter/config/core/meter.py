@@ -31,7 +31,8 @@ def find_meters(meter_info):
 def add_meter(meter_info):
 
     try:
-        Meter.objects.create(**meter_info)
+        meter = Meter.objects.create(**meter_info)
+        return meter
     except IntegrityError:
         raise ValueDuplicateException("该仪表已存在！")
 

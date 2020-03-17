@@ -49,10 +49,6 @@ class DtuActionHandler(ActionHandlerBase):
 
         param['region_id'] = int(param['region_id'])
         param['user_id'] = int(param['user_id'])
-        if 'address' in param:
-            param['address'] = int(param['address'])
-        if 'valve_dtu' in param:
-            param['valve_dtu'] = int(param['valve_dtu'])
         app_dtu_api.add_dtu(param)
 
         return Result.success()

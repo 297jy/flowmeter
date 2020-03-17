@@ -8,10 +8,13 @@ from flowmeter.config.api import meter as conf_meter_api
 from flowmeter.config.core import meter_state as core
 
 
-def add_meter_state():
+def add_meter_state(state_info):
+    must_dict = {
+        "meter_id": int,
+    }
+    param_check(state_info, must_dict)
 
-    state = MeterState()
-    state.save()
+    state = MeterState.objects.create(**state_info)
 
     return state
 
