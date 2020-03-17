@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html class="x-admin-sm">
-
 <head>
     <meta charset="UTF-8">
     <title>仪表状态</title>
@@ -20,6 +19,7 @@
             <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
             <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
         <![endif]-->
+
 </head>
 <body>
 <div class="layui-fluid">
@@ -30,77 +30,52 @@
                 <label for="L_username" class="layui-form-label">
                     在线状态
                 </label>
-                <div class="layui-input-inline">
-                    <select name="valve_state" id="online_state"
-                            lay-filter="valve_state" disabled="disabled">
-                        <option value="">未知</option>
-                        <option value="online">在线</option>
-                        <option value="offline">离线</option>
-                    </select>
+                <div class="layui-input-inline" id="online_state_div">
+                    <input type="text" readonly id="online_state" class="layui-input">
                 </div>
             </div>
 
-            <div class="layui-form-item" id="valve_dtu_div">
+            <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">
                     电池欠压状态
                 </label>
-                <div class="layui-input-inline">
-                    <select id="battery_pressure_state"
-                            lay-filter="battery_pressure_state" disabled="disabled">
-                        <option value="">未知</option>
-                        <option value="1">正常</option>
-                        <option value="0">异常</option>
-                    </select>
+                <div class="layui-input-inline" id="battery_pressure_state_div">
+                    <input type="text" readonly id="battery_pressure_state" class="layui-input">
                 </div>
             </div>
 
-            <div class="layui-form-item" id="valve_dtu_div">
+            <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">
                     阀门异常标志
                 </label>
-                <div class="layui-input-inline">
-                    <select id="valve_error_flag"
-                            lay-filter="valve_error_flag" disabled="disabled">
-                        <option value="">未知</option>
-                        <option value="1">正常</option>
-                        <option value="0">异常</option>
-                    </select>
+                <div class="layui-input-inline" id="valve_error_flag_div">
+                    <input type="text" readonly id="valve_error_flag" class="layui-input">
                 </div>
             </div>
 
-            <div class="layui-form-item" id="valve_dtu_div">
+            <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">
                     欠费状态
                 </label>
-                <div class="layui-input-inline">
-                    <select id="owe_state"
-                            lay-filter="owe_state" disabled="disabled">
-                        <option value="">未知</option>
-                        <option value="1">正常</option>
-                        <option value="0">欠费</option>
-                    </select>
+                <div class="layui-input-inline" id="owe_state_div">
+                    <input type="text" readonly id="owe_state" class="layui-input">
                 </div>
             </div>
 
-            <div class="layui-form-item" id="valve_dtu_div">
+            <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">
                     传感器状态
                 </label>
-                <div class="layui-input-inline">
-                    <select id="owe_state"
-                            lay-filter="owe_state" disabled="disabled">
-                        <option value="">未知</option>
-                        <option value="1">正常</option>
-                        <option value="0">异常</option>
-                    </select>
+                <div class="layui-input-inline" id="sensor_state_div">
+                    <input type="text" readonly id="sensor_state" class="layui-input">
                 </div>
             </div>
 
-            <div class="layui-form-item" id="manufacturer_input">
+            <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">
                     阀门状态
                 </label>
-                <div class="layui-input-inline">
+                <div class="layui-input-inline" id="valve_state_div">
                     <select name="valve_state" id="valve_state"
                             lay-filter="valve_state">
                         <option value="">未知</option>
@@ -114,7 +89,7 @@
                 <label for="L_username" class="layui-form-label">
                     预充值状态
                 </label>
-                <div class="layui-input-inline">
+                <div class="layui-input-inline" id="recharge_state_div">
                     <select name="recharge_state" id="recharge_state"
                             lay-filter="recharge_state">
                         <option value="">未知</option>
@@ -154,7 +129,7 @@
             form.on('select(valve_state)',
                 function (res) {
                     let val = res['value'];
-                    if(val.length === 0){
+                    if (val.length === 0) {
                         return false;
                     }
                     let nowMeterState = JSON.parse(JSON.stringify(meterState));
@@ -185,7 +160,7 @@
             form.on('select(recharge_state)',
                 function (res) {
                     let val = res['value'];
-                    if(val.length === 0){
+                    if (val.length === 0) {
                         return false;
                     }
                     let nowMeterState = JSON.parse(JSON.stringify(meterState));
@@ -230,6 +205,7 @@
                 }
             });
 
+            $("option").css("color", 'black');
 
         });
 </script>

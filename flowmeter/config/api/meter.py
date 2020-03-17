@@ -1,6 +1,9 @@
 # coding=utf-8
 
 import datetime
+
+from django.db.models import F
+
 from flowmeter.config.core import meter as core
 from flowmeter.common.api.validators import param_check, StrCheck, WhiteListCheck
 from flowmeter.config.api import dtu as conf_dtu_api
@@ -18,6 +21,12 @@ def find_meter(dtu_no, address):
     meter = core.find_one_meter({'dtu_id': dtu_id, 'address': address})
 
     return meter
+
+
+def find_meter_state(dtu_no, address):
+
+    meter = Meter.objects.values("state").get(dtu_no=dtu_no, address=address)
+    return meter['state']
 
 
 def find_meter_by_id(meter_id):
@@ -76,11 +85,8 @@ def add_meter(meter_info):
 
 def update_meter_data(dtu_no, address, meter_data):
     optional_dict = {
-        "dtu_no": int,
-        "address": int,
         "last_update_time": datetime.datetime,
         "surplus_gas": float,
-        "surplus_gas_limits": float,
         "flow_ratio": float,
         "flow_rate": float,
         "total_flow": float,
@@ -93,6 +99,20 @@ def update_meter_data(dtu_no, address, meter_data):
     old_meter = find_meter(dtu_no, address)
 
     core.update_meter(old_meter, meter_data)
+
+
+def add_meter_surplus_gas(dtu_no, address, num):
+    """
+    给仪表充值
+    :param dtu_no:
+    :param address:
+    :param num:
+    :return:
+    """
+    old_meter = find_meter(dtu_no, address)
+    old_meter.surplus_gas = F(old_meter.surplus_gas) + num
+    old_meter.last_update_time = datetime.datetime.now()
+    old_meter.save()
 
 
 def update_meter_info(meter_info):

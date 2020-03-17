@@ -1,17 +1,23 @@
 # coding=utf-8
 
+import datetime
+
+from django.db.models import F
+
 from flowmeter.applications.core import meter as core
 from flowmeter.applications.api import operator as app_opr_api
 from flowmeter.config.api import meter as conf_meter_api
+from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.api import meter_state as conf_state_api
 from flowmeter.config.api import operator as conf_opr_api
 from flowmeter.config.api import log as conf_log_api
 from flowmeter.common.api.validators import param_check
 from flowmeter.common.api.validators import StrCheck, WhiteListCheck
 from flowmeter.config.db.operator_table import Operator
-from flowmeter.config.const import VALVE_STATE_OPEN, VALVE_STATE_CLOSE, RECHARGE_STATE_OPEN, RECHARGE_STATE_CLOSE
+from flowmeter.config.const import VALVE_STATE_OPEN, VALVE_STATE_CLOSE, RECHARGE_STATE_OPEN, RECHARGE_STATE_CLOSE, \
+    STATE_ONLINE
 from django.db import transaction
-from flowmeter.common.api import request as request_api
+from flowmeter.applications.api import log as app_log_api
 
 
 def find_meter_by_query_terms(query_terms, page=None):
@@ -40,8 +46,12 @@ def find_meter_by_query_terms(query_terms, page=None):
 
 
 def find_meter_state_by_id(state_id):
+
+    dtu_no = conf_state_api.get_dtu_no_by_state_id(state_id)
     state = conf_state_api.find_meter_state_by_id(state_id)
-    return core.get_meter_state_dict(state)
+    state = core.get_meter_state_dict(state)
+    state['online_state'] = "在线" if conf_dtu_api.get_dtu_online_state(dtu_no) == STATE_ONLINE else "离线"
+    return state
 
 
 def add_meter(meter_info):
@@ -78,7 +88,7 @@ def del_batch_meter(meter_ids, state_ids):
         conf_state_api.del_batch_meter_state(state_ids)
         # 清空操作队列
         for dtu_no in dtu_nos:
-            conf_opr_api.clear_dtu_operator(dtu_no)
+            conf_opr_api.clear_all_dtu_operator(dtu_no)
 
 
 def update_meter(meter_info):
@@ -269,3 +279,50 @@ def recharge_meter(meter_info, user):
         opr = Operator.create_recharge_opr(user['id'], dtu_no, meter_info['address'], log.id, money)
         app_opr_api.execute_remote_op(opr)
 
+
+def update_meter_data(dtu_no, data):
+    """
+    更新仪表实时信息
+    :param dtu_no:
+    :param data:
+    :return:
+    """
+    must_dict = {
+        "address": int,
+        "opr_type": WhiteListCheck.check_opr_type,
+        "data": None
+    }
+    param_check(data, must_dict)
+    meter_data = {'last_update_time': datetime.datetime.now()}
+    if data['opr_type'] == Operator.QUERY:
+        status = data['data'].pop('status')
+        meter_data.update(data['data'])
+        conf_state_api.update_meter_state(dtu_no, data['address'], status)
+    # 更新仪表物理地址
+    elif data['opr_type'] == Operator.SET_METER_ADDRESS:
+        meter_data.update({'address': data['data']})
+
+    # 更新仪表流量系数
+    elif data['opr_type'] == Operator.SET_FLOW_RATIO:
+        meter_data.update({'flow_ratio': data['data']})
+
+    # 增加剩余气量
+    elif data['opr_type'] == Operator.RECHARGE:
+        meter_data.update({'surplus_gas': F('surplus_gas') + data['data']})
+
+    # 更新阀门状态
+    elif data['opr_type'] == Operator.OPEN_VALVE:
+        meter_data.update({'valve_state': VALVE_STATE_OPEN})
+
+    # 更新阀门状态
+    elif data['opr_type'] == Operator.CLOSE_VALVE:
+        meter_data.update({'valve_state': VALVE_STATE_CLOSE})
+
+    # 更新预充值状态
+    elif data['opr_type'] == Operator.OPEN_RECHARGE:
+        meter_data.update({'recharge_state': RECHARGE_STATE_OPEN})
+    # 更新预充值状态
+    elif data['opr_type'] == Operator.CLOSE_RECHARGE:
+        meter_data.update({'recharge_state': RECHARGE_STATE_CLOSE})
+
+    conf_state_api.update_meter_state(dtu_no, data['address'], meter_data)

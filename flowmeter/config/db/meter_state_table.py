@@ -17,7 +17,5 @@ class MeterState(models.Model):
     valve_error_flag = models.IntegerField(default=const.UNKNOWN_VALUE)
     # 欠费状态
     owe_state = models.IntegerField(default=const.UNKNOWN_VALUE)
-    # 仪表状态
-    online_state = models.CharField(default=const.UNKNOWN_STATE, max_length=8)
     # 传感器状态
     sensor_state = models.IntegerField(default=const.UNKNOWN_VALUE)

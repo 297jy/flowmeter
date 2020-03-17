@@ -79,4 +79,4 @@ def update_meter_data(dtu_no, data):
 
 def update_log_success_state(log_id):
 
-    conf_log_api.update_opr_log_state(log_id, OprLog.SUCCESS_STATE)
+    conf_log_api.update_opr_logs_state(log_id, OprLog.SUCCESS_STATE)

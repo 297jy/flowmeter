@@ -3,7 +3,7 @@
 from flowmeter.config.api import data_field
 from flowmeter.config.api import control_register
 from flowmeter.common.api import math
-from flowmeter.exceptions import ParameterErrorException
+from flowmeter.exceptions import ParameterErrorException, ValueValidException
 from flowmeter.config.db.operator_table import Operator
 
 
@@ -144,6 +144,7 @@ def get_frame_data(frame):
     res = {}
     for field, fun in __field_cal_fun_map:
         res[field] = fun(frame)
+
     return res
 
 
@@ -211,3 +212,16 @@ def cal_crc(data_frame):
     crc_h = crc >> 8
     crc_l = crc - (crc_h << 8)
     return crc_h, crc_l
+
+
+def check_crc(data):
+    """
+    检查数据帧是否正确
+    :param data:
+    :return:
+    """
+    crc_h = data[-2]
+    crc_l = data[-1]
+    now_crc_h, now_crc_l = cal_crc(data[0: -2])
+    if now_crc_h != crc_h or now_crc_l != crc_l:
+        raise ValueValidException()

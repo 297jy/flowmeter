@@ -23,6 +23,12 @@ def find_one_opr_log(log_info):
         return None
 
 
+def find_opr_logs(log_info):
+
+    oprs = OprLog.objects.filter(**log_info)
+    return oprs
+
+
 def find_earliest_opr_log(log_info):
 
     log = OprLog.objects.filter(**log_info).order_by('opr_time')[0: 1]

@@ -50,10 +50,27 @@ def find_opr_log_by_id(log_id):
     return log
 
 
-def update_opr_log_state(log_id, state):
+def update_opr_logs_state(log_ids, state):
 
-    log = find_opr_log_by_id(log_id)
-    core.update_opr_log_state(log, state)
+    OprLog.objects.filter(id__in=log_ids).update(state=state)
+
+
+def find_opr_log(filters=None, page=None):
+
+    if page is None:
+        if filters:
+            logs = core.find_opr_logs(filters)
+        else:
+            logs = core.find_opr_logs({})
+    else:
+        start_index = page.limit * (page.index - 1)
+        end_index = page.index * page.limit
+        if filters:
+            logs = OprLog.objects.filter(filters)[start_index: end_index]
+        else:
+            logs = OprLog.objects.all()[start_index: end_index]
+
+    return logs
 
 
 

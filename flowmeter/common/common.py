@@ -103,3 +103,32 @@ def serialize_obj(obj):
     obj_dict = dict(obj)
     obj_str = json.dumps(obj_dict)
     return obj_str
+
+
+def get_obj_attr(obj, attr_name):
+    attr_name += '.'
+    while len(attr_name) > 0:
+        index = attr_name.find('.')
+        obj = getattr(obj, attr_name[0: index])
+        attr_name = attr_name[index + 1: len(attr_name)]
+    return obj
+
+
+def transfer_obj_to_dict(objs, attribute_list, display_fun):
+    """
+    将对象转成字典
+    :param display_fun: 将数据库值，转为显示给用户的值的处理函数
+    :param objs: 对象列表
+    :parameter attribute_list: 为None是默认获取全部属性，否则只获取attribute_list中出现的属性名
+    :return:
+    """
+    dicts = []
+    for obj in objs:
+
+        obj_dict = {}
+        for att in attribute_list:
+            obj_dict[att] = get_obj_attr(obj, att)
+        display_fun(obj_dict)
+
+        dicts.append(obj_dict)
+    return dicts

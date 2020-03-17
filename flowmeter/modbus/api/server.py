@@ -1,11 +1,17 @@
 # coding=utf-8
 
+import traceback
+
 from twisted.internet.protocol import Protocol
 from twisted.internet.protocol import Factory
 from twisted.internet.endpoints import TCP4ServerEndpoint
 from twisted.internet import reactor
 from flowmeter.exceptions import OfflineException
 from flowmeter.modbus.api import frame
+from flowmeter.applications.api import operator as app_opr_api
+from flowmeter.applications.api import meter as app_meter_api
+from flowmeter.exceptions import ValueValidException
+from django.db import transaction
 
 import logging
 
@@ -21,8 +27,18 @@ class FlowMeterClients:
         self.ip_to_dtu_map = {}
 
     def add(self, dtu_no, ip, connect):
-        self.dtu_to_connect_map[dtu_no] = connect
-        self.ip_to_dtu_map[ip] = dtu_no
+        """
+        如果添加的dtu连接不存在，则返回True，否则返回False
+        :param dtu_no:
+        :param ip:
+        :param connect:
+        :return:
+        """
+        if dtu_no not in self.dtu_to_connect_map.keys():
+            self.dtu_to_connect_map[dtu_no] = connect
+            self.ip_to_dtu_map[ip] = dtu_no
+            return True
+        return False
 
     def get_connect(self, dtu_no):
         return self.dtu_to_connect_map[dtu_no]
@@ -99,17 +115,30 @@ class FlowMeterServer(Protocol):
         :param data_frame
         :return:
         """
-        # 回应心跳包
-        if FlowMeterServer.__is_heart_beat(data_frame):
-            # 添加新的客户端连接
-            dtu_no = FlowMeterServer.__heart_beat_transfer_dtu_no(data_frame)
-            ip = self.transport.getPeer().host
-            connect = self.transport
-            FlowMeterServer.clients.add(dtu_no, ip, connect)
+        ip = self.transport.getPeer().host
+        try:
             # 回应心跳包
-            self.transport.write(data_frame)
-        else:
-            data = frame.parse_data_frame(data_frame)
+            if FlowMeterServer.__is_heart_beat(data_frame):
+                # 添加新的客户端连接
+                dtu_no = FlowMeterServer.__heart_beat_transfer_dtu_no(data_frame)
+                connect = self.transport
+                FlowMeterServer.clients.add(dtu_no, ip, connect)
+
+                # 回应心跳包
+                self.transport.write(data_frame)
+                app_opr_api.execute_unexecuted_remote_op(dtu_no)
+
+            else:
+                dtu_no = self.clients.get_dtu_no(ip)
+                # 先解析数据帧
+                data = frame.parse_data_frame(data_frame)
+                with transaction.atomic():
+                    # 先执行一条等待结果的操作
+                    app_opr_api.execute_wait_remote_op(dtu_no, data['address'], data['opr_type'])
+                    # 更新仪表数据
+                    app_meter_api.update_meter_data(dtu_no, data)
+        except:
+            traceback.print_exc()
 
 
 class ModBusFactory(Factory):

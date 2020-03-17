@@ -4,6 +4,8 @@ from flowmeter.config.core import dtu as core
 from flowmeter.common.api.validators import param_check, StrCheck
 from flowmeter.config.api import cache
 from flowmeter.config.db.dtu_table import Dtu
+from flowmeter.config.api import cache as conf_cache_api
+from flowmeter.config.const import STATE_ONLINE, STATE_OFFLINE
 
 
 def find_dtu_by_no(dtu_no):
@@ -97,4 +99,16 @@ def get_used_num(region_id):
     res = Dtu.objects.filter(region_id=region_id).count()
 
     return res
+
+
+def get_dtu_online_state(dtu_no):
+    """
+    获取DTU的在线状态
+    :param dtu_no:
+    :return:
+    """
+    if conf_cache_api.is_exists_set('online_dtus', dtu_no):
+        return STATE_ONLINE
+    else:
+        return STATE_OFFLINE
 

@@ -10,13 +10,16 @@ def parse_data_frame(data_frame):
     :param data_frame:
     :return:
     """
-    frame = {'address': core.get_address(data_frame)}
+    core.check_crc(data_frame)
+    data = {'address': core.get_address(data_frame)}
     if core.is_query_opr(data_frame):
-        frame['opr_type'] = Operator.QUERY
-        frame['data'] = core.get_frame_data(data_frame)
+        data['opr_type'] = Operator.QUERY
+        data['data'] = core.get_frame_data(data_frame)
     else:
-        frame['opr_type'] = core.get_opr_type(data_frame)
-        frame['val'] = core.get_field_val(data_frame, frame['opr_type'])
+        data['opr_type'] = core.get_opr_type(data_frame)
+        data['data'] = core.get_field_val(data_frame, data['opr_type'])
+
+    return data
 
 
 def generate_data_frame(address, opr_type, val=None):

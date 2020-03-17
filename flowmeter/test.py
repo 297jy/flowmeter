@@ -75,4 +75,9 @@ if __name__ == "__main__":
     # BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     # print(user_api.check_email_unique('1347704262@qq.com'))
     # test_zset_redis()
+    test = {
+        "test": "test"
+    }
+    test.update({"a": "a"})
+    print(test)
     pass
