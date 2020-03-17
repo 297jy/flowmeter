@@ -27,18 +27,6 @@ class DtuActionHandler(ActionHandlerBase):
         param = request_api.get_param(request)
         page = request_api.get_page(request)
 
-        if 'manufacturer_id' in param:
-            if param['manufacturer_id']:
-                param['manufacturer_id'] = int(param['manufacturer_id'])
-            else:
-                del param['manufacturer_id']
-
-        if 'dtu_user_id' in param:
-            if param['dtu_user_id']:
-                param['dtu_user_id'] = int(param['dtu_user_id'])
-            else:
-                del param['dtu_user_id']
-
         dtus = app_dtu_api.find_dtu_by_query_terms(param, page)
 
         return Result.success(data=dtus, count=len(dtus))

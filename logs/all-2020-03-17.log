@@ -3234,3 +3234,391 @@
 [2020-03-17 21:18:41,968] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
 [2020-03-17 21:21:42,475] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\meter.py changed, reloading.
 [2020-03-17 21:21:43,213] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:23:17,811] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:23:17,898] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:23:17,905] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:23:17,910] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:23:17,925] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:23:21,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:21,848] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:21,855] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:21,862] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:21,869] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:25,850] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:25,906] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:25,913] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:25,920] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:25,926] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:27,298] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:27,342] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:27,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:27,355] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:27,362] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:28,774] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:28,876] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:28,883] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:28,891] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:28,898] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:30,598] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:30,638] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:30,645] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:30,651] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:30,658] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:33,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:33,799] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:33,806] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:33,819] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:33,824] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:35,254] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:35,290] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:35,297] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:35,309] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:35,315] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:38,306] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:38,345] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:38,351] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:38,361] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:38,367] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:40,435] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:40,525] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:40,531] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:40,540] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:40,548] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:42,679] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:42,714] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:42,720] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:42,730] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:42,735] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:44,430] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:44,463] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:44,469] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:44,481] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:44,485] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:45,767] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:45,816] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:45,822] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:45,832] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:45,837] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:47,199] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:23:47,238] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:23:47,244] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:23:47,253] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:23:47,258] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:23:49,106] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10617
+[2020-03-17 21:23:49,182] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-17 21:23:49,189] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-03-17 21:23:58,748] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-03-17 21:23:58,812] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:23:58,827] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 1235
+[2020-03-17 21:24:13,835] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10617
+[2020-03-17 21:24:13,907] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-17 21:24:13,915] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 417
+[2020-03-17 21:24:16,095] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：edit_admin
+[2020-03-17 21:24:16,106] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/admin/ HTTP/1.1" 200 68
+[2020-03-17 21:24:16,865] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-03-17 21:24:16,963] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:16,981] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 1235
+[2020-03-17 21:24:17,180] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10678
+[2020-03-17 21:24:17,237] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 21:24:17,242] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 200 239
+[2020-03-17 21:24:17,546] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-17 21:24:17,595] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 21:24:17,613] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 337
+[2020-03-17 21:24:17,963] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8838
+[2020-03-17 21:24:18,028] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:24:18,036] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 735
+[2020-03-17 21:24:18,041] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:18,058] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:18,064] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 21:24:18,068] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-17 21:24:18,381] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:24:18,426] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:24:18,431] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:18,437] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:24:18,449] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:19,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9812
+[2020-03-17 21:24:19,304] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-17 21:24:19,307] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-03-17 21:24:20,385] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:24:20,437] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:24:20,440] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:20,451] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:24:20,463] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:20,879] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /role/view/ HTTP/1.1" 200 4075
+[2020-03-17 21:24:20,943] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-17 21:24:20,945] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/auth/?action=query_role&page=1&limit=10 HTTP/1.1" 200 294
+[2020-03-17 21:24:21,331] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8838
+[2020-03-17 21:24:21,377] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:24:21,380] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:21,383] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 21:24:21,398] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-17 21:24:21,399] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 735
+[2020-03-17 21:24:21,405] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:21,736] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:24:21,792] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:24:21,794] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:21,805] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:24:21,813] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:23,827] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:24:23,870] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:24:23,871] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:23,883] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:24:23,891] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:24,502] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:24:24,624] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:24:24,627] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:24,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:24:24,644] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:25,015] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:24:25,064] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:24:25,067] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:25,077] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:24:25,086] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:25,543] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:24:25,598] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:24:25,601] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:25,612] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:24:25,622] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:26,132] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:24:26,178] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:24:26,180] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:24:26,190] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:24:26,199] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:24:27,946] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:24:28,068] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:24:28,073] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:24:28,081] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:24:28,085] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:24:30,663] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-17 21:24:30,666] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/meter/ HTTP/1.1" 200 259
+[2020-03-17 21:41:54,477] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\meter.py changed, reloading.
+[2020-03-17 21:41:55,255] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:44:44,064] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\dtu.py changed, reloading.
+[2020-03-17 21:44:44,785] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:45:27,644] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\views\user.py changed, reloading.
+[2020-03-17 21:45:28,366] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:45:36,916] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:46:14,223] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:46:18,269] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 9517
+[2020-03-17 21:46:18,316] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /welcome/ HTTP/1.1" 200 10977
+[2020-03-17 21:46:18,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/register/ HTTP/1.1" 200 4382
+[2020-03-17 21:46:18,404] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /system/frame/ HTTP/1.1" 200 3803
+[2020-03-17 21:46:18,409] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10617
+[2020-03-17 21:46:18,412] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-17 21:46:18,416] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10678
+[2020-03-17 21:46:18,420] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-03-17 21:46:18,424] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8838
+[2020-03-17 21:46:18,428] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:46:18,432] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /role/view/ HTTP/1.1" 200 4075
+[2020-03-17 21:46:18,435] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9812
+[2020-03-17 21:46:18,749] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-03-17 21:46:18,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_control_register&page=1&limit=10 HTTP/1.1" 200 1017
+[2020-03-17 21:46:18,760] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 21:46:18,767] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 200 239
+[2020-03-17 21:46:18,769] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-17 21:46:18,773] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/system/?action=query_data_field&page=1&limit=10 HTTP/1.1" 200 1555
+[2020-03-17 21:46:18,774] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-17 21:46:18,781] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 418
+[2020-03-17 21:46:18,797] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-17 21:46:18,800] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-03-17 21:46:18,812] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:46:18,830] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 1235
+[2020-03-17 21:46:18,841] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-17 21:46:18,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/auth/?action=query_role&page=1&limit=10 HTTP/1.1" 200 294
+[2020-03-17 21:46:18,857] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 21:46:18,880] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:46:18,890] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 21:46:18,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 337
+[2020-03-17 21:46:18,894] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:46:18,896] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:46:18,904] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-17 21:46:18,915] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 735
+[2020-03-17 21:46:18,918] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:46:18,924] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:46:18,930] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:46:18,945] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:46:22,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19487
+[2020-03-17 21:46:22,232] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-17 21:46:22,234] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:46:22,245] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 466
+[2020-03-17 21:46:22,252] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:46:24,738] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:46:24,795] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/meter/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\data_handler.py", line 56, in process_request
+    DataHandlerMiddleware.__del_empty_field(params)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\data_handler.py", line 40, in __del_empty_field
+    for field, val in params.keys():
+ValueError: too many values to unpack (expected 2)
+[2020-03-17 21:46:24,795] [basehttp.py:154] [basehttp:log_message] [ERROR]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 500 19118
+[2020-03-17 21:46:42,829] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:46:46,741] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:46:46,800] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:46:46,807] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:46:46,817] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:46:46,825] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:46:50,105] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:46:50,141] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:46:50,147] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:46:50,159] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:46:50,164] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:46:53,516] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/state/?meter_id=10 HTTP/1.1" 200 11057
+[2020-03-17 21:46:53,565] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-17 21:46:53,571] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?param=%7B%22state_id%22%3A10%7D&action=query_state HTTP/1.1" 200 337
+[2020-03-17 21:46:53,581] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:46:53,586] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:46:56,031] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10617
+[2020-03-17 21:46:56,111] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-17 21:46:56,118] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 418
+[2020-03-17 21:46:56,808] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11393
+[2020-03-17 21:46:56,879] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:46:56,893] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 1235
+[2020-03-17 21:46:57,357] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10678
+[2020-03-17 21:46:57,399] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 21:46:57,404] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 200 239
+[2020-03-17 21:46:58,122] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10678
+[2020-03-17 21:46:58,178] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 21:46:58,183] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 200 239
+[2020-03-17 21:46:58,715] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-17 21:46:58,781] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 21:46:58,799] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 337
+[2020-03-17 21:47:00,516] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/add/ HTTP/1.1" 200 5116
+[2020-03-17 21:47:00,548] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:47:00,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:47:05,549] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：add_dtu_region
+[2020-03-17 21:47:05,562] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu_region/ HTTP/1.1" 200 177
+[2020-03-17 21:47:18,290] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：add_dtu_region
+[2020-03-17 21:47:18,292] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu_region/ HTTP/1.1" 200 177
+[2020-03-17 21:48:09,220] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：add_dtu_region
+[2020-03-17 21:48:09,223] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu_region/ HTTP/1.1" 200 177
+[2020-03-17 21:49:25,706] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\data_handler.py changed, reloading.
+[2020-03-17 21:49:26,446] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:49:27,056] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：add_dtu_region
+[2020-03-17 21:49:27,061] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu_region/ HTTP/1.1" 200 177
+[2020-03-17 21:53:09,706] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:53:12,609] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu_region/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\data_handler.py", line 61, in process_request
+    request_api.set_param(request, params)
+  File "D:\project\python\flowmeter\flowmeter\common\api\request.py", line 73, in set_param
+    request.POST['param'] = params
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\http\request.py", line 458, in __setitem__
+    self._assert_mutable()
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\http\request.py", line 455, in _assert_mutable
+    raise AttributeError("This QueryDict instance is immutable")
+AttributeError: This QueryDict instance is immutable
+[2020-03-17 21:53:12,611] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /handler/dtu_region/ HTTP/1.1" 500 19662
+[2020-03-17 21:54:26,006] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\middlewares\data_handler.py changed, reloading.
+[2020-03-17 21:54:26,722] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:56:45,983] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 21:56:50,732] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：add_dtu_region
+[2020-03-17 21:56:50,740] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu_region/ HTTP/1.1" 200 68
+[2020-03-17 21:56:51,816] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-17 21:56:51,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/font.css HTTP/1.1" 200 505
+[2020-03-17 21:56:51,835] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/css/xadmin.css HTTP/1.1" 200 9946
+[2020-03-17 21:56:51,839] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/layui.js HTTP/1.1" 200 6667
+[2020-03-17 21:56:51,839] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/xadmin.js HTTP/1.1" 200 16891
+[2020-03-17 21:56:51,843] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/jquery-3.2.1.min.js HTTP/1.1" 200 86659
+[2020-03-17 21:56:51,844] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/layui.css HTTP/1.1" 200 89020
+[2020-03-17 21:56:51,848] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/flow-meter.js HTTP/1.1" 200 1879
+[2020-03-17 21:56:51,848] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/js/jquery.cookie.js HTTP/1.1" 200 3121
+[2020-03-17 21:56:51,854] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/layer.js HTTP/1.1" 200 22041
+[2020-03-17 21:56:51,871] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/font/iconfont.woff?v=240 HTTP/1.1" 200 26744
+[2020-03-17 21:56:51,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/table.js HTTP/1.1" 200 30963
+[2020-03-17 21:56:51,886] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/element.js HTTP/1.1" 200 7264
+[2020-03-17 21:56:51,886] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/css/modules/layer/default/layer.css?v=3.1.1 HTTP/1.1" 200 14425
+[2020-03-17 21:56:51,892] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laytpl.js HTTP/1.1" 200 1836
+[2020-03-17 21:56:51,906] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/laypage.js HTTP/1.1" 200 4472
+[2020-03-17 21:56:51,916] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/form.js HTTP/1.1" 200 9259
+[2020-03-17 21:56:51,922] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/util.js HTTP/1.1" 200 3458
+[2020-03-17 21:56:51,930] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /static/lib/layui/lay/modules/tree.js HTTP/1.1" 200 3060
+[2020-03-17 21:56:51,947] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 21:56:51,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 474
+[2020-03-17 21:56:59,129] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-17 21:56:59,209] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 21:56:59,231] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 474
+[2020-03-17 21:57:01,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/add/ HTTP/1.1" 200 5116
+[2020-03-17 21:57:01,895] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:57:01,909] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:57:04,281] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/add/ HTTP/1.1" 200 5116
+[2020-03-17 21:57:04,322] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:57:04,338] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:57:56,095] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-17 21:57:56,164] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 21:57:56,181] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 474
+[2020-03-17 21:57:56,974] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/add/ HTTP/1.1" 200 5116
+[2020-03-17 21:57:57,012] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:57:57,029] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:58:03,449] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-17 21:58:03,507] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 21:58:03,527] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 474
+[2020-03-17 21:58:04,159] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/add/ HTTP/1.1" 200 5116
+[2020-03-17 21:58:04,193] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:58:04,207] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:58:25,585] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/add/ HTTP/1.1" 200 5116
+[2020-03-17 21:58:25,624] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:58:25,638] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:58:35,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8838
+[2020-03-17 21:58:35,224] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:58:35,228] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:58:35,239] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 735
+[2020-03-17 21:58:35,247] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 21:58:35,249] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:58:35,250] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-17 21:58:36,018] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/add/ HTTP/1.1" 200 8871
+[2020-03-17 21:58:36,057] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 21:58:36,059] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 21:58:36,061] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 21:58:36,074] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-17 21:58:36,087] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 21:58:36,091] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 21:58:36,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?param=%7B%7D&action=query_dtu_region HTTP/1.1" 200 474
+[2020-03-17 21:58:36,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%7D&action=query_dtu HTTP/1.1" 200 735
+[2020-03-17 21:58:37,853] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_man_region
+[2020-03-17 21:58:37,858] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?param=%7B%22id%22%3A%229%22%7D&action=query_man_region HTTP/1.1" 200 474
+[2020-03-17 21:58:41,249] [log.py:228] [log:log_response] [ERROR]- Internal Server Error: /handler/dtu/
+Traceback (most recent call last):
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\core\handlers\exception.py", line 34, in inner
+    response = get_response(request)
+  File "D:\project\python\flowmeter\venv\lib\site-packages\django\utils\deprecation.py", line 93, in __call__
+    response = self.process_request(request)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\data_handler.py", line 57, in process_request
+    DataHandlerMiddleware.__del_empty_field(params)
+  File "D:\project\python\flowmeter\flowmeter\middlewares\data_handler.py", line 40, in __del_empty_field
+    for field, val in params.items():
+RuntimeError: dictionary changed size during iteration
+[2020-03-17 21:58:41,250] [basehttp.py:154] [basehttp:log_message] [ERROR]- "POST /handler/dtu/ HTTP/1.1" 500 19283
+[2020-03-17 22:00:03,525] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-17 22:00:06,486] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：add_dtu
+[2020-03-17 22:00:06,499] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu/ HTTP/1.1" 200 68
+[2020-03-17 22:00:06,504] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：add_dtu
+[2020-03-17 22:00:06,508] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu/ HTTP/1.1" 200 190
+[2020-03-17 22:00:09,991] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8838
+[2020-03-17 22:00:10,079] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-17 22:00:10,084] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 22:00:10,085] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-17 22:00:10,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-17 22:00:10,100] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 944
+[2020-03-17 22:00:10,106] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-17 22:00:13,675] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_dtu
+[2020-03-17 22:00:13,683] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/dtu/ HTTP/1.1" 200 68
+[2020-03-17 22:00:17,284] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /role/view/ HTTP/1.1" 200 4075
+[2020-03-17 22:00:17,351] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-17 22:00:17,352] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/auth/?action=query_role&page=1&limit=10 HTTP/1.1" 200 294
+[2020-03-17 22:00:17,813] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-17 22:00:17,856] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 22:00:17,878] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 474
+[2020-03-17 22:00:18,131] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10678
+[2020-03-17 22:00:18,198] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-17 22:00:18,202] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 200 239
+[2020-03-17 22:00:18,385] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-17 22:00:18,444] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-17 22:00:18,462] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 474

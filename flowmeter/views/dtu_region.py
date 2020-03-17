@@ -43,8 +43,6 @@ class DtuRegionActionHandler(ActionHandlerBase):
     def add_dtu_region(self, request):
 
         param = request_api.get_param(request)
-        param['total_num'] = int(param['total_num'])
-        param['manufacturer_id'] = int(param['manufacturer_id'])
 
         app_region_api.add_region(param)
 
@@ -53,8 +51,6 @@ class DtuRegionActionHandler(ActionHandlerBase):
     def update_dtu_region(self, request):
 
         param = request_api.get_param(request)
-        param['total_num'] = int(param['total_num'])
-        param['id'] = int(param['id'])
 
         app_region_api.update_dtu_region(param)
 

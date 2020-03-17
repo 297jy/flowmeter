@@ -61,6 +61,21 @@ def get_param(request):
     return param
 
 
+def set_param(request, params):
+    """
+    重新设置参数
+    :param params:
+    :param request:
+    :return:
+    """
+    if request.method == 'GET':
+        request.GET._mutable = True
+        request.GET['param'] = params
+    elif request.method == 'POST':
+        request.POST._mutable = True
+        request.POST['param'] = params
+
+
 def get_path(request):
     """
     获取访问路径

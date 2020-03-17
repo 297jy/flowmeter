@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'flowmeter.middlewares.auth.AuthMiddleware',
+    'flowmeter.middlewares.data_handler.DataHandlerMiddleware',
     'flowmeter.middlewares.error_handler.ErrorHandlerMiddleware',
 ]
 

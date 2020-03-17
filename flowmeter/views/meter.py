@@ -37,15 +37,6 @@ class MeterActionHandler(ActionHandlerBase):
         param = request_api.get_param(request)
         page = request_api.get_page(request)
 
-        params = ['manufacturer_id', 'dtu_user_id', 'dtu_id']
-        for p in params:
-            if p not in param.keys():
-                continue
-            if param[p]:
-                param[p] = int(param[p])
-            else:
-                del param[p]
-
         meters = app_meter_api.find_meter_by_query_terms(param, page)
 
         return Result.success(data=meters, count=len(meters))
@@ -53,14 +44,6 @@ class MeterActionHandler(ActionHandlerBase):
     def add_meter(self, request):
 
         param = request_api.get_param(request)
-
-        # 先转化为整形
-        int_list = ['dtu_id', 'address', 'valve_dtu_id', 'valve_address']
-        for num in int_list:
-            if num in param.keys():
-                param[num] = int(param[num])
-
-        param['surplus_gas_limits'] = float(param['surplus_gas_limits'])
 
         app_meter_api.add_meter(param)
 
@@ -92,43 +75,38 @@ class MeterActionHandler(ActionHandlerBase):
     def update_valve_state(self, request):
 
         meter_info = request_api.get_param(request)
-        meter_info['valve_state'] = int(meter_info['valve_state'])
         app_meter_api.update_valve_state(meter_info, request_api.get_user(request))
         return Result.success()
 
     def update_valve_dtu(self, request):
 
         valve_info = request_api.get_param(request)
-        valve_info['dtu_id'] = int(valve_info['dtu_id'])
+
         app_meter_api.update_valve_dtu(valve_info)
         return Result.success()
 
     def update_recharge_state(self, request):
 
         meter_info = request_api.get_param(request)
-        meter_info['recharge_state'] = int(meter_info['recharge_state'])
+
         app_meter_api.update_recharge_state(meter_info, request_api.get_user(request))
         return Result.success()
 
     def update_valve_address(self, request):
 
         valve_info = request_api.get_param(request)
-        valve_info['address'] = int(valve_info['address'])
-        valve_info['id'] = int(valve_info['id'])
         app_meter_api.update_valve_address(valve_info)
         return Result.success()
 
     def update_flow_ratio(self, request):
 
         meter_info = request_api.get_param(request)
-        meter_info['flow_ratio'] = float(meter_info['flow_ratio'])
         app_meter_api.update_flow_ratio(meter_info, request_api.get_user(request))
         return Result.success()
 
     def recharge_meter(self, request):
 
         meter_info = request_api.get_param(request)
-        meter_info['money'] = float(meter_info['money'])
         app_meter_api.recharge_meter(meter_info, request_api.get_user(request))
         return Result.success()
 

@@ -110,7 +110,7 @@ class UserActionHandler(ActionHandlerBase):
 
         manufacturer_info = request_api.get_param(request)
 
-        total_num = int(manufacturer_info.pop('total_num', 0))
+        total_num = manufacturer_info.pop('total_num', 0)
         manufacturer = app_user_api.create_manufacturer(manufacturer_info)
         conf_region_api.add_region({'manufacturer_id': manufacturer.id, "total_num": total_num})
 
