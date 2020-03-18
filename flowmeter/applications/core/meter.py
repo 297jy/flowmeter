@@ -1,6 +1,9 @@
 # coding=utf-8
+import datetime
 
 from django.db.models import Q, F
+
+from flowmeter import settings
 from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.db.valve_table import Valve
 from flowmeter.config.db.operator_table import Operator
@@ -41,7 +44,7 @@ def get_meter_dict(meter):
         "power": meter.power,
         "temperature": meter.temperature,
         "version": meter.version,
-        "last_update_time": meter.last_update_time,
+        "last_update_time": meter.last_update_time.strftime(settings.DATETIME_FORMAT_STR),
         "remark": meter.remark,
         "state_id": meter.meterstate.id,
     }
@@ -63,41 +66,14 @@ def get_meter_state_dict(state):
         "sensor_state": state.sensor_state,
         "valve_address": state.meter.valve.address,
         "valve_dtu": state.meter.valve.dtu.id,
+        "version": state.meter.version,
+        "temperature": state.meter.temperature
     }
     for key, val in state_dict.items():
         if val == UNKNOWN_VALUE or val == UNKNOWN_STATE:
             state_dict[key] = '未知'
-        elif key == "valve_state":
-            if val == VALVE_STATE_OPEN:
-                state_dict[key] = '开启'
-            else:
-                state_dict[key] = '关闭'
-        elif key == "recharge_state":
-            if val == RECHARGE_STATE_OPEN:
-                state_dict[key] = '开启'
-            else:
-                state_dict[key] = '关闭'
-        elif key == "battery_pressure_state":
-            if val == BATTERY_PRESSURE_STATE_NORMAL:
-                state_dict[key] = '正常'
-            else:
-                state_dict[key] = '欠压'
-        elif key == "valve_error_flag":
-            if val == VALVE_ERROR_FLAG_FALSE:
-                state_dict[key] = '正常'
-            else:
-                state_dict[key] = '异常'
-        elif key == "owe_state":
-            if val == OWE_STATE_FALSE:
-                state_dict[key] = '正常'
-            else:
-                state_dict[key] = '欠费'
-
-        elif key == "sensor_state":
-            if val == SENSOR_ERROR_FLAG_FALSE:
-                state_dict[key] = '正常'
-            else:
-                state_dict[key] = '异常'
+        else:
+            state_dict[key] = val
 
     return state_dict
 

@@ -133,13 +133,13 @@
                             return data.LAY_TABLE_INDEX + 1;
                         }
                     },
-                    {field: 'name', title: '操作人员名称'},
-                    {field: 'dtu_no', title: 'DTU编号'},
-                    {field: 'address', title: '仪表物理地址'},
+                    {field: 'opr_user_name', title: '操作人员名称'},
+                    {field: 'meter_dtu_dtu_no', title: 'DTU编号'},
+                    {field: 'meter_address', title: '仪表物理地址'},
                     {field: 'opr_type', title: '操作类型'},
                     {field: 'value', title: '值'},
                     {field: 'state', title: '操作状态'},
-                    {field: 'create_time', title: '操作时间'},
+                    {field: 'opr_time', title: '操作时间'},
                 ]],
                 url: '/handler/log/?action=query_opr_log',
                 page: true,
@@ -149,7 +149,7 @@
             });
 
             //头工具栏事件
-            table.on('toolbar(admin)',
+            table.on('toolbar(oprlog)',
                 function (obj) {
                     var checkStatus = table.checkStatus(obj.config.id);
                     switch (obj.event) {
@@ -161,7 +161,7 @@
                                     ids.push(checkStatus.data[i].id);
                                 }
                                 post({
-                                    "param": JSON.stringify({'admin_ids': ids}),
+                                    "param": JSON.stringify({'opr_log_ids': ids}),
                                     "action": "del_opr_log"
                                 }, '/handler/log/', function (data) {
                                     if (!data.success) {

@@ -25,8 +25,8 @@ def find_meter(dtu_no, address):
 
 def find_meter_state(dtu_no, address):
 
-    meter = Meter.objects.values("state").get(dtu_no=dtu_no, address=address)
-    return meter['state']
+    meter = Meter.objects.get(dtu__dtu_no=dtu_no, address=address)
+    return meter.meterstate
 
 
 def find_meter_by_id(meter_id):

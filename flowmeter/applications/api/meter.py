@@ -53,6 +53,7 @@ def find_meter_state_by_id(state_id):
     state = conf_state_api.find_meter_state_by_id(state_id)
     state = core.get_meter_state_dict(state)
     state['online_state'] = "在线" if conf_dtu_api.get_dtu_online_state(dtu_no) == STATE_ONLINE else "离线"
+
     return state
 
 
@@ -299,14 +300,16 @@ def update_meter_data(dtu_no, data):
     must_dict = {
         "address": int,
         "opr_type": WhiteListCheck.check_opr_type,
-        "data": None
     }
-    param_check(data, must_dict)
+
+    param_check(data, must_dict, extra=True)
     meter_data = {'last_update_time': datetime.datetime.now()}
+
     if data['opr_type'] == Operator.QUERY:
         status = data['data'].pop('status')
         meter_data.update(data['data'])
         conf_state_api.update_meter_state(dtu_no, data['address'], status)
+
     # 更新仪表物理地址
     elif data['opr_type'] == Operator.SET_METER_ADDRESS:
         meter_data.update({'address': data['data']})
@@ -321,20 +324,19 @@ def update_meter_data(dtu_no, data):
 
     # 更新阀门状态
     elif data['opr_type'] == Operator.OPEN_VALVE:
-        meter_data.update({'valve_state': VALVE_STATE_OPEN})
+        conf_state_api.update_meter_state(dtu_no, data['address'], {'valve_state': VALVE_STATE_OPEN})
 
     # 更新阀门状态
     elif data['opr_type'] == Operator.CLOSE_VALVE:
-        meter_data.update({'valve_state': VALVE_STATE_CLOSE})
-
+        conf_state_api.update_meter_state(dtu_no, data['address'], {'valve_state': VALVE_STATE_CLOSE})
     # 更新预充值状态
     elif data['opr_type'] == Operator.OPEN_RECHARGE:
-        meter_data.update({'recharge_state': RECHARGE_STATE_OPEN})
+        conf_state_api.update_meter_state(dtu_no, data['address'], {'recharge_state': RECHARGE_STATE_OPEN})
     # 更新预充值状态
     elif data['opr_type'] == Operator.CLOSE_RECHARGE:
-        meter_data.update({'recharge_state': RECHARGE_STATE_CLOSE})
+        conf_state_api.update_meter_state(dtu_no, data['address'], {'recharge_state': RECHARGE_STATE_CLOSE})
 
-    conf_state_api.update_meter_state(dtu_no, data['address'], meter_data)
+    conf_meter_api.update_meter_data(dtu_no, data['address'], meter_data)
 
 
 def get_meter_state_view_info(meter_id):
@@ -343,12 +345,13 @@ def get_meter_state_view_info(meter_id):
     :param meter_id: 仪表id
     :return:
     """
-    meter = Meter.objects.values("meterstate__id", "dtu__dtu_no", "valve__id").get(id=meter_id)
+    meter = Meter.objects.values("meterstate__id", "dtu__dtu_no", "valve__id", "address").get(id=meter_id)
     return {
         "meter_id": meter_id,
         "dtu_no": meter.get('dtu__dtu_no'),
         "id": meter.get('meterstate__id'),
         "valve_id": meter.get('valve__id'),
+        "address": meter.get('address'),
     }
 
 

@@ -139,7 +139,7 @@ class Operator:
         }
 
     def keys(self):
-        return 'user_id', 'opr_type', 'opr_time', 'val', 'dtu_no', 'meter_address', 'log_id'
+        return 'user_id', 'opr_type', 'val', 'dtu_no', 'meter_address', 'log_id'
 
     def __getitem__(self, item):
         return getattr(self, item)

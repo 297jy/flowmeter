@@ -1,0 +1,364 @@
+[2020-03-18 09:57:01,330] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-03-18 09:57:01,369] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-18 09:57:01,383] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 09:57:01,490] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-18 09:57:01,509] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-18 09:57:01,531] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-18 09:57:01,549] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 09:57:01,569] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-18 09:57:01,607] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 09:57:01,611] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-18 09:57:01,611] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 09:57:01,627] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 09:57:01,634] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 09:57:02,873] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 09:57:02,877] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 09:57:11,885] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 09:57:11,902] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 09:57:26,433] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 10:00:15,540] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 10:00:15,555] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 10:00:18,805] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:00:20,639] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:03:20,783] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 10:03:20,801] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 10:03:22,753] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 10:10:18,393] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 10:10:27,886] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 10:10:43,464] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 10:11:40,288] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 10:22:35,763] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:50:42,729] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:50:51,076] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:51:48,200] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:52:59,600] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:53:16,389] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:54:47,754] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:56:38,311] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 10:56:54,675] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 11:14:59,183] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:14:59,199] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:15:02,570] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:15:02,576] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:15:08,824] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 11:18:39,771] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：del_batch_meter
+[2020-03-18 11:18:39,796] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:18:48,794] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 11:18:48,797] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:18:48,820] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-18 11:18:49,693] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:18:49,695] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:18:52,228] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:18:52,231] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:18:54,736] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 11:18:56,574] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:18:56,577] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:18:58,169] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:18:58,171] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:19:04,316] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 11:19:04,318] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:19:04,343] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-18 11:19:04,591] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:19:04,594] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:20:05,585] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:20:05,587] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:20:06,490] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-18 11:20:06,490] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:20:06,521] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 11:20:08,187] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-18 11:20:08,187] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 11:20:18,762] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：add_meter
+[2020-03-18 11:20:19,612] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:20:19,615] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:20:21,344] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 11:20:21,359] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 11:20:23,069] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 11:20:28,520] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 11:26:46,995] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:26:47,007] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:26:48,535] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:26:48,542] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:26:52,141] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:26:52,144] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:32:00,618] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-18 11:32:31,446] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 11:32:33,824] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：del_opr_log
+[2020-03-18 11:35:18,634] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：del_opr_log
+[2020-03-18 11:35:20,456] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 11:35:22,553] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：del_opr_log
+[2020-03-18 11:35:22,572] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 11:35:25,406] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 11:35:27,081] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:35:27,092] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:35:28,073] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:35:28,077] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:39:46,463] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:39:46,477] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:39:47,694] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:39:47,699] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:40:54,075] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 11:40:54,089] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 11:40:55,831] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 11:40:55,845] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 11:40:57,401] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 11:41:44,736] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 11:42:05,076] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 11:47:33,450] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 11:47:33,463] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 11:47:44,315] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 11:49:34,112] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 11:58:56,862] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:00:50,591] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:02:06,010] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:03:30,252] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:03:32,773] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:04:02,133] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:04:34,397] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:07:20,010] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:07:42,205] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:08:20,120] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:12:23,478] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:12:51,844] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:19:08,526] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:19:32,003] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:19:53,913] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 12:20:15,546] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x10\x00'数据帧
+[2020-03-18 12:29:30,246] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x10\x00'数据帧
+[2020-03-18 12:31:34,295] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x10\x00'数据帧
+[2020-03-18 12:32:10,083] [server.py:121] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x10\x00'数据帧
+[2020-03-18 12:32:49,184] [server.py:121] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x10\x00'数据帧
+[2020-03-18 12:33:06,743] [server.py:121] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x10\x00'数据帧
+[2020-03-18 12:43:50,214] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x10\x00'数据帧
+[2020-03-18 12:44:25,715] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x10\x00'数据帧
+[2020-03-18 12:46:17,233] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x10\x00'数据帧
+[2020-03-18 12:46:43,716] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:15:53,152] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 13:15:53,166] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 13:15:55,701] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 13:15:55,714] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 13:15:58,070] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 13:16:54,632] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 13:16:56,820] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 13:16:56,865] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 13:17:48,785] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:21:42,112] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 13:21:45,318] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：del_opr_log
+[2020-03-18 13:21:45,337] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 13:21:51,762] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 13:21:51,766] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 13:21:52,862] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 13:21:52,876] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 13:21:55,103] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 13:22:27,620] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:22:44,934] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 13:24:38,320] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 13:24:40,522] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：del_opr_log
+[2020-03-18 13:24:40,541] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 13:24:42,458] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 13:24:42,462] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 13:24:43,654] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 13:24:43,668] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 13:24:45,800] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：update_valve_state
+[2020-03-18 13:24:57,228] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:25:00,300] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 13:25:50,839] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 13:26:25,120] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:31:42,502] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:31:51,438] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 13:32:32,635] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:32:51,978] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:33:04,535] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:33:20,819] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 13:36:37,874] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:36:45,874] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 13:37:15,729] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:37:19,683] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 13:38:27,990] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:38:31,669] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 13:41:13,567] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:42:06,041] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 13:42:28,109] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 14:58:35,238] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x02'数据帧
+[2020-03-18 15:08:59,042] [server.py:120] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x02'数据帧
+[2020-03-18 16:56:25,055] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x02'数据帧
+[2020-03-18 16:57:44,289] [server.py:127] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x02'数据帧
+[2020-03-18 16:57:47,267] [server.py:127] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x02'数据帧
+[2020-03-18 16:58:00,784] [server.py:127] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 17:11:06,305] [server.py:127] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 17:13:25,183] [server.py:127] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 17:14:37,972] [server.py:127] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 17:19:13,871] [server.py:127] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:12:21,235] [server.py:127] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:12:36,486] [server.py:127] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:13:24,296] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 18:13:24,311] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 18:13:28,293] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 18:13:28,298] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 18:13:30,018] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 18:13:30,020] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 18:31:46,228] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:31:56,002] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:33:09,851] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:33:13,053] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:35:56,634] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:36:00,576] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:36:38,937] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:36:41,630] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:45:17,643] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:45:22,897] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:47:27,218] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:47:29,305] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:49:37,061] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:49:39,157] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:51:46,300] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:51:51,638] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:52:08,163] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:52:10,739] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:53:24,178] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:53:26,083] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:54:49,026] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:54:50,577] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:56:41,189] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:56:42,269] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 18:58:52,238] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 18:58:53,212] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 19:00:05,476] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:00:06,965] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 19:01:22,266] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:01:24,430] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 19:01:49,139] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:01:50,266] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 19:10:18,975] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-03-18 19:10:26,370] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:10:31,954] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 19:11:19,183] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 19:11:53,764] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:11:56,890] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 19:12:18,789] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:12:27,008] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x06\x96\x03t\x10r\x8e'数据帧
+[2020-03-18 19:12:48,742] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:12:48,755] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:16:15,477] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:16:15,490] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:16:53,686] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:16:53,710] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:16:56,891] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:16:56,907] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:16:59,204] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:16:59,222] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:17:02,002] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:17:02,016] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:17:04,022] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:17:04,036] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:18:24,860] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:18:24,878] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:18:26,942] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:18:26,960] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:18:28,581] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:18:28,596] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:18:31,351] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:18:31,366] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:18:43,639] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:18:43,687] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:18:45,351] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:18:45,365] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:18:46,847] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:18:46,892] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:19:34,492] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:19:34,503] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:19:42,312] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:19:42,326] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:20:27,132] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:20:27,154] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-18 19:20:27,177] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:20:29,363] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:20:29,378] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:21:34,618] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:21:34,631] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:21:48,937] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:21:54,462] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:21:58,633] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:21:58,646] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:22:00,928] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:22:00,942] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:22:03,658] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:22:07,507] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:22:07,521] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:23:47,311] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:23:47,328] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:25:03,801] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:25:03,813] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:25:42,095] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:25:42,107] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:25:52,069] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:25:52,073] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:26:05,595] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:26:05,598] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:26:26,633] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:26:26,637] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:26:47,394] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:26:47,397] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:26:57,191] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:26:57,195] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:28:01,447] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-03-18 19:28:01,482] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-18 19:28:01,539] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-18 19:28:01,544] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-18 19:28:01,564] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-18 19:28:01,586] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:28:01,591] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:28:01,630] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:28:01,631] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:28:01,636] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-18 19:28:01,667] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-18 19:28:03,226] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:28:03,231] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:28:06,102] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:28:06,120] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:28:39,609] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:28:39,630] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:31:16,308] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:31:16,322] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:32:42,166] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:32:42,181] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:32:43,389] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:32:43,405] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:33:06,240] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:33:06,255] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:33:08,055] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:33:08,067] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:33:08,543] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:33:08,556] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:33:16,052] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:33:16,057] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:33:16,664] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:33:16,678] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:33:19,456] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:33:19,479] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:33:21,372] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:33:21,385] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:33:22,954] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:33:22,967] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:33:24,309] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:33:24,326] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:33:32,494] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:33:32,508] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:33:35,781] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:33:35,795] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:36:40,860] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:36:40,875] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:36:46,720] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:36:46,735] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:39:53,462] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:39:53,476] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:40:02,997] [server.py:128] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-18 19:40:05,665] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:40:05,684] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:40:07,891] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:40:07,907] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:40:10,270] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-18 19:40:10,281] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-18 19:40:21,384] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:40:21,398] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-18 19:40:23,053] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-18 19:40:23,067] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu

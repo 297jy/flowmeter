@@ -72,6 +72,24 @@
             </div>
 
             <div class="layui-form-item">
+                <label for="L_username" class="layui-form-label" style="width: 120px">
+                    温度
+                </label>
+                <div class="layui-input-inline" id="temperature_div">
+                    <input type="text" readonly id="temperature" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="L_username" class="layui-form-label" style="width: 120px">
+                    版本
+                </label>
+                <div class="layui-input-inline" id="version_div">
+                    <input type="text" readonly id="version" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
                 <label for="valve_state" class="layui-form-label" style="width: 120px">
                     阀门状态
                 </label>
@@ -134,9 +152,10 @@
                 layer = layui.layer;
 
             let meterState = {
-                "id": "{{ id }}",
-                "meter_id": "{{ meter_id }}",
-                "dtu_no": "{{ dtu_no }}",
+                "id": {{ id }},
+                "meter_id": {{ meter_id }},
+                "dtu_no": {{ dtu_no }},
+                "address": {{ address }},
             };
 
             //监听提交
@@ -229,7 +248,7 @@
                 } else {
                     let state_list = ['valve_state',
                         'recharge_state',
-                        'battery_pressure_state', 'valve_error_flag', 'owe_state', 'sensor_state', 'online_state', 'valve_address'];
+                        'battery_pressure_state', 'valve_error_flag', 'owe_state', 'sensor_state', 'online_state', 'valve_address', 'version', 'temperature'];
                     for (let i = 0; i < state_list.length; i++) {
                         $("#" + state_list[i]).val(res.data[state_list[i]]);
                     }

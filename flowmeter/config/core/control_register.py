@@ -29,5 +29,6 @@ def update_control_register(register_info):
         register.const_data = register_info['const_data']
         register.remark = register_info['remark']
         register.save()
+        return register
     except ControlRegister.DoesNotExist:
         raise DoesNotExistException("要编辑的控制寄存器不存在，编辑失败！")

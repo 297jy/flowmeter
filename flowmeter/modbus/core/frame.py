@@ -154,10 +154,12 @@ def get_opr_type(frame):
     :param frame:
     :return:
     """
-    field_val = frame[2] << 8 + frame[3]
-    const_data = frame[4] << 8 + frame[5]
+    field_val = (frame[2] << 8) + frame[3]
+    const_data = (frame[4] << 8) + frame[5]
+
     # 先根据域值筛选
     registers = control_register.find_registers_by_field_val(field_val)
+
     # 如果只筛选到一个操作类型，就直接返回
     if len(registers) == 1:
         return registers[0].opr_type
@@ -198,7 +200,7 @@ def cal_crc(data_frame):
     :param data_frame:
     :return:
     """
-    if len(data_frame & 1) != 0 or (len(data_frame) < 4):
+    if (len(data_frame) & 1) != 0 or (len(data_frame) < 4):
         raise ParameterErrorException("数据帧格式错误，无法生成校验码")
 
     crc = (1 << 16) - 1
@@ -220,8 +222,9 @@ def check_crc(data):
     :param data:
     :return:
     """
-    crc_h = data[-2]
-    crc_l = data[-1]
+    crc_l = data[-2]
+    crc_h = data[-1]
     now_crc_h, now_crc_l = cal_crc(data[0: -2])
+
     if now_crc_h != crc_h or now_crc_l != crc_l:
         raise ValueValidException()

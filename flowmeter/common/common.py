@@ -78,13 +78,19 @@ def transfer_hex_str(num):
     return hex_str
 
 
-def deserialize_obj(obj_dict, class_name=None):
+def deserialize_obj(obj_str, class_name=None):
     """
     反序列化成简单对象
-    :param obj_dict 待反序列化的对象字符串
+    :param obj_str 待反序列化的对象字符串
     :param class_name:
     :return: class_name为None时直接返回对象字典，否则返回指定对象
     """
+
+    if obj_str is None:
+        return None
+
+    obj_dict = json.loads(obj_str)
+
     if class_name is None:
         return obj_dict
 
@@ -106,12 +112,28 @@ def serialize_obj(obj):
 
 
 def get_obj_attr(obj, attr_name):
+    """
+    获得对象的某个属性
+    :param obj:
+    :param attr_name:
+    :return:
+    """
     attr_name += '.'
     while len(attr_name) > 0:
         index = attr_name.find('.')
         obj = getattr(obj, attr_name[0: index])
         attr_name = attr_name[index + 1: len(attr_name)]
     return obj
+
+
+def get_att_name(att_name):
+    """
+    获取属性名
+    :param att_name:
+    :return:
+    """
+    att = att_name.replace(".", "_")
+    return att
 
 
 def transfer_obj_to_dict(objs, attribute_list, display_fun):
@@ -127,7 +149,8 @@ def transfer_obj_to_dict(objs, attribute_list, display_fun):
 
         obj_dict = {}
         for att in attribute_list:
-            obj_dict[att] = get_obj_attr(obj, att)
+            att_name = get_att_name(att)
+            obj_dict[att_name] = get_obj_attr(obj, att)
         display_fun(obj_dict)
 
         dicts.append(obj_dict)

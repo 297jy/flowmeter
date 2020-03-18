@@ -2,10 +2,16 @@
 
 import os
 import json
+import threading
+
 from flowmeter.settings import BASE_DIR
 from flowmeter.config.api import role as conf_role_api
 from flowmeter.config.api import flag as conf_flag_api
+from flowmeter.config.api import cache as conf_cache_api
+from flowmeter.config.api import configure as conf_configure_api
 from flowmeter.config.db.flag_table import Flag
+from flowmeter.config.db.configure_table import Configure
+from flowmeter.modbus.api import server
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flowmeter.settings')
 
@@ -164,6 +170,35 @@ def init_role_version():
             conf_flag_api.get_role_version(role.name)
         except Flag.DoesNotExist:
             Flag.objects.create(**{"name": "{}_version".format(role.name), "val": str(1)})
+
+
+def init_configure():
+    """
+    初始化系统配置
+    :return:
+    """
+    conf_list = [{
+        'label': '检查未执行操作的时间间隔',
+        'name': 'unexecuted_opr_check_time',
+        'val': 5,
+    }]
+
+    for conf in conf_list:
+        try:
+            c = Configure.objects.get(name=conf['name'])
+            # 重新设置缓存
+            conf_cache_api.set_hash('configure', conf['name'], int(c.val))
+        except Configure.DoesNotExist:
+            Configure.objects.create(**conf)
+
+
+def start_flowmeter_server():
+    """
+    开始流量计远程服务器
+    :return:
+    """
+    t = threading.Thread(target=server.run_server, args=())
+    t.start()
 
 
 def main():

@@ -16,6 +16,7 @@ class LogActionHandler(ActionHandlerBase):
 
         action_dict = {
             'query_opr_log': self.query_opr_log,
+            'del_opr_log': self.del_opr_log,
         }
         super().__init__(action_dict)
 
@@ -27,6 +28,14 @@ class LogActionHandler(ActionHandlerBase):
         logs = app_log_api.find_logs_by_query_terms(param, page)
 
         return Result.success(data=logs, count=len(logs))
+
+    def del_opr_log(self, request):
+
+        param = request_api.get_param(request)
+
+        app_log_api.del_opr_logs(param['opr_log_ids'])
+
+        return Result.success()
 
 
 @xframe_options_sameorigin

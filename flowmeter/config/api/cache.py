@@ -129,17 +129,26 @@ def get_zset_all_member(name, class_name=None):
 
 def set_obj(keyname, obj):
     conn = get_redis_connection('default')
-    if __is_obj(obj):
-        obj = serialize_obj(obj)
+    obj = serialize_obj(obj)
     conn.set(keyname, obj)
 
 
 def get_obj(keyname, class_name=None):
     conn = get_redis_connection('default')
     obj = conn.get(keyname)
-    if __is_obj(obj):
-        obj = deserialize_obj(obj, class_name)
+    obj = deserialize_obj(obj, class_name)
     return obj
+
+
+def set_hash(name, key, val):
+    conn = get_redis_connection('default')
+    conn.hset(name, key, val)
+
+
+def get_hash(name, key):
+    conn = get_redis_connection('default')
+    val = conn.hget(name, key)
+    return val
 
 
 def delete(keyname):

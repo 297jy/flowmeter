@@ -2,6 +2,7 @@
 
 from flowmeter.config.api import cache
 from flowmeter.config.db.flag_table import Flag
+from django.db import transaction
 
 
 def get_role_version(role_name):
@@ -30,6 +31,8 @@ def set_role_version(role_name, new_version):
     key = "{}_version".format(role_name)
     version = Flag.objects.get(name=key)
     version.val = str(new_version)
-    version.save()
-    # 更新缓存内容
-    cache.set_int(key, new_version)
+
+    with transaction.atomic():
+        version.save()
+        # 更新缓存内容
+        cache.set_int(key, new_version)

@@ -45,7 +45,6 @@ def __transfer_database_to_display(oprlog_info):
 
 
 def find_logs_by_query_terms(query_terms, page=None):
-
     name = query_terms.get('username')
     state = query_terms.get('state')
     opr_type = query_terms.get('opr_type')
@@ -67,5 +66,5 @@ def find_logs_by_query_terms(query_terms, page=None):
 
     logs = conf_log_api.find_opr_log(query_box.get_filters(), page)
 
-    return transfer_obj_to_dict(logs, ['id', 'opr_user.name', 'opr_time', 'val', 'state', 'opr_type'],
-                                __transfer_database_to_display)
+    return transfer_obj_to_dict(logs, ['id', 'opr_user.name', 'opr_time', 'val', 'state', 'opr_type',
+                                       'meter.dtu.dtu_no', 'meter.address'], __transfer_database_to_display)

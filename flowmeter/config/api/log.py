@@ -73,6 +73,11 @@ def find_opr_log(filters=None, page=None):
     return logs
 
 
+def del_opr_logs(opr_log_ids):
+
+    OprLog.objects.filter(id__in=opr_log_ids).delete()
+
+
 
 
 

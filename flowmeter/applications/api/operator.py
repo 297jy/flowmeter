@@ -18,7 +18,7 @@ def execute_remote_op(opr):
     执行远程操作
     :return:
     """
-    data_frame = frame.generate_data_frame(opr.address, opr.opr_type, opr.val)
+    data_frame = frame.generate_data_frame(opr.meter_address, opr.opr_type, opr.val)
     # 直接向流量计发送数据帧
     try:
         server.send_data_frame(opr.dtu_no, data_frame)
@@ -27,7 +27,7 @@ def execute_remote_op(opr):
     except:
         traceback.print_exc()
         # 发送失败就放进未执行命令队列中
-        conf_operator_api.add_unexecuted_operator(opr)
+        conf_operator_api.add_unexecuted_operator(dict(opr))
 
 
 def execute_unexecuted_remote_op(dtu_no):
@@ -51,7 +51,6 @@ def execute_unexecuted_remote_op(dtu_no):
                         conf_operator_api.add_wait_operator(opr)
                         data_frame = frame.generate_data_frame(opr['meter_address'], opr['opr_type'], opr['val'])
                         server.send_data_frame(dtu_no, data_frame)
-                    return
 
             else:
                 if len(oprs) > 0:
@@ -66,14 +65,14 @@ def execute_unexecuted_remote_op(dtu_no):
                         conf_operator_api.remove_dtu_unexecuted_opr(dtu_no, address, opr_type)
                         data_frame = frame.generate_data_frame(address, opr_type, execute_opr['val'])
                         server.send_data_frame(dtu_no, data_frame)
-                    return
 
 
-def execute_wait_remote_op(dtu_no, address, opr_type):
+def execute_wait_remote_op(dtu_no, address, opr_type, val):
     """
     执行一条等待执行结果的远程操作
     :return:
     """
     # 先获取缓存中存在的带执行的操作命令
-    opr = conf_operator_api.get_and_del_earliest_wait_opr(dtu_no, address, opr_type)
-    app_log_api.update_logs_success_state([opr.log_id])
+    opr = conf_operator_api.get_and_del_wait_opr(dtu_no, address, opr_type, val)
+    if opr is not None:
+        app_log_api.update_logs_success_state([opr['log_id']])

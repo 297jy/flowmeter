@@ -32,3 +32,12 @@ def find_logs_by_query_terms(query_terms, page=None):
 def update_logs_success_state(log_ids):
 
     conf_log_api.update_opr_logs_state(log_ids, OprLog.SUCCESS_STATE)
+
+
+def del_opr_logs(opr_log_ids):
+    """
+    删除操作日志
+    :param opr_log_ids:
+    :return:
+    """
+    conf_log_api.del_opr_logs(opr_log_ids)

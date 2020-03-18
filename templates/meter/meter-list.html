@@ -135,16 +135,15 @@
                     {field: 'flow_rate', title: '瞬时流量'},
                     {field: 'flow_ratio', title: '流量系数', edit: 'number',},
                     {field: 'power', title: '电池电压'},
-                    {field: 'temperature', title: '温度'},
-                    {field: 'version', title: '版本'},
-                    {field: 'last_update_time', title: '更新时间'},
-                    {field: 'remark', edit: 'text', title: '备注'},
+                    {field: 'last_update_time', title: '更新时间', width: '10%'},
+                    {field: 'remark', edit: 'text', title: '备注', width: '15%'},
                     {
                         field: 'state',
                         title: '仪表状态',
+                        width: '5%',
                         templet: function (d) {
                             return "<button class=\"layui-btn\" onclick=\"xadmin." +
-                                "open('仪表状态','/meter/state/?meter_id=" + d['id'] + "',500, 600)\">查看</button>";
+                                "open('仪表状态','/meter/state/?meter_id=" + d['id'] + "',500, 720)\">查看</button>";
                         }
                     },
                 ]],

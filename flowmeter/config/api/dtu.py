@@ -4,6 +4,7 @@ from flowmeter.config.core import dtu as core
 from flowmeter.common.api.validators import param_check, StrCheck
 from flowmeter.config.api import cache
 from flowmeter.config.db.dtu_table import Dtu
+from flowmeter.modbus.api import server
 from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.config.const import STATE_ONLINE, STATE_OFFLINE
 
@@ -59,7 +60,7 @@ def find_meters_by_dtu_no(dtu_no):
 
 def find_id_by_dtu_no(dtu_no):
 
-    keyname = 'dtu_no_' + dtu_no
+    keyname = 'dtu_no_' + str(dtu_no)
     if cache.is_exists(keyname):
         return cache.get_int(keyname)
 
@@ -107,8 +108,6 @@ def get_dtu_online_state(dtu_no):
     :param dtu_no:
     :return:
     """
-    if conf_cache_api.is_exists_set('online_dtus', dtu_no):
-        return STATE_ONLINE
-    else:
-        return STATE_OFFLINE
+    return STATE_ONLINE if server.is_dtu_online(dtu_no) else STATE_OFFLINE
+
 
