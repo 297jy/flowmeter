@@ -3,7 +3,8 @@
 from django.db import models
 from flowmeter.config.db.user_table import User
 from flowmeter.config.db.meter_table import Meter
-from flowmeter.config.const import STATE_CHAR_LEN, OPR_TYPE_CHAR_LEN, ALARM_TYPE_CHAR_LEN, VALUE_CHAR_LEN
+from flowmeter.config.const import STATE_CHAR_LEN, OPR_TYPE_CHAR_LEN, ALARM_TYPE_CHAR_LEN, VALUE_CHAR_LEN, \
+    ACTION_TYPE_CHAR_LEN
 
 
 class Log(models.Model):
@@ -14,8 +15,6 @@ class Log(models.Model):
     ERROR_STATE = 'error'
     WAITE_STATE = 'wait'
 
-    # 操作用户
-    opr_user = models.ForeignKey(User, on_delete=models.CASCADE)
     # 操作时间
     opr_time = models.DateTimeField()
 
@@ -23,15 +22,19 @@ class Log(models.Model):
         abstract = True
 
 
-class LoginLog(Log):
+class SystemLog(Log):
     """
-    登录日志
+    系统日志
     """
     LOGIN_SUCCESS = 'success'
     LOGIN_ERROR = 'error'
 
+    # 系统日志的值
+    action_type = models.CharField(max_length=ACTION_TYPE_CHAR_LEN)
     # 操作状态
     state = models.CharField(max_length=STATE_CHAR_LEN)
+    # 操作用户
+    opr_user = models.ForeignKey(User, on_delete=models.CASCADE)
 
 
 class OprLog(Log):
@@ -46,6 +49,8 @@ class OprLog(Log):
     meter = models.ForeignKey(Meter, on_delete=models.CASCADE)
     # 操作值
     val = models.CharField(max_length=VALUE_CHAR_LEN)
+    # 操作用户
+    opr_user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
         ordering = ['opr_time']

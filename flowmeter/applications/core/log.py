@@ -60,11 +60,71 @@ def find_logs_by_query_terms(query_terms, page=None):
         opr_user__name__icontains=name,
         state=state,
         opr_type=opr_type,
-        create_time__gte=begin_time,
-        create_time__lte=end_time
+        opr_time__gte=begin_time,
+        opr_time__lte=end_time
     )
 
     logs = conf_log_api.find_opr_log(query_box.get_filters(), page)
 
     return transfer_obj_to_dict(logs, ['id', 'opr_user.name', 'opr_time', 'val', 'state', 'opr_type',
                                        'meter.dtu.dtu_no', 'meter.address'], __transfer_database_to_display)
+
+
+def find_system_logs_by_query_terms(query_terms, page=None):
+    query_box = query_terms.get('query_box')
+    state = query_terms.get('state')
+    begin_time = query_terms.get('begin_time')
+    if begin_time:
+        begin_time = datetime.datetime.strptime(begin_time, '%Y-%m-%d')
+    end_time = query_terms.get('end_time')
+    if end_time:
+        end_time = datetime.datetime.strptime(end_time, '%Y-%m-%d')
+
+    # 构造创建时间的查询条件
+    query_and = QueryTerms.make_and_query_terms(
+        state=state,
+        opr_time__gte=begin_time,
+        opr_time__lte=end_time
+    )
+    query_or = QueryTerms.make_or_query_terms(
+        action_type__icontains=query_box,
+        opr_user__name__icontains=query_box,
+    )
+
+    logs = conf_log_api.find_system_log(query_and.get_filters() & query_or.get_filters(), page)
+
+    return transfer_obj_to_dict(logs, ['id', 'opr_user.name', 'opr_time', 'action_type', 'state'],
+                                __transfer_database_to_display)
+
+
+def find_alarm_logs_by_query_terms(query_terms, page=None):
+
+    query_box = query_terms.get('query_box')
+    state = query_terms.get('state')
+    alarm_type = query_terms.get('alarm_type')
+    begin_time = query_terms.get('begin_time')
+    if begin_time:
+        begin_time = datetime.datetime.strptime(begin_time, '%Y-%m-%d')
+    end_time = query_terms.get('end_time')
+    if end_time:
+        end_time = datetime.datetime.strptime(end_time, '%Y-%m-%d')
+
+    # 构造创建时间的查询条件
+    query_or = QueryTerms.make_or_query_terms(
+        meter__dtu__user__name__icontains=query_box,
+        meter__dtu__region__manufacturer__name__icontains=query_box,
+        meter__dtu__dtu_no__icontains=query_box,
+        meter__address__icontains=query_box,
+    )
+    query_and = QueryTerms.make_and_query_terms(
+        state=state,
+        opr_time__gte=begin_time,
+        opr_time__lte=end_time,
+        alarm_type=alarm_type,
+    )
+
+    logs = conf_log_api.find_alarm_log(query_or.get_filters() & query_and.get_filters(), page)
+
+    return transfer_obj_to_dict(logs, ['id', 'meter.dtu.user.name', 'meter.dtu.region.manufacturer.name',
+                                       'alarm_type', 'state', 'meter.address', 'meter.dtu.dtu_no'],
+                                __transfer_database_to_display)

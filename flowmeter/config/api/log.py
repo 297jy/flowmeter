@@ -2,8 +2,8 @@
 
 import datetime
 from flowmeter.config.core import log as core
-from flowmeter.config.db.log_table import OprLog
-from flowmeter.common.api.validators import param_check, WhiteListCheck
+from flowmeter.config.db.log_table import OprLog, SystemLog, AlarmLog
+from flowmeter.common.api.validators import param_check, WhiteListCheck, StrCheck
 
 
 def add_alarm_log(log):
@@ -33,11 +33,18 @@ def add_opr_log(log):
     return core.add_opr_log(log)
 
 
-def find_earliest_opr_log(log_info):
+def add_system_log(log):
 
-    log = core.find_earliest_opr_log(log_info)
+    must_dict = {
+        "action_type": StrCheck.check_action_type,
+        "opr_user_id": int,
+        "opr_time": datetime.datetime,
+        "state": WhiteListCheck.check_opr_state,
+    }
 
-    return log
+    param_check(log, must_dict=must_dict, extra=True)
+
+    return core.add_system_log(log)
 
 
 def find_opr_log_by_id(log_id):
@@ -61,9 +68,9 @@ def find_opr_log(filters=None, page=None):
     """
     if page is None:
         if filters:
-            logs = core.find_opr_logs(filters).order_by('-opr_time')
+            logs = OprLog.objects.filter(filters).order_by('-opr_time')
         else:
-            logs = core.find_opr_logs({}).order_by('-opr_time')
+            logs = OprLog.objects.filter(filters).order_by('-opr_time')
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
@@ -75,9 +82,65 @@ def find_opr_log(filters=None, page=None):
     return logs
 
 
+def find_system_log(filters=None, page=None):
+    """
+    查询系统日志，按操作日期降序
+    :param filters:
+    :param page:
+    :return:
+    """
+    if page is None:
+        if filters:
+            logs = SystemLog.objects.filter(filters).order_by('-opr_time')
+        else:
+            logs = SystemLog.objects.filter(filters).order_by('-opr_time')
+    else:
+        start_index = page.limit * (page.index - 1)
+        end_index = page.index * page.limit
+        if filters:
+            logs = SystemLog.objects.filter(filters).order_by('-opr_time')[start_index: end_index]
+        else:
+            logs = SystemLog.objects.all().order_by('-opr_time')[start_index: end_index]
+
+    return logs
+
+
+def find_alarm_log(filters=None, page=None):
+    """
+    查询警报日志，按操作日期降序
+    :param filters:
+    :param page:
+    :return:
+    """
+    if page is None:
+        if filters:
+            logs = AlarmLog.objects.filter(filters).order_by('-opr_time')
+        else:
+            logs = AlarmLog.objects.filter(filters).order_by('-opr_time')
+    else:
+        start_index = page.limit * (page.index - 1)
+        end_index = page.index * page.limit
+        if filters:
+            logs = AlarmLog.objects.filter(filters).order_by('-opr_time')[start_index: end_index]
+        else:
+            logs = AlarmLog.objects.all().order_by('-opr_time')[start_index: end_index]
+
+    return logs
+
+
 def del_opr_logs(opr_log_ids):
 
     OprLog.objects.filter(id__in=opr_log_ids).delete()
+
+
+def del_system_logs(opr_log_ids):
+
+    SystemLog.objects.filter(id__in=opr_log_ids).delete()
+
+
+def del_alarm_logs(opr_log_ids):
+
+    AlarmLog.objects.filter(id__in=opr_log_ids).delete()
 
 
 

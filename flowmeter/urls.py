@@ -97,6 +97,8 @@ role_urlpatterns = [
 
 log_urlpatterns = [
     path('opr/view/', log.opr_log_view),
+    path('system/view/', log.system_log_view),
+    path('alarm/view/', log.alarm_log_view),
 ]
 
 # 视图路由

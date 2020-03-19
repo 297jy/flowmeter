@@ -159,6 +159,15 @@ class StrCheck:
             raise ParameterErrorException("URL字符长度只能为[1-{}]个字符！"
                                           .format(const.URL_CHAR_LEN))
 
+    @staticmethod
+    def check_action_type(url):
+
+        StrCheck.check_not_null(url)
+
+        if len(url) > const.ACTION_TYPE_CHAR_LEN:
+            raise ParameterErrorException("动作类型字符长度只能为[1-{}]个字符！"
+                                          .format(const.ACTION_TYPE_CHAR_LEN))
+
 
 class WhiteListCheck:
 

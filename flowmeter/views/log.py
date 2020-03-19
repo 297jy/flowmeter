@@ -17,6 +17,10 @@ class LogActionHandler(ActionHandlerBase):
         action_dict = {
             'query_opr_log': self.query_opr_log,
             'del_opr_log': self.del_opr_log,
+            'query_system_log': self.query_system_log,
+            "del_system_log": self.del_system_log,
+            'query_alarm_log': self.query_alarm_log,
+            "del_alarm_log": self.del_alarm_log,
         }
         super().__init__(action_dict)
 
@@ -28,6 +32,40 @@ class LogActionHandler(ActionHandlerBase):
         logs = app_log_api.find_logs_by_query_terms(param, page)
 
         return Result.success(data=logs, count=len(logs))
+
+    def query_system_log(self, request):
+
+        param = request_api.get_param(request)
+        page = request_api.get_page(request)
+
+        logs = app_log_api.find_system_logs_by_query_terms(param, page)
+
+        return Result.success(data=logs, count=len(logs))
+
+    def query_alarm_log(self, request):
+
+        param = request_api.get_param(request)
+        page = request_api.get_page(request)
+
+        logs = app_log_api.find_alarm_logs_by_query_terms(param, page)
+
+        return Result.success(data=logs, count=len(logs))
+
+    def del_system_log(self, request):
+
+        param = request_api.get_param(request)
+
+        app_log_api.del_system_logs(param['system_log_ids'])
+
+        return Result.success()
+
+    def del_alarm_log(self, request):
+
+        param = request_api.get_param(request)
+
+        app_log_api.del_opr_logs(param['alarm_log_ids'])
+
+        return Result.success()
 
     def del_opr_log(self, request):
 
@@ -42,6 +80,18 @@ class LogActionHandler(ActionHandlerBase):
 def opr_log_view(request):
 
     return render(request, 'log/opr_log-list.html', {})
+
+
+@xframe_options_sameorigin
+def system_log_view(request):
+
+    return render(request, 'log/system_log-list.html', {})
+
+
+@xframe_options_sameorigin
+def alarm_log_view(request):
+
+    return render(request, 'log/alarm_log-list.html', {})
 
 
 def log_handler(request):

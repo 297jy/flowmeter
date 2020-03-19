@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from flowmeter.config.db.log_table import AlarmLog, OprLog, LoginLog
+from flowmeter.config.db.log_table import AlarmLog, OprLog, SystemLog
 
 
 def add_alarm_log(log):
@@ -14,6 +14,12 @@ def add_opr_log(log):
     return opr
 
 
+def add_system_log(log):
+
+    log = SystemLog.objects.create(**log)
+    return log
+
+
 def find_one_opr_log(log_info):
 
     try:
@@ -23,21 +29,11 @@ def find_one_opr_log(log_info):
         return None
 
 
-def find_opr_logs(log_info):
+def find_one_system_log(log_info):
 
-    oprs = OprLog.objects.filter(**log_info)
-    return oprs
-
-
-def find_earliest_opr_log(log_info):
-
-    log = OprLog.objects.filter(**log_info).order_by('opr_time')[0: 1]
-
-    return log
-
-
-def update_opr_log_state(log, state):
-
-    log.state = state
-    log.save()
+    try:
+        log = SystemLog.objects.get(**log_info)
+        return log
+    except SystemLog.DoesNotExist:
+        return None
 

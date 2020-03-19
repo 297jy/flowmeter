@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>操作日志管理</title>
+    <title>系统日志管理</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -27,7 +27,7 @@
             <span class="layui-breadcrumb">
                 <a href="">首页</a>
                 <a href="">
-                    <cite>操作日志管理</cite>
+                    <cite>系统日志管理</cite>
                 </a>
             </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
@@ -50,27 +50,12 @@
                                    id="end_time">
                         </div>
                         <div class="layui-inline layui-col-md2">
-                            <input type="text" name="username" placeholder="请输入操作人员名称" autocomplete="off"
-                                   class="layui-input" id="username">
-                        </div>
-                        <div class="layui-inline layui-show-xs-block">
-                            <select name="opr_type" id="opr_type" lay-filter="opr_type">
-                                <option value="">操作类型</option>
-                                <option value="query">查询</option>
-                                <option value="recharge">充值</option>
-                                <option value="open_recharge">打开预充值</option>
-                                <option value="close_recharge">关闭预充值</option>
-                                <option value="open_valve">开阀</option>
-                                <option value="close_valve">关阀</option>
-                                <option value="set_meter_address">设置仪表物理地址</option>
-                                <option value="set_flow_ratio">设置流量系数</option>
-                                <option value="reset">重启仪表</option>
-                            </select>
+                            <input type="text" name="query_box" placeholder="请输入行为\操作人员名称" autocomplete="off"
+                                   class="layui-input" id="query_box">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
                             <select name="state" id="state" lay-filter="state">
                                 <option value="">操作状态</option>
-                                <option value="wait">等待中</option>
                                 <option value="success">成功</option>
                                 <option value="error">失败</option>
                             </select>
@@ -83,7 +68,7 @@
                     </form>
                 </div>
                 <div class="layui-card-body ">
-                    <table lay-filter="oprlog" id="oprlog">
+                    <table lay-filter="systemlog" id="systemlog">
                     </table>
                 </div>
             </div>
@@ -122,7 +107,7 @@
             form = layui.form;
 
             table.render({
-                elem: '#oprlog', //指定原始表格元素选择器（推荐id选择器）
+                elem: '#systemlog', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
                     {checkbox: true, width: '5%', field: 'id'},
                     {
@@ -134,14 +119,11 @@
                         }
                     },
                     {field: 'opr_user_name', title: '操作人员名称'},
-                    {field: 'meter_dtu_dtu_no', title: 'DTU编号'},
-                    {field: 'meter_address', title: '仪表物理地址'},
-                    {field: 'opr_type', title: '操作类型'},
-                    {field: 'val', title: '值'},
+                    {field: 'action_type', title: '行为'},
                     {field: 'state', title: '操作状态'},
                     {field: 'opr_time', title: '操作时间'},
                 ]],
-                url: '/handler/log/?action=query_opr_log',
+                url: '/handler/log/?action=query_system_log',
                 page: true,
                 toolbar: '#toolbarDemo',
                 defaultToolbar: ['filter', 'print'],
@@ -149,25 +131,25 @@
             });
 
             //头工具栏事件
-            table.on('toolbar(oprlog)',
+            table.on('toolbar(systemlog)',
                 function (obj) {
                     switch (obj.event) {
                         case 'del_batch':
                             layer.confirm('确认要删除吗？', function (index) {
-                                let checkStatus = table.checkStatus('oprlog');
+                                let checkStatus = table.checkStatus('systemlog');
                                 let ids = [];
                                 for (let i = 0; i < checkStatus.data.length; i++) {
                                     ids.push(checkStatus.data[i].id);
                                 }
                                 post({
-                                    "param": JSON.stringify({'opr_log_ids': ids}),
-                                    "action": "del_opr_log"
+                                    "param": JSON.stringify({'system_log_ids': ids}),
+                                    "action": "del_system_log"
                                 }, '/handler/log/', function (data) {
                                     if (!data.success) {
                                         layer.msg(data.msg, {icon: 5, time: 1000});
                                     } else {
                                         layer.msg('删除成功!', {icon: 1});
-                                        table.reload('oprlog');
+                                        table.reload('systemlog');
                                     }
                                 });
                             });
@@ -177,11 +159,10 @@
                                 "param": JSON.stringify({
                                     "begin_time": $("#begin_time").val(),
                                     "end_time": $("#end_time").val(),
-                                    "username": $("#username").val(),
+                                    "query_box": $("#username").val(),
                                     "state": $("#state").val(),
-                                    "opr_type": $("#opr_type").val(),
                                 }),
-                                "action": "export_opr_log"
+                                "action": "export_system_log"
                             }, '/handler/log/', function (res) {
                                 if (!res.success) {
                                     layer.msg(res.msg, {icon: 5, time: 3000});
@@ -196,6 +177,7 @@
                             break;
                     }
                 });
+
             //监听提交
             form.on('submit(search)',
                 function (data) {
