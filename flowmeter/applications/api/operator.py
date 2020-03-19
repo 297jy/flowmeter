@@ -23,7 +23,7 @@ def execute_remote_op(opr):
     try:
         server.send_data_frame(opr.dtu_no, data_frame)
         # 发送成功就把操作放进等待执行结果的队列中
-        conf_operator_api.add_wait_operator(opr)
+        conf_operator_api.add_wait_operator(dict(opr))
     except:
         traceback.print_exc()
         # 发送失败就放进未执行命令队列中
@@ -46,8 +46,8 @@ def execute_unexecuted_remote_op(dtu_no):
             if opr_type == Operator.RECHARGE:
                 for opr in oprs:
                     with transaction.atomic():
-                        conf_operator_api.get_and_del_earliest_unexecuted_opr(opr['meter_address'],
-                                                                              opr['opr_type'], opr['val'])
+                        conf_operator_api.get_and_del_earliest_unexecuted_opr(opr['dtu_no'],
+                                                                              opr['meter_address'], opr['opr_type'])
                         conf_operator_api.add_wait_operator(opr)
                         data_frame = frame.generate_data_frame(opr['meter_address'], opr['opr_type'], opr['val'])
                         server.send_data_frame(dtu_no, data_frame)
@@ -70,9 +70,10 @@ def execute_unexecuted_remote_op(dtu_no):
 def execute_wait_remote_op(dtu_no, address, opr_type, val):
     """
     执行一条等待执行结果的远程操作
-    :return:
+    :return:返回正在等待结果的操作
     """
     # 先获取缓存中存在的带执行的操作命令
     opr = conf_operator_api.get_and_del_wait_opr(dtu_no, address, opr_type, val)
     if opr is not None:
         app_log_api.update_logs_success_state([opr['log_id']])
+    return opr

@@ -8,6 +8,7 @@ from flowmeter.config.core import meter as core
 from flowmeter.common.api.validators import param_check, StrCheck, WhiteListCheck
 from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.db.meter_table import Meter
+from flowmeter.config.db.meter_state_table import MeterState
 
 
 def find_opr_logs_by_meter(meter_obj):
@@ -27,6 +28,12 @@ def find_meter_state(dtu_no, address):
 
     meter = Meter.objects.get(dtu__dtu_no=dtu_no, address=address)
     return meter.meterstate
+
+
+def find_meter_state_by_meter_id(meter_id):
+
+    state = MeterState.objects.get(meter__id=meter_id)
+    return state
 
 
 def find_meter_by_id(meter_id):
@@ -49,6 +56,19 @@ def find_dtu_nos_by_meter_ids(meter_ids):
     for meter in meters:
         dtu_nos.append(meter['dtu__dtu_no'])
     return dtu_nos
+
+
+def find_infos_by_meter_ids(meter_ids):
+    """
+    获得仪表对应的dtu和物理地址
+    :param meter_ids:
+    :return:
+    """
+    meters = Meter.objects.select_related('dtu__dtu_no').values('id', 'dtu__dtu_no', 'address').filter(id__in=meter_ids)
+    info_dicts = []
+    for meter in meters:
+        info_dicts.append({'dtu_no': meter['dtu__dtu_no'], 'address': meter['address'], 'meter_id': meter['id']})
+    return info_dicts
 
 
 def find_meters(filters=None, page=None):
@@ -82,8 +102,9 @@ def add_meter(meter_info):
     return core.add_meter(meter_info)
 
 
-def update_meter_data(dtu_no, address, meter_data):
+def update_meter_data(meter_id, meter_data):
     optional_dict = {
+        "address": int,
         "last_update_time": datetime.datetime,
         "surplus_gas": float,
         "flow_ratio": float,
@@ -95,7 +116,7 @@ def update_meter_data(dtu_no, address, meter_data):
     }
     param_check(meter_data, optional_dict=optional_dict)
 
-    old_meter = find_meter(dtu_no, address)
+    old_meter = find_meter_by_id(meter_id)
 
     core.update_meter(old_meter, meter_data)
 

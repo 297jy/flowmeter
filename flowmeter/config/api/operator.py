@@ -137,17 +137,25 @@ def remove_dtu_wait_opr(dtu_no, address, opr_type):
 
 
 def get_and_del_earliest_unexecuted_opr(dtu_no, address, opr_type):
+
+    address = str(address)
+
     key = 'opr_unexecuted_{}'.format(dtu_no)
     # 获取地址映射
     address_dict = cache.get_obj(key)
+    if address_dict is None:
+        address_dict = {}
     # 获取操作类型映射
     opr_type_dict = address_dict.get(address, {})
     # 获取操作列表
     oprs = opr_type_dict.get(opr_type, [])
     if len(oprs) == 0:
         return None
+
     opr = oprs[0]
     opr_type_dict[opr_type] = oprs[1: len(oprs)]
+
+    address_dict[address] = opr_type_dict
     cache.set_obj(key, address_dict)
     return opr
 

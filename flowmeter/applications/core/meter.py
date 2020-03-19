@@ -44,10 +44,13 @@ def get_meter_dict(meter):
         "power": meter.power,
         "temperature": meter.temperature,
         "version": meter.version,
-        "last_update_time": meter.last_update_time.strftime(settings.DATETIME_FORMAT_STR),
         "remark": meter.remark,
         "state_id": meter.meterstate.id,
     }
+
+    if meter.last_update_time is not None:
+        meter_dict['last_update_time'] = meter.last_update_time.strftime(settings.DATETIME_FORMAT_STR)
+
     for key, val in meter_dict.items():
         if val == UNKNOWN_VALUE or val == UNKNOWN_STATE:
             meter_dict[key] = '未知'

@@ -24,12 +24,9 @@ def add_opr_log(log):
         "opr_user_id": int,
         "meter_id": int,
     }
-    optional_dict = {
-        "val": None,
-    }
     if log.get('val') is not None:
         log['val'] = str(log['val'])
-    param_check(log, must_dict=must_dict, optional_dict=optional_dict)
+    param_check(log, must_dict=must_dict, extra=True)
 
     log['state'] = OprLog.WAITE_STATE
     log['opr_time'] = datetime.datetime.now()
@@ -56,19 +53,24 @@ def update_opr_logs_state(log_ids, state):
 
 
 def find_opr_log(filters=None, page=None):
-
+    """
+    查询操作日志，按操作日期降序
+    :param filters:
+    :param page:
+    :return:
+    """
     if page is None:
         if filters:
-            logs = core.find_opr_logs(filters)
+            logs = core.find_opr_logs(filters).order_by('-opr_time')
         else:
-            logs = core.find_opr_logs({})
+            logs = core.find_opr_logs({}).order_by('-opr_time')
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
-            logs = OprLog.objects.filter(filters)[start_index: end_index]
+            logs = OprLog.objects.filter(filters).order_by('-opr_time')[start_index: end_index]
         else:
-            logs = OprLog.objects.all()[start_index: end_index]
+            logs = OprLog.objects.all().order_by('-opr_time')[start_index: end_index]
 
     return logs
 

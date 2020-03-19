@@ -44,7 +44,7 @@ class FlowMeterClients:
         return False
 
     def get_connect(self, dtu_no):
-        return self.dtu_to_connect_map[dtu_no]
+        return self.dtu_to_connect_map.get(dtu_no)
 
     def get_online_dtu_no_list(self):
         return self.dtu_to_connect_map.keys()
@@ -117,6 +117,8 @@ class FlowMeterServer(Protocol):
         ip = self.transport.getPeer().host
         clients.remove(ip)
 
+        logger.info("断开连接！")
+
     def dataReceived(self, data_frame):
         """
         数据接收
@@ -135,7 +137,7 @@ class FlowMeterServer(Protocol):
                 connect = self.transport
                 clients.add(dtu_no, ip, connect)
                 # 回应心跳包
-                self.transport.write(data_frame)
+                self.transport.getHandle().sendall(data_frame)
 
             else:
                 dtu_no = clients.get_dtu_no(ip)
@@ -144,9 +146,11 @@ class FlowMeterServer(Protocol):
 
                 with transaction.atomic():
                     # 先执行一条等待结果的操作
-                    app_opr_api.execute_wait_remote_op(dtu_no, data['address'], data['opr_type'], data['data'])
+                    opr = app_opr_api.execute_wait_remote_op(dtu_no, data['address'], data['opr_type'], data['data'])
+
                     # 更新仪表数据
-                    app_meter_api.update_meter_data(dtu_no, data)
+                    if opr is not None:
+                        app_meter_api.update_meter_data(opr['meter_id'], data)
         except:
             traceback.print_exc()
 
@@ -188,7 +192,7 @@ def send_data_frame(dtu_no, data_frame):
     if connect is None:
         raise OfflineException()
 
-    connect.write(data_frame)
+    connect.getHandle().sendall(data_frame)
 
 
 def is_dtu_online(dtu_no):

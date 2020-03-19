@@ -25,106 +25,106 @@ class Operator:
         self.dtu_no = None
         self.meter_address = None
         self.log_id = None
-        self.valve_dtu_no = None
-        self.valve_address = None
+        self.meter_id = None
 
-    def init(self, user_id, dtu_no, meter_address, opr_type, log_id, val=None):
+    def init(self, user_id, dtu_no, meter_address, opr_type, log_id, meter_id, val=None):
         self.user_id = user_id
         self.opr_type = opr_type
         self.val = val
         self.dtu_no = dtu_no
         self.meter_address = meter_address
         self.log_id = log_id
+        self.meter_id = meter_id
 
     @staticmethod
-    def create_query_opr(user_id, dtu_no, meter_address, log_id):
+    def create_query_opr(user_id, dtu_no, meter_address, log_id, meter_id):
         """
         查询操作
         :return:
         """
         opr = Operator()
-        opr.init(user_id, dtu_no, meter_address, Operator.QUERY, log_id)
+        opr.init(user_id, dtu_no, meter_address, Operator.QUERY, log_id, meter_id)
 
         return opr
 
     @staticmethod
-    def create_recharge_opr(user_id, dtu_no, meter_address, log_id, val):
+    def create_recharge_opr(user_id, dtu_no, meter_address, log_id, meter_id, val):
         """
         充值操作
         :return:
         """
         opr = Operator()
-        opr.init(user_id, dtu_no, meter_address, Operator.RECHARGE, log_id, val)
+        opr.init(user_id, dtu_no, meter_address, Operator.RECHARGE, log_id, meter_id, val)
         return opr
 
     @staticmethod
-    def create_open_recharge_opr(user_id, dtu_no, meter_address, log_id):
+    def create_open_recharge_opr(user_id, dtu_no, meter_address, log_id, meter_id):
         """
         开启预充值操作
         :return:
         """
         opr = Operator()
-        opr.init(user_id, dtu_no, meter_address, Operator.OPEN_RECHARGE, log_id)
+        opr.init(user_id, dtu_no, meter_address, Operator.OPEN_RECHARGE, log_id, meter_id)
         return opr
 
     @staticmethod
-    def create_close_recharge_opr(user_id, dtu_no, meter_address, log_id):
+    def create_close_recharge_opr(user_id, dtu_no, meter_address, log_id, meter_id):
         """
         关闭预充值操作
         :return:
         """
         opr = Operator()
-        opr.init(user_id, dtu_no, meter_address, Operator.CLOSE_RECHARGE, log_id)
+        opr.init(user_id, dtu_no, meter_address, Operator.CLOSE_RECHARGE, log_id, meter_id)
         return opr
 
     @staticmethod
-    def create_open_valve_opr(user_id, dtu_no, meter_address, log_id):
+    def create_open_valve_opr(user_id, dtu_no, meter_address, log_id, meter_id):
         """
         打开阀门操作
         :return:
         """
         opr = Operator()
-        opr.init(user_id, dtu_no, meter_address, Operator.OPEN_VALVE, log_id)
+        opr.init(user_id, dtu_no, meter_address, Operator.OPEN_VALVE, log_id, meter_id)
         return opr
 
     @staticmethod
-    def create_close_valve_opr(user_id, dtu_no, meter_address, log_id):
+    def create_close_valve_opr(user_id, dtu_no, meter_address, log_id, meter_id):
         """
         关闭阀门操作
         :return:
         """
         opr = Operator()
-        opr.init(user_id, dtu_no, meter_address, Operator.CLOSE_VALVE, log_id)
+        opr.init(user_id, dtu_no, meter_address, Operator.CLOSE_VALVE, log_id, meter_id)
         return opr
 
     @staticmethod
-    def create_set_meter_address_opr(user_id, dtu_no, meter_address, log_id, val):
+    def create_set_meter_address_opr(user_id, dtu_no, meter_address, log_id, meter_id, val):
         """
         设置仪表地址操作
         :return:
         """
         opr = Operator()
-        opr.init(user_id, dtu_no, meter_address, Operator.SET_METER_ADDRESS, log_id, val)
+        opr.init(user_id, dtu_no, meter_address, Operator.SET_METER_ADDRESS, log_id, meter_id, val)
         return opr
 
     @staticmethod
-    def create_reset_opr(user_id, dtu_no, meter_address, log_id):
+    def create_reset_opr(user_id, dtu_no, meter_address, log_id, meter_id):
         """
         重启仪表操作
         :return:
         """
         opr = Operator()
-        opr.init(user_id, dtu_no, meter_address, Operator.RESET, log_id)
+        opr.init(user_id, dtu_no, meter_address, Operator.RESET, log_id, meter_id)
         return opr
 
     @staticmethod
-    def create_set_flow_ratio_opr(user_id, dtu_no, meter_address, log_id, val):
+    def create_set_flow_ratio_opr(user_id, dtu_no, meter_address, log_id, meter_id, val):
         """
         设置流量系数操作
         :return:
         """
         opr = Operator()
-        opr.init(user_id, dtu_no, meter_address, Operator.QUERY, log_id, val)
+        opr.init(user_id, dtu_no, meter_address, Operator.QUERY, log_id, meter_id, val)
         return opr
 
     def get_dict(self):
@@ -139,7 +139,7 @@ class Operator:
         }
 
     def keys(self):
-        return 'user_id', 'opr_type', 'val', 'dtu_no', 'meter_address', 'log_id'
+        return 'user_id', 'opr_type', 'val', 'dtu_no', 'meter_address', 'log_id', 'meter_id'
 
     def __getitem__(self, item):
         return getattr(self, item)

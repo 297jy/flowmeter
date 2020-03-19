@@ -61,7 +61,7 @@ class MeterActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
 
-        app_meter_api.del_batch_meter(param.get('meter_ids'), param.get('state_ids'))
+        app_meter_api.del_batch_meter(param.get('meter_ids'))
 
         return Result.success()
 
@@ -106,8 +106,8 @@ class MeterActionHandler(ActionHandlerBase):
 
     def recharge_meter(self, request):
 
-        meter_info = request_api.get_param(request)
-        app_meter_api.recharge_meter(meter_info, request_api.get_user(request))
+        param = request_api.get_param(request)
+        app_meter_api.recharge_meter(param['meter_ids'], param['money'], request_api.get_user(request))
         return Result.success()
 
     def reset_meter(self, request):
