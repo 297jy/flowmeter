@@ -14,3 +14,10 @@ class Configure(models.Model):
     label = models.CharField(max_length=const.NAME_CHAR_LEN)
     # 配置值
     val = models.CharField(max_length=const.VALUE_CHAR_LEN)
+
+    def keys(self):
+        return 'name', 'label', 'val'
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+

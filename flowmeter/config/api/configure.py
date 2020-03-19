@@ -1,6 +1,7 @@
 # coding=utf-8
 from flowmeter.config.api import cache
 from flowmeter.config.db.configure_table import Configure
+from flowmeter.common.api.validators import StrCheck, param_check
 from django.db import transaction
 
 
@@ -34,3 +35,25 @@ def set_unexecuted_opr_check_time(check_time):
     with transaction.atomic():
         conf.save()
         cache.set_hash('configure', key, check_time)
+
+
+def get_all_configure():
+    """
+    获取所有配置信息
+    :return:
+    """
+    confs = Configure.objects.all()
+    return confs
+
+
+def update_configure(conf_info):
+
+    must_dict = {
+        "name": str,
+        "val": StrCheck.check_value,
+    }
+    param_check(conf_info, must_dict)
+
+    conf = Configure.objects.get(name=conf_info['name'])
+    conf.val = conf_info['val']
+    conf.save()

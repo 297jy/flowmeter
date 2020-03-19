@@ -8,7 +8,6 @@ from django.views.decorators.clickjacking import xframe_options_sameorigin
 from flowmeter.views.common import ActionHandlerBase, Result
 from flowmeter.common.api import request as request_api
 from flowmeter.applications.api import meter as app_meter_api
-from flowmeter.config.api import meter as conf_meter_api
 
 
 class MeterActionHandler(ActionHandlerBase):

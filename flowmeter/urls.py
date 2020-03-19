@@ -72,6 +72,7 @@ manufacturer_urlpatterns = [
 system_setting_urlpatterns = [
     path('register/', system_setting.control_register_view),
     path('frame/', system_setting.data_field_view),
+    path('configure/', system_setting.configure_view),
 ]
 
 dtu_region_urlpatterns = [

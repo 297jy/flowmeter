@@ -120,7 +120,8 @@ def structure_nav_bars(nav_bars):
                 break
 
     nav_bar_list = sorted(nav_bar_list, key=itemgetter('order'))
-
+    for nav_bar in nav_bar_list:
+        nav_bar['childs'] = sorted(nav_bar['childs'], key=itemgetter('order'))
     return nav_bar_list
 
 

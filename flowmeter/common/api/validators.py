@@ -168,6 +168,24 @@ class StrCheck:
             raise ParameterErrorException("动作类型字符长度只能为[1-{}]个字符！"
                                           .format(const.ACTION_TYPE_CHAR_LEN))
 
+    @staticmethod
+    def check_value(url):
+
+        StrCheck.check_not_null(url)
+
+        if len(url) > const.VALUE_CHAR_LEN:
+            raise ParameterErrorException("值类型字符长度只能为[1-{}]个字符！"
+                                          .format(const.VALUE_CHAR_LEN))
+
+    @staticmethod
+    def check_configure_name(url):
+
+        StrCheck.check_not_null(url)
+
+        if len(url) > const.NAME_CHAR_LEN:
+            raise ParameterErrorException("配置名称字符长度只能为[1-{}]个字符！"
+                                          .format(const.VALUE_CHAR_LEN))
+
 
 class WhiteListCheck:
 

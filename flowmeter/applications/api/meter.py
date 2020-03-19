@@ -17,7 +17,6 @@ from flowmeter.config.const import VALVE_STATE_OPEN, VALVE_STATE_CLOSE, RECHARGE
     STATE_ONLINE
 from django.db import transaction
 from flowmeter.config.db.meter_table import Meter
-from flowmeter.applications.api import log as app_log_api
 
 
 def find_meter_by_query_terms(query_terms, page=None):
