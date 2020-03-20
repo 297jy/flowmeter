@@ -329,7 +329,8 @@ class WhiteListCheck:
     @staticmethod
     def check_alarm_type(alarm_type):
 
-        type_list = [AlarmLog.ALARM_EXCEED_LIMIT, AlarmLog.ALARM_SUB_VALVE, AlarmLog.ALARM_INTERRUPT]
+        type_list = [AlarmLog.ALARM_EXCEED_LIMIT, AlarmLog.ALARM_SUB_VALVE, AlarmLog.ALARM_INTERRUPT,
+                     AlarmLog.ALARM_SENSOR_ERROR, AlarmLog.ALARM_VALVE_ERROR]
         if alarm_type not in type_list:
             raise ParameterErrorException("没有该警报类型：{}！", alarm_type)
 

@@ -6,7 +6,7 @@ from django.db.models import Q
 from flowmeter import settings
 from flowmeter.common.api.excel import Excel, ExcelField
 from flowmeter.common.api.query import QueryTerms
-from flowmeter.config.db.log_table import OprLog, SystemLog
+from flowmeter.config.db.log_table import OprLog, SystemLog, AlarmLog
 from flowmeter.config.db.operator_table import Operator
 from flowmeter.config.api import log as conf_log_api
 from flowmeter.common.common import transfer_obj_to_dict
@@ -64,6 +64,25 @@ def __transfer_system_log_database_to_display(systemlog_info):
         elif state == SystemLog.ERROR_STATE:
             state = '失败'
         systemlog_info['state'] = state
+
+
+def __transfer_alarm_log_database_to_display(alarmlog_info):
+    """
+    将数据库中的值，转为前端显示的值
+    :return:
+    """
+    # 格式化日期
+    alarm_time = alarmlog_info['opr_time']
+    alarmlog_info['opr_time'] = str(alarm_time.strftime(settings.DATETIME_FORMAT_STR))
+
+    alarm_type_map = {
+        AlarmLog.ALARM_VALVE_ERROR: "阀门异常警报",
+        AlarmLog.ALARM_SENSOR_ERROR: "传感器异常警报",
+        AlarmLog.ALARM_SUB_VALVE: "分阀警报",
+        AlarmLog.ALARM_EXCEED_LIMIT: "越限警报",
+    }
+
+    alarmlog_info['alarm_type'] = alarm_type_map[alarmlog_info['alarm_type']]
 
 
 def find_logs_by_query_terms(query_terms, page=None):
@@ -148,17 +167,8 @@ def find_alarm_logs_by_query_terms(query_terms, page=None):
     logs = conf_log_api.find_alarm_log(query_or.get_filters() & query_and.get_filters(), page)
 
     return transfer_obj_to_dict(logs, ['id', 'meter.dtu.user.name', 'meter.dtu.region.manufacturer.name',
-                                       'alarm_type', 'state', 'meter.address', 'meter.dtu.dtu_no'],
-                                __transfer_system_log_database_to_display)
-
-
-def render_action_type_str(msg, data_field, param):
-    """
-    渲染信息字符串
-    :return:
-    """
-    param_dict = {data: param[data] for data in data_field}
-    return msg.format(**param_dict)
+                                       'alarm_type', 'state', 'meter.address', 'meter.dtu.dtu_no', 'opr_time'],
+                                __transfer_alarm_log_database_to_display)
 
 
 def __log_export(log_dict_list, sheet_name, filename, excel_fields):
@@ -189,3 +199,25 @@ def systemlog_export(systemlog_ids, filename):
                                      __transfer_system_log_database_to_display)
 
     __log_export(log_dicts, '系统日志列表', filename, excel_fields)
+
+
+def alarmlog_export(alarmlog_ids, filename):
+    """
+    将警报日志导出到文件中
+    :param alarmlog_ids:
+    :param filename:
+    :return:
+    """
+    prop_list = ['meter_dtu_user_name', 'meter_dtu_region_manufacturer_name', 'meter_dtu_dtu_no', 'meter_address',
+                 'alarm_type',  'opr_time']
+    name_list = ['仪表厂商名称', '仪表用户名称', '仪表DTU编号', '仪表物理地址', '警报类型', '警报时间']
+    excel_fields = []
+    for index in range(0, len(prop_list)):
+        excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
+
+    logs = conf_log_api.find_alarm_log(Q(id__in=alarmlog_ids))
+    log_dicts = transfer_obj_to_dict(logs, ['id', 'meter.dtu.user.name', 'meter.dtu.region.manufacturer.name',
+                                            'alarm_type', 'state', 'meter.address', 'meter.dtu.dtu_no', 'opr_time'],
+                                     __transfer_alarm_log_database_to_display)
+
+    __log_export(log_dicts, '警报日志列表', filename, excel_fields)

@@ -26,6 +26,7 @@ class LogActionHandler(ActionHandlerBase):
             'query_alarm_log': self.query_alarm_log,
             "del_alarm_log": self.del_alarm_log,
             'export_system_log': self.export_system_log,
+            'export_alarm_log': self.export_alarm_log,
         }
         super().__init__(action_dict)
 
@@ -87,6 +88,16 @@ class LogActionHandler(ActionHandlerBase):
         filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
 
         app_log_api.systemlog_export(param['systemlog_ids'], filename)
+
+        return Result.success(data=name)
+
+    def export_alarm_log(self, request):
+
+        param = request_api.get_param(request)
+        name = app_file_api.generate_excel_file_name()
+        filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
+
+        app_log_api.alarmlog_export(param['alarmlog_ids'], filename)
 
         return Result.success(data=name)
 

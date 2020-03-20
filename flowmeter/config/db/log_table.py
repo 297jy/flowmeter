@@ -65,6 +65,8 @@ class AlarmLog(Log):
     ALARM_EXCEED_LIMIT = 'exceed_limit'
     ALARM_INTERRUPT = 'interrupt'
     ALARM_SUB_VALVE = 'sub_valve'
+    ALARM_VALVE_ERROR = 'valve_error'
+    ALARM_SENSOR_ERROR = 'sensor_error'
 
     # 发生告警事件的仪表
     meter = models.ForeignKey(Meter, on_delete=models.CASCADE)

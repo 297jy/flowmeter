@@ -121,10 +121,21 @@ def add_system_log(log_dict):
 
 def systemlog_export(systemlog_ids, filename):
     """
-    将管理员导出到文件中
+    将系统日志导出到文件中
     :param systemlog_ids:
     :param filename:
     :return:
     """
     StrCheck.check_not_null(filename)
     core.systemlog_export(systemlog_ids, filename)
+
+
+def alarmlog_export(alarmlog_ids, filename):
+    """
+    将警报日志导出到文件中
+    :param alarmlog_ids:
+    :param filename:
+    :return:
+    """
+    StrCheck.check_not_null(filename)
+    core.alarmlog_export(alarmlog_ids, filename)
