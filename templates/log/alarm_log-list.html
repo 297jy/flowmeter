@@ -1,7 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
 <html class="x-admin-sm">
-
 <head>
     <meta charset="UTF-8">
     <title>警报日志管理</title>
@@ -50,7 +49,8 @@
                                    id="end_time">
                         </div>
                         <div class="layui-inline layui-col-md4">
-                            <input type="text" name="query_box" placeholder="请输入仪表用户名称\仪表厂商名称\仪表DTU编号\仪表物理地址" autocomplete="off"
+                            <input type="text" name="query_box" placeholder="请输入仪表用户名称\仪表厂商名称\仪表DTU编号\仪表物理地址"
+                                   autocomplete="off"
                                    class="layui-input" id="query_box">
                         </div>
                         <div class="layui-inline layui-show-xs-block">
@@ -111,8 +111,9 @@
             table.render({
                 elem: '#alarmlog', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
-                    {checkbox: true, width: '5%', field: 'id'},
+                    {checkbox: true, width: '5%', field: 'id', align: 'center'},
                     {
+                        align: 'center',
                         numbbers: true,
                         width: '5%',
                         title: '序号',
@@ -120,12 +121,12 @@
                             return data.LAY_TABLE_INDEX + 1;
                         }
                     },
-                    {field: 'meter_dtu_region_manufacturer_name', title: '仪表厂商名称'},
-                    {field: 'meter_dtu_user_name', title: '仪表用户名称'},
-                    {field: 'meter_dtu_dtu_no', title: '仪表DTU编号'},
-                    {field: 'meter_address', title: '仪表物理地址'},
-                    {field: 'alarm_type', title: '警报类型'},
-                    {field: 'opr_time', title: '警报时间'},
+                    {field: 'meter_dtu_region_manufacturer_name', title: '仪表厂商名称', align: 'center'},
+                    {field: 'meter_dtu_user_name', title: '仪表用户名称', align: 'center'},
+                    {field: 'meter_dtu_dtu_no', title: '仪表DTU编号', align: 'center'},
+                    {field: 'meter_address', title: '仪表物理地址', align: 'center'},
+                    {field: 'alarm_type', title: '警报类型', align: 'center'},
+                    {field: 'opr_time', title: '警报时间', align: 'center'},
                 ]],
                 url: '/handler/log/?action=query_alarm_log',
                 page: true,

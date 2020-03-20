@@ -2334,3 +2334,11 @@ KeyError: ''
 [2020-03-20 22:47:05,398] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22dsfsdfsdfds%22%2C%22alarm_type%22%3A%22%22%7D HTTP/1.1" 200 63
 [2020-03-20 22:47:05,551] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
 [2020-03-20 22:47:05,554] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10&param=%7B%22begin_time%22%3A%22%22%2C%22end_time%22%3A%22%22%2C%22query_box%22%3A%22dsfsdfsdfds%22%2C%22alarm_type%22%3A%22%22%7D HTTP/1.1" 200 63
+[2020-03-20 23:05:16,599] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\log.py changed, reloading.
+[2020-03-20 23:05:17,303] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-20 23:05:45,747] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\log.py changed, reloading.
+[2020-03-20 23:05:46,445] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-20 23:06:02,671] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\core\log.py changed, reloading.
+[2020-03-20 23:06:03,395] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-20 23:12:51,503] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\log.py changed, reloading.
+[2020-03-20 23:12:52,211] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

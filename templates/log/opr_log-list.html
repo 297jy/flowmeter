@@ -124,8 +124,9 @@
             table.render({
                 elem: '#oprlog', //指定原始表格元素选择器（推荐id选择器）
                 cols: [[
-                    {checkbox: true, width: '5%', field: 'id'},
+                    {checkbox: true, width: '5%', field: 'id', align: 'center'},
                     {
+                        align: 'center',
                         numbbers: true,
                         width: '5%',
                         title: '序号',
@@ -133,13 +134,13 @@
                             return data.LAY_TABLE_INDEX + 1;
                         }
                     },
-                    {field: 'opr_user_name', title: '操作人员名称'},
-                    {field: 'meter_dtu_dtu_no', title: 'DTU编号'},
-                    {field: 'meter_address', title: '仪表物理地址'},
-                    {field: 'opr_type', title: '操作类型'},
-                    {field: 'val', title: '值'},
-                    {field: 'state', title: '操作状态'},
-                    {field: 'opr_time', title: '操作时间'},
+                    {field: 'opr_user_name', title: '操作人员名称', align: 'center'},
+                    {field: 'meter_dtu_dtu_no', title: 'DTU编号', align: 'center'},
+                    {field: 'meter_address', title: '仪表物理地址', align: 'center'},
+                    {field: 'opr_type', title: '操作类型', align: 'center'},
+                    {field: 'val', title: '值', align: 'center'},
+                    {field: 'state', title: '操作状态', align: 'center'},
+                    {field: 'opr_time', title: '操作时间', align: 'center'},
                 ]],
                 url: '/handler/log/?action=query_opr_log',
                 page: true,
@@ -173,14 +174,13 @@
                             });
                             break;
                         case 'export':
+                            let checkStatus = table.checkStatus('oprlog');
+                            let ids = [];
+                            for (let i = 0; i < checkStatus.data.length; i++) {
+                                ids.push(checkStatus.data[i].id);
+                            }
                             post({
-                                "param": JSON.stringify({
-                                    "begin_time": $("#begin_time").val(),
-                                    "end_time": $("#end_time").val(),
-                                    "username": $("#username").val(),
-                                    "state": $("#state").val(),
-                                    "opr_type": $("#opr_type").val(),
-                                }),
+                                "param": JSON.stringify({'oprlog_ids': ids}),
                                 "action": "export_opr_log"
                             }, '/handler/log/', function (res) {
                                 if (!res.success) {
@@ -199,7 +199,7 @@
             //监听提交
             form.on('submit(search)',
                 function (data) {
-                    table.reload('systemlog', {
+                    table.reload('oprlog', {
                         "where": {
                             "param": JSON.stringify(data.field),
                         }

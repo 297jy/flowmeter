@@ -139,7 +139,6 @@ def find_system_logs_by_query_terms(query_terms, page=None):
 
 
 def find_alarm_logs_by_query_terms(query_terms, page=None):
-
     query_box = query_terms.get('query_box')
     state = query_terms.get('state')
     alarm_type = query_terms.get('alarm_type')
@@ -188,7 +187,7 @@ def systemlog_export(systemlog_ids, filename):
     :param filename:
     :return:
     """
-    prop_list = ['opr_user_name', 'action_type', 'state',  'opr_time']
+    prop_list = ['opr_user_name', 'action_type', 'state', 'opr_time']
     name_list = ['操作人员名称', '行为', '状态', '操作日期']
     excel_fields = []
     for index in range(0, len(prop_list)):
@@ -209,7 +208,7 @@ def alarmlog_export(alarmlog_ids, filename):
     :return:
     """
     prop_list = ['meter_dtu_user_name', 'meter_dtu_region_manufacturer_name', 'meter_dtu_dtu_no', 'meter_address',
-                 'alarm_type',  'opr_time']
+                 'alarm_type', 'opr_time']
     name_list = ['仪表厂商名称', '仪表用户名称', '仪表DTU编号', '仪表物理地址', '警报类型', '警报时间']
     excel_fields = []
     for index in range(0, len(prop_list)):
@@ -221,3 +220,24 @@ def alarmlog_export(alarmlog_ids, filename):
                                      __transfer_alarm_log_database_to_display)
 
     __log_export(log_dicts, '警报日志列表', filename, excel_fields)
+
+
+def oprlog_export(oprlog_ids, filename):
+    """
+    将系统日志导出到文件中
+    :param oprlog_ids:
+    :param filename:
+    :return:
+    """
+    prop_list = ['opr_user_name', 'meter_dtu_dtu_no', 'meter_address', 'opr_type', 'val', 'state', 'opr_time']
+    name_list = ['操作人员名称', 'DTU编号', '仪表物理地址', '操作类型', '值', '状态', '操作日期']
+    excel_fields = []
+    for index in range(0, len(prop_list)):
+        excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
+
+    logs = conf_log_api.find_opr_log(Q(id__in=oprlog_ids))
+    log_dicts = transfer_obj_to_dict(logs, ['id', 'opr_user.name', 'opr_time', 'val', 'state', 'opr_type',
+                                            'meter.dtu.dtu_no', 'meter.address'],
+                                     __transfer_opr_log_database_to_display)
+
+    __log_export(log_dicts, '操作日志列表', filename, excel_fields)

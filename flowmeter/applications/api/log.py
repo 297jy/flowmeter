@@ -139,3 +139,14 @@ def alarmlog_export(alarmlog_ids, filename):
     """
     StrCheck.check_not_null(filename)
     core.alarmlog_export(alarmlog_ids, filename)
+
+
+def oprlog_export(oprlog_ids, filename):
+    """
+    将警报日志导出到文件中
+    :param oprlog_ids:
+    :param filename:
+    :return:
+    """
+    StrCheck.check_not_null(filename)
+    core.oprlog_export(oprlog_ids, filename)
