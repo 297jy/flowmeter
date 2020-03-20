@@ -1,13 +1,17 @@
 # coding=utf-8
 
 import json
+import os
 
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.clickjacking import xframe_options_sameorigin
+
+from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
 from flowmeter.views.common import ActionHandlerBase, Result
 from flowmeter.common.api import request as request_api
 from flowmeter.applications.api import log as app_log_api
+from flowmeter.applications.api import file as app_file_api
 
 
 class LogActionHandler(ActionHandlerBase):
@@ -21,6 +25,7 @@ class LogActionHandler(ActionHandlerBase):
             "del_system_log": self.del_system_log,
             'query_alarm_log': self.query_alarm_log,
             "del_alarm_log": self.del_alarm_log,
+            'export_system_log': self.export_system_log,
         }
         super().__init__(action_dict)
 
@@ -74,6 +79,16 @@ class LogActionHandler(ActionHandlerBase):
         app_log_api.del_opr_logs(param['opr_log_ids'])
 
         return Result.success()
+
+    def export_system_log(self, request):
+
+        param = request_api.get_param(request)
+        name = app_file_api.generate_excel_file_name()
+        filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
+
+        app_log_api.systemlog_export(param['systemlog_ids'], filename)
+
+        return Result.success(data=name)
 
 
 @xframe_options_sameorigin

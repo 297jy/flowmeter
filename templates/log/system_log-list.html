@@ -114,14 +114,15 @@
                         numbbers: true,
                         width: '5%',
                         title: '序号',
+                        align: 'center',
                         templet: function (data) {
                             return data.LAY_TABLE_INDEX + 1;
                         }
                     },
-                    {field: 'opr_user_name', title: '操作人员名称'},
-                    {field: 'action_type', title: '行为'},
-                    {field: 'state', title: '操作状态'},
-                    {field: 'opr_time', title: '操作时间'},
+                    {field: 'opr_user_name', title: '操作人员名称', width: '15%', align: 'center'},
+                    {field: 'action_type', title: '行为', align: 'center'},
+                    {field: 'state', title: '操作状态', width: '5%', align: 'center'},
+                    {field: 'opr_time', title: '操作时间', width: '10%', align: 'center'},
                 ]],
                 url: '/handler/log/?action=query_system_log',
                 page: true,
@@ -155,13 +156,13 @@
                             });
                             break;
                         case 'export':
+                            let checkStatus = table.checkStatus('systemlog');
+                            let ids = [];
+                            for (let i = 0; i < checkStatus.data.length; i++) {
+                                ids.push(checkStatus.data[i].id);
+                            }
                             post({
-                                "param": JSON.stringify({
-                                    "begin_time": $("#begin_time").val(),
-                                    "end_time": $("#end_time").val(),
-                                    "query_box": $("#username").val(),
-                                    "state": $("#state").val(),
-                                }),
+                                "param": JSON.stringify({'systemlog_ids': ids}),
                                 "action": "export_system_log"
                             }, '/handler/log/', function (res) {
                                 if (!res.success) {

@@ -49,9 +49,10 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'flowmeter.middlewares.error_handler.ErrorHandlerMiddleware',
     'flowmeter.middlewares.auth.AuthMiddleware',
     'flowmeter.middlewares.data_handler.DataHandlerMiddleware',
-    'flowmeter.middlewares.error_handler.ErrorHandlerMiddleware',
+    'flowmeter.middlewares.log.LogMiddleware',
 ]
 
 ROOT_URLCONF = 'flowmeter.urls'

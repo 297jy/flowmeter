@@ -61,19 +61,28 @@ def get_param(request):
     return param
 
 
-def set_param(request, params):
+def set_param(request, param_name, params):
     """
     重新设置参数
-    :param params:
+    :param param_name: 参数名
+    :param params:参数值
     :param request:
     :return:
     """
     if request.method == 'GET':
         request.GET._mutable = True
-        request.GET['param'] = params
+        request.GET[param_name] = params
     elif request.method == 'POST':
         request.POST._mutable = True
-        request.POST['param'] = params
+        request.POST[param_name] = params
+
+
+def get_action_type(request):
+
+    if request.method == 'GET':
+        return request.GET.get('action_type')
+    elif request.method == 'POST':
+        return request.POST.get('action_type')
 
 
 def get_path(request):

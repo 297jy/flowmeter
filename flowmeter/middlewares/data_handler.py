@@ -39,7 +39,7 @@ class DataHandlerMiddleware(MiddlewareMixin):
         """
         del_list = []
         for field, val in params.items():
-            if val is None:
+            if not val:
                 del_list.append(field)
         # 删除空字段
         for field in del_list:
@@ -62,7 +62,7 @@ class DataHandlerMiddleware(MiddlewareMixin):
         # 转换数据类型
         DataHandlerMiddleware.__transfer_data_type(params)
 
-        request_api.set_param(request, params)
+        request_api.set_param(request, 'param', params)
 
 
 

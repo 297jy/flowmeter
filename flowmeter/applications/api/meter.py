@@ -109,13 +109,17 @@ def update_meter(meter_info):
         "dtu_no": int,
         "surplus_gas_limits": float,
     }
-    param_check(meter_info, must_dict)
+    optional_dict = {
+        'remark': StrCheck.check_remark,
+    }
+    param_check(meter_info, must_dict, optional_dict)
 
     # 保证原子性
     with transaction.atomic():
         # 更新不需要远程操作的仪表信息
         conf_meter_api.update_meter_info({"id": meter_info['id'],
-                                          "surplus_gas_limits": meter_info['surplus_gas_limits']})
+                                          "surplus_gas_limits": meter_info['surplus_gas_limits'],
+                                          "remark": meter_info['remark']})
 
 
 def update_valve_state(meter_state_info, user):

@@ -41,8 +41,11 @@ def add_system_log(log):
         "opr_time": datetime.datetime,
         "state": WhiteListCheck.check_opr_state,
     }
+    optional_dict = {
+        "msg": StrCheck.check_msg,
+    }
 
-    param_check(log, must_dict=must_dict, extra=True)
+    param_check(log, must_dict=must_dict, optional_dict=optional_dict)
 
     return core.add_system_log(log)
 

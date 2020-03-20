@@ -4,7 +4,7 @@ from django.db import models
 from flowmeter.config.db.user_table import User
 from flowmeter.config.db.meter_table import Meter
 from flowmeter.config.const import STATE_CHAR_LEN, OPR_TYPE_CHAR_LEN, ALARM_TYPE_CHAR_LEN, VALUE_CHAR_LEN, \
-    ACTION_TYPE_CHAR_LEN
+    ACTION_TYPE_CHAR_LEN, MSG_CHAR_LEN
 
 
 class Log(models.Model):
@@ -35,6 +35,8 @@ class SystemLog(Log):
     state = models.CharField(max_length=STATE_CHAR_LEN)
     # 操作用户
     opr_user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # 信息
+    msg = models.CharField(max_length=MSG_CHAR_LEN, default='')
 
 
 class OprLog(Log):

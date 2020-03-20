@@ -16,6 +16,11 @@ from flowmeter.modbus.api import server
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flowmeter.settings')
 
 
+ACTION_TYPE_INDEX = 0
+MSG_INDEX = 1
+DATA_FIELD_INDEX = 2
+
+
 def __check_init():
     """
     检查是否已经初始化完毕
@@ -26,137 +31,6 @@ def __check_init():
         return True
     else:
         return False
-
-
-def __init_authorities():
-    """
-    初始化用户可能拥有的所有权限
-    :return:
-    """
-    # 权限分类和权限之间的映射关系字典
-    cate_auth_map = {
-
-        "管理员管理": [
-            {
-                "name": "添加管理员",
-                "permission_action": "create_admin",
-            },
-            {
-                "name": "编辑管理员",
-                "permission_action": "edit_admin",
-            },
-            {
-                "name": "删除管理员",
-                "permission_action": "del_admin",
-            },
-            {
-                "name": "导入管理员",
-                "permission_action": "import_admin",
-            },
-            {
-                "name": "导出管理员",
-                "permission_action": "export_admin",
-            },
-            {
-                "name": "查询管理员",
-                "permission_action": "query_admin",
-            },
-        ],
-
-        "厂商管理": [
-            {
-                "name": "添加厂商",
-                "permission_action": "create_manufacturer",
-            },
-            {
-                "name": "编辑厂商",
-                "permission_action": "edit_manufacturer",
-            },
-            {
-                "name": "删除厂商",
-                "permission_action": "del_manufacturer",
-            },
-            {
-                "name": "导入厂商",
-                "permission_action": "import_manufacturer",
-            },
-            {
-                "name": "导出厂商",
-                "permission_action": "export_manufacturer",
-            },
-            {
-                "name": "查询厂商",
-                "permission_action": "query_manufacturer",
-            },
-        ],
-
-        "DTU用户管理": [
-            {
-                "name": "添加DTU用户",
-                "permission_action": "create_dtu_user",
-            },
-            {
-                "name": "编辑DTU用户",
-                "permission_action": "edit_dtu_user",
-            },
-            {
-                "name": "删除DTU用户",
-                "permission_action": "del_dtu_user",
-            },
-            {
-                "name": "导入DTU用户",
-                "permission_action": "import_dtu_user",
-            },
-            {
-                "name": "导出DTU用户",
-                "permission_action": "export_dtu_user",
-            },
-            {
-                "name": "查询DTU用户",
-                "permission_action": "query_dtu_user",
-            },
-        ],
-        "日志管理": [
-            {
-                "name": "查询系统日志",
-                "permission_action": "query_system_log",
-            },
-            {
-                "name": "删除系统日志",
-                "permission_action": "del_system_log",
-            },
-            {
-                "name": "查询操作日志",
-                "permission_action": "query_operator_log",
-            },
-            {
-                "name": "删除系统日志",
-                "permission_action": "del_operator_log",
-            },
-            {
-                "name": "查询警报日志",
-                "permission_action": "del_alarm_log",
-            },
-            {
-                "name": "删除警报日志",
-                "permission_action": "del_alarm_log",
-            },
-            {
-                "name": "查询登录日志",
-                "permission_action": "query_login_log",
-            },
-            {
-                "name": "删除登录日志",
-                "permission_action": "del_login_log",
-            },
-        ],
-
-    }
-
-    flag_file_path = os.path.join(BASE_DIR, 'file', 'category_auth_map')
-    f = open(flag_file_path, 'wt')
-    f.write(json.dumps(cate_auth_map))
-    f.close()
 
 
 def init_role_version():
@@ -192,6 +66,33 @@ def init_configure():
             Configure.objects.create(**conf)
 
 
+def load_log_configure():
+    """
+    加载配置文件信息到缓存中
+    :return:
+    """
+
+    log_conf_file = open('configure/system_log.conf', 'rt', encoding='utf-8')
+    while True:
+        # 读取配置文件每一行的配置信息
+        log_conf_str = log_conf_file.readline()
+        if not log_conf_str:
+            break
+        log_confs = log_conf_str.split('=')
+
+        action_type = log_confs[ACTION_TYPE_INDEX]
+        conf_dict = {'msg': log_confs[MSG_INDEX]}
+        if DATA_FIELD_INDEX < len(log_confs):
+            conf_dict['data_field'] = log_confs[DATA_FIELD_INDEX].strip().split(';')
+        else:
+            conf_dict['data_field'] = []
+
+        conf_cache_api.set_hash('log_configure', action_type,
+                                json.dumps(conf_dict))
+
+    log_conf_file.close()
+
+
 def start_flowmeter_server():
     """
     开始流量计远程服务器
@@ -202,7 +103,7 @@ def start_flowmeter_server():
 
 
 def main():
-    __init_authorities()
+    pass
 
 
 if __name__ == '__main__':

@@ -184,7 +184,16 @@ class StrCheck:
 
         if len(url) > const.NAME_CHAR_LEN:
             raise ParameterErrorException("配置名称字符长度只能为[1-{}]个字符！"
-                                          .format(const.VALUE_CHAR_LEN))
+                                          .format(const.NAME_CHAR_LEN))
+
+    @staticmethod
+    def check_msg(url):
+
+        StrCheck.check_not_null(url)
+
+        if len(url) > const.MSG_CHAR_LEN:
+            raise ParameterErrorException("信息字符长度只能为[1-{}]个字符！"
+                                          .format(const.MSG_CHAR_LEN))
 
 
 class WhiteListCheck:

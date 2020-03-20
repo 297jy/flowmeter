@@ -141,6 +141,7 @@ def update_meter_info(meter_info):
     }
     optional_dict = {
         "surplus_gas_limits": float,
+        "remark": StrCheck.check_remark,
     }
     param_check(meter_info, must_dict, optional_dict)
 
