@@ -75,8 +75,26 @@ def get_meter_state_dict(state):
     for key, val in state_dict.items():
         if val == UNKNOWN_VALUE or val == UNKNOWN_STATE:
             state_dict[key] = '未知'
-        else:
-            state_dict[key] = val
+
+    if state_dict['battery_pressure_state'] == BATTERY_PRESSURE_STATE_NORMAL:
+        state_dict['battery_pressure_state'] = '正常'
+    else:
+        state_dict['battery_pressure_state'] = '异常'
+
+    if state_dict['valve_error_flag'] == VALVE_ERROR_FLAG_FALSE:
+        state_dict['valve_error_flag'] = '正常'
+    else:
+        state_dict['valve_error_flag'] = '异常'
+
+    if state_dict['owe_state'] == OWE_STATE_FALSE:
+        state_dict['owe_state'] = '正常'
+    else:
+        state_dict['owe_state'] = '欠费'
+
+    if state_dict['sensor_state'] == OWE_STATE_FALSE:
+        state_dict['sensor_state'] = '正常'
+    else:
+        state_dict['sensor_state'] = '异常'
 
     return state_dict
 

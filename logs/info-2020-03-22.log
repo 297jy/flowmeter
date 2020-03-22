@@ -178,3 +178,13 @@
 [2020-03-22 12:16:17,561] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
 [2020-03-22 12:16:17,576] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
 [2020-03-22 12:16:22,472] [server.py:122] [server:connectionLost] [INFO]- 断开连接！
+[2020-03-22 12:21:59,484] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:21:59,499] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:27:45,813] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:27:45,827] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:27:58,216] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:27:58,231] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:27:59,715] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:27:59,748] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:28:01,829] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:28:01,846] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
