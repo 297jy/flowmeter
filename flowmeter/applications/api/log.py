@@ -194,7 +194,7 @@ def check_and_send_alarm(meter_id, data, status=None):
             log_dict = {'alarm_type': AlarmLog.ALARM_EXCEED_LIMIT, 'meter_id': meter_id,
                         'opr_time': datetime.datetime.now()}
             # 异步执行
-            alarm_task.send_alarm(log_dict)
+            alarm_task.send_alarm.delay(log_dict)
 
     if status and isinstance(status, dict):
         sensor_state = status.get('sensor_state')

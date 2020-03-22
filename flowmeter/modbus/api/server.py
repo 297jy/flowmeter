@@ -11,11 +11,8 @@ from flowmeter.modbus.api import frame
 from flowmeter.applications.api import operator as app_opr_api
 from flowmeter.applications.api import meter as app_meter_api
 from flowmeter.applications.api import log as app_log_api
-from flowmeter.config.api import cache as conf_cache_api
 from twisted.internet import task
 from flowmeter.config.api import configure as conf_configure_api
-from flowmeter.exceptions import ValueValidException
-from django.db import transaction
 from flowmeter.config.api import meter as conf_meter_api
 
 import logging
@@ -186,10 +183,10 @@ def run_server(port=8081):
     # 创建定时任务，定时循环调用
     exec_remote_task = task.LoopingCall(exec_remote_opr)
     # 开启定时任务，并指定定时任务的时间间隔
-    # exec_remote_task.start(int(conf_configure_api.get_unexecuted_opr_check_time()))
+    exec_remote_task.start(conf_configure_api.get_unexecuted_opr_check_time())
 
     query_task = task.LoopingCall(query_meter_data)
-    query_task.start(10)
+    query_task.start(conf_configure_api.get_query_meter_time() * 60)
 
     endpoint = TCP4ServerEndpoint(reactor, port)
     endpoint.listen(ModBusFactory())

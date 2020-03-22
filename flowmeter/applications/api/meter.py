@@ -4,7 +4,6 @@ import datetime
 
 from flowmeter.applications.core import meter as core
 from flowmeter.applications.api import operator as app_opr_api
-from flowmeter.celery_task.api import alarm_task
 from flowmeter.config.api import meter as conf_meter_api
 from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.api import meter_state as conf_state_api
@@ -13,7 +12,6 @@ from flowmeter.config.api import log as conf_log_api
 from flowmeter.config.api import valve as conf_valve_api
 from flowmeter.common.api.validators import param_check
 from flowmeter.common.api.validators import StrCheck, WhiteListCheck
-from flowmeter.config.db.log_table import AlarmLog
 from flowmeter.config.db.operator_table import Operator
 from flowmeter.config.const import VALVE_STATE_OPEN, VALVE_STATE_CLOSE, RECHARGE_STATE_OPEN, RECHARGE_STATE_CLOSE, \
     STATE_ONLINE

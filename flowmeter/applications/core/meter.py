@@ -1,5 +1,6 @@
 # coding=utf-8
 import datetime
+import math
 
 from django.db.models import Q, F
 
@@ -36,10 +37,10 @@ def get_meter_dict(meter):
         "manufacturer_name": meter.dtu.region.manufacturer.name,
         "dtu_no": meter.dtu.dtu_no,
         "address": meter.address,
-        "surplus_gas": meter.surplus_gas,
-        "total_flow": meter.total_flow,
+        "surplus_gas": round(meter.surplus_gas, 6),
+        "total_flow": round(meter.total_flow, 6),
         "surplus_gas_limits": meter.surplus_gas_limits,
-        "flow_rate": meter.flow_rate,
+        "flow_rate": round(meter.flow_rate, 6),
         "flow_ratio": meter.flow_ratio,
         "power": meter.power,
         "temperature": meter.temperature,
