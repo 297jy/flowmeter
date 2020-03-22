@@ -10,6 +10,7 @@ from flowmeter.exceptions import OfflineException
 from flowmeter.modbus.api import frame
 from flowmeter.applications.api import operator as app_opr_api
 from flowmeter.applications.api import meter as app_meter_api
+from flowmeter.applications.api import log as app_log_api
 from flowmeter.config.api import cache as conf_cache_api
 from twisted.internet import task
 from flowmeter.config.api import configure as conf_configure_api
@@ -145,14 +146,12 @@ class FlowMeterServer(Protocol):
                 dtu_no = FlowMeterClients.get_dtu_no(ip)
                 # 先解析数据帧
                 data = frame.parse_data_frame(data_frame)
-
-                with transaction.atomic():
-                    # 先执行一条等待结果的操作
-                    opr = app_opr_api.execute_wait_remote_op(dtu_no, data['address'], data['opr_type'], data['data'])
-
-                    # 更新仪表数据
-                    if opr is not None:
-                        app_meter_api.update_meter_data(opr['meter_id'], data)
+                # 先执行一条等待结果的操作
+                opr = app_opr_api.execute_wait_remote_op(dtu_no, data['address'], data['opr_type'], data['data'])
+                # 更新仪表数据
+                if opr is not None:
+                    app_log_api.check_and_send_alarm(opr['meter_id'], data['data'], data['data'].get('status'))
+                    app_meter_api.update_meter_data(opr['meter_id'], data)
         except:
             traceback.print_exc()
 
@@ -187,7 +186,7 @@ def run_server(port=8081):
     # 创建定时任务，定时循环调用
     exec_remote_task = task.LoopingCall(exec_remote_opr)
     # 开启定时任务，并指定定时任务的时间间隔
-    exec_remote_task.start(int(conf_configure_api.get_unexecuted_opr_check_time()))
+    # exec_remote_task.start(int(conf_configure_api.get_unexecuted_opr_check_time()))
 
     query_task = task.LoopingCall(query_meter_data)
     query_task.start(10)

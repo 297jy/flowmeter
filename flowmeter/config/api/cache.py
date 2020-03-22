@@ -1,8 +1,6 @@
 # coding=utf-8
 
 from django_redis import get_redis_connection
-from flowmeter.exceptions import ParameterErrorException
-from flowmeter.config.core import cache as core
 from flowmeter.common.common import deserialize_obj, serialize_obj
 
 
@@ -154,5 +152,16 @@ def get_hash(name, key):
 def delete(keyname):
     conn = get_redis_connection('default')
     conn.delete(keyname)
+
+
+def publish_message(channel_name, message):
+    """
+    发布消息
+    :param message:
+    :param channel_name: 通道名称
+    :return:
+    """
+    conn = get_redis_connection('default')
+    conn.publish(channel_name, message)
 
 

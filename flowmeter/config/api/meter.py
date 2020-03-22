@@ -24,6 +24,16 @@ def find_meter(dtu_no, address):
     return meter
 
 
+def get_meter_surplus_gas_limits(meter_id):
+    """
+    获取仪表的剩余气量限值
+    :param meter_id:
+    :return:
+    """
+    meter = Meter.objects.values('surplus_gas_limits').get(id=meter_id)
+    return meter['surplus_gas_limits']
+
+
 def find_meter_state(dtu_no, address):
 
     meter = Meter.objects.get(dtu__dtu_no=dtu_no, address=address)

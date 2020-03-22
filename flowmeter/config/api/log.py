@@ -14,7 +14,7 @@ def add_alarm_log(log):
     param_check(log, must_dict=must_dict, extra=True)
 
     log['opr_time'] = datetime.datetime.now()
-    core.add_alarm_log(log)
+    return core.add_alarm_log(log)
 
 
 def add_opr_log(log):

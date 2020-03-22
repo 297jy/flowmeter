@@ -42,7 +42,8 @@ def get_users(filters=None, page=None):
 
 def get_all_admin_ids():
     ids = User.objects.values('id').filter(role=RoleType.ADMIN)
-    return ids
+
+    return [admin_id['id'] for admin_id in ids]
 
 
 def get_user_by_id(user_id):

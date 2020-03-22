@@ -23,15 +23,6 @@ app.config_from_object('django.conf:settings')
 # Celery加载所有注册的应用
 app.autodiscover_tasks(lambda: settings.INSTALLED_APPS)
 
-app.conf.update(
-    CELERYBEAT_SCHEDULE={
-        'add-every-30-minutes': {
-            'task': 'flowmeter.tasks.query_meter_data',
-            'schedule': timedelta(seconds=10),  # 每30分钟执行一次该任务
-        }
-    }
-)
-
 
 @app.task(bind=True)
 def debug_task(self):

@@ -14,7 +14,9 @@
     <!-- <link rel="stylesheet" href="./css/theme5.css"> -->
     <script src="/static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/js/xadmin.js"></script>
-
+        <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
+    <script src="/static/js/flow-meter.js" charset="utf-8"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
           <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -181,13 +183,13 @@
 
             ws.onmessage = function (evt) {
                 var msg = evt.data;
-                var msg_dict = JSON.stringify(msg);
+                var msg_dict = JSON.parse(msg);
                 notice.options['onclick'] = function () {
 
-                    var alarm_id = msg_dict['alarm_id'];
+                    var alarm_id = msg_dict['alarm_reader_id'];
                     //标记该警报为已经阅读
                     post({
-                        "param": JSON.stringify({'alarm_id': alarm_id}),
+                        "param": JSON.stringify({'alarm_reader_id': alarm_id}),
                         "action": "read_alarm_log"
                     }, '/handler/log/', function (data) {
                     });

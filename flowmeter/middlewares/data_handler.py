@@ -33,7 +33,7 @@ class DataHandlerMiddleware(MiddlewareMixin):
         """
         del_list = []
         for field, val in params.items():
-            if not val:
+            if not val and val != 0:
                 del_list.append(field)
         # 删除空字段
         for field in del_list:

@@ -68,17 +68,10 @@ class AlarmLog(Log):
     ALARM_VALVE_ERROR = 'valve_error'
     ALARM_SENSOR_ERROR = 'sensor_error'
 
-    # 该警报已经被阅读
-    STATE_READ = 'read'
-    # 该警报未被阅读
-    STATE_UNREAD = 'unread'
-
     # 发生告警事件的仪表
     meter = models.ForeignKey(Meter, on_delete=models.CASCADE)
     # 告警事件类型
     alarm_type = models.CharField(max_length=ALARM_TYPE_CHAR_LEN)
-    # 警报状态
-    state = models.CharField(max_length=STATE_CHAR_LEN, default=STATE_UNREAD)
 
     def get_display_alarm_type(self):
         if self.alarm_type == AlarmLog.ALARM_EXCEED_LIMIT:
@@ -89,9 +82,3 @@ class AlarmLog(Log):
             return "传感器异常警报"
         elif self.alarm_type == AlarmLog.ALARM_VALVE_ERROR:
             return "阀门异常警报"
-
-    class Meta:
-        # 创建状态索引
-        indexes = [
-            models.Index(fields=['state'], name='state_index'),
-        ]

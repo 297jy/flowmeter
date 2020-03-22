@@ -4,6 +4,8 @@ import validators
 from voluptuous import Schema
 from voluptuous import MultipleInvalid
 from voluptuous import Required
+
+from flowmeter.config.db.alarm_log_reader import AlarmLogReader
 from flowmeter.exceptions import ParameterErrorException
 from flowmeter.common.const import RoleType
 from flowmeter.common.const import UserStateType
@@ -330,8 +332,8 @@ class WhiteListCheck:
     def check_alarm_state(state):
 
         state_list = [
-            AlarmLog.STATE_READ,
-            AlarmLog.STATE_UNREAD,
+            AlarmLogReader.STATE_READ,
+            AlarmLogReader.STATE_UNREAD,
         ]
 
         if state not in state_list:
