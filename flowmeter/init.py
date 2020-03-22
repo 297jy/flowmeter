@@ -4,11 +4,9 @@ import os
 import json
 import threading
 
-from flowmeter.settings import BASE_DIR
 from flowmeter.config.api import role as conf_role_api
 from flowmeter.config.api import flag as conf_flag_api
 from flowmeter.config.api import cache as conf_cache_api
-from flowmeter.config.api import configure as conf_configure_api
 from flowmeter.config.db.flag_table import Flag
 from flowmeter.config.db.configure_table import Configure
 from flowmeter.modbus.api import server
@@ -19,18 +17,6 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flowmeter.settings')
 ACTION_TYPE_INDEX = 0
 MSG_INDEX = 1
 DATA_FIELD_INDEX = 2
-
-
-def __check_init():
-    """
-    检查是否已经初始化完毕
-    :return:
-    """
-    flag_file_path = os.path.join(BASE_DIR, 'file', 'init.flag')
-    if os.path.exists(flag_file_path):
-        return True
-    else:
-        return False
 
 
 def init_role_version():
@@ -52,18 +38,26 @@ def init_configure():
     :return:
     """
     conf_list = [{
-        'label': '检查未执行操作的时间间隔',
+        'label': '检查未执行操作时间间隔（秒）',
         'name': 'unexecuted_opr_check_time',
         'val': 5,
+    }, {
+        'label': '定时查询流量计时间间隔（分）',
+        'name': 'query_meter_time',
+        'val': 30,
+    }, {
+        'label': '登录过期时间',
+        'name': 'session_expire_time',
+        'val': '关闭浏览器过期',
     }]
 
     for conf in conf_list:
         try:
             c = Configure.objects.get(name=conf['name'])
-            # 重新设置缓存
-            conf_cache_api.set_hash('configure', conf['name'], int(c.val))
+            conf_cache_api.set_hash('configure', conf['name'], c.val)
         except Configure.DoesNotExist:
             Configure.objects.create(**conf)
+            conf_cache_api.set_hash('configure', conf['name'], conf['val'])
 
 
 def load_log_configure():

@@ -29,6 +29,8 @@ from flowmeter.views import dtu
 from flowmeter.views import meter
 from flowmeter.views import auth
 from flowmeter.views import log
+from flowmeter.views import websocket
+
 
 # 视图处理器路由
 handler_urlpatterns = [
@@ -108,6 +110,7 @@ urlpatterns = [
     path('error/', include(error_urlpatterns)),
     path('index/', index.index_view),
     path('welcome/', welcome.welcome_view),
+    path('websocket/', websocket.link_view),
     path('login/', login.login_view),
     path('admin/', include(admin_urlpatterns)),
     path('dtu_user/', include(dtu_user_urlpatterns)),

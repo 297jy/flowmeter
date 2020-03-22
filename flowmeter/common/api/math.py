@@ -16,7 +16,7 @@ def byte_arr_convert_int(byte_arr):
 
     res = 0
     for byte in byte_arr:
-        res = res << 8 + byte
+        res = (res << 8) + byte
 
     return res
 

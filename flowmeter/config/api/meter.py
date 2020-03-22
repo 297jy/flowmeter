@@ -111,7 +111,7 @@ def update_meter_data(meter_id, meter_data):
         "flow_rate": float,
         "total_flow": float,
         "temperature": float,
-        "power": float,
+        "power": int,
         "version": float,
     }
     param_check(meter_data, optional_dict=optional_dict)

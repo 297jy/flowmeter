@@ -166,7 +166,7 @@ def find_alarm_logs_by_query_terms(query_terms, page=None):
     logs = conf_log_api.find_alarm_log(query_or.get_filters() & query_and.get_filters(), page)
 
     return transfer_obj_to_dict(logs, ['id', 'meter.dtu.user.name', 'meter.dtu.region.manufacturer.name',
-                                       'alarm_type', 'state', 'meter.address', 'meter.dtu.dtu_no', 'opr_time'],
+                                       'alarm_type', 'meter.address', 'meter.dtu.dtu_no', 'opr_time'],
                                 __transfer_alarm_log_database_to_display)
 
 
@@ -216,7 +216,7 @@ def alarmlog_export(alarmlog_ids, filename):
 
     logs = conf_log_api.find_alarm_log(Q(id__in=alarmlog_ids))
     log_dicts = transfer_obj_to_dict(logs, ['id', 'meter.dtu.user.name', 'meter.dtu.region.manufacturer.name',
-                                            'alarm_type', 'state', 'meter.address', 'meter.dtu.dtu_no', 'opr_time'],
+                                            'alarm_type', 'meter.address', 'meter.dtu.dtu_no', 'opr_time'],
                                      __transfer_alarm_log_database_to_display)
 
     __log_export(log_dicts, '警报日志列表', filename, excel_fields)

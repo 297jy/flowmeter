@@ -6,6 +6,8 @@ from django.db import models
 from django.db.models import Q
 from django.db import transaction
 from django.db.utils import IntegrityError
+
+from flowmeter.common.const import RoleType
 from flowmeter.config.db import user_table
 from flowmeter.config.db.user_table import User
 from flowmeter.config.core import user as user_core
@@ -36,6 +38,11 @@ def get_users(filters=None, page=None):
         else:
             users = User.objects.all()[start_index: end_index]
     return users
+
+
+def get_all_admin_ids():
+    ids = User.objects.values('id').filter(role=RoleType.ADMIN)
+    return ids
 
 
 def get_user_by_id(user_id):

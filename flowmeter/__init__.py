@@ -1,6 +1,5 @@
-# coding=utf-8
-"""
-from flowmeter.celery import app as celery_app
+# coding:utf-8
+from __future__ import absolute_import, unicode_literals
 
-__all__ = ('celery_app',)
-"""
+# 引入celery实例对象
+from .celery import app as celery_app

@@ -1,6 +1,7 @@
 # coding=utf-8
 import traceback
 
+from flowmeter.exceptions import OfflineException
 from flowmeter.modbus.api import server
 from flowmeter.modbus.api import frame
 from flowmeter.config.api import operator as conf_operator_api
@@ -24,8 +25,7 @@ def execute_remote_op(opr):
         server.send_data_frame(opr.dtu_no, data_frame)
         # 发送成功就把操作放进等待执行结果的队列中
         conf_operator_api.add_wait_operator(dict(opr))
-    except:
-        traceback.print_exc()
+    except OfflineException:
         # 发送失败就放进未执行命令队列中
         conf_operator_api.add_unexecuted_operator(dict(opr))
 
@@ -75,5 +75,6 @@ def execute_wait_remote_op(dtu_no, address, opr_type, val):
     # 先获取缓存中存在的带执行的操作命令
     opr = conf_operator_api.get_and_del_wait_opr(dtu_no, address, opr_type, val)
     if opr is not None:
-        app_log_api.update_logs_success_state([opr['log_id']])
+        if opr['log_id']:
+            app_log_api.update_logs_success_state([opr['log_id']])
     return opr

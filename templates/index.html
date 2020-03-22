@@ -14,6 +14,7 @@
     <!-- <link rel="stylesheet" href="./css/theme5.css"> -->
     <script src="/static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/js/xadmin.js"></script>
+
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
     <!--[if lt IE 9]>
           <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
@@ -80,17 +81,17 @@
         <ul id="nav">
             {% for nav in nav_bars %}
                 <li>
-                    {% if nav.url%}
-                    <a onclick="xadmin.add_tab('{{ nav.name }}','{{ nav.url }}',true)">
-                        <i class="iconfont left-nav-li" lay-tips="{{ nav.name }}">&#{{ nav.icon }};</i>
-                        <cite>{{ nav.name }}</cite>
-                    </a>
+                    {% if nav.url %}
+                        <a onclick="xadmin.add_tab('{{ nav.name }}','{{ nav.url }}',true)">
+                            <i class="iconfont left-nav-li" lay-tips="{{ nav.name }}">&#{{ nav.icon }};</i>
+                            <cite>{{ nav.name }}</cite>
+                        </a>
                     {% endif %}
-                    {% if not nav.url%}
-                    <a>
-                        <i class="iconfont left-nav-li" lay-tips="{{ nav.name }}">&#{{ nav.icon }};</i>
-                        <cite>{{ nav.name }}</cite>
-                    </a>
+                    {% if not nav.url %}
+                        <a>
+                            <i class="iconfont left-nav-li" lay-tips="{{ nav.name }}">&#{{ nav.icon }};</i>
+                            <cite>{{ nav.name }}</cite>
+                        </a>
                     {% endif %}
                     {% if nav.childs %}
                         <ul class="sub-menu">
@@ -140,5 +141,76 @@
 <!-- 中部结束 -->
 
 </body>
+<script>
+
+    layui.config({
+        base: '/static/dist/'
+    }).extend({
+        notice: 'notice'
+    });
+
+    layui.use(['notice', 'jquery', 'layer'], function () {
+        var notice = layui.notice;
+        var layer = layui.layer;
+        var $ = layui.jquery;
+
+        notice.options = {
+            closeButton: true,//显示关闭按钮
+            debug: false,//启用debug
+            positionClass: "toast-top-right",//弹出的位置,
+            showDuration: "300",//显示的时间
+            hideDuration: "1000",//消失的时间
+            timeOut: "0",//停留的时间
+            extendedTimeOut: "0",//控制时间
+            showEasing: "swing",//显示时的动画缓冲方式
+            hideEasing: "linear",//消失时的动画缓冲方式
+            iconClass: 'toast-info', // 自定义图标，有内置，如不需要则传空 支持layui内置图标/自定义iconfont类名
+            onclick: null// 点击关闭回调
+        };
+
+
+        if ("WebSocket" in window) {
+
+            // 打开一个 web socket
+            ws = new WebSocket("ws://" + window.location.host + "/websocket/");
+
+            ws.onopen = function () {
+                // Web Socket 已连接上，使用 send() 方法发送数据
+                ws.send(JSON.stringify({'user_id': '{{ user.id }}'}))
+            };
+
+            ws.onmessage = function (evt) {
+                var msg = evt.data;
+                var msg_dict = JSON.stringify(msg);
+                notice.options['onclick'] = function () {
+
+                    var alarm_id = msg_dict['alarm_id'];
+                    //标记该警报为已经阅读
+                    post({
+                        "param": JSON.stringify({'alarm_id': alarm_id}),
+                        "action": "read_alarm_log"
+                    }, '/handler/log/', function (data) {
+                    });
+                };
+                notice.error(msg_dict['msg']);
+            };
+
+            ws.onclose = function () {
+                // 关闭 websocket
+                layer.alert("网络异常，与远程服务器通信中断！", {icon: 5}, function () {
+                    layer.closeAll();
+                });
+
+            };
+        } else {
+
+            layer.alert("您当前的浏览器不支持该系统，请更换成谷歌浏览器！", {icon: 5}, function () {
+                layer.closeAll();
+            });
+        }
+    });
+
+
+</script>
 
 </html>

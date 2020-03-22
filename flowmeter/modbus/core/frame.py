@@ -3,7 +3,7 @@
 from flowmeter.config.api import data_field
 from flowmeter.config.api import control_register
 from flowmeter.common.api import math
-from flowmeter.exceptions import ParameterErrorException, ValueValidException
+from flowmeter.exceptions import ValueValidException
 from flowmeter.config.db.operator_table import Operator
 
 
@@ -38,7 +38,7 @@ def __cal_surplus_gas(frame):
     if len(frame) <= field.end_address:
         return None
     surplus_gas = math.byte_arr_convert_signed_int(frame[field.begin_address: field.end_address + 1])
-    return surplus_gas
+    return float(surplus_gas)
 
 
 def __cal_flow_rate(frame):
@@ -57,12 +57,12 @@ def __cal_flow_rate(frame):
 def __cal_total_flow(frame):
     int_field = data_field.find_total_flow_int_field()
     float_field = data_field.find_total_flow_float_field()
-    res = None
+    res = 0.0
     if len(frame) > int_field.end_address:
-        res = math.byte_arr_convert_int(frame[int_field.begin_address: int_field.end_address + 1])
+        res += math.byte_arr_convert_int(frame[int_field.begin_address: int_field.end_address + 1])
     if len(frame) > float_field.end_address:
         res += math.calculate_double(frame[float_field.begin_address: float_field.end_address + 1])
-    return res
+    return float(res)
 
 
 def __get_version(frame):
@@ -70,7 +70,9 @@ def __get_version(frame):
     if len(frame) <= field.end_address:
         return None
     byte = frame[field.begin_address]
-    version = (byte / 16) + byte % 16 * 0.1
+    high_num = byte >> 4
+    low_num = byte - (high_num << 4)
+    version = high_num + low_num * 0.1
     return version
 
 
@@ -112,7 +114,7 @@ def __cal_temperature(frame):
     if len(frame) <= field.end_address:
         return None
     temperature = math.byte_arr_convert_int(frame[field.begin_address: field.end_address + 1])
-    return temperature
+    return float(temperature / 10.0)
 
 
 def __cal_flow_ratio(frame):
@@ -120,7 +122,7 @@ def __cal_flow_ratio(frame):
     if len(frame) <= field.end_address:
         return None
     flow_ratio = math.byte_arr_convert_int(frame[field.begin_address: field.end_address + 1])
-    return flow_ratio
+    return float(flow_ratio / 1000.0)
 
 
 # 数据域与其对应的计算函数映射
@@ -132,6 +134,7 @@ __field_cal_fun_map = {
     "power": __cal_power,
     "temperature": __cal_temperature,
     "flow_ratio": __cal_flow_ratio,
+    "version": __get_version,
 }
 
 
@@ -142,7 +145,7 @@ def get_frame_data(frame):
     :return:
     """
     res = {}
-    for field, fun in __field_cal_fun_map:
+    for field, fun in __field_cal_fun_map.items():
         res[field] = fun(frame)
 
     return res
@@ -200,8 +203,6 @@ def cal_crc(data_frame):
     :param data_frame:
     :return:
     """
-    if (len(data_frame) & 1) != 0 or (len(data_frame) < 4):
-        raise ParameterErrorException("数据帧格式错误，无法生成校验码")
 
     crc = (1 << 16) - 1
     for byte in data_frame:

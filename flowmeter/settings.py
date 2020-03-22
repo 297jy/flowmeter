@@ -27,7 +27,7 @@ SECRET_KEY = 'n0-=oi!xo003%y3j7!s4-yloy34x@or=3_)t^ak6g3c(_uqse1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -262,9 +262,13 @@ TMP_FILE_DIRECTORY_PATH = os.path.join(BASE_DIR, 'file', 'tmp')
 MAX_DTU_NO = 1 << 16 - 1
 
 # 异步任务队列配置
-# Celery application definition
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
-CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_RESULT_SERIALIZER = 'json'
+# celery settings
+# celery中间人 redis://redis服务所在的ip地址:端口/数据库号
+BROKER_URL = 'redis://127.0.0.1:6379/0'
+# celery结果返回，可用于跟踪结果
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
+
+# celery内容等消息的格式设置
+CELERY_ACCEPT_CONTENT = ['application/json', ]
 CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'

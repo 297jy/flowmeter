@@ -62,6 +62,13 @@ def update_opr_logs_state(log_ids, state):
     OprLog.objects.filter(id__in=log_ids).update(state=state)
 
 
+def update_alarm_log_state(log_id, state):
+
+    log = AlarmLog.objects.get(id=log_id)
+    log.state = state
+    log.save()
+
+
 def find_opr_log(filters=None, page=None):
     """
     查询操作日志，按操作日期降序

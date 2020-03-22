@@ -1,0 +1,180 @@
+[2020-03-22 00:07:02,428] [server.py:130] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:10:20,382] [server.py:130] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:10:46,402] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-22 00:10:46,418] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-22 00:10:46,437] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_configure
+[2020-03-22 00:10:46,443] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-03-22 00:10:46,451] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 00:10:46,453] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-03-22 00:10:46,474] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 00:10:46,494] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-03-22 00:10:46,496] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-22 00:10:46,511] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-22 00:10:46,543] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 00:10:46,545] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 00:10:46,547] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-22 00:10:46,578] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 00:10:46,584] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-22 00:10:46,615] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 00:10:50,192] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-22 00:10:50,582] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 00:10:50,585] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 00:10:50,586] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-22 00:10:50,919] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 00:10:50,920] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 00:12:14,073] [server.py:130] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:14:08,657] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-22 00:14:08,694] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-22 00:14:08,708] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_configure
+[2020-03-22 00:14:08,719] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_control_register
+[2020-03-22 00:14:08,731] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-22 00:14:08,741] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 00:14:08,744] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-22 00:14:08,758] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 00:14:08,760] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-03-22 00:14:08,775] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-22 00:14:08,780] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-03-22 00:14:08,793] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 00:14:08,802] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 00:14:08,824] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 00:14:08,838] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-22 00:14:08,873] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 00:14:10,032] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 00:14:10,036] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 00:14:11,286] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 00:14:11,300] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 00:14:13,058] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 00:14:13,073] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 00:27:51,848] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:33:24,616] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:34:11,272] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 00:34:11,287] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 00:36:21,337] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:38:03,043] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:38:48,596] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:38:56,177] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:41:00,715] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:41:03,983] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:41:05,868] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 00:45:00,384] [server.py:131] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 10:46:28,911] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 10:48:19,661] [server.py:122] [server:connectionLost] [INFO]- 断开连接！
+[2020-03-22 10:52:37,272] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 10:53:23,381] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 10:55:16,199] [server.py:122] [server:connectionLost] [INFO]- 断开连接！
+[2020-03-22 11:13:25,027] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:14:11,493] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x00\x02\x14"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:18:29,086] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:21:51,078] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:22:17,837] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:22:44,566] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:22:51,260] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:25:49,533] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:25:49,551] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:25:55,571] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:56,479] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:56,642] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:56,805] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:56,981] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:57,141] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:57,298] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:57,469] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:57,749] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:57,906] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:58,076] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:25:58,211] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_data_field
+[2020-03-22 11:27:26,438] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:27:33,983] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:30:08,107] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:30:16,672] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:32:45,015] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:32:49,314] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:33:33,465] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:33:40,056] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:36:41,966] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:36:45,256] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:38:09,411] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:38:12,331] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:38:51,594] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:38:53,624] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:39:00,138] [server.py:122] [server:connectionLost] [INFO]- 断开连接！
+[2020-03-22 11:39:04,596] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:39:04,614] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:39:07,305] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 11:39:07,312] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:39:07,313] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-22 11:39:08,035] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:39:08,038] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:39:10,119] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-22 11:39:10,295] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-22 11:39:10,434] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-22 11:39:10,584] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-22 11:39:10,750] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-22 11:39:11,630] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:39:11,632] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:39:12,902] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:39:12,904] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:39:13,313] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:39:13,315] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:39:13,498] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:39:13,501] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:39:13,692] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:39:13,694] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:39:13,837] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:39:13,838] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:39:14,009] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:39:14,011] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:43:06,226] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:43:12,806] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:43:17,189] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 11:43:17,205] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 11:43:58,970] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:44:01,267] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:44:24,251] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:44:28,352] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:45:06,252] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:45:09,856] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 11:45:21,628] [server.py:122] [server:connectionLost] [INFO]- 断开连接！
+[2020-03-22 11:59:08,654] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 11:59:16,680] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:03:07,123] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 12:03:11,223] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:04:24,371] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 12:04:30,327] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:05:22,829] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 12:05:26,166] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:05:51,003] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-22 12:05:51,018] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-22 12:06:01,587] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:06:01,604] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:07:04,373] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 12:07:08,827] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:08:01,675] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 12:08:08,740] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:08:14,454] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:08:14,468] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:10:02,389] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 12:10:07,147] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:10:12,845] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:10:12,864] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:11:58,649] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 12:12:03,826] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:12:07,224] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:12:07,237] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:12:10,163] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:12:10,178] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:14:55,975] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 12:15:02,629] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:15:10,673] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:15:10,687] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:16:04,852] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x00'数据帧
+[2020-03-22 12:16:07,127] [server.py:132] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01\x03 @fff\x00\x00\x00\n>\xc8\xceq\x07\xec\x80\x04\x02\x13"\x01\x00\x00\x0e!\x012\x00d_\xfc\x00\x01]\xa4'数据帧
+[2020-03-22 12:16:10,984] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:16:10,998] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:16:13,204] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:16:13,237] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:16:15,798] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:16:15,814] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:16:17,561] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_state
+[2020-03-22 12:16:17,576] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-22 12:16:22,472] [server.py:122] [server:connectionLost] [INFO]- 断开连接！

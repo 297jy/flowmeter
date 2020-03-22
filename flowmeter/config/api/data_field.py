@@ -98,11 +98,11 @@ def find_total_flow_field():
 
 def find_total_flow_int_field():
 
-    key_name = 'field_total_flow_int'
+    key_name = 'field_flow_total_int'
     if cache.is_exists(key_name):
         return cache.get_obj(key_name, DataField)
 
-    field = core.find_one_data_field({'field_name': 'total_flow_int'})
+    field = core.find_one_data_field({'field_name': 'flow_total_int'})
     cache.set_obj(key_name, field)
 
     return field
@@ -110,11 +110,11 @@ def find_total_flow_int_field():
 
 def find_total_flow_float_field():
 
-    key_name = 'field_total_flow_float'
+    key_name = 'field_flow_total_float'
     if cache.is_exists(key_name):
         return cache.get_obj(key_name, DataField)
 
-    field = core.find_one_data_field({'field_name': 'total_flow_float'})
+    field = core.find_one_data_field({'field_name': 'flow_total_float'})
     cache.set_obj(key_name, field)
 
     return field

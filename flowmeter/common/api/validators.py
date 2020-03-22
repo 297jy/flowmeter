@@ -327,6 +327,17 @@ class WhiteListCheck:
             raise ParameterErrorException("没有该操作状态：{}！", state)
 
     @staticmethod
+    def check_alarm_state(state):
+
+        state_list = [
+            AlarmLog.STATE_READ,
+            AlarmLog.STATE_UNREAD,
+        ]
+
+        if state not in state_list:
+            raise ParameterErrorException("没有该警报状态：{}！", state)
+
+    @staticmethod
     def check_alarm_type(alarm_type):
 
         type_list = [AlarmLog.ALARM_EXCEED_LIMIT, AlarmLog.ALARM_SUB_VALVE, AlarmLog.ALARM_INTERRUPT,

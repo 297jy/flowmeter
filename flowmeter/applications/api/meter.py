@@ -150,12 +150,12 @@ def update_valve_state(meter_state_info, user):
         if meter_state_info['valve_state'] == VALVE_STATE_OPEN:
             log_dict['opr_type'] = Operator.OPEN_VALVE
             log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_open_valve_opr(user['id'], valve_dtu_no, valve_address, log.id,
+            opr = Operator.create_open_valve_opr(valve_dtu_no, valve_address, log.id,
                                                  meter_state_info['meter_id'])
         else:
             log_dict['opr_type'] = Operator.CLOSE_VALVE
             log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_close_valve_opr(user['id'], valve_dtu_no, valve_address, log.id,
+            opr = Operator.create_close_valve_opr(valve_dtu_no, valve_address, log.id,
                                                   meter_state_info['meter_id'])
 
         app_opr_api.execute_remote_op(opr)
@@ -188,12 +188,12 @@ def update_recharge_state(meter_state_info, user):
         if meter_state_info['recharge_state'] == RECHARGE_STATE_OPEN:
             log_dict['opr_type'] = Operator.OPEN_RECHARGE
             log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_open_recharge_opr(user['id'], dtu_no, meter_state_info['address'], log.id,
+            opr = Operator.create_open_recharge_opr(dtu_no, meter_state_info['address'], log.id,
                                                     meter_state_info['meter_id'])
         else:
             log_dict['opr_type'] = Operator.CLOSE_RECHARGE
             log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_close_recharge_opr(user['id'], dtu_no, meter_state_info['address'], log.id,
+            opr = Operator.create_close_recharge_opr(dtu_no, meter_state_info['address'], log.id,
                                                      meter_state_info['meter_id'])
 
         app_opr_api.execute_remote_op(opr)
@@ -219,12 +219,12 @@ def update_flow_ratio(meter_info, user):
     # 保证原子性
     with transaction.atomic():
         log = conf_log_api.add_opr_log(log_dict)
-        opr = Operator.create_set_flow_ratio_opr(user['id'], dtu_no, meter_info['address'],
+        opr = Operator.create_set_flow_ratio_opr(dtu_no, meter_info['address'],
                                                  log.id, meter_info['id'], meter_info['flow_ratio'])
         app_opr_api.execute_remote_op(opr)
 
 
-def query_meter_data(meter_info, user):
+def query_meter_data(meter_info, user, record_log=True):
     must_dict = {
         "id": int,
         "address": int,
@@ -233,11 +233,20 @@ def query_meter_data(meter_info, user):
     param_check(meter_info, must_dict)
 
     dtu_no = meter_info['dtu_no']
-    log_dict = {"opr_user_id": user['id'], "meter_id": meter_info['meter_id'], 'opr_type': Operator.QUERY, 'val': None}
+
+    log_dict = {}
+    if record_log:
+        log_dict = {"opr_user_id": user['id'], "meter_id": meter_info['meter_id'], 'opr_type': Operator.QUERY,
+                    'val': None}
     # 保证原子性
     with transaction.atomic():
-        log = conf_log_api.add_opr_log(log_dict)
-        opr = Operator.create_query_opr(user['id'], dtu_no, meter_info['address'], log.id, meter_info['id'])
+
+        log_id = ""
+        if record_log:
+            log = conf_log_api.add_opr_log(log_dict)
+            log_id = log.id
+
+        opr = Operator.create_query_opr(dtu_no, meter_info['address'], log_id, meter_info['id'])
         app_opr_api.execute_remote_op(opr)
 
 
@@ -262,7 +271,7 @@ def reset_meter(meter_info, user):
     # 保证原子性
     with transaction.atomic():
         log = conf_log_api.add_opr_log(log_dict)
-        opr = Operator.create_reset_opr(user['id'], dtu_no, meter_info['address'], log.id, meter_info['id'])
+        opr = Operator.create_reset_opr(dtu_no, meter_info['address'], log.id, meter_info['id'])
         app_opr_api.execute_remote_op(opr)
 
 
@@ -284,7 +293,7 @@ def recharge_meter(meter_ids, money, user):
         # 保证原子性
         with transaction.atomic():
             log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_recharge_opr(user['id'], meter_info['dtu_no'], meter_info['address'], log.id,
+            opr = Operator.create_recharge_opr(meter_info['dtu_no'], meter_info['address'], log.id,
                                                meter_info['id'], money)
             app_opr_api.execute_remote_op(opr)
 

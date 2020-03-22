@@ -4,7 +4,7 @@ import json
 
 from flowmeter.config.api import log as conf_log_api
 from flowmeter.config.api import cache as conf_cache_api
-from flowmeter.config.db.log_table import OprLog
+from flowmeter.config.db.log_table import OprLog, AlarmLog
 from flowmeter.common.api.validators import param_check, WhiteListCheck, StrCheck
 from flowmeter.applications.core import log as core
 from flowmeter.config.db.log_table import SystemLog
@@ -150,3 +150,8 @@ def oprlog_export(oprlog_ids, filename):
     """
     StrCheck.check_not_null(filename)
     core.oprlog_export(oprlog_ids, filename)
+
+
+def read_alarm_log(alarm_id):
+
+    conf_log_api.update_alarm_log_state(alarm_id, AlarmLog.STATE_READ)

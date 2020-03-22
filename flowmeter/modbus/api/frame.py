@@ -31,7 +31,12 @@ def generate_data_frame(address, opr_type, val=None):
     :return:
     """
     __SET_REGISTER_OPR_CODE = 6
-    frame = [int(address), __SET_REGISTER_OPR_CODE, ]
+    __QUERY_OPR_CODE = 3
+    frame = [int(address)]
+    if opr_type == Operator.QUERY:
+        frame.append(__QUERY_OPR_CODE)
+    else:
+        frame.append(__SET_REGISTER_OPR_CODE)
     register = core.get_register_by_opr_type(opr_type)
     field_val_h = register.field_val >> 8
     field_val_l = register.field_val - (field_val_h << 8)

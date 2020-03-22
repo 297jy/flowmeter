@@ -28,6 +28,7 @@ class LogActionHandler(ActionHandlerBase):
             'export_system_log': self.export_system_log,
             'export_alarm_log': self.export_alarm_log,
             'export_opr_log': self.export_opr_log,
+            'read_alarm_log': self.read_alarm_log,
         }
         super().__init__(action_dict)
 
@@ -111,6 +112,14 @@ class LogActionHandler(ActionHandlerBase):
         app_log_api.oprlog_export(param['oprlog_ids'], filename)
 
         return Result.success(data=name)
+
+    def read_alarm_log(self, request):
+
+        param = request_api.get_param(request)
+
+        app_log_api.read_alarm_log(param['alarm_id'])
+
+        return Result.success()
 
 
 @xframe_options_sameorigin
