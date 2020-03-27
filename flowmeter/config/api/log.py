@@ -153,6 +153,77 @@ def del_alarm_logs(opr_log_ids):
     AlarmLog.objects.filter(id__in=opr_log_ids).delete()
 
 
+def get_system_log_total_num():
+
+    log_total_num = SystemLog.objects.all().count()
+    return log_total_num
+
+
+def get_alarm_log_total_num():
+    log_total_num = AlarmLog.objects.all().count()
+    return log_total_num
+
+
+def get_operator_log_total_num():
+    log_total_num = OprLog.objects.all().count()
+    return log_total_num
+
+
+def get_sub_valve_alarm_num_by_man_id(man_id):
+
+    num = AlarmLog.objects.filter(alarm_type=AlarmLog.ALARM_SUB_VALVE, meter__dtu__region__manufacturer_id=man_id)\
+        .count()
+    return num
+
+
+def get_sensor_alarm_num_by_man_id(man_id):
+    num = AlarmLog.objects.filter(alarm_type=AlarmLog.ALARM_SENSOR_ERROR, meter__dtu__region__manufacturer_id=man_id) \
+        .count()
+    return num
+
+
+def get_exceed_alarm_num_by_man_id(man_id):
+    num = AlarmLog.objects.filter(alarm_type=AlarmLog.ALARM_EXCEED_LIMIT, meter__dtu__region__manufacturer_id=man_id) \
+        .count()
+    return num
+
+
+def get_valve_alarm_num_by_man_id(man_id):
+    num = AlarmLog.objects.filter(alarm_type=AlarmLog.ALARM_VALVE_ERROR, meter__dtu__region__manufacturer_id=man_id) \
+        .count()
+    return num
+
+
+def get_sub_valve_alarm_num_by_dtu_user_id(dtu_user_id):
+
+    num = AlarmLog.objects.filter(alarm_type=AlarmLog.ALARM_SUB_VALVE, meter__dtu__user__id=dtu_user_id)\
+        .count()
+    return num
+
+
+def get_sensor_alarm_num_by_dtu_user_id(man_id):
+    num = AlarmLog.objects.filter(alarm_type=AlarmLog.ALARM_SENSOR_ERROR, meter__dtu__user__id=man_id) \
+        .count()
+    return num
+
+
+def get_exceed_alarm_num_by_dtu_user_id(man_id):
+    num = AlarmLog.objects.filter(alarm_type=AlarmLog.ALARM_EXCEED_LIMIT, meter__dtu__user__id=man_id) \
+        .count()
+    return num
+
+
+def get_valve_alarm_num_by_dtu_user_id(man_id):
+    num = AlarmLog.objects.filter(alarm_type=AlarmLog.ALARM_VALVE_ERROR, meter__dtu__user__id=man_id) \
+        .count()
+    return num
+
+
+
+
+
+
+
 
 
 

@@ -17,7 +17,7 @@ Including another URLconf
 from django.urls import path
 from django.urls import include
 from flowmeter.views import index
-from flowmeter.views import welcome
+from flowmeter.views import statistic
 from flowmeter.views import login
 from flowmeter.views import error
 from flowmeter.views import user
@@ -104,12 +104,18 @@ log_urlpatterns = [
     path('alarm/view/', log.alarm_log_view),
 ]
 
+statistic_urlpatterns = [
+    path('admin/', statistic.admin_statistic_view),
+    path('manufacturer/', statistic.manufacturer_statistic_view),
+    path('dtu_user/', statistic.dtu_user_statistic_view),
+]
+
 # 视图路由
 urlpatterns = [
     path('handler/', include(handler_urlpatterns)),
     path('error/', include(error_urlpatterns)),
     path('index/', index.index_view),
-    path('welcome/', welcome.welcome_view),
+    path('statistic/', include(statistic_urlpatterns)),
     path('websocket/', websocket.link_view),
     path('login/', login.login_view),
     path('admin/', include(admin_urlpatterns)),

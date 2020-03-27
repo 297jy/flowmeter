@@ -202,3 +202,13 @@ def get_valve_dtu_and_address(meter_id):
 
     meter = Meter.objects.values('valve__dtu__dtu_no', 'valve__address').get(id=meter_id)
     return meter['valve__dtu__dtu_no'], meter['valve__address']
+
+
+def get_total_meter_num_by_man_id(man_id):
+    num = Meter.objects.filter(dtu__region__manufacturer__id=man_id).count()
+    return num
+
+
+def get_total_meter_num_by_dtu_user_id(dtu_user_id):
+    num = Meter.objects.filter(dtu__user__id=dtu_user_id).count()
+    return num

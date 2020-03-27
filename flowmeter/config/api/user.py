@@ -1,20 +1,16 @@
 # coding=utf-8
 
-import copy
 import datetime
-from django.db import models
-from django.db.models import Q
-from django.db import transaction
-from django.db.utils import IntegrityError
 
+from django.db.models import Count
+from django.db.utils import IntegrityError
 from flowmeter.common.const import RoleType
-from flowmeter.config.db import user_table
 from flowmeter.config.db.user_table import User
+from flowmeter.config.db.dtu_table import Dtu
 from flowmeter.config.core import user as user_core
 from flowmeter.config.api import role as role_api
 from flowmeter.common.api.validators import StrCheck, WhiteListCheck, IntCheck, ListCheck
 from flowmeter.common.api.validators import param_check
-from flowmeter.common import const
 from flowmeter.exceptions import NotUniqueException
 
 
@@ -40,6 +36,21 @@ def get_users(filters=None, page=None):
     return users
 
 
+def get_admin_num():
+    admin_num = User.objects.filter(role=RoleType.ADMIN).count()
+    return admin_num
+
+
+def get_manufacturer_num():
+    manufacturer_num = User.objects.filter(role=RoleType.MANUFACTURER).count()
+    return manufacturer_num
+
+
+def get_dtu_user_num():
+    dtu_num = User.objects.filter(role=RoleType.DTU_USER).count()
+    return dtu_num
+
+
 def get_all_admin_ids():
     ids = User.objects.values('id').filter(role=RoleType.ADMIN)
 
@@ -58,6 +69,13 @@ def get_user_by_name(name):
     user = user_core.get_user({"name": name})
 
     return user
+
+
+def get_dtu_user_num_by_man_id(man_id):
+
+    num = Dtu.objects.filter(region__manufacturer__id=man_id).aggregate(Count('user'))
+
+    return num['user__count']
 
 
 def get_user_by_phone(phone):

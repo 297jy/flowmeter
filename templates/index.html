@@ -14,7 +14,7 @@
     <!-- <link rel="stylesheet" href="./css/theme5.css"> -->
     <script src="/static/lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="/static/js/xadmin.js"></script>
-        <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.min.js"></script>
     <script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
     <script src="/static/js/flow-meter.js" charset="utf-8"></script>
     <!-- 让IE8/9支持媒体查询，从而兼容栅格 -->
@@ -68,7 +68,7 @@
                 <dd>
                     <a onclick="xadmin.open('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
                 <dd>
-                    <a href="./login.html">退出</a></dd>
+                    <a href="/logout">退出</a></dd>
             </dl>
         </li>
         <li class="layui-nav-item to-index">
@@ -119,7 +119,7 @@
     <div class="layui-tab tab" lay-filter="xbs_tab" lay-allowclose="false">
         <ul class="layui-tab-title">
             <li class="home">
-                <i class="layui-icon">&#xe68e;</i>我的桌面
+                <i class="layui-icon">&#xe68e;</i>首页
             </li>
         </ul>
         <div class="layui-unselect layui-form-select layui-form-selected" id="tab_right">
@@ -131,7 +131,15 @@
         </div>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe src='/welcome' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                {% if user.role ==  'admin' %}
+                    <iframe src='/statistic/admin/' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                {% endif %}
+                {% if user.role ==  'manufacturer' %}
+                    <iframe src='/statistic/manufacturer/' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                {% endif %}
+                {% if user.role ==  'dtu_user' %}
+                    <iframe src='/statistic/dtu_user/' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                {% endif %}
             </div>
         </div>
         <div id="tab_show"></div>
