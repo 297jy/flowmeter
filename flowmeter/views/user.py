@@ -250,7 +250,7 @@ class UserActionHandler(ActionHandlerBase):
         name = app_file_api.generate_excel_file_name()
         filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
 
-        app_user_api.admin_export(param, filename)
+        app_user_api.admin_export(param['admin_ids'], filename)
 
         return Result.success(data=name)
 
@@ -260,7 +260,7 @@ class UserActionHandler(ActionHandlerBase):
         name = app_file_api.generate_excel_file_name()
         filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
 
-        app_user_api.dtu_user_export(param, filename)
+        app_user_api.dtu_user_export(param['dtu_user_ids'], filename)
 
         return Result.success(data=name)
 
@@ -270,7 +270,7 @@ class UserActionHandler(ActionHandlerBase):
         name = app_file_api.generate_excel_file_name()
         filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
 
-        app_user_api.manufacturer_export(param, filename)
+        app_user_api.manufacturer_export(param['man_ids'], filename)
 
         return Result.success(data=name)
 

@@ -119,6 +119,24 @@ def find_admins_by_query_terms(query_terms, page=None):
     return __find_users_by_query_terms(query_terms, page)
 
 
+def __find_user_by_ids(user_ids):
+
+    users = conf_user_api.find_user_by_ids(user_ids)
+    return transfer_user_obj_to_dict(users)
+
+
+def find_admins_by_ids(admin_ids):
+    return __find_user_by_ids(admin_ids)
+
+
+def find_manufacturers_by_ids(man_ids):
+    return __find_user_by_ids(man_ids)
+
+
+def find_dtu_users_by_ids(dtu_user_ids):
+    return __find_user_by_ids(dtu_user_ids)
+
+
 def __get_manufacturer_dtu_region(manufacturer_id):
     """
     获得每个供气商的dtu区间
@@ -354,31 +372,29 @@ def __user_export(user_dict_list, sheet_name, filename, excel_fields):
     excel.write(filename, sheet_name)
 
 
-def admin_export(query_terms, filename):
+def admin_export(admin_ids, filename):
     """
     将管理员导出到文件中
-    :param query_terms:
+    :param admin_ids:
     :param filename:
     :return:
     """
-    query_terms['role'] = const.RoleType.ADMIN
     prop_list = ['name', 'phone', 'email', 'state', 'remark', 'create_time']
     name_list = ['用户名', '联系电话', '邮箱', '状态', '备注', '创建时间']
     excel_fields = []
     for index in range(0, len(prop_list)):
         excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
-    admin_dicts = find_admins_by_query_terms(query_terms)
+    admin_dicts = find_admins_by_ids(admin_ids)
     __user_export(admin_dicts, '管理员列表', filename, excel_fields)
 
 
-def manufacturer_export(query_terms, filename):
+def manufacturer_export(man_ids, filename):
     """
     将厂商列表导出到文件中
-    :param query_terms:
+    :param man_ids:
     :param filename:
     :return:
     """
-    query_terms['role'] = const.RoleType.MANUFACTURER
     prop_list = ['name', 'phone', 'email', 'state', 'dtu_used_num', 'dtu_total_num', 'remark', 'create_time']
     name_list = ['供气商名称', '联系电话', '邮箱', '状态', 'DTU数量', 'DTU最大数量',  '备注', '创建时间']
 
@@ -386,24 +402,23 @@ def manufacturer_export(query_terms, filename):
     for index in range(0, len(prop_list)):
         excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
 
-    manufacturers = find_manufacturers_by_query_terms(query_terms)
+    manufacturers = find_manufacturers_by_ids(man_ids)
     __user_export(manufacturers, '供气商列表', filename, excel_fields)
     
 
-def dtu_user_export(query_terms, filename):
+def dtu_user_export(dtu_user_ids, filename):
     """
     将DTU用户导出到文件中
-    :param query_terms:
+    :param dtu_user_ids:
     :param filename:
     :return:
     """
-    query_terms['role'] = const.RoleType.DTU_USER
     prop_list = ['name', 'phone', 'email', 'state', 'remark', 'create_time']
     name_list = ['姓名', '联系电话', '邮箱', '状态', '备注', '创建时间']
     excel_fields = []
     for index in range(0, len(prop_list)):
         excel_fields.append(ExcelField.require_field(prop_list[index], name_list[index]))
-    dtu_users = find_dtu_users_by_query_terms(query_terms)
+    dtu_users = find_dtu_users_by_ids(dtu_user_ids)
     __user_export(dtu_users, '用户列表', filename, excel_fields)
 
 

@@ -225,3 +225,8 @@ def check_name_unique(name):
     if not user_core.check_user_unique({'name': name}):
         raise NotUniqueException("名称：{}已存在！".format(name))
 
+
+def find_user_by_ids(user_ids):
+    users = User.objects.filter(id__in=user_ids)
+    return users
+

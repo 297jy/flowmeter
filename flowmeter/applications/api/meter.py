@@ -377,3 +377,11 @@ def update_valve_dtu(valve_info):
     param_check(valve_info, must_dict)
 
     conf_valve_api.update_valve(valve_info)
+
+
+def generate_report_table(meter_ids):
+    """
+    生成报表
+    :return:
+    """
+    conf_meter_api.find_meters()

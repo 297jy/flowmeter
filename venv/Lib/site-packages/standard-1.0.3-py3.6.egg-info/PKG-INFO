@@ -1,0 +1,79 @@
+Metadata-Version: 2.1
+Name: standard
+Version: 1.0.3
+Summary: Standard Library for Python
+Home-page: https://yoginth.gitlab.io
+Author: Yoginth
+Author-email: yoginth@zoho.com
+License: UNKNOWN
+Project-URL: Patreon, https://www.patreon.com/yoginth
+Project-URL: Source, https://gitlab.com/yoginth/standard
+Description: ## Standard
+        
+        > Standard Library for Python
+        
+        ## Screenshot
+        
+        <img src="https://gitlab.com/yoginth/standard/raw/master/Screenshot.png" width="550">
+        
+        ## Inspired by
+        
+        - [CS50 Library](https://github.com/cs50/python-cs50)
+        
+        ## Install
+        
+        ```
+        $ pip install standard
+        ```
+        
+        ## Usage
+        
+        ```python
+        import standard
+        # from standard import gets, getc, getf, geti
+        
+        string = standard.gets("Enter the String: ")
+        print(string)
+        
+        char = standard.getc("Enter the Character: ")
+        print(char)
+        
+        flo = standard.getf("Enter the Value: ")
+        print(flo)
+        
+        integer = standard.geti("Enter the Number: ")
+        print(integer)
+        ```
+        
+        ## Get Help
+        
+        There are few ways to get help:
+        
+         1. Please [post questions on Stack Overflow](https://stackoverflow.com/questions/ask). You can open issues with questions, as long you add a link to your Stack Overflow question.
+        
+         2. For bug reports and feature requests, open issues.
+        
+         3. For direct and quick help, you can [email me](mailto://yoginth@zoho.com).
+        
+        ## How to contribute
+        Have an idea? Found a bug? See [how to contribute][contributing].
+        
+        Thanks!
+        
+        ## License
+        
+        [MIT][license]
+        
+        [LICENSE]: https://yoginth.mit-license.org/
+        [contributing]: /CONTRIBUTING.md
+        
+Keywords: standard
+Platform: UNKNOWN
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 3
+Classifier: Natural Language :: English
+Classifier: Environment :: Plugins
+Classifier: Operating System :: OS Independent
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Description-Content-Type: text/markdown

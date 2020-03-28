@@ -178,15 +178,14 @@
             //头工具栏事件
             table.on('toolbar(dtu_user)',
                 function (obj) {
-                    var checkStatus = table.checkStatus(obj.config.id);
+                    let checkStatus = table.checkStatus('dtu_user');
+                    let ids = [];
+                    for (let i = 0; i < checkStatus.data.length; i++) {
+                        ids.push(checkStatus.data[i].id);
+                    }
                     switch (obj.event) {
                         case 'del_batch':
                             layer.confirm('确认要删除吗？', function (index) {
-                                let checkStatus = table.checkStatus('dtu_user');
-                                let ids = [];
-                                for (let i = 0; i < checkStatus.data.length; i++) {
-                                    ids.push(checkStatus.data[i].id);
-                                }
                                 post({
                                     "param": JSON.stringify({'dtu_user_ids': ids}),
                                     "action": "del_batch_dtu_user"
@@ -202,11 +201,7 @@
                             break;
                         case 'export':
                             post({
-                                "param": JSON.stringify({
-                                    "begin_time": $("#begin_time").val(),
-                                    "end_time": $("#end_time").val(),
-                                    "query_box": $("#query_box").val(),
-                                }),
+                                "param": JSON.stringify({'dtu_user_ids': ids}),
                                 "action": "export_dtu_user"
                             }, '/handler/dtu_user/', function (res) {
                                 if (!res.success) {

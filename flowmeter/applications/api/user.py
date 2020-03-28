@@ -332,37 +332,37 @@ def check_name_unique(name):
     return True
 
 
-def admin_export(query_terms, filename):
+def admin_export(admin_ids, filename):
     """
     将管理员导出到文件中
-    :param query_terms:
+    :param admin_ids:
     :param filename:
     :return:
     """
     StrCheck.check_not_null(filename)
-    user_core.admin_export(query_terms, filename)
+    user_core.admin_export(admin_ids, filename)
 
 
-def manufacturer_export(query_terms, filename):
+def manufacturer_export(man_ids, filename):
     """
     将厂商列表导出到文件中
-    :param query_terms:
+    :param man_ids:
     :param filename:
     :return:
     """
     StrCheck.check_not_null(filename)
-    user_core.manufacturer_export(query_terms, filename)
+    user_core.manufacturer_export(man_ids, filename)
 
 
-def dtu_user_export(query_terms, filename):
+def dtu_user_export(dtu_user_ids, filename):
     """
     将DTU用户导出到文件中
-    :param query_terms:
+    :param dtu_user_ids:
     :param filename:
     :return:
     """
     StrCheck.check_not_null(filename)
-    user_core.dtu_user_export(query_terms, filename)
+    user_core.dtu_user_export(dtu_user_ids, filename)
 
 
 def admin_import(filename):
