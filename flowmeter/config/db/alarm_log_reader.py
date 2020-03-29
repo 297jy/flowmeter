@@ -18,7 +18,8 @@ class AlarmLogReader(models.Model):
     # 警报状态
     state = models.CharField(max_length=STATE_CHAR_LEN, default=STATE_UNREAD)
     alarm_log = models.ForeignKey(AlarmLog, on_delete=models.CASCADE)
-    unique_flag = models.CharField(max_length=UNIQUE_FLAG_CHAR_LEN, unique=True)
+    # 判断警报是否重复推送的标志
+    unique_flag = models.CharField(max_length=UNIQUE_FLAG_CHAR_LEN)
 
     class Meta:
         # 创建状态索引

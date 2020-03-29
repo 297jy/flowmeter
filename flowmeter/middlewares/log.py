@@ -1,14 +1,10 @@
 # coding=utf-8
+
 import datetime
 import json
-import re
-from django.http import HttpResponse
-from django.shortcuts import redirect
 from django.utils.deprecation import MiddlewareMixin
 from flowmeter.common.api import request as request_api
 from flowmeter.config.db.log_table import SystemLog
-from flowmeter.views.common import Result
-from flowmeter.applications.api.auth import is_action_allowed
 from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.applications.api import log as app_log_api
 
