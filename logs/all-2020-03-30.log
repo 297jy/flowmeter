@@ -1,0 +1,348 @@
+[2020-03-30 00:17:46,409] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-30 00:22:35,774] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-30 00:22:52,354] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:23:02,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:23:12,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:23:22,325] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:23:32,325] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:23:42,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:23:52,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:24:02,325] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:24:12,325] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:24:22,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:24:32,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:24:42,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:24:52,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:25:02,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:25:12,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:25:22,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:25:32,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:25:42,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:25:52,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:26:02,326] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:26:12,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:26:22,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:26:32,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:26:42,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:26:52,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:27:02,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:27:12,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:27:22,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:27:32,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:27:42,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:27:52,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:28:02,327] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:28:12,328] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:28:22,328] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:28:32,328] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:28:42,328] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:28:52,328] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:29:02,328] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:29:12,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:29:22,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:29:32,328] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:29:42,328] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:29:52,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:30:02,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:30:12,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:30:22,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:30:32,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:30:42,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:30:52,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:31:02,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:31:12,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:31:22,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:31:32,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:31:42,329] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:31:52,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:32:02,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:32:12,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:32:22,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:32:32,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:32:42,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:32:52,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:33:02,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:33:12,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:33:22,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:33:32,330] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:33:42,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:33:52,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:34:02,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:34:12,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:34:22,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:34:32,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:34:42,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:34:52,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:35:02,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:35:12,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:35:22,331] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:35:32,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:35:42,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:35:52,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:36:02,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:36:12,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:36:22,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:36:32,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:36:42,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:36:52,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:37:02,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:37:12,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:37:22,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:37:32,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:37:42,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:37:52,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:38:02,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:38:12,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:38:22,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:38:32,332] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:38:42,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:38:52,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:39:02,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:39:12,334] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:39:22,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:39:32,336] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:39:42,334] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:39:52,334] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:40:02,334] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:40:12,333] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:40:22,334] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:40:32,334] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:40:42,334] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:40:51,676] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-30 00:40:52,341] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:41:02,336] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:41:12,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:41:22,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:41:32,338] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:41:42,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:41:52,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:42:02,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:42:12,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:42:22,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:42:32,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:42:42,335] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:42:52,336] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:43:02,336] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:43:12,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:43:22,340] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:43:32,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:43:42,338] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:43:52,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:44:02,336] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:44:12,336] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:44:22,336] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:44:32,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:44:42,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:44:52,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:45:02,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:45:12,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:45:22,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:45:32,336] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:45:42,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:45:52,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:46:02,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:46:12,336] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:46:22,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:46:32,338] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:46:42,338] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:46:52,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:47:02,338] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:47:12,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:47:22,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:47:32,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:47:42,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:47:52,338] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:48:02,337] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:48:12,338] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:48:22,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:48:32,338] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:48:42,340] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:48:52,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:49:02,342] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:49:12,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:49:22,339] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:49:32,341] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:50:03,493] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:50:03,598] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:50:03,660] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:50:12,341] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:50:22,342] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:50:32,344] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:50:42,341] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:50:52,341] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {}
+[2020-03-30 00:51:07,938] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:51:17,928] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:51:27,929] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:51:37,927] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:51:47,927] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:51:57,932] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:52:07,932] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:52:17,930] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:52:27,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:52:37,928] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:52:47,929] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:52:57,928] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:53:07,929] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:53:17,929] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:53:27,930] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:53:37,929] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:53:47,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:53:57,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:54:07,930] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:54:17,930] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:54:27,930] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:54:37,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:54:47,930] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:54:57,930] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:55:07,930] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:55:17,930] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:55:27,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:55:37,932] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:55:47,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:55:57,933] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:56:07,934] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:56:17,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:56:27,932] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:56:37,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:56:47,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:56:57,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:57:07,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:57:17,931] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:57:27,932] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:57:37,932] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:57:47,932] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 00:57:57,932] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,600] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,612] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,622] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,632] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,641] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,650] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,661] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,670] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,679] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,689] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,701] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,710] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,721] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,730] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,739] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,748] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,759] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:08,768] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:18,863] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:28,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:38,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:48,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:01:58,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:02:08,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:02:18,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:02:28,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:02:38,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:02:41,592] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\user.py changed, reloading.
+[2020-03-30 01:02:42,400] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-30 01:02:48,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:02:55,430] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 302 0
+[2020-03-30 01:02:55,439] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-03-30 01:02:58,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:02:59,007] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-03-30 01:02:59,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 96
+[2020-03-30 01:03:00,292] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 13562
+[2020-03-30 01:03:00,339] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/admin/ HTTP/1.1" 200 3937
+[2020-03-30 01:03:00,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10249
+[2020-03-30 01:03:00,350] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11027
+[2020-03-30 01:03:00,352] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10316
+[2020-03-30 01:03:00,361] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-30 01:03:00,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8838
+[2020-03-30 01:03:00,364] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19332
+[2020-03-30 01:03:00,371] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-03-30 01:03:00,373] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /role/view/ HTTP/1.1" 200 4075
+[2020-03-30 01:03:00,617] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-30 01:03:00,627] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-30 01:03:00,637] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-30 01:03:00,648] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 200 239
+[2020-03-30 01:03:00,663] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 1235
+[2020-03-30 01:03:00,669] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-30 01:03:00,669] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-30 01:03:00,670] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-30 01:03:00,671] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-30 01:03:00,683] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-30 01:03:00,714] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-30 01:03:00,733] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 948
+[2020-03-30 01:03:00,740] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-30 01:03:00,751] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-30 01:03:00,750] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:03:00,753] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 1056
+[2020-03-30 01:03:00,757] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/auth/?action=query_role&page=1&limit=10 HTTP/1.1" 200 294
+[2020-03-30 01:03:00,759] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-30 01:03:00,763] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 474
+[2020-03-30 01:03:00,764] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-30 01:03:00,782] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 846
+[2020-03-30 01:03:00,789] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-30 01:03:00,808] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 147
+[2020-03-30 01:03:02,208] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10249
+[2020-03-30 01:03:02,261] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-30 01:03:02,268] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:03:02,270] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 147
+[2020-03-30 01:03:08,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:03:18,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:03:28,857] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:03:38,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:03:48,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:03:58,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:04:08,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:04:11,616] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\celery_task\api\twelve_fixed_task.py changed, reloading.
+[2020-03-30 01:04:12,457] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-30 01:04:13,605] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 13562
+[2020-03-30 01:04:13,663] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/admin/ HTTP/1.1" 200 3937
+[2020-03-30 01:04:13,677] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10249
+[2020-03-30 01:04:13,681] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /manufacturer/view/ HTTP/1.1" 200 11027
+[2020-03-30 01:04:13,685] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_user/view/ HTTP/1.1" 200 10316
+[2020-03-30 01:04:13,690] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu_region/view/ HTTP/1.1" 200 6896
+[2020-03-30 01:04:13,694] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 8838
+[2020-03-30 01:04:13,698] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19332
+[2020-03-30 01:04:13,702] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-03-30 01:04:13,706] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /role/view/ HTTP/1.1" 200 4075
+[2020-03-30 01:04:13,930] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-30 01:04:13,945] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-30 01:04:13,958] [twelve_fixed_task.py:37] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:04:13,961] [twelve_fixed_task.py:40] [twelve_fixed_task:statistic_meter_data] [INFO]- yes
+[2020-03-30 01:04:13,963] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-30 01:04:13,972] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 422
+[2020-03-30 01:04:13,978] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?action=query_dtu_user&page=1&limit=10 HTTP/1.1" 200 239
+[2020-03-30 01:04:13,984] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?action=query_manufacturer&page=1&limit=10 HTTP/1.1" 200 1235
+[2020-03-30 01:04:13,983] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-03-30 01:04:14,000] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_role
+[2020-03-30 01:04:14,003] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-30 01:04:14,016] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/auth/?action=query_role&page=1&limit=10 HTTP/1.1" 200 294
+[2020-03-30 01:04:14,024] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 1056
+[2020-03-30 01:04:14,039] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-30 01:04:14,038] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-03-30 01:04:14,042] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_region
+[2020-03-30 01:04:14,047] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user
+[2020-03-30 01:04:14,047] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu
+[2020-03-30 01:04:14,059] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_manufacturer
+[2020-03-30 01:04:14,070] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user HTTP/1.1" 200 239
+[2020-03-30 01:04:14,076] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 846
+[2020-03-30 01:04:14,095] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 948
+[2020-03-30 01:04:14,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_region/?action=query_dtu_region&page=1&limit=10 HTTP/1.1" 200 474
+[2020-03-30 01:04:14,098] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/manufacturer/?param=%7B%7D&action=query_manufacturer HTTP/1.1" 200 1235
+[2020-03-30 01:04:15,401] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /admin/view/ HTTP/1.1" 200 10249
+[2020-03-30 01:04:15,452] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_admin
+[2020-03-30 01:04:15,458] [twelve_fixed_task.py:37] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:04:15,459] [twelve_fixed_task.py:40] [twelve_fixed_task:statistic_meter_data] [INFO]- yes
+[2020-03-30 01:04:15,460] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/admin/?action=query_admin&page=1&limit=10 HTTP/1.1" 200 422
+[2020-03-30 01:04:18,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:04:28,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:04:38,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:04:48,131] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\user.py changed, reloading.
+[2020-03-30 01:04:48,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:04:48,966] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-30 01:04:58,785] [autoreload.py:203] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\applications\api\user.py changed, reloading.
+[2020-03-30 01:04:58,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:04:59,663] [autoreload.py:578] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2020-03-30 01:05:08,879] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:05:18,858] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:05:28,859] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:05:38,859] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}
+[2020-03-30 01:05:48,859] [twelve_fixed_task.py:36] [twelve_fixed_task:statistic_meter_data] [INFO]- {11: [1000.0, 1200.0]}

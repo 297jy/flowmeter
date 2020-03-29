@@ -1,5 +1,5 @@
 # coding=utf-8
-
+import datetime
 import json
 
 
@@ -155,3 +155,14 @@ def transfer_obj_to_dict(objs, attribute_list, display_fun):
 
         dicts.append(obj_dict)
     return dicts
+
+
+def get_before_date(days):
+    """
+    获取几天前的日期
+    :return:
+    """
+    now_date = datetime.datetime.now()
+    week_begin = now_date - datetime.timedelta(days=days)
+    before_date = week_begin.date()
+    return before_date

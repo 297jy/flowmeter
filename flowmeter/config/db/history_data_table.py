@@ -10,6 +10,6 @@ class MeterHistoryData(models.Model):
     """
     meter = models.ForeignKey(Meter, on_delete=models.CASCADE)
     # 记录的数据
-    data = models.CharField(max_length=DATA_CHAR_LEN)
+    data = models.FloatField(max_length=DATA_CHAR_LEN)
     # 记录的日期
-    time = models.DateField()
+    time = models.DateField(db_index=True)

@@ -272,3 +272,28 @@ CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
 CELERY_ACCEPT_CONTENT = ['application/json', ]
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
+
+
+# 导入任务所在文件
+CELERY_IMPORTS = (
+    'flowmeter.celery_task.api.twelve_fixed_task',
+)
+
+# 需要执行任务的配置
+CELERYBEAT_SCHEDULE = {
+    'clean_junk_file': {
+        # 具体需要执行的函数
+        # 该函数必须要使用@app.task装饰
+        'task': 'flowmeter.celery_task.api.twelve_fixed_task.clean_junk_file',
+        # 定时时间
+        # 每分钟执行一次，不能为小数
+        'schedule': crontab(minute='*/1'),
+        'args': ()
+    },
+    'statistic_meter_data': {
+        'task': 'flowmeter.celery_task.api.twelve_fixed_task.statistic_meter_data',
+        # 设置定时的时间，10秒一次
+        'schedule': timedelta(seconds=10),
+        'args': ()
+    }
+}

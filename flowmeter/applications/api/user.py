@@ -346,7 +346,6 @@ def admin_export(admin_ids, filename):
 def manufacturer_export(man_ids, filename):
     """
     将厂商列表导出到文件中
-    :param man_ids:
     :param filename:
     :return:
     """
