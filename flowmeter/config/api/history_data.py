@@ -1,10 +1,12 @@
 # coding=utf-8
 
 import datetime
+import json
 
 from flowmeter.common.api.validators import param_check
 from flowmeter.common.common import get_before_date
 from flowmeter.config.db.history_data_table import MeterHistoryData
+from flowmeter.config.api import cache as conf_cache_api
 
 
 def add_meter_history_data(data_info):
@@ -35,3 +37,11 @@ def find_recent_week_all_meters_history_data():
 
     return res
 
+
+def get_meter_recent_week_data(meter_id):
+
+    data_str = conf_cache_api.get_hash('statistic', meter_id)
+    if data_str:
+        return json.loads(data_str)
+    else:
+        return [i - i for i in range(0, 7)]

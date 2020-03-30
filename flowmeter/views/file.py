@@ -36,7 +36,8 @@ class FileActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
         name = param.get('filename')
-        filename = os.path.join(TMP_FILE_DIRECTORY_PATH, name)
+        filename = os.path.split(name)[1]
+        filename = os.path.join(TMP_FILE_DIRECTORY_PATH, filename)
 
         file = app_file_api.read_binary_file(filename)
         return Result.success(data={"file": file, "filename": name}, data_type=Result.FILE_DATA_TYPE)

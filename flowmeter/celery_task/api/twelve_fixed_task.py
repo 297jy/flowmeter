@@ -9,6 +9,7 @@ from flowmeter.celery import app
 from flowmeter.config.api import history_data as conf_history_api
 from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.celery_task.core import twelve_fixed_task as core
+from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
 
 import logging
 logger = logging.getLogger('log')
@@ -20,10 +21,9 @@ def clean_junk_file():
     清除垃圾文件定时任务
     :return:
     """
-    tmp_dir = '/project/python/flowmeter/file/tmp'
-    filelist = os.listdir(tmp_dir)
+    filelist = os.listdir(TMP_FILE_DIRECTORY_PATH)
     for f in filelist:
-        filepath = os.path.join(tmp_dir, f)
+        filepath = os.path.join(TMP_FILE_DIRECTORY_PATH, f)
         os.remove(filepath)
 
 

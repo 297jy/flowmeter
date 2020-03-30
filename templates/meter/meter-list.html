@@ -80,6 +80,9 @@
     <button class="layui-btn" onclick="xadmin.open('添加DTU','/meter/add/',700,650)">
         <i class="layui-icon"></i>添加
     </button>
+    <button class="layui-btn" lay-event="generate_report">
+        生成报表
+    </button>
     <button class="layui-btn" lay-event="query_meter">
         查询
     </button>
@@ -201,14 +204,14 @@
             table.on('toolbar(meter)',
                 function (obj) {
                     let checkStatus = table.checkStatus('meter');
+                    let ids = [], state_ids = [];
+                    for (let i = 0; i < checkStatus.data.length; i++) {
+                        ids.push(checkStatus.data[i].id);
+                        state_ids.push(checkStatus.data[i].state_id);
+                    }
                     switch (obj.event) {
                         case 'del_batch':
                             layer.confirm('确认要删除吗？', function (index) {
-                                let ids = [], state_ids = [];
-                                for (let i = 0; i < checkStatus.data.length; i++) {
-                                    ids.push(checkStatus.data[i].id);
-                                    state_ids.push(checkStatus.data[i].state_id);
-                                }
                                 post({
                                     "param": JSON.stringify({'meter_ids': ids, 'state_ids': state_ids}),
                                     "action": "del_batch_meter"
@@ -222,7 +225,22 @@
                                 });
                             });
                             break;
-
+                        case 'generate_report':
+                                post({
+                                "param": JSON.stringify({'meter_ids': ids}),
+                                "action": "generate_report"
+                            }, '/handler/meter/', function (res) {
+                                if (!res.success) {
+                                    layer.msg(res.msg, {icon: 5, time: 3000});
+                                } else {
+                                    let param = JSON.stringify({
+                                        "filename": res.data,
+                                    });
+                                    let action = 'download_file';
+                                    window.open('/handler/file/?param=' + param + '&action=' + action);
+                                }
+                            });
+                            break;
                         case 'query_meter':
                             ids = [];
                             for (let i = 0; i < checkStatus.data.length; i++) {

@@ -3,6 +3,11 @@ import datetime
 import math
 
 from django.db.models import Q, F
+from reportlab.graphics.charts.lineplots import LinePlot
+from reportlab.graphics.charts.textlabels import Label
+from reportlab.graphics.shapes import Drawing
+from reportlab.graphics.widgets.markers import makeMarker
+from reportlab.pdfbase import pdfmetrics, ttfonts
 
 from flowmeter import settings
 from flowmeter.config.api import dtu as conf_dtu_api
@@ -15,6 +20,7 @@ from flowmeter.exceptions import ValueValidException
 from flowmeter.config.const import UNKNOWN_STATE, UNKNOWN_VALUE, VALVE_STATE_OPEN, VALVE_STATE_CLOSE, \
     RECHARGE_STATE_OPEN, RECHARGE_STATE_CLOSE, BATTERY_PRESSURE_STATE_NORMAL, VALVE_ERROR_FLAG_FALSE, OWE_STATE_FALSE, \
     SENSOR_ERROR_FLAG_FALSE
+from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
 
 
 def get_meter_filters(manufacturer_id, dtu_user_id, dtu_id):
@@ -145,3 +151,59 @@ def create_opr_log(opr_info):
     log = conf_log_api.add_opr_log(opr_info)
 
     return log
+
+
+def draw_recent_week_pdf(filename, data_list):
+    """
+    画最近七天的流量计报表
+    :param filename:
+    :param data_list
+    :return:
+    """
+    data = []
+    max_val = 0
+    for index in range(0, len(data_list)):
+        data.append((index + 1, data_list[index]))
+        max_val = max(max_val, data_list[index])
+
+    drawing = Drawing(500, 800)
+    lp = LinePlot()
+    lp.x = 50
+    lp.y = 80
+    lp.height = 600
+    lp.width = 400
+    lp.data = [data]
+    lp.joinedLines = 1
+    lp.lines.symbol = makeMarker('FilledCircle')
+    lp.xValueAxis.valueMin = 1
+    lp.xValueAxis.valueMax = 7
+    lp.xValueAxis.valueStep = 1
+    lp.yValueAxis.valueMin = 0
+    lp.yValueAxis.valueMax = (int(max_val / 100) + 1) * 100
+    lp.yValueAxis.valueStep = 100
+    drawing.add(lp)
+
+    x_title = Label()
+    # 若需要显示中文，需要先注册一个中文字体
+    pdfmetrics.registerFont(ttfonts.TTFont("haha", "simsun.ttc"))
+    x_title.fontName = "haha"
+    x_title.fontSize = 12
+    title_text = '用气量'
+    x_title._text = title_text
+    x_title.x = 20
+    x_title.y = 100
+    x_title.textAnchor = 'middle'
+    drawing.add(x_title)
+
+    y_title = Label()
+    # 若需要显示中文，需要先注册一个中文字体
+    pdfmetrics.registerFont(ttfonts.TTFont("haha", "simsun.ttc"))
+    y_title.fontName = "haha"
+    y_title.fontSize = 12
+    title_text = '最近七天'
+    y_title._text = title_text
+    y_title.x = 80
+    y_title.y = 50
+    y_title.textAnchor = 'middle'
+    drawing.add(y_title)
+    drawing.save(formats=['pdf'], outDir=TMP_FILE_DIRECTORY_PATH, fnRoot=filename)

@@ -1,10 +1,12 @@
 # coding=utf-8
 
 import datetime
+import os
 
 from flowmeter.applications.core import meter as core
 from flowmeter.applications.api import operator as app_opr_api
 from flowmeter.config.api import meter as conf_meter_api
+from flowmeter.config.api import history_data as conf_history_api
 from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.api import meter_state as conf_state_api
 from flowmeter.config.api import operator as conf_opr_api
@@ -17,6 +19,9 @@ from flowmeter.config.const import VALVE_STATE_OPEN, VALVE_STATE_CLOSE, RECHARGE
     STATE_ONLINE
 from django.db import transaction
 from flowmeter.config.db.meter_table import Meter
+from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
+from flowmeter.config.api import cache as conf_cache_api
+from flowmeter.common.api import file as common_file_api
 
 
 def find_meter_by_query_terms(query_terms, page=None):
@@ -384,4 +389,16 @@ def generate_report_table(meter_ids):
     生成报表
     :return:
     """
-    conf_meter_api.find_meters()
+    meter_infos = conf_meter_api.find_infos_by_meter_ids(meter_ids)
+
+    file_list = []
+    for meter_info in meter_infos:
+        filename = 'DTU编号：{}-物理地址：{}-报表.pdf'.format(meter_info['dtu_no'], meter_info['address'])
+        path = os.path.join(TMP_FILE_DIRECTORY_PATH, filename)
+        file_list.append(path)
+        data_list = conf_history_api.get_meter_recent_week_data(meter_info['meter_id'])
+        core.draw_recent_week_pdf(filename, data_list)
+
+    zipfile = common_file_api.compress_file(file_list)
+    return zipfile
+

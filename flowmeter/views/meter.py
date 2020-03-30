@@ -28,6 +28,7 @@ class MeterActionHandler(ActionHandlerBase):
             "recharge_meter": self.recharge_meter,
             "update_valve_address": self.update_valve_address,
             "update_valve_dtu": self.update_valve_dtu,
+            "generate_report": self.generate_report,
         }
         super().__init__(action_dict)
 
@@ -119,6 +120,12 @@ class MeterActionHandler(ActionHandlerBase):
         meter_info = request_api.get_param(request)
         app_meter_api.query_meter_data(meter_info, request_api.get_user(request))
         return Result.success()
+
+    def generate_report(self, request):
+
+        param = request_api.get_param(request)
+        filename = app_meter_api.generate_report_table(param['meter_ids'])
+        return Result.success(data=filename)
 
 
 @xframe_options_sameorigin
