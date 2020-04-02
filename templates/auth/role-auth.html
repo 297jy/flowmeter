@@ -49,12 +49,12 @@
                             <td>
                                 {% if role_auth.check_all %}
                                     <input type="checkbox" lay-skin="primary" lay-filter="father"
-                                           title="{{ role_auth.name }}" {% if name != 'admin' %}disabled{% endif %}
+                                           title="{{ role_auth.name }}" {% if name == 'admin' %}disabled{% endif %}
                                            checked>
                                 {% endif %}
                                 {% if not role_auth.check_all %}
                                     <input type="checkbox" lay-skin="primary" lay-filter="father"
-                                           title="{{ role_auth.name }}" {% if name != 'admin' %}disabled{% endif %}>
+                                           title="{{ role_auth.name }}" {% if name == 'admin' %}disabled{% endif %}>
                                 {% endif %}
                             </td>
                             <td>

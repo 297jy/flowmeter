@@ -607,3 +607,5 @@
 [2020-03-30 23:16:13,249] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：download_file
 [2020-03-30 23:18:20,420] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：generate_report
 [2020-03-30 23:19:41,141] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：generate_report
+[2020-03-30 23:21:33,083] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：generate_report
+[2020-03-30 23:21:33,577] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：download_file
