@@ -116,9 +116,7 @@ class LogActionHandler(ActionHandlerBase):
     def read_alarm_log(self, request):
 
         param = request_api.get_param(request)
-
         app_log_api.read_alarm_log(param['alarm_reader_id'])
-
         return Result.success()
 
 

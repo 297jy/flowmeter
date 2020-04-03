@@ -16,7 +16,7 @@ from flowmeter.common.api.validators import param_check
 from flowmeter.common.api.validators import StrCheck, WhiteListCheck
 from flowmeter.config.db.operator_table import Operator
 from flowmeter.config.const import VALVE_STATE_OPEN, VALVE_STATE_CLOSE, RECHARGE_STATE_OPEN, RECHARGE_STATE_CLOSE, \
-    STATE_ONLINE
+    STATE_ONLINE, UNKNOWN_VALUE, UNKNOWN_STATE
 from django.db import transaction
 from flowmeter.config.db.meter_table import Meter
 from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
@@ -56,9 +56,19 @@ def find_meter_state_by_id(state_id, user):
     state = core.get_meter_state_dict(state)
     state['online_state'] = "在线" if conf_dtu_api.get_dtu_online_state(dtu_no) == STATE_ONLINE else "离线"
     if 'valve_state' not in user['actions']:
-        state['valve_state'] = "开启" if state['valve_state'] == VALVE_STATE_OPEN else "关闭"
+        if state['valve_state'] == UNKNOWN_VALUE or state['valve_state'] == UNKNOWN_STATE:
+            state['valve_state'] = '未知'
+        elif state['valve_state'] == VALVE_STATE_OPEN:
+            state['valve_state'] = '开启'
+        else:
+            state['valve_state'] = "关闭"
     if 'recharge_state' not in user['actions']:
-        state['recharge_state'] = "开启" if state['recharge_state'] == RECHARGE_STATE_OPEN else "关闭"
+        if state['recharge_state'] == UNKNOWN_VALUE or state['recharge_state'] == UNKNOWN_STATE:
+            state['recharge_state'] = '未知'
+        elif state['recharge_state'] == RECHARGE_STATE_OPEN:
+            state['recharge_state'] = '开启'
+        else:
+            state['recharge_state'] = "关闭"
     return state
 
 

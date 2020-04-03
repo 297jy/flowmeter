@@ -52,8 +52,8 @@ class MeterActionHandler(ActionHandlerBase):
     def query_meter_state(self, request):
 
         param = request_api.get_param(request)
-
-        state = app_meter_api.find_meter_state_by_id(param['state_id'])
+        user = request_api.get_user(request)
+        state = app_meter_api.find_meter_state_by_id(param['state_id'], user)
 
         return Result.success(data=state)
 

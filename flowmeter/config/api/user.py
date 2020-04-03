@@ -246,5 +246,5 @@ def find_dtu_users_of_man(man_id):
 
 def find_dtu_users_of_admin():
     dtu_user_infos = User.objects.filter(role=RoleType.DTU_USER).values('id', 'phone', 'name')\
-        .distinct('id')
+        .distinct()
     return dtu_user_infos
