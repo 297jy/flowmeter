@@ -21,7 +21,7 @@ def add_valve(valve_info):
         valve = Valve.objects.create(**valve_info)
         return valve
     except IntegrityError:
-        raise ValueDuplicateException("该仪表已存在！")
+        raise ValueDuplicateException("该阀门已存在！")
 
 
 def del_batch_valve(valve_ids):

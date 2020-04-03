@@ -24,4 +24,10 @@ class Dtu(models.Model):
             "dtu_no": self.dtu_no,
         }
 
+    def keys(self):
+        return "id", "remark", "dtu_no"
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+
 

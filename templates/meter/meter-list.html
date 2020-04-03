@@ -41,17 +41,21 @@
             <div class="layui-card">
                 <div class="layui-card-body ">
                     <form class="layui-form layui-col-space5">
-
-                        <div class="layui-inline layui-show-xs-block" id="manufacturer_input">
-                            <select name="manufacturer_id" lay-search="" id="manufacturer" lay-filter="manufacturer">
-                                <option value="">供气商</option>
-                            </select>
-                        </div>
-                        <div class="layui-inline layui-show-xs-block" id="dtu_user_input">
-                            <select name="dtu_user_id" lay-search="" id="dtu_user" lay-filter="dtu_user">
-                                <option value="">DTU用户</option>
-                            </select>
-                        </div>
+                        {% if user.role == 'admin' %}
+                            <div class="layui-inline layui-show-xs-block" id="manufacturer_input">
+                                <select name="manufacturer_id" lay-search="" id="manufacturer"
+                                        lay-filter="manufacturer">
+                                    <option value="">供气商</option>
+                                </select>
+                            </div>
+                        {% endif %}
+                        {% if user.role == 'admin' or user.role == 'manufacturer' %}
+                            <div class="layui-inline layui-show-xs-block" id="dtu_user_input">
+                                <select name="dtu_user_id" lay-search="" id="dtu_user" lay-filter="dtu_user">
+                                    <option value="">DTU用户</option>
+                                </select>
+                            </div>
+                        {% endif %}
                         <div class="layui-inline layui-show-xs-block">
                             <select name="dtu_id" lay-search="" id="dtu">
                                 <option value="">DTU</option>
@@ -77,37 +81,47 @@
     <button class="layui-btn layui-btn-danger" lay-event="del_batch">
         <i class="layui-icon"></i>批量删除
     </button>
-    <button class="layui-btn" onclick="xadmin.open('添加DTU','/meter/add/',700,650)">
+    <button class="layui-btn" onclick="xadmin.open('添加流量计','/meter/add/',700,650)">
         <i class="layui-icon"></i>添加
     </button>
     <button class="layui-btn" lay-event="generate_report">
         生成报表
     </button>
-    <button class="layui-btn" lay-event="query_meter">
-        查询
-    </button>
-    <button class="layui-btn" lay-event="open_valve">
-        开阀
-    </button>
-    <button class="layui-btn" lay-event="close_valve">
-        关阀
-    </button>
-    <button class="layui-btn" lay-event="open_recharge">
-        打开预充值
-    </button>
-    <button class="layui-btn" lay-event="close_recharge">
-        关闭预充值
-    </button>
-    <button class="layui-btn" lay-event="reset_meter" style="margin-right: 20px">
-        重启仪表
-    </button>
-    <div class="layui-inline layui-show-xs-block">
-        <input type="text" name="query_box" placeholder="" autocomplete="off"
-               class="layui-input" id="money">
-    </div>
-    <button class="layui-btn" lay-event="recharge_meter">
-        充值
-    </button>
+    {% if 'query_meter_data' in user.actions %}
+        <button class="layui-btn" lay-event="query_meter">
+            查询
+        </button>
+    {% endif %}
+    {% if 'update_valve_state' in user.actions %}
+        <button class="layui-btn" lay-event="open_valve">
+            开阀
+        </button>
+        <button class="layui-btn" lay-event="close_valve">
+            关阀
+        </button>
+    {% endif %}
+    {% if 'update_recharge_state' in user.actions %}
+        <button class="layui-btn" lay-event="open_recharge">
+            打开预充值
+        </button>
+        <button class="layui-btn" lay-event="close_recharge">
+            关闭预充值
+        </button>
+    {% endif %}
+    {% if 'reset_meter' in user.actions %}
+        <button class="layui-btn" lay-event="reset_meter" style="margin-right: 20px">
+            重启仪表
+        </button>
+    {% endif %}
+    {% if 'recharge_meter' in user.actions %}
+        <div class="layui-inline layui-show-xs-block">
+            <input type="text" name="query_box" placeholder="" autocomplete="off"
+                   class="layui-input" id="money">
+        </div>
+        <button class="layui-btn" lay-event="recharge_meter">
+            充值
+        </button>
+    {% endif %}
 </script>
 <script>
     layui.use(['table', 'form', 'jquery', 'element', 'tree'],
@@ -226,7 +240,7 @@
                             });
                             break;
                         case 'generate_report':
-                                post({
+                            post({
                                 "param": JSON.stringify({'meter_ids': ids}),
                                 "action": "generate_report"
                             }, '/handler/meter/', function (res) {
@@ -369,20 +383,23 @@
                     return false;
                 });
 
-            get({
-                "param": JSON.stringify({}),
-                "action": "query_manufacturer"
-            }, '/handler/manufacturer/', function (res) {
-                if (!res.success) {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                } else {
-                    for (let i = 0; i < res.data.length; i++) {
-                        $("#manufacturer").append('<option value="' + res.data[i].id + '">'
-                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+            {% if user.role == 'admin' %}
+                get({
+                    "param": JSON.stringify({}),
+                    "action": "query_manufacturer"
+                }, '/handler/manufacturer/', function (res) {
+                    if (!res.success) {
+                        layer.msg(res.msg, {icon: 5, time: 1000});
+                    } else {
+                        for (let i = 0; i < res.data.length; i++) {
+                            $("#manufacturer").append('<option value="' + res.data[i].id + '">'
+                                + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                        }
+                        form.render('select');
                     }
-                    form.render('select');
-                }
-            });
+                });
+            {% endif %}
+
 
             form.on('select(manufacturer)', function () {
 
@@ -409,8 +426,25 @@
                     }
                 });
 
-
             });
+            {% if user.role == 'manufacturer' %}
+                get({
+                    "param": JSON.stringify({}),
+                    "action": "query_dtu_user_of_select_box"
+                }, '/handler/user/', function (res) {
+                    if (!res.success) {
+                        layer.msg(res.msg, {icon: 5, time: 1000});
+                    } else {
+
+                        for (let i = 0; i < res.data.length; i++) {
+                            $("#dtu_user").append('<option value="' + res.data[i].id + '">'
+                                + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                        }
+                        form.render('select');
+                    }
+                });
+            {% endif %}
+
 
             form.on('select(dtu_user)', function () {
 
@@ -437,15 +471,26 @@
                         form.render('select');
                     }
                 });
-
-
             });
+
+            {% if user.role == 'dtu_user' %}
+                get({
+                    "param": JSON.stringify({'user_id': {}}),
+                    "action": "query_dtu_of_select_box"
+                }, '/handler/dtu/', function (res) {
+                    if (!res.success) {
+                        layer.msg(res.msg, {icon: 5, time: 1000});
+                    } else {
+
+                        for (let i = 0; i < res.data.length; i++) {
+                            $("#dtu").append('<option value="' + res.data[i].id + '">' + res.data[i]['dtu_no'] + '</option>');
+                        }
+                        form.render('select');
+                    }
+                });
+            {% endif %}
 
         });
 </script>
-<script>var _hmt = _hmt || [];
-(function () {
-
-})();</script>
 
 </html>

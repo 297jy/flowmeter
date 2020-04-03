@@ -21,6 +21,3 @@ class Valve(models.Model):
     address = models.IntegerField(null=True)
     # 阀门控制器对应的仪表
     meter = models.OneToOneField(Meter, on_delete=models.CASCADE, null=True)
-
-    class Meta:
-        unique_together = (("dtu", "address"),)

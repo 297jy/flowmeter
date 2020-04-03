@@ -6,6 +6,7 @@ from django.db.models import Q
 from flowmeter import settings
 from flowmeter.common.api.excel import Excel, ExcelField
 from flowmeter.common.api.query import QueryTerms
+from flowmeter.common.const import RoleType
 from flowmeter.config.db.log_table import OprLog, SystemLog, AlarmLog
 from flowmeter.config.db.operator_table import Operator
 from flowmeter.config.api import log as conf_log_api
@@ -85,7 +86,7 @@ def __transfer_alarm_log_database_to_display(alarmlog_info):
     alarmlog_info['alarm_type'] = alarm_type_map[alarmlog_info['alarm_type']]
 
 
-def find_logs_by_query_terms(query_terms, page=None):
+def find_logs_by_query_terms(query_terms, user, page=None):
     name = query_terms.get('username')
     state = query_terms.get('state')
     opr_type = query_terms.get('opr_type')
@@ -97,13 +98,19 @@ def find_logs_by_query_terms(query_terms, page=None):
         end_time = datetime.datetime.strptime(end_time, '%Y-%m-%d')
 
     # 构造创建时间的查询条件
-    query_box = QueryTerms.make_and_query_terms(
-        opr_user__name__icontains=name,
-        state=state,
-        opr_type=opr_type,
-        opr_time__gte=begin_time,
-        opr_time__lte=end_time
-    )
+    term_info = {
+        'opr_user__name__icontains': name,
+        'state': state,
+        'opr_type': opr_type,
+        'opr_time__gte': begin_time,
+        'opr_time__lte': end_time,
+    }
+    if user['role'] == RoleType.MANUFACTURER:
+        term_info['meter__dtu__region__manufacturer__id'] = user['id']
+    elif user['role'] == RoleType.DTU_USER:
+        term_info['opr_user__id'] = user['id']
+
+    query_box = QueryTerms.make_and_query_terms(**term_info)
 
     logs = conf_log_api.find_opr_log(query_box.get_filters(), page)
 
@@ -111,7 +118,7 @@ def find_logs_by_query_terms(query_terms, page=None):
                                        'meter.dtu.dtu_no', 'meter.address'], __transfer_opr_log_database_to_display)
 
 
-def find_system_logs_by_query_terms(query_terms, page=None):
+def find_system_logs_by_query_terms(query_terms, user, page=None):
     query_box = query_terms.get('query_box')
     state = query_terms.get('state')
     begin_time = query_terms.get('begin_time')
@@ -122,11 +129,16 @@ def find_system_logs_by_query_terms(query_terms, page=None):
         end_time = datetime.datetime.strptime(end_time, '%Y-%m-%d')
 
     # 构造创建时间的查询条件
-    query_and = QueryTerms.make_and_query_terms(
-        state=state,
-        opr_time__gte=begin_time,
-        opr_time__lte=end_time
-    )
+    term_info = {
+        'state': state,
+        'opr_time__gte': begin_time,
+        'opr_time__lte': end_time,
+    }
+    if user['role'] != RoleType.ADMIN:
+        term_info['opr_user__id'] = user['id']
+
+    # 构造创建时间的查询条件
+    query_and = QueryTerms.make_and_query_terms(**term_info)
     query_or = QueryTerms.make_or_query_terms(
         action_type__icontains=query_box,
         opr_user__name__icontains=query_box,
@@ -138,7 +150,7 @@ def find_system_logs_by_query_terms(query_terms, page=None):
                                 __transfer_system_log_database_to_display)
 
 
-def find_alarm_logs_by_query_terms(query_terms, page=None):
+def find_alarm_logs_by_query_terms(query_terms, user, page=None):
     query_box = query_terms.get('query_box')
     state = query_terms.get('state')
     alarm_type = query_terms.get('alarm_type')
@@ -149,6 +161,17 @@ def find_alarm_logs_by_query_terms(query_terms, page=None):
     if end_time:
         end_time = datetime.datetime.strptime(end_time, '%Y-%m-%d')
 
+    term_info = {
+        'state': state,
+        'opr_time__gte': begin_time,
+        'opr_time__lte': end_time,
+        'alarm_type': alarm_type,
+    }
+    if user['role'] == RoleType.MANUFACTURER:
+        term_info['meter__dtu__region__manufacturer__id'] = user['id']
+    elif user['role'] == RoleType.DTU_USER:
+        term_info['meter__dtu__user__id'] = user['id']
+
     # 构造创建时间的查询条件
     query_or = QueryTerms.make_or_query_terms(
         meter__dtu__user__name__icontains=query_box,
@@ -156,12 +179,7 @@ def find_alarm_logs_by_query_terms(query_terms, page=None):
         meter__dtu__dtu_no__icontains=query_box,
         meter__address__icontains=query_box,
     )
-    query_and = QueryTerms.make_and_query_terms(
-        state=state,
-        opr_time__gte=begin_time,
-        opr_time__lte=end_time,
-        alarm_type=alarm_type,
-    )
+    query_and = QueryTerms.make_and_query_terms(**term_info)
 
     logs = conf_log_api.find_alarm_log(query_or.get_filters() & query_and.get_filters(), page)
 

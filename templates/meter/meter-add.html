@@ -26,17 +26,19 @@
     <div class="layui-row">
         <form class="layui-form">
             {% csrf_token %}
-            <div class="layui-form-item" id="manufacturer_input">
-                <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>供气商
-                </label>
-                <div class="layui-input-inline" style="width: 400px">
-                    <select name="manufacturer_id" lay-verify="required" lay-search="" id="manufacturer"
-                            lay-filter="manufacturer" required>
-                        <option value="">未选择</option>
-                    </select>
+            {% if user.role == 'admin' %}
+                <div class="layui-form-item" id="manufacturer_input">
+                    <label for="L_username" class="layui-form-label">
+                        <span class="x-red">*</span>供气商
+                    </label>
+                    <div class="layui-input-inline" style="width: 400px">
+                        <select name="manufacturer_id" lay-verify="required" lay-search="" id="manufacturer"
+                                lay-filter="manufacturer" required>
+                            <option value="">未选择</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
+            {% endif %}
 
             <div class="layui-form-item">
                 <label for="L_username" class="layui-form-label">
@@ -171,23 +173,27 @@
                         form.render();
                     }
                 });
+            });
 
+            {% if user.role != 'admin' %}
                 get({
                     "param": JSON.stringify({}),
-                    "action": "query_dtu_user"
-                }, '/handler/dtu_user/', function (res) {
+                    "action": "query_dtu_of_select_box"
+                }, '/handler/dtu/', function (res) {
                     if (!res.success) {
                         layer.msg(res.msg, {icon: 5, time: 1000});
                     } else {
+
+                        $("#dtu").children().remove();
+                        $("#dtu").append('<option value="">未选择</option>');
+
                         for (let i = 0; i < res.data.length; i++) {
-                            $("#dtu_user").append('<option value="' + res.data[i].id + '">'
-                                + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                            $("#dtu").append('<option value="' + res.data[i].id + '">' + res.data[i]['dtu_no'] + '(' + res.data[i]['remark'] + ')' + '</option>');
                         }
-                        form.render('select');
+                        form.render();
                     }
                 });
-
-            });
+            {% endif %}
 
             form.on('select(valve_type)', function () {
 
@@ -205,7 +211,6 @@
                     $("#valve_dtu_div").hide();
                 }
 
-
             });
 
             //监听提交
@@ -214,10 +219,10 @@
 
                     let obj = res.field;
                     delete obj['manufacturer_id'];
-                    if(obj['valve_address'] === ""){
+                    if (obj['valve_address'] === "") {
                         delete obj['valve_address']
                     }
-                    if(obj['valve_dtu_id'] === ""){
+                    if (obj['valve_dtu_id'] === "") {
                         delete obj['valve_dtu_id']
                     }
                     post({
@@ -241,45 +246,26 @@
                     return false;
                 });
 
-            get({
-                "param": JSON.stringify({}),
-                "action": "query_manufacturer"
-            }, '/handler/manufacturer/', function (res) {
-                if (!res.success) {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                } else {
-                    for (let i = 0; i < res.data.length; i++) {
-                        $("#manufacturer").append('<option value="' + res.data[i].id + '">'
-                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+            {% if user.role == 'admin' %}
+                get({
+                    "param": JSON.stringify({}),
+                    "action": "query_manufacturer"
+                }, '/handler/manufacturer/', function (res) {
+                    if (!res.success) {
+                        layer.msg(res.msg, {icon: 5, time: 1000});
+                    } else {
+                        for (let i = 0; i < res.data.length; i++) {
+                            $("#manufacturer").append('<option value="' + res.data[i].id + '">'
+                                + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                        }
+                        form.render('select');
                     }
-                    form.render('select');
-                }
-            });
-
+                });
+            {% endif %}
 
             get({
                 "param": JSON.stringify({}),
-                "action": "query_dtu_region"
-            }, '/handler/dtu_region/', function (res) {
-                if (!res.success) {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                } else {
-
-                    $("#dtu_region").children().remove();
-                    $("#dtu_region").append('<option value="">未选择</option>');
-
-                    for (let i = 0; i < res.data.length; i++) {
-                        let right = res.data[i].left + res.data[i]['total_num'];
-                        $("#dtu_region").append('<option value="' + res.data[i].id + '">' + res.data[i].left + ' -- ' + right + '</option>');
-                    }
-                    form.render();
-                }
-            });
-
-
-            get({
-                "param": JSON.stringify({}),
-                "action": "query_dtu"
+                "action": "query_dtu_of_select_box"
             }, '/handler/dtu/', function (res) {
                 if (!res.success) {
                     layer.msg(res.msg, {icon: 5, time: 1000});
@@ -296,12 +282,6 @@
 
         });
 </script>
-<script>var _hmt = _hmt || [];
-(function () {
-    var hm = document.createElement("script");
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();</script>
 </body>
 
 </html>

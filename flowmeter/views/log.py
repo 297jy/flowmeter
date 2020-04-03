@@ -36,8 +36,8 @@ class LogActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
         page = request_api.get_page(request)
-
-        logs = app_log_api.find_logs_by_query_terms(param, page)
+        user = request_api.get_user(request)
+        logs = app_log_api.find_logs_by_query_terms(param, user, page)
 
         return Result.success(data=logs, count=len(logs))
 
@@ -45,8 +45,8 @@ class LogActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
         page = request_api.get_page(request)
-
-        logs = app_log_api.find_system_logs_by_query_terms(param, page)
+        user = request_api.get_user(request)
+        logs = app_log_api.find_system_logs_by_query_terms(param, user, page)
 
         return Result.success(data=logs, count=len(logs))
 
@@ -54,8 +54,8 @@ class LogActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
         page = request_api.get_page(request)
-
-        logs = app_log_api.find_alarm_logs_by_query_terms(param, page)
+        user = request_api.get_user(request)
+        logs = app_log_api.find_alarm_logs_by_query_terms(param, user, page)
 
         return Result.success(data=logs, count=len(logs))
 

@@ -15,8 +15,9 @@ from flowmeter.applications.core import log as core
 from flowmeter.config.db.log_table import SystemLog
 
 
-def find_logs_by_query_terms(query_terms, page=None):
+def find_logs_by_query_terms(query_terms, user, page=None):
     """
+    :param user:
     :param page: 分页对象
     :param query_terms:
     :return: 查询到的操作日志列表
@@ -30,14 +31,14 @@ def find_logs_by_query_terms(query_terms, page=None):
         "opr_type": WhiteListCheck.check_opr_type,
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
-
-    logs = core.find_logs_by_query_terms(query_terms, page)
+    logs = core.find_logs_by_query_terms(query_terms, user, page)
 
     return logs
 
 
-def find_system_logs_by_query_terms(query_terms, page=None):
+def find_system_logs_by_query_terms(query_terms, user, page=None):
     """
+    :param user:
     :param page: 分页对象
     :param query_terms:
     :return: 查询到的系统日志列表
@@ -51,13 +52,14 @@ def find_system_logs_by_query_terms(query_terms, page=None):
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
 
-    logs = core.find_system_logs_by_query_terms(query_terms, page)
+    logs = core.find_system_logs_by_query_terms(query_terms, user, page)
 
     return logs
 
 
-def find_alarm_logs_by_query_terms(query_terms, page=None):
+def find_alarm_logs_by_query_terms(query_terms, user, page=None):
     """
+    :param user:
     :param page: 分页对象
     :param query_terms:
     :return: 查询到的警报日志列表
@@ -72,7 +74,7 @@ def find_alarm_logs_by_query_terms(query_terms, page=None):
     }
     param_check(query_terms, optional_dict=optional_dict)
 
-    logs = core.find_alarm_logs_by_query_terms(query_terms, page)
+    logs = core.find_alarm_logs_by_query_terms(query_terms, user, page)
 
     return logs
 

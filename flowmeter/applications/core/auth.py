@@ -98,6 +98,8 @@ def structure_nav_bars(nav_bars):
     :param nav_bars:
     :return:
     """
+    __FATHER_FLAG = -1
+
     # 父导航条
     nav_bar_list = []
     # 子导航条
@@ -105,7 +107,7 @@ def structure_nav_bars(nav_bars):
 
     for nav in nav_bars:
         # 找到所有父导航条
-        if nav.fid == -1:
+        if nav.fid == __FATHER_FLAG:
             nav_dict = nav.get_dict()
             nav_dict['childs'] = []
             nav_bar_list.append(nav_dict)
@@ -118,6 +120,11 @@ def structure_nav_bars(nav_bars):
             if f_nav['id'] == nav['fid']:
                 f_nav['childs'].append(nav)
                 break
+
+    # 删除不能出现的父导航栏
+    for fa_nav in nav_bar_list:
+        if not fa_nav.get('url') and len(fa_nav.get('childs', [])) == 0:
+            nav_bar_list.remove(fa_nav)
 
     nav_bar_list = sorted(nav_bar_list, key=itemgetter('order'))
     for nav_bar in nav_bar_list:

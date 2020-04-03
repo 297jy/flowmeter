@@ -37,7 +37,7 @@ class MeterActionHandler(ActionHandlerBase):
         param = request_api.get_param(request)
         page = request_api.get_page(request)
 
-        meters = app_meter_api.find_meter_by_query_terms(param, page)
+        meters = app_meter_api.find_meter_by_query_terms(param, request_api.get_user(request), page)
 
         return Result.success(data=meters, count=len(meters))
 
@@ -130,8 +130,7 @@ class MeterActionHandler(ActionHandlerBase):
 
 @xframe_options_sameorigin
 def meter_view(request):
-
-    return render(request, 'meter/meter-list.html', {})
+    return render(request, 'meter/meter-list.html', {'user': request_api.get_user(request)})
 
 
 @xframe_options_sameorigin

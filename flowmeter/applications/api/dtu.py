@@ -95,8 +95,9 @@ def del_batch_dtu(dtu_ids):
 def query_dtu_of_select_box(user):
     if user['role'] == RoleType.MANUFACTURER:
         dtus = conf_dtu_api.find_dtus_of_select_box_by_man_id(user['id'])
-    else:
+    elif user['role'] == RoleType.ADMIN:
         dtus = conf_dtu_api.find_all_dtus_of_select()
-
+    else:
+        dtus = conf_dtu_api.find_dtus_of_select_box_by_user_id(user['id'])
     return dtus
 

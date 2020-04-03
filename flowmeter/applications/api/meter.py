@@ -24,7 +24,7 @@ from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.common.api import file as common_file_api
 
 
-def find_meter_by_query_terms(query_terms, page=None):
+def find_meter_by_query_terms(query_terms, user, page=None):
     """
     查找仪表
     """
@@ -38,7 +38,7 @@ def find_meter_by_query_terms(query_terms, page=None):
     param_check(query_terms, optional_dict=optional_dict)
 
     filters = core.get_meter_filters(query_terms.get('manufacturer_id'), query_terms.get('dtu_user_id'),
-                                     query_terms.get('dtu_id'))
+                                     query_terms.get('dtu_id'), user)
 
     meters = conf_meter_api.find_meters(filters, page)
 
@@ -49,13 +49,16 @@ def find_meter_by_query_terms(query_terms, page=None):
     return meter_dicts
 
 
-def find_meter_state_by_id(state_id):
+def find_meter_state_by_id(state_id, user):
 
     dtu_no = conf_state_api.get_dtu_no_by_state_id(state_id)
     state = conf_state_api.find_meter_state_by_id(state_id)
     state = core.get_meter_state_dict(state)
     state['online_state'] = "在线" if conf_dtu_api.get_dtu_online_state(dtu_no) == STATE_ONLINE else "离线"
-
+    if 'valve_state' not in user['actions']:
+        state['valve_state'] = "开启" if state['valve_state'] == VALVE_STATE_OPEN else "关闭"
+    if 'recharge_state' not in user['actions']:
+        state['recharge_state'] = "开启" if state['recharge_state'] == RECHARGE_STATE_OPEN else "关闭"
     return state
 
 

@@ -10,6 +10,7 @@ from reportlab.graphics.widgets.markers import makeMarker
 from reportlab.pdfbase import pdfmetrics, ttfonts
 
 from flowmeter import settings
+from flowmeter.common.const import RoleType
 from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.db.valve_table import Valve
 from flowmeter.config.db.operator_table import Operator
@@ -23,7 +24,7 @@ from flowmeter.config.const import UNKNOWN_STATE, UNKNOWN_VALUE, VALVE_STATE_OPE
 from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
 
 
-def get_meter_filters(manufacturer_id, dtu_user_id, dtu_id):
+def get_meter_filters(manufacturer_id, dtu_user_id, dtu_id, user):
     filters = Q()
     if manufacturer_id is not None:
         filters &= Q(dtu__region__manufacturer__id=manufacturer_id)
@@ -31,6 +32,11 @@ def get_meter_filters(manufacturer_id, dtu_user_id, dtu_id):
         filters &= Q(dtu__id=dtu_id)
     if dtu_user_id is not None:
         filters &= Q(dtu__user__id=dtu_user_id)
+
+    if user['role'] == RoleType.DTU_USER:
+        filters &= Q(dtu__user__id=user['id'])
+    elif user['role'] == RoleType.MANUFACTURER:
+        filters &= Q(dtu__region__manufacturer__id=user['id'])
 
     return filters
 

@@ -94,12 +94,16 @@
                     阀门状态
                 </label>
                 <div class="layui-input-inline" id="valve_state_div">
-                    <select name="valve_state" id="valve_state"
-                            lay-filter="valve_state">
-                        <option value="">未知</option>
-                        <option value="1">开启</option>
-                        <option value="0">关闭</option>
-                    </select>
+                    {% if 'update_valve_state' in user.actions %}
+                        <select name="valve_state" id="valve_state"
+                                lay-filter="valve_state">
+                            <option value="">未知</option>
+                            <option value="1">开启</option>
+                            <option value="0">关闭</option>
+                        </select>
+                    {% else %}
+                        <input type="text" readonly id="valve_state" class="layui-input">
+                    {% endif %}
                 </div>
             </div>
 
@@ -108,12 +112,16 @@
                     预充值状态
                 </label>
                 <div class="layui-input-inline" id="recharge_state_div">
-                    <select name="recharge_state" id="recharge_state"
-                            lay-filter="recharge_state">
-                        <option value="">未知</option>
-                        <option value="1">开启</option>
-                        <option value="0">关闭</option>
-                    </select>
+                    {% if 'update_recharge_state' in user.actions %}
+                        <select name="recharge_state" id="recharge_state"
+                                lay-filter="recharge_state">
+                            <option value="">未知</option>
+                            <option value="1">开启</option>
+                            <option value="0">关闭</option>
+                        </select>
+                    {% else %}
+                        <input type="text" readonly id="recharge_state" class="layui-input">
+                    {% endif %}
                 </div>
             </div>
 
@@ -122,8 +130,12 @@
                     阀门控制器DTU
                 </label>
                 <div class="layui-input-inline">
-                    <select name="valve_dtu_id" lay-search="" id="valve_dtu" lay-filter="valve_dtu">
-                    </select>
+                    {% if 'update_valve_dtu' in user.actions %}
+                        <select name="valve_dtu_id" lay-search="" id="valve_dtu" lay-filter="valve_dtu">
+                        </select>
+                    {% else %}
+                        <input type="text" readonly id="valve_dtu" class="layui-input">
+                    {% endif %}
                 </div>
             </div>
 
@@ -132,8 +144,13 @@
                     阀门控制器物理地址
                 </label>
                 <div class="layui-input-inline">
-                    <input type="number" id="valve_address" name="valve_address"
-                           autocomplete="off" class="layui-input">
+                    {% if 'update_valve_address' in user.actions %}
+                        <input type="number" id="valve_address" name="valve_address"
+                               autocomplete="off" class="layui-input">
+                    {% else %}
+                        <input type="number" id="valve_address" name="valve_address"
+                               autocomplete="off" class="layui-input" readonly>
+                    {% endif %}
                 </div>
             </div>
 
@@ -237,7 +254,7 @@
                     });
                     return false;
                 }
-                );
+            );
 
             get({
                 "param": JSON.stringify({"state_id": {{id}}}),
@@ -255,7 +272,7 @@
                     let valve_dtu_val = res.data['valve_dtu'];
                     get({
                         "param": JSON.stringify({}),
-                        "action": "query_dtu"
+                        "action": "query_dtu_of_select_box"
                     }, '/handler/dtu/', function (res) {
                         if (!res.success) {
                             layer.msg(res.msg, {icon: 5, time: 1000});
