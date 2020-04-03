@@ -1,4 +1,5 @@
 # coding=utf-8
+from django.db.models import F
 
 from flowmeter.config.core import dtu_region as core
 from flowmeter.common.api.validators import param_check
@@ -90,3 +91,26 @@ def del_batch_region(region_ids):
     """
 
     core.del_batch_region(region_ids)
+
+
+def find_can_used_regions_by_man_id(man_id):
+    """
+    查找man_id对应的区间列表
+    :param man_id:
+    :return:
+    """
+    regions = DtuRegion.objects.filter(manufacturer__id=man_id, used_num__lte=F('right') - F('left') + 1)\
+        .values('id', 'left', 'right')
+    region_infos = []
+    for region in regions:
+        region_infos.append(dict(region))
+    return region_infos
+
+
+def find_all_can_used_regions():
+    regions = DtuRegion.objects.filter(used_num__lte=F('right') - F('left') + 1) \
+        .values('id', 'left', 'right')
+    region_infos = []
+    for region in regions:
+        region_infos.append(dict(region))
+    return region_infos

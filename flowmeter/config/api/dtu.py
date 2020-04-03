@@ -111,3 +111,15 @@ def get_dtu_online_state(dtu_no):
     return STATE_ONLINE if server.is_dtu_online(dtu_no) else STATE_OFFLINE
 
 
+def find_dtus_of_select_box_by_man_id(man_id):
+    dtus = Dtu.objects.filter(region__manufacturer__id=man_id).values('id', 'dtu_no', 'remark')
+    dtu_infos = [dict(dtu) for dtu in dtus]
+    return dtu_infos
+
+
+def find_all_dtus_of_select():
+    dtus = Dtu.objects.all().values('id', 'dtu_no', 'remark')
+    dtu_infos = [dict(dtu) for dtu in dtus]
+    return dtu_infos
+
+

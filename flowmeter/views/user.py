@@ -19,6 +19,7 @@ class UserActionHandler(ActionHandlerBase):
     def __init__(self):
 
         action_dict = {
+            'query_dtu_user_of_select_box': self.query_dtu_user_of_select_box,
             'query_admin': self.query_admin,
             'query_dtu_user': self.query_dtu_user,
             'query_manufacturer': self.query_manufacturer,
@@ -60,7 +61,6 @@ class UserActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
         page = request_api.get_page(request)
-
         dtu_users = app_user_api.find_dtu_users_by_query_terms(param, page)
 
         return Result.success(data=dtu_users, count=len(dtu_users))
@@ -78,7 +78,7 @@ class UserActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
 
-        dtu_users = app_user_api.find_dtu_user_by_man_id(param.get('man_id'))
+        dtu_users = app_user_api.find_dtu_users_by_man_id(param.get('man_id'))
 
         return Result.success(data=dtu_users, count=len(dtu_users))
 
@@ -273,6 +273,12 @@ class UserActionHandler(ActionHandlerBase):
         app_user_api.manufacturer_export(param['man_ids'], filename)
 
         return Result.success(data=name)
+
+    def query_dtu_user_of_select_box(self, request):
+
+        user = request_api.get_user(request)
+        dtu_users = app_user_api.find_dtu_users_of_select_box(user)
+        return Result.success(data=dtu_users)
 
 
 @xframe_options_sameorigin

@@ -1,6 +1,7 @@
 # coding=utf-8
 
 from flowmeter.applications.core import dtu_region as core
+from flowmeter.common.const import RoleType
 from flowmeter.config.api import dtu_region as conf_region_api
 from flowmeter.common.api.validators import param_check
 from flowmeter.exceptions import ParameterErrorException
@@ -85,4 +86,14 @@ def del_batch_region(region_ids):
         core.check_region_can_del(region_id)
 
     conf_region_api.del_batch_region(region_ids)
+
+
+def query_dtu_region_of_select_box(user):
+
+    if user['role'] == RoleType.MANUFACTURER:
+        dtu_regions = conf_region_api.find_can_used_regions_by_man_id(user['id'])
+    else:
+        dtu_regions = conf_region_api.find_all_can_used_regions()
+
+    return dtu_regions
 

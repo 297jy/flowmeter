@@ -16,7 +16,7 @@ class DataHandlerMiddleware(MiddlewareMixin):
         """
         if field_name in ['id', 'meter_id', 'address', 'valve_state', 'dtu_no', 'manufacturer_id', 'dtu_user_id',
                           'dtu_id', 'recharge_state', 'money', 'region_id', 'user_id', 'total_num', 'valve_dtu_id',
-                          'valve_address', 'state_id', 'admin_id']:
+                          'valve_address', 'state_id', 'admin_id', 'user_phone']:
             return int
 
         if field_name in ['surplus_gas_limits', 'flow_ratio']:

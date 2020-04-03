@@ -41,20 +41,20 @@
             <div class="layui-card">
                 <div class="layui-card-body ">
                     <form class="layui-form layui-col-space5">
-
+                        {% if 'query_manufacturer' in user.actions %}
                             <div class="layui-input-inline" style="width: 400px">
                                 <select name="manufacturer_id" lay-search="" id="manufacturer"
                                         lay-filter="test">
                                     <option value="">供气商</option>
                                 </select>
                             </div>
-
-                            <div class="layui-input-inline" style="width: 400px">
-                                <select name="dtu_user_id" lay-search="" id="dtu_user"
-                                        lay-filter="test">
-                                    <option value="">DTU用户</option>
-                                </select>
-                            </div>
+                        {% endif %}
+                        <div class="layui-input-inline" style="width: 400px">
+                            <select name="dtu_user_id" lay-search="" id="dtu_user"
+                                    lay-filter="test">
+                                <option value="">DTU用户</option>
+                            </select>
+                        </div>
                         <div class="layui-inline layui-show-xs-block">
                             <button class="layui-btn" lay-submit="" lay-filter="search">
                                 <i class="layui-icon">&#xe615;</i>
@@ -173,29 +173,31 @@
                     return false;
                 });
 
-            get({
-                "param": JSON.stringify({}),
-                "action": "query_manufacturer"
-            }, '/handler/manufacturer/', function (res) {
-                if (!res.success) {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                } else {
-                    for(let i=0;i<res.data.length;i++){
-                        $("#manufacturer").append('<option value="' + res.data[i].id + '">'
-                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+            {% if 'query_manufacturer' in user.actions %}
+                get({
+                    "param": JSON.stringify({}),
+                    "action": "query_manufacturer"
+                }, '/handler/manufacturer/', function (res) {
+                    if (!res.success) {
+                        layer.msg(res.msg, {icon: 5, time: 1000});
+                    } else {
+                        for (let i = 0; i < res.data.length; i++) {
+                            $("#manufacturer").append('<option value="' + res.data[i].id + '">'
+                                + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                        }
+                        form.render('select');
                     }
-                    form.render('select');
-                }
-            });
+                });
+            {% endif %}
 
             get({
                 "param": JSON.stringify({}),
-                "action": "query_dtu_user"
+                "action": "query_dtu_user_of_select_box"
             }, '/handler/dtu_user/', function (res) {
                 if (!res.success) {
                     layer.msg(res.msg, {icon: 5, time: 1000});
                 } else {
-                    for(let i=0;i<res.data.length;i++){
+                    for (let i = 0; i < res.data.length; i++) {
                         $("#dtu_user").append('<option value="' + res.data[i].id + '">'
                             + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
                     }
@@ -204,9 +206,5 @@
             });
         });
 </script>
-<script>var _hmt = _hmt || [];
-(function () {
-
-})();</script>
 
 </html>

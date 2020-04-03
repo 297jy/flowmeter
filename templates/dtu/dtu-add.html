@@ -26,20 +26,21 @@
     <div class="layui-row">
         <form class="layui-form">
             {% csrf_token %}
-            <div class="layui-form-item" id="manufacturer_input">
-                <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>供气商
-                </label>
-                <div class="layui-input-inline" style="width: 400px">
-                    <select name="manufacturer_id" lay-verify="required" lay-search="" id="manufacturer"
-                            lay-filter="manufacturer">
-                        <option value="">未选择</option>
-                    </select>
+            {% if 'query_manufacturer' in user.actions %}
+                <div class="layui-form-item" id="manufacturer_input">
+                    <label for="L_username" class="layui-form-label">
+                        <span class="x-red">*</span>供气商
+                    </label>
+                    <div class="layui-input-inline" style="width: 400px">
+                        <select name="manufacturer_id" lay-verify="required" lay-search="" id="manufacturer"
+                                lay-filter="manufacturer">
+                            <option value="">未选择</option>
+                        </select>
+                    </div>
                 </div>
-            </div>
-
+            {% endif %}
             <div class="layui-form-item">
-                <label for="L_username" class="layui-form-label">
+                <label for="L_username" class="layui-form-label" style="width: 120px">
                     <span class="x-red">*</span>DTU区间
                 </label>
                 <div class="layui-input-inline">
@@ -51,22 +52,21 @@
             </div>
 
             <div class="layui-form-item">
-                <label for="L_username" class="layui-form-label">
-                    <span class="x-red">*</span>DTU用户
-                </label>
-                <div class="layui-input-inline" style="width: 400px">
-                    <select name="user_id" lay-verify="required" lay-search="" id="dtu_user" lay-filter="test">
-                        <option value="">未选择</option>
-                    </select>
+                <label for="user_phone" class="layui-form-label" style="width: 120px">
+                    <span class="x-red">*</span>DTU用户联系电话</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="user_phone" name="user_phone" required="" lay-verify="phone"
+                           autocomplete="off"
+                           class="layui-input">
                 </div>
             </div>
 
             <div class="layui-form-item layui-form-text">
-                <label for="desc" class="layui-form-label">
+                <label for="desc" class="layui-form-label" style="width: 120px;">
                     备注
                 </label>
                 <div class="layui-input-block">
-                    <textarea placeholder="请输入内容" id="desc" name="remark" class="layui-textarea"></textarea>
+                    <textarea placeholder="请输入内容" id="desc" name="remark" class="layui-textarea" style="width: 450px"></textarea>
                 </div>
             </div>
             <div class="layui-form-item">
@@ -82,6 +82,15 @@
             $ = layui.jquery;
             var form = layui.form,
                 layer = layui.layer;
+
+            //自定义验证规则
+            form.verify({
+                phone: function (value) {
+                    if (!checkPhone(value)) {
+                        return "DTU用户联系电话格式错误！"
+                    }
+                },
+            });
 
             form.on('select(manufacturer)', function () {
 
@@ -133,40 +142,27 @@
                     return false;
                 });
 
-            get({
-                "param": JSON.stringify({}),
-                "action": "query_manufacturer"
-            }, '/handler/manufacturer/', function (res) {
-                if (!res.success) {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                } else {
-                    for (let i = 0; i < res.data.length; i++) {
-                        $("#manufacturer").append('<option value="' + res.data[i].id + '">'
-                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+            {% if 'query_manufacturer' in user.actions %}
+                get({
+                    "param": JSON.stringify({}),
+                    "action": "query_manufacturer"
+                }, '/handler/manufacturer/', function (res) {
+                    if (!res.success) {
+                        layer.msg(res.msg, {icon: 5, time: 1000});
+                    } else {
+                        for (let i = 0; i < res.data.length; i++) {
+                            $("#manufacturer").append('<option value="' + res.data[i].id + '">'
+                                + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
+                        }
+                        form.render('select');
                     }
-                    form.render('select');
-                }
-            });
-
-            get({
-                "param": JSON.stringify({}),
-                "action": "query_dtu_user"
-            }, '/handler/dtu_user/', function (res) {
-                if (!res.success) {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                } else {
-                    for (let i = 0; i < res.data.length; i++) {
-                        $("#dtu_user").append('<option value="' + res.data[i].id + '">'
-                            + res.data[i].name + '(' + res.data[i].phone + ')' + '</option>');
-                    }
-                    form.render('select');
-                }
-            });
+                });
+            {% endif %}
 
 
             get({
                 "param": JSON.stringify({}),
-                "action": "query_dtu_region"
+                "action": "query_dtu_region_of_select_box"
             }, '/handler/dtu_region/', function (res) {
                 if (!res.success) {
                     layer.msg(res.msg, {icon: 5, time: 1000});
@@ -176,39 +172,13 @@
                     $("#dtu_region").append('<option value="">未选择</option>');
 
                     for (let i = 0; i < res.data.length; i++) {
-                        let right = res.data[i].left + res.data[i]['total_num'];
-                        $("#dtu_region").append('<option value="' + res.data[i].id + '">' + res.data[i].left + ' -- ' + right + '</option>');
+                        $("#dtu_region").append('<option value="' + res.data[i].id + '">' + res.data[i].left + ' -- ' + res.data[i].right + '</option>');
                     }
                     form.render();
                 }
             });
-
-
-            get({
-                "param": JSON.stringify({}),
-                "action": "query_dtu"
-            }, '/handler/dtu/', function (res) {
-                if (!res.success) {
-                    layer.msg(res.msg, {icon: 5, time: 1000});
-                } else {
-
-                    for (let i = 0; i < res.data.length; i++) {
-                        $("#valve_dtu").append('<option value="' + res.data[i].id + '">'
-                            + res.data[i]['dtu_no'] + '(' + res.data[i]['remark'] + ')' + '</option>');
-                    }
-                    form.render();
-                }
-            });
-
-
         });
 </script>
-<script>var _hmt = _hmt || [];
-(function () {
-    var hm = document.createElement("script");
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();</script>
 </body>
 
 </html>

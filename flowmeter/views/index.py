@@ -12,7 +12,8 @@ def index_view(request):
     :param request:
     :return:
     """
-    nav_bars = auth_api.structure_nav_bars_by_role('admin')
+    user = request_api.get_user(request)
+    nav_bars = auth_api.structure_nav_bars_by_role(user['role'])
 
-    context = {'nav_bars': nav_bars, 'user': request_api.get_user(request)}
+    context = {'nav_bars': nav_bars, 'user': user}
     return render(request, 'index.html', context)

@@ -33,5 +33,18 @@ class User(models.Model):
             "role": self.role.name,
         }
 
+    def keys(self):
+        return "id", "name", "phone", "email", "create_time", "state", "remark", "actions", "role"
+
+    def __getitem__(self, item):
+
+        if item == "actions":
+            val = get_allowed_action_of_role(self.role)
+        elif item == "role":
+            val = self.role.name
+        else:
+            val = getattr(self, item)
+        return val
+
 
 

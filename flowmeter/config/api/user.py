@@ -230,3 +230,21 @@ def find_user_by_ids(user_ids):
     users = User.objects.filter(id__in=user_ids)
     return users
 
+
+def find_dtu_users_of_man(man_id):
+    dtu_user_infos = Dtu.objects.filter(region__manufacturer__id=man_id).values('user__id', 'user__phone', 'user__name')\
+        .distinct()
+    dtu_users = []
+    for dtu_user_info in dtu_user_infos:
+        dtu_users.append({
+            "id": dtu_user_info['user__id'],
+            "name": dtu_user_info['user__name'],
+            "phone": dtu_user_info['user__phone']
+        })
+    return dtu_users
+
+
+def find_dtu_users_of_admin():
+    dtu_user_infos = User.objects.filter(role=RoleType.DTU_USER).values('id', 'phone', 'name')\
+        .distinct('id')
+    return dtu_user_infos

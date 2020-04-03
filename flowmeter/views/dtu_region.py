@@ -20,6 +20,7 @@ class DtuRegionActionHandler(ActionHandlerBase):
             "add_dtu_region": self.add_dtu_region,
             "update_dtu_region": self.update_dtu_region,
             "del_batch_dtu_region": self.del_batch_dtu_region,
+            "query_dtu_region_of_select_box": self.query_dtu_region_of_select_box,
         }
         super().__init__(action_dict)
 
@@ -64,6 +65,12 @@ class DtuRegionActionHandler(ActionHandlerBase):
         app_region_api.del_batch_region(dtu_region_ids)
 
         return Result.success()
+
+    def query_dtu_region_of_select_box(self, request):
+
+        user = request_api.get_user(request)
+        regions = app_region_api.query_dtu_region_of_select_box(user)
+        return Result.success(data=regions)
 
 
 @xframe_options_sameorigin

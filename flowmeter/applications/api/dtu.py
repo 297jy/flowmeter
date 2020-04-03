@@ -1,6 +1,7 @@
 # coding=utf-8
 
 from flowmeter.applications.core import dtu as core
+from flowmeter.common.const import RoleType
 from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.api import valve as conf_valve_api
 from flowmeter.config.api import dtu_region as conf_region_api
@@ -16,13 +17,15 @@ def add_dtu(dtu_info):
     """
     must_dict = {
         "region_id": int,
-        "user_id": int,
+        "user_phone": int,
     }
     optional_dict = {
         "remark": StrCheck.check_remark,
     }
     param_check(dtu_info, must_dict, optional_dict)
 
+    user = core.get_dtu_user_by_phone(dtu_info['user_phone'])
+    dtu_info['user_id'] = user.id
     region = conf_region_api.find_region_by_id(dtu_info['region_id'])
     dtu_info['dtu_no'] = core.find_can_use_dtu_no(region)
     # 保证原子性
@@ -87,4 +90,13 @@ def del_batch_dtu(dtu_ids):
 
         for region in regions:
             core.update_region_used_num(region)
+
+
+def query_dtu_of_select_box(user):
+    if user['role'] == RoleType.MANUFACTURER:
+        dtus = conf_dtu_api.find_dtus_of_select_box_by_man_id(user['id'])
+    else:
+        dtus = conf_dtu_api.find_all_dtus_of_select()
+
+    return dtus
 

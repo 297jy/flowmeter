@@ -35,3 +35,4 @@ def del_batch_dtu(dtu_ids):
     query_terms = query.QueryTerms.make_or_query_terms(**{'id': dtu_ids})
 
     Dtu.objects.filter(query_terms.get_filters()).delete()
+

@@ -19,6 +19,7 @@ class DtuActionHandler(ActionHandlerBase):
             "add_dtu": self.add_dtu,
             "update_dtu": self.update_dtu,
             "del_batch_dtu": self.del_batch_dtu,
+            "query_dtu_of_select_box": self.query_dtu_of_select_box,
         }
         super().__init__(action_dict)
 
@@ -35,8 +36,6 @@ class DtuActionHandler(ActionHandlerBase):
 
         param = request_api.get_param(request)
 
-        param['region_id'] = int(param['region_id'])
-        param['user_id'] = int(param['user_id'])
         app_dtu_api.add_dtu(param)
 
         return Result.success()
@@ -60,17 +59,22 @@ class DtuActionHandler(ActionHandlerBase):
 
         return Result.success()
 
+    def query_dtu_of_select_box(self, request):
+        user = request_api.get_user(request)
+        dtus = app_dtu_api.query_dtu_of_select_box(user)
+        return Result.success(data=dtus)
+
 
 @xframe_options_sameorigin
 def dtu_view(request):
 
-    return render(request, 'dtu/dtu-list.html', {})
+    return render(request, 'dtu/dtu-list.html', {'user': request_api.get_user(request)})
 
 
 @xframe_options_sameorigin
 def dtu_add(request):
 
-    return render(request, 'dtu/dtu-add.html', {})
+    return render(request, 'dtu/dtu-add.html', {'user': request_api.get_user(request)})
 
 
 def dtu_handler(request):

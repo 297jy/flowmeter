@@ -22,7 +22,7 @@ def transfer_user_obj_to_dict(users, attribute_list=None):
     user_dicts = []
     for user in users:
 
-        user_dict = user.get_dict()
+        user_dict = dict(user)
         __transfer_database_to_display(user_dict)
 
         if 'actions' in user_dict.keys():

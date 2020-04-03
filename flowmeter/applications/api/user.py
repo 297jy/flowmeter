@@ -3,6 +3,7 @@
 from flowmeter.common.api.validators import param_check
 from flowmeter.common.api.validators import StrCheck, ListCheck, IntCheck, WhiteListCheck
 from flowmeter.applications.core import user as user_core
+from flowmeter.common.const import RoleType
 from flowmeter.config.api import user as conf_user_api
 from flowmeter.exceptions import NotUniqueException
 from flowmeter.config.db.user_table import User
@@ -86,7 +87,6 @@ def find_dtu_users_by_query_terms(query_terms, page=None):
                         }
     :return: 查询到的dtu用户列表
     """
-
     optional_dict = {
         "begin_time": int,
         "end_time": int,
@@ -97,6 +97,10 @@ def find_dtu_users_by_query_terms(query_terms, page=None):
     dtu_users = user_core.find_dtu_users_by_query_terms(query_terms, page)
 
     return dtu_users
+
+
+def find_dtu_users_of_man(man_id):
+    return conf_user_api.find_dtu_users_of_man(man_id)
 
 
 def create_admin(admin_info):
@@ -394,22 +398,14 @@ def dtu_user_import(filename):
     user_core.dtu_user_import(filename)
 
 
-def find_dtu_user_by_man_id(man_id):
+def find_dtu_users_of_select_box(user):
 
-    dtu_users = set()
+    if user['role'] == RoleType.MANUFACTURER:
+        dtu_users = conf_user_api.find_dtu_users_of_man(user['id'])
+    else:
+        dtu_users = conf_user_api.find_dtu_users_of_admin()
 
-    man = User.objects.prefetch_related('dturegion_set__dtu_set__user').get(id=man_id)
-    # 先获取区间
-    dtu_regions = man.dturegion_set.all()
-
-    for region in dtu_regions:
-
-        # 获取dtu
-        dtus = region.dtu_set.all()
-        for dtu in dtus:
-            dtu_users.add(dtu.user)
-
-    return user_core.transfer_user_obj_to_dict(dtu_users, ['id', 'name', 'phone'])
+    return user_core.transfer_user_obj_to_dict(dtu_users)
 
 
 def find_dtu_by_user_id(user_id):
@@ -419,6 +415,11 @@ def find_dtu_by_user_id(user_id):
     dtus = user.dtu_set.all()
 
     return user_core.transfer_user_obj_to_dict(dtus, ['id', 'dtu_no', 'remark'])
+
+
+def find_dtu_users_by_man_id(man_id):
+
+    return user_core.transfer_user_obj_to_dict(conf_user_api.find_dtu_users_of_man(man_id))
 
 
 

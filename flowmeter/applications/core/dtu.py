@@ -1,10 +1,11 @@
 # coding=utf-8
 
-from django.db.models import Q, F
+from django.db.models import Q
+
+from flowmeter.common.const import RoleType
 from flowmeter.config.api import dtu as conf_dtu_api
-from flowmeter.config.db.valve_table import Valve
-from flowmeter.config.api import dtu_region as conf_region_api
-from flowmeter.exceptions import ValueValidException
+from flowmeter.config.api import user as conf_user_api
+from flowmeter.exceptions import ValueValidException, DoesNotExistException, ParameterErrorException
 
 
 def get_dtu_filter(manufacturer_id, dtu_user_id):
@@ -91,3 +92,13 @@ def get_dtu_info(dtu_info):
         dtu_dict['remark'] = dtu_info['remark']
 
     return dtu_dict
+
+
+def get_dtu_user_by_phone(phone):
+    try:
+        user = conf_user_api.get_user_by_phone(phone)
+        if user.role != RoleType.DTU_USER:
+            raise ParameterErrorException("该用户不是DTU用户！")
+        return user
+    except DoesNotExistException:
+        raise DoesNotExistException("该DTU用户不存在！")
