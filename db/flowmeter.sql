@@ -11,7 +11,7 @@
  Target Server Version : 80019
  File Encoding         : 65001
 
- Date: 19/03/2020 23:44:07
+ Date: 05/04/2020 15:20:32
 */
 
 SET NAMES utf8mb4;
@@ -41,7 +41,7 @@ CREATE TABLE `auth_group_permissions`  (
   INDEX `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm`(`permission_id`) USING BTREE,
   CONSTRAINT `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `auth_group_permissions_group_id_b120cbf9_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for auth_permission
@@ -55,7 +55,7 @@ CREATE TABLE `auth_permission`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `auth_permission_content_type_id_codename_01ab375a_uniq`(`content_type_id`, `codename`) USING BTREE,
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 141 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 149 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of auth_permission
@@ -200,6 +200,14 @@ INSERT INTO `auth_permission` VALUES (137, 'Can add system log', 35, 'add_system
 INSERT INTO `auth_permission` VALUES (138, 'Can change system log', 35, 'change_systemlog');
 INSERT INTO `auth_permission` VALUES (139, 'Can delete system log', 35, 'delete_systemlog');
 INSERT INTO `auth_permission` VALUES (140, 'Can view system log', 35, 'view_systemlog');
+INSERT INTO `auth_permission` VALUES (141, 'Can add alarm log reader', 36, 'add_alarmlogreader');
+INSERT INTO `auth_permission` VALUES (142, 'Can change alarm log reader', 36, 'change_alarmlogreader');
+INSERT INTO `auth_permission` VALUES (143, 'Can delete alarm log reader', 36, 'delete_alarmlogreader');
+INSERT INTO `auth_permission` VALUES (144, 'Can view alarm log reader', 36, 'view_alarmlogreader');
+INSERT INTO `auth_permission` VALUES (145, 'Can add meter history data', 37, 'add_meterhistorydata');
+INSERT INTO `auth_permission` VALUES (146, 'Can change meter history data', 37, 'change_meterhistorydata');
+INSERT INTO `auth_permission` VALUES (147, 'Can delete meter history data', 37, 'delete_meterhistorydata');
+INSERT INTO `auth_permission` VALUES (148, 'Can view meter history data', 37, 'view_meterhistorydata');
 
 -- ----------------------------
 -- Table structure for auth_user
@@ -249,7 +257,7 @@ CREATE TABLE `auth_user_user_permissions`  (
   INDEX `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm`(`permission_id`) USING BTREE,
   CONSTRAINT `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for celery_taskmeta
@@ -302,7 +310,7 @@ CREATE TABLE `django_admin_log`  (
   INDEX `django_admin_log_user_id_c564eba6_fk_auth_user_id`(`user_id`) USING BTREE,
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for django_content_type
@@ -314,7 +322,7 @@ CREATE TABLE `django_content_type`  (
   `model` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `django_content_type_app_label_model_76bd3d3b_uniq`(`app_label`, `model`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of django_content_type
@@ -333,6 +341,7 @@ INSERT INTO `django_content_type` VALUES (24, 'djcelery', 'tasksetmeta');
 INSERT INTO `django_content_type` VALUES (25, 'djcelery', 'taskstate');
 INSERT INTO `django_content_type` VALUES (26, 'djcelery', 'workerstate');
 INSERT INTO `django_content_type` VALUES (27, 'flowmeter', 'alarmlog');
+INSERT INTO `django_content_type` VALUES (36, 'flowmeter', 'alarmlogreader');
 INSERT INTO `django_content_type` VALUES (7, 'flowmeter', 'auth');
 INSERT INTO `django_content_type` VALUES (8, 'flowmeter', 'authcategory');
 INSERT INTO `django_content_type` VALUES (33, 'flowmeter', 'configure');
@@ -344,6 +353,7 @@ INSERT INTO `django_content_type` VALUES (17, 'flowmeter', 'dturegion');
 INSERT INTO `django_content_type` VALUES (34, 'flowmeter', 'flag');
 INSERT INTO `django_content_type` VALUES (29, 'flowmeter', 'loginlog');
 INSERT INTO `django_content_type` VALUES (16, 'flowmeter', 'meter');
+INSERT INTO `django_content_type` VALUES (37, 'flowmeter', 'meterhistorydata');
 INSERT INTO `django_content_type` VALUES (32, 'flowmeter', 'meterstate');
 INSERT INTO `django_content_type` VALUES (15, 'flowmeter', 'navigationbar');
 INSERT INTO `django_content_type` VALUES (28, 'flowmeter', 'oprlog');
@@ -365,7 +375,7 @@ CREATE TABLE `django_migrations`  (
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 75 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of django_migrations
@@ -432,6 +442,18 @@ INSERT INTO `django_migrations` VALUES (59, 'flowmeter', '0041_auto_20200317_180
 INSERT INTO `django_migrations` VALUES (60, 'flowmeter', '0042_auto_20200319_1729', '2020-03-19 17:29:42.893913');
 INSERT INTO `django_migrations` VALUES (61, 'flowmeter', '0043_auto_20200319_1734', '2020-03-19 17:34:52.438862');
 INSERT INTO `django_migrations` VALUES (62, 'flowmeter', '0044_remove_alarmlog_opr_user', '2020-03-19 20:44:48.188759');
+INSERT INTO `django_migrations` VALUES (63, 'flowmeter', '0045_systemlog_msg', '2020-03-22 15:58:36.025756');
+INSERT INTO `django_migrations` VALUES (64, 'flowmeter', '0046_alarmlog_state', '2020-03-22 15:58:36.057785');
+INSERT INTO `django_migrations` VALUES (65, 'flowmeter', '0047_auto_20200321_1711', '2020-03-22 15:58:36.081807');
+INSERT INTO `django_migrations` VALUES (66, 'flowmeter', '0048_auto_20200322_1553', '2020-03-22 15:58:55.536670');
+INSERT INTO `django_migrations` VALUES (67, 'flowmeter', '0049_alarmlogreader_unique_flag', '2020-03-22 17:51:36.604223');
+INSERT INTO `django_migrations` VALUES (68, 'flowmeter', '0050_meterhistorydata', '2020-03-27 19:36:34.150294');
+INSERT INTO `django_migrations` VALUES (69, 'flowmeter', '0051_auto_20200327_1939', '2020-03-27 19:39:25.798472');
+INSERT INTO `django_migrations` VALUES (70, 'flowmeter', '0051_auto_20200329_1633', '2020-03-29 16:33:15.734316');
+INSERT INTO `django_migrations` VALUES (71, 'flowmeter', '0050_auto_20200329_1836', '2020-03-29 18:36:34.789787');
+INSERT INTO `django_migrations` VALUES (72, 'flowmeter', '0050_auto_20200329_2244', '2020-03-29 22:44:05.255015');
+INSERT INTO `django_migrations` VALUES (73, 'flowmeter', '0051_auto_20200329_2308', '2020-03-29 23:08:07.391083');
+INSERT INTO `django_migrations` VALUES (74, 'flowmeter', '0052_auto_20200403_1956', '2020-04-03 19:56:24.845101');
 
 -- ----------------------------
 -- Table structure for django_session
@@ -569,7 +591,54 @@ CREATE TABLE `flowmeter_alarmlog`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_alarmlog_meter_id_a826c25e_fk_flowmeter_meter_id`(`meter_id`) USING BTREE,
   CONSTRAINT `flowmeter_alarmlog_meter_id_a826c25e_fk_flowmeter_meter_id` FOREIGN KEY (`meter_id`) REFERENCES `flowmeter_meter` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of flowmeter_alarmlog
+-- ----------------------------
+INSERT INTO `flowmeter_alarmlog` VALUES (1, '2020-03-22 21:21:32.103598', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (2, '2020-03-22 21:22:24.169105', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (3, '2020-03-22 21:24:06.564052', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (4, '2020-03-22 21:24:17.868597', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (5, '2020-03-22 21:24:38.672184', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (6, '2020-03-22 21:26:19.387958', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (7, '2020-03-22 21:27:27.028366', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (8, '2020-03-22 21:30:47.893644', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (11, '2020-03-22 21:38:48.693814', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (13, '2020-03-22 22:56:17.302654', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (14, '2020-03-22 22:57:02.064116', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (16, '2020-03-22 22:58:03.798455', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (17, '2020-03-22 22:59:04.475207', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (18, '2020-03-22 22:59:29.616823', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (23, '2020-03-22 23:38:11.280961', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (24, '2020-03-22 23:52:02.073642', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (25, '2020-03-22 23:52:14.921911', 'exceed_limit', 11);
+INSERT INTO `flowmeter_alarmlog` VALUES (26, '2020-03-22 23:52:32.940719', 'exceed_limit', 11);
+
+-- ----------------------------
+-- Table structure for flowmeter_alarmlogreader
+-- ----------------------------
+DROP TABLE IF EXISTS `flowmeter_alarmlogreader`;
+CREATE TABLE `flowmeter_alarmlogreader`  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `state` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `alarm_log_id` int(0) NOT NULL,
+  `user_id` int(0) NOT NULL,
+  `unique_flag` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `flowmeter_alarmlogre_alarm_log_id_ea28fd16_fk_flowmeter`(`alarm_log_id`) USING BTREE,
+  INDEX `user_state_index`(`user_id`, `state`) USING BTREE,
+  CONSTRAINT `flowmeter_alarmlogre_alarm_log_id_ea28fd16_fk_flowmeter` FOREIGN KEY (`alarm_log_id`) REFERENCES `flowmeter_alarmlog` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
+  CONSTRAINT `flowmeter_alarmlogreader_user_id_58fca90c_fk_flowmeter_user_id` FOREIGN KEY (`user_id`) REFERENCES `flowmeter_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 51 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of flowmeter_alarmlogreader
+-- ----------------------------
+INSERT INTO `flowmeter_alarmlogreader` VALUES (47, 'unread', 26, 1, '2020_3_22_1_11_exceed_limit');
+INSERT INTO `flowmeter_alarmlogreader` VALUES (48, 'read', 26, 2, '2020_3_22_2_11_exceed_limit');
+INSERT INTO `flowmeter_alarmlogreader` VALUES (49, 'unread', 26, 9, '2020_3_22_9_11_exceed_limit');
+INSERT INTO `flowmeter_alarmlogreader` VALUES (50, 'read', 26, 15, '2020_3_22_15_11_exceed_limit');
 
 -- ----------------------------
 -- Table structure for flowmeter_auth
@@ -584,7 +653,7 @@ CREATE TABLE `flowmeter_auth`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_auth_category_id_8f7a78fc_fk_flowmeter_authcategory_id`(`category_id`) USING BTREE,
   CONSTRAINT `flowmeter_auth_category_id_8f7a78fc_fk_flowmeter_authcategory_id` FOREIGN KEY (`category_id`) REFERENCES `flowmeter_authcategory` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 63 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 64 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_auth
@@ -620,11 +689,11 @@ INSERT INTO `flowmeter_auth` VALUES (28, '导入DTU用户', 'import_dtu_user', N
 INSERT INTO `flowmeter_auth` VALUES (29, '导出DTU用户', 'export_dtu_user', NULL, 5);
 INSERT INTO `flowmeter_auth` VALUES (30, '查看系统设置', 'query_setting', NULL, 2);
 INSERT INTO `flowmeter_auth` VALUES (31, '切换DTU用户账号状态', 'switch_dtu_user_state', NULL, 5);
-INSERT INTO `flowmeter_auth` VALUES (32, '查询DTU列表', 'query_dtu;query_dtu_by_user_id', NULL, 6);
+INSERT INTO `flowmeter_auth` VALUES (32, '查询DTU列表', 'query_dtu;query_dtu_by_user_id;query_dtu_user_of_select_box;query_dtu_region_of_select_box;query_dtu_of_select_box', NULL, 6);
 INSERT INTO `flowmeter_auth` VALUES (33, '添加DTU', 'add_dtu', NULL, 6);
 INSERT INTO `flowmeter_auth` VALUES (34, '编辑DTU', 'update_dtu', NULL, 6);
 INSERT INTO `flowmeter_auth` VALUES (35, '删除DTU', 'del_batch_dtu', NULL, 6);
-INSERT INTO `flowmeter_auth` VALUES (36, '查询仪表', 'query_meter;query_state', NULL, 7);
+INSERT INTO `flowmeter_auth` VALUES (36, '查询仪表', 'query_meter;query_state;query_dtu_user_of_select_box;query_dtu_of_select_box;query_dtu_region_of_select_box', NULL, 7);
 INSERT INTO `flowmeter_auth` VALUES (37, '添加仪表', 'add_meter', NULL, 7);
 INSERT INTO `flowmeter_auth` VALUES (38, '编辑仪表', 'update_meter', NULL, 7);
 INSERT INTO `flowmeter_auth` VALUES (39, '批量删除仪表', 'del_batch_meter', NULL, 7);
@@ -642,8 +711,7 @@ INSERT INTO `flowmeter_auth` VALUES (50, '查询操作日志', 'query_opr_log', 
 INSERT INTO `flowmeter_auth` VALUES (51, '删除系统日志', 'del_system_log', NULL, 10);
 INSERT INTO `flowmeter_auth` VALUES (52, '查询系统日志', 'query_system_log', NULL, 10);
 INSERT INTO `flowmeter_auth` VALUES (53, '删除警报日志', 'del_alarm_log', NULL, 10);
-INSERT INTO `flowmeter_auth` VALUES (54, '查询警报日志', 'query_alarm_log', NULL, 10);
-INSERT INTO `flowmeter_auth` VALUES (55, '删除警报日志', 'del_alarm_log', NULL, 10);
+INSERT INTO `flowmeter_auth` VALUES (54, '查询警报日志', 'query_alarm_log;read_alarm_log', NULL, 10);
 INSERT INTO `flowmeter_auth` VALUES (56, '导出操作日志', 'export_alarm_log', NULL, 10);
 INSERT INTO `flowmeter_auth` VALUES (57, '导出系统日志', 'export_system_log', NULL, 10);
 INSERT INTO `flowmeter_auth` VALUES (58, '导出警报日志', 'export_alarm_log', NULL, 10);
@@ -651,6 +719,7 @@ INSERT INTO `flowmeter_auth` VALUES (59, '修改阀门控制器物理地址', 'u
 INSERT INTO `flowmeter_auth` VALUES (60, '修改阀门控制器DTU', 'update_valve_dtu', NULL, 7);
 INSERT INTO `flowmeter_auth` VALUES (61, '查询系统设置', 'query_configure', NULL, 2);
 INSERT INTO `flowmeter_auth` VALUES (62, '编辑系统设置', 'update_configure', NULL, 2);
+INSERT INTO `flowmeter_auth` VALUES (63, '生成报表', 'generate_report', NULL, 7);
 
 -- ----------------------------
 -- Table structure for flowmeter_authcategory
@@ -687,12 +756,14 @@ CREATE TABLE `flowmeter_configure`  (
   `val` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `label` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_configure
 -- ----------------------------
 INSERT INTO `flowmeter_configure` VALUES (1, 'unexecuted_opr_check_time', '5', '检查未执行操作的时间间隔');
+INSERT INTO `flowmeter_configure` VALUES (2, 'query_meter_time', '30', '定时查询流量计时间间隔（分）');
+INSERT INTO `flowmeter_configure` VALUES (3, 'session_expire_time', '关闭浏览器过期', '登录过期时间');
 
 -- ----------------------------
 -- Table structure for flowmeter_controlregister
@@ -707,7 +778,7 @@ CREATE TABLE `flowmeter_controlregister`  (
   `opr_type` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `opr_type`(`opr_type`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_controlregister
@@ -720,6 +791,7 @@ INSERT INTO `flowmeter_controlregister` VALUES (5, '阀门关', 38404, 29712, ' 
 INSERT INTO `flowmeter_controlregister` VALUES (6, '预充值功能开', 38405, 29712, ' test', 'open_recharge');
 INSERT INTO `flowmeter_controlregister` VALUES (7, '预充值功能关', 38405, 35823, ' test', 'close_recharge');
 INSERT INTO `flowmeter_controlregister` VALUES (8, '表复位重启', 38416, 29712, 'testtestttt', 'reset');
+INSERT INTO `flowmeter_controlregister` VALUES (9, '查询仪表数据', 0, 16, '', 'query');
 
 -- ----------------------------
 -- Table structure for flowmeter_datafield
@@ -759,7 +831,7 @@ CREATE TABLE `flowmeter_dataframeformat`  (
   `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `remark` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for flowmeter_dtu
@@ -777,7 +849,7 @@ CREATE TABLE `flowmeter_dtu`  (
   INDEX `flowmeter_dtu_user_id_7a23c210_fk_flowmeter_user_id`(`user_id`) USING BTREE,
   CONSTRAINT `flowmeter_dtu_region_id_2c8e3b9c_fk_flowmeter_dturegion_id` FOREIGN KEY (`region_id`) REFERENCES `flowmeter_dturegion` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `flowmeter_dtu_user_id_7a23c210_fk_flowmeter_user_id` FOREIGN KEY (`user_id`) REFERENCES `flowmeter_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_dtu
@@ -786,6 +858,7 @@ INSERT INTO `flowmeter_dtu` VALUES (14, 'testsdfsdfsdfdsf   test', 14, 0, 15);
 INSERT INTO `flowmeter_dtu` VALUES (15, 'testsdfsfdsfsdfdsf  test', 16, 100, 15);
 INSERT INTO `flowmeter_dtu` VALUES (16, 'test', 14, 1, 15);
 INSERT INTO `flowmeter_dtu` VALUES (17, 'test', 17, 220, 15);
+INSERT INTO `flowmeter_dtu` VALUES (18, 'test', 14, 2, 15);
 
 -- ----------------------------
 -- Table structure for flowmeter_dturegion
@@ -805,7 +878,7 @@ CREATE TABLE `flowmeter_dturegion`  (
 -- ----------------------------
 -- Records of flowmeter_dturegion
 -- ----------------------------
-INSERT INTO `flowmeter_dturegion` VALUES (14, 0, 99, 9, 2);
+INSERT INTO `flowmeter_dturegion` VALUES (14, 0, 99, 9, 3);
 INSERT INTO `flowmeter_dturegion` VALUES (16, 100, 219, 9, 1);
 INSERT INTO `flowmeter_dturegion` VALUES (17, 220, 220, 9, 1);
 
@@ -823,9 +896,9 @@ CREATE TABLE `flowmeter_flag`  (
 -- ----------------------------
 -- Records of flowmeter_flag
 -- ----------------------------
-INSERT INTO `flowmeter_flag` VALUES (1, 'admin_version', '15');
-INSERT INTO `flowmeter_flag` VALUES (2, 'dtu_user_version', '1');
-INSERT INTO `flowmeter_flag` VALUES (3, 'manufacturer_version', '1');
+INSERT INTO `flowmeter_flag` VALUES (1, 'admin_version', '16');
+INSERT INTO `flowmeter_flag` VALUES (2, 'dtu_user_version', '4');
+INSERT INTO `flowmeter_flag` VALUES (3, 'manufacturer_version', '2');
 
 -- ----------------------------
 -- Table structure for flowmeter_meter
@@ -848,13 +921,35 @@ CREATE TABLE `flowmeter_meter`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `flowmeter_meter_dtu_id_address_82f69c16_uniq`(`dtu_id`, `address`) USING BTREE,
   CONSTRAINT `flowmeter_meter_dtu_id_584ecca7_fk_flowmeter_dtu_id` FOREIGN KEY (`dtu_id`) REFERENCES `flowmeter_dtu` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_meter
 -- ----------------------------
-INSERT INTO `flowmeter_meter` VALUES (11, 1, '2020-03-18 21:33:02.777854', -1, 1.2, -1, -1, -1, -1, -1, -1, 'test', 14);
+INSERT INTO `flowmeter_meter` VALUES (11, 1, '2020-03-22 23:52:32.939718', 2028, 3000, 0.1, 3.5999999046325684, 10.392200022935867, 30.6, 3617, 2.2, 'test', 14);
 INSERT INTO `flowmeter_meter` VALUES (12, 2, '2020-03-19 17:19:06.691427', -1, 2.2, -1, -1, -1, -1, -1, -1, '', 14);
+INSERT INTO `flowmeter_meter` VALUES (16, 4, NULL, -1, 1000, -1, -1, -1, -1, -1, -1, 'test', 14);
+
+-- ----------------------------
+-- Table structure for flowmeter_meterhistorydata
+-- ----------------------------
+DROP TABLE IF EXISTS `flowmeter_meterhistorydata`;
+CREATE TABLE `flowmeter_meterhistorydata`  (
+  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `data` double NOT NULL,
+  `time` date NOT NULL,
+  `meter_id` int(0) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `flowmeter_meterhisto_meter_id_81ce8141_fk_flowmeter`(`meter_id`) USING BTREE,
+  INDEX `flowmeter_meterhistorydata_time_6c428b2d`(`time`) USING BTREE,
+  CONSTRAINT `flowmeter_meterhisto_meter_id_81ce8141_fk_flowmeter` FOREIGN KEY (`meter_id`) REFERENCES `flowmeter_meter` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of flowmeter_meterhistorydata
+-- ----------------------------
+INSERT INTO `flowmeter_meterhistorydata` VALUES (3, 1000, '2020-03-28', 11);
+INSERT INTO `flowmeter_meterhistorydata` VALUES (4, 1200, '2020-03-29', 11);
 
 -- ----------------------------
 -- Table structure for flowmeter_meterstate
@@ -872,13 +967,14 @@ CREATE TABLE `flowmeter_meterstate`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `meter_id`(`meter_id`) USING BTREE,
   CONSTRAINT `flowmeter_meterstate_meter_id_44db7d81_fk_flowmeter_meter_id` FOREIGN KEY (`meter_id`) REFERENCES `flowmeter_meter` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_meterstate
 -- ----------------------------
-INSERT INTO `flowmeter_meterstate` VALUES (11, 1, 1, -1, -1, -1, -1, 11);
+INSERT INTO `flowmeter_meterstate` VALUES (11, 0, 0, 0, 0, 0, 0, 11);
 INSERT INTO `flowmeter_meterstate` VALUES (12, 1, 1, -1, -1, -1, -1, 12);
+INSERT INTO `flowmeter_meterstate` VALUES (14, -1, -1, -1, -1, -1, -1, 16);
 
 -- ----------------------------
 -- Table structure for flowmeter_navigationbar
@@ -895,26 +991,26 @@ CREATE TABLE `flowmeter_navigationbar`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_navigationbar_auth_id_a595869c_fk_flowmeter_auth_id`(`auth_id`) USING BTREE,
   CONSTRAINT `flowmeter_navigationbar_auth_id_a595869c_fk_flowmeter_auth_id` FOREIGN KEY (`auth_id`) REFERENCES `flowmeter_auth` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_navigationbar
 -- ----------------------------
-INSERT INTO `flowmeter_navigationbar` VALUES (1, 'xe6b8', '管理员列表', -1, 1, '/admin/view/', 1);
-INSERT INTO `flowmeter_navigationbar` VALUES (2, 'xe6b8', '系统管理', -1, 8, '', NULL);
-INSERT INTO `flowmeter_navigationbar` VALUES (3, 'xe6b8', '控制寄存器定义', 2, 1, '/system/register/', 2);
-INSERT INTO `flowmeter_navigationbar` VALUES (4, 'xe6b8', '数据帧格式定义', 2, 2, '/system/frame/', 4);
-INSERT INTO `flowmeter_navigationbar` VALUES (5, 'xe6b8', '供气商列表', -1, 2, '/manufacturer/view/', 6);
-INSERT INTO `flowmeter_navigationbar` VALUES (6, 'xe6b8', 'DTU区间列表', -1, 4, '/dtu_region/view/', 19);
+INSERT INTO `flowmeter_navigationbar` VALUES (1, 'xe726', '管理员列表', -1, 1, '/admin/view/', 1);
+INSERT INTO `flowmeter_navigationbar` VALUES (2, 'xe6cb', '系统管理', -1, 8, '', NULL);
+INSERT INTO `flowmeter_navigationbar` VALUES (3, 'xe749', '控制寄存器定义', 2, 1, '/system/register/', 2);
+INSERT INTO `flowmeter_navigationbar` VALUES (4, 'xe747', '数据帧格式定义', 2, 2, '/system/frame/', 4);
+INSERT INTO `flowmeter_navigationbar` VALUES (5, 'xe6f5', '供气商列表', -1, 2, '/manufacturer/view/', 6);
+INSERT INTO `flowmeter_navigationbar` VALUES (6, 'xe696', 'DTU区间列表', -1, 4, '/dtu_region/view/', 19);
 INSERT INTO `flowmeter_navigationbar` VALUES (7, 'xe6b8', 'DTU用户列表', -1, 3, '/dtu_user/view/', 24);
-INSERT INTO `flowmeter_navigationbar` VALUES (8, 'xe6b8', 'DTU列表', -1, 5, '/dtu/view/', 32);
-INSERT INTO `flowmeter_navigationbar` VALUES (9, 'xe6b8', '仪表列表', -1, 6, '/meter/view/', 36);
-INSERT INTO `flowmeter_navigationbar` VALUES (10, 'xe6b8', '角色管理', -1, 4, '/role/view/', 40);
-INSERT INTO `flowmeter_navigationbar` VALUES (11, 'xe6b8', '日志管理', -1, 7, '', NULL);
-INSERT INTO `flowmeter_navigationbar` VALUES (12, 'xe6b8', '操作日志管理', 11, 1, '/log/opr/view/', 50);
-INSERT INTO `flowmeter_navigationbar` VALUES (13, 'xe6b8', '系统日志管理', 11, 2, '/log/system/view/', 52);
-INSERT INTO `flowmeter_navigationbar` VALUES (14, 'xe6b8', '警报日志管理', 11, 3, '/log/alarm/view/', 54);
-INSERT INTO `flowmeter_navigationbar` VALUES (15, 'xe6b8', '系统设置', 2, 3, '/system/configure/', 2);
+INSERT INTO `flowmeter_navigationbar` VALUES (8, 'xe6da', 'DTU列表', -1, 5, '/dtu/view/', 32);
+INSERT INTO `flowmeter_navigationbar` VALUES (9, 'xe6a9', '流量计列表', -1, 6, '/meter/view/', 36);
+INSERT INTO `flowmeter_navigationbar` VALUES (10, 'xe732', '角色管理', -1, 4, '/role/view/', 40);
+INSERT INTO `flowmeter_navigationbar` VALUES (11, 'xe6fc', '日志管理', -1, 7, '', NULL);
+INSERT INTO `flowmeter_navigationbar` VALUES (12, 'xe744', '操作日志管理', 11, 1, '/log/opr/view/', 50);
+INSERT INTO `flowmeter_navigationbar` VALUES (13, 'xe74a', '系统日志管理', 11, 2, '/log/system/view/', 52);
+INSERT INTO `flowmeter_navigationbar` VALUES (14, 'xe74e', '警报日志管理', 11, 3, '/log/alarm/view/', 54);
+INSERT INTO `flowmeter_navigationbar` VALUES (15, 'xe6ae', '系统设置', 2, 3, '/system/configure/', 2);
 
 -- ----------------------------
 -- Table structure for flowmeter_oprlog
@@ -975,73 +1071,112 @@ CREATE TABLE `flowmeter_roleauth`  (
   INDEX `flowmeter_roleauth_role_id_dc772944_fk_flowmeter_role_name`(`role_id`) USING BTREE,
   CONSTRAINT `flowmeter_roleauth_auth_id_076ea1f3_fk_flowmeter_auth_id` FOREIGN KEY (`auth_id`) REFERENCES `flowmeter_auth` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `flowmeter_roleauth_role_id_dc772944_fk_flowmeter_role_name` FOREIGN KEY (`role_id`) REFERENCES `flowmeter_role` (`name`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 726 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 977 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_roleauth
 -- ----------------------------
-INSERT INTO `flowmeter_roleauth` VALUES (787, 1, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (788, 2, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (789, 3, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (790, 4, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (791, 5, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (792, 6, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (793, 7, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (794, 8, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (795, 9, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (796, 10, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (797, 11, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (798, 12, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (799, 13, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (800, 14, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (801, 15, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (802, 16, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (803, 17, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (804, 18, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (805, 19, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (806, 20, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (807, 21, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (808, 22, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (809, 23, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (810, 24, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (811, 25, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (812, 26, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (813, 27, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (814, 28, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (815, 29, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (816, 30, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (817, 31, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (818, 32, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (819, 33, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (820, 34, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (821, 35, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (822, 36, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (823, 37, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (824, 38, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (825, 39, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (826, 40, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (827, 41, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (828, 42, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (829, 43, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (830, 44, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (831, 45, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (832, 46, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (833, 47, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (834, 48, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (835, 49, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (836, 50, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (837, 51, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (838, 52, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (839, 53, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (840, 54, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (841, 55, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (842, 56, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (843, 57, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (844, 58, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (845, 59, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (846, 60, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (847, 61, 'admin');
-INSERT INTO `flowmeter_roleauth` VALUES (848, 62, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (849, 1, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (850, 2, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (851, 3, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (852, 4, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (853, 5, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (854, 6, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (855, 7, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (856, 8, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (857, 9, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (858, 10, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (859, 11, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (860, 12, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (861, 13, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (862, 14, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (863, 15, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (864, 16, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (865, 17, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (866, 18, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (867, 19, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (868, 20, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (869, 21, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (870, 22, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (871, 23, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (872, 24, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (873, 25, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (874, 26, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (875, 27, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (876, 28, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (877, 29, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (878, 30, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (879, 31, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (880, 32, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (881, 33, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (882, 34, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (883, 35, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (884, 36, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (885, 37, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (886, 38, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (887, 39, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (888, 40, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (889, 41, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (890, 42, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (891, 43, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (892, 44, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (893, 45, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (894, 46, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (895, 47, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (896, 48, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (897, 49, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (898, 50, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (899, 51, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (900, 52, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (901, 53, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (902, 54, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (904, 56, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (905, 57, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (906, 58, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (907, 59, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (908, 60, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (909, 61, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (910, 62, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (911, 63, 'admin');
+INSERT INTO `flowmeter_roleauth` VALUES (923, 32, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (924, 33, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (925, 34, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (926, 35, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (927, 36, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (928, 37, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (929, 38, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (930, 39, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (931, 43, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (932, 44, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (933, 45, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (934, 46, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (935, 47, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (936, 48, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (937, 50, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (938, 52, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (939, 54, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (940, 56, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (941, 57, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (942, 58, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (943, 59, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (944, 60, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (945, 63, 'manufacturer');
+INSERT INTO `flowmeter_roleauth` VALUES (961, 23, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (962, 36, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (963, 37, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (964, 38, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (965, 39, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (966, 46, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (967, 47, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (968, 50, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (969, 52, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (970, 54, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (971, 56, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (972, 57, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (973, 58, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (974, 59, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (975, 60, 'dtu_user');
+INSERT INTO `flowmeter_roleauth` VALUES (976, 63, 'dtu_user');
 
 -- ----------------------------
 -- Table structure for flowmeter_systemlog
@@ -1053,10 +1188,41 @@ CREATE TABLE `flowmeter_systemlog`  (
   `action_type` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `state` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `opr_user_id` int(0) NOT NULL,
+  `msg` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_systemlog_opr_user_id_b12aa62a_fk_flowmeter_user_id`(`opr_user_id`) USING BTREE,
   CONSTRAINT `flowmeter_systemlog_opr_user_id_b12aa62a_fk_flowmeter_user_id` FOREIGN KEY (`opr_user_id`) REFERENCES `flowmeter_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of flowmeter_systemlog
+-- ----------------------------
+INSERT INTO `flowmeter_systemlog` VALUES (1, '2020-03-22 21:21:13.055964', '编辑流量计。流量计DTU编号为：dtu_no，物理地址为：address，气量限值为：surplus_gas_limits，备注为：remark。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (2, '2020-03-28 19:14:20.875251', '导出管理员账号。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (3, '2020-03-28 19:15:18.059275', '导出管理员账号。', 'error', 2, 'invalid literal for int() with base 10: \'admin_ids\'');
+INSERT INTO `flowmeter_systemlog` VALUES (4, '2020-03-28 19:15:39.213815', '导出管理员账号。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (5, '2020-03-28 19:15:56.910268', '编辑管理员账号。用户名为：name，联系电话为：phone，邮箱为：email，备注为：remark。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (6, '2020-03-28 19:16:14.372988', '导出管理员账号。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (7, '2020-03-28 19:16:47.286631', '导出管理员账号。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (8, '2020-03-28 19:19:45.206040', '导出供气商账号。', 'error', 2, '\'man_ids\'');
+INSERT INTO `flowmeter_systemlog` VALUES (9, '2020-03-28 19:21:50.081809', '导出供气商账号。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (10, '2020-03-28 19:22:04.071583', '导出DTU用户账号。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (11, '2020-03-30 20:00:57.283589', '编辑角色权限。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (12, '2020-04-02 18:23:04.152168', '编辑角色权限。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (13, '2020-04-02 18:24:06.733758', '编辑角色权限。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (14, '2020-04-02 18:24:17.380951', '编辑角色权限。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (15, '2020-04-02 19:51:57.950210', '编辑角色权限。', 'success', 2, '');
+INSERT INTO `flowmeter_systemlog` VALUES (16, '2020-04-03 12:33:08.458070', '添加DTU。', 'error', 9, '参数校验失败，[TypeInvalid(\'expected int\',)]！');
+INSERT INTO `flowmeter_systemlog` VALUES (17, '2020-04-03 12:34:06.041616', '添加DTU。', 'error', 9, '\'NoneType\' object has no attribute \'id\'');
+INSERT INTO `flowmeter_systemlog` VALUES (18, '2020-04-03 12:34:36.329075', '添加DTU。', 'success', 9, '');
+INSERT INTO `flowmeter_systemlog` VALUES (19, '2020-04-03 19:15:29.752796', '添加流量计。物理地址为：address，气量限值为：surplus_gas_limits。', 'error', 9, '该仪表已存在！');
+INSERT INTO `flowmeter_systemlog` VALUES (20, '2020-04-03 19:15:33.265837', '添加流量计。物理地址为：address，气量限值为：surplus_gas_limits。', 'error', 9, '该仪表已存在！');
+INSERT INTO `flowmeter_systemlog` VALUES (21, '2020-04-03 19:15:36.094660', '添加流量计。物理地址为：address，气量限值为：surplus_gas_limits。', 'error', 9, '该仪表已存在！');
+INSERT INTO `flowmeter_systemlog` VALUES (22, '2020-04-03 19:15:39.298228', '添加流量计。物理地址为：address，气量限值为：surplus_gas_limits。', 'success', 9, '');
+INSERT INTO `flowmeter_systemlog` VALUES (23, '2020-04-03 19:16:28.380689', '添加流量计。物理地址为：address，气量限值为：surplus_gas_limits。', 'error', 9, '该仪表已存在！');
+INSERT INTO `flowmeter_systemlog` VALUES (24, '2020-04-03 19:17:45.284095', '添加流量计。物理地址为：address，气量限值为：surplus_gas_limits。', 'error', 9, '该阀门已存在！');
+INSERT INTO `flowmeter_systemlog` VALUES (25, '2020-04-03 21:22:39.836845', '编辑流量计。流量计DTU编号为：dtu_no，物理地址为：address，气量限值为：surplus_gas_limits，备注为：remark。', 'success', 15, '');
+INSERT INTO `flowmeter_systemlog` VALUES (26, '2020-04-03 21:22:42.708477', '编辑流量计。流量计DTU编号为：dtu_no，物理地址为：address，气量限值为：surplus_gas_limits，备注为：remark。', 'success', 15, '');
 
 -- ----------------------------
 -- Table structure for flowmeter_user
@@ -1082,7 +1248,7 @@ CREATE TABLE `flowmeter_user`  (
 -- ----------------------------
 -- Records of flowmeter_user
 -- ----------------------------
-INSERT INTO `flowmeter_user` VALUES (1, 'test1', 'e4e5d1c9bf848d039fcf8afdb38ec6cb', '11111111111', '2@qq.com', '2020-02-26 17:04:40.000000', 'enable', ' ', 'admin');
+INSERT INTO `flowmeter_user` VALUES (1, 'test1', 'e4e5d1c9bf848d039fcf8afdb38ec6cb', '11111111111', '2@qq.com', '2020-02-26 17:04:40.000000', 'enable', ' test', 'admin');
 INSERT INTO `flowmeter_user` VALUES (2, '陈伟强', 'e4e5d1c9bf848d039fcf8afdb38ec6cb', '13850592086', '1347704262@qq.com', '2020-02-14 17:09:58.900227', 'enable', '', 'admin');
 INSERT INTO `flowmeter_user` VALUES (9, '供气商1', 'e4e5d1c9bf848d039fcf8afdb38ec6cb', '13850592081', '111@qq.com', '2020-02-24 15:28:33.706380', 'enable', 'test111', 'manufacturer');
 INSERT INTO `flowmeter_user` VALUES (10, '供气商2', 'e4e5d1c9bf848d039fcf8afdb38ec6cb', '13850592082', '121@qq.com', '2020-02-24 17:30:27.532084', 'enable', 'test111', 'manufacturer');
@@ -1103,17 +1269,17 @@ CREATE TABLE `flowmeter_valve`  (
   `meter_id` int(0) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `meter_id`(`meter_id`) USING BTREE,
-  UNIQUE INDEX `flowmeter_valve_dtu_id_address_e15e2602_uniq`(`dtu_id`, `address`) USING BTREE,
   INDEX `flowmeter_valve_valve_dtu_id_f690f97a_fk_flowmeter_dtu_id`(`valve_dtu_id`) USING BTREE,
   INDEX `flowmeter_valve_dtu_id_51252e3a`(`dtu_id`) USING BTREE,
   CONSTRAINT `flowmeter_valve_meter_id_f5ca6c64_fk_flowmeter_meter_id` FOREIGN KEY (`meter_id`) REFERENCES `flowmeter_meter` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `flowmeter_valve_valve_dtu_id_f690f97a_fk_flowmeter_dtu_id` FOREIGN KEY (`valve_dtu_id`) REFERENCES `flowmeter_dtu` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_valve
 -- ----------------------------
 INSERT INTO `flowmeter_valve` VALUES (9, 1, 14, NULL, 11);
 INSERT INTO `flowmeter_valve` VALUES (10, 3, 14, NULL, 12);
+INSERT INTO `flowmeter_valve` VALUES (12, 4, 14, NULL, 16);
 
 SET FOREIGN_KEY_CHECKS = 1;

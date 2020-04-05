@@ -1445,3 +1445,170 @@
 [2020-04-03 21:40:29,938] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 1232
 [2020-04-03 21:40:29,939] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_of_select_box
 [2020-04-03 21:40:29,942] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%22user_id%22%3A%7B%7D%7D&action=query_dtu_of_select_box HTTP/1.1" 200 322
+[2020-04-03 21:41:33,673] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/log/ HTTP/1.1" 200 160
+[2020-04-03 21:41:36,784] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /logout/ HTTP/1.1" 302 0
+[2020-04-03 21:41:36,790] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /login/ HTTP/1.1" 200 2944
+[2020-04-03 21:41:40,670] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：login
+[2020-04-03 21:41:40,676] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/login/ HTTP/1.1" 200 96
+[2020-04-03 21:41:41,908] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8060
+[2020-04-03 21:41:41,943] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/dtu_user/ HTTP/1.1" 200 3598
+[2020-04-03 21:41:41,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 7791
+[2020-04-03 21:41:41,952] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19048
+[2020-04-03 21:41:41,956] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-04-03 21:41:41,960] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/system/view/ HTTP/1.1" 200 8587
+[2020-04-03 21:41:41,962] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/alarm/view/ HTTP/1.1" 200 9075
+[2020-04-03 21:41:42,115] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-04-03 21:41:42,121] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_system_log&page=1&limit=10 HTTP/1.1" 200 769
+[2020-04-03 21:41:42,133] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 160
+[2020-04-03 21:41:42,140] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-04-03 21:41:42,142] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user_of_select_box
+[2020-04-03 21:41:42,149] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user_of_select_box HTTP/1.1" 200 116
+[2020-04-03 21:41:42,157] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_of_select_box
+[2020-04-03 21:41:42,162] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%22user_id%22%3A%7B%7D%7D&action=query_dtu_of_select_box HTTP/1.1" 200 322
+[2020-04-03 21:41:42,163] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 1232
+[2020-04-03 21:41:42,170] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-04-03 21:41:42,171] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-04-03 21:41:42,176] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-04-03 21:41:42,213] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10 HTTP/1.1" 200 2302
+[2020-04-03 21:41:44,384] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：read_alarm_log
+[2020-04-03 21:41:44,391] [basehttp.py:154] [basehttp:log_message] [INFO]- "POST /handler/log/ HTTP/1.1" 200 68
+[2020-04-03 21:41:45,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8060
+[2020-04-03 21:41:45,838] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/dtu_user/ HTTP/1.1" 200 3598
+[2020-04-03 21:41:45,856] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 7791
+[2020-04-03 21:41:45,859] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19048
+[2020-04-03 21:41:45,860] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-04-03 21:41:45,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/system/view/ HTTP/1.1" 200 8587
+[2020-04-03 21:41:45,861] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/alarm/view/ HTTP/1.1" 200 9075
+[2020-04-03 21:41:46,011] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-04-03 21:41:46,014] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-04-03 21:41:46,023] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 160
+[2020-04-03 21:41:46,026] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user_of_select_box
+[2020-04-03 21:41:46,030] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-04-03 21:41:46,032] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user_of_select_box HTTP/1.1" 200 116
+[2020-04-03 21:41:46,033] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_of_select_box
+[2020-04-03 21:41:46,037] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-04-03 21:41:46,045] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%22user_id%22%3A%7B%7D%7D&action=query_dtu_of_select_box HTTP/1.1" 200 322
+[2020-04-03 21:41:46,051] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_system_log&page=1&limit=10 HTTP/1.1" 200 769
+[2020-04-03 21:41:46,050] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-04-03 21:41:46,062] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 1232
+[2020-04-03 21:41:46,095] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10 HTTP/1.1" 200 2302
+[2020-04-03 21:41:47,125] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8060
+[2020-04-03 21:41:47,164] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/dtu_user/ HTTP/1.1" 200 3598
+[2020-04-03 21:41:47,176] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 7791
+[2020-04-03 21:41:47,182] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19048
+[2020-04-03 21:41:47,184] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-04-03 21:41:47,185] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/system/view/ HTTP/1.1" 200 8587
+[2020-04-03 21:41:47,187] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/alarm/view/ HTTP/1.1" 200 9075
+[2020-04-03 21:41:47,331] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-04-03 21:41:47,333] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-04-03 21:41:47,340] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-04-03 21:41:47,344] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_system_log&page=1&limit=10 HTTP/1.1" 200 769
+[2020-04-03 21:41:47,350] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-04-03 21:41:47,365] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user_of_select_box
+[2020-04-03 21:41:47,368] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 160
+[2020-04-03 21:41:47,378] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user_of_select_box HTTP/1.1" 200 116
+[2020-04-03 21:41:47,380] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-04-03 21:41:47,384] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_of_select_box
+[2020-04-03 21:41:47,396] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%22user_id%22%3A%7B%7D%7D&action=query_dtu_of_select_box HTTP/1.1" 200 322
+[2020-04-03 21:41:47,411] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 1232
+[2020-04-03 21:41:47,418] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10 HTTP/1.1" 200 2302
+[2020-04-03 21:41:47,742] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8060
+[2020-04-03 21:41:47,780] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/dtu_user/ HTTP/1.1" 200 3598
+[2020-04-03 21:41:47,788] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 7791
+[2020-04-03 21:41:47,793] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19048
+[2020-04-03 21:41:47,795] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-04-03 21:41:47,796] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/system/view/ HTTP/1.1" 200 8587
+[2020-04-03 21:41:47,797] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/alarm/view/ HTTP/1.1" 200 9075
+[2020-04-03 21:41:47,927] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 160
+[2020-04-03 21:41:47,926] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user_of_select_box
+[2020-04-03 21:41:47,933] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user_of_select_box HTTP/1.1" 200 116
+[2020-04-03 21:41:47,935] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_of_select_box
+[2020-04-03 21:41:47,935] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-04-03 21:41:47,948] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%22user_id%22%3A%7B%7D%7D&action=query_dtu_of_select_box HTTP/1.1" 200 322
+[2020-04-03 21:41:47,950] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-04-03 21:41:47,955] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-04-03 21:41:47,964] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-04-03 21:41:47,970] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-04-03 21:41:47,976] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_system_log&page=1&limit=10 HTTP/1.1" 200 769
+[2020-04-03 21:41:47,977] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 1232
+[2020-04-03 21:41:48,010] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10 HTTP/1.1" 200 2302
+[2020-04-03 21:41:48,117] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8060
+[2020-04-03 21:41:48,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/dtu_user/ HTTP/1.1" 200 3598
+[2020-04-03 21:41:48,163] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 7791
+[2020-04-03 21:41:48,165] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19048
+[2020-04-03 21:41:48,167] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-04-03 21:41:48,171] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/system/view/ HTTP/1.1" 200 8587
+[2020-04-03 21:41:48,171] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/alarm/view/ HTTP/1.1" 200 9075
+[2020-04-03 21:41:48,299] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user_of_select_box
+[2020-04-03 21:41:48,299] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 160
+[2020-04-03 21:41:48,305] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user_of_select_box HTTP/1.1" 200 116
+[2020-04-03 21:41:48,307] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-04-03 21:41:48,309] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_of_select_box
+[2020-04-03 21:41:48,320] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%22user_id%22%3A%7B%7D%7D&action=query_dtu_of_select_box HTTP/1.1" 200 322
+[2020-04-03 21:41:48,320] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-04-03 21:41:48,326] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-04-03 21:41:48,329] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-04-03 21:41:48,340] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-04-03 21:41:48,346] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_system_log&page=1&limit=10 HTTP/1.1" 200 769
+[2020-04-03 21:41:48,349] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 1232
+[2020-04-03 21:41:48,380] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10 HTTP/1.1" 200 2302
+[2020-04-03 21:41:48,454] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8060
+[2020-04-03 21:41:48,488] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/dtu_user/ HTTP/1.1" 200 3598
+[2020-04-03 21:41:48,493] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 7791
+[2020-04-03 21:41:48,497] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19048
+[2020-04-03 21:41:48,504] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-04-03 21:41:48,504] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/system/view/ HTTP/1.1" 200 8587
+[2020-04-03 21:41:48,506] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/alarm/view/ HTTP/1.1" 200 9075
+[2020-04-03 21:41:48,636] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 160
+[2020-04-03 21:41:48,637] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user_of_select_box
+[2020-04-03 21:41:48,641] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-04-03 21:41:48,643] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user_of_select_box HTTP/1.1" 200 116
+[2020-04-03 21:41:48,650] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-04-03 21:41:48,657] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-04-03 21:41:48,666] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-04-03 21:41:48,668] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-04-03 21:41:48,675] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_of_select_box
+[2020-04-03 21:41:48,679] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_system_log&page=1&limit=10 HTTP/1.1" 200 769
+[2020-04-03 21:41:48,685] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%22user_id%22%3A%7B%7D%7D&action=query_dtu_of_select_box HTTP/1.1" 200 322
+[2020-04-03 21:41:48,705] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 1232
+[2020-04-03 21:41:48,718] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10 HTTP/1.1" 200 2302
+[2020-04-03 21:41:48,777] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8060
+[2020-04-03 21:41:48,815] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/dtu_user/ HTTP/1.1" 200 3598
+[2020-04-03 21:41:48,833] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 7791
+[2020-04-03 21:41:48,834] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19048
+[2020-04-03 21:41:48,836] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-04-03 21:41:48,837] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/system/view/ HTTP/1.1" 200 8587
+[2020-04-03 21:41:48,838] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/alarm/view/ HTTP/1.1" 200 9075
+[2020-04-03 21:41:48,988] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-04-03 21:41:48,996] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-04-03 21:41:48,999] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_system_log&page=1&limit=10 HTTP/1.1" 200 769
+[2020-04-03 21:41:49,002] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-04-03 21:41:49,019] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-04-03 21:41:49,021] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-04-03 21:41:49,022] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_of_select_box
+[2020-04-03 21:41:49,032] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 160
+[2020-04-03 21:41:49,033] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user_of_select_box
+[2020-04-03 21:41:49,037] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%22user_id%22%3A%7B%7D%7D&action=query_dtu_of_select_box HTTP/1.1" 200 322
+[2020-04-03 21:41:49,047] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user_of_select_box HTTP/1.1" 200 116
+[2020-04-03 21:41:49,056] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 1232
+[2020-04-03 21:41:49,082] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10 HTTP/1.1" 200 2302
+[2020-04-03 21:41:49,090] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /index/ HTTP/1.1" 200 8060
+[2020-04-03 21:41:49,137] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /statistic/dtu_user/ HTTP/1.1" 200 3598
+[2020-04-03 21:41:49,145] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /dtu/view/ HTTP/1.1" 200 7791
+[2020-04-03 21:41:49,149] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /meter/view/ HTTP/1.1" 200 19048
+[2020-04-03 21:41:49,151] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/opr/view/ HTTP/1.1" 200 9870
+[2020-04-03 21:41:49,152] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/system/view/ HTTP/1.1" 200 8587
+[2020-04-03 21:41:49,153] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /log/alarm/view/ HTTP/1.1" 200 9075
+[2020-04-03 21:41:49,277] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?action=query_dtu&page=1&limit=10 HTTP/1.1" 200 160
+[2020-04-03 21:41:49,278] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_user_of_select_box
+[2020-04-03 21:41:49,284] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu_user/?param=%7B%7D&action=query_dtu_user_of_select_box HTTP/1.1" 200 116
+[2020-04-03 21:41:49,285] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_meter
+[2020-04-03 21:41:49,288] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_dtu_of_select_box
+[2020-04-03 21:41:49,298] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/dtu/?param=%7B%22user_id%22%3A%7B%7D%7D&action=query_dtu_of_select_box HTTP/1.1" 200 322
+[2020-04-03 21:41:49,315] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_opr_log
+[2020-04-03 21:41:49,318] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/meter/?action=query_meter&page=1&limit=10 HTTP/1.1" 200 1232
+[2020-04-03 21:41:49,317] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_alarm_log
+[2020-04-03 21:41:49,326] [common.py:63] [common:get_action_handler] [INFO]- 当前正在操作action：query_system_log
+[2020-04-03 21:41:49,329] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_opr_log&page=1&limit=10 HTTP/1.1" 200 63
+[2020-04-03 21:41:49,339] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_system_log&page=1&limit=10 HTTP/1.1" 200 769
+[2020-04-03 21:41:49,374] [basehttp.py:154] [basehttp:log_message] [INFO]- "GET /handler/log/?action=query_alarm_log&page=1&limit=10 HTTP/1.1" 200 2302
