@@ -1,63 +1,19 @@
 # coding=utf-8
 
-from django_redis import get_redis_connection
+import redis
+
 from flowmeter.common.common import deserialize_obj, serialize_obj
 
 import logging
 logger = logging.getLogger('log')
 
-
-class RedisConnect:
-    def __init__(self):
-        self.connect = get_redis_connection('default')
-
-    def __del__(self):
-        self.connect.close()
-        logger.error('断开连接！')
-
-    def ttl(self, key):
-        """剩余过期时间"""
-        return self.connect.ttl(key)
-
-    def get(self, key):
-        return self.connect.get(key)
-
-    def set(self, key, val):
-        self.connect.set(key, val)
-
-    def zadd(self, key, val):
-        self.connect.zadd(key, val)
-
-    def sadd(self, key, val):
-        self.connect.sadd(key, val)
-
-    def sismember(self, key, val):
-        return self.connect.sismember(key, val)
-
-    def zrange(self, key, begin, end):
-        return self.connect.zrange(key, begin, end)
-
-    def hset(self, name, key, val):
-        return self.connect.hset(name, key, val)
-
-    def hget(self, name, key):
-        return self.connect.hget(name, key)
-
-    def delete(self, keyname):
-        return self.connect.delete(keyname)
-
-    def publish(self, channel_name, message):
-        self.connect.publish(channel_name, message)
-
-    def pubsub(self):
-        return self.connect.pubsub()
-
-
-conn = RedisConnect()
+pool = redis.ConnectionPool(host='127.0.0.1', port=6379, max_connections=2000)
 
 
 def is_exists(name):
+    conn = redis.Redis(connection_pool=pool)
     timeout = conn.ttl(name)
+    conn.close()
     return timeout == 0
 
 
@@ -67,21 +23,29 @@ def get_int(name):
     :param name:
     :return:
     """
+    conn = redis.Redis(connection_pool=pool)
     val = conn.get(name)
+    conn.close()
     return int(val) if val else None
 
 
 def set_int(name, val):
+    conn = redis.Redis(connection_pool=pool)
     conn.set(name, val)
+    conn.close()
 
 
 def get_list(name):
+    conn = redis.Redis(connection_pool=pool)
     val = conn.get(name)
+    conn.close()
     return list(val) if val else []
 
 
 def set_list(name, val_list):
+    conn = redis.Redis(connection_pool=pool)
     conn.set(name, val_list)
+    conn.close()
 
 
 def __is_obj(obj):
@@ -111,14 +75,18 @@ def add_sorted_set(name, obj, score):
 
     if __is_obj(obj):
         obj = serialize_obj(obj)
+    conn = redis.Redis(connection_pool=pool)
     conn.zadd(name, {obj: score})
+    conn.close()
 
 
 def add_set(name, obj):
     # 如果是对象先序列化
     if __is_obj(obj):
         obj = serialize_obj(obj)
+    conn = redis.Redis(connection_pool=pool)
     conn.sadd(name, obj)
+    conn.close()
 
 
 def is_exists_set(name, obj):
@@ -131,8 +99,10 @@ def is_exists_set(name, obj):
     # 如果是对象先序列化
     if __is_obj(obj):
         obj = serialize_obj(obj)
-
-    return True if conn.sismember(name, obj) == 1 else False
+    conn = redis.Redis(connection_pool=pool)
+    is_member = conn.sismember(name, obj)
+    conn.close()
+    return True if is_member == 1 else False
 
 
 def get_sorted_set_first(name, class_name=None):
@@ -142,7 +112,9 @@ def get_sorted_set_first(name, class_name=None):
     :param name:
     :return:
     """
+    conn = redis.Redis(connection_pool=pool)
     res = conn.zrange(name, 0, 0)
+    conn.close()
 
     if len(res) == 0:
         return None
@@ -158,8 +130,9 @@ def get_zset_all_member(name, class_name=None):
     :param name:
     :return:
     """
+    conn = redis.Redis(connection_pool=pool)
     members = conn.zrange(name, 0, -1)
-
+    conn.close()
     res = []
     for member in members:
         res.append(deserialize_obj(member, class_name) if __is_obj(member) else member)
@@ -169,26 +142,36 @@ def get_zset_all_member(name, class_name=None):
 
 def set_obj(keyname, obj):
     obj = serialize_obj(obj)
+    conn = redis.Redis(connection_pool=pool)
     conn.set(keyname, obj)
+    conn.close()
 
 
 def get_obj(keyname, class_name=None):
+    conn = redis.Redis(connection_pool=pool)
     obj = conn.get(keyname)
+    conn.close()
     obj = deserialize_obj(obj, class_name)
     return obj
 
 
 def set_hash(name, key, val):
+    conn = redis.Redis(connection_pool=pool)
     conn.hset(name, key, val)
+    conn.close()
 
 
 def get_hash(name, key):
+    conn = redis.Redis(connection_pool=pool)
     val = conn.hget(name, key)
+    conn.close()
     return val
 
 
 def delete(keyname):
+    conn = redis.Redis(connection_pool=pool)
     conn.delete(keyname)
+    conn.close()
 
 
 def publish_message(channel_name, message):
@@ -198,10 +181,8 @@ def publish_message(channel_name, message):
     :param channel_name: 通道名称
     :return:
     """
+    conn = redis.Redis(connection_pool=pool)
     conn.publish(channel_name, message)
-
-
-def pubsub():
-    return conn.pubsub()
+    conn.close()
 
 

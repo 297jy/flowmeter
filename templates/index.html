@@ -157,18 +157,6 @@
             onclick: null// 点击关闭回调
         };
 
-        window.onbeforeunload(function () {
-            //判断是关闭还是刷新
-            if (event.clientX > document.body.clientWidth && event.clientY < 0 || event.altKey) {
-                //关闭时怎么处理
-                alert('刷新');
-            } else {
-                //刷新时怎么处理
-                alert('刷新');
-            }
-
-        });
-
         if ("WebSocket" in window) {
 
             open_falg = false;
@@ -207,6 +195,7 @@
                     layer.closeAll();
                 });**/
                     open_falg = false;
+                    alert('断开了！')
                 };
             }
 
@@ -218,7 +207,7 @@
                     connect();
                 }
                 ws.send('{{ user.id }}');
-            }, 60 * 1000);
+            }, 10 * 1000);
 
         } else {
 
