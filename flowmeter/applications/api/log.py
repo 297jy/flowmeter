@@ -2,17 +2,22 @@
 import datetime
 import json
 
-from flowmeter.celery_task.api import alarm_task
+from django.db import IntegrityError
+
 from flowmeter.common.const import RoleType
 from flowmeter.config.api import log as conf_log_api
 from flowmeter.config.api import alarm_log_reader as conf_reader_api
 from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.config.api import meter as conf_meter_api
+from flowmeter.config.api import user as conf_user_api
 from flowmeter.config.const import SENSOR_ERROR_FLAG_TRUE, VALVE_ERROR_FLAG_TRUE, OWE_STATE_TRUE, VALVE_STATE_OPEN
 from flowmeter.config.db.log_table import OprLog, AlarmLog
 from flowmeter.common.api.validators import param_check, WhiteListCheck, StrCheck
 from flowmeter.applications.core import log as core
-from flowmeter.config.db.log_table import SystemLog
+
+import logging
+
+logger = logging.getLogger('log')
 
 
 def find_logs_by_query_terms(query_terms, user, page=None):
@@ -80,7 +85,6 @@ def find_alarm_logs_by_query_terms(query_terms, user, page=None):
 
 
 def update_logs_success_state(log_ids):
-
     conf_log_api.update_opr_logs_state(log_ids, OprLog.SUCCESS_STATE)
 
 
@@ -169,9 +173,8 @@ def read_alarm_log(alarm_log_id):
 
 
 def render_msg(alarm_log, role_type):
-
     if role_type == RoleType.ADMIN:
-        return "供气商：{}，DTU用户：{}，DTU编号：{}，发生了：{}！".\
+        return "供气商：{}，DTU用户：{}，DTU编号：{}，发生了：{}！". \
             format(alarm_log.meter.dtu.region.manufacturer.name, alarm_log.meter.dtu.user.name,
                    alarm_log.meter.dtu.dtu_no, alarm_log.get_display_alarm_type())
     elif role_type == RoleType.MANUFACTURER:
@@ -196,7 +199,7 @@ def check_and_send_alarm(meter_id, data, status=None):
             log_dict = {'alarm_type': AlarmLog.ALARM_EXCEED_LIMIT, 'meter_id': meter_id,
                         'opr_time': datetime.datetime.now()}
             # 异步执行
-            alarm_task.send_alarm.delay(log_dict)
+            send_alarm(log_dict)
 
     if status and isinstance(status, dict):
         sensor_state = status.get('sensor_state')
@@ -204,14 +207,14 @@ def check_and_send_alarm(meter_id, data, status=None):
             log_dict = {'alarm_type': AlarmLog.ALARM_SENSOR_ERROR, 'meter_id': meter_id,
                         'opr_time': datetime.datetime.now()}
             # 异步执行
-            alarm_task.send_alarm.delay(log_dict)
+            send_alarm(log_dict)
 
         valve_error_flag = status.get('valve_error_flag')
         if valve_error_flag and valve_error_flag == VALVE_ERROR_FLAG_TRUE:
             log_dict = {'alarm_type': AlarmLog.ALARM_VALVE_ERROR, 'meter_id': meter_id,
                         'opr_time': datetime.datetime.now()}
             # 异步执行
-            alarm_task.send_alarm.delay(log_dict)
+            send_alarm(log_dict)
 
         owe_state = status.get('owe_state')
         valve_state = status.get('valve_state')
@@ -219,5 +222,42 @@ def check_and_send_alarm(meter_id, data, status=None):
             log_dict = {'alarm_type': AlarmLog.ALARM_SUB_VALVE, 'meter_id': meter_id,
                         'opr_time': datetime.datetime.now()}
             # 异步执行
-            alarm_task.send_alarm.delay(log_dict)
+            send_alarm(log_dict)
 
+
+def send_alarm(alarm_log_dict):
+    """
+    向用户发送警报
+    :return:
+    """
+    alarm_log = conf_log_api.add_alarm_log(alarm_log_dict)
+    # 向管理员推送警报
+    admin_ids = conf_user_api.get_all_admin_ids()
+    logger.info(admin_ids)
+    for admin_id in admin_ids:
+        try:
+            reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': int(admin_id)})
+            alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log,
+                                                                              RoleType.ADMIN)}
+            conf_cache_api.publish_message('alarm_user_id_{}'.format(admin_id), json.dumps(alarm_log_dict))
+        except IntegrityError:
+            pass
+    # 还需要向流量计的厂商推送警报
+    man_id = alarm_log.meter.dtu.region.manufacturer.id
+    try:
+        reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': man_id})
+        alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log,
+                                                                          RoleType.MANUFACTURER)}
+        conf_cache_api.publish_message('alarm_user_id_{}'.format(man_id), json.dumps(alarm_log_dict))
+    except IntegrityError:
+        pass
+
+    # 还需要向DTU用户推送警报
+    user_id = alarm_log.meter.dtu.user.id
+    try:
+        reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': user_id})
+        alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log,
+                                                                          RoleType.DTU_USER)}
+        conf_cache_api.publish_message('alarm_user_id_{}'.format(man_id), json.dumps(alarm_log_dict))
+    except IntegrityError:
+        pass

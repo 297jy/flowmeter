@@ -1,3 +1,0 @@
-[2020-02-01 20:06:00,490] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
-[2020-02-01 20:18:30,324] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\settings.py changed, reloading.
-[2020-02-01 20:18:30,871] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader

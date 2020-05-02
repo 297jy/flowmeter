@@ -53,3 +53,7 @@ class ExpireException(Exception):
     """
     过期异常
     """
+
+
+class ConnectCloseException(Exception):
+    """连接关闭异常"""

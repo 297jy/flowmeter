@@ -1,4 +1,6 @@
 # coding=utf-8
+import datetime
+import time
 
 
 class Operator:
@@ -23,6 +25,7 @@ class Operator:
         self.meter_address = None
         self.log_id = None
         self.meter_id = None
+        self.opr_time = int(time.mktime(datetime.datetime.now().timetuple()))
 
     def init(self, dtu_no, meter_address, opr_type, log_id, meter_id, val=None):
         self.opr_type = opr_type
@@ -134,7 +137,7 @@ class Operator:
         }
 
     def keys(self):
-        return 'opr_type', 'val', 'dtu_no', 'meter_address', 'log_id', 'meter_id'
+        return 'opr_type', 'val', 'dtu_no', 'meter_address', 'log_id', 'meter_id', 'opr_time'
 
     def __getitem__(self, item):
         return getattr(self, item)

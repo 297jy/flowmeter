@@ -21,5 +21,6 @@ class ErrorHandlerMiddleware(MiddlewareMixin):
     def process_exception(self, request, exception):
 
         traceback.print_exc()
+        logger.error(str(exception))
         result = Result.error(msg=str(exception))
         return HttpResponse(json.dumps(dict(result)))

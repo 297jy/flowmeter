@@ -31,7 +31,7 @@ def find_register_by_opr_type(opr_type):
         # 重新设置缓存
         conf_cache_api.set_hash('control_register', opr_type, register_str)
     else:
-        register_dict = json.loads(register_str)
+        register_dict = json.loads(register_str.decode('utf-8'))
         register = ControlRegister()
         register.field_val = register_dict['field_val']
         register.const_data = register_dict['const_data']

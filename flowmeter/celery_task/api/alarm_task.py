@@ -5,12 +5,10 @@ import json
 import logging
 
 from django.db import IntegrityError
-from django.db import transaction
 from flowmeter.celery import app
 from flowmeter.common.const import RoleType
 from flowmeter.config.api import user as conf_user_api
 from flowmeter.config.api import log as conf_log_api
-from flowmeter.celery_task.core import alarm_task as core
 from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.config.api import alarm_log_reader as conf_reader_api
 from flowmeter.applications.api import log as app_log_api
@@ -18,7 +16,6 @@ from flowmeter.applications.api import log as app_log_api
 logger = logging.getLogger('log')
 
 
-@app.task
 def send_alarm(alarm_log_dict):
     """
     向用户发送警报

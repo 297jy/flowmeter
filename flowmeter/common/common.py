@@ -89,7 +89,7 @@ def deserialize_obj(obj_str, class_name=None):
     if obj_str is None:
         return None
 
-    obj_dict = json.loads(obj_str)
+    obj_dict = json.loads(obj_str.decode('utf-8'))
 
     if class_name is None:
         return obj_dict

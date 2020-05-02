@@ -5,6 +5,16 @@ from flowmeter.common.api.validators import StrCheck, param_check
 from django.db import transaction
 
 
+def get_websocket_port_name():
+    """获取websocket端口配置名"""
+    return "websocket_port"
+
+
+def get_flowmeter_port_name():
+    """获取流量器远程服务器端口配置名"""
+    return "flowmeter_port"
+
+
 def get_unexecuted_opr_check_time():
     """
     获取未执行的操作的检查时间
@@ -77,6 +87,15 @@ def get_all_configure():
     return confs
 
 
+def get_configure_by_name(name):
+    """根据配置名获取配置值"""
+    val = cache.get_hash('configure', name)
+    if val is None:
+        val = Configure.objects.get(name=name).val
+        cache.set_hash('configure', name, val)
+    return val
+
+
 def update_configure(conf_info):
 
     must_dict = {
@@ -87,4 +106,8 @@ def update_configure(conf_info):
 
     conf = Configure.objects.get(name=conf_info['name'])
     conf.val = conf_info['val']
-    conf.save()
+
+    with transaction.atomic():
+        conf.save()
+        # 更新缓存
+        cache.set_hash('configure', conf_info['name'], conf_info['val'])

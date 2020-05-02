@@ -3,9 +3,60 @@
 from django_redis import get_redis_connection
 from flowmeter.common.common import deserialize_obj, serialize_obj
 
+import logging
+logger = logging.getLogger('log')
+
+
+class RedisConnect:
+    def __init__(self):
+        self.connect = get_redis_connection('default')
+
+    def __del__(self):
+        self.connect.close()
+        logger.error('断开连接！')
+
+    def ttl(self, key):
+        """剩余过期时间"""
+        return self.connect.ttl(key)
+
+    def get(self, key):
+        return self.connect.get(key)
+
+    def set(self, key, val):
+        self.connect.set(key, val)
+
+    def zadd(self, key, val):
+        self.connect.zadd(key, val)
+
+    def sadd(self, key, val):
+        self.connect.sadd(key, val)
+
+    def sismember(self, key, val):
+        return self.connect.sismember(key, val)
+
+    def zrange(self, key, begin, end):
+        return self.connect.zrange(key, begin, end)
+
+    def hset(self, name, key, val):
+        return self.connect.hset(name, key, val)
+
+    def hget(self, name, key):
+        return self.connect.hget(name, key)
+
+    def delete(self, keyname):
+        return self.connect.delete(keyname)
+
+    def publish(self, channel_name, message):
+        self.connect.publish(channel_name, message)
+
+    def pubsub(self):
+        return self.connect.pubsub()
+
+
+conn = RedisConnect()
+
 
 def is_exists(name):
-    conn = get_redis_connection('default')
     timeout = conn.ttl(name)
     return timeout == 0
 
@@ -16,24 +67,20 @@ def get_int(name):
     :param name:
     :return:
     """
-    conn = get_redis_connection('default')
     val = conn.get(name)
     return int(val) if val else None
 
 
 def set_int(name, val):
-    conn = get_redis_connection('default')
     conn.set(name, val)
 
 
 def get_list(name):
-    conn = get_redis_connection('default')
     val = conn.get(name)
     return list(val) if val else []
 
 
 def set_list(name, val_list):
-    conn = get_redis_connection('default')
     conn.set(name, val_list)
 
 
@@ -62,14 +109,12 @@ def add_sorted_set(name, obj, score):
     :return:
     """
 
-    conn = get_redis_connection('default')
     if __is_obj(obj):
         obj = serialize_obj(obj)
     conn.zadd(name, {obj: score})
 
 
 def add_set(name, obj):
-    conn = get_redis_connection('default')
     # 如果是对象先序列化
     if __is_obj(obj):
         obj = serialize_obj(obj)
@@ -83,7 +128,6 @@ def is_exists_set(name, obj):
     :param obj:
     :return:
     """
-    conn = get_redis_connection('default')
     # 如果是对象先序列化
     if __is_obj(obj):
         obj = serialize_obj(obj)
@@ -98,7 +142,6 @@ def get_sorted_set_first(name, class_name=None):
     :param name:
     :return:
     """
-    conn = get_redis_connection('default')
     res = conn.zrange(name, 0, 0)
 
     if len(res) == 0:
@@ -115,7 +158,6 @@ def get_zset_all_member(name, class_name=None):
     :param name:
     :return:
     """
-    conn = get_redis_connection('default')
     members = conn.zrange(name, 0, -1)
 
     res = []
@@ -126,31 +168,26 @@ def get_zset_all_member(name, class_name=None):
 
 
 def set_obj(keyname, obj):
-    conn = get_redis_connection('default')
     obj = serialize_obj(obj)
     conn.set(keyname, obj)
 
 
 def get_obj(keyname, class_name=None):
-    conn = get_redis_connection('default')
     obj = conn.get(keyname)
     obj = deserialize_obj(obj, class_name)
     return obj
 
 
 def set_hash(name, key, val):
-    conn = get_redis_connection('default')
     conn.hset(name, key, val)
 
 
 def get_hash(name, key):
-    conn = get_redis_connection('default')
     val = conn.hget(name, key)
     return val
 
 
 def delete(keyname):
-    conn = get_redis_connection('default')
     conn.delete(keyname)
 
 
@@ -161,7 +198,10 @@ def publish_message(channel_name, message):
     :param channel_name: 通道名称
     :return:
     """
-    conn = get_redis_connection('default')
     conn.publish(channel_name, message)
+
+
+def pubsub():
+    return conn.pubsub()
 
 

@@ -128,4 +128,5 @@ urlpatterns = [
     path('log/', include(log_urlpatterns)),
     path('system/', include(system_setting_urlpatterns)),
     path('logout/', logout.logout_view),
+    path('', login.login_view),
 ]

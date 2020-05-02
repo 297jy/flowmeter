@@ -157,46 +157,76 @@
             onclick: null// 点击关闭回调
         };
 
+        window.onbeforeunload(function () {
+            //判断是关闭还是刷新
+            if (event.clientX > document.body.clientWidth && event.clientY < 0 || event.altKey) {
+                //关闭时怎么处理
+                alert('刷新');
+            } else {
+                //刷新时怎么处理
+                alert('刷新');
+            }
+
+        });
 
         if ("WebSocket" in window) {
 
-            // 打开一个 web socket
-            ws = new WebSocket("ws://" + window.location.host + "/websocket/");
+            open_falg = false;
 
-            ws.onopen = function () {
-                // Web Socket 已连接上，使用 send() 方法发送数据
-                ws.send(JSON.stringify({'user_id': '{{ user.id }}'}))
-            };
+            function connect() {
+                // 打开一个 web socket
+                ws = new WebSocket("ws://" + window.location.host + "/websocket/");
 
-            ws.onmessage = function (evt) {
-                var msg = evt.data;
-                var msg_dict = JSON.parse(msg);
-                notice.options['onclick'] = function () {
-
-                    var alarm_id = msg_dict['alarm_reader_id'];
-                    //标记该警报为已经阅读
-                    post({
-                        "param": JSON.stringify({'alarm_reader_id': alarm_id}),
-                        "action": "read_alarm_log"
-                    }, '/handler/log/', function (data) {
-                    });
+                ws.onopen = function () {
+                    // Web Socket 已连接上，使用 send() 方法发送数据
+                    ws.send(JSON.stringify({'user_id': '{{ user.id }}'}));
+                    open_falg = true;
                 };
-                notice.error(msg_dict['msg']);
-            };
 
-            ws.onclose = function () {
-                // 关闭 websocket
-                layer.alert("网络异常，与远程服务器通信中断！", {icon: 5}, function () {
+                ws.onmessage = function (evt) {
+                    var msg = evt.data;
+                    console.log("收到了来自服务器websocket消息" + msg);
+                    var msg_dict = JSON.parse(msg);
+                    notice.options['onclick'] = function () {
+
+                        var alarm_id = msg_dict['alarm_reader_id'];
+                        //标记该警报为已经阅读
+                        post({
+                            "param": JSON.stringify({'alarm_reader_id': alarm_id}),
+                            "action": "read_alarm_log"
+                        }, '/handler/log/', function (data) {
+                        });
+                    };
+                    notice.error(msg_dict['msg']);
+                };
+
+                ws.onclose = function () {
+                    // 关闭 websocket
+                    /**
+                     layer.alert("网络异常，与远程服务器通信中断！", {icon: 5}, function () {
                     layer.closeAll();
-                });
+                });**/
+                    open_falg = false;
+                };
+            }
 
-            };
+            connect();
+
+            //定时1分钟检查连接是否关闭，如果关闭则重新开启
+            setInterval(function () {
+                if (!open_falg) {
+                    connect();
+                }
+                ws.send('{{ user.id }}');
+            }, 60 * 1000);
+
         } else {
 
             layer.alert("您当前的浏览器不支持该系统，请更换成谷歌浏览器！", {icon: 5}, function () {
                 layer.closeAll();
             });
         }
+
     });
 
 

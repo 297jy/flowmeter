@@ -13,14 +13,13 @@ from flowmeter.config.api import operator as conf_opr_api
 from flowmeter.config.api import log as conf_log_api
 from flowmeter.config.api import valve as conf_valve_api
 from flowmeter.common.api.validators import param_check
-from flowmeter.common.api.validators import StrCheck, WhiteListCheck
+from flowmeter.common.api.validators import StrCheck, WhiteListCheck, ListCheck
 from flowmeter.config.db.operator_table import Operator
 from flowmeter.config.const import VALVE_STATE_OPEN, VALVE_STATE_CLOSE, RECHARGE_STATE_OPEN, RECHARGE_STATE_CLOSE, \
     STATE_ONLINE, UNKNOWN_VALUE, UNKNOWN_STATE
 from django.db import transaction
 from flowmeter.config.db.meter_table import Meter
 from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
-from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.common.api import file as common_file_api
 
 
@@ -187,33 +186,23 @@ def update_recharge_state(meter_state_info, user):
     :return:
     """
     must_dict = {
-        "id": int,
-        "meter_id": int,
-        "address": int,
-        "recharge_state": int,
-        "dtu_no": int,
+        "meter_ids": ListCheck.check_is_int_list,
+        "recharge_state": WhiteListCheck.check_recharge_state,
     }
     param_check(meter_state_info, must_dict, )
 
-    dtu_no = meter_state_info['dtu_no']
+    log_dict = {
+        "opr_user_id": user['id'],
+        "meter_ids": meter_state_info['meter_ids'],
+        "opr_type": Operator.OPEN_RECHARGE,
+    }
+    log = conf_log_api.add_opr_log(log_dict)
 
     # 保证原子性
-    with transaction.atomic():
-        log_dict = {
-            "opr_user_id": user['id'],
-            "meter_id": meter_state_info['meter_id'],
-        }
-        if meter_state_info['recharge_state'] == RECHARGE_STATE_OPEN:
-            log_dict['opr_type'] = Operator.OPEN_RECHARGE
-            log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_open_recharge_opr(dtu_no, meter_state_info['address'], log.id,
-                                                    meter_state_info['meter_id'])
-        else:
-            log_dict['opr_type'] = Operator.CLOSE_RECHARGE
-            log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_close_recharge_opr(dtu_no, meter_state_info['address'], log.id,
-                                                     meter_state_info['meter_id'])
-
+    meter_infos = conf_meter_api.find_infos_by_meter_ids(meter_state_info['meter_ids'])
+    for meter_info in meter_infos:
+        opr = Operator.create_open_recharge_opr(meter_info['dtu_no'], meter_info['address'], log.id,
+                                                meter_state_info['meter_id'])
         app_opr_api.execute_remote_op(opr)
 
 
@@ -312,7 +301,7 @@ def recharge_meter(meter_ids, money, user):
         with transaction.atomic():
             log = conf_log_api.add_opr_log(log_dict)
             opr = Operator.create_recharge_opr(meter_info['dtu_no'], meter_info['address'], log.id,
-                                               meter_info['id'], money)
+                                               meter_info['meter_id'], money)
             app_opr_api.execute_remote_op(opr)
 
 

@@ -1,5 +1,5 @@
 # coding=utf-8
-
+import threading
 import traceback
 
 from twisted.internet.protocol import Protocol
@@ -140,17 +140,25 @@ class FlowMeterServer(Protocol):
                 self.transport.getHandle().sendall(data_frame)
 
             else:
-                dtu_no = FlowMeterClients.get_dtu_no(ip)
                 # 先解析数据帧
-                data = frame.parse_data_frame(data_frame)
-                # 先执行一条等待结果的操作
-                opr = app_opr_api.execute_wait_remote_op(dtu_no, data['address'], data['opr_type'], data['data'])
-                # 更新仪表数据
-                if opr is not None:
-                    app_log_api.check_and_send_alarm(opr['meter_id'], data['data'], data['data'].get('status'))
-                    app_meter_api.update_meter_data(opr['meter_id'], data)
+                try:
+                    FlowMeterServer.__data_receiver_handler(ip, data_frame)
+                except Exception as ex:
+                    logger.error(str(ex))
         except:
             traceback.print_exc()
+
+    @staticmethod
+    def __data_receiver_handler(ip, data_frame):
+        """收到数据帧的处理函数"""
+        dtu_no = FlowMeterClients.get_dtu_no(ip)
+        data = frame.parse_data_frame(data_frame)
+        # 先执行一条等待结果的操作
+        opr = app_opr_api.execute_wait_remote_op(dtu_no, data['address'], data['opr_type'], data['data'])
+        # 更新仪表数据
+        if opr is not None:
+            app_log_api.check_and_send_alarm(opr['meter_id'], data['data'], data['data'].get('status'))
+            app_meter_api.update_meter_data(opr['meter_id'], data)
 
 
 class ModBusFactory(Factory):
@@ -173,7 +181,7 @@ def query_meter_data():
                                        record_log=False)
 
 
-def run_server(port=8081):
+def run_server(port=8003):
     """
     开始服务器端的运行
     :param port: 服务器连接端口
@@ -218,4 +226,5 @@ def is_dtu_online(dtu_no):
 
 
 if __name__ == "__main__":
-    run_server()
+    t = threading.Thread(target=run_server, args=())
+    t.start()

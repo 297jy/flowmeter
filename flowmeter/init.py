@@ -1,6 +1,5 @@
 # coding=utf-8
 
-import os
 import json
 import threading
 
@@ -9,9 +8,8 @@ from flowmeter.config.api import flag as conf_flag_api
 from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.config.db.flag_table import Flag
 from flowmeter.config.db.configure_table import Configure
-from flowmeter.modbus.api import server
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flowmeter.settings')
+from flowmeter.modbus.api import server
 
 
 ACTION_TYPE_INDEX = 0

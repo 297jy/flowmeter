@@ -7,6 +7,10 @@ from flowmeter.common.api import request as request_api
 from flowmeter.config.db.log_table import SystemLog
 from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.applications.api import log as app_log_api
+from flowmeter.init import load_log_configure
+
+import logging
+logger = logging.getLogger('log')
 
 
 class LogMiddleware(MiddlewareMixin):
@@ -20,18 +24,23 @@ class LogMiddleware(MiddlewareMixin):
         :return:
         """
         log_dict_str = conf_cache_api.get_hash('log_configure', action)
+        # 配置信息还没加载到缓存中就立即加载
         if log_dict_str is None:
-            return None
-        log_dict = json.loads(log_dict_str)
+            load_log_configure()
+            log_dict_str = conf_cache_api.get_hash('log_configure', action)
+            if log_dict_str is None:
+                return None
+
+        log_dict = json.loads(log_dict_str.decode('utf-8'))
 
         # 获得行为类型模板
         msg = log_dict['msg']
         data_field = log_dict['data_field']
         # 渲染系统日志行为类型字段
         data_list = []
-        for data in data_field:
-            if data:
-                data_list.append(data)
+        for field in data_field:
+            data_list.append(params.get(field, ''))
+
         return msg.format(*data_list)
 
     def process_request(self, request):

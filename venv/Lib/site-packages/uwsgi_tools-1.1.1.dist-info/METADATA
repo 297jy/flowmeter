@@ -1,0 +1,30 @@
+Metadata-Version: 2.0
+Name: uwsgi-tools
+Version: 1.1.1
+Summary: uwsgi tools: curl and reverse proxy
+Home-page: https://github.com/andreif/uwsgi-tools
+Author: Andrei Fokau
+Author-email: andrei@5monkeys.se
+License: MIT
+Download-URL: https://github.com/andreif/uwsgi-tools/tarball/1.1.1
+Description-Content-Type: UNKNOWN
+Platform: UNKNOWN
+Classifier: Environment :: Web Environment
+Classifier: Natural Language :: English
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Internet :: WWW/HTTP :: Dynamic Content
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+
+
+Reverse proxy and curl for uWSGI server using `uwsgi` protocol
+
+

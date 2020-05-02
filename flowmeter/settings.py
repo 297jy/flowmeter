@@ -32,13 +32,14 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'flowmeter',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'flowmeter',
+    'djcelery',
 ]
 
 MIDDLEWARE = [
@@ -98,7 +99,7 @@ CACHES = {
         "LOCATION": "redis://127.0.0.1:6379",
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            "CONNECTION_POOL_KWARGS": {"max_connections": 100}
+            "CONNECTION_POOL_KWARGS": {"max_connections": 20000}
             # "PASSWORD": "密码",
         }
     }
@@ -225,11 +226,7 @@ LOGGING = {
             'level': 'INFO',
             'propagate': True
         },
-        'django.db.backends': {
-            'handlers': ['console'],
-            'propagate': True,
-            'level': 'DEBUG',
-        },
+
     }
 }
 
@@ -277,6 +274,7 @@ CELERY_RESULT_SERIALIZER = 'json'
 # 导入任务所在文件
 CELERY_IMPORTS = (
     'flowmeter.celery_task.api.twelve_fixed_task',
+    'flowmeter.celery_task.api.ten_minutes_fixed_task',
 )
 
 # 需要执行任务的配置
@@ -285,15 +283,25 @@ CELERYBEAT_SCHEDULE = {
         # 具体需要执行的函数
         # 该函数必须要使用@app.task装饰
         'task': 'flowmeter.celery_task.api.twelve_fixed_task.clean_junk_file',
-        # 定时时间
-        # 每分钟执行一次，不能为小数
-        'schedule': crontab(minute='*/1'),
+        # 定时时间 12点执行
+        'schedule': crontab(minute=0, hour=0),
         'args': ()
     },
     'statistic_meter_data': {
         'task': 'flowmeter.celery_task.api.twelve_fixed_task.statistic_meter_data',
-        # 设置定时的时间，10秒一次
-        'schedule': timedelta(seconds=10),
+        # 定时时间 12点执行
+        'schedule': crontab(minute=0, hour=0),
+        'args': ()
+    },
+    'check_system_env': {
+        'task': 'flowmeter.celery_task.api.ten_minutes_fixed_task.check_system_env',
+        # 设置定时的时间，10分钟执行一次
+        'schedule': crontab(minute='*/10'),
         'args': ()
     }
 }
+
+WEBSOCKET_FACTORY_CLASS = 'dwebsocket.backends.uwsgi.factory.uWsgiWebSocketFactory'
+WSGI_APPLICATION = 'flowmeter.wsgi.application'
+
+DJANGO_REDIS_CLOSE_CONNECTION = True

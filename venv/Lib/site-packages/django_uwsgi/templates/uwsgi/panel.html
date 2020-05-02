@@ -1,0 +1,221 @@
+{% load i18n %}
+{% if unavailable %}
+    <h4>{% trans 'ERROR: uWSGI is not available!' %}</h4>
+{% else %}
+<style>
+    body.app-django_uwsgi .submit-row a.button {
+        display: inline-block
+    }
+    #djDebug .submit-row {
+        padding-top: 5px;
+        padding-bottom: 5px
+    }
+</style>
+
+<div id="content-main" class="inline-related tabular">
+    <div class="module">
+        <table>
+            <caption>
+                <h4>{% trans 'Status' %}</h4>
+            </caption>
+            <thead>
+                <tr>
+                    <th>{% trans "Option" %}</th>
+                    <th>{% trans "Value" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in stats %}
+                <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="module">
+        <table>
+            <caption>
+                <h4>{% trans 'Options' %} (<a href="http://uwsgi-docs.readthedocs.org/en/latest/Options.html">read docs</a>)</h4>
+            </caption>
+            <thead>
+                <tr>
+                    <th>{% trans "Option" %}</th>
+                    <th>{% trans "Value" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in uwsgi.opt.items %}
+                <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                    <td><a href="http://uwsgi-docs.readthedocs.org/en/latest/Options.html#{{ key }}">{{ key }}</a></td>
+                    {# uWSGI allows to use options without values if value = true #}
+                    <td>{% if value %}{{ value }}{% else %}true{% endif %}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="module">
+        <table>
+            <caption>
+                <h4>{% trans 'Magic table' %} (<a href="http://uwsgi-docs.readthedocs.io/en/latest/Configuration.html#magic-variables">read docs</a>)</h4>
+            </caption>
+            <thead>
+                <tr>
+                    <th>{% trans "Option" %}</th>
+                    <th>{% trans "Value" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for key, value in uwsgi.magic_table.items %}
+                <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                    <td>{{ key }}</td>
+                    <td>{{ value }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="module balanced">
+        <table>
+            <caption>
+                <h4>{% trans 'Workers' %}</h4>
+            </caption>
+            <thead>
+                <tr>
+                    <th>{% trans "id" %}</th>
+                    <th>{% trans "pid" %}</th>
+                    <th>{% trans "status" %}</th>
+                    <th>{% trans "requests" %}</th>
+                    <th>{% trans "exceptions" %}</th>
+                    <th>{% trans "signals" %}</th>
+                    <th>{% trans "running time(ms)" %}</th>
+                    <th>{% trans "avg response time(ms)" %}</th>
+                    <th>{% trans "load" %}</th>
+                    <th>{% trans "last spawn" %}</th>
+                    <th>{% trans "respawn count" %}</th>
+                    <th>{% trans "address space (vsz)" %}</th>
+                    <th>{% trans "resident memory (rss)" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for w in workers %}
+                <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                    <td>{{ w.id }}</td>
+                    <td>{{ w.pid }}</td>
+                    <td>{{ w.status }}</td>
+                    <td>{{ w.requests }}</td>
+                    <td>{{ w.exceptions }}</td>
+                    <td>{{ w.signals }}</td>
+                    <td>{{ w.running_time }}</td>
+                    <td>{{ w.avg_rt }}</td>
+                    <td>{{ w.load|floatformat:2 }} %</td>
+                    <td>{{ w.last_spawn }}</td>
+                    <td>{{ w.respawn_count }}</td>
+                    <td>{{ w.vsz|filesizeformat }}</td>
+                    <td>{{ w.rss|filesizeformat }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="module balanced">
+        <table>
+            <caption>
+                <h4>{% trans 'Applications' %}</h4>
+            </caption>
+            <thead>
+                <tr>
+                    <th>{% trans "#" %}</th>
+                    <th>{% trans "modifier1" %}</th>
+                    <th>{% trans "mountpoint" %}</th>
+                    <th>{% trans "interpreter" %}</th>
+                    <th>{% trans "callable" %}</th>
+                    <th>{% trans "chdir" %}</th>
+                    <th>{% trans "requests" %}</th>
+                    <th>{% trans "exceptions" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for w in workers %}
+                {% for app in w.apps %}
+                <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                    <td>{{ app.id }}</td>
+                    <td>{{ app.modifier1 }}</td>
+                    <td>{{ app.mountpoint }}</td>
+                    <td>{{ app.interpreter }}</td>
+                    <td>{{ app.callable }}</td>
+                    <td>{{ app.chdir }}</td>
+                    <td>{{ app.requests }}</td>
+                    <td>{{ app.exceptions }}</td>
+                </tr>
+                {% endfor %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% if uwsgi.spooler_jobs %}
+    <div class="module balanced">
+        <table>
+            <caption>
+                <h4>{% trans 'Spooler' %}</h4>
+            </caption>
+            <thead>
+                <tr>
+                    <th>{% trans "job filename" %}</th>
+                    <th>{% trans "environment" %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in jobs %}
+                <tr class="{% cycle 'djDebugOdd' 'djDebugEven' %}">
+                    <td align="left">{{ job.file }}</td>
+                    <td align="left">{{ job.env }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endif %}
+    <div class="module balanced">
+        <table>
+            <caption>
+                <h4>{% trans 'Actions' %}</h4>
+            </caption>
+            <thead>
+                <tr>
+                    <th>{% trans 'Send uWSGI Signal' %}</th>
+                    <th>{% trans 'Send uWSGI Log message' %}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="djDebugOdd">
+                    <td align="left">
+                        <form action="{% url 'uwsgi_signal' %}" method="post">
+                            {% csrf_token %}
+                            <label for="signal_number">{% trans 'Signal number' %}</label>
+                            <input id="signal_number" type="text" size="3" name="signal_number" required>
+                            <input type="submit" class="button" value="{% trans 'Send' %}">
+                        </form>
+                    </td>
+                    <td align="left">
+                        <form action="{% url 'uwsgi_log' %}" method="post">
+                            {% csrf_token %}
+                            <label for="log_message">{% trans 'Log message' %}</label>
+                            <input id="log_message" type="text" size="72" name="log_message" required>
+                            <input type="submit" class="button" value="{% trans 'Send' %}">
+                        </form>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    {% if uwsgi.masterpid %}
+    <div class="submit-row">
+        <a href="{% url 'uwsgi_reload' %}" class="button">{% trans 'Gracefully reload uWSGI' %}</a>
+        <a href="{% url 'uwsgi_cache_clear' %}" class="button">{% trans 'Clear uWSGI cache' %}</a>
+    </div>
+    {% endif %}
+</div>
+{% endif %}

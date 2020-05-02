@@ -1,5 +1,0 @@
-[2020-02-06 15:23:15,850] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
-[2020-02-06 15:26:49,767] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\wsgi.py changed, reloading.
-[2020-02-06 15:26:50,318] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
-[2020-02-06 15:29:43,469] [autoreload.py:222] [autoreload:trigger_reload] [INFO]- D:\project\python\flowmeter\flowmeter\config\db\auth_category_table.py changed, reloading.
-[2020-02-06 15:29:44,030] [autoreload.py:598] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
