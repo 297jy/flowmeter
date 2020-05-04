@@ -116,7 +116,7 @@ urlpatterns = [
     path('error/', include(error_urlpatterns)),
     path('index/', index.index_view),
     path('statistic/', include(statistic_urlpatterns)),
-    path('websocket/', websocket.link_view),
+    # path('websocket/', websocket.link_view),
     path('login/', login.login_view),
     path('admin/', include(admin_urlpatterns)),
     path('dtu_user/', include(dtu_user_urlpatterns)),

@@ -55,7 +55,7 @@ class OprLog(Log):
     opr_user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     class Meta:
-        ordering = ['opr_time']
+        ordering = ['opr_time', 'meter__id']
 
 
 class AlarmLog(Log):

@@ -233,28 +233,28 @@ def update_flow_ratio(meter_info, user):
 
 def query_meter_data(meter_info, user, record_log=True):
     must_dict = {
-        "id": int,
-        "address": int,
-        "dtu_no": int,
+        "meter_ids": ListCheck.check_is_int_list,
     }
     param_check(meter_info, must_dict)
+    meter_infos = conf_meter_api.find_infos_by_meter_ids(meter_info['meter_ids'])
 
-    dtu_no = meter_info['dtu_no']
+    for meter_info in meter_infos:
+        dtu_no = meter_info['dtu_no']
 
-    log_dict = {}
-    if record_log:
-        log_dict = {"opr_user_id": user['id'], "meter_id": meter_info['meter_id'], 'opr_type': Operator.QUERY,
-                    'val': None}
-    # 保证原子性
-    with transaction.atomic():
-
-        log_id = ""
+        log_dict = {}
         if record_log:
-            log = conf_log_api.add_opr_log(log_dict)
-            log_id = log.id
+            log_dict = {"opr_user_id": user['id'], "meter_id": meter_info['meter_id'], 'opr_type': Operator.QUERY,
+                        'val': ""}
+        # 保证原子性
+        with transaction.atomic():
 
-        opr = Operator.create_query_opr(dtu_no, meter_info['address'], log_id, meter_info['id'])
-        app_opr_api.execute_remote_op(opr)
+            log_id = ""
+            if record_log:
+                log = conf_log_api.add_opr_log(log_dict)
+                log_id = log.id
+
+            opr = Operator.create_query_opr(dtu_no, meter_info['address'], log_id, meter_info['meter_id'])
+            app_opr_api.execute_remote_op(opr)
 
 
 def reset_meter(meter_info, user):

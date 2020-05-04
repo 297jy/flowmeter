@@ -1,6 +1,9 @@
 # coding=utf-8
-import datetime
+
+
 import time
+from django.db import models
+from flowmeter.config import const
 
 
 class Operator:
@@ -22,18 +25,19 @@ class Operator:
         self.opr_type = None
         self.val = None
         self.dtu_no = None
-        self.meter_address = None
+        self.address = None
         self.log_id = None
         self.meter_id = None
-        self.opr_time = int(time.mktime(datetime.datetime.now().timetuple()))
+        self.opr_time = time.time()
 
     def init(self, dtu_no, meter_address, opr_type, log_id, meter_id, val=None):
         self.opr_type = opr_type
         self.val = val
         self.dtu_no = dtu_no
-        self.meter_address = meter_address
+        self.address = meter_address
         self.log_id = log_id
         self.meter_id = meter_id
+        self.opr_time = time.time()
 
     @staticmethod
     def create_query_opr(dtu_no, meter_address, log_id, meter_id):
@@ -132,14 +136,70 @@ class Operator:
             'opr_type': self.opr_type,
             "val": self.val,
             "dtu_no": self.dtu_no,
-            "meter_address": self.meter_address,
+            "meter_address": self.address,
             "log_id": self.log_id,
         }
 
     def keys(self):
-        return 'opr_type', 'val', 'dtu_no', 'meter_address', 'log_id', 'meter_id', 'opr_time'
+        return 'opr_type', 'val', 'dtu_no', 'address', 'log_id', 'meter_id', 'opr_time'
 
     def __getitem__(self, item):
         return getattr(self, item)
+
+
+class UnExecutedOpr(models.Model):
+    """
+    未执行的远程操作
+    """
+
+    # 操作时间
+    opr_time = models.FloatField()
+    # DTU心跳包编号
+    dtu_no = models.IntegerField()
+    # 对应的日志ID
+    log_id = models.IntegerField(null=True)
+    # 物理地址
+    address = models.IntegerField()
+    opr_type = models.CharField(max_length=const.OPR_TYPE_CHAR_LEN)
+    val = models.FloatField(null=True)
+    meter_id = models.IntegerField(default=0)
+
+    def keys(self):
+        return 'opr_time', 'dtu_no', 'log_id', 'address', 'opr_type', 'meter_id'
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+
+    class Meta:
+        ordering = ['opr_time']
+        index_together = ['dtu_no', 'address', 'opr_type']
+
+
+class WaitOpr(models.Model):
+    """
+    已经向服务器发送命令，但是服务器还没响应的操作
+    """
+
+    # 操作时间
+    opr_time = models.FloatField()
+    # DTU心跳包编号
+    dtu_no = models.IntegerField()
+    # 对应的日志ID
+    log_id = models.IntegerField(null=True)
+    # 物理地址
+    address = models.IntegerField()
+    opr_type = models.CharField(max_length=const.OPR_TYPE_CHAR_LEN)
+    val = models.FloatField(null=True)
+    meter_id = models.IntegerField(default=0)
+
+    def keys(self):
+        return 'opr_time', 'dtu_no', 'log_id', 'address', 'opr_type', 'meter_id'
+
+    def __getitem__(self, item):
+        return getattr(self, item)
+
+    class Meta:
+        ordering = ['opr_time']
+        index_together = ['dtu_no', 'address', 'opr_type']
 
 

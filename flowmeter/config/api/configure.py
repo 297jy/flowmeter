@@ -15,6 +15,11 @@ def get_flowmeter_port_name():
     return "flowmeter_port"
 
 
+def get_clear_failed_opr_time_name():
+    """获取清除失败操作的时间间隔"""
+    return "clear_failed_opr_time"
+
+
 def get_unexecuted_opr_check_time():
     """
     获取未执行的操作的检查时间

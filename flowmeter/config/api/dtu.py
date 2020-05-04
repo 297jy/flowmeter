@@ -4,8 +4,6 @@ from flowmeter.config.core import dtu as core
 from flowmeter.common.api.validators import param_check, StrCheck
 from flowmeter.config.api import cache
 from flowmeter.config.db.dtu_table import Dtu
-from flowmeter.modbus.api import server
-from flowmeter.config.api import cache as conf_cache_api
 from flowmeter.config.const import STATE_ONLINE, STATE_OFFLINE
 
 
@@ -108,7 +106,22 @@ def get_dtu_online_state(dtu_no):
     :param dtu_no:
     :return:
     """
-    return STATE_ONLINE if server.is_dtu_online(dtu_no) else STATE_OFFLINE
+    dtu = Dtu.objects.get(dtu_no=dtu_no)
+    return dtu.online_state
+
+
+def update_dtu_offline_state(dtu_no):
+    """将DTU更新为离线状态"""
+    dtu = Dtu.objects.get(dtu_no=dtu_no)
+    dtu.online_state = STATE_OFFLINE
+    dtu.save()
+
+
+def update_dtu_online_state(dtu_no):
+    """将DTU更新为在线状态"""
+    dtu = Dtu.objects.get(dtu_no=dtu_no)
+    dtu.online_state = STATE_ONLINE
+    dtu.save()
 
 
 def find_dtus_of_select_box_by_man_id(man_id):
@@ -127,5 +140,19 @@ def find_all_dtus_of_select():
     dtus = Dtu.objects.all().values('id', 'dtu_no', 'remark')
     dtu_infos = [dict(dtu) for dtu in dtus]
     return dtu_infos
+
+
+def get_all_dtu_no():
+    dtus = Dtu.objects.all().values('dtu_no')
+    dtu_nos = [dtu_info['dtu_no'] for dtu_info in dtus]
+    return dtu_nos
+
+
+def get_online_dtu_nos():
+    dtus = Dtu.objects.filter(online_state=STATE_ONLINE).values('dtu_no')
+    dtu_nos = [dtu['dtu_no'] for dtu in dtus]
+    return dtu_nos
+
+
 
 

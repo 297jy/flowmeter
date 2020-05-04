@@ -24,15 +24,16 @@ def send_alarm(alarm_log_dict):
     alarm_log = conf_log_api.add_alarm_log(alarm_log_dict)
     # 向管理员推送警报
     admin_ids = conf_user_api.get_all_admin_ids()
-    logger.info(admin_ids)
+    logger.error(admin_ids)
     for admin_id in admin_ids:
-        try:
-            reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': int(admin_id)})
-            alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': app_log_api.render_msg(alarm_log,
-                                                                                          RoleType.ADMIN)}
-            conf_cache_api.publish_message('alarm_user_id_{}'.format(admin_id), json.dumps(alarm_log_dict))
-        except IntegrityError:
-            pass
+        # try:
+        reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': int(admin_id)})
+        alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': app_log_api.render_msg(alarm_log,
+                                                                                      RoleType.ADMIN)}
+        conf_cache_api.publish_message('alarm_user_id_{}'.format(admin_id), json.dumps(alarm_log_dict))
+        logger.error('开始推送！')
+        # except IntegrityError:
+        pass
     # 还需要向流量计的厂商推送警报
     man_id = alarm_log.meter.dtu.region.manufacturer.id
     try:
@@ -49,6 +50,7 @@ def send_alarm(alarm_log_dict):
         reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': user_id})
         alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': app_log_api.render_msg(alarm_log,
                                                                                       RoleType.DTU_USER)}
+
         conf_cache_api.publish_message('alarm_user_id_{}'.format(man_id), json.dumps(alarm_log_dict))
     except IntegrityError:
         pass

@@ -235,20 +235,25 @@ def send_alarm(alarm_log_dict):
     admin_ids = conf_user_api.get_all_admin_ids()
     logger.info(admin_ids)
     for admin_id in admin_ids:
-        try:
-            reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': int(admin_id)})
-            alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log,
-                                                                              RoleType.ADMIN)}
-            conf_cache_api.publish_message('alarm_user_id_{}'.format(admin_id), json.dumps(alarm_log_dict))
-        except IntegrityError:
-            pass
+        reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': int(admin_id)})
+        alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log, RoleType.ADMIN)}
+        user_alarm_log_dict = {
+            "user_id": str(admin_id),
+            "alarm": alarm_log_dict,
+        }
+        conf_cache_api.publish_message('alarm_channel', json.dumps(user_alarm_log_dict))
+
     # 还需要向流量计的厂商推送警报
     man_id = alarm_log.meter.dtu.region.manufacturer.id
     try:
         reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': man_id})
         alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log,
                                                                           RoleType.MANUFACTURER)}
-        conf_cache_api.publish_message('alarm_user_id_{}'.format(man_id), json.dumps(alarm_log_dict))
+        user_alarm_log_dict = {
+            "user_id": str(man_id),
+            "alarm": alarm_log_dict,
+        }
+        conf_cache_api.publish_message('alarm_user_id_{}'.format(man_id), json.dumps(user_alarm_log_dict))
     except IntegrityError:
         pass
 
@@ -258,6 +263,10 @@ def send_alarm(alarm_log_dict):
         reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': user_id})
         alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log,
                                                                           RoleType.DTU_USER)}
-        conf_cache_api.publish_message('alarm_user_id_{}'.format(man_id), json.dumps(alarm_log_dict))
+        user_alarm_log_dict = {
+            "user_id": str(user_id),
+            "alarm": alarm_log_dict,
+        }
+        conf_cache_api.publish_message('alarm_user_id_{}'.format(man_id), json.dumps(user_alarm_log_dict))
     except IntegrityError:
         pass

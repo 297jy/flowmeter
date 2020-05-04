@@ -3,9 +3,7 @@
 import datetime
 
 from flowmeter.celery_task.api import alarm_task
-from flowmeter.common.api.validators import param_check, StrCheck, WhiteListCheck
-from flowmeter.config.api import dtu as conf_dtu_api
-from flowmeter.config.api import log as conf_log_api
+from flowmeter.common.api.validators import param_check, WhiteListCheck
 from flowmeter.config.db.log_table import AlarmLog
 from flowmeter.config.db.meter_state_table import MeterState
 from flowmeter.config.api import meter as conf_meter_api

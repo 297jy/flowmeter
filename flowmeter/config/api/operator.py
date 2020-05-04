@@ -1,8 +1,12 @@
 # coding=utf-8
 
-from flowmeter.config.api import cache
-from flowmeter.config.db.operator_table import Operator
+import time
+
+from flowmeter.config.db.operator_table import Operator, UnExecutedOpr, WaitOpr
 from flowmeter.common.api.validators import param_check, WhiteListCheck
+
+import logging
+logger = logging.getLogger('log')
 
 
 def add_unexecuted_operator(opr):
@@ -13,27 +17,19 @@ def add_unexecuted_operator(opr):
     """
     must_dict = {
         'dtu_no': int,
-        'meter_address': int,
+        'address': int,
         'opr_type': WhiteListCheck.check_opr_type,
     }
     param_check(opr, must_dict, extra=True)
+    opr['opr_time'] = time.time()
 
-    key = 'opr_unexecuted_{}'.format(opr['dtu_no'])
-    # 获取地址映射
-    address_dict = cache.get_obj(key)
-    if address_dict is None:
-        address_dict = {}
-    # 获取操作类型映射
-    opr_type_dict = address_dict.get(opr['meter_address'], {})
-    # 获取操作列表
-    oprs = opr_type_dict.get(opr['opr_type'], [])
-    # 添加新操作到最后末尾
-    oprs.append(dict(opr))
+    UnExecutedOpr.objects.create(**opr)
 
-    opr_type_dict[opr['opr_type']] = oprs
-    address_dict[opr['meter_address']] = opr_type_dict
 
-    cache.set_obj(key, address_dict)
+def get_all_unexecuted_opr(dtu_no):
+
+    oprs = UnExecutedOpr.objects.filter(dtu_no=dtu_no)
+    return oprs
 
 
 def add_wait_operator(opr):
@@ -44,42 +40,37 @@ def add_wait_operator(opr):
     """
     must_dict = {
         'dtu_no': int,
-        'meter_address': int,
+        'address': int,
         'opr_type': WhiteListCheck.check_opr_type,
     }
     param_check(opr, must_dict, extra=True)
 
-    key = 'opr_wait_{}'.format(opr['dtu_no'])
-    # 获取地址映射
-    address_dict = cache.get_obj(key)
-    if address_dict is None:
-        address_dict = {}
+    opr['opr_time'] = time.time()
 
-    # 获取操作类型映射
-    opr_type_dict = address_dict.get(opr['meter_address'], {})
-    # 获取操作列表
-    oprs = opr_type_dict.get(opr['opr_type'], [])
-    # 添加新操作到最后末尾
-    oprs.append(opr)
-
-    opr_type_dict[opr['opr_type']] = oprs
-    address_dict[opr['meter_address']] = opr_type_dict
-
-    cache.set_obj(key, address_dict)
+    WaitOpr.objects.create(**opr)
 
 
-def get_all_unexecuted_opr(dtu_no):
+def get_one_wait_opr(dtu_no, address, opr_type):
+    """获取并删除一个等待操作"""
+    try:
+        opr = WaitOpr.objects.get(dtu_no=dtu_no, address=address, opr_type=opr_type)
+        return opr
+    except WaitOpr.DoesNotExist:
+        return None
 
-    key = 'opr_unexecuted_{}'.format(dtu_no)
-    oprs_dict = cache.get_obj(key)
-    return oprs_dict if oprs_dict is not None else {}
+
+def get_and_del_earliest_unexecuted_opr(dtu_no, address, opr_type):
+    try:
+        opr = UnExecutedOpr.objects.get(dtu_no=dtu_no, address=address, opr_type=opr_type)
+        opr.delete()
+        return opr
+    except WaitOpr.DoesNotExist:
+        return None
 
 
 def get_all_wait_opr(dtu_no):
-
-    key = 'opr_wait_{}'.format(dtu_no)
-    oprs_dict = cache.get_obj(key)
-    return oprs_dict
+    oprs = WaitOpr.objects.filter(dtu_no=dtu_no)
+    return oprs
 
 
 def clear_all_dtu_operator(dtu_no):
@@ -88,10 +79,8 @@ def clear_all_dtu_operator(dtu_no):
     :param dtu_no:
     :return:
     """
-    key = 'opr_unexecuted_{}'.format(dtu_no)
-    cache.delete(key)
-    key = 'opr_wait_{}'.format(dtu_no)
-    cache.delete(key)
+    UnExecutedOpr.objects.filter(dtu_no=dtu_no).delete()
+    WaitOpr.objects.filter(dtu_no=dtu_no).delete()
 
 
 def remove_dtu_unexecuted_opr(dtu_no, address, opr_type):
@@ -102,19 +91,7 @@ def remove_dtu_unexecuted_opr(dtu_no, address, opr_type):
     :param dtu_no:
     :return:
     """
-    address = str(address)
-
-    key = 'opr_unexecuted_{}'.format(dtu_no)
-    # 获取地址映射
-    address_dict = cache.get_obj(key)
-    if address_dict is None:
-        address_dict = {}
-
-    # 获取操作类型映射
-    opr_type_dict = address_dict.get(address, {})
-    opr_type_dict[opr_type] = []
-    address_dict[address] = opr_type_dict
-    cache.set_obj(key, address_dict)
+    UnExecutedOpr.objects.filter(dtu_no=dtu_no, address=address, opr_type=opr_type).delete()
 
 
 def remove_dtu_wait_opr(dtu_no, address, opr_type):
@@ -125,74 +102,25 @@ def remove_dtu_wait_opr(dtu_no, address, opr_type):
     :param dtu_no:
     :return:
     """
-    address = str(address)
-
-    key = 'opr_wait_{}'.format(dtu_no)
-    address_dict = cache.get_obj(key)
-    # 获取操作类型映射
-    opr_type_dict = address_dict.get(address, {})
-    opr_type_dict[opr_type] = []
-    address_dict[address] = opr_type_dict
-    cache.set_obj(key, address_dict)
+    WaitOpr.objects.filter(dtu_no=dtu_no, address=address, opr_type=opr_type).delete()
 
 
-def get_and_del_earliest_unexecuted_opr(dtu_no, address, opr_type):
+def get_log_ids_and_del_unexecuted_opr(dtu_no, address, opr_type):
 
-    address = str(address)
-
-    key = 'opr_unexecuted_{}'.format(dtu_no)
-    # 获取地址映射
-    address_dict = cache.get_obj(key)
-    if address_dict is None:
-        address_dict = {}
-    # 获取操作类型映射
-    opr_type_dict = address_dict.get(address, {})
-    # 获取操作列表
-    oprs = opr_type_dict.get(opr_type, [])
-    if len(oprs) == 0:
-        return None
-
-    opr = oprs[0]
-    opr_type_dict[opr_type] = oprs[1: len(oprs)]
-
-    address_dict[address] = opr_type_dict
-    cache.set_obj(key, address_dict)
-    return opr
+    oprs = UnExecutedOpr.objects.filter(dtu_no=dtu_no, address=address, opr_type=opr_type)
+    log_ids = [opr.log_id for opr in oprs]
+    oprs.delete()
+    return log_ids
 
 
-def get_and_del_wait_opr(dtu_no, address, opr_type, val):
+def del_unexecuted_opr_by_ids(opr_ids):
 
-    key = 'opr_wait_{}'.format(dtu_no)
+    UnExecutedOpr.objects.filter(id__in=opr_ids).delete()
 
-    address = str(address)
-    # 获取地址映射
-    address_dict = cache.get_obj(key)
-    if address_dict is None:
-        address_dict = {}
-    # 获取操作类型映射
-    opr_type_dict = address_dict.get(address, {})
-    # 获取操作列表
-    oprs = opr_type_dict.get(opr_type, [])
 
-    opr = None
-    if len(oprs) == 0:
-        return None
+def del_unexecuted_opr_by_id(opr_id):
+    UnExecutedOpr.objects.filter(id=opr_id).delete()
 
-    if opr_type == Operator.QUERY:
-        opr = oprs[0]
-        opr_type_dict[opr_type] = oprs[1: len(oprs)]
-    else:
-        for i in range(0, len(oprs)):
-            if oprs[i]['val'] == val:
-                opr = oprs[i]
-                break
-        if opr is not None:
-            oprs.remove(opr)
-        opr_type_dict[opr_type] = oprs
-
-    address_dict[address] = opr_type_dict
-    cache.set_obj(key, address_dict)
-    return opr
 
 
 

@@ -85,7 +85,7 @@ DATABASES = {
         'NAME': 'flowmeter',
         'USER': 'root',
         'PASSWORD': 'root!@#',
-        'HOST': 'localhost',
+        'HOST': 'www.cqust.fun',
         'PORT': '3306',
         # 是否支持事务操作
         'ATOMIC_REQUESTS': True,

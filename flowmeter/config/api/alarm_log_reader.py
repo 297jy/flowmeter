@@ -1,6 +1,8 @@
 # coding=utf-8
 import datetime
 
+from django.db import connection
+from django.db.utils import OperationalError
 from flowmeter.common.api.validators import param_check
 from flowmeter.config.db.alarm_log_reader import AlarmLogReader
 from flowmeter.config.db.log_table import AlarmLog
@@ -31,6 +33,5 @@ def read_alarm(alarm_read_id):
 
 
 def get_user_unread_alarms(user_id):
-
     readers = AlarmLogReader.objects.filter(user_id=user_id, state=AlarmLogReader.STATE_UNREAD)
     return readers

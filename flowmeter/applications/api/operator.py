@@ -1,7 +1,6 @@
 # coding=utf-8
-import traceback
 
-from flowmeter.exceptions import OfflineException
+
 from flowmeter.modbus.api import server
 from flowmeter.modbus.api import frame
 from flowmeter.config.api import operator as conf_operator_api
@@ -19,15 +18,30 @@ def execute_remote_op(opr):
     执行远程操作
     :return:
     """
-    data_frame = frame.generate_data_frame(opr.meter_address, opr.opr_type, opr.val)
-    # 直接向流量计发送数据帧
-    try:
-        server.send_data_frame(opr.dtu_no, data_frame)
-        # 发送成功就把操作放进等待执行结果的队列中
-        conf_operator_api.add_wait_operator(dict(opr))
-    except OfflineException:
-        # 发送失败就放进未执行命令队列中
-        conf_operator_api.add_unexecuted_operator(dict(opr))
+    opr = dict(opr)
+    logger.info('添加了未执行操作：{}'.format(opr))
+    with transaction.atomic():
+        if opr['opr_type'] != Operator.RECHARGE:
+
+            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'], opr['opr_type'])
+            app_log_api.update_logs_success_state(log_ids)
+            # 之前还未执行的关阀操作可以删除
+            if opr['opr_type'] == Operator.OPEN_VALVE:
+                log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
+                                                                               Operator.CLOSE_VALVE)
+            if opr['opr_type'] == Operator.CLOSE_VALVE:
+                log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
+                                                                               Operator.OPEN_VALVE)
+
+            if opr['opr_type'] == Operator.OPEN_RECHARGE:
+                log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
+                                                                               Operator.CLOSE_RECHARGE)
+            if opr['opr_type'] == Operator.CLOSE_RECHARGE:
+                log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
+                                                                               Operator.OPEN_RECHARGE)
+            app_log_api.update_logs_success_state(log_ids)
+
+        conf_operator_api.add_unexecuted_operator(opr)
 
 
 def execute_unexecuted_remote_op(dtu_no):
@@ -36,45 +50,42 @@ def execute_unexecuted_remote_op(dtu_no):
     :return:
     """
     # 先获取缓存中存在的带执行的操作命令
-    oprs_dict = conf_operator_api.get_all_unexecuted_opr(dtu_no)
-    # 遍历所有待执行命令的仪表物理地址
-    for address, opr_type_dict in oprs_dict.items():
-        # 遍历所有命令类型
-        for opr_type, oprs in opr_type_dict.items():
+    oprs = conf_operator_api.get_all_unexecuted_opr(dtu_no)
 
-            # 如果是充值操作，则每条等待命令都需要发送
-            if opr_type == Operator.RECHARGE:
-                for opr in oprs:
-                    with transaction.atomic():
-                        conf_operator_api.get_and_del_earliest_unexecuted_opr(opr['dtu_no'],
-                                                                              opr['meter_address'], opr['opr_type'])
-                        conf_operator_api.add_wait_operator(opr)
-                        data_frame = frame.generate_data_frame(opr['meter_address'], opr['opr_type'], opr['val'])
-                        server.send_data_frame(dtu_no, data_frame)
+    # 正在等待的操作不重复执行
+    wait_oprs = conf_operator_api.get_all_wait_opr(dtu_no)
+    wait_opr_set = set()
+    for opr in wait_oprs:
+        key_name = "_".join([str(opr.dtu_no), str(opr.address), opr.opr_type])
+        wait_opr_set.add(key_name)
 
-            else:
-                if len(oprs) > 0:
-                    # 只需要执行最后一条命令，其他命令不用发送，状态直接设为成功
-                    execute_opr = oprs[len(oprs) - 1]
-                    log_ids = [opr['log_id'] for opr in oprs[0: -1]]
-                    with transaction.atomic():
-                        app_log_api.update_logs_success_state(log_ids)
-                        # 把要执行的命令，放进等待队列中
-                        conf_operator_api.add_wait_operator(execute_opr)
-                        # 从待执行的命令队列中移除
-                        conf_operator_api.remove_dtu_unexecuted_opr(dtu_no, address, opr_type)
-                        data_frame = frame.generate_data_frame(address, opr_type, execute_opr['val'])
-                        server.send_data_frame(dtu_no, data_frame)
+    opr_map = {}
+    for opr in oprs:
+        key_name = "_".join([str(opr.dtu_no), str(opr.address), opr.opr_type])
+        if key_name not in wait_opr_set:
+            opr_map[key_name] = opr
+
+    for opr in opr_map.values():
+        try:
+            with transaction.atomic():
+                conf_operator_api.del_unexecuted_opr_by_id(opr.id)
+                conf_operator_api.add_wait_operator(dict(opr))
+                data_frame = frame.generate_data_frame(opr.address, opr.opr_type, opr.val)
+                server.send_data_frame(dtu_no, data_frame)
+        except Exception as ex:
+            logger.error(str(ex))
 
 
-def execute_wait_remote_op(dtu_no, address, opr_type, val):
+def execute_wait_remote_op(dtu_no, address, opr_type):
     """
     执行一条等待执行结果的远程操作
     :return:返回正在等待结果的操作
     """
     # 先获取缓存中存在的带执行的操作命令
-    opr = conf_operator_api.get_and_del_wait_opr(dtu_no, address, opr_type, val)
+    opr = conf_operator_api.get_one_wait_opr(dtu_no, address, opr_type)
     if opr is not None:
-        if opr['log_id']:
-            app_log_api.update_logs_success_state([opr['log_id']])
+        if opr.log_id:
+            with transaction.atomic():
+                app_log_api.update_logs_success_state([opr.log_id])
+                opr.delete()
     return opr

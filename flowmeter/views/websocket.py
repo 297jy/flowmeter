@@ -40,7 +40,9 @@ def __notice_user(redis_pubsub, flag):
     """通知用户消息"""
     while not flag.is_return:
         messages = redis_pubsub.listen()
+        logger.error('收到了redis通道消息！')
         for msg in messages:
+            logger.error('收到了消息{}！'.format(msg['type']))
             if msg and msg['type'] == 'message':
                 uwsgi.websocket_send(msg['data'])
 
@@ -72,7 +74,7 @@ def link_view(request):
         # 获取当前登录的用户
 
         user = request_api.get_user(request)
-        conn = __register_connect(user['id'])
+        conn, pubsub = __register_connect(user['id'])
 
         uwsgi.websocket_handshake()
         # 发送所有用户未阅读的警报
@@ -84,16 +86,16 @@ def link_view(request):
         # 创建协程
         gevent.joinall([
             gevent.spawn(__check_live, conn=conn, flag=flag),
-            gevent.spawn(__notice_user, redis_pubsub=conn.pubsub(), flag=flag),
+            gevent.spawn(__notice_user, redis_pubsub=pubsub, flag=flag),
         ])
 
 
 def __register_connect(user_id):
     """注册一个连接并返回一个redis连接"""
-    conn = redis.Redis(connection_pool=conf_cache_api.pool)
+    conn = redis.StrictRedis(connection_pool=conf_cache_api.pool)
     redis_pubsub = conn.pubsub()
     redis_pubsub.subscribe('alarm_user_id_{}'.format(user_id))
-    return conn
+    return conn, redis_pubsub
 
 
 def __unregister_connect(conn):

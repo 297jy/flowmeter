@@ -163,7 +163,7 @@
 
             function connect() {
                 // 打开一个 web socket
-                ws = new WebSocket("ws://" + window.location.host + "/websocket/");
+                ws = new WebSocket("ws://" + window.location.host + ":{{ websocket_port }}/websocket/");
 
                 ws.onopen = function () {
                     // Web Socket 已连接上，使用 send() 方法发送数据
@@ -206,7 +206,6 @@
                 if (!open_falg) {
                     connect();
                 }
-                ws.send('{{ user.id }}');
             }, 10 * 1000);
 
         } else {
