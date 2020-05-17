@@ -216,12 +216,12 @@ def run_server(port=8003):
     """
 
     # 创建5秒定时任务
-    exec_remote_task = task.LoopingCall(five_seconds_beat_task)
-    exec_remote_task.start(5)
+    five_seconds_tasks = task.LoopingCall(five_seconds_beat_task)
+    five_seconds_tasks.start(5)
 
     # 创建10秒定时任务
-    exec_remote_task = task.LoopingCall(ten_seconds_beat_task)
-    exec_remote_task.start(10)
+    ten_seconds_tasks = task.LoopingCall(ten_seconds_beat_task)
+    ten_seconds_tasks.start(10)
 
     # 创建30分钟定时任务
     query_task = task.LoopingCall(thirty_minutes_beat_task)
@@ -236,10 +236,16 @@ def clear_timeout_opr():
     # 清除在等待超时的数据帧
     logger.info("开始清除过期操作")
     timeout_time = int(conf_configure_api.get_configure_by_name(conf_configure_api.get_wait_timeout()))
-    oprs = conf_opr_api.clear_all_timeout_wait_oprs(timeout_time)
-    opr_ids = [opr.log_id for opr in oprs]
+    oprs = conf_opr_api.get_all_timeout_wait_oprs(timeout_time)
+
+    opr_ids = []
+    for opr in oprs:
+        opr_ids.append(opr.id)
+        app_log_api.send_opr_status(opr.id)
+
     # 更新日志状态为失败
     conf_log_api.update_opr_logs_state(opr_ids, OprLog.ERROR_STATE)
+    oprs.delete()
 
     logger.info("将日志：{}状态设置为失败！".format(opr_ids))
 

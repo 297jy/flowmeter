@@ -23,6 +23,7 @@ def add_unexecuted_operator(opr):
     param_check(opr, must_dict, extra=True)
     opr['opr_time'] = time.time()
 
+    logger.info("添加未执行操作：{}".format(opr))
     UnExecutedOpr.objects.create(**opr)
 
 
@@ -73,7 +74,7 @@ def get_all_wait_opr_by_dtu_no(dtu_no):
     return oprs
 
 
-def clear_all_timeout_wait_oprs(time_out):
+def get_all_timeout_wait_oprs(time_out):
     """
     清除所有已经超时的等待操作
     :param time_out:
@@ -81,7 +82,6 @@ def clear_all_timeout_wait_oprs(time_out):
     """
     now_time = time.time()
     oprs = WaitOpr.objects.filter(opr_time__lt=now_time-time_out)
-    oprs.delete()
     return oprs
 
 

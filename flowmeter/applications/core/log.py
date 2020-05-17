@@ -13,7 +13,7 @@ from flowmeter.config.api import log as conf_log_api
 from flowmeter.common.common import transfer_obj_to_dict
 
 
-def __transfer_opr_log_database_to_display(oprlog_info):
+def transfer_opr_log_database_to_display(oprlog_info):
     """
     将数据库中的值，转为前端显示的值
     :return:
@@ -115,7 +115,7 @@ def find_logs_by_query_terms(query_terms, user, page=None):
     logs = conf_log_api.find_opr_log(query_box.get_filters(), page)
 
     return transfer_obj_to_dict(logs, ['id', 'opr_user.name', 'opr_time', 'val', 'state', 'opr_type',
-                                       'meter.dtu.dtu_no', 'meter.address'], __transfer_opr_log_database_to_display)
+                                       'meter.dtu.dtu_no', 'meter.address'], transfer_opr_log_database_to_display)
 
 
 def find_system_logs_by_query_terms(query_terms, user, page=None):
@@ -256,6 +256,6 @@ def oprlog_export(oprlog_ids, filename):
     logs = conf_log_api.find_opr_log(Q(id__in=oprlog_ids))
     log_dicts = transfer_obj_to_dict(logs, ['id', 'opr_user.name', 'opr_time', 'val', 'state', 'opr_type',
                                             'meter.dtu.dtu_no', 'meter.address'],
-                                     __transfer_opr_log_database_to_display)
+                                     transfer_opr_log_database_to_display)
 
     __log_export(log_dicts, '操作日志列表', filename, excel_fields)

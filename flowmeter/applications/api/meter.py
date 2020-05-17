@@ -248,7 +248,7 @@ def query_meter_data(meter_info, user, record_log=True):
         # 保证原子性
         with transaction.atomic():
 
-            log_id = ""
+            log_id = None
             if record_log:
                 log = conf_log_api.add_opr_log(log_dict)
                 log_id = log.id

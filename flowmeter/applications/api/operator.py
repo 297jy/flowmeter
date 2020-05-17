@@ -88,5 +88,6 @@ def execute_wait_remote_op(dtu_no, address, opr_type):
         if opr.log_id:
             with transaction.atomic():
                 app_log_api.update_logs_success_state([opr.log_id])
+                app_log_api.send_opr_status(opr.log_id)
                 opr.delete()
     return opr

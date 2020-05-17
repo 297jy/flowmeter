@@ -163,6 +163,8 @@
 
             open_falg = false;
 
+            alarms = Array();
+
             function connect() {
                 // 打开一个 web socket
                 ws = new WebSocket("ws://" + window.location.host + ":{{ websocket_port }}/websocket/");
@@ -177,23 +179,39 @@
                     var msg = evt.data;
                     console.log("收到了来自服务器websocket消息" + msg);
                     var msg_dict = JSON.parse(msg);
-                    var alarm_id = msg_dict['alarm_reader_id'];
+                    var msg_type = msg_dict['type'];
 
-                    //if (!all_alarm_list.has(alarm_id)) {
+                    if (msg_type === "alarm") {
+                        var alarm_id = msg_dict['alarm_reader_id'];
+                        for(var i=0;i<alarms.length;i++){
+                            if(alarms[i] === alarm_id){
+                                return;
+                            }
+                        }
+                        alarms.push(alarm_id);
                         notice.options['onclick'] = function () {
-
-                            //var alarm_id = msg_dict['alarm_reader_id'];
-                            //all_alarm_list.add(alarm_id);
                             //标记该警报为已经阅读
                             post({
                                 "param": JSON.stringify({'alarm_reader_id': alarm_id}),
                                 "action": "read_alarm_log"
                             }, '/handler/log/', function (data) {
                             });
-
                         };
                         notice.error(msg_dict['msg']);
-                   // }
+                    }
+                    else{
+                        if(msg_type === "opr_msg"){
+                            var status = msg_dict['status'];
+                            if(status === "error"){
+                                layer.msg(msg_dict['msg'], {icon: 5, time: 3000});
+                            }
+                            else{
+                                if(status === "success"){
+                                    layer.msg(msg_dict['msg'], {icon: 6, time: 3000});
+                                }
+                            }
+                        }
+                    }
 
                 };
 

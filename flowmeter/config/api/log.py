@@ -58,7 +58,8 @@ def find_opr_log_by_id(log_id):
 
 
 def update_opr_logs_state(log_ids, state):
-
+    if len(log_ids) == 0:
+        return
     OprLog.objects.filter(id__in=log_ids).update(state=state)
 
 

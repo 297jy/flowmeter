@@ -172,7 +172,7 @@ def read_alarm_log(alarm_log_id):
     conf_reader_api.read_alarm(alarm_log_id)
 
 
-def render_msg(alarm_log, role_type):
+def render_alarm_msg(alarm_log, role_type):
     if role_type == RoleType.ADMIN:
         return "供气商：{}，DTU用户：{}，DTU编号：{}，发生了：{}！". \
             format(alarm_log.meter.dtu.region.manufacturer.name, alarm_log.meter.dtu.user.name,
@@ -196,7 +196,7 @@ def check_and_send_alarm(meter_id, data, status=None):
     """
     if 'surplus_gas' in data.keys():
         if data['surplus_gas'] < conf_meter_api.get_meter_surplus_gas_limits(meter_id):
-            log_dict = {'alarm_type': AlarmLog.ALARM_EXCEED_LIMIT, 'meter_id': meter_id,
+            log_dict = {'type': 'alarm', 'alarm_type': AlarmLog.ALARM_EXCEED_LIMIT, 'meter_id': meter_id,
                         'opr_time': datetime.datetime.now()}
             # 异步执行
             send_alarm(log_dict)
@@ -204,14 +204,14 @@ def check_and_send_alarm(meter_id, data, status=None):
     if status and isinstance(status, dict):
         sensor_state = status.get('sensor_state')
         if sensor_state and sensor_state == SENSOR_ERROR_FLAG_TRUE:
-            log_dict = {'alarm_type': AlarmLog.ALARM_SENSOR_ERROR, 'meter_id': meter_id,
+            log_dict = {'type': 'alarm', 'alarm_type': AlarmLog.ALARM_SENSOR_ERROR, 'meter_id': meter_id,
                         'opr_time': datetime.datetime.now()}
             # 异步执行
             send_alarm(log_dict)
 
         valve_error_flag = status.get('valve_error_flag')
         if valve_error_flag and valve_error_flag == VALVE_ERROR_FLAG_TRUE:
-            log_dict = {'alarm_type': AlarmLog.ALARM_VALVE_ERROR, 'meter_id': meter_id,
+            log_dict = {'type': 'alarm', 'alarm_type': AlarmLog.ALARM_VALVE_ERROR, 'meter_id': meter_id,
                         'opr_time': datetime.datetime.now()}
             # 异步执行
             send_alarm(log_dict)
@@ -219,7 +219,7 @@ def check_and_send_alarm(meter_id, data, status=None):
         owe_state = status.get('owe_state')
         valve_state = status.get('valve_state')
         if owe_state and valve_state and owe_state == OWE_STATE_TRUE and valve_state == VALVE_STATE_OPEN:
-            log_dict = {'alarm_type': AlarmLog.ALARM_SUB_VALVE, 'meter_id': meter_id,
+            log_dict = {'type': 'alarm', 'alarm_type': AlarmLog.ALARM_SUB_VALVE, 'meter_id': meter_id,
                         'opr_time': datetime.datetime.now()}
             # 异步执行
             send_alarm(log_dict)
@@ -236,7 +236,8 @@ def send_alarm(alarm_log_dict):
     logger.info(admin_ids)
     for admin_id in admin_ids:
         reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': int(admin_id)})
-        alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log, RoleType.ADMIN)}
+        alarm_log_dict = {'type': 'alarm', 'alarm_reader_id': reader.id,
+                          'msg': render_alarm_msg(alarm_log, RoleType.ADMIN)}
         user_alarm_log_dict = {
             "user_id": str(admin_id),
             "alarm": alarm_log_dict,
@@ -247,8 +248,8 @@ def send_alarm(alarm_log_dict):
     man_id = alarm_log.meter.dtu.region.manufacturer.id
     try:
         reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': man_id})
-        alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log,
-                                                                          RoleType.MANUFACTURER)}
+        alarm_log_dict = {'type': 'alarm', 'alarm_reader_id': reader.id, 'msg': render_alarm_msg(alarm_log,
+                                                                                                 RoleType.MANUFACTURER)}
         user_alarm_log_dict = {
             "user_id": str(man_id),
             "alarm": alarm_log_dict,
@@ -261,8 +262,8 @@ def send_alarm(alarm_log_dict):
     user_id = alarm_log.meter.dtu.user.id
     try:
         reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': user_id})
-        alarm_log_dict = {'alarm_reader_id': reader.id, 'msg': render_msg(alarm_log,
-                                                                          RoleType.DTU_USER)}
+        alarm_log_dict = {'type': 'alarm', 'alarm_reader_id': reader.id, 'msg': render_alarm_msg(alarm_log,
+                                                                                                 RoleType.DTU_USER)}
         user_alarm_log_dict = {
             "user_id": str(user_id),
             "alarm": alarm_log_dict,
@@ -270,3 +271,35 @@ def send_alarm(alarm_log_dict):
         conf_cache_api.publish_message('alarm_user_id_{}'.format(man_id), json.dumps(user_alarm_log_dict))
     except IntegrityError:
         pass
+
+
+def send_opr_status(log_id):
+    """
+    向用户发送操作日志执行状态
+    :return:
+    """
+    opr_log = conf_log_api.find_opr_log_by_id(log_id)
+    if opr_log is None:
+        return
+    log_dict = {
+        "val": opr_log.val,
+        "opr_type": opr_log.opr_type,
+        "opr_user_id": opr_log.opr_user.id,
+    }
+
+    logger.info("准备向用户推送：{}".format(log_dict))
+    opr_log_dict = {'type': 'opr_msg', 'msg': render_msg(log_dict), "state": opr_log.state}
+    user_opr_log_dict = {
+        "user_id": log_dict['opr_user_id'],
+        "alarm": opr_log_dict,
+    }
+    conf_cache_api.publish_message('alarm_channel', json.dumps(user_opr_log_dict))
+
+
+def render_msg(log_dict):
+    """渲染提示信息"""
+    core.transfer_opr_log_database_to_display(log_dict)
+    if log_dict['val']:
+        return "{}：{}成功".format(log_dict['opr_type'], log_dict['val'])
+    else:
+        return "{}成功".format(log_dict['opr_type'])
