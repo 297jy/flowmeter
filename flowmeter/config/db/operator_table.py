@@ -10,15 +10,23 @@ class Operator:
     """
     操作实体
     """
-
+    # 查询
     QUERY = 'query'
+    # 充值
     RECHARGE = 'recharge'
+    # 打开预充值
     OPEN_RECHARGE = 'open_recharge'
+    # 关闭预充值
     CLOSE_RECHARGE = 'close_recharge'
+    # 开阀操作
     OPEN_VALVE = 'open_valve'
+    # 关阀操作
     CLOSE_VALVE = 'close_valve'
+    # 设置物理地址
     SET_METER_ADDRESS = 'set_meter_address'
+    # 重启仪表
     RESET = 'reset'
+    # 设置流量系数
     SET_FLOW_RATIO = 'set_flow_ratio'
 
     def __init__(self):
