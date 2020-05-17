@@ -157,6 +157,8 @@
             onclick: null// 点击关闭回调
         };
 
+        //all_alarm_list = [];
+
         if ("WebSocket" in window) {
 
             open_falg = false;
@@ -175,17 +177,24 @@
                     var msg = evt.data;
                     console.log("收到了来自服务器websocket消息" + msg);
                     var msg_dict = JSON.parse(msg);
-                    notice.options['onclick'] = function () {
+                    var alarm_id = msg_dict['alarm_reader_id'];
 
-                        var alarm_id = msg_dict['alarm_reader_id'];
-                        //标记该警报为已经阅读
-                        post({
-                            "param": JSON.stringify({'alarm_reader_id': alarm_id}),
-                            "action": "read_alarm_log"
-                        }, '/handler/log/', function (data) {
-                        });
-                    };
-                    notice.error(msg_dict['msg']);
+                    //if (!all_alarm_list.has(alarm_id)) {
+                        notice.options['onclick'] = function () {
+
+                            //var alarm_id = msg_dict['alarm_reader_id'];
+                            //all_alarm_list.add(alarm_id);
+                            //标记该警报为已经阅读
+                            post({
+                                "param": JSON.stringify({'alarm_reader_id': alarm_id}),
+                                "action": "read_alarm_log"
+                            }, '/handler/log/', function (data) {
+                            });
+
+                        };
+                        notice.error(msg_dict['msg']);
+                   // }
+
                 };
 
                 ws.onclose = function () {
@@ -195,7 +204,6 @@
                     layer.closeAll();
                 });**/
                     open_falg = false;
-                    alert('断开了！')
                 };
             }
 
@@ -207,6 +215,12 @@
                     connect();
                 }
             }, 10 * 1000);
+
+            //4小时主动关一下连接，避免mysql连接超时
+            setInterval(function () {
+                ws.close();
+                open_falg = false;
+            }, 4 * 3600 * 1000);
 
         } else {
 

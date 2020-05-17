@@ -1,6 +1,5 @@
 # coding=utf-8
 """远程服务器运行脚本"""
-import gevent
 import os
 import django
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'flowmeter.settings')

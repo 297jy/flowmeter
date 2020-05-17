@@ -20,28 +20,28 @@ def execute_remote_op(opr):
     """
     opr = dict(opr)
     logger.info('添加了未执行操作：{}'.format(opr))
-    with transaction.atomic():
-        if opr['opr_type'] != Operator.RECHARGE:
 
-            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'], opr['opr_type'])
-            app_log_api.update_logs_success_state(log_ids)
-            # 之前还未执行的关阀操作可以删除
-            if opr['opr_type'] == Operator.OPEN_VALVE:
-                log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
-                                                                               Operator.CLOSE_VALVE)
-            if opr['opr_type'] == Operator.CLOSE_VALVE:
-                log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
-                                                                               Operator.OPEN_VALVE)
+    if opr['opr_type'] != Operator.RECHARGE:
 
-            if opr['opr_type'] == Operator.OPEN_RECHARGE:
-                log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
-                                                                               Operator.CLOSE_RECHARGE)
-            if opr['opr_type'] == Operator.CLOSE_RECHARGE:
-                log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
-                                                                               Operator.OPEN_RECHARGE)
-            app_log_api.update_logs_success_state(log_ids)
+        log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'], opr['opr_type'])
+        app_log_api.update_logs_success_state(log_ids)
+        # 之前还未执行的关阀操作可以删除
+        if opr['opr_type'] == Operator.OPEN_VALVE:
+            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
+                                                                           Operator.CLOSE_VALVE)
+        if opr['opr_type'] == Operator.CLOSE_VALVE:
+            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
+                                                                           Operator.OPEN_VALVE)
 
-        conf_operator_api.add_unexecuted_operator(opr)
+        if opr['opr_type'] == Operator.OPEN_RECHARGE:
+            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
+                                                                           Operator.CLOSE_RECHARGE)
+        if opr['opr_type'] == Operator.CLOSE_RECHARGE:
+            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
+                                                                           Operator.OPEN_RECHARGE)
+        app_log_api.update_logs_success_state(log_ids)
+
+    conf_operator_api.add_unexecuted_operator(opr)
 
 
 def execute_unexecuted_remote_op(dtu_no):

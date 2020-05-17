@@ -13,7 +13,6 @@ from flowmeter.config.api import alarm_log_reader as conf_reader_api
 from flowmeter.applications.api import log as app_log_api
 from flowmeter.common.const import RoleType
 
-
 logger = logging.getLogger('log')
 
 
@@ -22,7 +21,7 @@ def run():
     application = tornado.web.Application([
         (r"/websocket/", AlarmNoticeHandler),
     ],)
-    application.listen(port=8004, address="0.0.0.0")
+    application.listen(port=8004, address="127.0.0.1")
     tornado.ioloop.IOLoop.instance().start()
 
 
@@ -57,7 +56,9 @@ class AlarmNoticeHandler(tornado.websocket.WebSocketHandler):
 
     @staticmethod
     def __get_unread_alarm_dicts(user_id):
+
         alarms = conf_reader_api.get_user_unread_alarms(user_id)
+
         alarm_dicts = []
         for alarm in alarms:
             alarm_log_dict = {'alarm_reader_id': alarm.id,
@@ -89,7 +90,7 @@ class AlarmNoticeHandler(tornado.websocket.WebSocketHandler):
 
 def notice_user():
     """通知用户进程"""
-    conn = redis.Redis(host='0.0.0.0', port=6379)
+    conn = redis.Redis(host='127.0.0.1', port=6379)
     pubsub = conn.pubsub()
     pubsub.subscribe('alarm_channel')
     while True:

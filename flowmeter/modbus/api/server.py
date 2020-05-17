@@ -44,7 +44,7 @@ class FlowMeterClients:
         """
         FlowMeterClients.lock.acquire()
         try:
-            if dtu_no not in FlowMeterClients.dtu_to_connect_map.keys():
+            if ip not in FlowMeterClients.ip_to_dtu_map.keys():
                 FlowMeterClients.dtu_to_connect_map[dtu_no] = connect
                 FlowMeterClients.ip_to_dtu_map[ip] = dtu_no
                 return True
@@ -115,7 +115,7 @@ class FlowMeterServer(Protocol):
         """
         dtu_no = 0
         for byte in heart_beat:
-            dtu_no = dtu_no + (byte << FlowMeterServer.HEX_NUM)
+            dtu_no = (dtu_no << FlowMeterServer.HEX_NUM) + byte
 
         return dtu_no
 
@@ -134,10 +134,12 @@ class FlowMeterServer(Protocol):
         """
         ip = self.transport.getPeer().host
         dtu_no = FlowMeterClients.get_dtu_no(ip)
+
+        logger.info("ip：{}，dtu_no：{}断开连接".format(ip, dtu_no))
+
         # 更新DTU离线状态
         conf_dtu_api.update_dtu_offline_state(dtu_no)
         FlowMeterClients.remove(ip)
-        logger.info("断开连接！")
 
     def dataReceived(self, data_frame):
         """
@@ -211,10 +213,10 @@ def run_server(port=8003):
     # 开启定时任务，并指定定时任务的时间间隔
     exec_remote_task.start(conf_configure_api.get_unexecuted_opr_check_time())
 
-    """
     query_task = task.LoopingCall(query_meter_data)
     query_task.start(conf_configure_api.get_query_meter_time() * 60)
 
+    """
     clear_task = task.LoopingCall(clear_failed_opr)
     clear_time = int(conf_configure_api.get_configure_by_name(conf_configure_api.get_clear_failed_opr_time_name()))
     clear_task.start(clear_time * 60)
@@ -222,6 +224,7 @@ def run_server(port=8003):
     endpoint = TCP4ServerEndpoint(reactor, port)
     endpoint.listen(ModBusFactory())
     reactor.run(installSignalHandlers=0)
+
 
 """
 def clear_failed_opr():
@@ -260,12 +263,15 @@ def clear_failed_opr():
 
 
 def exec_remote_opr():
-    dtu_nos = conf_dtu_api.get_online_dtu_nos()
-    for dtu_no in dtu_nos:
-        try:
-            app_opr_api.execute_unexecuted_remote_op(dtu_no)
-        except Exception as ex:
-            logger.error(str(ex))
+    try:
+        dtu_nos = conf_dtu_api.get_online_dtu_nos()
+        for dtu_no in dtu_nos:
+            try:
+                app_opr_api.execute_unexecuted_remote_op(dtu_no)
+            except Exception as ex:
+                logger.error(str(ex))
+    except Exception as ex:
+        logger.error(ex)
 
 
 def send_data_frame(dtu_no, data_frame):
@@ -275,6 +281,7 @@ def send_data_frame(dtu_no, data_frame):
         raise OfflineException()
 
     connect.getHandle().sendall(data_frame)
+    logger.info("服务器发送了：{}".format(data_frame))
 
 
 if __name__ == "__main__":

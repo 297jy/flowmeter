@@ -2,11 +2,11 @@
 """
 每隔10分钟检查一次
 """
-from flowmeter.celery import app
 from flowmeter.init import start_flowmeter_server
 from flowmeter.init import init_role_version
 from flowmeter.init import init_configure
 from flowmeter.celery_task.core import ten_minutes_core
+from flowmeter.celery import app
 
 
 @app.task

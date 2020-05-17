@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'djcelery',
 ]
 
 MIDDLEWARE = [
@@ -85,7 +84,7 @@ DATABASES = {
         'NAME': 'flowmeter',
         'USER': 'root',
         'PASSWORD': 'root!@#',
-        'HOST': 'www.cqust.fun',
+        'HOST': '127.0.0.1',
         'PORT': '3306',
         # 是否支持事务操作
         'ATOMIC_REQUESTS': True,
@@ -134,16 +133,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
-
-LANGUAGE_CODE = 'en-us'
-
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Shanghai'
 
 USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+USE_TZ = False
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
@@ -262,20 +258,6 @@ MAX_DTU_NO = 1 << 16 - 1
 # celery settings
 # celery中间人 redis://redis服务所在的ip地址:端口/数据库号
 BROKER_URL = 'redis://127.0.0.1:6379/0'
-# celery结果返回，可用于跟踪结果
-CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
-
-# celery内容等消息的格式设置
-CELERY_ACCEPT_CONTENT = ['application/json', ]
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-
-
-# 导入任务所在文件
-CELERY_IMPORTS = (
-    'flowmeter.celery_task.api.twelve_fixed_task',
-    'flowmeter.celery_task.api.ten_minutes_fixed_task',
-)
 
 # 需要执行任务的配置
 CELERYBEAT_SCHEDULE = {
@@ -293,13 +275,23 @@ CELERYBEAT_SCHEDULE = {
         'schedule': crontab(minute=0, hour=0),
         'args': ()
     },
-    'check_system_env': {
-        'task': 'flowmeter.celery_task.api.ten_minutes_fixed_task.check_system_env',
-        # 设置定时的时间，10分钟执行一次
-        'schedule': crontab(minute='*/10'),
-        'args': ()
-    }
 }
+
+# redis
+REDIS_PORT = 6379
+REDIS_DB = 0
+# 从环境变量中取得redis服务器地址
+REDIS_HOST = os.environ.get('REDIS_ADDR', 'redis')
+
+# celery settings
+# 这两项必须设置，否则不能正常启动celery beat
+CELERY_ENABLE_UTC = True
+CELERY_TIMEZONE = TIME_ZONE
+# 任务队列配置
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379/0'
+CELERY_ACCEPT_CONTENT = ['application/json', ]
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379/0'
+CELERY_TASK_SERIALIZER = 'json'
 
 WEBSOCKET_FACTORY_CLASS = 'dwebsocket.backends.uwsgi.factory.uWsgiWebSocketFactory'
 WSGI_APPLICATION = 'flowmeter.wsgi.application'

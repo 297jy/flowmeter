@@ -7,9 +7,9 @@ from flowmeter.common.common import deserialize_obj, serialize_obj
 import logging
 logger = logging.getLogger('log')
 
-pool = redis.ConnectionPool(host='0.0.0.0', port=6379, max_connections=2000)
+pool = redis.ConnectionPool(host='127.0.0.1', port=6379, max_connections=2000)
 
-host = '0.0.0.0'
+host = '127.0.0.1'
 
 
 def is_exists(name):
