@@ -1,6 +1,6 @@
 import os
 import traceback
-
+import time
 from reportlab.graphics.charts.barcharts import VerticalBarChart
 from reportlab.graphics.charts.legends import Legend
 from reportlab.graphics.shapes import Drawing
@@ -17,6 +17,7 @@ from reportlab.graphics.shapes import Drawing, Rect
 from reportlab.graphics.charts.textlabels import Label
 from reportlab.graphics.charts.piecharts import Pie
 
+print(time.time())
 # 注意data的类型，
 # 每一个数据点是一个元组
 # 一条曲线对应一个存储数据点元组的元组

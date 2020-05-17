@@ -1,6 +1,5 @@
 # coding=utf-8
 import threading
-import time
 from twisted.internet.protocol import Protocol
 from twisted.internet.protocol import Factory
 from twisted.internet.endpoints import TCP4ServerEndpoint
@@ -138,7 +137,11 @@ class FlowMeterServer(Protocol):
         logger.info("ip：{}，dtu_no：{}断开连接".format(ip, dtu_no))
 
         # 更新DTU离线状态
-        conf_dtu_api.update_dtu_offline_state(dtu_no)
+        try:
+            conf_dtu_api.update_dtu_offline_state(dtu_no)
+        except Exception as ex:
+            logger.error(str(ex))
+
         FlowMeterClients.remove(ip)
 
     def dataReceived(self, data_frame):
@@ -159,8 +162,12 @@ class FlowMeterServer(Protocol):
             FlowMeterClients.add(dtu_no, ip, connect)
             # 回应心跳包
             self.transport.getHandle().sendall(data_frame)
+
             # 更新上线状态
-            conf_dtu_api.update_dtu_online_state(dtu_no)
+            try:
+                conf_dtu_api.update_dtu_online_state(dtu_no)
+            except Exception as ex:
+                logger.error(str(ex))
 
         else:
             # 先解析数据帧
@@ -195,7 +202,7 @@ def query_meter_data():
     定时查询目前所有在线DTU的所有仪表数据
     :return:
     """
-
+    logger.info("开始定时查询流量计数据")
     meters = conf_meter_api.find_meters()
     meter_ids = [meter.id for meter in meters]
     app_meter_api.query_meter_data({"meter_ids": meter_ids}, None, record_log=False)
@@ -208,70 +215,42 @@ def run_server(port=8003):
     :return:
     """
 
-    # 创建定时任务，定时循环调用
-    exec_remote_task = task.LoopingCall(exec_remote_opr)
-    # 开启定时任务，并指定定时任务的时间间隔
-    exec_remote_task.start(conf_configure_api.get_unexecuted_opr_check_time())
+    # 创建5秒定时任务
+    exec_remote_task = task.LoopingCall(five_seconds_beat_task)
+    exec_remote_task.start(5)
 
-    query_task = task.LoopingCall(query_meter_data)
-    query_task.start(conf_configure_api.get_query_meter_time() * 60)
+    # 创建10秒定时任务
+    exec_remote_task = task.LoopingCall(ten_seconds_beat_task)
+    exec_remote_task.start(10)
 
-    """
-    clear_task = task.LoopingCall(clear_failed_opr)
-    clear_time = int(conf_configure_api.get_configure_by_name(conf_configure_api.get_clear_failed_opr_time_name()))
-    clear_task.start(clear_time * 60)
-    """
+    # 创建30分钟定时任务
+    query_task = task.LoopingCall(thirty_minutes_beat_task)
+    query_task.start(30 * 60)
+
     endpoint = TCP4ServerEndpoint(reactor, port)
     endpoint.listen(ModBusFactory())
     reactor.run(installSignalHandlers=0)
 
 
-"""
-def clear_failed_opr():
-    # 清除失败的远程操作
-    dtu_nos = conf_dtu_api.get_all_dtu_no()
-    now_time = time.time()
-    for dtu_no in dtu_nos:
-        oprs_dict = conf_opr_api.get_all_unexecuted_opr(dtu_no)
-        for meter_address, opr_type_dict in oprs_dict.items():
-            for opr_type, oprs in opr_type_dict.items():
-                new_oprs = []
-                failed_log_ids = []
-                for opr in oprs:
-                    # 删除掉已经超过两小时但是未执行成功的操作
-                    if (now_time - opr['opr_time']) <= 7200:
-                        new_oprs.append(opr)
-                    else:
-                        failed_log_ids.append(opr['log_id'])
-                conf_opr_api.set_unexecuted_operator(dtu_no, meter_address, opr_type, new_oprs)
-                conf_log_api.update_opr_logs_state(failed_log_ids, OprLog.ERROR_STATE)
+def clear_timeout_opr():
+    # 清除在等待超时的数据帧
+    logger.info("开始清除过期操作")
+    timeout_time = int(conf_configure_api.get_configure_by_name(conf_configure_api.get_wait_timeout()))
+    oprs = conf_opr_api.clear_all_timeout_wait_oprs(timeout_time)
+    opr_ids = [opr.log_id for opr in oprs]
+    # 更新日志状态为失败
+    conf_log_api.update_opr_logs_state(opr_ids, OprLog.ERROR_STATE)
 
-        oprs_dict = conf_opr_api.get_all_wait_opr(dtu_no)
-        for meter_address, opr_type_dict in oprs_dict.items():
-            for opr_type, oprs in opr_type_dict.items():
-                new_oprs = []
-                failed_log_ids = []
-                for opr in oprs:
-                    # 删除掉已经超过两小时但是未执行成功的操作
-                    if (now_time - opr['opr_time']) <= 7200:
-                        new_oprs.append(opr)
-                    else:
-                        failed_log_ids.append(opr['log_id'])
-                conf_opr_api.set_wait_operator(dtu_no, meter_address, opr_type, new_oprs)
-                conf_log_api.update_opr_logs_state(failed_log_ids, OprLog.ERROR_STATE)
-"""
+    logger.info("将日志：{}状态设置为失败！".format(opr_ids))
 
 
 def exec_remote_opr():
-    try:
-        dtu_nos = conf_dtu_api.get_online_dtu_nos()
-        for dtu_no in dtu_nos:
-            try:
-                app_opr_api.execute_unexecuted_remote_op(dtu_no)
-            except Exception as ex:
-                logger.error(str(ex))
-    except Exception as ex:
-        logger.error(ex)
+    dtu_nos = conf_dtu_api.get_online_dtu_nos()
+    for dtu_no in dtu_nos:
+        try:
+            app_opr_api.execute_unexecuted_remote_op(dtu_no)
+        except Exception as ex:
+            logger.error(str(ex))
 
 
 def send_data_frame(dtu_no, data_frame):
@@ -282,6 +261,30 @@ def send_data_frame(dtu_no, data_frame):
 
     connect.getHandle().sendall(data_frame)
     logger.info("服务器发送了：{}".format(data_frame))
+
+
+def five_seconds_beat_task():
+    """
+    5秒定时任务
+    :return:
+    """
+    exec_remote_opr()
+
+
+def ten_seconds_beat_task():
+    """
+    10秒定时任务
+    :return:
+    """
+    clear_timeout_opr()
+
+
+def thirty_minutes_beat_task():
+    """
+    30分钟定时任务
+    :return:
+    """
+    query_meter_data()
 
 
 if __name__ == "__main__":

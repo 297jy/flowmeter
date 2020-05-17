@@ -208,6 +208,6 @@ class WaitOpr(models.Model):
 
     class Meta:
         ordering = ['opr_time']
-        index_together = ['dtu_no', 'address', 'opr_type']
+        index_together = ['dtu_no', 'address', 'opr_type', 'opr_time']
 
 

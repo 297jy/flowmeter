@@ -20,6 +20,11 @@ def get_clear_failed_opr_time_name():
     return "clear_failed_opr_time"
 
 
+def get_wait_timeout():
+    """获取数据帧等待超时时间"""
+    return "wait_timeout"
+
+
 def get_unexecuted_opr_check_time():
     """
     获取未执行的操作的检查时间

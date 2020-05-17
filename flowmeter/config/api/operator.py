@@ -68,8 +68,20 @@ def get_and_del_earliest_unexecuted_opr(dtu_no, address, opr_type):
         return None
 
 
-def get_all_wait_opr(dtu_no):
+def get_all_wait_opr_by_dtu_no(dtu_no):
     oprs = WaitOpr.objects.filter(dtu_no=dtu_no)
+    return oprs
+
+
+def clear_all_timeout_wait_oprs(time_out):
+    """
+    清除所有已经超时的等待操作
+    :param time_out:
+    :return: 已经清除的等待操作
+    """
+    now_time = time.time()
+    oprs = WaitOpr.objects.filter(opr_time__lt=now_time-time_out)
+    oprs.delete()
     return oprs
 
 

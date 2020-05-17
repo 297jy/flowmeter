@@ -53,7 +53,7 @@ def execute_unexecuted_remote_op(dtu_no):
     oprs = conf_operator_api.get_all_unexecuted_opr(dtu_no)
 
     # 正在等待的操作不重复执行
-    wait_oprs = conf_operator_api.get_all_wait_opr(dtu_no)
+    wait_oprs = conf_operator_api.get_all_wait_opr_by_dtu_no(dtu_no)
     wait_opr_set = set()
     for opr in wait_oprs:
         key_name = "_".join([str(opr.dtu_no), str(opr.address), opr.opr_type])
@@ -70,6 +70,7 @@ def execute_unexecuted_remote_op(dtu_no):
             with transaction.atomic():
                 conf_operator_api.del_unexecuted_opr_by_id(opr.id)
                 conf_operator_api.add_wait_operator(dict(opr))
+                logger.info("开始执行操作：{}！".format(dict(opr)))
                 data_frame = frame.generate_data_frame(opr.address, opr.opr_type, opr.val)
                 server.send_data_frame(dtu_no, data_frame)
         except Exception as ex:
