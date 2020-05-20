@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : test
+ Source Server         : www.cqust.fun
  Source Server Type    : MySQL
- Source Server Version : 80019
- Source Host           : localhost:3306
+ Source Server Version : 50730
+ Source Host           : www.cqust.fun:3306
  Source Schema         : flowmeter
 
  Target Server Type    : MySQL
- Target Server Version : 80019
+ Target Server Version : 50730
  File Encoding         : 65001
 
- Date: 05/04/2020 15:20:32
+ Date: 20/05/2020 10:44:41
 */
 
 SET NAMES utf8mb4;
@@ -22,20 +22,20 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_group`;
 CREATE TABLE `auth_group`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(150) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `name`(`name`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for auth_group_permissions
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_group_permissions`;
 CREATE TABLE `auth_group_permissions`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `group_id` int(0) NOT NULL,
-  `permission_id` int(0) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `group_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `auth_group_permissions_group_id_permission_id_0cd325b0_uniq`(`group_id`, `permission_id`) USING BTREE,
   INDEX `auth_group_permissio_permission_id_84c5c92e_fk_auth_perm`(`permission_id`) USING BTREE,
@@ -48,14 +48,14 @@ CREATE TABLE `auth_group_permissions`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_permission`;
 CREATE TABLE `auth_permission`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `content_type_id` int(0) NOT NULL,
+  `content_type_id` int(11) NOT NULL,
   `codename` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `auth_permission_content_type_id_codename_01ab375a_uniq`(`content_type_id`, `codename`) USING BTREE,
   CONSTRAINT `auth_permission_content_type_id_2f476e4b_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 149 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 157 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of auth_permission
@@ -208,13 +208,21 @@ INSERT INTO `auth_permission` VALUES (145, 'Can add meter history data', 37, 'ad
 INSERT INTO `auth_permission` VALUES (146, 'Can change meter history data', 37, 'change_meterhistorydata');
 INSERT INTO `auth_permission` VALUES (147, 'Can delete meter history data', 37, 'delete_meterhistorydata');
 INSERT INTO `auth_permission` VALUES (148, 'Can view meter history data', 37, 'view_meterhistorydata');
+INSERT INTO `auth_permission` VALUES (149, 'Can add un executed opr', 38, 'add_unexecutedopr');
+INSERT INTO `auth_permission` VALUES (150, 'Can change un executed opr', 38, 'change_unexecutedopr');
+INSERT INTO `auth_permission` VALUES (151, 'Can delete un executed opr', 38, 'delete_unexecutedopr');
+INSERT INTO `auth_permission` VALUES (152, 'Can view un executed opr', 38, 'view_unexecutedopr');
+INSERT INTO `auth_permission` VALUES (153, 'Can add wait opr', 39, 'add_waitopr');
+INSERT INTO `auth_permission` VALUES (154, 'Can change wait opr', 39, 'change_waitopr');
+INSERT INTO `auth_permission` VALUES (155, 'Can delete wait opr', 39, 'delete_waitopr');
+INSERT INTO `auth_permission` VALUES (156, 'Can view wait opr', 39, 'view_waitopr');
 
 -- ----------------------------
 -- Table structure for auth_user
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_user`;
 CREATE TABLE `auth_user`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `password` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `last_login` datetime(6) DEFAULT NULL,
   `is_superuser` tinyint(1) NOT NULL,
@@ -227,31 +235,31 @@ CREATE TABLE `auth_user`  (
   `date_joined` datetime(6) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `username`(`username`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for auth_user_groups
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_user_groups`;
 CREATE TABLE `auth_user_groups`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `user_id` int(0) NOT NULL,
-  `group_id` int(0) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `auth_user_groups_user_id_group_id_94350c0c_uniq`(`user_id`, `group_id`) USING BTREE,
   INDEX `auth_user_groups_group_id_97559544_fk_auth_group_id`(`group_id`) USING BTREE,
   CONSTRAINT `auth_user_groups_group_id_97559544_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `auth_user_groups_user_id_6a12ed8b_fk_auth_user_id` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for auth_user_user_permissions
 -- ----------------------------
 DROP TABLE IF EXISTS `auth_user_user_permissions`;
 CREATE TABLE `auth_user_user_permissions`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `user_id` int(0) NOT NULL,
-  `permission_id` int(0) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `permission_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `auth_user_user_permissions_user_id_permission_id_14a6b632_uniq`(`user_id`, `permission_id`) USING BTREE,
   INDEX `auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm`(`permission_id`) USING BTREE,
@@ -264,7 +272,7 @@ CREATE TABLE `auth_user_user_permissions`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `celery_taskmeta`;
 CREATE TABLE `celery_taskmeta`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `task_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `status` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `result` longtext CHARACTER SET utf8 COLLATE utf8_bin,
@@ -275,14 +283,14 @@ CREATE TABLE `celery_taskmeta`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `task_id`(`task_id`) USING BTREE,
   INDEX `celery_taskmeta_hidden_23fd02dc`(`hidden`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for celery_tasksetmeta
 -- ----------------------------
 DROP TABLE IF EXISTS `celery_tasksetmeta`;
 CREATE TABLE `celery_tasksetmeta`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `taskset_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `result` longtext CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `date_done` datetime(6) NOT NULL,
@@ -290,21 +298,21 @@ CREATE TABLE `celery_tasksetmeta`  (
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `taskset_id`(`taskset_id`) USING BTREE,
   INDEX `celery_tasksetmeta_hidden_593cfc24`(`hidden`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for django_admin_log
 -- ----------------------------
 DROP TABLE IF EXISTS `django_admin_log`;
 CREATE TABLE `django_admin_log`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `action_time` datetime(6) NOT NULL,
   `object_id` longtext CHARACTER SET utf8 COLLATE utf8_bin,
   `object_repr` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `action_flag` smallint unsigned NOT NULL,
+  `action_flag` smallint(5) UNSIGNED NOT NULL,
   `change_message` longtext CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `content_type_id` int(0) DEFAULT NULL,
-  `user_id` int(0) NOT NULL,
+  `content_type_id` int(11) DEFAULT NULL,
+  `user_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `django_admin_log_content_type_id_c4bce8eb_fk_django_co`(`content_type_id`) USING BTREE,
   INDEX `django_admin_log_user_id_c564eba6_fk_auth_user_id`(`user_id`) USING BTREE,
@@ -317,12 +325,12 @@ CREATE TABLE `django_admin_log`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `django_content_type`;
 CREATE TABLE `django_content_type`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `app_label` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `model` varchar(100) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `django_content_type_app_label_model_76bd3d3b_uniq`(`app_label`, `model`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 38 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 40 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of django_content_type
@@ -361,8 +369,10 @@ INSERT INTO `django_content_type` VALUES (14, 'flowmeter', 'protocol');
 INSERT INTO `django_content_type` VALUES (11, 'flowmeter', 'role');
 INSERT INTO `django_content_type` VALUES (13, 'flowmeter', 'roleauth');
 INSERT INTO `django_content_type` VALUES (35, 'flowmeter', 'systemlog');
+INSERT INTO `django_content_type` VALUES (38, 'flowmeter', 'unexecutedopr');
 INSERT INTO `django_content_type` VALUES (12, 'flowmeter', 'user');
 INSERT INTO `django_content_type` VALUES (30, 'flowmeter', 'valve');
+INSERT INTO `django_content_type` VALUES (39, 'flowmeter', 'waitopr');
 INSERT INTO `django_content_type` VALUES (6, 'sessions', 'session');
 
 -- ----------------------------
@@ -370,12 +380,12 @@ INSERT INTO `django_content_type` VALUES (6, 'sessions', 'session');
 -- ----------------------------
 DROP TABLE IF EXISTS `django_migrations`;
 CREATE TABLE `django_migrations`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `app` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 75 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 83 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of django_migrations
@@ -454,6 +464,14 @@ INSERT INTO `django_migrations` VALUES (71, 'flowmeter', '0050_auto_20200329_183
 INSERT INTO `django_migrations` VALUES (72, 'flowmeter', '0050_auto_20200329_2244', '2020-03-29 22:44:05.255015');
 INSERT INTO `django_migrations` VALUES (73, 'flowmeter', '0051_auto_20200329_2308', '2020-03-29 23:08:07.391083');
 INSERT INTO `django_migrations` VALUES (74, 'flowmeter', '0052_auto_20200403_1956', '2020-04-03 19:56:24.845101');
+INSERT INTO `django_migrations` VALUES (75, 'flowmeter', '0053_auto_20200503_2215', '2020-05-14 21:58:52.857368');
+INSERT INTO `django_migrations` VALUES (76, 'flowmeter', '0054_auto_20200503_2242', '2020-05-14 21:58:54.545904');
+INSERT INTO `django_migrations` VALUES (77, 'flowmeter', '0055_auto_20200503_2247', '2020-05-14 21:58:55.049361');
+INSERT INTO `django_migrations` VALUES (78, 'flowmeter', '0056_auto_20200503_2249', '2020-05-14 21:58:55.334612');
+INSERT INTO `django_migrations` VALUES (79, 'flowmeter', '0057_auto_20200503_2249', '2020-05-14 21:58:55.593857');
+INSERT INTO `django_migrations` VALUES (80, 'flowmeter', '0058_auto_20200503_2256', '2020-05-14 21:58:55.674922');
+INSERT INTO `django_migrations` VALUES (81, 'flowmeter', '0059_auto_20200504_0001', '2020-05-14 21:58:56.349535');
+INSERT INTO `django_migrations` VALUES (82, 'flowmeter', '0060_auto_20200504_0022', '2020-05-14 21:58:57.054175');
 
 -- ----------------------------
 -- Table structure for django_session
@@ -477,32 +495,32 @@ INSERT INTO `django_session` VALUES ('201oh4w0wafq4fp1nmqq1mw4v7bzbvy7', 'NTc0ZT
 -- ----------------------------
 DROP TABLE IF EXISTS `djcelery_crontabschedule`;
 CREATE TABLE `djcelery_crontabschedule`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `minute` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `hour` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `day_of_week` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `day_of_month` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `month_of_year` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for djcelery_intervalschedule
 -- ----------------------------
 DROP TABLE IF EXISTS `djcelery_intervalschedule`;
 CREATE TABLE `djcelery_intervalschedule`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `every` int(0) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `every` int(11) NOT NULL,
   `period` varchar(24) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for djcelery_periodictask
 -- ----------------------------
 DROP TABLE IF EXISTS `djcelery_periodictask`;
 CREATE TABLE `djcelery_periodictask`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `task` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `args` longtext CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
@@ -513,25 +531,25 @@ CREATE TABLE `djcelery_periodictask`  (
   `expires` datetime(6) DEFAULT NULL,
   `enabled` tinyint(1) NOT NULL,
   `last_run_at` datetime(6) DEFAULT NULL,
-  `total_run_count` int unsigned NOT NULL,
+  `total_run_count` int(10) UNSIGNED NOT NULL,
   `date_changed` datetime(6) NOT NULL,
   `description` longtext CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `crontab_id` int(0) DEFAULT NULL,
-  `interval_id` int(0) DEFAULT NULL,
+  `crontab_id` int(11) DEFAULT NULL,
+  `interval_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `name`(`name`) USING BTREE,
   INDEX `djcelery_periodictas_crontab_id_75609bab_fk_djcelery_`(`crontab_id`) USING BTREE,
   INDEX `djcelery_periodictas_interval_id_b426ab02_fk_djcelery_`(`interval_id`) USING BTREE,
   CONSTRAINT `djcelery_periodictas_crontab_id_75609bab_fk_djcelery_` FOREIGN KEY (`crontab_id`) REFERENCES `djcelery_crontabschedule` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `djcelery_periodictas_interval_id_b426ab02_fk_djcelery_` FOREIGN KEY (`interval_id`) REFERENCES `djcelery_intervalschedule` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for djcelery_periodictasks
 -- ----------------------------
 DROP TABLE IF EXISTS `djcelery_periodictasks`;
 CREATE TABLE `djcelery_periodictasks`  (
-  `ident` smallint(0) NOT NULL,
+  `ident` smallint(6) NOT NULL,
   `last_update` datetime(6) NOT NULL,
   PRIMARY KEY (`ident`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
@@ -541,7 +559,7 @@ CREATE TABLE `djcelery_periodictasks`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `djcelery_taskstate`;
 CREATE TABLE `djcelery_taskstate`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `state` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `task_id` varchar(36) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `name` varchar(200) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
@@ -553,9 +571,9 @@ CREATE TABLE `djcelery_taskstate`  (
   `result` longtext CHARACTER SET utf8 COLLATE utf8_bin,
   `traceback` longtext CHARACTER SET utf8 COLLATE utf8_bin,
   `runtime` double DEFAULT NULL,
-  `retries` int(0) NOT NULL,
+  `retries` int(11) NOT NULL,
   `hidden` tinyint(1) NOT NULL,
-  `worker_id` int(0) DEFAULT NULL,
+  `worker_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `task_id`(`task_id`) USING BTREE,
   INDEX `djcelery_taskstate_worker_id_f7f57a05_fk_djcelery_workerstate_id`(`worker_id`) USING BTREE,
@@ -564,30 +582,30 @@ CREATE TABLE `djcelery_taskstate`  (
   INDEX `djcelery_taskstate_tstamp_4c3f93a1`(`tstamp`) USING BTREE,
   INDEX `djcelery_taskstate_hidden_c3905e57`(`hidden`) USING BTREE,
   CONSTRAINT `djcelery_taskstate_worker_id_f7f57a05_fk_djcelery_workerstate_id` FOREIGN KEY (`worker_id`) REFERENCES `djcelery_workerstate` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for djcelery_workerstate
 -- ----------------------------
 DROP TABLE IF EXISTS `djcelery_workerstate`;
 CREATE TABLE `djcelery_workerstate`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `hostname` varchar(255) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `last_heartbeat` datetime(6) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `hostname`(`hostname`) USING BTREE,
   INDEX `djcelery_workerstate_last_heartbeat_4539b544`(`last_heartbeat`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for flowmeter_alarmlog
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_alarmlog`;
 CREATE TABLE `flowmeter_alarmlog`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `opr_time` datetime(6) NOT NULL,
   `alarm_type` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `meter_id` int(0) NOT NULL,
+  `meter_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_alarmlog_meter_id_a826c25e_fk_flowmeter_meter_id`(`meter_id`) USING BTREE,
   CONSTRAINT `flowmeter_alarmlog_meter_id_a826c25e_fk_flowmeter_meter_id` FOREIGN KEY (`meter_id`) REFERENCES `flowmeter_meter` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -620,10 +638,10 @@ INSERT INTO `flowmeter_alarmlog` VALUES (26, '2020-03-22 23:52:32.940719', 'exce
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_alarmlogreader`;
 CREATE TABLE `flowmeter_alarmlogreader`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `state` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `alarm_log_id` int(0) NOT NULL,
-  `user_id` int(0) NOT NULL,
+  `alarm_log_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `unique_flag` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_alarmlogre_alarm_log_id_ea28fd16_fk_flowmeter`(`alarm_log_id`) USING BTREE,
@@ -638,18 +656,18 @@ CREATE TABLE `flowmeter_alarmlogreader`  (
 INSERT INTO `flowmeter_alarmlogreader` VALUES (47, 'unread', 26, 1, '2020_3_22_1_11_exceed_limit');
 INSERT INTO `flowmeter_alarmlogreader` VALUES (48, 'read', 26, 2, '2020_3_22_2_11_exceed_limit');
 INSERT INTO `flowmeter_alarmlogreader` VALUES (49, 'unread', 26, 9, '2020_3_22_9_11_exceed_limit');
-INSERT INTO `flowmeter_alarmlogreader` VALUES (50, 'read', 26, 15, '2020_3_22_15_11_exceed_limit');
+INSERT INTO `flowmeter_alarmlogreader` VALUES (50, 'unread', 26, 15, '2020_3_22_15_11_exceed_limit');
 
 -- ----------------------------
 -- Table structure for flowmeter_auth
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_auth`;
 CREATE TABLE `flowmeter_auth`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `permission_action` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `remark` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `category_id` int(0) NOT NULL,
+  `category_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_auth_category_id_8f7a78fc_fk_flowmeter_authcategory_id`(`category_id`) USING BTREE,
   CONSTRAINT `flowmeter_auth_category_id_8f7a78fc_fk_flowmeter_authcategory_id` FOREIGN KEY (`category_id`) REFERENCES `flowmeter_authcategory` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -726,11 +744,11 @@ INSERT INTO `flowmeter_auth` VALUES (63, '生成报表', 'generate_report', NULL
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_authcategory`;
 CREATE TABLE `flowmeter_authcategory`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `remark` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_authcategory
@@ -751,12 +769,12 @@ INSERT INTO `flowmeter_authcategory` VALUES (10, '日志管理', NULL);
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_configure`;
 CREATE TABLE `flowmeter_configure`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `val` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `label` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_configure
@@ -764,16 +782,19 @@ CREATE TABLE `flowmeter_configure`  (
 INSERT INTO `flowmeter_configure` VALUES (1, 'unexecuted_opr_check_time', '5', '检查未执行操作的时间间隔');
 INSERT INTO `flowmeter_configure` VALUES (2, 'query_meter_time', '30', '定时查询流量计时间间隔（分）');
 INSERT INTO `flowmeter_configure` VALUES (3, 'session_expire_time', '关闭浏览器过期', '登录过期时间');
+INSERT INTO `flowmeter_configure` VALUES (4, 'websocket_port', '8004', 'websocket服务器端口');
+INSERT INTO `flowmeter_configure` VALUES (5, 'flowmeter_port', '8003', '远程服务器端口');
+INSERT INTO `flowmeter_configure` VALUES (6, 'wait_timeout', '600', '数据帧等待超时时间（秒）');
 
 -- ----------------------------
 -- Table structure for flowmeter_controlregister
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_controlregister`;
 CREATE TABLE `flowmeter_controlregister`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `field_val` int(0) NOT NULL,
-  `const_data` int(0) DEFAULT NULL,
+  `field_val` int(11) NOT NULL,
+  `const_data` int(11) DEFAULT NULL,
   `remark` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `opr_type` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
@@ -798,10 +819,10 @@ INSERT INTO `flowmeter_controlregister` VALUES (9, '查询仪表数据', 0, 16, 
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_datafield`;
 CREATE TABLE `flowmeter_datafield`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `begin_address` int(0) NOT NULL,
-  `end_address` int(0) NOT NULL,
+  `begin_address` int(11) NOT NULL,
+  `end_address` int(11) NOT NULL,
   `field_name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 13 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
@@ -827,7 +848,7 @@ INSERT INTO `flowmeter_datafield` VALUES (12, '流量系数', 29, 30, 'flow_rati
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_dataframeformat`;
 CREATE TABLE `flowmeter_dataframeformat`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `remark` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
@@ -838,11 +859,12 @@ CREATE TABLE `flowmeter_dataframeformat`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_dtu`;
 CREATE TABLE `flowmeter_dtu`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `remark` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `region_id` int(0) NOT NULL,
-  `dtu_no` int(0) NOT NULL,
-  `user_id` int(0) DEFAULT NULL,
+  `region_id` int(11) NOT NULL,
+  `dtu_no` int(11) NOT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `online_state` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `flowmeter_dtu_dtu_no_09e8e0cf_uniq`(`dtu_no`) USING BTREE,
   INDEX `flowmeter_dtu_region_id_2c8e3b9c_fk_flowmeter_dturegion_id`(`region_id`) USING BTREE,
@@ -854,22 +876,22 @@ CREATE TABLE `flowmeter_dtu`  (
 -- ----------------------------
 -- Records of flowmeter_dtu
 -- ----------------------------
-INSERT INTO `flowmeter_dtu` VALUES (14, 'testsdfsdfsdfdsf   test', 14, 0, 15);
-INSERT INTO `flowmeter_dtu` VALUES (15, 'testsdfsfdsfsdfdsf  test', 16, 100, 15);
-INSERT INTO `flowmeter_dtu` VALUES (16, 'test', 14, 1, 15);
-INSERT INTO `flowmeter_dtu` VALUES (17, 'test', 17, 220, 15);
-INSERT INTO `flowmeter_dtu` VALUES (18, 'test', 14, 2, 15);
+INSERT INTO `flowmeter_dtu` VALUES (14, 'testsdfsdfsdfdsf   test', 14, 0, 15, 'offline');
+INSERT INTO `flowmeter_dtu` VALUES (15, 'testsdfsfdsfsdfdsf  test', 16, 100, 15, 'offline');
+INSERT INTO `flowmeter_dtu` VALUES (16, 'test', 14, 1, 15, 'offline');
+INSERT INTO `flowmeter_dtu` VALUES (17, 'test', 17, 220, 15, 'offline');
+INSERT INTO `flowmeter_dtu` VALUES (18, 'test', 14, 2, 15, 'offline');
 
 -- ----------------------------
 -- Table structure for flowmeter_dturegion
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_dturegion`;
 CREATE TABLE `flowmeter_dturegion`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `left` int(0) NOT NULL,
-  `right` int(0) NOT NULL,
-  `manufacturer_id` int(0) NOT NULL,
-  `used_num` int(0) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `left` int(11) NOT NULL,
+  `right` int(11) NOT NULL,
+  `manufacturer_id` int(11) NOT NULL,
+  `used_num` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_dturegion_manufacturer_id_ad32ad37`(`manufacturer_id`) USING BTREE,
   CONSTRAINT `flowmeter_dturegion_manufacturer_id_ad32ad37_fk_flowmeter` FOREIGN KEY (`manufacturer_id`) REFERENCES `flowmeter_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -887,7 +909,7 @@ INSERT INTO `flowmeter_dturegion` VALUES (17, 220, 220, 9, 1);
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_flag`;
 CREATE TABLE `flowmeter_flag`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `val` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
@@ -905,8 +927,8 @@ INSERT INTO `flowmeter_flag` VALUES (3, 'manufacturer_version', '2');
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_meter`;
 CREATE TABLE `flowmeter_meter`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `address` int(0) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `address` int(11) NOT NULL,
   `last_update_time` datetime(6) DEFAULT NULL,
   `surplus_gas` double DEFAULT NULL,
   `surplus_gas_limits` double DEFAULT NULL,
@@ -917,11 +939,11 @@ CREATE TABLE `flowmeter_meter`  (
   `power` double DEFAULT NULL,
   `version` double DEFAULT NULL,
   `remark` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `dtu_id` int(0) NOT NULL,
+  `dtu_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `flowmeter_meter_dtu_id_address_82f69c16_uniq`(`dtu_id`, `address`) USING BTREE,
   CONSTRAINT `flowmeter_meter_dtu_id_584ecca7_fk_flowmeter_dtu_id` FOREIGN KEY (`dtu_id`) REFERENCES `flowmeter_dtu` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_meter
@@ -929,16 +951,17 @@ CREATE TABLE `flowmeter_meter`  (
 INSERT INTO `flowmeter_meter` VALUES (11, 1, '2020-03-22 23:52:32.939718', 2028, 3000, 0.1, 3.5999999046325684, 10.392200022935867, 30.6, 3617, 2.2, 'test', 14);
 INSERT INTO `flowmeter_meter` VALUES (12, 2, '2020-03-19 17:19:06.691427', -1, 2.2, -1, -1, -1, -1, -1, -1, '', 14);
 INSERT INTO `flowmeter_meter` VALUES (16, 4, NULL, -1, 1000, -1, -1, -1, -1, -1, -1, 'test', 14);
+INSERT INTO `flowmeter_meter` VALUES (17, 1, NULL, -1, 1000, -1, -1, -1, -1, -1, -1, 'test', 16);
 
 -- ----------------------------
 -- Table structure for flowmeter_meterhistorydata
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_meterhistorydata`;
 CREATE TABLE `flowmeter_meterhistorydata`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `data` double NOT NULL,
   `time` date NOT NULL,
-  `meter_id` int(0) NOT NULL,
+  `meter_id` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_meterhisto_meter_id_81ce8141_fk_flowmeter`(`meter_id`) USING BTREE,
   INDEX `flowmeter_meterhistorydata_time_6c428b2d`(`time`) USING BTREE,
@@ -956,18 +979,18 @@ INSERT INTO `flowmeter_meterhistorydata` VALUES (4, 1200, '2020-03-29', 11);
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_meterstate`;
 CREATE TABLE `flowmeter_meterstate`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `valve_state` int(0) NOT NULL,
-  `recharge_state` int(0) NOT NULL,
-  `battery_pressure_state` int(0) NOT NULL,
-  `valve_error_flag` int(0) NOT NULL,
-  `owe_state` int(0) NOT NULL,
-  `sensor_state` int(0) NOT NULL,
-  `meter_id` int(0) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `valve_state` int(11) NOT NULL,
+  `recharge_state` int(11) NOT NULL,
+  `battery_pressure_state` int(11) NOT NULL,
+  `valve_error_flag` int(11) NOT NULL,
+  `owe_state` int(11) NOT NULL,
+  `sensor_state` int(11) NOT NULL,
+  `meter_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `meter_id`(`meter_id`) USING BTREE,
   CONSTRAINT `flowmeter_meterstate_meter_id_44db7d81_fk_flowmeter_meter_id` FOREIGN KEY (`meter_id`) REFERENCES `flowmeter_meter` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_meterstate
@@ -975,19 +998,20 @@ CREATE TABLE `flowmeter_meterstate`  (
 INSERT INTO `flowmeter_meterstate` VALUES (11, 0, 0, 0, 0, 0, 0, 11);
 INSERT INTO `flowmeter_meterstate` VALUES (12, 1, 1, -1, -1, -1, -1, 12);
 INSERT INTO `flowmeter_meterstate` VALUES (14, -1, -1, -1, -1, -1, -1, 16);
+INSERT INTO `flowmeter_meterstate` VALUES (15, -1, -1, -1, -1, -1, -1, 17);
 
 -- ----------------------------
 -- Table structure for flowmeter_navigationbar
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_navigationbar`;
 CREATE TABLE `flowmeter_navigationbar`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `icon` varchar(32) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `fid` int(0) NOT NULL,
-  `order` int(0) NOT NULL,
+  `fid` int(11) NOT NULL,
+  `order` int(11) NOT NULL,
   `url` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `auth_id` int(0) DEFAULT NULL,
+  `auth_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_navigationbar_auth_id_a595869c_fk_flowmeter_auth_id`(`auth_id`) USING BTREE,
   CONSTRAINT `flowmeter_navigationbar_auth_id_a595869c_fk_flowmeter_auth_id` FOREIGN KEY (`auth_id`) REFERENCES `flowmeter_auth` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -1017,19 +1041,19 @@ INSERT INTO `flowmeter_navigationbar` VALUES (15, 'xe6ae', '系统设置', 2, 3,
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_oprlog`;
 CREATE TABLE `flowmeter_oprlog`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `opr_time` datetime(6) NOT NULL,
   `state` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `opr_type` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `opr_user_id` int(0) NOT NULL,
-  `meter_id` int(0) NOT NULL,
+  `opr_user_id` int(11) NOT NULL,
+  `meter_id` int(11) NOT NULL,
   `val` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_oprlog_opr_user_id_414a4755_fk_flowmeter_user_id`(`opr_user_id`) USING BTREE,
   INDEX `flowmeter_oprlog_meter_id_382107dd_fk_flowmeter_meter_id`(`meter_id`) USING BTREE,
   CONSTRAINT `flowmeter_oprlog_meter_id_382107dd_fk_flowmeter_meter_id` FOREIGN KEY (`meter_id`) REFERENCES `flowmeter_meter` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `flowmeter_oprlog_opr_user_id_414a4755_fk_flowmeter_user_id` FOREIGN KEY (`opr_user_id`) REFERENCES `flowmeter_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 47 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 54 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_oprlog
@@ -1039,6 +1063,13 @@ INSERT INTO `flowmeter_oprlog` VALUES (43, '2020-03-19 16:39:17.416780', 'succes
 INSERT INTO `flowmeter_oprlog` VALUES (44, '2020-03-19 16:43:16.124581', 'wait', 'open_valve', 2, 12, '');
 INSERT INTO `flowmeter_oprlog` VALUES (45, '2020-03-19 17:10:01.278637', 'wait', 'open_valve', 2, 12, '');
 INSERT INTO `flowmeter_oprlog` VALUES (46, '2020-03-19 17:18:46.275831', 'success', 'open_valve', 2, 12, '');
+INSERT INTO `flowmeter_oprlog` VALUES (47, '2020-05-15 01:58:23.131088', 'success', 'query', 2, 11, '');
+INSERT INTO `flowmeter_oprlog` VALUES (48, '2020-05-17 16:09:59.598400', 'wait', 'query', 2, 11, '');
+INSERT INTO `flowmeter_oprlog` VALUES (49, '2020-05-17 16:14:03.613652', 'success', 'query', 2, 11, '');
+INSERT INTO `flowmeter_oprlog` VALUES (50, '2020-05-17 16:20:14.331925', 'wait', 'query', 2, 11, '');
+INSERT INTO `flowmeter_oprlog` VALUES (51, '2020-05-17 17:39:33.762358', 'error', 'query', 2, 11, '');
+INSERT INTO `flowmeter_oprlog` VALUES (52, '2020-05-17 21:15:49.130101', 'wait', 'query', 2, 17, '');
+INSERT INTO `flowmeter_oprlog` VALUES (53, '2020-05-17 21:19:39.854310', 'wait', 'recharge', 2, 17, '100');
 
 -- ----------------------------
 -- Table structure for flowmeter_role
@@ -1063,8 +1094,8 @@ INSERT INTO `flowmeter_role` VALUES ('manufacturer', 'sdfsf', '供气商');
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_roleauth`;
 CREATE TABLE `flowmeter_roleauth`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `auth_id` int(0) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `auth_id` int(11) NOT NULL,
   `role_id` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_roleauth_auth_id_076ea1f3_fk_flowmeter_auth_id`(`auth_id`) USING BTREE,
@@ -1183,16 +1214,16 @@ INSERT INTO `flowmeter_roleauth` VALUES (976, 63, 'dtu_user');
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_systemlog`;
 CREATE TABLE `flowmeter_systemlog`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `opr_time` datetime(6) NOT NULL,
   `action_type` varchar(256) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `state` varchar(16) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
-  `opr_user_id` int(0) NOT NULL,
+  `opr_user_id` int(11) NOT NULL,
   `msg` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `flowmeter_systemlog_opr_user_id_b12aa62a_fk_flowmeter_user_id`(`opr_user_id`) USING BTREE,
   CONSTRAINT `flowmeter_systemlog_opr_user_id_b12aa62a_fk_flowmeter_user_id` FOREIGN KEY (`opr_user_id`) REFERENCES `flowmeter_user` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 27 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 28 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_systemlog
@@ -1223,13 +1254,40 @@ INSERT INTO `flowmeter_systemlog` VALUES (23, '2020-04-03 19:16:28.380689', '添
 INSERT INTO `flowmeter_systemlog` VALUES (24, '2020-04-03 19:17:45.284095', '添加流量计。物理地址为：address，气量限值为：surplus_gas_limits。', 'error', 9, '该阀门已存在！');
 INSERT INTO `flowmeter_systemlog` VALUES (25, '2020-04-03 21:22:39.836845', '编辑流量计。流量计DTU编号为：dtu_no，物理地址为：address，气量限值为：surplus_gas_limits，备注为：remark。', 'success', 15, '');
 INSERT INTO `flowmeter_systemlog` VALUES (26, '2020-04-03 21:22:42.708477', '编辑流量计。流量计DTU编号为：dtu_no，物理地址为：address，气量限值为：surplus_gas_limits，备注为：remark。', 'success', 15, '');
+INSERT INTO `flowmeter_systemlog` VALUES (27, '2020-05-17 21:15:40.245935', '添加流量计。物理地址为：1，气量限值为：1000.0。', 'success', 2, '');
+
+-- ----------------------------
+-- Table structure for flowmeter_unexecutedopr
+-- ----------------------------
+DROP TABLE IF EXISTS `flowmeter_unexecutedopr`;
+CREATE TABLE `flowmeter_unexecutedopr`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `opr_time` double NOT NULL,
+  `dtu_no` int(11) NOT NULL,
+  `log_id` int(11) DEFAULT NULL,
+  `address` int(11) NOT NULL,
+  `opr_type` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `val` double DEFAULT NULL,
+  `meter_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `flowmeter_unexecutedopr_dtu_no_address_opr_type_ca37931b_idx`(`dtu_no`, `address`, `opr_type`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 36 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of flowmeter_unexecutedopr
+-- ----------------------------
+INSERT INTO `flowmeter_unexecutedopr` VALUES (31, 1589721579.8558269, 1, 53, 1, 'recharge', 100, 17);
+INSERT INTO `flowmeter_unexecutedopr` VALUES (32, 1589811636.1597753, 0, NULL, 1, 'query', NULL, 11);
+INSERT INTO `flowmeter_unexecutedopr` VALUES (33, 1589811636.2037292, 0, NULL, 2, 'query', NULL, 12);
+INSERT INTO `flowmeter_unexecutedopr` VALUES (34, 1589811636.244718, 0, NULL, 4, 'query', NULL, 16);
+INSERT INTO `flowmeter_unexecutedopr` VALUES (35, 1589811636.2686088, 1, NULL, 1, 'query', NULL, 17);
 
 -- ----------------------------
 -- Table structure for flowmeter_user
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_user`;
 CREATE TABLE `flowmeter_user`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `password` varchar(128) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `phone` varchar(11) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
@@ -1262,18 +1320,18 @@ INSERT INTO `flowmeter_user` VALUES (15, 'test', 'e4e5d1c9bf848d039fcf8afdb38ec6
 -- ----------------------------
 DROP TABLE IF EXISTS `flowmeter_valve`;
 CREATE TABLE `flowmeter_valve`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
-  `address` int(0) DEFAULT NULL,
-  `dtu_id` int(0) DEFAULT NULL,
-  `valve_dtu_id` int(0) DEFAULT NULL,
-  `meter_id` int(0) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `address` int(11) DEFAULT NULL,
+  `dtu_id` int(11) DEFAULT NULL,
+  `valve_dtu_id` int(11) DEFAULT NULL,
+  `meter_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `meter_id`(`meter_id`) USING BTREE,
   INDEX `flowmeter_valve_valve_dtu_id_f690f97a_fk_flowmeter_dtu_id`(`valve_dtu_id`) USING BTREE,
   INDEX `flowmeter_valve_dtu_id_51252e3a`(`dtu_id`) USING BTREE,
   CONSTRAINT `flowmeter_valve_meter_id_f5ca6c64_fk_flowmeter_meter_id` FOREIGN KEY (`meter_id`) REFERENCES `flowmeter_meter` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT,
   CONSTRAINT `flowmeter_valve_valve_dtu_id_f690f97a_fk_flowmeter_dtu_id` FOREIGN KEY (`valve_dtu_id`) REFERENCES `flowmeter_dtu` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of flowmeter_valve
@@ -1281,5 +1339,28 @@ CREATE TABLE `flowmeter_valve`  (
 INSERT INTO `flowmeter_valve` VALUES (9, 1, 14, NULL, 11);
 INSERT INTO `flowmeter_valve` VALUES (10, 3, 14, NULL, 12);
 INSERT INTO `flowmeter_valve` VALUES (12, 4, 14, NULL, 16);
+INSERT INTO `flowmeter_valve` VALUES (13, 1, 16, NULL, 17);
+
+-- ----------------------------
+-- Table structure for flowmeter_waitopr
+-- ----------------------------
+DROP TABLE IF EXISTS `flowmeter_waitopr`;
+CREATE TABLE `flowmeter_waitopr`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `opr_time` double NOT NULL,
+  `dtu_no` int(11) NOT NULL,
+  `log_id` int(11) DEFAULT NULL,
+  `address` int(11) NOT NULL,
+  `opr_type` varchar(64) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `val` double DEFAULT NULL,
+  `meter_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE,
+  INDEX `flowmeter_waitopr_dtu_no_address_opr_type_bfeda961_idx`(`dtu_no`, `address`, `opr_type`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 65 CHARACTER SET = utf8 COLLATE = utf8_bin ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of flowmeter_waitopr
+-- ----------------------------
+INSERT INTO `flowmeter_waitopr` VALUES (52, 1589721351.1534169, 1, 52, 1, 'query', NULL, 17);
 
 SET FOREIGN_KEY_CHECKS = 1;

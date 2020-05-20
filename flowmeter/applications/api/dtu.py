@@ -3,10 +3,9 @@
 from flowmeter.applications.core import dtu as core
 from flowmeter.common.const import RoleType
 from flowmeter.config.api import dtu as conf_dtu_api
-from flowmeter.config.api import valve as conf_valve_api
 from flowmeter.config.api import dtu_region as conf_region_api
 from flowmeter.common.api.validators import param_check
-from flowmeter.common.api.validators import StrCheck, WhiteListCheck
+from flowmeter.common.api.validators import StrCheck
 from django.db import transaction
 
 

@@ -115,7 +115,7 @@ class FlowMeterServer(Protocol):
         dtu_no = 0
         for byte in heart_beat:
             dtu_no = (dtu_no << FlowMeterServer.HEX_NUM) + byte
-
+        logger.info("dtu_no:{}".format(dtu_no))
         return dtu_no
 
     def connectionMade(self):
