@@ -185,7 +185,8 @@ class FlowMeterServer(Protocol):
         opr = app_opr_api.execute_wait_remote_op(dtu_no, data['address'], data['opr_type'])
         # 更新仪表数据
         if opr is not None:
-            app_log_api.check_and_send_alarm(opr['meter_id'], data['data'], data['data'].get('status'))
+            if 'data' in data.keys() and isinstance(data['data'], dict):
+                app_log_api.check_and_send_alarm(opr['meter_id'], data['data'], data['data'].get('status'))
             app_meter_api.update_meter_data(opr['meter_id'], data)
 
 
@@ -253,10 +254,7 @@ def clear_timeout_opr():
 def exec_remote_opr():
     dtu_nos = conf_dtu_api.get_online_dtu_nos()
     for dtu_no in dtu_nos:
-        try:
-            app_opr_api.execute_unexecuted_remote_op(dtu_no)
-        except Exception as ex:
-            logger.error(str(ex))
+        app_opr_api.execute_unexecuted_remote_op(dtu_no)
 
 
 def send_data_frame(dtu_no, data_frame):
@@ -274,7 +272,10 @@ def five_seconds_beat_task():
     5秒定时任务
     :return:
     """
-    exec_remote_opr()
+    try:
+        exec_remote_opr()
+    except Exception as ex:
+        logger.error(str(ex))
 
 
 def ten_seconds_beat_task():
@@ -282,7 +283,10 @@ def ten_seconds_beat_task():
     10秒定时任务
     :return:
     """
-    clear_timeout_opr()
+    try:
+        clear_timeout_opr()
+    except Exception as ex:
+        logger.error(str(ex))
 
 
 def thirty_minutes_beat_task():
@@ -290,7 +294,10 @@ def thirty_minutes_beat_task():
     30分钟定时任务
     :return:
     """
-    query_meter_data()
+    try:
+        query_meter_data()
+    except Exception as ex:
+        logger.error(str(ex))
 
 
 if __name__ == "__main__":

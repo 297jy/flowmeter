@@ -229,3 +229,18 @@ def check_crc(data):
 
     if now_crc_h != crc_h or now_crc_l != crc_l:
         raise ValueValidException()
+
+
+def transfer_frame_val(opr_type, val):
+    """
+    将值转换成数据帧中数据域的值
+    :param opr_type:
+    :param val:
+    :return:
+    """
+    if opr_type == Operator.RECHARGE:
+        return int(val)
+    elif opr_type == Operator.SET_FLOW_RATIO:
+        return int(val * 100)
+    elif opr_type == Operator.SET_METER_ADDRESS:
+        return int(val)

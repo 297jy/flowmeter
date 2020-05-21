@@ -19,8 +19,9 @@ def transfer_opr_log_database_to_display(oprlog_info):
     :return:
     """
     # 格式化日期
-    opr_time = oprlog_info['opr_time']
-    oprlog_info['opr_time'] = str(opr_time.strftime(settings.DATETIME_FORMAT_STR))
+    if 'opr_time' in oprlog_info.keys():
+        opr_time = oprlog_info['opr_time']
+        oprlog_info['opr_time'] = str(opr_time.strftime(settings.DATETIME_FORMAT_STR))
 
     if 'state' in oprlog_info.keys():
         # 将英文的状态值，转化为中文
@@ -33,19 +34,19 @@ def transfer_opr_log_database_to_display(oprlog_info):
             state = '失败'
         oprlog_info['state'] = state
 
-    opr_type_map = {
-        Operator.QUERY: "查询",
-        Operator.RECHARGE: "充值",
-        Operator.SET_FLOW_RATIO: "设置流量系数",
-        Operator.CLOSE_RECHARGE: "关闭预充值功能",
-        Operator.OPEN_RECHARGE: "打开预充值功能",
-        Operator.CLOSE_VALVE: "关阀",
-        Operator.OPEN_VALVE: "开阀",
-        Operator.SET_METER_ADDRESS: "设置仪表物理地址",
-        Operator.RESET: "重启仪表",
-    }
-
-    oprlog_info['opr_type'] = opr_type_map[oprlog_info['opr_type']]
+    if 'opr_type' in oprlog_info.keys():
+        opr_type_map = {
+            Operator.QUERY: "查询",
+            Operator.RECHARGE: "充值",
+            Operator.SET_FLOW_RATIO: "设置流量系数",
+            Operator.CLOSE_RECHARGE: "关闭预充值功能",
+            Operator.OPEN_RECHARGE: "打开预充值功能",
+            Operator.CLOSE_VALVE: "关阀",
+            Operator.OPEN_VALVE: "开阀",
+            Operator.SET_METER_ADDRESS: "设置仪表物理地址",
+            Operator.RESET: "重启仪表",
+        }
+        oprlog_info['opr_type'] = opr_type_map[oprlog_info['opr_type']]
 
 
 def __transfer_system_log_database_to_display(systemlog_info):

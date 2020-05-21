@@ -201,7 +201,7 @@
                     }
                     else{
                         if(msg_type === "opr_msg"){
-                            var status = msg_dict['status'];
+                            var status = msg_dict['state'];
                             if(status === "error"){
                                 layer.msg(msg_dict['msg'], {icon: 5, time: 3000});
                             }

@@ -45,6 +45,7 @@ def generate_data_frame(address, opr_type, val=None):
 
     # 如果有值就使用用户提供的值
     if val is not None:
+        val = core.transfer_frame_val(opr_type, val)
         data_h = val >> 8
         data_l = val - (data_h << 8)
     else:

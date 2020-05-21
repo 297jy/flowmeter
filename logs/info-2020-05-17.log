@@ -1,5 +1,0 @@
-[2020-05-17 00:11:33,025] [server.py:156] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01'数据帧
-[2020-05-17 00:11:33,029] [server.py:142] [server:connectionLost] [INFO]- ip：127.0.0.1，dtu_no：256断开连接
-[2020-05-17 00:11:54,881] [server.py:155] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01'数据帧
-[2020-05-17 00:11:54,885] [server.py:141] [server:connectionLost] [INFO]- ip：127.0.0.1，dtu_no：256断开连接
-[2020-05-17 00:13:17,626] [server.py:155] [server:dataReceived] [INFO]- ip: 127.0.0.1，发送了b'\x01'数据帧
