@@ -11,16 +11,30 @@
 # FOR A PARTICULAR PURPOSE.
 #
 ##############################################################################
-"""Sequence Interfaces
+"""
+Sequence Interfaces
 
-Importing this module does *not* mark any standard classes
-as implementing any of these interfaces.
+Importing this module does *not* mark any standard classes as
+implementing any of these interfaces.
+
+While this module is not deprecated, new code should generally use
+:mod:`zope.interface.common.collections`, specifically
+:class:`~zope.interface.common.collections.ISequence` and
+:class:`~zope.interface.common.collections.IMutableSequence`. This
+module is occasionally useful for its fine-grained breakdown of interfaces.
+
+The standard library :class:`list`, :class:`tuple` and
+:class:`collections.UserList`, among others, implement ``ISequence``
+or ``IMutableSequence`` but *do not* implement any of the interfaces
+in this module.
 """
 
 __docformat__ = 'restructuredtext'
 from zope.interface import Interface
+from zope.interface.common import collections
+from zope.interface._compat import PYTHON2 as PY2
 
-class IMinimalSequence(Interface):
+class IMinimalSequence(collections.IIterable):
     """Most basic sequence interface.
 
     All sequences are iterable.  This requires at least one of the
@@ -41,16 +55,30 @@ class IMinimalSequence(Interface):
         Declaring this interface does not specify whether `__getitem__`
         supports slice objects."""
 
-class IFiniteSequence(IMinimalSequence):
+class IFiniteSequence(collections.ISized, IMinimalSequence):
+    """
+    A sequence of bound size.
 
-    def __len__():
-        """``x.__len__() <==> len(x)``"""
+    .. versionchanged:: 5.0.0
+       Extend ``ISized``
+    """
 
-class IReadSequence(IFiniteSequence):
-    """read interface shared by tuple and list"""
+class IReadSequence(collections.IContainer, IFiniteSequence):
+    """
+    read interface shared by tuple and list
+
+    This interface is similar to
+    :class:`~zope.interface.common.collections.ISequence`, but
+    requires that all instances be totally ordered. Most users
+    should prefer ``ISequence``.
+
+    .. versionchanged:: 5.0.0
+       Extend ``IContainer``
+    """
 
     def __contains__(item):
         """``x.__contains__(item) <==> item in x``"""
+        # Optional in IContainer, required here.
 
     def __lt__(other):
         """``x.__lt__(other) <==> x < other``"""
@@ -79,13 +107,14 @@ class IReadSequence(IFiniteSequence):
     def __rmul__(n):
         """``x.__rmul__(n) <==> n * x``"""
 
-    def __getslice__(i, j):
-        """``x.__getslice__(i, j) <==> x[i:j]``
+    if PY2:
+        def __getslice__(i, j):
+            """``x.__getslice__(i, j) <==> x[i:j]``
 
-        Use of negative indices is not supported.
+            Use of negative indices is not supported.
 
-        Deprecated since Python 2.0 but still a part of `UserList`.
-        """
+            Deprecated since Python 2.0 but still a part of `UserList`.
+            """
 
 class IExtendedReadSequence(IReadSequence):
     """Full read interface for lists"""
@@ -116,21 +145,23 @@ class IUniqueMemberWriteSequence(Interface):
         supports slice objects.
         """
 
-    def __setslice__(i, j, other):
-        """``x.__setslice__(i, j, other) <==> x[i:j] = other``
+    if PY2:
+        def __setslice__(i, j, other):
+            """``x.__setslice__(i, j, other) <==> x[i:j] = other``
 
-        Use of negative indices is not supported.
+            Use of negative indices is not supported.
 
-        Deprecated since Python 2.0 but still a part of `UserList`.
-        """
+            Deprecated since Python 2.0 but still a part of `UserList`.
+            """
 
-    def __delslice__(i, j):
-        """``x.__delslice__(i, j) <==> del x[i:j]``
+        def __delslice__(i, j):
+            """``x.__delslice__(i, j) <==> del x[i:j]``
 
-        Use of negative indices is not supported.
+            Use of negative indices is not supported.
 
-        Deprecated since Python 2.0 but still a part of `UserList`.
-        """
+            Deprecated since Python 2.0 but still a part of `UserList`.
+            """
+
     def __iadd__(y):
         """``x.__iadd__(y) <==> x += y``"""
 
@@ -162,4 +193,23 @@ class IWriteSequence(IUniqueMemberWriteSequence):
         """``x.__imul__(n) <==> x *= n``"""
 
 class ISequence(IReadSequence, IWriteSequence):
-    """Full sequence contract"""
+    """
+    Full sequence contract.
+
+    New code should prefer
+    :class:`~zope.interface.common.collections.IMutableSequence`.
+
+    Compared to that interface, which is implemented by :class:`list`
+    (:class:`~zope.interface.common.builtins.IList`), among others,
+    this interface is missing the following methods:
+
+        - clear
+
+        - count
+
+        - index
+
+    This interface adds the following methods:
+
+        - sort
+    """

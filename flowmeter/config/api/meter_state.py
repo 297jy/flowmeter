@@ -2,7 +2,7 @@
 
 import datetime
 
-from flowmeter.celery_task.api import alarm_task
+from flowmeter.applications.api import log
 from flowmeter.common.api.validators import param_check, WhiteListCheck
 from flowmeter.config.db.log_table import AlarmLog
 from flowmeter.config.db.meter_state_table import MeterState
@@ -82,21 +82,20 @@ def update_meter_state(meter_id, state_info):
 
     # 检查是否有警报发生
     if state_info.get('sensor_state') == SENSOR_ERROR_FLAG_TRUE:
-        log_dict = {'alarm_type': AlarmLog.ALARM_SENSOR_ERROR, 'meter_id': meter_id,
+        log_dict = {'type': 'alarm', 'alarm_type': AlarmLog.ALARM_SENSOR_ERROR, 'meter_id': meter_id,
                     'opr_time': datetime.datetime.now()}
-        # 异步执行
-        alarm_task.send_alarm.delay(log_dict)
+        log.send_alarm(log_dict)
     if state_info.get('valve_error_flag') == VALVE_ERROR_FLAG_TRUE:
-        log_dict = {'alarm_type': AlarmLog.ALARM_VALVE_ERROR, 'meter_id': meter_id,
+        log_dict = {'type': 'alarm', 'alarm_type': AlarmLog.ALARM_VALVE_ERROR, 'meter_id': meter_id,
                     'opr_time': datetime.datetime.now()}
         # 异步执行
-        alarm_task.send_alarm.delay(log_dict)
+        log.send_alarm(log_dict)
 
     if state_info.get('owe_state') == OWE_STATE_TRUE and state_info.get('valve_state') == VALVE_STATE_OPEN:
-        log_dict = {'alarm_type': AlarmLog.ALARM_SUB_VALVE, 'meter_id': meter_id,
+        log_dict = {'type': 'alarm', 'alarm_type': AlarmLog.ALARM_SUB_VALVE, 'meter_id': meter_id,
                     'opr_time': datetime.datetime.now()}
         # 异步执行
-        alarm_task.send_alarm.delay(log_dict)
+        log.send_alarm(log_dict)
 
     try:
         state = conf_meter_api.find_meter_state_by_meter_id(meter_id)
