@@ -49,11 +49,8 @@ def find_meter_by_query_terms(query_terms, user, page=None):
 
 
 def find_meter_state_by_id(state_id, user):
-
-    dtu_no = conf_state_api.get_dtu_no_by_state_id(state_id)
     state = conf_state_api.find_meter_state_by_id(state_id)
     state = core.get_meter_state_dict(state)
-    state['online_state'] = "在线" if conf_dtu_api.get_dtu_online_state(dtu_no) == STATE_ONLINE else "离线"
     if 'valve_state' not in user['actions']:
         if state['valve_state'] == UNKNOWN_VALUE or state['valve_state'] == UNKNOWN_STATE:
             state['valve_state'] = '未知'
@@ -114,10 +111,11 @@ def del_batch_meter(meter_ids):
             conf_opr_api.clear_all_dtu_operator(dtu_no)
 
 
-def update_meter(meter_info):
+def update_meter(meter_info, user):
     """
     更新仪表信息
     :param meter_info:
+    :param user:
     :return:
     """
     must_dict = {
@@ -131,12 +129,24 @@ def update_meter(meter_info):
     }
     param_check(meter_info, must_dict, optional_dict)
 
-    # 保证原子性
-    with transaction.atomic():
-        # 更新不需要远程操作的仪表信息
-        conf_meter_api.update_meter_info({"id": meter_info['id'],
-                                          "surplus_gas_limits": meter_info['surplus_gas_limits'],
-                                          "remark": meter_info['remark']})
+    old_meter = conf_meter_api.find_meter_by_id(meter_info['id'])
+    conf_meter_api.update_meter_info({"id": meter_info['id'],
+                                      "surplus_gas_limits": meter_info['surplus_gas_limits'],
+                                      "remark": meter_info.get('remark', '')})
+
+    # 更改物理地址
+    if old_meter.address != meter_info['address']:
+        log_dict = {
+            "opr_user_id": user['id'],
+            "meter_id": meter_info['id'],
+            "opr_type": Operator.SET_METER_ADDRESS,
+        }
+        # 保证原子性
+        with transaction.atomic():
+            log = conf_log_api.add_opr_log(log_dict)
+            opr = Operator.create_set_meter_address_opr(meter_info['dtu_no'], old_meter.address, log.id,
+                                                        meter_info['id'], meter_info['address'])
+            app_opr_api.execute_remote_op(opr)
 
 
 def update_valve_state(meter_state_info, user):
@@ -147,35 +157,33 @@ def update_valve_state(meter_state_info, user):
     :return:
     """
     must_dict = {
-        "id": int,
-        "meter_id": int,
-        "address": int,
+        "meter_ids": ListCheck.check_is_int_list,
         "valve_state": int,
-        "dtu_no": int,
     }
     param_check(meter_state_info, must_dict, )
 
     # 查找该流量计对应的阀门DTU
-    valve_dtu_no, valve_address = conf_meter_api.get_valve_dtu_and_address(meter_state_info['meter_id'])
+    meter_infos = conf_meter_api.find_infos_by_meter_ids(meter_state_info['meter_ids'])
 
-    # 保证原子性
-    with transaction.atomic():
-        log_dict = {
-            "opr_user_id": user['id'],
-            "meter_id": meter_state_info['meter_id'],
-        }
-        if meter_state_info['valve_state'] == VALVE_STATE_OPEN:
-            log_dict['opr_type'] = Operator.OPEN_VALVE
-            log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_open_valve_opr(valve_dtu_no, valve_address, log.id,
-                                                 meter_state_info['meter_id'])
-        else:
-            log_dict['opr_type'] = Operator.CLOSE_VALVE
-            log = conf_log_api.add_opr_log(log_dict)
-            opr = Operator.create_close_valve_opr(valve_dtu_no, valve_address, log.id,
-                                                  meter_state_info['meter_id'])
+    for meter_info in meter_infos:
+        # 保证原子性
+        with transaction.atomic():
+            log_dict = {
+                "opr_user_id": user['id'],
+                "meter_id": meter_info['meter_id'],
+            }
+            if meter_state_info['valve_state'] == VALVE_STATE_OPEN:
+                log_dict['opr_type'] = Operator.OPEN_VALVE
+                log = conf_log_api.add_opr_log(log_dict)
+                opr = Operator.create_open_valve_opr(meter_info['dtu_no'], meter_info['address'], log.id,
+                                                     meter_info['meter_id'])
+            else:
+                log_dict['opr_type'] = Operator.CLOSE_VALVE
+                log = conf_log_api.add_opr_log(log_dict)
+                opr = Operator.create_close_valve_opr(meter_info['dtu_no'], meter_info['address'], log.id,
+                                                      meter_info['meter_id'])
 
-        app_opr_api.execute_remote_op(opr)
+            app_opr_api.execute_remote_op(opr)
 
 
 def update_recharge_state(meter_state_info, user):
@@ -191,19 +199,25 @@ def update_recharge_state(meter_state_info, user):
     }
     param_check(meter_state_info, must_dict, )
 
-    log_dict = {
-        "opr_user_id": user['id'],
-        "meter_ids": meter_state_info['meter_ids'],
-        "opr_type": Operator.OPEN_RECHARGE,
-    }
-    log = conf_log_api.add_opr_log(log_dict)
-
-    # 保证原子性
     meter_infos = conf_meter_api.find_infos_by_meter_ids(meter_state_info['meter_ids'])
     for meter_info in meter_infos:
-        opr = Operator.create_open_recharge_opr(meter_info['dtu_no'], meter_info['address'], log.id,
-                                                meter_state_info['meter_id'])
-        app_opr_api.execute_remote_op(opr)
+        # 保证原子性
+        with transaction.atomic():
+            log_dict = {
+                "opr_user_id": user['id'],
+                "meter_id": meter_info['meter_id'],
+            }
+            if meter_state_info['recharge_state'] == RECHARGE_STATE_OPEN:
+                log_dict['opr_type'] = Operator.OPEN_RECHARGE
+                log = conf_log_api.add_opr_log(log_dict)
+                opr = Operator.create_open_recharge_opr(meter_info['dtu_no'], meter_info['address'], log.id,
+                                                        meter_info['meter_id'])
+            else:
+                log_dict['opr_type'] = Operator.CLOSE_RECHARGE
+                log = conf_log_api.add_opr_log(log_dict)
+                opr = Operator.create_close_recharge_opr(meter_info['dtu_no'], meter_info['address'], log.id,
+                                                         meter_info['meter_id'])
+            app_opr_api.execute_remote_op(opr)
 
 
 def update_flow_ratio(meter_info, user):
@@ -265,21 +279,19 @@ def reset_meter(meter_info, user):
     :return:
     """
     must_dict = {
-        "id": int,
-        "address": int,
-        "dtu_no": int,
+        "meter_ids": ListCheck.check_is_int_list,
     }
     param_check(meter_info, must_dict, )
 
-    dtu_no = meter_info['dtu_no']
-
-    log_dict = {"opr_user_id": user['id'], "meter_id": meter_info['meter_id'], 'opr_type': Operator.RESET, 'val': None}
-
-    # 保证原子性
-    with transaction.atomic():
-        log = conf_log_api.add_opr_log(log_dict)
-        opr = Operator.create_reset_opr(dtu_no, meter_info['address'], log.id, meter_info['id'])
-        app_opr_api.execute_remote_op(opr)
+    meter_infos = conf_meter_api.find_infos_by_meter_ids(meter_info['meter_ids'])
+    for meter_info in meter_infos:
+        log_dict = {"opr_user_id": user['id'], "meter_id": meter_info['meter_id'], 'opr_type': Operator.RESET,
+                    'val': ""}
+        # 保证原子性
+        with transaction.atomic():
+            log = conf_log_api.add_opr_log(log_dict)
+            opr = Operator.create_reset_opr(meter_info['dtu_no'], meter_info['address'], log.id, meter_info['meter_id'])
+            app_opr_api.execute_remote_op(opr)
 
 
 def recharge_meter(meter_ids, money, user):
@@ -294,7 +306,6 @@ def recharge_meter(meter_ids, money, user):
     meter_infos = conf_meter_api.find_infos_by_meter_ids(meter_ids)
 
     for meter_info in meter_infos:
-
         log_dict = {"opr_user_id": user['id'], "meter_id": meter_info['meter_id'], 'opr_type': Operator.RECHARGE,
                     'val': money}
         # 保证原子性
@@ -403,4 +414,3 @@ def generate_report_table(meter_ids):
 
     zipfile = common_file_api.compress_file(file_list)
     return zipfile
-

@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>仪表列表</title>
+    <title>流量计列表</title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport"
@@ -27,7 +27,7 @@
     <span class="layui-breadcrumb">
         <a href="">首页</a>
         <a href="">
-            <cite>仪表列表</cite>
+            <cite>流量计列表</cite>
         </a>
     </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
@@ -131,6 +131,8 @@
             table = layui.table;
             form = layui.form;
 
+            window.sessionStorage.setItem('table', table);
+
             let data_map = {};
             table.render({
                 elem: '#meter', //指定原始表格元素选择器（推荐id选择器）
@@ -144,14 +146,14 @@
                             return data.LAY_TABLE_INDEX + 1;
                         }
                     },
-                    {field: 'dtu_no', title: 'DTU编号'},
+                    {field: 'dtu_no', title: '心跳包'},
                     {field: 'address', title: '物理地址', edit: 'text',},
-                    {field: 'surplus_gas', title: '剩余气量(m³)'},
-                    {field: 'total_flow', title: '累计用量(m³)'},
-                    {field: 'surplus_gas_limits', title: '气量限值(m³)', edit: 'text',},
-                    {field: 'flow_rate', title: '瞬时流量'},
+                    {field: 'surplus_gas', title: '剩余气量（m³）'},
+                    {field: 'total_flow', title: '累计用量（m³）'},
+                    {field: 'surplus_gas_limits', title: '气量限值（m³）', edit: 'text',},
+                    {field: 'flow_rate', title: '瞬时流量（Nm³/h）'},
                     {field: 'flow_ratio', title: '流量系数', edit: 'number',},
-                    {field: 'power', title: '电池电压'},
+                    {field: 'power', title: '电池电压（V）'},
                     {field: 'last_update_time', title: '更新时间', width: '10%'},
                     {field: 'remark', edit: 'text', title: '备注', width: '15%'},
                     {
@@ -333,7 +335,7 @@
                                 if (!data.success) {
                                     layer.msg(data.msg, {icon: 5, time: 1000});
                                 } else {
-                                    layer.msg('查询成功!', {icon: 1});
+                                    layer.msg('关阀成功!', {icon: 1});
                                 }
                             });
                             break;

@@ -68,8 +68,7 @@ class MeterActionHandler(ActionHandlerBase):
     def update_meter(self, request):
 
         meter_info = request_api.get_param(request)
-        app_meter_api.update_meter(meter_info)
-
+        app_meter_api.update_meter(meter_info, request_api.get_user(request))
         return Result.success()
 
     def update_valve_state(self, request):

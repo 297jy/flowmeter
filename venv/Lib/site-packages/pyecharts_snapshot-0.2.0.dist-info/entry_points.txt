@@ -1,0 +1,3 @@
+[console_scripts]
+snapshot = pyecharts_snapshot.main:main
+

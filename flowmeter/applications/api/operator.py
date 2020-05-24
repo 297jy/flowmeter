@@ -1,6 +1,4 @@
 # coding=utf-8
-
-
 from flowmeter.modbus.api import server
 from flowmeter.modbus.api import frame
 from flowmeter.config.api import operator as conf_operator_api
@@ -44,16 +42,16 @@ def execute_remote_op(opr):
     conf_operator_api.add_unexecuted_operator(opr)
 
 
-def execute_unexecuted_remote_op(dtu_no):
+def execute_unexecuted_remote_op():
     """
-    执行一条还未执行的远程操作
+    执行还未执行的远程操作
     :return:
     """
     # 先获取缓存中存在的带执行的操作命令
-    oprs = conf_operator_api.get_all_unexecuted_opr(dtu_no)
+    oprs = conf_operator_api.get_all_unexecuted_opr()
 
     # 正在等待的操作不重复执行
-    wait_oprs = conf_operator_api.get_all_wait_opr_by_dtu_no(dtu_no)
+    wait_oprs = conf_operator_api.get_all_wait_oprs()
     wait_opr_set = set()
     for opr in wait_oprs:
         key_name = "_".join([str(opr.dtu_no), str(opr.address), opr.opr_type])
@@ -68,11 +66,14 @@ def execute_unexecuted_remote_op(dtu_no):
     for opr in opr_map.values():
         try:
             with transaction.atomic():
-                conf_operator_api.del_unexecuted_opr_by_id(opr.id)
+                address = opr.address
+                if opr.opr_type == Operator.SET_METER_ADDRESS:
+                    opr.address = int(opr.val)
                 conf_operator_api.add_wait_operator(dict(opr))
+                conf_operator_api.del_unexecuted_opr_by_id(opr.id)
                 logger.info("开始执行操作：{}！".format(dict(opr)))
-                data_frame = frame.generate_data_frame(opr.address, opr.opr_type, opr.val)
-                server.send_data_frame(dtu_no, data_frame)
+                data_frame = frame.generate_data_frame(address, opr.opr_type, opr.val)
+                server.send_data_frame(opr.dtu_no, data_frame)
         except Exception as ex:
             logger.error(str(ex))
 

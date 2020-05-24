@@ -1,0 +1,3 @@
+[console_scripts]
+py-backwards = py_backwards.main:main
+

@@ -1,0 +1,19 @@
+Metadata-Version: 2.0
+Name: py-backwards
+Version: 0.7
+Summary: Translates python code for older versions
+Home-page: https://github.com/nvbn/py-backwards
+Author: Vladimir Iakovlev
+Author-email: nvbn.rm@gmail.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: typed-ast
+Requires-Dist: autopep8
+Requires-Dist: colorama
+Requires-Dist: py-backwards-astunparse
+Requires-Dist: pathlib2; python_version<"3.4"
+Requires-Dist: typing; python_version<"3.5"
+
+UNKNOWN
+
+

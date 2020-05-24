@@ -1,6 +1,9 @@
 # coding=utf-8
 
 import math
+import logging
+
+LOG = logging.getLogger('log')
 
 
 def byte_arr_convert_signed_int(byte_arr):

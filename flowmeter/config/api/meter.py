@@ -116,7 +116,7 @@ def update_meter_data(meter_id, meter_data):
     optional_dict = {
         "address": int,
         "last_update_time": datetime.datetime,
-        "surplus_gas": float,
+        "surplus_gas": int,
         "flow_ratio": float,
         "flow_rate": float,
         "total_flow": float,

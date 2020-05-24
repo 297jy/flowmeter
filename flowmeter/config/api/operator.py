@@ -27,9 +27,9 @@ def add_unexecuted_operator(opr):
     UnExecutedOpr.objects.create(**opr)
 
 
-def get_all_unexecuted_opr(dtu_no):
+def get_all_unexecuted_opr():
 
-    oprs = UnExecutedOpr.objects.filter(dtu_no=dtu_no)
+    oprs = UnExecutedOpr.objects.all()
     return oprs
 
 
@@ -69,8 +69,8 @@ def get_and_del_earliest_unexecuted_opr(dtu_no, address, opr_type):
         return None
 
 
-def get_all_wait_opr_by_dtu_no(dtu_no):
-    oprs = WaitOpr.objects.filter(dtu_no=dtu_no)
+def get_all_wait_oprs():
+    oprs = WaitOpr.objects.all()
     return oprs
 
 

@@ -41,47 +41,31 @@ class FlowMeterClients:
         :param connect:
         :return:
         """
-        FlowMeterClients.lock.acquire()
-        try:
-            if ip not in FlowMeterClients.ip_to_dtu_map.keys():
-                FlowMeterClients.dtu_to_connect_map[dtu_no] = connect
-                FlowMeterClients.ip_to_dtu_map[ip] = dtu_no
-                return True
-        finally:
-            FlowMeterClients.lock.release()
+        if ip not in FlowMeterClients.ip_to_dtu_map.keys():
+            FlowMeterClients.dtu_to_connect_map[dtu_no] = connect
+            FlowMeterClients.ip_to_dtu_map[ip] = dtu_no
+            return True
         return False
 
     @staticmethod
     def get_connect(dtu_no):
-        FlowMeterClients.lock.acquire()
-        try:
-            connect = FlowMeterClients.dtu_to_connect_map.get(dtu_no)
-        finally:
-            FlowMeterClients.lock.release()
-
+        connect = FlowMeterClients.dtu_to_connect_map.get(dtu_no)
         return connect
 
     @staticmethod
     def get_dtu_no(ip):
-        FlowMeterClients.lock.acquire()
         dtu_no = FlowMeterClients.ip_to_dtu_map[ip] if ip in FlowMeterClients.ip_to_dtu_map.keys() else None
-        FlowMeterClients.lock.release()
         return dtu_no
 
     @staticmethod
     def remove(ip):
+        dtu_no = FlowMeterClients.get_dtu_no(ip)
+        if dtu_no is None:
+            return
+        del FlowMeterClients.ip_to_dtu_map[ip]
 
-        FlowMeterClients.lock.acquire()
-        try:
-            dtu_no = FlowMeterClients.get_dtu_no(ip)
-            if dtu_no is None:
-                return
-            del FlowMeterClients.ip_to_dtu_map[ip]
-
-            if dtu_no in FlowMeterClients.dtu_to_connect_map.keys():
-                del FlowMeterClients.dtu_to_connect_map[dtu_no]
-        finally:
-            FlowMeterClients.lock.release()
+        if dtu_no in FlowMeterClients.dtu_to_connect_map.keys():
+            del FlowMeterClients.dtu_to_connect_map[dtu_no]
 
 
 class FlowMeterServer(Protocol):
@@ -131,18 +115,15 @@ class FlowMeterServer(Protocol):
         :param reason:
         :return:
         """
-        ip = self.transport.getPeer().host
-        dtu_no = FlowMeterClients.get_dtu_no(ip)
-
-        logger.info("ip：{}，dtu_no：{}断开连接".format(ip, dtu_no))
-
-        # 更新DTU离线状态
         try:
-            conf_dtu_api.update_dtu_offline_state(dtu_no)
+            ip = self.transport.getPeer().host
+            dtu_no = FlowMeterClients.get_dtu_no(ip)
+
+            logger.info("ip：{}，dtu_no：{}断开连接".format(ip, dtu_no))
+
+            FlowMeterClients.remove(ip)
         except Exception as ex:
             logger.error(str(ex))
-
-        FlowMeterClients.remove(ip)
 
     def dataReceived(self, data_frame):
         """
@@ -151,8 +132,10 @@ class FlowMeterServer(Protocol):
         :return:
         """
         ip = self.transport.getPeer().host
-
-        logger.info("ip: {}，发送了{}数据帧".format(ip, data_frame))
+        data_list = []
+        for data in data_frame:
+            data_list.append(str(data))
+        logger.info("ip: {}，发送了{}数据帧，字节长度：{}".format(ip, ";".join(data_list), len(data_frame)))
 
         # 回应心跳包
         if FlowMeterServer.__is_heart_beat(data_frame):
@@ -162,13 +145,6 @@ class FlowMeterServer(Protocol):
             FlowMeterClients.add(dtu_no, ip, connect)
             # 回应心跳包
             self.transport.getHandle().sendall(data_frame)
-
-            # 更新上线状态
-            try:
-                conf_dtu_api.update_dtu_online_state(dtu_no)
-            except Exception as ex:
-                logger.error(str(ex))
-
         else:
             # 先解析数据帧
             try:
@@ -252,9 +228,7 @@ def clear_timeout_opr():
 
 
 def exec_remote_opr():
-    dtu_nos = conf_dtu_api.get_online_dtu_nos()
-    for dtu_no in dtu_nos:
-        app_opr_api.execute_unexecuted_remote_op(dtu_no)
+    app_opr_api.execute_unexecuted_remote_op()
 
 
 def send_data_frame(dtu_no, data_frame):

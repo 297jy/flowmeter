@@ -37,8 +37,8 @@ def __cal_surplus_gas(frame):
     field = data_field.find_surplus_gas_field()
     if len(frame) <= field.end_address:
         return None
-    surplus_gas = math.byte_arr_convert_signed_int(frame[field.begin_address: field.end_address + 1])
-    return float(surplus_gas)
+    surplus_gas = math.byte_arr_convert_int(frame[field.begin_address: field.end_address + 1])
+    return surplus_gas
 
 
 def __cal_flow_rate(frame):
@@ -62,6 +62,7 @@ def __cal_total_flow(frame):
         res += math.byte_arr_convert_int(frame[int_field.begin_address: int_field.end_address + 1])
     if len(frame) > float_field.end_address:
         res += math.calculate_double(frame[float_field.begin_address: float_field.end_address + 1])
+
     return float(res)
 
 
