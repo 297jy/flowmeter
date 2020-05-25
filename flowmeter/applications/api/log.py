@@ -36,9 +36,9 @@ def find_logs_by_query_terms(query_terms, user, page=None):
         "opr_type": WhiteListCheck.check_opr_type,
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
-    logs = core.find_logs_by_query_terms(query_terms, user, page)
+    logs, num = core.find_logs_by_query_terms(query_terms, user, page)
 
-    return logs
+    return logs, num
 
 
 def find_system_logs_by_query_terms(query_terms, user, page=None):
@@ -57,9 +57,9 @@ def find_system_logs_by_query_terms(query_terms, user, page=None):
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
 
-    logs = core.find_system_logs_by_query_terms(query_terms, user, page)
+    logs, num = core.find_system_logs_by_query_terms(query_terms, user, page)
 
-    return logs
+    return logs, num
 
 
 def find_alarm_logs_by_query_terms(query_terms, user, page=None):
@@ -79,9 +79,9 @@ def find_alarm_logs_by_query_terms(query_terms, user, page=None):
     }
     param_check(query_terms, optional_dict=optional_dict)
 
-    logs = core.find_alarm_logs_by_query_terms(query_terms, user, page)
+    logs, num = core.find_alarm_logs_by_query_terms(query_terms, user, page)
 
-    return logs
+    return logs, num
 
 
 def update_logs_success_state(log_ids):

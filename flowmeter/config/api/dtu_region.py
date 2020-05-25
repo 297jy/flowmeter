@@ -40,15 +40,18 @@ def find_regions(filters=None, page=None):
             regions = DtuRegion.objects.filter(filters)
         else:
             regions = DtuRegion.objects.all()
+        num = len(regions)
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
             regions = DtuRegion.objects.filter(filters)[start_index: end_index]
+            num = DtuRegion.objects.filter(filters).count()
         else:
             regions = DtuRegion.objects.all()[start_index: end_index]
+            num = DtuRegion.objects.all().count()
 
-    return regions
+    return regions, num
 
 
 def find_region_by_manufacturer_id(manufacturer_id):

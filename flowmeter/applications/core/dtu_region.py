@@ -59,7 +59,7 @@ def transfer_dtu_region_obj_to_dict(region):
 def find_dtu_regions_by_query_terms(query_terms, page=None):
 
     # 查找指定条件供气商
-    mans = app_user_api.find_manufacturers_by_query_terms(query_terms)
+    mans, num = app_user_api.find_manufacturers_by_query_terms(query_terms)
 
     # 提取所有供气商的id
     man_ids = [m['id'] for m in mans]
@@ -69,9 +69,9 @@ def find_dtu_regions_by_query_terms(query_terms, page=None):
     # 构造查询框的查询条件
     query_box = QueryTerms.make_or_query_terms(manufacturer_id=man_ids)
 
-    regions = conf_region_api.find_regions(query_box.get_filters(), page)
+    regions, num = conf_region_api.find_regions(query_box.get_filters(), page)
 
-    return regions
+    return regions, num
 
 
 def is_total_num_legal(region, total_num):

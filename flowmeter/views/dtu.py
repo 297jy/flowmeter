@@ -28,9 +28,9 @@ class DtuActionHandler(ActionHandlerBase):
         param = request_api.get_param(request)
         page = request_api.get_page(request)
 
-        dtus = app_dtu_api.find_dtu_by_query_terms(param, page)
+        dtus, num = app_dtu_api.find_dtu_by_query_terms(param, page)
 
-        return Result.success(data=dtus, count=len(dtus))
+        return Result.success(data=dtus, count=num)
 
     def add_dtu(self, request):
 

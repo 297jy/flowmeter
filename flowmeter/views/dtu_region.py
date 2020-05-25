@@ -29,9 +29,9 @@ class DtuRegionActionHandler(ActionHandlerBase):
         param = request_api.get_param(request)
         page = request_api.get_page(request)
 
-        regions = app_region_api.find_regions_by_query_terms(param, page)
+        regions, num = app_region_api.find_regions_by_query_terms(param, page)
 
-        return Result.success(data=regions, count=len(regions))
+        return Result.success(data=regions, count=num)
 
     def query_man_region(self, request):
 

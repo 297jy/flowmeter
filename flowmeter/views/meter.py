@@ -37,9 +37,9 @@ class MeterActionHandler(ActionHandlerBase):
         param = request_api.get_param(request)
         page = request_api.get_page(request)
 
-        meters = app_meter_api.find_meter_by_query_terms(param, request_api.get_user(request), page)
+        meters, num = app_meter_api.find_meter_by_query_terms(param, request_api.get_user(request), page)
 
-        return Result.success(data=meters, count=len(meters))
+        return Result.success(data=meters, count=num)
 
     def add_meter(self, request):
 

@@ -26,14 +26,17 @@ def get_users(filters=None, page=None):
             users = User.objects.filter(filters)
         else:
             users = User.objects.all()
+        num = len(users)
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
             users = User.objects.filter(filters)[start_index: end_index]
+            num = User.objects.filter(filters).count()
         else:
             users = User.objects.all()[start_index: end_index]
-    return users
+            num = User.objects.all().count()
+    return users, num
 
 
 def get_admin_num():

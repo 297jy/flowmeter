@@ -37,27 +37,27 @@ class LogActionHandler(ActionHandlerBase):
         param = request_api.get_param(request)
         page = request_api.get_page(request)
         user = request_api.get_user(request)
-        logs = app_log_api.find_logs_by_query_terms(param, user, page)
+        logs, num = app_log_api.find_logs_by_query_terms(param, user, page)
 
-        return Result.success(data=logs, count=len(logs))
+        return Result.success(data=logs, count=num)
 
     def query_system_log(self, request):
 
         param = request_api.get_param(request)
         page = request_api.get_page(request)
         user = request_api.get_user(request)
-        logs = app_log_api.find_system_logs_by_query_terms(param, user, page)
+        logs, num = app_log_api.find_system_logs_by_query_terms(param, user, page)
 
-        return Result.success(data=logs, count=len(logs))
+        return Result.success(data=logs, count=num)
 
     def query_alarm_log(self, request):
 
         param = request_api.get_param(request)
         page = request_api.get_page(request)
         user = request_api.get_user(request)
-        logs = app_log_api.find_alarm_logs_by_query_terms(param, user, page)
+        logs, num = app_log_api.find_alarm_logs_by_query_terms(param, user, page)
 
-        return Result.success(data=logs, count=len(logs))
+        return Result.success(data=logs, count=num)
 
     def del_system_log(self, request):
 

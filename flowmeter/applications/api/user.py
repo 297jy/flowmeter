@@ -30,9 +30,9 @@ def find_admins_by_query_terms(query_terms, page=None):
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
 
-    admins = user_core.find_admins_by_query_terms(query_terms, page)
+    admins, num = user_core.find_admins_by_query_terms(query_terms, page)
 
-    return admins
+    return admins, num
 
 
 def switch_admin_state_by_id(admin_id):
@@ -70,9 +70,9 @@ def find_manufacturers_by_query_terms(query_terms, page=None):
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
 
-    manufacturers = user_core.find_manufacturers_by_query_terms(query_terms, page)
+    manufacturers, num = user_core.find_manufacturers_by_query_terms(query_terms, page)
 
-    return manufacturers
+    return manufacturers, num
 
 
 def find_dtu_users_by_query_terms(query_terms, page=None):
@@ -94,9 +94,9 @@ def find_dtu_users_by_query_terms(query_terms, page=None):
     }
     param_check(query_terms, must_dict={}, optional_dict=optional_dict)
 
-    dtu_users = user_core.find_dtu_users_by_query_terms(query_terms, page)
+    dtu_users, num = user_core.find_dtu_users_by_query_terms(query_terms, page)
 
-    return dtu_users
+    return dtu_users, num
 
 
 def find_dtu_users_of_man(man_id):

@@ -68,9 +68,9 @@ def __find_users_by_query_terms(query_terms, page=None):
     # 构造角色的查询条件
     query_role = QueryTerms.make_and_query_terms(role=role)
 
-    users = conf_user_api.get_users(query_box.get_filters() & query_role.get_filters() & query_time.get_filters(), page)
+    users, num = conf_user_api.get_users(query_box.get_filters() & query_role.get_filters() & query_time.get_filters(), page)
 
-    return transfer_user_obj_to_dict(users)
+    return transfer_user_obj_to_dict(users), num
 
 
 def __switch_user_state_by_id(user_id):
@@ -159,12 +159,12 @@ def __get_manufacturer_dtu_region(manufacturer_id):
 
 def find_manufacturers_by_query_terms(query_terms, page=None):
     query_terms['role'] = const.RoleType.MANUFACTURER
-    manufacturers = __find_users_by_query_terms(query_terms, page)
+    manufacturers, num = __find_users_by_query_terms(query_terms, page)
     for man in manufacturers:
         region = __get_manufacturer_dtu_region(man['id'])
         man['dtu_total_num'] = region['total_num']
         man['dtu_used_num'] = region['used_num']
-    return manufacturers
+    return manufacturers, num
 
 
 def find_dtu_users_by_query_terms(query_terms, page=None):

@@ -35,14 +35,14 @@ def find_regions_by_query_terms(query_terms, page=None):
     }
     param_check(query_terms, optional_dict=optional_dict)
 
-    regions = core.find_dtu_regions_by_query_terms(query_terms, page)
+    regions, num = core.find_dtu_regions_by_query_terms(query_terms, page)
 
     region_dicts = []
     for region in regions:
         region_dict = core.transfer_dtu_region_obj_to_dict(region)
         region_dicts.append(region_dict)
 
-    return region_dicts
+    return region_dicts, num
 
 
 def find_regions_by_man_id(id):

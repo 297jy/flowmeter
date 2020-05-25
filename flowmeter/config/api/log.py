@@ -82,15 +82,17 @@ def find_opr_log(filters=None, page=None):
             logs = OprLog.objects.filter(filters).order_by('-opr_time')
         else:
             logs = OprLog.objects.filter(filters).order_by('-opr_time')
+        num = len(logs)
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
             logs = OprLog.objects.filter(filters).order_by('-opr_time')[start_index: end_index]
+            num = OprLog.objects.filter(filters).count()
         else:
             logs = OprLog.objects.all().order_by('-opr_time')[start_index: end_index]
-
-    return logs
+            num = OprLog.objects.all().count()
+    return logs, num
 
 
 def find_system_log(filters=None, page=None):
@@ -105,15 +107,17 @@ def find_system_log(filters=None, page=None):
             logs = SystemLog.objects.filter(filters).order_by('-opr_time')
         else:
             logs = SystemLog.objects.filter(filters).order_by('-opr_time')
+        num = len(logs)
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
             logs = SystemLog.objects.filter(filters).order_by('-opr_time')[start_index: end_index]
+            num = SystemLog.objects.filter(filters).count()
         else:
             logs = SystemLog.objects.all().order_by('-opr_time')[start_index: end_index]
-
-    return logs
+            num = SystemLog.objects.all().count()
+    return logs, num
 
 
 def find_alarm_log(filters=None, page=None):
@@ -128,15 +132,17 @@ def find_alarm_log(filters=None, page=None):
             logs = AlarmLog.objects.filter(filters).order_by('-opr_time')
         else:
             logs = AlarmLog.objects.filter(filters).order_by('-opr_time')
+        num = len(logs)
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
             logs = AlarmLog.objects.filter(filters).order_by('-opr_time')[start_index: end_index]
+            num = AlarmLog.objects.filter(filters).count()
         else:
             logs = AlarmLog.objects.all().order_by('-opr_time')[start_index: end_index]
-
-    return logs
+            num = AlarmLog.objects.all().count()
+    return logs, num
 
 
 def del_opr_logs(opr_log_ids):

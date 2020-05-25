@@ -31,7 +31,7 @@ def get_dtu_dict(dtu):
             "manufacturer_name": dtu.region.manufacturer.name,
             "manufacturer_phone": dtu.region.manufacturer.phone,
             "remark": dtu.remark,
-            "dtu_no": dtu.dtu_no,
+            "dtu_no": hex(dtu.dtu_no),
         }
 
 

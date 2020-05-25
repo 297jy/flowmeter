@@ -53,26 +53,26 @@ class UserActionHandler(ActionHandlerBase):
         param = request_api.get_param(request)
         page = request_api.get_page(request)
 
-        admins = app_user_api.find_admins_by_query_terms(param, page)
+        admins, num = app_user_api.find_admins_by_query_terms(param, page)
 
-        return Result.success(data=admins, count=len(admins))
+        return Result.success(data=admins, count=num)
 
     def query_dtu_user(self, request):
 
         param = request_api.get_param(request)
         page = request_api.get_page(request)
-        dtu_users = app_user_api.find_dtu_users_by_query_terms(param, page)
+        dtu_users, num = app_user_api.find_dtu_users_by_query_terms(param, page)
 
-        return Result.success(data=dtu_users, count=len(dtu_users))
+        return Result.success(data=dtu_users, count=num)
 
     def query_manufacturer(self, request):
 
         param = request_api.get_param(request)
         page = request_api.get_page(request)
 
-        manufacturers = app_user_api.find_manufacturers_by_query_terms(param, page)
+        manufacturers, num = app_user_api.find_manufacturers_by_query_terms(param, page)
 
-        return Result.success(data=manufacturers, count=len(manufacturers))
+        return Result.success(data=manufacturers, count=num)
 
     def query_dtu_user_by_man_id(self, request):
 

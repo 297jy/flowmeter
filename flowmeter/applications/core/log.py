@@ -113,10 +113,10 @@ def find_logs_by_query_terms(query_terms, user, page=None):
 
     query_box = QueryTerms.make_and_query_terms(**term_info)
 
-    logs = conf_log_api.find_opr_log(query_box.get_filters(), page)
+    logs, num = conf_log_api.find_opr_log(query_box.get_filters(), page)
 
     return transfer_obj_to_dict(logs, ['id', 'opr_user.name', 'opr_time', 'val', 'state', 'opr_type',
-                                       'meter.dtu.dtu_no', 'meter.address'], transfer_opr_log_database_to_display)
+                                       'meter.dtu.dtu_no', 'meter.address'], transfer_opr_log_database_to_display), num
 
 
 def find_system_logs_by_query_terms(query_terms, user, page=None):
@@ -145,10 +145,10 @@ def find_system_logs_by_query_terms(query_terms, user, page=None):
         opr_user__name__icontains=query_box,
     )
 
-    logs = conf_log_api.find_system_log(query_and.get_filters() & query_or.get_filters(), page)
+    logs, num = conf_log_api.find_system_log(query_and.get_filters() & query_or.get_filters(), page)
 
     return transfer_obj_to_dict(logs, ['id', 'opr_user.name', 'opr_time', 'action_type', 'state'],
-                                __transfer_system_log_database_to_display)
+                                __transfer_system_log_database_to_display), num
 
 
 def find_alarm_logs_by_query_terms(query_terms, user, page=None):
@@ -182,11 +182,11 @@ def find_alarm_logs_by_query_terms(query_terms, user, page=None):
     )
     query_and = QueryTerms.make_and_query_terms(**term_info)
 
-    logs = conf_log_api.find_alarm_log(query_or.get_filters() & query_and.get_filters(), page)
+    logs, num = conf_log_api.find_alarm_log(query_or.get_filters() & query_and.get_filters(), page)
 
     return transfer_obj_to_dict(logs, ['id', 'meter.dtu.user.name', 'meter.dtu.region.manufacturer.name',
                                        'alarm_type', 'meter.address', 'meter.dtu.dtu_no', 'opr_time'],
-                                __transfer_alarm_log_database_to_display)
+                                __transfer_alarm_log_database_to_display), num
 
 
 def __log_export(log_dict_list, sheet_name, filename, excel_fields):

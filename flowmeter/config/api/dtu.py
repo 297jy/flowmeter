@@ -83,15 +83,18 @@ def find_dtus(filters=None, page=None):
             dtus = Dtu.objects.select_related('user', 'region').filter(filters).order_by('dtu_no')
         else:
             dtus = Dtu.objects.select_related('user', 'region').all().order_by('dtu_no')
+        num = len(dtus)
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
+            num = Dtu.objects.filter(filters).count()
             dtus = Dtu.objects.filter(filters)[start_index: end_index]
         else:
+            num = Dtu.objects.filter(filters).count()
             dtus = Dtu.objects.all()[start_index: end_index]
 
-    return dtus
+    return dtus, num
 
 
 def get_used_num(region_id):

@@ -48,13 +48,13 @@ def find_dtu_by_query_terms(query_terms, page=None):
 
     filters = core.get_dtu_filter(query_terms.get('manufacturer_id'), query_terms.get('dtu_user_id'))
 
-    dtus = conf_dtu_api.find_dtus(filters, page)
+    dtus, num = conf_dtu_api.find_dtus(filters, page)
 
     dtu_dicts = []
     for dtu in dtus:
         dtu_dicts.append(core.get_dtu_dict(dtu))
 
-    return dtu_dicts
+    return dtu_dicts, num
 
 
 def update_dtu_region(dtu_info):

@@ -7,7 +7,6 @@ from flowmeter.applications.core import meter as core
 from flowmeter.applications.api import operator as app_opr_api
 from flowmeter.config.api import meter as conf_meter_api
 from flowmeter.config.api import history_data as conf_history_api
-from flowmeter.config.api import dtu as conf_dtu_api
 from flowmeter.config.api import meter_state as conf_state_api
 from flowmeter.config.api import operator as conf_opr_api
 from flowmeter.config.api import log as conf_log_api
@@ -16,7 +15,7 @@ from flowmeter.common.api.validators import param_check
 from flowmeter.common.api.validators import StrCheck, WhiteListCheck, ListCheck
 from flowmeter.config.db.operator_table import Operator
 from flowmeter.config.const import VALVE_STATE_OPEN, VALVE_STATE_CLOSE, RECHARGE_STATE_OPEN, RECHARGE_STATE_CLOSE, \
-    STATE_ONLINE, UNKNOWN_VALUE, UNKNOWN_STATE
+    UNKNOWN_VALUE, UNKNOWN_STATE
 from django.db import transaction
 from flowmeter.config.db.meter_table import Meter
 from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
@@ -39,13 +38,13 @@ def find_meter_by_query_terms(query_terms, user, page=None):
     filters = core.get_meter_filters(query_terms.get('manufacturer_id'), query_terms.get('dtu_user_id'),
                                      query_terms.get('dtu_id'), user)
 
-    meters = conf_meter_api.find_meters(filters, page)
+    meters, num = conf_meter_api.find_meters(filters, page)
 
     meter_dicts = []
     for meter in meters:
         meter_dicts.append(core.get_meter_dict(meter))
 
-    return meter_dicts
+    return meter_dicts, num
 
 
 def find_meter_state_by_id(state_id, user):

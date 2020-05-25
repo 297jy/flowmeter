@@ -80,6 +80,7 @@
         <i class="layui-icon"></i>添加
     </button>
 </script>
+
 <script>
     layui.use(['table', 'form', 'jquery', 'element', 'tree'],
         function () {
@@ -88,7 +89,7 @@
             form = layui.form;
 
             table.render({
-                elem: '#dtu', //指定原始表格元素选择器（推荐id选择器）
+                elem: '#dtu',
                 cols: [[
                     {checkbox: true, width: '5%', field: 'id'},
                     {
@@ -96,14 +97,14 @@
                         width: '5%',
                         title: '序号',
                         templet: function (data) {
-                            return data.LAY_TABLE_INDEX + 1;
+                            return data.LAY_INDEX + 1;
                         }
                     },
                     {field: 'manufacturer_name', title: '供气商名称'},
                     {field: 'manufacturer_phone', title: '供气商联系电话'},
                     {field: 'user_name', title: 'DTU用户名称'},
                     {field: 'user_phone', title: 'DTU用户联系电话'},
-                    {field: 'dtu_no', title: 'DTU编号'},
+                    {field: 'dtu_no', title: '心跳包'},
                     {field: 'remark', edit: 'text', title: '备注'},
                 ]],
                 url: '/handler/dtu/?action=query_dtu',
@@ -138,7 +139,6 @@
             //头工具栏事件
             table.on('toolbar(dtu)',
                 function (obj) {
-                    var checkStatus = table.checkStatus(obj.config.id);
                     switch (obj.event) {
                         case 'del_batch':
                             layer.confirm('确认要删除吗？', function (index) {

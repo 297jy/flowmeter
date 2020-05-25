@@ -87,15 +87,18 @@ def find_meters(filters=None, page=None):
             meters = Meter.objects.filter(filters).order_by('dtu__dtu_no')
         else:
             meters = Meter.objects.all().order_by('dtu__dtu_no')
+        num = len(meters)
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
+            num = Meter.objects.filter(filters).count()
             meters = Meter.objects.filter(filters).order_by('dtu__dtu_no')[start_index: end_index]
         else:
+            num = Meter.objects.all().count()
             meters = Meter.objects.all().order_by('dtu__dtu_no')[start_index: end_index]
 
-    return meters
+    return meters, num
 
 
 def add_meter(meter_info):
