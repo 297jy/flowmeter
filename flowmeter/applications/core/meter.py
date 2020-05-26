@@ -1,27 +1,18 @@
 # coding=utf-8
-import datetime
-import math
 
-from django.db.models import Q, F
-from reportlab.graphics.charts.lineplots import LinePlot
-from reportlab.graphics.charts.textlabels import Label
-from reportlab.graphics.shapes import Drawing
-from reportlab.graphics.widgets.markers import makeMarker
-from reportlab.pdfbase import pdfmetrics, ttfonts
+import logging
+
+from django.db.models import Q
 
 from flowmeter import settings
 from flowmeter.common.const import RoleType
-from flowmeter.config.api import dtu as conf_dtu_api
-from flowmeter.config.db.valve_table import Valve
-from flowmeter.config.db.operator_table import Operator
-from flowmeter.config.api import meter as conf_meter_api
+from flowmeter.config.api import history_data as conf_history_api
+from flowmeter.common.api import pyecharts
 from flowmeter.config.api import log as conf_log_api
-from flowmeter.config.api import meter_state as conf_state_api
-from flowmeter.exceptions import ValueValidException
-from flowmeter.config.const import UNKNOWN_STATE, UNKNOWN_VALUE, VALVE_STATE_OPEN, VALVE_STATE_CLOSE, \
-    RECHARGE_STATE_OPEN, RECHARGE_STATE_CLOSE, BATTERY_PRESSURE_STATE_NORMAL, VALVE_ERROR_FLAG_FALSE, OWE_STATE_FALSE, \
-    SENSOR_ERROR_FLAG_FALSE
-from flowmeter.settings import TMP_FILE_DIRECTORY_PATH
+from flowmeter.config.const import UNKNOWN_STATE, UNKNOWN_VALUE, \
+    BATTERY_PRESSURE_STATE_NORMAL, VALVE_ERROR_FLAG_FALSE, OWE_STATE_FALSE
+
+LOG = logging.getLogger('log')
 
 
 def get_meter_filters(manufacturer_id, dtu_user_id, dtu_id, user):
@@ -159,57 +150,28 @@ def create_opr_log(opr_info):
     return log
 
 
-def draw_recent_week_pdf(filename, data_list):
+def draw_report(filename, meter_id):
     """
-    画最近七天的流量计报表
+    生成报表
+    :param meter_id:
     :param filename:
-    :param data_list
     :return:
     """
-    data = []
-    max_val = 0
-    for index in range(0, len(data_list)):
-        data.append((index + 1, data_list[index]))
-        max_val = max(max_val, data_list[index])
 
-    drawing = Drawing(500, 800)
-    lp = LinePlot()
-    lp.x = 50
-    lp.y = 80
-    lp.height = 600
-    lp.width = 400
-    lp.data = [data]
-    lp.joinedLines = 1
-    lp.lines.symbol = makeMarker('FilledCircle')
-    lp.xValueAxis.valueMin = 1
-    lp.xValueAxis.valueMax = 7
-    lp.xValueAxis.valueStep = 1
-    lp.yValueAxis.valueMin = 0
-    lp.yValueAxis.valueMax = (int(max_val / 100) + 1) * 100
-    lp.yValueAxis.valueStep = 100
-    drawing.add(lp)
+    year_map = conf_history_api.get_meter_year_data(meter_id)
+    month_map = conf_history_api.get_meter_month_data(meter_id)
+    total_flow = conf_history_api.get_meter_flow_data(meter_id)
 
-    x_title = Label()
-    # 若需要显示中文，需要先注册一个中文字体
-    pdfmetrics.registerFont(ttfonts.TTFont("haha", "simsun.ttc"))
-    x_title.fontName = "haha"
-    x_title.fontSize = 12
-    title_text = '用气量'
-    x_title._text = title_text
-    x_title.x = 20
-    x_title.y = 100
-    x_title.textAnchor = 'middle'
-    drawing.add(x_title)
+    month_list = sorted(month_map.keys())
+    month_flow_list = [month_map[day] for day in month_list]
+    year_list = sorted(year_map.keys())
+    year_flow_list = [year_map[year] for year in year_list]
 
-    y_title = Label()
-    # 若需要显示中文，需要先注册一个中文字体
-    pdfmetrics.registerFont(ttfonts.TTFont("haha", "simsun.ttc"))
-    y_title.fontName = "haha"
-    y_title.fontSize = 12
-    title_text = '最近七天'
-    y_title._text = title_text
-    y_title.x = 80
-    y_title.y = 50
-    y_title.textAnchor = 'middle'
-    drawing.add(y_title)
-    drawing.save(formats=['pdf'], outDir=TMP_FILE_DIRECTORY_PATH, fnRoot=filename)
+    month_chart = pyecharts.ChartInfo(x_list=month_list, y_list=month_flow_list, title="月报表")
+    year_chart = pyecharts.ChartInfo(
+        x_list=year_list, y_list=year_flow_list, title="年报表                       总用气量：{}".format(total_flow))
+    report_form = pyecharts.ReportForm()
+    report_form.add_chart(month_chart)
+    report_form.add_chart(year_chart)
+
+    report_form.save(path=filename)

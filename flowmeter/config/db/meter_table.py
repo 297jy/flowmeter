@@ -31,6 +31,8 @@ class Meter(models.Model):
     version = models.FloatField(default=const.UNKNOWN_VALUE, null=True)
     # 仪表备注
     remark = models.CharField(max_length=const.REMARK_CHAR_LEN, null=True)
+    # 昨天的累计用量
+    yesterday_total_flow = models.FloatField(default=0.0)
 
     class Meta:
         unique_together = (("dtu", "address"),)

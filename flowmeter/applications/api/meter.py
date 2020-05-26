@@ -6,7 +6,6 @@ import os
 from flowmeter.applications.core import meter as core
 from flowmeter.applications.api import operator as app_opr_api
 from flowmeter.config.api import meter as conf_meter_api
-from flowmeter.config.api import history_data as conf_history_api
 from flowmeter.config.api import meter_state as conf_state_api
 from flowmeter.config.api import operator as conf_opr_api
 from flowmeter.config.api import log as conf_log_api
@@ -235,7 +234,7 @@ def update_flow_ratio(meter_info, user):
     param_check(meter_info, must_dict, )
 
     dtu_no = meter_info['dtu_no']
-    log_dict = {"opr_user_id": user['id'], "meter_id": meter_info['meter_id'], 'opr_type': Operator.SET_FLOW_RATIO}
+    log_dict = {"opr_user_id": user['id'], "meter_id": meter_info['id'], 'opr_type': Operator.SET_FLOW_RATIO}
     # 保证原子性
     with transaction.atomic():
         log = conf_log_api.add_opr_log(log_dict)
@@ -405,11 +404,10 @@ def generate_report_table(meter_ids):
 
     file_list = []
     for meter_info in meter_infos:
-        filename = 'DTU编号：{}-物理地址：{}-报表.pdf'.format(meter_info['dtu_no'], meter_info['address'])
+        filename = 'DTU编号：{}-物理地址：{}-报表.html'.format(meter_info['dtu_no'], meter_info['address'])
         path = os.path.join(TMP_FILE_DIRECTORY_PATH, filename)
         file_list.append(path)
-        data_list = conf_history_api.get_meter_recent_week_data(meter_info['meter_id'])
-        core.draw_recent_week_pdf(filename, data_list)
+        core.draw_report(path, meter_info['meter_id'])
 
     zipfile = common_file_api.compress_file(file_list)
     return zipfile

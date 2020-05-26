@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from django.db import models
-from flowmeter.config.const import REMARK_CHAR_LEN, STATE_CHAR_LEN, STATE_OFFLINE
+from flowmeter.config.const import REMARK_CHAR_LEN
 from flowmeter.config.db.dtu_region_table import DtuRegion
 from flowmeter.config.db.user_table import User
 
@@ -16,8 +16,6 @@ class Dtu(models.Model):
     dtu_no = models.IntegerField(unique=True)
     # 仪表的使用用户
     user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
-    # 在线状态
-    online_state = models.CharField(max_length=STATE_CHAR_LEN, default=STATE_OFFLINE)
 
     def get_dict(self):
         return {

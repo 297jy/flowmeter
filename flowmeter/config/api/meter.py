@@ -84,19 +84,19 @@ def find_infos_by_meter_ids(meter_ids):
 def find_meters(filters=None, page=None):
     if page is None:
         if filters:
-            meters = Meter.objects.filter(filters).order_by('dtu__dtu_no')
+            meters = Meter.objects.filter(filters).order_by('dtu__dtu_no', 'address')
         else:
-            meters = Meter.objects.all().order_by('dtu__dtu_no')
+            meters = Meter.objects.all().order_by('dtu__dtu_no', 'address')
         num = len(meters)
     else:
         start_index = page.limit * (page.index - 1)
         end_index = page.index * page.limit
         if filters:
             num = Meter.objects.filter(filters).count()
-            meters = Meter.objects.filter(filters).order_by('dtu__dtu_no')[start_index: end_index]
+            meters = Meter.objects.filter(filters).order_by('dtu__dtu_no', 'address')[start_index: end_index]
         else:
             num = Meter.objects.all().count()
-            meters = Meter.objects.all().order_by('dtu__dtu_no')[start_index: end_index]
+            meters = Meter.objects.all().order_by('dtu__dtu_no', 'address')[start_index: end_index]
 
     return meters, num
 
@@ -215,3 +215,7 @@ def get_total_meter_num_by_man_id(man_id):
 def get_total_meter_num_by_dtu_user_id(dtu_user_id):
     num = Meter.objects.filter(dtu__user__id=dtu_user_id).count()
     return num
+
+
+def get_all_meters():
+    return Meter.objects.all()

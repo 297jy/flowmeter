@@ -135,7 +135,7 @@ class Operator:
         :return:
         """
         opr = Operator()
-        opr.init(dtu_no, meter_address, Operator.QUERY, log_id, meter_id, val)
+        opr.init(dtu_no, meter_address, Operator.SET_FLOW_RATIO, log_id, meter_id, val)
         return opr
 
     def get_dict(self):

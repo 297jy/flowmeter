@@ -259,20 +259,22 @@ MAX_DTU_NO = 1 << 16 - 1
 # celery中间人 redis://redis服务所在的ip地址:端口/数据库号
 BROKER_URL = 'redis://127.0.0.1:6379/0'
 
+worker_hijack_root_logger = False
+
 # 需要执行任务的配置
-CELERYBEAT_SCHEDULE = {
+CELERY_BEAT_SCHEDULE = {
     'clean_junk_file': {
-        # 具体需要执行的函数
-        # 该函数必须要使用@app.task装饰
-        'task': 'flowmeter.celery_task.api.twelve_fixed_task.clean_junk_file',
+        'task': 'flowmeter.tasks.clean_junk_file',
         # 定时时间 12点执行
-        'schedule': crontab(minute=0, hour=0),
+        # 'schedule': crontab(minute=0, hour=0),
+        'schedule': timedelta(seconds=10),
         'args': ()
     },
     'statistic_meter_data': {
-        'task': 'flowmeter.celery_task.api.twelve_fixed_task.statistic_meter_data',
+        'task': 'flowmeter.tasks.statistic_meter_data',
         # 定时时间 12点执行
-        'schedule': crontab(minute=0, hour=0),
+        # 'schedule': crontab(minute=0, hour=0),
+        'schedule': timedelta(seconds=10),
         'args': ()
     },
 }
