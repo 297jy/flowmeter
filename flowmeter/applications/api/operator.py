@@ -23,21 +23,6 @@ def execute_remote_op(opr):
 
         log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'], opr['opr_type'])
         app_log_api.update_logs_success_state(log_ids)
-        # 之前还未执行的关阀操作可以删除
-        if opr['opr_type'] == Operator.OPEN_VALVE:
-            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
-                                                                           Operator.CLOSE_VALVE)
-        if opr['opr_type'] == Operator.CLOSE_VALVE:
-            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
-                                                                           Operator.OPEN_VALVE)
-
-        if opr['opr_type'] == Operator.OPEN_RECHARGE:
-            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
-                                                                           Operator.CLOSE_RECHARGE)
-        if opr['opr_type'] == Operator.CLOSE_RECHARGE:
-            log_ids = conf_operator_api.get_log_ids_and_del_unexecuted_opr(opr['dtu_no'], opr['address'],
-                                                                           Operator.OPEN_RECHARGE)
-        app_log_api.update_logs_success_state(log_ids)
 
     conf_operator_api.add_unexecuted_operator(opr)
 
@@ -86,9 +71,9 @@ def execute_wait_remote_op(dtu_no, address, opr_type):
     # 先获取缓存中存在的带执行的操作命令
     opr = conf_operator_api.get_one_wait_opr(dtu_no, address, opr_type)
     if opr is not None:
-        if opr.log_id:
-            with transaction.atomic():
+        with transaction.atomic():
+            if opr.log_id:
                 app_log_api.update_logs_success_state([opr.log_id])
                 app_log_api.send_opr_status(opr.log_id)
-                opr.delete()
+            opr.delete()
     return opr

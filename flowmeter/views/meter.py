@@ -8,6 +8,7 @@ from django.views.decorators.clickjacking import xframe_options_sameorigin
 from flowmeter.views.common import ActionHandlerBase, Result
 from flowmeter.common.api import request as request_api
 from flowmeter.applications.api import meter as app_meter_api
+from flowmeter.config.api import configure as conf_configure_api
 
 
 class MeterActionHandler(ActionHandlerBase):
@@ -129,7 +130,8 @@ class MeterActionHandler(ActionHandlerBase):
 
 @xframe_options_sameorigin
 def meter_view(request):
-    return render(request, 'meter/meter-list.html', {'user': request_api.get_user(request)})
+    port = conf_configure_api.get_configure_by_name(conf_configure_api.get_websocket_port_name())
+    return render(request, 'meter/meter-list.html', {'user': request_api.get_user(request), 'websocket_port': int(port)})
 
 
 @xframe_options_sameorigin

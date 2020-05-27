@@ -5,7 +5,7 @@ from flowmeter.config.db.log_table import AlarmLog, OprLog, SystemLog
 
 def add_alarm_log(log):
 
-    return AlarmLog.objects.create(**log)
+    return AlarmLog.objects.create(alarm_type=log['alarm_type'], meter_id=log['meter_id'], opr_time=log['opr_time'])
 
 
 def add_opr_log(log):

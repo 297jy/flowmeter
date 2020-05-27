@@ -29,7 +29,8 @@
   };
 
 	Xadmin.prototype.add_tab = function (title,url,is_refresh) {
-		var id = md5(url);//md5每个url
+
+	    var id = md5(url);
 
 		//重复点击
 		for (var i = 0; i <$('.x-iframe').length; i++) {

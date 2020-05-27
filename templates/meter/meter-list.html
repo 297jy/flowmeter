@@ -492,6 +492,67 @@
                 });
             {% endif %}
 
+            if ("WebSocket" in window) {
+
+                open_falg = false;
+
+
+                function connect() {
+                    // 打开一个 web socket
+                    ws = new WebSocket("ws://" + window.location.host + ":{{ websocket_port }}/websocket/");
+
+                    ws.onopen = function () {
+                        // Web Socket 已连接上，使用 send() 方法发送数据
+                        ws.send(JSON.stringify({'user_id': 'opr_msg_{{ user.id }}', 'opr_msg': true}));
+                        open_falg = true;
+                    };
+
+                    ws.onmessage = function (evt) {
+                        var msg = evt.data;
+                        console.log("收到了来自服务器websocket消息" + msg);
+                        var msg_dict = JSON.parse(msg);
+
+                        var status = msg_dict['state'];
+                        if (status === "error") {
+                            layer.msg(msg_dict['msg'], {icon: 5, time: 3000});
+                        }
+                        else {
+                            if (status === "success") {
+                                layer.msg(msg_dict['msg'], {icon: 6, time: 3000});
+                                table.reload('meter');
+                            }
+                        }
+
+
+                    };
+
+                    ws.onclose = function () {
+                        // 关闭 websocket
+                        /**
+                         layer.alert("网络异常，与远程服务器通信中断！", {icon: 5}, function () {
+                    layer.closeAll();
+                });**/
+                        open_falg = false;
+                    };
+                }
+
+                connect();
+
+                //定时1分钟检查连接是否关闭，如果关闭则重新开启
+                setInterval(function () {
+                    if (!open_falg) {
+                        connect();
+                    }
+                }, 10 * 1000);
+
+                //4小时主动关一下连接，避免mysql连接超时
+                setInterval(function () {
+                    ws.close();
+                    open_falg = false;
+                }, 4 * 3600 * 1000);
+
+            }
+
         });
 </script>
 

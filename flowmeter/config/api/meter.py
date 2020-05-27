@@ -219,3 +219,8 @@ def get_total_meter_num_by_dtu_user_id(dtu_user_id):
 
 def get_all_meters():
     return Meter.objects.all()
+
+
+def get_meter_surplus_gas(meter_id):
+    meter = Meter.objects.get(id=meter_id)
+    return meter.surplus_gas

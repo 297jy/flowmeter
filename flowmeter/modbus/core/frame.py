@@ -123,7 +123,7 @@ def __cal_flow_ratio(frame):
     if len(frame) <= field.end_address:
         return None
     flow_ratio = math.byte_arr_convert_int(frame[field.begin_address: field.end_address + 1])
-    return float(flow_ratio / 1000.0)
+    return float(flow_ratio / 100.0)
 
 
 # 数据域与其对应的计算函数映射
@@ -188,7 +188,7 @@ def get_field_val(frame, opr_type):
     if opr_type == Operator.RECHARGE:
         return math.byte_arr_convert_int(frame[__DATA_FIELD_BEGIN_INDEX: __DATA_FIELD_END_INDEX])
     elif opr_type == Operator.SET_FLOW_RATIO:
-        return math.calculate_double(frame[__DATA_FIELD_BEGIN_INDEX: __DATA_FIELD_END_INDEX])
+        return math.byte_arr_convert_int(frame[__DATA_FIELD_BEGIN_INDEX: __DATA_FIELD_END_INDEX]) / 100.0
     elif opr_type == Operator.SET_METER_ADDRESS:
         return math.byte_arr_convert_int(frame[__DATA_FIELD_BEGIN_INDEX: __DATA_FIELD_END_INDEX])
 

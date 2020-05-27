@@ -11,7 +11,7 @@ import logging
 
 from flowmeter.config.api import alarm_log_reader as conf_reader_api
 from flowmeter.applications.api import log as app_log_api
-from flowmeter.common.const import RoleType
+from flowmeter.config.api import user as conf_user_api
 
 logger = logging.getLogger('log')
 
@@ -21,7 +21,7 @@ def run():
     application = tornado.web.Application([
         (r"/websocket/", AlarmNoticeHandler),
     ],)
-    application.listen(port=8004, address="127.0.0.1")
+    application.listen(port=8004, address="0.0.0.0")
     tornado.ioloop.IOLoop.instance().start()
 
 
@@ -48,11 +48,13 @@ class AlarmNoticeHandler(tornado.websocket.WebSocketHandler):
 
         user_info = json.loads(message)
         user_id = user_info['user_id']
+        opr_msg = user_info['opr_msg']
         AlarmNoticeHandler.user_id_connect_map[user_id] = self
 
-        alarm_dicts = AlarmNoticeHandler.__get_unread_alarm_dicts(user_id)
-        for alarm_dict in alarm_dicts:
-            self.write_message(json.dumps(alarm_dict))
+        if opr_msg is False:
+            alarm_dicts = AlarmNoticeHandler.__get_unread_alarm_dicts(user_id)
+            for alarm_dict in alarm_dicts:
+                self.write_message(json.dumps(alarm_dict))
 
     @staticmethod
     def __get_unread_alarm_dicts(user_id):
@@ -61,8 +63,8 @@ class AlarmNoticeHandler(tornado.websocket.WebSocketHandler):
 
         alarm_dicts = []
         for alarm in alarms:
-            alarm_log_dict = {'alarm_reader_id': alarm.id,
-                              'msg': app_log_api.render_msg(alarm.alarm_log, RoleType.MANUFACTURER)}
+            alarm_log_dict = {'type': 'alarm', 'alarm_reader_id': alarm.id,
+                              'msg': app_log_api.render_alarm_msg(alarm.alarm_log, conf_user_api.get_user_role(user_id))}
             alarm_dicts.append(alarm_log_dict)
         return alarm_dicts
 
@@ -100,6 +102,8 @@ def notice_user():
                 msg = json.loads(message['data'].decode('utf-8'))
                 user_id = msg['user_id']
                 alarm = msg['alarm']
+                if alarm['type'] == 'opr_msg':
+                    user_id = "opr_msg_{}".format(user_id)
                 AlarmNoticeHandler.notice_user(user_id, alarm)
 
 

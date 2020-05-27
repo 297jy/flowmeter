@@ -233,7 +233,6 @@ def send_alarm(alarm_log_dict):
     alarm_log = conf_log_api.add_alarm_log(alarm_log_dict)
     # 向管理员推送警报
     admin_ids = conf_user_api.get_all_admin_ids()
-    logger.info(admin_ids)
     for admin_id in admin_ids:
         reader = conf_reader_api.add_unread_alarm({'alarm_log': alarm_log, 'user_id': int(admin_id)})
         alarm_log_dict = {'type': 'alarm', 'alarm_reader_id': reader.id,

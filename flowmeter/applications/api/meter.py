@@ -342,6 +342,11 @@ def update_meter_data(meter_id, data):
     elif data['opr_type'] == Operator.SET_FLOW_RATIO:
         meter_data.update({'flow_ratio': data['data']})
 
+    # 更新剩余气量
+    elif data['opr_type'] == Operator.RECHARGE:
+        surplus_gas = conf_meter_api.get_meter_surplus_gas(meter_id)
+        meter_data.update({'surplus_gas': int(surplus_gas + data['data'])})
+
     # 更新阀门状态
     elif data['opr_type'] == Operator.OPEN_VALVE:
         conf_state_api.update_meter_state(meter_id, {'valve_state': VALVE_STATE_OPEN})
@@ -349,9 +354,11 @@ def update_meter_data(meter_id, data):
     # 更新阀门状态
     elif data['opr_type'] == Operator.CLOSE_VALVE:
         conf_state_api.update_meter_state(meter_id, {'valve_state': VALVE_STATE_CLOSE})
+
     # 更新预充值状态
     elif data['opr_type'] == Operator.OPEN_RECHARGE:
         conf_state_api.update_meter_state(meter_id, {'recharge_state': RECHARGE_STATE_OPEN})
+
     # 更新预充值状态
     elif data['opr_type'] == Operator.CLOSE_RECHARGE:
         conf_state_api.update_meter_state(meter_id, {'recharge_state': RECHARGE_STATE_CLOSE})

@@ -132,10 +132,6 @@ class FlowMeterServer(Protocol):
         :return:
         """
         ip = self.transport.getPeer().host
-        data_list = []
-        for data in data_frame:
-            data_list.append(str(data))
-        logger.info("ip: {}，发送了{}数据帧，字节长度：{}".format(ip, ";".join(data_list), len(data_frame)))
 
         # 回应心跳包
         if FlowMeterServer.__is_heart_beat(data_frame):
@@ -155,8 +151,15 @@ class FlowMeterServer(Protocol):
     @staticmethod
     def __data_receiver_handler(ip, data_frame):
         """收到数据帧的处理函数"""
+        data_list = [str(data_byte) for data_byte in data_frame]
+        logger.info("ip: {}，发送了{}数据帧，字节长度：{}".
+                    format(ip, ";".join(data_list), len(data_frame)))
+
         dtu_no = FlowMeterClients.get_dtu_no(ip)
         data = frame.parse_data_frame(data_frame)
+
+        logger.info("该操作类型：{}".format(data['opr_type']))
+
         # 先执行一条等待结果的操作
         opr = app_opr_api.execute_wait_remote_op(dtu_no, data['address'], data['opr_type'])
         # 更新仪表数据
@@ -180,7 +183,7 @@ def query_meter_data():
     :return:
     """
     logger.info("开始定时查询流量计数据")
-    meters = conf_meter_api.find_meters()
+    meters, num = conf_meter_api.find_meters()
     meter_ids = [meter.id for meter in meters]
     app_meter_api.query_meter_data({"meter_ids": meter_ids}, None, record_log=False)
 
@@ -238,7 +241,8 @@ def send_data_frame(dtu_no, data_frame):
         raise OfflineException()
 
     connect.getHandle().sendall(data_frame)
-    logger.info("服务器发送了：{}".format(data_frame))
+    data_list = [str(data) for data in data_frame]
+    logger.info("服务器发送了：{}".format(";".join(data_list)))
 
 
 def five_seconds_beat_task():
